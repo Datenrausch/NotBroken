@@ -1,3 +1,4 @@
 *.pyc
 *_credentials.py
 *.DS
+*.DS_Store
