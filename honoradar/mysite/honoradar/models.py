@@ -26,9 +26,12 @@ class Choice(models.Model):
 
 class Medium(models.Model):
     mediumname = models.CharField(max_length=200)
+    pub_date = models.DateTimeField('date published')
     def __str__(self):
         return self.mediumname
-
+    def was_published_recently(self):
+        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+        
 class Salary(models.Model):
     medium = models.ForeignKey(Medium, on_delete=models.CASCADE)
     salary_number=models.IntegerField(default=0)

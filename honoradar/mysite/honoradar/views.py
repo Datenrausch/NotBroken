@@ -3,7 +3,7 @@ from django.template import loader
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from django.views import generic
-
+import datetime
 from .models import *
 
 def senddata(request):
@@ -12,6 +12,14 @@ def senddata(request):
         mediumname=(request.POST.get('mediumname'))
         message=(request.POST.get('message'))
         festfrei=(request.POST.get('festfrei'))
+        mediumobj = Medium()
+        mediumobj.mediumname = mediumname
+        mediumobj.message = message
+        mediumobj.pub_date= timezone.now()
+        print(mediumobj)
+        mediumobj.save()
+
+
         if festfrei=="fest":
             gehalt=(request.POST.get('gehalt'))
             StundenProWoche=(request.POST.get('StundenProWoche'))
@@ -46,14 +54,6 @@ def senddata(request):
             if videoAudioText=="video":
                 MinutenProVideo=(request.POST.get('MinutenProVideo'))
                 print(MinutenProVideo)
-
-
-
-
-
-
-
-
 
     return HttpResponseRedirect(reverse('honoradar:index'))
 
