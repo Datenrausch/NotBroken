@@ -5,55 +5,22 @@ from django.urls import reverse
 from django.views import generic
 import datetime
 from .models import *
-
+from django.db.models import Q
 def senddata(request):
     if request.method == 'POST':
         print("senddata")
         mediumname=(request.POST.get('mediumname'))
         message=(request.POST.get('message'))
         festfrei=(request.POST.get('festfrei'))
-        mediumobj = Medium()
-        mediumobj.mediumname = mediumname
-        mediumobj.message = message
-        mediumobj.pub_date= timezone.now()
-        print(mediumobj)
-        mediumobj.save()
-
-
-        if festfrei=="fest":
-            gehalt=(request.POST.get('gehalt'))
-            StundenProWoche=(request.POST.get('StundenProWoche'))
-            cheforvolo=(request.POST.get('cheforvolo'))
-            arbeitserfahrung=(request.POST.get("arbeitserfahrung"))
-            wohlfuehl=(request.POST.get("wohlfuehl"))
-            print(mediumname, festfrei, gehalt, StundenProWoche, cheforvolo, arbeitserfahrung,wohlfuehl, message)
-        if festfrei=="pauschal":
-            gehalt=(request.POST.get('gehalt'))
-            tageProMonat=(request.POST.get('tageProMonat'))
-            stundenProTag=(request.POST.get('stundenProTag'))
-            position=(request.POST.get('cheforvolo'))
-            arbeitserfahrung=(request.POST.get("arbeitserfahrung"))
-            wohlfuehl=(request.POST.get("wohlfuehl"))
-            print(mediumname, festfrei, gehalt, tageProMonat, stundenProTag, position, arbeitserfahrung,wohlfuehl, message)
-        if festfrei=="frei":
-            gehalt=(request.POST.get('lohnProAuftrag'))
-            ProductType=(request.POST.get('ProductType'))
-            Verwertung=(request.POST.get('Verwertung'))
-            Zeitaufwand=(request.POST.get('Zeitaufwand'))
-            arbeitserfahrung=(request.POST.get("arbeitserfahrung"))
-            zufriedenheit=(request.POST.get("zufriedenheit"))
-            videoAudioText=(request.POST.get('videoAudioText'))
-            print(mediumname,festfrei, gehalt,ProductType,Verwertung,Zeitaufwand,arbeitserfahrung,zufriedenheit,videoAudioText)
-            if videoAudioText=="text":
-                ZeichenProArtikel=(request.POST.get('ZeichenProArtikel'))
-                print(ZeichenProArtikel)
-            if videoAudioText=="audio":
-                MinutenProAudio=(request.POST.get('MinutenProAudio'))
-                print(MinutenProAudio)
-
-            if videoAudioText=="video":
-                MinutenProVideo=(request.POST.get('MinutenProVideo'))
-                print(MinutenProVideo)
+        try:
+            Medium.objects.get(
+            Q(mediumname=mediumname),
+            Q(festfrei=festfrei)
+        )
+        except Medium.DoesNotExist:
+            obj = Medium(mediumname=mediumname, festfrei=festfrei)
+            print("CREATING NEW")
+            obj.save()
 
     return HttpResponseRedirect(reverse('honoradar:index'))
 

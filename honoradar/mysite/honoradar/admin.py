@@ -5,24 +5,23 @@ from .models import *
 
 
 
-class SalaryInline(admin.TabularInline):
-    model = Salary
+class DataCollection(admin.TabularInline):
+    model = DataCollection
     extra = 3
 
-class RatingInline(admin.TabularInline):
-    model = Rating
-    extra = 3
+
 
 class MediumAdmin(admin.ModelAdmin):
     fieldsets = [
-    (None,               {'fields': ['mediumname']}),
-    ('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
+    (None,               {'fields': ['mediumname'] }),
+    ('Jobstatus', {'fields': ['festfrei']}),
+
 ]
-    inlines = ([SalaryInline, RatingInline])
+    inlines = [DataCollection]
     #this is for the question page
-    list_display = ('mediumname', 'pub_date', 'was_published_recently')
+    list_display = ['mediumname','festfrei']
     #fields = ['pub_date', 'question_text']
-    list_filter = ['pub_date']
+    list_filter = ['festfrei']
     search_fields = ['mediumname']
 
 class ChoiceInline(admin.TabularInline):
@@ -42,7 +41,6 @@ class QuestionAdmin(admin.ModelAdmin):
     list_filter = ['pub_date']
     search_fields = ['question_text']
 
+
 admin.site.register(Medium, MediumAdmin)
 admin.site.register(Question, QuestionAdmin)
-admin.site.register(Salary)
-admin.site.register(Rating)

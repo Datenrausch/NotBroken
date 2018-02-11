@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 import datetime
+from model_utils import Choices
 
 
 class Question(models.Model):
@@ -26,20 +27,18 @@ class Choice(models.Model):
 
 class Medium(models.Model):
     mediumname = models.CharField(max_length=200)
-    pub_date = models.DateTimeField('date published')
+    FESTFREI = Choices("fest","pauschal","frei")
+    festfrei = models.CharField(choices=FESTFREI, default=FESTFREI.frei, max_length=10)
+
     def __str__(self):
         return self.mediumname
-    def was_published_recently(self):
-        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
-        
-class Salary(models.Model):
+    
+class DataCollection(models.Model):
     medium = models.ForeignKey(Medium, on_delete=models.CASCADE)
-    salary_number=models.IntegerField(default=0)
-    def __str__(self):
-        return self.salary_number
 
-class Rating(models.Model):
-    medium = models.ForeignKey(Medium, on_delete=models.CASCADE)
+    salary_number=models.IntegerField(default=0)
     rating_number=models.IntegerField(default=0)
+
+
     def __str__(self):
-        return self.rating_number
+        return (self.salary_number, self.rating_number)
