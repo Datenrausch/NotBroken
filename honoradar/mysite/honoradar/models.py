@@ -23,22 +23,20 @@ class Choice(models.Model):
     def __str__(self):
         return self.choice_text
 
-class form(models.Model):
-    pass
-
 
 class Medium(models.Model):
-    form = models.ForeignKey(form, on_delete=models.CASCADE)
-    medium_text = models.CharField(max_length=200)
-    pub_date = models.DateTimeField('date published')
-    list_filter = ['pub_date']
-    search_fields = ['medium_text']
-    pass
+    mediumname = models.CharField(max_length=200)
+    def __str__(self):
+        return self.mediumname
 
 class Salary(models.Model):
-    form = models.ForeignKey(form, on_delete=models.CASCADE)
-    salary_number=models.IntegerField()
+    medium = models.ForeignKey(Medium, on_delete=models.CASCADE)
+    salary_number=models.IntegerField(default=0)
+    def __str__(self):
+        return self.salary_number
 
 class Rating(models.Model):
-    form = models.ForeignKey(form, on_delete=models.CASCADE)
-    salary_number=models.IntegerField()
+    medium = models.ForeignKey(Medium, on_delete=models.CASCADE)
+    rating_number=models.IntegerField(default=0)
+    def __str__(self):
+        return self.rating_number

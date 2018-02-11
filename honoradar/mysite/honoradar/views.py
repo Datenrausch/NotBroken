@@ -4,26 +4,53 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from django.views import generic
 
-from .models import Question, Choice
+from .models import *
 
 def senddata(request):
     if request.method == 'POST':
         print("senddata")
         mediumname=(request.POST.get('mediumname'))
-        message=(request.POST.get('mediumname'))
+        message=(request.POST.get('message'))
         festfrei=(request.POST.get('festfrei'))
         if festfrei=="fest":
             gehalt=(request.POST.get('gehalt'))
-            arbeitszeit=(request.POST.get('arbeitszeit'))
+            StundenProWoche=(request.POST.get('StundenProWoche'))
+            cheforvolo=(request.POST.get('cheforvolo'))
+            arbeitserfahrung=(request.POST.get("arbeitserfahrung"))
+            wohlfuehl=(request.POST.get("wohlfuehl"))
+            print(mediumname, festfrei, gehalt, StundenProWoche, cheforvolo, arbeitserfahrung,wohlfuehl, message)
+        if festfrei=="pauschal":
+            gehalt=(request.POST.get('gehalt'))
+            tageProMonat=(request.POST.get('tageProMonat'))
+            stundenProTag=(request.POST.get('stundenProTag'))
             position=(request.POST.get('cheforvolo'))
-            arbeitserfahrung=(request.POST.get("erfahrung"))
-            zufriedenheit=(request.POST.get("happiness"))
-            print(mediumname, festfrei, gehalt, arbeitszeit, position, arbeitserfahrung,zufriedenheit, message)
+            arbeitserfahrung=(request.POST.get("arbeitserfahrung"))
+            wohlfuehl=(request.POST.get("wohlfuehl"))
+            print(mediumname, festfrei, gehalt, tageProMonat, stundenProTag, position, arbeitserfahrung,wohlfuehl, message)
+        if festfrei=="frei":
+            gehalt=(request.POST.get('lohnProAuftrag'))
+            ProductType=(request.POST.get('ProductType'))
+            Verwertung=(request.POST.get('Verwertung'))
+            Zeitaufwand=(request.POST.get('Zeitaufwand'))
+            arbeitserfahrung=(request.POST.get("arbeitserfahrung"))
+            zufriedenheit=(request.POST.get("zufriedenheit"))
+            videoAudioText=(request.POST.get('videoAudioText'))
+            print(mediumname,festfrei, gehalt,ProductType,Verwertung,Zeitaufwand,arbeitserfahrung,zufriedenheit,videoAudioText)
+            if videoAudioText=="text":
+                ZeichenProArtikel=(request.POST.get('ZeichenProArtikel'))
+                print(ZeichenProArtikel)
+            if videoAudioText=="audio":
+                MinutenProAudio=(request.POST.get('MinutenProAudio'))
+                print(MinutenProAudio)
+
+            if videoAudioText=="video":
+                MinutenProVideo=(request.POST.get('MinutenProVideo'))
+                print(MinutenProVideo)
 
 
 
-        print(request.POST.get('festfrei'))
-        print(request.POST)
+
+
 
 
 
