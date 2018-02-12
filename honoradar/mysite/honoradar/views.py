@@ -13,14 +13,48 @@ def senddata(request):
         message=(request.POST.get('message'))
         festfrei=(request.POST.get('festfrei'))
         try:
-            Medium.objects.get(
+            mediumobj=Medium.objects.get(
             Q(mediumname=mediumname),
             Q(festfrei=festfrei)
         )
+            if festfrei=="fest":
+                gehalt=(request.POST.get('gehalt'))
+                wohlfuehl=(request.POST.get("wohlfuehl"))
+            if festfrei=="pauschal":
+                gehalt=(request.POST.get('gehalt'))
+                wohlfuehl=(request.POST.get("wohlfuehl"))
+            if festfrei=="frei":
+                gehalt=(request.POST.get('lohnProAuftrag'))
+                wohlfuehl=(request.POST.get("zufriedenheit"))
+            datacollection = DataCollection(
+            medium=mediumobj,
+            salary_number=gehalt,
+            rating_number=wohlfuehl,
+            )
+            datacollection.save(force_insert=True)
         except Medium.DoesNotExist:
-            obj = Medium(mediumname=mediumname, festfrei=festfrei)
+            if festfrei=="fest":
+                gehalt=(request.POST.get('gehalt'))
+                wohlfuehl=(request.POST.get("wohlfuehl"))
+            if festfrei=="pauschal":
+                gehalt=(request.POST.get('gehalt'))
+                wohlfuehl=(request.POST.get("wohlfuehl"))
+            if festfrei=="frei":
+                gehalt=(request.POST.get('lohnProAuftrag'))
+                wohlfuehl=(request.POST.get("zufriedenheit"))
+
+
+
+            mediumobj = Medium(mediumname=mediumname, festfrei=festfrei)
+            datacollection = DataCollection(
+            medium=mediumobj,
+            salary_number=gehalt,
+            rating_number=wohlfuehl,
+            )
+            datacollection.save(force_insert=True)
+
             print("CREATING NEW")
-            obj.save()
+            mediumobj.save()
 
     return HttpResponseRedirect(reverse('honoradar:index'))
 

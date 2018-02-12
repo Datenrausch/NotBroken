@@ -32,13 +32,13 @@ class Medium(models.Model):
 
     def __str__(self):
         return self.mediumname
-    
+
 class DataCollection(models.Model):
     medium = models.ForeignKey(Medium, on_delete=models.CASCADE)
 
     salary_number=models.IntegerField(default=0)
     rating_number=models.IntegerField(default=0)
-
+    
 
     def __str__(self):
         return (self.salary_number, self.rating_number)
