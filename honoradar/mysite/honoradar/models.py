@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 import datetime
+from model_utils import Choices
 
 
 class Question(models.Model):
@@ -23,22 +24,21 @@ class Choice(models.Model):
     def __str__(self):
         return self.choice_text
 
-class form(models.Model):
-    pass
-
 
 class Medium(models.Model):
-    form = models.ForeignKey(form, on_delete=models.CASCADE)
-    medium_text = models.CharField(max_length=200)
-    pub_date = models.DateTimeField('date published')
-    list_filter = ['pub_date']
-    search_fields = ['medium_text']
-    pass
+    mediumname = models.CharField(max_length=200)
+    FESTFREI = Choices("fest","pauschal","frei")
+    festfrei = models.CharField(choices=FESTFREI, default=FESTFREI.frei, max_length=10)
 
-class Salary(models.Model):
-    form = models.ForeignKey(form, on_delete=models.CASCADE)
-    salary_number=models.IntegerField()
+    def __str__(self):
+        return self.mediumname
 
-class Rating(models.Model):
-    form = models.ForeignKey(form, on_delete=models.CASCADE)
-    salary_number=models.IntegerField()
+class DataCollection(models.Model):
+    medium = models.ForeignKey(Medium, on_delete=models.CASCADE)
+
+    salary_number=models.IntegerField(default=0)
+    rating_number=models.IntegerField(default=0)
+
+
+    def __str__(self):
+        return (self.salary_number,self.rating_number)

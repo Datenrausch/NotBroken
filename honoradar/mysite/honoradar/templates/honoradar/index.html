@@ -5,16 +5,13 @@
 <head>
     {% load static %}
 
-    <link rel="stylesheet" type="text/css" href="{% static 'honoradar/style.css' %}" />
-    <!--    <link rel="stylesheet" media="(max-width:480px)" type="text/css" href="{% static 'compareprices/480Max.css' %}" />
-    <link rel="stylesheet" media="(min-width:481px)" type="text/css" href="{% static 'compareprices/480Min.css' %}" />-->
     <!-- Meta -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="description" content="Honorardar">
-    <meta name="author" content="Michel Penke und Haluka Maier-Borst">
-    <meta name="date" content="2017-11-18">
-    <meta name="robots" content="index,follow">
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  	<meta name="description" content="Honorardar">
+  	<meta name="author" content="Michel Penke und Haluka Maier-Borst">
+  	<meta name="date" content="2017-11-18">
+  	<meta name="robots" content="index,follow">
 
     <!-- Favicon final_redone: https://realfavicongenerator.net PLEASE DO NOT FORGET -->
     <link rel="shortcut icon" type="image/x-icon" href="#">
@@ -32,16 +29,6 @@
     <link rel="stylesheet" href="{% static 'honoradar/navbar/css/reset.css'%}">
     <link rel="stylesheet" href="{% static 'honoradar/navbar/css/style.css'%}">
     <link href="lity/dist/lity.css" rel="stylesheet">
-
-    <!-- Javascript -->
-    <script src="{% static 'honoradar/navbar/js/modernizr.js'%}"></script>
-    <script src="{% static 'honoradar/html5shiv.js'%}"></script>
-    <script src="{% static 'honoradar/lity/vendor/jquery.js'%}"></script>
-    <script src="{% static 'honoradar/lity/dist/lity.js'%}"></script>
-    <script src="{% static 'honoradar/js/jquery.js'%}"></script>
-    <script src="{% static 'honoradar/js/javascript.js'%}"></script>
-    <script src="{% static 'honoradar/js/javascript-new.js'%}"></script>
-
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
@@ -64,7 +51,6 @@
     <meta name="title" content="XXX">
     <meta name="description" content="XXX">
     <meta name="keywords" content="XXX">
-
 
 </head>
 
@@ -156,10 +142,9 @@
                   <form action="{% url 'honoradar:senddata' %}" method="post" name="firstbox" id="giv-form">
                       {% csrf_token %}
                     <div class="banner-left-1">Wie verdienst du dein Geld?</div>
-                    <div class="banner-left-shadow"></div>
 
                     <!-- Medium-Select -->
-                    <input name="mediumname" id="data_1" class="media-select" list="medium" placeholder="Welches Medium?" type="text" />
+                    <input name="mediumname" id="data_medium" class="media-select" list="medium" placeholder="Welches Medium?" type="text" />
                     <datalist id="medium">
   <option value="Frankfurter Allgemeine Zeitung (FAZ)">
   <option value="Spiegel">
@@ -172,338 +157,277 @@
 </datalist>
 
 
+<!-- Switch-Select -->
+	<div class="switch-field switch-field-text-1 tooltip">
+		<input name="festfrei" type="radio" id="data_arbeitsverhaeltnis_fest" name="switch" value="fest" onclick="festfunction()"/>
+		<label for="data_arbeitsverhaeltnis_fest">Fest</label>
+		<input name="festfrei" type="radio" id="data_arbeitsverhaeltnis_pauschal" name="switch" value="pauschal" onclick="pauschalfunction()"/>
+		<label for="data_arbeitsverhaeltnis_pauschal">Pauschal</label>
+		<input name="festfrei" type="radio" id="data_arbeitsverhaeltnis_frei" name="switch" value="frei" onclick="freifunction()"/>
+		<label for="data_arbeitsverhaeltnis_frei">Frei</label>
+	</div>
 
-                    <!-- Switch-Select -->
-                    <div>
-                        <div class="switch-field switch-field-text-1 tooltip">
-                            <input name="festfrei" type="radio" id="data_2" name="switch" value="fest" onclick="festfunction()" />
-                            <label for="data_2">Fest</label>
-                            <input name="festfrei" type="radio" id="data_3" name="switch" value="pauschal" onclick="pauschalfunction()" />
-                            <label for="data_3">Pauschal</label>
-                            <input name="festfrei" type="radio" id="data_4" name="switch" value="frei" onclick="freifunction()" />
-                            <label for="data_4">Frei</label>
-                        </div>
-                    </div>
+  <!-- Loan-Select -->
+  	<input  name="gehalt" id="data_gehalt" class="loan-select hide" list="gehalt" placeholder="Gehalt pro Monat?" type="number"	min="0" oninput="validity.valid||(value='');" inputmode="numeric" />
 
+    <!-- Hour-Week-Select -->
+    	<div class="hour-week-select hide" id="pre-data_stunden_woche">
+    		<input id="data_stunden_woche" name="arbeitszeit" class="hour-week-bar" type="range" min="1" max="50" value="0"/>
+    	</div>
+    	<div class="break hide" id="break-1"></div>
 
-                    <!-- Loan-Select -->
-                    <input name="gehalt" id="data_5" class="loan-select hide" list="gehalt" placeholder="Gehalt pro Monat?" type="number" min="0" oninput="validity.valid||(value='');" inputmode="numeric" />
+      <!-- Day-Month-Select -->
+      	<div class="day-month-select hide" id="pre-data_tag_monat">
+      		<input name="tageProMonat" id="data_tag_monat" class="day-month-bar" type="range" min="1" max="30" value="0"/>
+      	</div>
 
-                    <!-- Hour-Week-Select -->
-                    <div class="hour-week-select hide" id="pre-data_6">
-                        <input name="arbeitszeit"  id="data_6" class="hour-week-bar" type="range" min="1" max="50" value="1">
-                    </div>
-                    <div class="break hide" id="break-1"></div>
+        <!-- Hour-Day-Select -->
+        	<div class="hour-day-select hide" id="pre-data_stunden_tag">
+        		<input name="stundenProTag" id="data_stunden_tag" class="hour-day-bar" type="range" min="1" max="24" value="0"/>
+        	</div>
 
+          <!-- Freelancer-Loan-Select -->
+          	<input name="lohnProAuftrag" id="data_honorar" class="loan-select hide" list="gehalt" placeholder="Lohn für den Auftrag?" type="number"	min="0" oninput="validity.valid||(value='');" inputmode="numeric" />
 
-                    <!-- Day-Month-Select -->
-                    <div class="day-month-select hide" id="pre-data_7">
-                        <input name="tageProMonat"  id="data_7" class="day-month-bar" type="range" min="1" max="30" value="1">
-                    </div>
+            <!-- Unit-Select -->
+            	<div class="hide" id="pre-data_format_text_audio_video">
+            		<div class="switch-field switch-field-text-2 tooltip">
+            			<input type="radio" id="data_format_text" name="videoAudioText" value="text" onclick="textfunction()"/>
+            			<label for="data_format_text">Text</label>
+            			<input type="radio" id="data_format_audio" name="videoAudioText" value="audio" onclick="audiofunction()"/>
+            			<label for="data_format_audio">Audio</label>
+            			<input type="radio" id="data_format_video" name="videoAudioText"value="video" onclick="videofunction()"/>
+            			<label for="data_format_video">Video</label>
+            		</div>
+            	</div>
 
-                    <!-- Hour-Day-Select -->
-                    <div class="hour-day-select hide" id="pre-data_8">
-                        <input name="stundenProTag"  id="data_8" class="hour-day-bar" type="range" min="1" max="24" value="1">
-                    </div>
+              <!-- Text-Amount-Select -->
+              	<div class="text-amount-select hide" id="pre-data_laenge_text">
+              		<input name="ZeichenProArtikel" id="data_laenge_text" class="amount-text-bar" type="range" min="100" max="25000" value="0" step="100"/>
+              	</div>
 
-                    <!-- Freelancer-Loan-Select -->
-                    <input name="lohnProAuftrag" id="data_9" class="loan-select hide" list="gehalt" placeholder="Lohn für den Auftrag?" type="number" min="0" oninput="validity.valid||(value='');" inputmode="numeric" />
+                <!-- Audio-Amount-Select -->
+                	<div class="audio-amount-select hide" id="pre-data_laenge_audio">
+                		<input name="MinutenProAudio" id="data_laenge_audio" class="amount-av-bar" type="range" min="0.5" max="90" value="0" step="0.5"/>
+                	</div>
 
-                    <!-- Unit-Select -->
-                    <div class="hide" id="pre-data_10-12">
-                        <div class="switch-field switch-field-text-2 tooltip">
-                            <input type="radio" id="data_10" name="videoAudioText" value="text" onclick="textfunction()" />
-                            <label for="data_10">Text</label>
-                            <input type="radio" id="data_11" name="videoAudioText" value="audio" onclick="audiofunction()" />
-                            <label for="data_11">Audio</label>
-                            <input type="radio" id="data_12" name="videoAudioText" value="video" onclick="videofunction()" />
-                            <label for="data_12">Video</label>
-                        </div>
-                    </div>
+                  <!-- Video-Amount-Select -->
+                  	<div class="video-amount-select hide" id="pre-data_laenge_video">
+                  		<input name="MinutenProVideo" id="data_laenge_video" class="amount-av-bar" type="range" min="0.5" max="90" value="0" step="0.5"/>
+                  	</div>
 
-                    <!-- Text-Amount-Select -->
-                    <div class="text-amount-select hide" id="pre-data_13">
-                        <input name="ZeichenProArtikel" id="data_13" class="amount-text-bar" type="range" min="100" max="25000" value="1" step="100">
-                    </div>
-
-                    <!-- Audio-Amount-Select -->
-                    <div class="audio-amount-select hide" id="pre-data_14">
-                        <input name="MinutenProAudio" id="data_14" class="amount-av-bar" type="range" min="0.5" max="90" value="1" step="0.5">
-                    </div>
-
-                    <!-- Video-Amount-Select -->
-                    <div class="video-amount-select hide" id="pre-data_15">
-                        <input name="MinutenProVideo" id="data_15" class="amount-av-bar" type="range" min="0.5" max="90" value="1" step="0.5">
-                    </div>
 
                     <!-- Genre-Select -->
-                    <input name="ProductType" id="data_16" class="genre-select hide" list="genre" placeholder="Welches Genre?" type="text" />
-                    <datalist id="genre">
-                      <option value="Bericht">
-                      <option value="Doku">
-                      <option value="Feature">
-                      <option value="Interview">
-                      <option value="Kommentar">
-                      <option value="Moderation">
-                      <option value="Nachricht">
-                      <option value="Portrait">
-                      <option value="Reportage">
-                    </datalist>
+                    	<input name="ProductType" id="data_genre" class="genre-select hide" list="genre" placeholder="Welches Genre?" type="text"/>
+                    	<datalist id="genre">
+                    		<option value="Bericht">
+                    		<option value="Doku">
+                    		<option value="Feature">
+                    		<option value="Interview">
+                    		<option value="Kommentar">
+                    		<option value="Moderation">
+                    		<option value="Nachricht">
+                    		<option value="Portrait">
+                    		<option value="Reportage">
+                    	</datalist>
 
-                    <!-- Digitalization-Select -->
-                    <div id="pre-data_17-19" class="hide">
-                        <div class="switch-field switch-field-text-3 tooltip">
-                            <input name="Verwertung" type="radio" id="data_17" name="switch" value="Analog" />
-                            <label for="data_17">Analog</label>
-                            <input name="Verwertung" type="radio" id="data_18" name="switch" value="Digital" />
-                            <label for="data_18">Digital</label>
-                            <input name="Verwertung" type="radio" id="data_19" name="switch" value="Analog & Digital" />
-                            <label for="data_19">Beides</label>
-                        </div>
-                    </div>
+                      <!-- Digitalization-Select -->
+                      	<div id="pre-data_verbreitung_analog_digital_beides" class="hide">
+                      		<div class="switch-field switch-field-text-3 tooltip">
+                      			<input name="Verwertung" type="radio" id="data_verbreitung_analog" name="switch-verbreitung" value="Analog"/>
+                      			<label for="data_verbreitung_analog">Analog</label>
+                      			<input name="Verwertung" type="radio" id="data_verbreitung_digital" name="switch-verbreitung" value="Digital"/>
+                      			<label for="data_verbreitung_digital">Digital</label>
+                      			<input name="Verwertung" type="radio" id="data_verbreitung_beides" name="switch-verbreitung" value="Analog & Digital"/>
+                      			<label for="data_verbreitung_beides">Beides</label>
+                      		</div>
+                      	</div>
 
-                    <!-- Time-Select -->
-                    <div class="time-select hide" id="pre-data_20">
-                        <input name="Zeitaufwand" id="data_20" class="amount-time-bar" type="range" min="0.5" max="100" value="1" step="0.5">
-                    </div>
+                        <!-- Time-Select -->
+                        	<div class="time-select hide" id="pre-data_zeit">
+                        		<input name="Zeitaufwand"id="data_zeit" class="amount-time-bar" type="range" min="0.5" max="100" value="0" step="0.5"/>
+                        	</div>
 
 
-                    <div class="break"></div>
-                    <div class="banner-left-2 zbanner-left hide" id="banner-left-2">Wie ist deine Arbeitssituation?</div>
-                    <div class="banner-left-3 zbanner-left hide" id="banner-left-3">Wie ist deine Arbeitssituation?</div>
-                    <div id="banner-left-triangle" class="banner-left-shadow hide"></div>
+                          <div class="break"></div>
+                        	<div class="banner-left-2 zbanner-left hide" id="banner-left-2">Wie ist deine Arbeitssituation?</div>
+                        	<div class="banner-left-3 zbanner-left hide" id="banner-left-3">Wie ist deine Arbeitssituation?</div><div id="banner-left-triangle" class="banner-left-shadow hide"></div>
 
-                    <!-- Position-Select -->
-                    <input name=cheforvolo id="data_21" class="position-select hide" list="position" placeholder="Welche Position?" type="text" />
-                    <datalist id="position">
-  <option value="Chefredakteur">
-  <option value="Ressortleiter">
-  <option value="Chef vom Dienst (CvD)">
-  <option value="Redakteur">
-  <option value="Volontär">
-</datalist>
+                          <!-- Position-Select -->
+                          	<input name=cheforvolo id="data_position" class="position-select hide" list="position" placeholder="Welche Position?" type="text"/>
+                          	<datalist id="position">
+                          		<option value="Chefredakteur">
+                          		<option value="Ressortleiter">
+                          		<option value="Chef vom Dienst (CvD)">
+                          		<option value="Redakteur">
+                          		<option value="Voluntär">
+                          	</datalist>
 
-                    <!-- Experience-Select -->
-                    <div>
-                        <div class="switch-field switch-field-text-4 hide" id="pre-data_22-24">
-                            <input name="erfahrung"  type="radio" id="data_22" name="switch" value="1" />
-                            <label for="data_22">1 Jahr</label>
-                            <input name="erfahrung" type="radio" id="data_23" name="switch" value="3" />
-                            <label for="data_23">3 Jahre</label>
-                            <input name="erfahrung"  type="radio" id="data_24" name="switch" value="5" />
-                            <label for="data_24">5 Jahre</label>
-                        </div>
-                    </div>
+                            <!-- Experience-Select -->
+                            	<div class="switch-field switch-field-text-4 hide" id="pre-data_erfahrung_jahr_1_3_5">
+                            		<input name="erfahrung" type="radio" id="data_erfahrung_jahr_1" name="switch" value="0"/>
+                            		<label for="data_erfahrung_jahr_1">1 Jahr</label>
+                            		<input name="erfahrung" type="radio" id="data_erfahrung_jahr_3" name="switch" value="3"/>
+                            		<label for="data_erfahrung_jahr_3">3 Jahre</label>
+                            		<input name="erfahrung" type="radio" id="data_erfahrung_jahr_5" name="switch" value="5"/>
+                            		<label for="data_erfahrung_jahr_5">5 Jahre</label>
+                            	</div>
 
-                    <div>
-                        <div class="switch-field switch-field-text-4 experience-right hide" id="pre-data_25-27">
-                            <input name="erfahrung"  type="radio" id="data_25" name="switch" value="1" />
-                            <label for="data_25">1 Jahr</label>
-                            <input name="erfahrung"  type="radio" id="data_26" name="switch" value="3" />
-                            <label for="data_26">3 Jahre</label>
-                            <input name="erfahrung"  type="radio" id="data_27" name="switch" value="5" />
-                            <label for="data_27">5 Jahre</label>
-                        </div>
-                    </div>
+                              <!-- Happiness-Select -->
+                              	<div class="happiness-select hide" id="pre-data_athmosphaere">
+                              		<input name="happiness"id="data_athmosphaere" class="happiness-bar" type="range" min="1" max="100" value="0"/>
+                              	</div>
 
-                    <!-- Happiness-Select -->
-                    <div class="happiness-select hide" id="pre-data_28">
-                        <input name="happiness"  id="data_28" class="happiness-bar" type="range" min="1" max="100" value="1">
-                    </div>
+                                <!-- Luckiness-Select -->
+                                	<div class="luckiness-select hide" id="pre-data_zusammenarbeit">
+                                		<input name="luckiness"id="data_zusammenarbeit" class="luckiness-bar" type="range" min="1" max="100" value="0"/>
+                                	</div>
 
-                    <!-- Luckiness-Select -->
-                    <div class="luckiness-select hide" id="pre-data_29">
-                        <input name="luckiness" id="data_29" class="luckiness-bar" type="range" min="1" max="100" value="1">
-                    </div>
 
 
                     <div class="break"></div>
 
                     <!-- Comment-Select -->
-                    <div class="hide" id="pre-data_30">
-                        <textarea id="data_30" class="comment-select" name="message" placeholder="Dein Kommentar ..." maxlength="250"></textarea>
-                    </div>
-                    <span class="hide" id="disclaimer"><p class="disclaimer"><a href="#">!</a>Achte darauf, dass du deine Identität im Kommentar nicht verrätst!</p></span>
+                    	  <div class="hide" id="pre-data_kommentar">
+                    		<textarea id="data_kommentar" class="comment-select" name="message" placeholder="Dein Kommentar ..." maxlength="250"></textarea>
+                    	</div>
+                    	<span class="hide" id="disclaimer"><p class="disclaimer"><a href="#">!</a>Achte darauf, dass du deine Identität im Kommentar nicht verrätst!</p></span>
 
-                    <!-- Checkbox-Select -->
-                    <span class="hide" id="pre-data_31">
-<input name="agb" class="checkbox" type="checkbox" id="data_31" />
-<label class="checkboxlabel" for="data_31"></label>
-<p class="checkboxtext">Ich bin mit den <a href="#" target="_blank">AGBs</a> einverstanden.</p>
-</span>
-
-                    <!-- Submit -->
-                    <input type="submit" class="submit-get hide" id="data_32" value="Daten spenden">
-
-                </form>
-            </div>
-
-            <!-- Output-Input-Box -->
-            <div class="get">
-                <form id="get-form">
-                    <div class="banner-right-1">Welches Medium interessiert dich?</div>
-                    <div class="banner-right-shadow"></div>
-
-                    <!-- Medium-Select -->
-                    <input id="data_33" class="media-select" list="medium" placeholder="Welches Medium?" type="text" />
-                    <datalist id="medium">
-  <option value="Frankfurter Allgemeine Zeitung (FAZ)">
-  <option value="Spiegel">
-  <option value="Spiegel TV">
-  <option value="Spiegel Online (SPON)">
-  <option value="Süddeutsche Zeitung (SZ)">
-  <option value="Südwestrundfunk (SWR)">
-  <option value="Tagesspiegel">
-  <option value="Zeit Online (ZON)">
-</datalist>
+                      <!-- Checkbox-Select -->
+                      	<span class="hide" id="pre-data_checkbox">
+                      		<input name="agb"class="checkbox" type="checkbox" id="data_checkbox" />
+                      		<label class="checkboxlabel" for="data_checkbox"></label>
+                      		<p class="checkboxtext">Ich bin mit den <a href="#" target="_blank">AGBs</a> einverstanden.</p>
+                      	</span>
 
 
+                        <!-- Submit -->
+                        	<input type="submit" class="submit-get hide" id="data_submit" value="Daten spenden"/>
 
-                    <!-- Switch-Select -->
-                    <div id="data_34">
-                        <div class="switch-field switch-field-text-1">
-                            <input type="radio" id="data_35" name="switch" value="fest" />
-                            <label for="data_35">Fest</label>
-                            <input type="radio" id="data_36" name="switch" value="pauschal" />
-                            <label for="data_36">Pauschal</label>
-                            <input type="radio" id="data_37" name="switch" value="frei" />
-                            <label for="data_37">Frei</label>
-                        </div>
-                    </div>
+                        	</form>
+                        	</div>
 
-                    <input type="submit" class="submit-giv hide" value="Daten abfragen">
+                          <!-- Output-Input-Box -->
+                          	<div class="get">
+                          	<form id="get">
+                          	<div class="banner-right-1">Welches Medium interessiert dich?</div><div class="banner-right-shadow"></div>
 
-                </form>
-            </div>
-
-            <div class="result hide" id="result">
-                <div class="banner-left-3">Überschrift</div>
-                <div class="banner-left-shadow"></div>
+                          <!-- Medium-Select -->
+                          	<input id="data_33" class="media-select" list="medium" placeholder="Welches Medium?" type="text"/>
+                          	<datalist id="medium">
+                          		<option value="Frankfurter Allgemeine Zeitung (FAZ)">
+                          		<option value="Spiegel">
+                          		<option value="Spiegel TV">
+                          		<option value="Spiegel Online (SPON)">
+                          		<option value="Süddeutsche Zeitung (SZ)">
+                          		<option value="Südwestrundfunk (SWR)">
+                          		<option value="Tagesspiegel">
+                          		<option value="Zeit Online (ZON)">
+                          	</datalist>
 
 
 
-                <button onclick="myFunction()">Try it</button>
+                          <!-- Switch-Select -->
+                          	<div id="data_34">
+                          		<div class="switch-field switch-field-text-1">
+                          			<input type="radio" id="data_35" name="switch" value="fest" />
+                          			<label for="data_35">Fest</label>
+                          			<input type="radio" id="data_36" name="switch" value="pauschal"/>
+                          			<label for="data_36">Pauschal</label>
+                          			<input type="radio" id="data_37" name="switch" value="frei" />
+                          			<label for="data_37">Frei</label>
+                          		</div>
+                          	</div>
 
-                <div id="myDIV" class="dontstyle">
-                    This is a DIV element.
-                </div>
-            </div>
+                          <!-- Submit -->
+                          	<input type="submit" class="submit-giv hide" value="Daten abfragen"/>
 
+                          	</form>
+                          	</div>
 
-            <!-- News -->
+                          <!-- Grafic-Box -->
+                          	<div class="result hide" id="result">
+                          		<div class="banner-left-3">Überschrift</div><div class="banner-left-shadow"></div>
+                          	</div>
 
-            <div class="nbox">
-                <a href="#">
-                    <div class="ntile news_1"><span class="news-title-head">Der große Gehalts-Report 2018</span>
-                    </div>
-                </a>
+                          <!-- News -->
+                          	<div class="nbox-1">
+                          		<a href="#">
+                          		<div class="ntile-first news_1"><span class="news-title-head">Der große Gehalts-Report 2018</span>
+                          		</div>
+                          		</a>
+                          		<a href="#">
+                          		<div class="ntile-first news_2"><span class="news-title">Das sagt die Presse zum Gehalts-Report</span>
+                          		</div>
+                          		</a>
+                          		<a href="#">
+                          		<div class="ntile-first news_3"><span class="news-title">Was geschieht mit deinen Daten?</span>
+                          		</div>
+                          		</a>
+                          		<a href="#">
+                          		<div class="ntile-first news_4"><span class="news-title">Warum Daten spenden?</span>
+                          		</div>
+                          		</a>
+                          		<a href="#">
+                          		<div class="ntile-first news_5"><span class="news-title">Die Methodik dahinter</span>
+                          		</div>
+                          		</a>
+                          	</div>
 
-                <a href="#">
-                    <div class="ntile news_2"><span class="news-title">Das sagt die Presse zum Gehalts-Report</span>
-                    </div>
-                </a>
+                          <!-- Freischreiber-Parallax -->
+                          	<a href="https://www.freischreiber.de" target="_blank" class="link"><div class="freischreiber-box"></div></a>
 
-                <a href="#">
-                    <div class="ntile news_3"><span class="news-title">Was geschieht mit deinen Daten?</span>
-                    </div>
-                </a>
+                          <!-- News -->
+                          	<div class="nbox-2">
+                          		<a href="#">
+                          		<div class="ntile-second news_6"><span class="news-title">Das sagt die Presse zum Gehalts-Report</span>
+                          		</div>
+                          		</a>
+                          		<a href="#">
+                          		<div class="ntile-second news_7"><span class="news-title">Was geschieht mit deinen Daten?</span>
+                          		</div>
+                          		</a>
+                          		<a href="#">
+                          		<div class="ntile-second news_8"><span class="news-title">Warum Daten spenden?</span>
+                          		</div>
+                          		</a>
+                          		<a href="#">
+                          		<div class="ntile-second news_9"><span class="news-title">Die Methodik dahinter</span>
+                          		</div>
+                          		</a>
+                          	</div>
 
-                <a href="#">
-                    <div class="ntile news_4"><span class="news-title">Warum Daten spenden?</span>
-                    </div>
-                </a>
+                          </main>
 
-                <a href="#">
-                    <div class="ntile news_5"><span class="news-title">Die Methodik dahinter</span>
-                    </div>
-                </a>
-            </div>
+                          <!-- Footer -->
+                          <div class="footer">
+                          	<div class="footer-grid">
+                          		<div class="footer-grid-first">
+                          		<a href="../projekt"><p class="footer-item-first">Über das Projekt</p></a>
+                          		<a href="../credits"><p class="footer-item">Wer sind die Macher?</p></a>
+                          		<a href="../impressum"><p class="footer-item">Rankings & Reports</p></a>
+                          		<a href="../newsletter"><p class="footer-item">Newsletter</p></a>
+                          	</div>
+                          	<div class="footer-grid-second">
+                          		<a href="../datenschutz"><p class="footer-item-first">Datenschutz</p></a>
+                          		<a href="../methodologie"><p class="footer-item">Methodologie</p></a>
+                          		<a href="../kontakt"><p class="footer-item">Kontakt & Fragen</p></a>
+                          		<a href="../impressum"><p class="footer-item">Impressum</p></a>
+                          	</div>
+                          </div>
 
-            <!-- Freischreiber-Parallax -->
-
-            <a href="https://www.freischreiber.de" target="_blank" class="link">
-                <div class="freischreiber-box"></div>
-            </a>
-
-
-
-
-            <!-- Videos -->
-
-
-            <div class="nbox">
-                <a href="#">
-                    <div class="ntile news_1"><span class="news-title-head">Der große Gehalts-Report 2018</span>
-                    </div>
-                </a>
-
-                <a href="#">
-                    <div class="ntile news_2"><span class="news-title">Das sagt die Presse zum Gehalts-Report</span>
-                    </div>
-                </a>
-
-                <a href="#">
-                    <div class="ntile news_3"><span class="news-title">Was geschieht mit deinen Daten?</span>
-                    </div>
-                </a>
-
-                <a href="#">
-                    <div class="ntile news_4"><span class="news-title">Warum Daten spenden?</span>
-                    </div>
-                </a>
-
-                <a href="#">
-                    <div class="ntile news_5"><span class="news-title">Die Methodik dahinter</span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="vbox">
-                <div class="vtile video_1">
-                    <a href="//www.youtube.com/watch?v=XSGBVzeBUbk" class="video" data-lity>
-                        <span></span>
-                        <img src="{% static 'honoradar/image/video_1.jpg'%}">
-                    </a>
-                </div>
-                <div class="vtile video_2">
-                    <a href="//www.youtube.com/watch?v=XSGBVzeBUbk" class="video" data-lity>
-                        <span></span>
-                        <img src="{% static 'honoradar/image/video_2.jpg'%}">
-                    </a>
-                </div>
-                <div class="vtile video_3">
-                    <a href="//www.youtube.com/watch?v=XSGBVzeBUbk" class="video" data-lity>
-                        <span></span>
-                        <img src="{% static 'honoradar/image/video_3.jpg'%}">
-                    </a>
-                </div>
-                <div class="vtile video_4">
-                    <a href="//www.youtube.com/watch?v=XSGBVzeBUbk" class="video" data-lity>
-                        <span></span>
-                        <img src="{% static 'honoradar/image/video_4.jpg'%}">
-                    </a>
-                </div>
-            </div>
-
-
-    </main>
-    <div class="footer">
-
-
-
-    </div>
-
+                          </div>
 
     <!-- Javascript -->
-    <script src="navbar/js/modernizr.js"></script>
-    <script src="js/html5shiv.js"></script>
-    <script src="lity/vendor/jquery.js"></script>
-    <script src="lity/dist/lity.js"></script>
-    <script src="js/jquery.js"></script>
-    <script src="js/javascript.js"></script>
-    <script src="js/javascript-new.js"></script>
-    <script src="navbar/js/jquery-2.1.1.js"></script>
-    <script src="navbar/js/main.js"></script>
+    <script src="{% static 'honoradar/navbar/js/modernizr.js'%}"></script>
+    <script src="{% static 'honoradar/html5shiv.js'%}"></script>
+    <script src="{% static 'honoradar/lity/vendor/jquery.js'%}"></script>
+    <script src="{% static 'honoradar/lity/dist/lity.js'%}"></script>
+    <script src="{% static 'honoradar/js/jquery.js'%}"></script>
+    <script src="{% static 'honoradar/js/javascript.js'%}"></script>
+    <script src="{% static 'honoradar/js/javascript-new.js'%}"></script>
+    <script src="{% static 'honoradar/navbar/js/jquery-2.1.1.js'%}"></script>
+    <script src="{% static 'honoradar/navbar/js/main.js'%}"></script>
 </body>
 
 </html>

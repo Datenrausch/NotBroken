@@ -1,15 +1,217 @@
 
-
-
-
-
-
-
-.footer {
-	height: 300px;
+.nbox-2 {
 	width: 100%;
-	background-color: #27ae60;
-		position: relative;
+	margin: 50px 2% 50px 2%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: flex-start;
+	align-content: flex-start;
+	flex-wrap: wrap;
+}
+
+.ntile-second {
+	height: 250px;
+	min-width: 260px;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+
+@media (max-width: 900px)  {
+
+.nbox-2 a:nth-child(1) {
+	width: calc(100%);
+	margin: 30px 0px 0px 0px;
+}
+
+.nbox-2 a:nth-child(2) {
+	width: calc(100%);
+	margin: 30px 0px 0px 0px;
+}
+
+.nbox-2 a:nth-child(3) {
+	width: calc(100%);
+	margin: 30px 0px 0px 0px;
+}
+
+.nbox-2 a:nth-child(4) {
+	width: calc(100%);
+	margin: 30px 0px 0px 0px;
+}
+}
+
+@media (min-width: 900px)  { 
+
+.nbox-2 a:nth-child(1) {
+	width: calc(50% - 15px);
+	margin: 30px 15px 0px 0px;
 
 }
+
+.nbox-2 a:nth-child(2) {
+	width: calc(50% - 15px);
+	margin: 30px 0px 0px 15px;
+}
+
+.nbox-2 a:nth-child(3) {
+	width: calc(50% - 15px);
+	margin: 30px 15px 0px 0px;
+}
+
+.nbox-2 a:nth-child(4) {
+	width: calc(50% - 15px);
+	margin: 30px 0px 0px 15px;
+}
+}	
+
+@media (min-width: 1590px)  { 
+
+.nbox-2 a:nth-child(1) {
+	width: calc(25% - 21px);
+	max-width: calc(23%);
+	margin: 30px 15px 0px 0px;
+}
+
+.nbox-2 a:nth-child(2) {
+	width: calc(25% - 21px);
+	margin: 30px 15px 0px 15px;
+}
+
+.nbox-2 a:nth-child(3) {
+	width: calc(25% - 21px);
+	margin: 30px 15px 0px 15px;
+
+}
+
+.nbox-2 a:nth-child(4) {
+	width: calc(25% - 21px);
+	margin: 30px 0px 0px 15px;
+}
+}
+
+.news_6 {
+  background-size: 130% ;
+  background-repeat: no-repeat;
+  background-image: url(../image/news_2.jpg);
+  background-position: center center;
+  background-origin: padding-box;
+  transition: .7s;
+  -webkit-transition: .7s;
+  -o-transition: .7s;
+  -moz-transition: .7s;
+  padding: 20px 50px 0px calc(2.5%);
+}
+
+.news_7 {
+  background-size: 130% ; 
+  background-repeat: no-repeat;
+  background-image: url(../image/news_3.jpg);
+  background-position: center center;	
+  transition: .7s;
+  -webkit-transition: .7s;
+  -o-transition: .7s;
+  -moz-transition: .7s;
+  padding: 160px 50px 0px calc(2.5%);
+}
+
+.news_8 {
+  background-size: 130% ;
+  background-repeat: no-repeat;
+  background-image: url(../image/news_4.jpg);
+  background-position: center center;   
+  transition: .7s;
+  -webkit-transition: .7s;
+  -o-transition: .7s;
+  -moz-transition: .7s;
+  padding: 160px 50px 0px calc(2.5%);
+}
+
+.news_9 {
+  background-size: 130% ; 
+  background-image: url(../image/news_5.jpg);
+  background-position: center center;
+  background-position: 50% 50%;    
+  transition: .7s;
+  -webkit-transition: .7s;
+  -o-transition: .7s;
+  -moz-transition: .7s;
+  padding: 100px 0px 0px 20%;
+}
+
+.news_6:hover {
+	transition: .5s;
+	-webkit-transition: .5s;
+	-o-transition: .5s;
+	-moz-transition: .5s;
+	transform: scale(1.02);
+	-webkit-transform: scale(1.02);
+	-o-transform: scale(1.02);
+	-moz-transform: scale(1.02);
+}
+
+.news_7:hover {
+	transition: .5s;
+	-webkit-transition: .5s;
+	-o-transition: .5s;
+	-moz-transition: .5s;
+	transform: scale(1.02);
+	-webkit-transform: scale(1.02);
+	-o-transform: scale(1.02);
+	-moz-transform: scale(1.02);
+}
+
+.news_8:hover {
+	transition: .5s;
+	-webkit-transition: .5s;
+	-o-transition: .5s;
+	-moz-transition: .5s;
+	transform: scale(1.02);
+	-webkit-transform: scale(1.02);
+	-o-transform: scale(1.02);
+	-moz-transform: scale(1.02);
+}
+
+.news_9:hover {
+	transition: .5s;
+	-webkit-transition: .5s;
+	-o-transition: .5s;
+	-moz-transition: .5s;
+	transform: scale(1.02);
+	-webkit-transform: scale(1.02);
+	-o-transform: scale(1.02);
+	-moz-transform: scale(1.02);
+}
+
+.news-title {
+	color: white;
+	font-family: InknutAntiqua-Bold;
+	font-size: 0.7em;
+	background-color: #27ae60;
+	line-height: 2em;
+	border-radius: 10px;
+}
+
+.ntile-second span { 
+  display: inline;
+  padding-left: .7rem;
+  padding-right: .7rem;
+  /* Needs prefixing */
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.title-news h2 {
+	color: #27ae60;
+	font-size: 1.7em;
+	font-family: InknutAntiqua-Bold !important;
+	margin-top: 50px;
+}
+
+
+
+
+
+
 
