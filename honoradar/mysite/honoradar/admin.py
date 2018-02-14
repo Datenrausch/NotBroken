@@ -1,7 +1,28 @@
 from django.contrib import admin
 
-from .models import Choice, Question
+from .models import *
 
+
+
+
+class DataCollection(admin.TabularInline):
+    model = DataCollection
+    extra = 3
+
+
+
+class MediumAdmin(admin.ModelAdmin):
+    fieldsets = [
+    (None,               {'fields': ['mediumname'] }),
+    ('Jobstatus', {'fields': ['festfrei']}),
+
+]
+    inlines = [DataCollection]
+    #this is for the question page
+    list_display = ['mediumname','festfrei']
+    #fields = ['pub_date', 'question_text']
+    list_filter = ['festfrei']
+    search_fields = ['mediumname']
 
 class ChoiceInline(admin.TabularInline):
     model = Choice
@@ -21,6 +42,5 @@ class QuestionAdmin(admin.ModelAdmin):
     search_fields = ['question_text']
 
 
-
-
+admin.site.register(Medium, MediumAdmin)
 admin.site.register(Question, QuestionAdmin)

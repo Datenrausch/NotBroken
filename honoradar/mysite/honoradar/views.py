@@ -3,30 +3,49 @@ from django.template import loader
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from django.views import generic
-
-from .models import Question, Choice
-
+import datetime
+from .models import *
+from django.db.models import Q
 def senddata(request):
     if request.method == 'POST':
         print("senddata")
         mediumname=(request.POST.get('mediumname'))
-        message=(request.POST.get('mediumname'))
+        message=(request.POST.get('message'))
         festfrei=(request.POST.get('festfrei'))
-        if festfrei=="fest":
-            gehalt=(request.POST.get('gehalt'))
-            arbeitszeit=(request.POST.get('arbeitszeit'))
-            position=(request.POST.get('cheforvolo'))
-            arbeitserfahrung=(request.POST.get("erfahrung"))
-            zufriedenheit=(request.POST.get("happiness"))
-            print(mediumname, festfrei, gehalt, arbeitszeit, position, arbeitserfahrung,zufriedenheit, message)
+        try:
+            mediumobj=Medium.objects.get(
+            Q(mediumname=mediumname),
+            Q(festfrei=festfrei)
+        )
+            print(mediumobj)
+            if festfrei=="fest":
+                gehalt=(request.POST.get('gehalt'))
+                wohlfuehl=(request.POST.get("wohlfuehl"))
+            if festfrei=="pauschal":
+                gehalt=(request.POST.get('gehalt'))
+                wohlfuehl=(request.POST.get("wohlfuehl"))
+            if festfrei=="frei":
+                gehalt=(request.POST.get('lohnProAuftrag'))
+                wohlfuehl=(request.POST.get("zufriedenheit"))
 
 
+        except Medium.DoesNotExist:
+            if festfrei=="fest":
+                gehalt=(request.POST.get('gehalt'))
+                wohlfuehl=(request.POST.get("wohlfuehl"))
+            if festfrei=="pauschal":
+                gehalt=(request.POST.get('gehalt'))
+                wohlfuehl=(request.POST.get("wohlfuehl"))
+            if festfrei=="frei":
+                gehalt=(request.POST.get('lohnProAuftrag'))
+                wohlfuehl=(request.POST.get("zufriedenheit"))
 
-        print(request.POST.get('festfrei'))
-        print(request.POST)
+
+            mediumobj = Medium(mediumname=mediumname, festfrei=festfrei)
 
 
-
+            print("CREATING NEW")
+            mediumobj.save()
 
     return HttpResponseRedirect(reverse('honoradar:index'))
 
