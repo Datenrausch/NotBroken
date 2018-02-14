@@ -17,6 +17,7 @@ def senddata(request):
             Q(mediumname=mediumname),
             Q(festfrei=festfrei)
         )
+            print(mediumobj)
             if festfrei=="fest":
                 gehalt=(request.POST.get('gehalt'))
                 wohlfuehl=(request.POST.get("wohlfuehl"))
@@ -26,12 +27,8 @@ def senddata(request):
             if festfrei=="frei":
                 gehalt=(request.POST.get('lohnProAuftrag'))
                 wohlfuehl=(request.POST.get("zufriedenheit"))
-            datacollection = DataCollection(
-            medium=mediumobj,
-            salary_number=gehalt,
-            rating_number=wohlfuehl,
-            )
-            datacollection.save(force_insert=True)
+
+
         except Medium.DoesNotExist:
             if festfrei=="fest":
                 gehalt=(request.POST.get('gehalt'))
@@ -44,14 +41,8 @@ def senddata(request):
                 wohlfuehl=(request.POST.get("zufriedenheit"))
 
 
-
             mediumobj = Medium(mediumname=mediumname, festfrei=festfrei)
-            datacollection = DataCollection(
-            medium=mediumobj,
-            salary_number=gehalt,
-            rating_number=wohlfuehl,
-            )
-            datacollection.save(force_insert=True)
+
 
             print("CREATING NEW")
             mediumobj.save()

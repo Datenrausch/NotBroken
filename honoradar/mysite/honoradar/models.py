@@ -38,7 +38,7 @@ class DataCollection(models.Model):
 
     salary_number=models.IntegerField(default=0)
     rating_number=models.IntegerField(default=0)
-    
+
 
     def __str__(self):
-        return (self.salary_number, self.rating_number)
+        return (self.salary_number,self.rating_number)
