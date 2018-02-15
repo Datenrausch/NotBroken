@@ -59,39 +59,39 @@ $(document).ready(parallax.init());
 });//]]> 
 
 window.onload=function(){
-document.querySelector('#data_6').addEventListener('input', function rangeChange() {
+document.querySelector('#data_stunden_woche').addEventListener('input', function rangeChange() {
   // trigger the CSS to update
   this.setAttribute('value', this.value);
 });
-document.querySelector('#data_7').addEventListener('input', function rangeChange() {
+document.querySelector('#data_tag_monat').addEventListener('input', function rangeChange() {
   // trigger the CSS to update
   this.setAttribute('value', this.value);
 });
-document.querySelector('#data_8').addEventListener('input', function rangeChange() {
+document.querySelector('#data_stunden_tag').addEventListener('input', function rangeChange() {
   // trigger the CSS to update
   this.setAttribute('value', this.value);
 });
-document.querySelector('#data_13').addEventListener('input', function rangeChange() {
+document.querySelector('#data_laenge_text').addEventListener('input', function rangeChange() {
   // trigger the CSS to update
   this.setAttribute('value', this.value);
 });
-document.querySelector('#data_14').addEventListener('input', function rangeChange() {
+document.querySelector('#data_laenge_audio').addEventListener('input', function rangeChange() {
   // trigger the CSS to update
   this.setAttribute('value', this.value);
 });
-document.querySelector('#data_15').addEventListener('input', function rangeChange() {
+document.querySelector('#data_laenge_video').addEventListener('input', function rangeChange() {
   // trigger the CSS to update
   this.setAttribute('value', this.value);
 });
-document.querySelector('#data_20').addEventListener('input', function rangeChange() {
+document.querySelector('#data_zeit').addEventListener('input', function rangeChange() {
   // trigger the CSS to update
   this.setAttribute('value', this.value);
 });
-document.querySelector('#data_28').addEventListener('input', function rangeChange() {
+document.querySelector('#data_athmosphaere').addEventListener('input', function rangeChange() {
   // trigger the CSS to update
   this.setAttribute('value', this.value);
 });
-document.querySelector('#data_29').addEventListener('input', function rangeChange() {
+document.querySelector('#data_zusammenarbeit').addEventListener('input', function rangeChange() {
   // trigger the CSS to update
   this.setAttribute('value', this.value);
 });
