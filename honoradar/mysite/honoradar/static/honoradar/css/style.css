@@ -2102,7 +2102,7 @@ a.news_1 {
   -webkit-transition: .7s;
   -o-transition: .7s;
   -moz-transition: .7s;
-  padding: 100px 0px 0px 20%;
+  padding: 100px 0px 0px calc(50% - 120px);
 }
 
 .news_6 {
