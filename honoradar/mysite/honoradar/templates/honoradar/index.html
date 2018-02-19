@@ -57,9 +57,8 @@
 <body>
     <title>Honoradar</title>
 
-    <!-- Parallax -->
+<!-- Parallax -->
     <div class="panel">
-
         <div class="title1 titl">w</div>
         <div class="title2 titl">a</div>
         <div class="title3 titl">s</div>
@@ -85,9 +84,13 @@
         <div class="title23 titl">e</div>
         <div class="title24 titl">n</div>
         <div class="title25 titl">?</div>
-
+		
+		<h1 class="head-title">Honorardar</h1>
+		<div class="head-box-1"></div>
+		<div class="head-box-2"></div>
+		<div class="head-box-3"></div>
+		
     </div>
-
 
 <!-- Navbar -->
     <a href="#cd-nav" class="cd-nav-trigger">Menu
@@ -128,13 +131,12 @@
     </div>
     </div>
 
-
-
 <!-- Main -->
 <main>
+<!--Banderole-->
+<div class="banderole"></div>
 
- <!-- Input-Input-Box -->
-    <h1>Honorardar</h1>
+<!-- Input-Input-Box -->
     <div class="giv-get">
     <div class="giv">
     <form action="{% url 'honoradar:senddata' %}" method="post" name="firstbox" id="giv-form">
@@ -302,7 +304,7 @@
 <!-- Output-Input-Box -->
     <div class="get">
     <form id="get">
-    <div class="banner-right-1">Welches Medium interessiert dich?</div><div class="banner-right-shadow"></div>
+    <div class="banner-right-1">Welche Redaktion interessiert dich?</div><div class="banner-right-shadow"></div>
 
 <!-- Medium-Select -->
     <input id="data_33" class="media-select" list="medium" placeholder="Welches Medium?" type="text"/>
@@ -379,11 +381,9 @@
     </a>
     </div>
 
-</main>
-
 <!-- Footer -->
-    <div class="footer">
-    <div class="footer-grid">
+	<div class="footer">
+	<div class="footer-grid">
         <div class="footer-grid-first">
             <a href="../projekt"><p class="footer-item-first">Über das Projekt</p></a>
             <a href="../credits"><p class="footer-item">Wer sind die Macher?</p></a>
@@ -398,6 +398,9 @@
         </div>
     </div>
 	</div>
+	
+</main>
+
 
     <!-- Javascript -->
     <script src="{% static 'honoradar/navbar/js/modernizr.js'%}"></script>
