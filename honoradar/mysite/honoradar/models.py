@@ -40,5 +40,8 @@ class DataCollection(models.Model):
     rating_number=models.IntegerField(default=0)
 
 
+
+
     def __str__(self):
-        return (self.salary_number,self.rating_number)
+        template = '{0.salary_number} {0.rating_number}'
+        return template.format(self)
