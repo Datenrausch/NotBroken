@@ -34,14 +34,27 @@ class Medium(models.Model):
         return self.mediumname
 
 class DataCollection(models.Model):
+
     medium = models.ForeignKey(Medium, on_delete=models.CASCADE)
-
-    salary_number=models.IntegerField(default=0)
     rating_number=models.IntegerField(default=0)
+    salary_number=models.IntegerField(default=0)
 
 
+    position=models.CharField(default="None",max_length=200)
 
+    ProductType=models.CharField(default="None",max_length=200)
+
+    arbeitszeit=models.IntegerField(default=0)
+    stundenProTag=models.IntegerField(default=0)
+    tageProMonat=models.IntegerField(default=0)
+    Zeitaufwand=models.IntegerField(default=0)
+    MinutenProAudio=models.IntegerField(default=0)
+    MinutenProVideo=models.IntegerField(default=0)
+    ZeichenProArtikel=models.IntegerField(default=0)
+
+
+    LohnProAuftrag=models.IntegerField(default=0)
 
     def __str__(self):
-        template = '{0.salary_number} {0.rating_number}'
+        template = '{0.salary_number} {0.rating_number} {0.arbeitszeit} {0.position} {0.ProductType}'
         return template.format(self)

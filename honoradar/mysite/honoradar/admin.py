@@ -7,7 +7,7 @@ from .models import *
 
 class DataCollection(admin.TabularInline):
     model = DataCollection
-    extra = 3
+    extra = 1
 
 
 
