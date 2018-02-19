@@ -27,34 +27,36 @@ class Choice(models.Model):
 
 class Medium(models.Model):
     mediumname = models.CharField(max_length=200)
-    FESTFREI = Choices("fest","pauschal","frei")
-    festfrei = models.CharField(choices=FESTFREI, default=FESTFREI.frei, max_length=10)
+    FREEOREMPLOYED = Choices("fest","pauschal","frei")
+    freeoremployed = models.CharField(choices=FREEOREMPLOYED, default=FREEOREMPLOYED.frei, max_length=10)
 
     def __str__(self):
         return self.mediumname
 
 class DataCollection(models.Model):
 
-    medium = models.ForeignKey(Medium, on_delete=models.CASCADE)
-    rating_number=models.IntegerField(default=0)
-    salary_number=models.IntegerField(default=0)
+    Medium = models.ForeignKey(Medium, on_delete=models.CASCADE)
+    Happiness=models.IntegerField(default=0)
+    SalaryPerMonthEmpMix=models.IntegerField(default=0)
+    FeeFree=models.IntegerField(default=0)
 
 
-    position=models.CharField(default="None",max_length=200)
+    JobPosition=models.CharField(default="None",max_length=200)
+    EXPERIENCE = Choices("keine","1 Jahr","3 Jahre"," 5 Jahre")
+    Experience = models.CharField(choices=EXPERIENCE, default=EXPERIENCE.keine, max_length=10)
 
+    HoursPerWeekEmp=models.IntegerField(default=0)
+    HoursSpentFree=models.IntegerField(default=0)
+
+    HoursPerDayMix=models.IntegerField(default=0)
+    DaysPerMonthMix=models.IntegerField(default=0)
     ProductType=models.CharField(default="None",max_length=200)
-
-    arbeitszeit=models.IntegerField(default=0)
-    stundenProTag=models.IntegerField(default=0)
-    tageProMonat=models.IntegerField(default=0)
-    Zeitaufwand=models.IntegerField(default=0)
-    MinutenProAudio=models.IntegerField(default=0)
-    MinutenProVideo=models.IntegerField(default=0)
-    ZeichenProArtikel=models.IntegerField(default=0)
+    MinPerAudioFree=models.IntegerField(default=0)
+    MinPerVideoFree=models.IntegerField(default=0)
+    CharPerArticleFree=models.IntegerField(default=0)
 
 
-    LohnProAuftrag=models.IntegerField(default=0)
 
     def __str__(self):
-        template = '{0.salary_number} {0.rating_number} {0.arbeitszeit} {0.position} {0.ProductType}'
+        template = '{0.SalaryPerMonthEmpMix} {0.Happiness} {0.HoursPerWeekEmp}{0.ProductType}'
         return template.format(self)

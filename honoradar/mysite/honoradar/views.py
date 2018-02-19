@@ -9,35 +9,31 @@ from django.db.models import Q
 def senddata(request):
     if request.method == 'POST':
         print("senddata")
-        mediumname=(request.POST.get('mediumname'))
-        message=(request.POST.get('message'))
-        festfrei=(request.POST.get('festfrei'))
+        MediumName=(request.POST.get('MediumName'))
+        message=(request.POST.get('Message'))
+        FreeOrEmployed=(request.POST.get('FreeOrEmployed'))
         print(request.POST)
         try:
             mediumobj=Medium.objects.get(
-            Q(mediumname=mediumname),
-            Q(festfrei=festfrei)
+            Q(mediumname=MediumName),
+            Q(freeoremployed=FreeOrEmployed)
         )
             print("Found it")
 
             print(mediumobj)
-            if festfrei=="fest":
-                gehalt=(request.POST.get('gehalt'))
-                print(gehalt)
-                wohlfuehl=(request.POST.get("happiness"))
-                print(wohlfuehl)
-                d = mediumobj.datacollection_set.create(salary_number=int(gehalt),rating_number=int(wohlfuehl)
+            if FreeOrEmployed=="fest":
+                SalaryPerMonthEmpMix=(request.POST.get('SalaryPerMonthEmpMix'))
+                Happiness=(request.POST.get("Happiness"))
+                d = mediumobj.datacollection_set.create(SalaryPerMonthEmpMix=int(SalaryPerMonthEmpMix),Happiness=int(Happiness)
                 )
 
-            if festfrei=="pauschal":
-                gehalt=(request.POST.get('gehalt'))
-                print(gehalt)
-                wohlfuehl=(request.POST.get("happiness"))
-                print(wohlfuehl)
-                d = mediumobj.datacollection_set.create(salary_number=int(gehalt),rating_number=int(wohlfuehl)
+            if FreeOrEmployed=="pauschal":
+                SalaryPerMonthEmpMix=(request.POST.get('SalaryPerMonthEmpMix'))
+                Happiness=(request.POST.get("Happiness"))
+                d = mediumobj.datacollection_set.create(SalaryPerMonthEmpMix=int(SalaryPerMonthEmpMix),Happiness=int(Happiness)
                 )
 
-            if festfrei=="frei":
+            if FreeOrEmployed=="frei":
                 gehalt=(request.POST.get('gehalt'))
                 print(gehalt)
                 wohlfuehl=(request.POST.get("happiness"))
@@ -46,22 +42,54 @@ def senddata(request):
                 )
 
         except Medium.DoesNotExist:
-            if festfrei=="fest":
-                gehalt=(request.POST.get('gehalt'))
-                wohlfuehl=(request.POST.get("happiness"))
-            if festfrei=="pauschal":
-                gehalt=(request.POST.get('gehalt'))
-                wohlfuehl=(request.POST.get("happiness"))
-            if festfrei=="frei":
+            if FreeOrEmployed=="fest":
+                SalaryPerMonthEmp=(request.POST.get('SalaryPerMonthEmp'))
+                HoursPerWeekEmp=(request.POST.get("HoursPerWeekEmp"))
+                JobPosition=(request.POST.get("JobPosition"))
+                Experience=(request.POST.get("ExperienceEmplMix"))
+                Happiness=(request.POST.get("Happiness"))
+                comment=(request.POST.get("Message"))
+                mediumobj = Medium(mediumname=MediumName, freeoremployed=FreeOrEmployed)
+                mediumobj.save()
+
+                d = mediumobj.datacollection_set.create(
+                SalaryPerMonthEmp=int(SalaryPerMonthEmp),
+                HoursPerWeekEmp=int(HoursPerWeekEmp),
+                JobPosition=str(JobPosition),
+                Experience=str(Experience),
+                Happiness=int(Happiness),
+                comment=str(comment),
+                )
+
+
+
+            if FreeOrEmployed=="pauschal":
+                SalaryPerMonthEmp=(request.POST.get('SalaryPerMonthEmp'))
+                DaysPerMonthMix=(request.POST.get("DaysPerMonthMix"))
+                HoursPerDayMix=(request.POST.get("HoursPerDayMix"))
+                JobPosition=(request.POST.get("JobPosition"))
+                Experience=(request.POST.get("ExperienceEmplMix"))
+                Happiness=(request.POST.get("Happiness"))
+                comment=(request.POST.get("Message"))
+                mediumobj = Medium(mediumname=MediumName, freeoremployed=FreeOrEmployed)
+                mediumobj.save()
+                print("Hey")
+                d = mediumobj.datacollection_set.create(
+                SalaryPerMonthEmp=int(SalaryPerMonthEmp),
+                DaysPerMonthMix=int(DaysPerMonthMix),
+                HoursPerDayMix=int(HoursPerDayMix),
+                JobPosition=str(JobPosition),
+                Experience=str(Experience),
+                Happiness=int(Happiness),
+                comment=str(comment),
+                )
+
+
+            if FreeOrEmployed=="frei":
                 gehalt=(request.POST.get('lohnProAuftrag'))
                 wohlfuehl=(request.POST.get("happiness"))
 
-            print("New Medium")
-            mediumobj = Medium(mediumname=mediumname, festfrei=festfrei)
-            mediumobj.save()
 
-            d = mediumobj.datacollection_set.create(salary_number=int(gehalt),rating_number=int(wohlfuehl),
-            )
 
     return HttpResponseRedirect(reverse('honoradar:index'))
 

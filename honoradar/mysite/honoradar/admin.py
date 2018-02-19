@@ -14,14 +14,14 @@ class DataCollection(admin.TabularInline):
 class MediumAdmin(admin.ModelAdmin):
     fieldsets = [
     (None,               {'fields': ['mediumname'] }),
-    ('Jobstatus', {'fields': ['festfrei']}),
+    ('Jobstatus', {'fields': ['freeoremployed']}),
 
 ]
     inlines = [DataCollection]
     #this is for the question page
-    list_display = ['mediumname','festfrei']
+    list_display = ['mediumname','freeoremployed']
     #fields = ['pub_date', 'question_text']
-    list_filter = ['festfrei']
+    list_filter = ['freeoremployed']
     search_fields = ['mediumname']
 
 class ChoiceInline(admin.TabularInline):

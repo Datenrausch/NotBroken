@@ -144,7 +144,7 @@
      <div class="banner-left-1">Wie verdienst du dein Geld?</div>
 
 <!-- Medium-Select -->
-    <input name="mediumname" id="data_medium" class="media-select" list="medium" placeholder="Welches Medium?" type="text" />
+    <input name="MediumName" id="data_medium" class="media-select" list="medium" placeholder="Welches Medium?" type="text" />
     <datalist id="medium">
 		<option value="Frankfurter Allgemeine Zeitung (FAZ)">
 		<option value="Spiegel">
@@ -159,61 +159,61 @@
 
 <!-- Switch-Select -->
 	<div class="switch-field switch-field-text-1 tooltip">
-		<input name="festfrei" type="radio" id="data_arbeitsverhaeltnis_fest" name="switch" value="fest" onclick="festfunction()"/>
+		<input name="FreeOrEmployed" type="radio" id="data_arbeitsverhaeltnis_fest" name="switch" value="fest" onclick="festfunction()"/>
 		<label for="data_arbeitsverhaeltnis_fest">Fest</label>
-		<input name="festfrei" type="radio" id="data_arbeitsverhaeltnis_pauschal" name="switch" value="pauschal" onclick="pauschalfunction()"/>
+		<input name="FreeOrEmployed" type="radio" id="data_arbeitsverhaeltnis_pauschal" name="switch" value="pauschal" onclick="pauschalfunction()"/>
 		<label for="data_arbeitsverhaeltnis_pauschal">Pauschal</label>
-		<input name="festfrei" type="radio" id="data_arbeitsverhaeltnis_frei" name="switch" value="frei" onclick="freifunction()"/>
+		<input name="FreeOrEmployed" type="radio" id="data_arbeitsverhaeltnis_frei" name="switch" value="frei" onclick="freifunction()"/>
 		<label for="data_arbeitsverhaeltnis_frei">Frei</label>
 	</div>
 
  <!-- Loan-Select -->
-  	<input  name="gehalt" id="data_gehalt" class="loan-select hide" list="gehalt" placeholder="Gehalt pro Monat?" type="number"	min="0" oninput="validity.valid||(value='');" inputmode="numeric" />
+  	<input  name="SalaryPerMonthEmpMix" id="data_gehalt" class="loan-select hide" list="gehalt" placeholder="Gehalt pro Monat?" type="number"	min="0" oninput="validity.valid||(value='');" inputmode="numeric" />
 
 <!-- Hour-Week-Select -->
     <div class="hour-week-select hide" id="pre-data_stunden_woche">
-    	<input id="data_stunden_woche" name="arbeitszeit" class="hour-week-bar" type="range" min="1" max="50" value="0"/>
+    	<input id="data_stunden_woche" name="HoursPerWeekEmp" class="hour-week-bar" type="range" min="1" max="50" value="0"/>
     </div>
     <div class="break hide" id="break-1"></div>
 
 <!-- Day-Month-Select -->
     <div class="day-month-select hide" id="pre-data_tag_monat">
-      	<input name="tageProMonat" id="data_tag_monat" class="day-month-bar" type="range" min="1" max="30" value="0"/>
+      	<input name="DaysPerMonthMix" id="data_tag_monat" class="day-month-bar" type="range" min="1" max="30" value="0"/>
     </div>
 
 <!-- Hour-Day-Select -->
     <div class="hour-day-select hide" id="pre-data_stunden_tag">
-        <input name="stundenProTag" id="data_stunden_tag" class="hour-day-bar" type="range" min="1" max="24" value="0"/>
+        <input name="HoursPerDayMix" id="data_stunden_tag" class="hour-day-bar" type="range" min="1" max="24" value="0"/>
     </div>
 
-<!-- Freelancer-Loan-Select -->
-    <input name="lohnProAuftrag" id="data_honorar" class="loan-select hide" list="gehalt" placeholder="Lohn für den Auftrag?" type="number"	min="0" oninput="validity.valid||(value='');" inputmode="numeric" />
+<!-- Freelancer-fee-Select -->
+    <input name="FeeFree" id="data_honorar" class="loan-select hide" list="gehalt" placeholder="Lohn für den Auftrag?" type="number"	min="0" oninput="validity.valid||(value='');" inputmode="numeric" />
 
 <!-- Unit-Select -->
     <div class="hide" id="pre-data_format_text_audio_video">
     <div class="switch-field switch-field-text-2 tooltip">
-        <input type="radio" id="data_format_text" name="videoAudioText" value="text" onclick="textfunction()"/>
+        <input type="radio" id="data_format_text" name="VideoAudioTextFree" value="text" onclick="textfunction()"/>
         <label for="data_format_text">Text</label>
-        <input type="radio" id="data_format_audio" name="videoAudioText" value="audio" onclick="audiofunction()"/>
+        <input type="radio" id="data_format_audio" name="VideoAudioTextFree" value="audio" onclick="audiofunction()"/>
         <label for="data_format_audio">Audio</label>
-        <input type="radio" id="data_format_video" name="videoAudioText"value="video" onclick="videofunction()"/>
+        <input type="radio" id="data_format_video" name="VideoAudioTextFree"value="video" onclick="videofunction()"/>
         <label for="data_format_video">Video</label>
     </div>
     </div>
 
 <!-- Text-Amount-Select -->
     <div class="text-amount-select hide" id="pre-data_laenge_text">
-        <input name="ZeichenProArtikel" id="data_laenge_text" class="amount-text-bar" type="range" min="100" max="25000" value="0" step="100"/>
+        <input name="CharPerArticleFree" id="data_laenge_text" class="amount-text-bar" type="range" min="100" max="25000" value="0" step="100"/>
     </div>
 
 <!-- Audio-Amount-Select -->
     <div class="audio-amount-select hide" id="pre-data_laenge_audio">
-		<input name="MinutenProAudio" id="data_laenge_audio" class="amount-av-bar" type="range" min="0.5" max="90" value="0" step="0.5"/>
+		<input name="MinPerAudioFree" id="data_laenge_audio" class="amount-av-bar" type="range" min="0.5" max="90" value="0" step="0.5"/>
     </div>
 
 <!-- Video-Amount-Select -->
     <div class="video-amount-select hide" id="pre-data_laenge_video">
-        <input name="MinutenProVideo" id="data_laenge_video" class="amount-av-bar" type="range" min="0.5" max="90" value="0" step="0.5"/>
+        <input name="MinPerVideoFree" id="data_laenge_video" class="amount-av-bar" type="range" min="0.5" max="90" value="0" step="0.5"/>
     </div>
 
 <!-- Genre-Select -->
@@ -233,18 +233,18 @@
 <!-- Digitalization-Select -->
     <div id="pre-data_verbreitung_analog_digital_beides" class="hide">
     <div class="switch-field switch-field-text-3 tooltip">
-        <input name="Verwertung" type="radio" id="data_verbreitung_analog" name="switch-verbreitung" value="Analog"/>
+        <input name="AnalogDigitalFree" type="radio" id="data_verbreitung_analog" name="switch-verbreitung" value="Analog"/>
         <label for="data_verbreitung_analog">Analog</label>
-        <input name="Verwertung" type="radio" id="data_verbreitung_digital" name="switch-verbreitung" value="Digital"/>
+        <input name="AnalogDigitalFree" type="radio" id="data_verbreitung_digital" name="switch-verbreitung" value="Digital"/>
         <label for="data_verbreitung_digital">Digital</label>
-        <input name="Verwertung" type="radio" id="data_verbreitung_beides" name="switch-verbreitung" value="Analog & Digital"/>
+        <input name="AnalogDigitalFree" type="radio" id="data_verbreitung_beides" name="switch-verbreitung" value="Analog & Digital"/>
         <label for="data_verbreitung_beides">Beides</label>
     </div>
     </div>
 
 <!-- Time-Select -->
     <div class="time-select hide" id="pre-data_zeit">
-        <input name="Zeitaufwand"id="data_zeit" class="amount-time-bar" type="range" min="0.5" max="100" value="0" step="0.5"/>
+        <input name="HoursSpentFree"id="data_zeit" class="amount-time-bar" type="range" min="0.5" max="100" value="0" step="0.5"/>
     </div>
 
 	<div class="break"></div>
@@ -252,7 +252,7 @@
     <div class="banner-left-3 zbanner-left hide" id="banner-left-3">Wie ist deine Arbeitssituation?</div><div id="banner-left-triangle" class="banner-left-shadow hide"></div>
 
 <!-- Position-Select -->
-    <input name=cheforvolo id="data_position" class="position-select hide" list="position" placeholder="Welche Position?" type="text"/>
+    <input name=JobPosition id="data_position" class="position-select hide" list="position" placeholder="Welche Position?" type="text"/>
     <datalist id="position">
         <option value="Chefredakteur">
         <option value="Ressortleiter">
@@ -263,34 +263,34 @@
 
 <!-- Experience-Select -->
     <div class="switch-field switch-field-text-4 hide" id="pre-data_erfahrung_jahr_1_3_5">
-		<input name="erfahrung" type="radio" id="data_erfahrung_jahr_1" name="switch" value="0"/>
+		<input name="ExperienceEmplMix" type="radio" id="data_erfahrung_jahr_1" name="switch" value="0"/>
         <label for="data_erfahrung_jahr_1">1 Jahr</label>
-        <input name="erfahrung" type="radio" id="data_erfahrung_jahr_3" name="switch" value="3"/>
+        <input name="ExperienceEmplMix" type="radio" id="data_erfahrung_jahr_3" name="switch" value="3"/>
         <label for="data_erfahrung_jahr_3">3 Jahre</label>
-        <input name="erfahrung" type="radio" id="data_erfahrung_jahr_5" name="switch" value="5"/>
+        <input name="ExperienceEmplMix" type="radio" id="data_erfahrung_jahr_5" name="switch" value="5"/>
         <label for="data_erfahrung_jahr_5">5 Jahre</label>
     </div>
 
 <!-- Happiness-Select -->
     <div class="happiness-select hide" id="pre-data_athmosphaere">
-        <input name="happiness"id="data_athmosphaere" class="happiness-bar" type="range" min="1" max="100" value="0"/>
+        <input name="Happiness"id="data_athmosphaere" class="happiness-bar" type="range" min="1" max="100" value="0"/>
     </div>
 
 <!-- Luckiness-Select -->
     <div class="luckiness-select hide" id="pre-data_zusammenarbeit">
-        <input name="happiness"id="data_zusammenarbeit" class="luckiness-bar" type="range" min="1" max="100" value="0"/>
+        <input name="Happiness"id="data_zusammenarbeit" class="luckiness-bar" type="range" min="1" max="100" value="0"/>
     </div>
 	<div class="break"></div>
 
 <!-- Comment-Select -->
     <div class="hide" id="pre-data_kommentar">
-        <textarea id="data_kommentar" class="comment-select" name="message" placeholder="Dein Kommentar ..." maxlength="250"></textarea>
+        <textarea id="data_kommentar" class="comment-select" name="Message" placeholder="Dein Kommentar ..." maxlength="250"></textarea>
     </div>
     <span class="hide" id="disclaimer"><p class="disclaimer"><a href="#">!</a>Achte darauf, dass du deine Identität im Kommentar nicht verrätst!</p></span>
 
 <!-- Checkbox-Select -->
     <span class="hide" id="pre-data_checkbox">
-        <input name="agb"class="checkbox" type="checkbox" id="data_checkbox" />
+        <input name="AGB"class="checkbox" type="checkbox" id="data_checkbox" />
         <label class="checkboxlabel" for="data_checkbox"></label>
         <p class="checkboxtext">Ich bin mit den <a href="#" target="_blank">AGBs</a> einverstanden.</p>
     </span>
