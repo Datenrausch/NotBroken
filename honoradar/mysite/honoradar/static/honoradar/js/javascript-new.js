@@ -56,10 +56,6 @@ function festfunction() {
     element.classList.add("show");
     element.classList.remove("hide");
 	
-	var element = document.getElementById("banner-left-3");
-    element.classList.add("hide");
-    element.classList.remove("show");
-	
 	var element = document.getElementById("banner-left-triangle");
     element.classList.add("show");
     element.classList.remove("hide");
@@ -76,10 +72,6 @@ function festfunction() {
 	var element = document.getElementById("pre-data_athmosphaere");
     element.classList.add("show");
     element.classList.remove("hide");
-	
-	var element = document.getElementById("pre-data_zusammenarbeit");
-    element.classList.add("hide");
-    element.classList.remove("show");
 	
 	var element = document.getElementById("pre-data_kommentar");
     element.classList.add("show");
@@ -159,10 +151,6 @@ function pauschalfunction() {
     element.classList.add("show");
     element.classList.remove("hide");
 	
-	var element = document.getElementById("banner-left-3");
-    element.classList.add("hide");
-    element.classList.remove("show");
-	
 	var element = document.getElementById("banner-left-triangle");
     element.classList.add("show");
     element.classList.remove("hide");
@@ -179,10 +167,6 @@ function pauschalfunction() {
 	var element = document.getElementById("pre-data_athmosphaere");
     element.classList.add("show");
     element.classList.remove("hide");
-	
-	var element = document.getElementById("pre-data_zusammenarbeit");
-    element.classList.add("hide");
-    element.classList.remove("show");
 	
 	var element = document.getElementById("pre-data_kommentar");
     element.classList.add("show");
@@ -248,13 +232,9 @@ function freifunction() {
     element.classList.remove("hide");
 	
 	var element = document.getElementById("banner-left-2");
-    element.classList.add("hide");
-    element.classList.remove("show");
-	
-	var element = document.getElementById("banner-left-3");
     element.classList.add("show");
     element.classList.remove("hide");
-	
+
 	var element = document.getElementById("banner-left-triangle");
     element.classList.add("show");
     element.classList.remove("hide");
@@ -271,7 +251,6 @@ function freifunction() {
 	var element = document.getElementById("pre-data_athmosphaere");
     element.classList.add("show");
     element.classList.remove("hide");
-	
 	
 	var element = document.getElementById("pre-data_kommentar");
     element.classList.add("show");

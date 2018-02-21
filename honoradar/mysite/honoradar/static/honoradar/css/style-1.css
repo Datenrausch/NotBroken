@@ -1,3 +1,44 @@
+
+
+
+.save-point-all {
+	width: 100%;
+	
+	
+}
+
+.save-point {
+	
+}
+
+
+.point-1
+
+
+
+
+
+save-point-all
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .head-title {
 	font-size: 3em;
 	font-family: InknutAntiqua-Bold;
@@ -36,3 +77,9 @@
 	margin-top: ;
 }
 
+
+.year {
+	float: none;
+	margin-left: calc(100% - 120px);
+	width: 100%;
+}

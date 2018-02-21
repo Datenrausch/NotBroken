@@ -133,15 +133,24 @@
 
 <!-- Main -->
 <main>
-<!--Banderole-->
+<!-- Banderole -->
 <div class="banderole"></div>
+
+<!-- Save-Points -->
+	<div class="save-point-all">
+	<div class="save-point point-1">anonym & verschlüsselt</div>
+	<div class="save-point point-2">kostenlos & dkgjndg</div>
+	<div class="save-point point-3">fgdf</div>
+	</div>
+
 
 <!-- Input-Input-Box -->
     <div class="giv-get">
     <div class="giv">
     <form action="{% url 'honoradar:senddata' %}" method="post" name="firstbox" id="giv-form">
       {% csrf_token %}
-     <div class="banner-left-1">Wie verdienst du dein Geld?</div>
+	
+	<div class="banner-left-1">Wie verdienst du dein Geld?</div><div class="banner-left-shadow"></div>
 
 <!-- Medium-Select -->
     <input name="mediumname" id="data_medium" class="media-select" list="medium" placeholder="Welches Medium?" type="text" />
@@ -248,8 +257,7 @@
     </div>
 
 	<div class="break"></div>
-    <div class="banner-left-2 zbanner-left hide" id="banner-left-2">Wie ist deine Arbeitssituation?</div>
-    <div class="banner-left-3 zbanner-left hide" id="banner-left-3">Wie ist deine Arbeitssituation?</div><div id="banner-left-triangle" class="banner-left-shadow hide"></div>
+    <div class="banner-left-2 zbanner-left hide" id="banner-left-2">Wie ist deine Arbeitssituation?</div><div id="banner-left-triangle" class="banner-left-shadow hide"></div>
 
 <!-- Position-Select -->
     <input name=cheforvolo id="data_position" class="position-select hide" list="position" placeholder="Welche Position?" type="text"/>
