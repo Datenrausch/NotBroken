@@ -1159,9 +1159,9 @@ input[type="range"]:before {
 
 .happiness-select input[type="range"]:after {
   position: absolute;
-  content: 'Wohlfühl-Faktor in der Redaktion';
   display: block;
-  margin: 2px 0px 0px calc(50% - 80px);
+  margin: 2px 0px 0px calc(50% - 40px);
+  content: 'Arbeitsatmosphäre';
 }
 
 .happiness-select input {
@@ -1169,59 +1169,6 @@ input[type="range"]:before {
 }
 
 .happiness-select input:hover  {
-  cursor: pointer;
-}
-
-/*Luckiness-Select*/
-
-.luckiness-select {
-  width: calc(100% - 80px);
-  height: 33px;
-  -webkit-box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.2);
-  -moz-box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.2);
-  box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.2);
-  border-radius: 20px;
-  background: #27ae60;
-  float: left;
-}
-
-
-@media (max-width: 800px)  { 
-.luckiness-select {
-  margin: 40px 40px 0px 40px;
-}
-}	
-	
-@media (min-width: 800px)  { 
-.luckiness-select {
-  margin: 30px 40px 0px 40px;
-}
-}	
-
-@media (min-width: 1075px)  { 
-.luckiness-select {
-  margin: 40px 40px 0px 40px;
-}
-}	
-
-@media (min-width: 1600px)  { 
-.luckiness-select {
-  margin: 30px 40px 0px 40px;
-}
-}
-
-.luckiness-select input[type="range"]:after {
-  position: absolute;
-  content: 'Wohlfühl-Faktor bei der Zusammenarbeit';
-  display: block;
-  margin: 2px 0px 0px calc(50% - 110px);
-}
-
-.luckiness-select input {
-	margin-left: -15px;
-}
-
-.luckiness-select input:hover  {
   cursor: pointer;
 }
 

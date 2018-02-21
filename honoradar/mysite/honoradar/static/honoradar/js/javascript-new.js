@@ -269,12 +269,9 @@ function freifunction() {
     element.classList.remove("hide");
 	
 	var element = document.getElementById("pre-data_athmosphaere");
-    element.classList.add("hide");
-    element.classList.remove("show");
-	
-	var element = document.getElementById("pre-data_zusammenarbeit");
     element.classList.add("show");
     element.classList.remove("hide");
+	
 	
 	var element = document.getElementById("pre-data_kommentar");
     element.classList.add("show");
