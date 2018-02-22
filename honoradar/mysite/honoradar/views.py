@@ -3,6 +3,9 @@ from django.template import loader
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from django.views import generic
+from django.core.exceptions import ValidationError
+from django.contrib import messages
+
 import datetime
 from .models import *
 from django.db.models import Q
@@ -10,6 +13,13 @@ def senddata(request):
     if request.method == 'POST':
         print("senddata")
         MediumName=(request.POST.get('MediumName'))
+        print(MediumName)
+        if MediumName:
+            print("Hey")
+        else:
+            print("No Mediumname!!")
+            messages.info(request, 'OIDA!')
+            return HttpResponseRedirect(reverse('honoradar:index'))
         message=(request.POST.get('Message'))
         FreeOrEmployed=(request.POST.get('FreeOrEmployed'))
         print(request.POST)

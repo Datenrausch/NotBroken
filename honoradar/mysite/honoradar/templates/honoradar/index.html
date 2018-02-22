@@ -295,6 +295,12 @@
         <p class="checkboxtext">Ich bin mit den <a href="#" target="_blank">AGBs</a> einverstanden.</p>
     </span>
 
+    {% if messages %}
+    {% for message in messages %}
+      <div class="alert {% if message.tags %} alert-{{ message.tags }}{% endif %}">{{ message|safe }}</div>
+    {% endfor %}
+    {% endif %}
+
 <!-- Submit -->
     <input type="submit" class="submit-get hide" id="data_submit" value="Daten spenden"/>
 
