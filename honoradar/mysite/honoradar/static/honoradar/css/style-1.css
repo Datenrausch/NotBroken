@@ -1,142 +1,46 @@
-.save-box {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-  height: auto;
-  margin: 40px 0px 60px 0px;
-  flex-wrap: wrap;	
-  text-align: center;
-}
-
-.savetile {
-	width: 10%; 
-	min-width: 100px;
-	height: 100px;
-	margin: 25px 75px 25px 75px;
-	
-}
-
-.save-1 {
-	background-image: url(../image/anonym.png);
-	background-repeat: no-repeat;
-	background-position: center center;
-}
-
-.save-1:after {
-	content: 'anonym';
-	font-family: InknutAntiqua-Bold;
-	color: #27ae60;
-	margin-top: 110px;
-	display: inline-block;
-}
-
-.save-2 {
-	background-image: url(../image/freiwillig.png);
-	background-repeat: no-repeat;
-	background-position: center center;
-}
-
-.save-2:after {
-	content: 'freiwillig';
-	font-family: InknutAntiqua-Bold;
-	color: #27ae60;
-	margin-top: 110px;
-	display: inline-block;
-}
-
-.save-3 {
-	background-image: url(../image/kostenlos.png);
-	background-repeat: no-repeat;
-	background-position: center center;
-}
-
-.save-3:after {
-	content: 'kostenlos';
-	font-family: InknutAntiqua-Bold;
-	color: #27ae60;
-	margin-top: 110px;
-	display: inline-block;
-}
-
-.save-4 {
-	background-image: url(../image/verschluesselt.png);
-	background-repeat: no-repeat;
-	background-position: center center;
-}
-
-.save-4:after {
-	content: 'verschlüsselt';
-	font-family: InknutAntiqua-Bold;
-	color: #27ae60;
-	margin-top: 110px;
-	display: inline-block;
-}
-
-.save-5 {
-	background-image: url(../image/legal.png);
-	background-repeat: no-repeat;
-	background-position: center center;
-}
-
-.save-5:after {
-	content: 'legal';
-	font-family: InknutAntiqua-Bold;
-	color: #27ae60;
-	margin-top: 110px;
-	display: inline-block;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .head-title {
 	font-size: 3em;
 	font-family: InknutAntiqua-Bold;
 	color: #fff;
-	margin: 100px 0px 0px 10%;
+	margin: 160px 0px 0px 10%;
 	z-index: 1;
+	display: inline-block;
+	width: 80%;
+	position: absolute;
+}
+
+.head-subtitle {
+	font-size: 1em;
+	line-height: 1.5em;
+	font-family: InknutAntiqua-Bold;
+	color: #fff;
+	margin: 360px 0px 0px 100px;
+	z-index: 1;
+	display: inline-block;
+	position: absolute;
+	width: 27%;
 }
 
 .head-box-1 {
-	height: ; 
-	width: ;
 	position: absolute;
-	margin-top: -55px;
-  width: 50%;
-
-  border-bottom: solid 330px #243040;
-
-  border-right: solid 230px transparent;
-  border-top: solid 100px transparent;	
+	margin-top: 150px;
+	width: 65%;
+	min-width: 800px;
+	border-bottom: solid 550px #27ae60;
+	border-right: solid 330px transparent;
+	border-top: solid 400px transparent;	
 
 }
 
 .head-box-2 {
-	background-color: #243040;
-	height: 450px; 
-	width: 50%;
 	position: absolute;
-	margin-top: 200px;
+	margin-top: 150px;
+	width: 45%;
+	min-width: 300px;
+	border-bottom: solid 230px #2ecc71;
+	border-right: solid 230px transparent;
+	border-top: solid 430px transparent;
 }
 
 .head-box-3 {

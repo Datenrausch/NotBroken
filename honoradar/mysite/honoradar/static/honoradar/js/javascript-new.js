@@ -85,9 +85,6 @@ function festfunction() {
     element.classList.add("show");
     element.classList.remove("hide");
 	
-	var element = document.getElementById("data_submit");
-    element.classList.add("show");
-    element.classList.remove("hide");	
 
 	document.getElementById("data_format_text").checked = false;
 	document.getElementById("data_format_audio").checked = false;
@@ -180,10 +177,6 @@ function pauschalfunction() {
     element.classList.add("show");
     element.classList.remove("hide");
 	
-	var element = document.getElementById("data_submit");
-    element.classList.add("show");
-    element.classList.remove("hide");
-	
 	document.getElementById("data_format_text").checked = false;
 	document.getElementById("data_format_audio").checked = false;
 	document.getElementById("data_format_video").checked = false;
@@ -263,10 +256,7 @@ function freifunction() {
 	var element = document.getElementById("pre-data_checkbox");
     element.classList.add("show");
     element.classList.remove("hide");
-	
-	var element = document.getElementById("data_submit");
-    element.classList.add("show");
-    element.classList.remove("hide");
+
 
 }
 

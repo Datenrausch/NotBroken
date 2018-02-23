@@ -36,6 +36,7 @@ content: " ";
 }
 
 .giv {
+	min-height: 450px;
 	background-color: #394d66;
 	flex-basis: content;
 	width: 45%;
@@ -49,6 +50,7 @@ content: " ";
 }
 
 .get {
+	min-height: 450px;
 	background-color: #394d66;
 	flex-basis: content;
 	width: 45%;
@@ -773,7 +775,6 @@ input[type="range"]::-webkit-slider-thumb{
   margin: 7px 10px 0px 13px;
   width: calc(100% - 50px);
   color: #fff;
-  background: #e74c3c;
   text-align: center;
   background: #2ecc71;
   background-position: center;
@@ -802,7 +803,6 @@ input[type="range"]::-webkit-slider-thumb{
   margin: 7px 10px 0px 13px;
   width: calc(100% - 50px);
   color: #fff;
-  background: #e74c3c;
   text-align: center;
   background: #2ecc71;
   background-position: center;
@@ -829,8 +829,6 @@ input[type="range"]::-webkit-slider-thumb{
   outline: none;
   margin: 7px 10px 0px 13px;
   width: calc(100% - 50px);
-  color: #fff;
-  background: #e74c3c;
   text-align: center;
   background: #2ecc71;
   background-position: center;
@@ -858,7 +856,6 @@ input[type="range"]::-webkit-slider-thumb{
   margin: 7px 10px 0px 13px;
   width: calc(100% - 70px);
   color: #fff;
-  background: #e74c3c;
   text-align: center;
   background: #2ecc71;
   background-position: center;
@@ -886,7 +883,6 @@ input[type="range"]::-webkit-slider-thumb{
   margin: 7px 10px 0px 13px;
   width: calc(100% - 70px);
   color: #fff;
-  background: #e74c3c;
   text-align: center;
   background: #2ecc71;
   background-position: center;
@@ -2374,4 +2370,99 @@ a.news_1 {
 .banderole {
 	background-size: 15%;
 }
+}
+
+/*Savepoints*/
+
+.save-box {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: auto;
+  margin: 40px 0px 60px 0px;
+  flex-wrap: wrap;	
+  text-align: center;
+}
+
+.savetile {
+	width: 5%; 
+	min-width: 100px;
+	height: 100px;
+	margin: 25px 90px 25px 90px;
+	
+}
+
+.save-1 {
+	background-image: url(../image/anonym.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.save-1:after {
+	content: 'anonym';
+	margin-left: -10px;
+	font-family: InknutAntiqua-Bold;
+	color: #27ae60;
+	margin-top: 110px;
+	display: inline-block;
+}
+
+.save-2 {
+	background-image: url(../image/freiwillig.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.save-2:after {
+	content: 'freiwillig';
+	margin-left: -15px;
+	font-family: InknutAntiqua-Bold;
+	color: #27ae60;
+	margin-top: 110px;
+	display: inline-block;
+}
+
+.save-3 {
+	background-image: url(../image/kostenlos.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.save-3:after {
+	content: 'kostenlos';
+	margin-left: -20px;
+	font-family: InknutAntiqua-Bold;
+	color: #27ae60;
+	margin-top: 110px;
+	display: inline-block;
+}
+
+.save-4 {
+	background-image: url(../image/verschluesselt.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.save-4:after {
+	content: 'verschlüsselt';
+	margin-left: -50px;
+	font-family: InknutAntiqua-Bold;
+	color: #27ae60;
+	margin-top: 110px;
+	display: inline-block;
+}
+
+.save-5 {
+	background-image: url(../image/legal.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.save-5:after {
+	content: 'legal';
+	font-family: InknutAntiqua-Bold;
+	color: #27ae60;
+	margin-top: 110px;
+	display: inline-block;
 }
