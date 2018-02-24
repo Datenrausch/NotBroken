@@ -59,37 +59,12 @@
 
 <!-- Parallax -->
     <div class="panel">
-        <div class="title1 titl">w</div>
-        <div class="title2 titl">a</div>
-        <div class="title3 titl">s</div>
-        <div class="title4 titl">v</div>
-        <div class="title5 titl">e</div>
-        <div class="title6 titl">r</div>
-        <div class="title7 titl">d</div>
-        <div class="title8 titl">i</div>
-        <div class="title9 titl">e</div>
-        <div class="title10 titl">n</div>
-        <div class="title11 titl">e</div>
-        <div class="title12 titl">n</div>
-        <div class="title13 titl">J</div>
-        <div class="title14 titl">o</div>
-        <div class="title15 titl">u</div>
-        <div class="title16 titl">r</div>
-        <div class="title17 titl">n</div>
-        <div class="title18 titl">a</div>
-        <div class="title19 titl">l</div>
-        <div class="title20 titl">i</div>
-        <div class="title21 titl">s</div>
-        <div class="title22 titl">t</div>
-        <div class="title23 titl">e</div>
-        <div class="title24 titl">n</div>
-        <div class="title25 titl">?</div>
-		
-		<h1 class="head-title">Honorardar</h1>
-		<h2 class="head-subtitle">Willst du wissen, wie viel Journalisten verdienen? Spende deine Gehaltsdaten – und analysiere die Gehaltsdaten deiner Kollegen. </h2>
+		<h2 class="head-subtitle">Was verdienen die<br>Kollegen? Hier spenden<br>Journalisten ihre<br>Gehaltsdaten – erfahren,<br>was Kollegen verdienen. </h2>
+		<a href="#banderole" id="machmit" class="smooth"><h3 class="head-action">Macht mit!</h3></a>
+		<h1 class="head-title">Was verdienst du?</h1>
 		<div class="head-box-1"></div>
-		<div class="head-box-2"></div>
-		<div class="head-box-3"></div>
+		<div class="head-box-0"></div>
+		<div class="head-box-0"></div>
 		
     </div>
 
@@ -133,9 +108,9 @@
     </div>
 
 <!-- Main -->
-<main>
+<main id="main">
 <!-- Banderole -->
-<div class="banderole"></div>
+<div class="banderole" id="banderole"></div>
 
 <!-- Save-Points -->
 	<div class="save-box">
@@ -148,7 +123,7 @@
 
 
 <!-- Input-Input-Box -->
-    <div class="giv-get">
+    <div class="giv-get" id="giv-get">
     <div class="giv">
     <form action="{% url 'honoradar:senddata' %}" method="post" name="firstbox" id="giv-form">
       {% csrf_token %}

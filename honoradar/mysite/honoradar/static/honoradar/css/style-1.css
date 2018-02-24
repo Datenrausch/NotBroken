@@ -1,46 +1,110 @@
 
 .head-title {
-	font-size: 3em;
+	font-size: 2.5em; 
+	font-size: calc(55px + 1.8vw);
 	font-family: InknutAntiqua-Bold;
 	color: #fff;
-	margin: 160px 0px 0px 10%;
+	margin-top: -250px;
+	margin-left: 360px;
 	z-index: 1;
 	display: inline-block;
-	width: 80%;
 	position: absolute;
+	padding: 30px;
+	background-color: #2ecc71;
+	text-align: center;
+	border-radius: 10px;
 }
 
-.head-subtitle {
-	font-size: 1em;
-	line-height: 1.5em;
-	font-family: InknutAntiqua-Bold;
+.head-subtitle { 
+	font-size: 1.5em; 
+	font-size: calc(22px + .3vw);
+	line-height: 1.8em;
+	font-family: 'Open Sans';
 	color: #fff;
-	margin: 360px 0px 0px 100px;
-	z-index: 1;
+	z-index: 2;
 	display: inline-block;
 	position: absolute;
-	width: 27%;
+	margin-top: -450px;
+	margin-left: 50px;
+}
+
+.head-action {
+	font-size: 2.5em; 
+	line-height: 0.6em;
+	padding: 30px;
+	font-family: 'Open Sans';
+	color: #fff;
+	z-index: 2;
+	display: inline-block;
+	position: absolute;
+	margin-top: -150px;
+	margin-left: 100px;	
+	text-align: center;
+	width: 300px;
+	height: 75px;
+	background: #243040;
+	font-family: InknutAntiqua-Bold;
+	font-size: calc(22px + .3vw);
+    border-radius: 10px;
+    -moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+    outline: 0px none transparent;
+	cursor: pointer;
+	transition: all ease 0.2s;
+	-webkit-transition: all ease 0.2s;
+	-o-transition: all ease 0.2s;
+	-moz-transition: all ease 0.2s;
+	transition-delay: all 300ms ease;
+	-webkit-transition-delay: all 300ms ease;
+	-moz-transition-delay: all 300ms ease;
+	-o-transition-delay: all 300ms ease;
+	border: solid 2px #243040;
+}
+
+
+.head-action:hover {
+	background: #394d66;
+	color: #fff;
+	transition: all ease 0.2s;
+	-webkit-transition: all ease 0.2s;
+	-o-transition: all ease 0.2s;
+	-moz-transition: all ease 0.2s;
+	transition-delay: all 300ms ease;
+	-webkit-transition-delay: all 300ms ease;
+	-moz-transition-delay: all 300ms ease;
+	-o-transition-delay: all 300ms ease;
+	border: solid 2px #394d66;
+}
+
+a[ id="machmit" ]:target ~ #main#banderole {
+    -webkit-transform: translateY( 0px);
+    transform: translateY( 0px );
 }
 
 .head-box-1 {
 	position: absolute;
-	margin-top: 150px;
-	width: 65%;
-	min-width: 800px;
-	border-bottom: solid 550px #27ae60;
-	border-right: solid 330px transparent;
-	border-top: solid 400px transparent;	
-
+	margin: 600px 0px 0px 0px;
+	padding: 0px;
+	width: 800px;
+	height: 300vh;
+	background-color: #27ae60;    
+	transform-origin: 0 90%;
+	-webkit-transform-origin: 0 90%;
+	-mz-transform-origin: 0 90%;
+	-o-transform-origin: 0 90%;
+	-moz-transform-origin: 0 90%;
+    transform: rotate(-25deg);
+	background-color: #27ae60;
 }
+
 
 .head-box-2 {
 	position: absolute;
-	margin-top: 150px;
-	width: 45%;
-	min-width: 300px;
-	border-bottom: solid 230px #2ecc71;
-	border-right: solid 230px transparent;
-	border-top: solid 430px transparent;
+	margin: 66vh 0px 0px 0px;
+	padding: 0vh 0px calc(100vh - 100px - 34vh) 5%;
+	width: 800px;
+	background-color: #2ecc71;
 }
 
 .head-box-3 {
