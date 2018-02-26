@@ -28,15 +28,6 @@ body, html {
   overflow-x: hidden;
 }
 
-a {
-  color: #9cb3a8;
-  text-decoration: none;
-}
-
-
-a::visited {
-	outline: 0;
-}
 
 /* -------------------------------- 
 
@@ -352,7 +343,7 @@ main {
 
 .navtitle2 {
 	display:inline-block;
-    border-bottom:1px solid #394d66;
+    border-bottom: 1px solid #394d66;
     padding-bottom:20px;
 	bottom: -20px;
 }
