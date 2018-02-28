@@ -41,7 +41,7 @@ main {
   /* fix bug on iOS */
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
-  background-color: #e3e3e3;
+  background-color: #D8DBE2;
   /* Force Hardware Acceleration in WebKit */
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);

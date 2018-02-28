@@ -7,7 +7,7 @@
   align-items: flex-start;
   width: 100%;
   height: auto;
-  margin: 40px 0px 60px 0px;
+  margin: 80px 0px 0px 0px;
   flex-wrap: wrap;	
   text-align: center;
 }
@@ -15,46 +15,101 @@
 .social-box:before {
 	content: 'Erzähle es deinen Kollegen weiter';
 	color: #fff;
-	font-size: 1.7em;
+	font-size: 1em;
 	font-family: InknutAntiqua-Bold !important;
 	margin: -60px 0px 0px 0px;
 	position: absolute;
 	z-index: 1;
 	padding: 15px;
-	background-color: #243040;
-	border-radius: 10px;
+	background-color: #FF9F23;
+	border-radius: 0px;
 }
 
 .socialtile {
-	width: 5%; 
-	min-width: 75px;
-	height: 75px;
+	width: 50px;
+	height: 50px;
+	width: calc(50px + 1.5vw); 
+	height: calc(50px + 1.5vw); 
 	margin: 25px 20px 25px 20px;
-	
+	border-radius: 50px;
+	transition: .5s;
+	-webkit-transition: .5s;
+	-o-transition: .5s;
+	-moz-transition: .5s;
+}
+
+@media (max-width: 650px)  {
+.socialtile {
+	width: 40px;
+	height: 40px;
+	width: calc(40px + 1.5vw); 
+	height: calc(40px + 1.5vw); 
+	margin: 25px 8px 10px 8px; 
+}
+
+.social-box:before {
+	font-size: 0.6em;
+	font-family: InknutAntiqua-Bold !important;
+	margin: -60px 0px 0px 0px;
+	padding: 15px;
+}
+}
+
+@media (max-width: 350px)  {
+.socialtile {
+	width: 30px;
+	height: 30px;
+	width: calc(30px + 1.5vw); 
+	height: calc(30px + 1.5vw); 
+	margin: 25px 5px 10px 5px; 
+}
+
+.social-box:before {
+	font-size: 0.5em;
+	font-family: InknutAntiqua-Bold !important;
+	margin: -60px 0px 0px 0px;
+	padding: 15px;
+}
+}
+
+.socialtile:hover {	
+	transition: .5s;
+	-webkit-transition: .5s;
+	-o-transition: .5s;
+	-moz-transition: .5s;
+	transform: scale(1.2);
+	-webkit-transform: scale(1.2);
+	-o-transform: scale(1.2);
+	-moz-transform: scale(1.2);
 }
 
 .social-1 {
 	background-image: url(../image/anonym.png);
 	background-repeat: no-repeat;
 	background-position: center center;
+	background-size: 100%;
 }
 
 .social-2 {
 	background-image: url(../image/freiwillig.png);
 	background-repeat: no-repeat;
 	background-position: center center;
+	background-size: 100%;
 }
 
 .social-3 {
-	background-image: url(../image/kostenlos.png);
+	background-image: url(http://hashtagswahl.de/whatsapp.png);
 	background-repeat: no-repeat;
 	background-position: center center;
+	background-size: 97%;
+	border-radius: 50px 50px 50px 0px;
 }
 
 .social-4 {
 	background-image: url(../image/verschluesselt.png);
 	background-repeat: no-repeat;
 	background-position: center center;
+	background-size: 100%;
 }
 
 
@@ -62,5 +117,5 @@
 	background-image: url(../image/legal.png);
 	background-repeat: no-repeat;
 	background-position: center center;
+	background-size: 100%;
 }
-

@@ -4,12 +4,12 @@ main {
 }
 
 main:before {
-content: " ";
-  position: absolute;
-  z-index: -1;
-  left: 0px;
-  right: 0px;
-  border: 25px solid #2ecc71;
+	content: " ";
+	position: absolute;
+	z-index: -1;
+	left: 0px;
+	right: 0px;
+	border: 25px solid #2ecc71;
 }
 
 /*Header*/
