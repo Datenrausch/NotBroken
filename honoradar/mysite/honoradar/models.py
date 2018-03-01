@@ -40,10 +40,10 @@ class DataCollection(models.Model):
     SalaryPerMonthEmpMix=models.IntegerField(default=0)
     FeeFree=models.IntegerField(default=0)
 
-
+    #Have to change into buttons
     JobPosition=models.CharField(default="None",max_length=200)
-    EXPERIENCE = Choices("keine","1 Jahr","3 Jahre"," 5 Jahre")
-    Experience = models.CharField(choices=EXPERIENCE, default=EXPERIENCE.keine, max_length=10)
+    EXPERIENCE = Choices("keineAngabe","1 Jahr","3 Jahre"," 5 Jahre")
+    Experience = models.CharField(choices=EXPERIENCE, default=EXPERIENCE.keineAngabe, max_length=10)
 
     HoursPerWeekEmp=models.IntegerField(default=0)
     HoursSpentFree=models.IntegerField(default=0)
@@ -54,6 +54,8 @@ class DataCollection(models.Model):
     MinPerAudioFree=models.IntegerField(default=0)
     MinPerVideoFree=models.IntegerField(default=0)
     CharPerArticleFree=models.IntegerField(default=0)
+
+    Comment=models.CharField(default="Kein Kommentar",max_length=600)
 
 
 

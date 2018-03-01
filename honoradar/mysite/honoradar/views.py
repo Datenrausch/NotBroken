@@ -10,18 +10,18 @@ import datetime
 from .models import *
 from django.db.models import Q
 def senddata(request):
+    sanitycheck=0
     if request.method == 'POST':
         print("senddata")
         MediumName=(request.POST.get('MediumName'))
-        print(MediumName)
         if MediumName:
-            print("Hey")
+            pass
         else:
             print("No Mediumname!!")
-            messages.info(request, 'OIDA!')
-            return redirect(reverse('IndexView') + '#get')
-        message=(request.POST.get('Message'))
+            sanitycheck=1
+            messages.info(request, 'Medium')
         FreeOrEmployed=(request.POST.get('FreeOrEmployed'))
+        Comment=(request.POST.get('Comment'))
         print(request.POST)
         try:
             mediumobj=Medium.objects.get(
@@ -29,13 +29,49 @@ def senddata(request):
             Q(freeoremployed=FreeOrEmployed)
         )
             print("Found it")
-
             print(mediumobj)
             if FreeOrEmployed=="fest":
+
                 SalaryPerMonthEmpMix=(request.POST.get('SalaryPerMonthEmpMix'))
+                print(SalaryPerMonthEmpMix)
+                if SalaryPerMonthEmpMix:
+                    pass
+                else:
+                    sanitycheck=1
+                    print("No Salary Angabe!!")
+                    messages.info(request, 'Angabe zum Gehalt')
+
                 Happiness=(request.POST.get("Happiness"))
-                d = mediumobj.datacollection_set.create(SalaryPerMonthEmpMix=int(SalaryPerMonthEmpMix),Happiness=int(Happiness)
-                )
+                if Happiness == 0:
+                    pass
+                else:
+                    sanitycheck=1
+                    print("No Happiness Angabe!!")
+                    messages.info(request, 'Angabe zur Zufriedenheit')
+
+                HoursPerWeek=(request.POST.get("HoursPerWeekEmp"))
+                if HoursPerWeek == 0:
+                    HoursPerWeek=int(HoursPerWeek)
+                    pass
+                else:
+                    sanitycheck=1
+                    print("No HoursPerWeek Angabe!!")
+                    messages.info(request, 'Angabe zur Arbeitszeit')
+
+                JobPosition=(request.POST.get("JobPosition"))
+                Experience=(request.POST.get("ExperienceEmplMix"))
+                print(request.POST)
+                if(sanitycheck==0):
+                    d = mediumobj.datacollection_set.create(
+                    SalaryPerMonthEmpMix=SalaryPerMonthEmpMix,
+                    Happiness=Happiness,
+                    HoursPerWeekEmp=HoursPerWeek,
+                    JobPosition=JobPosition,
+                    Experience=Experience,
+                    Comment=Comment
+                    )
+                else:
+                    pass
 
             if FreeOrEmployed=="pauschal":
                 SalaryPerMonthEmpMix=(request.POST.get('SalaryPerMonthEmpMix'))
@@ -53,23 +89,49 @@ def senddata(request):
 
         except Medium.DoesNotExist:
             if FreeOrEmployed=="fest":
-                SalaryPerMonthEmp=(request.POST.get('SalaryPerMonthEmp'))
-                HoursPerWeekEmp=(request.POST.get("HoursPerWeekEmp"))
+                SalaryPerMonthEmpMix=(request.POST.get('SalaryPerMonthEmpMix'))
+                print(SalaryPerMonthEmpMix)
+                if SalaryPerMonthEmpMix:
+                    pass
+                else:
+                    sanitycheck=1
+                    print("No Salary Angabe!!")
+                    messages.info(request, 'Angabe zum Gehalt')
+
+                Happiness=(request.POST.get("Happiness"))
+                if Happiness == 0:
+                    pass
+                else:
+                    sanitycheck=1
+                    print("No Happiness Angabe!!")
+                    messages.info(request, 'Angabe zur Zufriedenheit')
+
+                HoursPerWeek=(request.POST.get("HoursPerWeekEmp"))
+                if HoursPerWeek == 0:
+                    HoursPerWeek=int(HoursPerWeek)
+                    pass
+                else:
+                    sanitycheck=1
+                    print("No HoursPerWeek Angabe!!")
+                    messages.info(request, 'Angabe zur Arbeitszeit')
+
                 JobPosition=(request.POST.get("JobPosition"))
                 Experience=(request.POST.get("ExperienceEmplMix"))
-                Happiness=(request.POST.get("Happiness"))
-                comment=(request.POST.get("Message"))
-                mediumobj = Medium(mediumname=MediumName, freeoremployed=FreeOrEmployed)
-                mediumobj.save()
 
-                d = mediumobj.datacollection_set.create(
-                SalaryPerMonthEmp=int(SalaryPerMonthEmp),
-                HoursPerWeekEmp=int(HoursPerWeekEmp),
-                JobPosition=str(JobPosition),
-                Experience=str(Experience),
-                Happiness=int(Happiness),
-                comment=str(comment),
-                )
+
+                Comment=(request.POST.get('Comment'))
+                if(sanitycheck==0):
+                    mediumobj = Medium(mediumname=MediumName, freeoremployed=FreeOrEmployed)
+                    mediumobj.save()
+                    print(request.POST)
+                    d = mediumobj.datacollection_set.create(
+                    SalaryPerMonthEmpMix=int(SalaryPerMonthEmpMix),
+                    Happiness=int(Happiness),
+                    HoursPerWeekEmp=int(HoursPerWeek),
+                    JobPosition=JobPosition,
+                    Experience=Experience,
+                    Comment=Comment
+                    )
 
 
 

@@ -11,3 +11,9 @@ urlpatterns = [
     path('senddata/', views.senddata, name='senddata')
 
 ]
+
+#Add URL maps to redirect the base URL to our application
+from django.views.generic import RedirectView
+urlpatterns += [
+    path('', RedirectView.as_view(url='/honoradar/', permanent=True)),
+]
