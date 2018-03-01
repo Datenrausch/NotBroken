@@ -1,11 +1,11 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 from django.template import loader
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from django.views import generic
 from django.core.exceptions import ValidationError
 from django.contrib import messages
-
+from django.template.defaultfilters import slugify
 import datetime
 from .models import *
 from django.db.models import Q
@@ -19,7 +19,7 @@ def senddata(request):
         else:
             print("No Mediumname!!")
             messages.info(request, 'OIDA!')
-            return HttpResponseRedirect(reverse('honoradar:index'))
+            return redirect(reverse('IndexView') + '#get')
         message=(request.POST.get('Message'))
         FreeOrEmployed=(request.POST.get('FreeOrEmployed'))
         print(request.POST)
