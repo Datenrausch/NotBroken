@@ -2469,3 +2469,124 @@ p a:after {
 p a:hover:after{
 	width: calc(100% + 6px);
 }
+
+/*socialpoints*/
+
+.social-box {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: auto;
+  margin: 100px 0px 0px 0px;
+  flex-wrap: wrap;	
+  text-align: center;
+}
+
+.social-box:before {
+	content: 'Erzähle es deinen Kollegen weiter';
+	color: #fff;
+	font-size: 1em;
+	font-family: InknutAntiqua-Bold !important;
+	margin: -60px 0px 0px 0px;
+	position: absolute;
+	z-index: 1;
+	padding: 15px;
+	background-color: #FF9F23;
+	border-radius: 0px;
+}
+
+.socialtile {
+	width: 50px;
+	height: 50px;
+	width: calc(50px + 1.5vw); 
+	height: calc(50px + 1.5vw); 
+	margin: 25px 20px 25px 20px;
+	border-radius: 50px;
+	transition: .5s;
+	-webkit-transition: .5s;
+	-o-transition: .5s;
+	-moz-transition: .5s;
+}
+
+@media (max-width: 650px)  {
+.socialtile {
+	width: 40px;
+	height: 40px;
+	width: calc(40px + 1.5vw); 
+	height: calc(40px + 1.5vw); 
+	margin: 25px 8px 10px 8px; 
+}
+
+.social-box:before {
+	font-size: 0.6em;
+	font-family: InknutAntiqua-Bold !important;
+	margin: -60px 0px 0px 0px;
+	padding: 15px;
+}
+}
+
+@media (max-width: 350px)  {
+.socialtile {
+	width: 30px;
+	height: 30px;
+	width: calc(30px + 1.5vw); 
+	height: calc(30px + 1.5vw); 
+	margin: 25px 5px 10px 5px; 
+}
+
+.social-box:before {
+	font-size: 0.5em;
+	font-family: InknutAntiqua-Bold !important;
+	margin: -60px 0px 0px 0px;
+	padding: 15px;
+}
+}
+
+.socialtile:hover {	
+	transition: .5s;
+	-webkit-transition: .5s;
+	-o-transition: .5s;
+	-moz-transition: .5s;
+	transform: scale(1.2);
+	-webkit-transform: scale(1.2);
+	-o-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+}
+
+.social-1 {
+	background-image: url(../image/twitter.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100%;
+}
+
+.social-2 {
+	background-image: url(../image/facebook.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100%;
+}
+
+.social-3 {
+	background-image: url(../image/whatsapp.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 97%;
+	border-radius: 50px 50px 50px 0px;
+}
+
+.social-4 {
+	background-image: url(../image/messenger.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100%;
+}
+
+
+.social-5 {
+	background-image: url(../image/mail.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100%;
+}

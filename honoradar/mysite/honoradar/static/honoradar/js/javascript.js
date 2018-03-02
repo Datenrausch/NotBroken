@@ -184,6 +184,9 @@ function festfunction() {
     element.classList.add("show");
     element.classList.remove("hide");
 	
+	var element = document.getElementById("data_submit");
+    element.classList.add("show");
+    element.classList.remove("hide");
 
 	document.getElementById("data_format_text").checked = false;
 	document.getElementById("data_format_audio").checked = false;
@@ -276,6 +279,10 @@ function pauschalfunction() {
     element.classList.add("show");
     element.classList.remove("hide");
 	
+	var element = document.getElementById("data_submit");
+    element.classList.add("show");
+    element.classList.remove("hide");
+	
 	document.getElementById("data_format_text").checked = false;
 	document.getElementById("data_format_audio").checked = false;
 	document.getElementById("data_format_video").checked = false;
@@ -356,7 +363,9 @@ function freifunction() {
     element.classList.add("show");
     element.classList.remove("hide");
 
-
+	var element = document.getElementById("data_submit");
+    element.classList.add("show");
+    element.classList.remove("hide");
 }
 
 function textfunction() {
@@ -371,6 +380,7 @@ function textfunction() {
 	var element = document.getElementById("pre-data_laenge_video");
     element.classList.add("hide");
     element.classList.remove("show");
+	
 }
 
 function audiofunction() {
@@ -400,3 +410,11 @@ function videofunction() {
     element.classList.add("show");
     element.classList.remove("hide");
 }
+
+$('.smooth').on('click', function(e){
+  var href = $(this).attr('href');
+  $('html, body').animate({
+    scrollTop:$(href).offset().top
+  },'slow');
+  e.preventDefault();
+})
