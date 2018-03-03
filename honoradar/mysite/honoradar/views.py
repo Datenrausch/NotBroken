@@ -330,9 +330,9 @@ def senddata(request):
                     Comment=Comment,
                     )
 
-    return render(request, 'honoradar/index.html')
+    #return render(request, 'honoradar/index.html')
 
-#    return HttpResponseRedirect(reverse('honoradar:index'))
+    return HttpResponseRedirect(reverse('honoradar:index'))
 
 class IndexView(generic.ListView):
     template_name = 'honoradar/index.html'
