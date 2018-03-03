@@ -489,7 +489,7 @@ main:before {
 
 .media-select {
   font-family: 'Open Sans';
-  font-size: 13px;
+  font-size: 15px;
   height: 35px;
   border-radius: 4px 4px 4px 4px;
   padding-left: 22px;
@@ -532,7 +532,7 @@ main:before {
   padding: 30px 40px 20px 40px;
   overflow: hidden;
   float: left;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 @media (max-width: 800px)  { 
@@ -578,7 +578,7 @@ main:before {
   width: 33.33%;
   background-color: #e3e3e3;
   color: rgba(0, 0, 0, 0.6);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: normal;
   text-align: center;
   text-shadow: none;
@@ -621,7 +621,7 @@ main:before {
   content: 'Arbeitsverhältnis';
   display: block;
   color: white;
-  font-size: 13px;
+  font-size: 15px;
   margin-top: -22px;
   margin-left: calc(1%);
 }
@@ -662,7 +662,7 @@ main:before {
 
 .loan-select {
   font-family: 'Open Sans';
-  font-size: 13px;
+  font-size: 15px;
   height: 35px;
   border-radius: 4px 4px 4px 4px;
   padding-left: 22px;
@@ -744,7 +744,7 @@ input[type="range"]::-webkit-slider-thumb{
 
 .hour-week-bar[type="range"]:before {
   position: absolute;
-  bottom: -15%;
+  bottom: -0%;
   right: -30px;
   content: attr(value);
   display: block;
@@ -772,7 +772,7 @@ input[type="range"]::-webkit-slider-thumb{
 
 .day-month-bar[type="range"]:before {
   position: absolute;
-  bottom: -15%;
+  bottom: -0%;
   right: -30px;
   content: attr(value);
   display: block;
@@ -798,7 +798,7 @@ input[type="range"]::-webkit-slider-thumb{
 
 .hour-day-bar[type="range"]:before {
   position: absolute;
-  bottom: -15%;
+  bottom: -0%;
   right: -30px;
   content: attr(value);
   display: block;
@@ -826,7 +826,7 @@ input[type="range"]::-webkit-slider-thumb{
 
 .happiness-bar[type="range"]:before {
   position: absolute;
-  bottom: -15%;
+  bottom: -0%;
   right: -50px;
   content: attr(value);
   display: block;
@@ -956,7 +956,7 @@ input[type="range"]::-webkit-slider-thumb{
 
 input[type="range"]:before {
   position: absolute;
-  bottom: -15%;
+  bottom: -5%;
   right: -30px;
   content: attr(value);
   display: block;
@@ -981,7 +981,7 @@ input[type="range"]:before {
   position: absolute;
   content: 'Arbeitstage pro Monat';
   display: block;
-  margin: 4px 0px 0px calc(50% - 81px);
+  margin: 4px 0px 0px calc(50% - 70px);
   color: #fff;
   font-size: 1.2em;
 }
@@ -1014,7 +1014,7 @@ input[type="range"]:before {
 .position-select {
   font-family: 'Open Sans';
   margin: 30px 20px 0px 40px;
-  font-size: 13px;
+  font-size: 15px;
   width: 220px;
   height: 35px;
   border-radius: 4px 4px 4px 4px;
@@ -1113,7 +1113,7 @@ input[type="range"]:before {
 	height: 100px;
 	margin: 30px 30px 0px 40px;
 	font-family: 'Open Sans';
-	font-size: 13px;
+	font-size: 15px;
 	padding: 20px 30px 10px 30px;
 	color: #243040;
 	border-radius: 10px;
@@ -1156,7 +1156,7 @@ input[type="range"]:before {
   margin: 10px 0px 0px 40px;
   color: white;
   font-family: 'Open Sans';
-  font-size: 13px;
+  font-size: 15px;
   line-height: 20px;
 }
 
@@ -1483,7 +1483,7 @@ input[type="range"]:before {
 
 .amount-text-bar[type="range"]:before {
   position: absolute;
-  bottom: -15%;
+  bottom: -0%;
   right: -70px;
   content: attr(value);
   display: block;
@@ -1511,7 +1511,7 @@ input[type="range"]:before {
 
 .amount-av-bar[type="range"]:before {
   position: absolute;
-  bottom: -15%;
+  bottom: -0%;
   right: -50px;
   content: attr(value);
   display: block;
@@ -1539,7 +1539,7 @@ input[type="range"]:before {
 
 .amount-time-bar[type="range"]:before {
   position: absolute;
-  bottom: -15%;
+  bottom: -0%;
   right: -50px;
   content: attr(value);
   display: block;
@@ -1551,7 +1551,7 @@ input[type="range"]:before {
 
 .genre-select {
   font-family: 'Open Sans';
-  font-size: 13px;
+  font-size: 15px;
   height: 35px;
   border-radius: 4px 4px 4px 4px;
   padding-left: 22px;
@@ -1713,10 +1713,10 @@ input[type="range"]:before {
   position: relative;
   content: '';
   display: block;
-  margin: 5px 50px 20px 110px;
+  margin: 7px 50px 20px 110px;
   color: white;
   font-family: 'Open Sans';
-  font-size: 13px;
+  font-size: 15px;
   line-height: 20px;
 }
 
