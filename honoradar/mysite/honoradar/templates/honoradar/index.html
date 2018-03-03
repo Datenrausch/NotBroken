@@ -131,13 +131,8 @@
 	
 	<div class="banner-left-1">Wie verdienst du dein Geld?</div><div class="banner-left-shadow"></div>
 
-<!-- Medium-Select -->
-	<div class="alert alert-media-select">
-		<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-		<strong>Achtung: </strong>Bitte füllen dieses Feld aus!
-	</div>
-	
-    <input name="mediumname" id="data_medium" class="media-select" list="medium" placeholder="Welches Medium?" type="text" />
+<!-- Medium-Select -->	
+    <input name="mediumname" id="data_medium" class="media-select alert-border" list="medium" placeholder="Welches Medium?" type="text" />
     <datalist id="medium">
 		<option value="Frankfurter Allgemeine Zeitung (FAZ)">
 		<option value="Spiegel">
@@ -160,16 +155,11 @@
 	</div>
 
  <!-- Loan-Select -->
-	<div class="alert alert-media-select">
-		<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-		<strong>Achtung: </strong>Bitte füllen dieses Feld aus!
-	</div>
-	
   	<input  name="gehalt" id="data_gehalt" class="loan-select hide" list="gehalt" placeholder="Gehalt pro Monat?" type="number"	min="0" oninput="validity.valid||(value='');" inputmode="numeric" />
 
 <!-- Hour-Week-Select -->
     <div class="hour-week-select hide" id="pre-data_stunden_woche">
-    	<input id="data_stunden_woche" name="arbeitszeit" class="hour-week-bar" type="range" min="1" max="50" value="0"/>
+    	<input id="data_stunden_woche" name="arbeitszeit" class="hour-week-bar alert-border-bar" type="range" min="1" max="50" value="0"/>
     </div>
     <div class="break hide" id="break-1"></div>
 
@@ -282,12 +272,16 @@
 
 <!-- Checkbox-Select -->
     <span class="hide" id="pre-data_checkbox">
-        <input name="agb"class="checkbox" type="checkbox" id="data_checkbox" />
-        <label class="checkboxlabel" for="data_checkbox"></label>
+        <input name="agb"class="checkbox alert-checkbox" type="checkbox" id="data_checkbox" />
+        <label class="checkboxlabel alert-checkbox" for="data_checkbox"></label>
         <p class="checkboxtext">Ich bin mit den <a href="#" target="_blank" class="clear-agb">AGBs</a> einverstanden.</p>
     </span>
 
 <!-- Submit -->
+	<div class="alert alert-media-select">
+		<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+		<strong>Achtung! </strong>Bitte fülle folgende Felder aus: Feld1, Feld2 und Feld2.
+	</div>
     <input type="submit" class="submit-get hide" id="data_submit" value="Daten spenden"/>
 
     </form>

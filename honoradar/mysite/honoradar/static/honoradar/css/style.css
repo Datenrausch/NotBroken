@@ -1181,7 +1181,7 @@ input[type="range"]:before {
 
 .submit-get {
 	position: relative;
-	margin: 60px calc(50% - 100px) 0px;
+	margin: 30px calc(50% - 100px) 0px;
 	width: 200px;
 	height: 50px;
 	background: #243040;
@@ -1207,19 +1207,19 @@ input[type="range"]:before {
 
 @media (max-width: 1420px)  { 
 .submit-get {
-	margin: 60px calc(50% - 100px) 0px;
+	margin: 20px calc(50% - 100px) 0px;
 }
 }
 
 @media (max-width: 1075px)  { 
 .submit-get {
-	margin: 60px calc(50% - 100px) 0px;
+	margin: 20px calc(50% - 100px) 0px;
 }
 }
 
 @media (max-width: 646px)  { 
 .submit-get {
-	margin: 60px calc(50% - 100px) 0px;
+	margin: 20px calc(50% - 100px) 0px;
 }
 }
 
@@ -1701,10 +1701,10 @@ input[type="range"]:before {
 
 
 .checkboxtext {
-  position: absolute;
+  position: relative;
   content: '';
   display: block;
-  margin: 5px 50px 0px 110px;
+  margin: 5px 50px 20px 110px;
   color: white;
   font-family: 'Open Sans';
   font-size: 13px;
