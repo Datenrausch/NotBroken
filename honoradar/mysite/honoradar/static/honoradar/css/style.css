@@ -490,7 +490,7 @@ main:before {
 .media-select {
   font-family: 'Open Sans';
   font-size: 13px;
-  height: 33px;
+  height: 35px;
   border-radius: 4px 4px 4px 4px;
   padding-left: 22px;
   float: left;
@@ -559,7 +559,7 @@ main:before {
 @media (min-width: 1600px)  { 
 .switch-field {
   width: calc(50%);
-  padding: 30px 40px 0px 30px;
+  padding: 32px 40px 0px 30px;
 }
 }
 
@@ -663,7 +663,7 @@ main:before {
 .loan-select {
   font-family: 'Open Sans';
   font-size: 13px;
-  height: 33px;
+  height: 35px;
   border-radius: 4px 4px 4px 4px;
   padding-left: 22px;
   float: left;
@@ -706,8 +706,8 @@ input[type="range"]::-webkit-slider-thumb{
   -webkit-appearance: none;
   appearance: none;
   outline: 0px none transparent;
-  width: 18px;
-  height: 18px;
+  width: 25px;
+  height: 25px;
   border-radius: 100%;
   background: #ecf0f1;
   z-index: 3;
@@ -728,7 +728,7 @@ input[type="range"]::-webkit-slider-thumb{
 .hour-week-bar[type="range"] {
   position: relative;
   outline: none;
-  margin: 7px 10px 0px 13px;
+  margin: 4px 10px 0px 13px;
   width: calc(100% - 50px);
   color: #fff;
   text-align: center;
@@ -756,7 +756,7 @@ input[type="range"]::-webkit-slider-thumb{
 .day-month-bar[type="range"] {
   position: relative;
   outline: none;
-  margin: 7px 10px 0px 13px;
+  margin: 5px 10px 0px 13px;
   width: calc(100% - 50px);
   color: #fff;
   text-align: center;
@@ -783,7 +783,7 @@ input[type="range"]::-webkit-slider-thumb{
 .hour-day-bar[type="range"] {
   position: relative;
   outline: none;
-  margin: 7px 10px 0px 13px;
+  margin: 5px 10px 0px 13px;
   width: calc(100% - 50px);
   text-align: center;
   background: #2ecc71;
@@ -804,12 +804,13 @@ input[type="range"]::-webkit-slider-thumb{
   display: block;
   text-align: center;
   font-size: 20px;
+  color: #fff;
 }
 
 .happiness-bar[type="range"] {
   position: relative;
   outline: none;
-  margin: 7px 10px 0px 13px;
+  margin: 5px 10px 0px 13px;
   width: calc(100% - 70px);
   color: #fff;
   text-align: center;
@@ -868,7 +869,7 @@ input[type="range"]::-webkit-slider-thumb{
 }
 
 .day-month-select {
-  height: 33px;
+  height: 35px;
   -webkit-box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.2);
   -moz-box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.2);
   box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.2);
@@ -910,7 +911,7 @@ input[type="range"]::-webkit-slider-thumb{
 }
 
 .hour-day-select {
-  height: 33px;
+  height: 35px;
   -webkit-box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.2);
   -moz-box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.2);
   box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.2);
@@ -967,8 +968,9 @@ input[type="range"]:before {
   position: absolute;
   content: 'Arbeitsstunden pro Woche';
   display: block;
-  margin: 2px 0px 0px calc(50% - 71px);
+  margin: 4px 0px 0px calc(50% - 81px);
   color: #fff;
+  font-size: 1.2em;
 }
 
 .hour-week-select input {
@@ -979,8 +981,9 @@ input[type="range"]:before {
   position: absolute;
   content: 'Arbeitstage pro Monat';
   display: block;
-  margin: 2px 0px 0px calc(50% - 71px);
+  margin: 4px 0px 0px calc(50% - 81px);
   color: #fff;
+  font-size: 1.2em;
 }
 
 .day-month-select input {
@@ -991,8 +994,9 @@ input[type="range"]:before {
   position: absolute;
   content: 'Arbeitsstunden pro Tag ';
   display: block;
-  margin: 2px 0px 0px calc(50% - 60px);
-    color: #fff;
+  margin: 4px 0px 0px calc(50% - 70px);
+  color: #fff;
+  font-size: 1.2em;
 }
 
 .hour-day-select input {
@@ -1012,7 +1016,7 @@ input[type="range"]:before {
   margin: 30px 20px 0px 40px;
   font-size: 13px;
   width: 220px;
-  height: 33px;
+  height: 35px;
   border-radius: 4px 4px 4px 4px;
   float: left;
   padding-left: 30px;
@@ -1051,7 +1055,7 @@ input[type="range"]:before {
 
 .happiness-select {
   width: calc(100% - 80px);
-  height: 33px;
+  height: 35px;
   -webkit-box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.2);
   -moz-box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.2);
   box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.2);
@@ -1088,8 +1092,9 @@ input[type="range"]:before {
 .happiness-select input[type="range"]:after {
   position: absolute;
   display: block;
-  margin: 2px 0px 0px calc(50% - 40px);
+  margin: 4px 0px 0px calc(50% - 50px);
   content: 'Arbeitsatmosphäre';
+  font-size: 1.2em;
 }
 
 .happiness-select input {
@@ -1304,7 +1309,7 @@ input[type="range"]:before {
 
 .text-amount-select {
   width: calc(100% - 80px);
-  height: 33px;
+  height: 35px;
   -webkit-box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.2);
   -moz-box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.2);
   box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.2);
@@ -1342,7 +1347,8 @@ input[type="range"]:before {
   position: absolute;
   content: 'Länge des Textes in Zeichen';
   display: block;
-  margin: 2px 0px 0px calc(50% - 60px);
+  margin: 4px 0px 0px calc(50% - 70px);
+  font-size: 1.2em;
 }
 
 .text-amount-select input {
@@ -1355,7 +1361,7 @@ input[type="range"]:before {
 
 .audio-amount-select {
   width: calc(100% - 80px);
-  height: 33px;
+  height: 35px;
   -webkit-box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.2);
   -moz-box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.2);
   box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.2);
@@ -1393,7 +1399,8 @@ input[type="range"]:before {
   position: absolute;
   content: 'Länge der Audio in Minuten';
   display: block;
-  margin: 2px 0px 0px calc(50% - 70px);
+  margin: 4px 0px 0px calc(50% - 80px);
+  font-size: 1.2em;
 }
 
 .audio-amount-select input {
@@ -1406,7 +1413,7 @@ input[type="range"]:before {
 
 .video-amount-select {
   width: calc(100% - 80px);
-  height: 33px;
+  height: 35px;
   -webkit-box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.2);
   -moz-box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.2);
   box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.2);
@@ -1444,7 +1451,8 @@ input[type="range"]:before {
   position: absolute;
   content: 'Länge des Videos in Minuten';
   display: block;
-  margin: 2px 0px 0px calc(50% - 70px);
+  margin: 4px 0px 0px calc(50% - 80px);
+  font-size: 1.2em;
 }
 
 .video-amount-select input {
@@ -1458,7 +1466,7 @@ input[type="range"]:before {
 .amount-text-bar[type="range"] {
   position: relative;
   outline: none;
-  margin: 7px 10px 0px 13px;
+  margin: 5px 10px 0px 13px;
   width: calc(100% - 90px);
   color: #fff;
   background: #e74c3c;
@@ -1486,7 +1494,7 @@ input[type="range"]:before {
 .amount-av-bar[type="range"] {
   position: relative;
   outline: none;
-  margin: 7px 10px 0px 13px;
+  margin: 5px 10px 0px 13px;
   width: calc(100% - 70px);
   color: #fff;
   background: #e74c3c;
@@ -1514,7 +1522,7 @@ input[type="range"]:before {
 .amount-time-bar[type="range"] {
   position: relative;
   outline: none;
-  margin: 7px 10px 0px 13px;
+  margin: 5px 10px 0px 13px;
   width: calc(100% - 70px);
   color: #fff;
   background: #e74c3c;
@@ -1544,7 +1552,7 @@ input[type="range"]:before {
 .genre-select {
   font-family: 'Open Sans';
   font-size: 13px;
-  height: 33px;
+  height: 35px;
   border-radius: 4px 4px 4px 4px;
   padding-left: 22px;
   float: left;
@@ -1583,7 +1591,7 @@ input[type="range"]:before {
 
 .time-select {
   width: calc(100% - 80px);
-  height: 33px;
+  height: 35px;
   -webkit-box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.2);
   -moz-box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.2);
   box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.2);
@@ -1621,7 +1629,8 @@ input[type="range"]:before {
   position: absolute;
   content: 'Zeitaufwand in Stunden';
   display: block;
-  margin: 2px 0px 0px calc(50% - 60px);
+  margin: 4px 0px 0px calc(50% - 70px);
+  font-size: 1.2em;
 }
 
 .time-select input {

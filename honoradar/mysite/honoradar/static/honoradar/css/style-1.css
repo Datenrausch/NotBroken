@@ -21,11 +21,12 @@
 	-moz-transition: all @duration @ease;
 	-o-transition: all @duration @ease;
 	transition: all @duration @ease;
+	background: #fdecea;
 }
 
 .alert-border-bar {
 	border: 2px solid rgba(244, 67, 54, 0.85) !important;
-	margin-top: 6px !important;
+	margin-top: 3px !important;
 	-webkit-transition: all @duration @ease;
 	-moz-transition: all @duration @ease;
 	-o-transition: all @duration @ease;
@@ -33,7 +34,7 @@
 }
 
 .alert-checkbox {
-	background: rgba(244, 67, 54, 0.85);
+	background: rgba(244, 67, 54, 0.75);
 	-webkit-transition: all @duration @ease;
 	-moz-transition: all @duration @ease;
 	-o-transition: all @duration @ease;
