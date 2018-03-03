@@ -50,7 +50,7 @@ class DataCollection(models.Model):
 
     HoursPerDayMix=models.IntegerField(default=0)
     DaysPerMonthMix=models.IntegerField(default=0)
-    ProductType=models.CharField(default="None",max_length=200)
+    Genre=models.CharField(default="None",max_length=200)
     MinPerAudioFree=models.IntegerField(default=0)
     MinPerVideoFree=models.IntegerField(default=0)
     CharPerArticleFree=models.IntegerField(default=0)
@@ -60,5 +60,5 @@ class DataCollection(models.Model):
 
 
     def __str__(self):
-        template = '{0.SalaryPerMonthEmpMix} {0.Happiness} {0.HoursPerWeekEmp}{0.ProductType}'
+        template = '{0.SalaryPerMonthEmpMix} {0.Happiness} {0.HoursPerWeekEmp}{0.Genre}'
         return template.format(self)
