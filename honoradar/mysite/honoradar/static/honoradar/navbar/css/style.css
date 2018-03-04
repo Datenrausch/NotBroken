@@ -1,8 +1,4 @@
-/* -------------------------------- 
-
-Primary style
-
--------------------------------- */
+/*Primary style*/
 *, *::after, *::before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -29,11 +25,7 @@ body, html {
 }
 
 
-/* -------------------------------- 
-
-Main Components 
-
--------------------------------- */
+/*Main Components*/
 
 main {
   position: relative;
@@ -151,21 +143,6 @@ main {
   height: 2px;
   background-color: #ffffff;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .cd-nav-trigger .cd-nav-icon::before, .cd-nav-trigger .cd-nav-icon:after {
   /* upper and lower lines of the menu icon */
