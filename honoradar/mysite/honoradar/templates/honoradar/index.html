@@ -152,6 +152,11 @@
 		<input name="festfrei" type="radio" id="data_arbeitsverhaeltnis_frei" name="switch" value="frei" onclick="freifunction()"/>
 		<label for="data_arbeitsverhaeltnis_frei">Frei</label>
 	</div>
+	
+	<div class="break"></div>
+	
+<!-- Tutorial-Giv-->
+	<div class="tutorial-giv" id="tutorial-giv"></div>
 
  <!-- Loan-Select -->
   	<input  name="gehalt" id="data_gehalt" class="loan-select hide" list="gehalt" placeholder="Gehalt pro Monat?" type="number"	min="0" oninput="validity.valid||(value='');" inputmode="numeric" />
@@ -230,7 +235,7 @@
 
 <!-- Time-Select -->
     <div class="time-select hide" id="pre-data_zeit">
-        <input name="Zeitaufwand"id="data_zeit" class="amount-time-bar" type="range" min="0.5" max="3636" value="0" step="0.5"/>
+        <input name="Zeitaufwand"id="data_zeit" class="amount-time-bar" type="range" min="0.5" max="100" value="0" step="0.5"/>
     </div>
 
 	<div class="break"></div>
@@ -289,11 +294,11 @@
 <!-- Output-Input-Box -->
     <div class="get">
     <form id="get">
-    <div class="banner-right-1">Welche Redaktion  dich?</div><div class="banner-right-shadow"></div>
+    <div class="banner-right-1">Welches Medium interessiert dich?</div><div class="banner-right-shadow"></div>
 
 <!-- Medium-Select -->
-    <input id="data_33" class="media-select" list="medium" placeholder="Welches Medium?" type="text"/>
-    <datalist id="medium">
+    <input id="media-analyse" class="media-select" list="medium" placeholder="Welches Medium?" type="text"/>
+    <datalist id="medium-analyse">
         <option value="Frankfurter Allgemeine Zeitung (FAZ)">
         <option value="Spiegel">
         <option value="Spiegel TV">
@@ -305,35 +310,39 @@
     </datalist>
 
 <!-- Switch-Select -->
-    <div id="data_34">
-    <div class="switch-field switch-field-text-1">
-        <input type="radio" id="data_35" name="switch" value="fest" />
-        <label for="data_35">Fest</label>
-        <input type="radio" id="data_36" name="switch" value="pauschal"/>
-        <label for="data_36">Pauschal</label>
-        <input type="radio" id="data_37" name="switch" value="frei" />
-        <label for="data_37">Frei</label>
+    <div class="switch-field switch-field-text-1 tooltip">
+        <input type="radio" id="data_arbeitsverhaeltnis_fest-analyse" name="switch" value="fest" onclick="getfunction()"/>
+        <label for="data_arbeitsverhaeltnis_fest-analyse">Fest</label>
+        <input type="radio" id="data_arbeitsverhaeltnis_pauschal-analyse" name="switch" value="pauschal" onclick="getfunction()"/>
+        <label for="data_arbeitsverhaeltnis_pauschal-analyse">Pauschal</label>
+        <input type="radio" id="data_arbeitsverhaeltnis_frei-analyse" name="switch" value="frei" onclick="getfunction()"/>
+        <label for="data_arbeitsverhaeltnis_frei-analyse">Frei</label>
     </div>
-    </div>
-
+	
+	<div class="break"></div>
+	
+<!-- Tutorial-Get -->
+	<div class="tutorial-get" id="tutorial-get"></div>
+	
 <!-- Submit -->
-    <input type="submit" class="submit-giv hide" value="Daten abfragen"/>
+    <a href="#break-2" class="smooth" onclick="analysefunction()"><input type="submit" class="submit-giv hide" id="analyse_submit" value="Daten abfragen"/></a>
 
     </form>
     </div>
 
 <!-- Grafic-Box -->
+	<div class="break" id="break-2"></div>
     <div class="result hide" id="result">
-    <div class="banner-left-3">Überschrift</div><div class="banner-left-shadow"></div>
+    <div class="banner-left-3">Hier erscheinen später Infografiken</div><div class="banner-left-shadow"></div>
     </div>
 	
 <!-- Social Share -->
 	<div class="social-box">
-		<a target="_blank" title="Twitter" href="https://twitter.com/intent/tweet?url=https://wasjournalistenverdienen.de&text=Was%20verdienen%20Journalisten?%20Die%20neue%20interaktive%20Datenbank%20der%20Freischreiber:"><div class="social-1 socialtile"></div></a>
-		<a target="_blank" title="Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://wasjournalistenverdienen.de"><div class="social-2 socialtile"></div></a>
-		<a title="Whatsapp" href="whatsapp://send?text=https://wasjournalistenverdienen.de"><div class="social-3 socialtile"></div></a>
-		<a title="Facebook Messenger" href="fb-messenger://share/?link=https://wasjournalistenverdienen.de&app_id=123456789"><div class="social-4 socialtile"></div></a>
-		<a title="E-Mail" href="mailto:?subject=Interaktive Datenbank: Was verdienen Journalisten?&amp;body=Hallo, schau dir mal diese Seite an: https://wasjournalistenverdienen.de"><div class="social-5 socialtile"></div></a>
+		<a target="_blank" href="https://twitter.com/intent/tweet?url=https://wasjournalistenverdienen.de&text=Was%20verdienen%20Journalisten?%20Die%20neue%20interaktive%20Datenbank%20der%20Freischreiber:"><div class="social-1 socialtile"></div></a>
+		<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://wasjournalistenverdienen.de"><div class="social-2 socialtile"></div></a>
+		<a href="whatsapp://send?text=https://wasjournalistenverdienen.de"><div class="social-3 socialtile"></div></a>
+		<a href="fb-messenger://share/?link=https://wasjournalistenverdienen.de&app_id=123456789"><div class="social-4 socialtile"></div></a>
+		<a href="mailto:?subject=Interaktive Datenbank: Was verdienen Journalisten?&amp;body=Hallo, schau dir mal diese Seite an: https://wasjournalistenverdienen.de"><div class="social-5 socialtile"></div></a>
 	</div>
    
 

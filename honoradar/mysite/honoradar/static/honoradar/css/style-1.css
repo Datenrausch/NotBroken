@@ -1,96 +1,23 @@
 
 
-.alert {
-    padding: 10px;
-    background-color: rgba(244, 67, 54, 0.65);
-    color: white;
-	font-size: 15px;
-	border: 2px solid rgba(244, 67, 54, 1);
-	border-radius: 3px;
-	line-height: 1.2em;
-	-webkit-transition: all @duration @ease;
-	-moz-transition: all @duration @ease;
-	-o-transition: all @duration @ease;
-	transition: all @duration @ease;
+.tutorial-giv {
+	height: 200px;
+	width: 80%;
+	margin: 10px 10% 0px 10%;
+	background: url(../image/datenspende.png) no-repeat 0% 0%;
+	background-position: center center;
+	background-size: 100%; 
+	position: relative;
 }
 
-@media (max-width: 360px)  {
-.alert {
-  	font-size: 12px;;
-}
-}
-
-
-.alert-border {
-	border: 2px solid rgba(244, 67, 54, 0.85);
-	-webkit-transition: all @duration @ease;
-	-moz-transition: all @duration @ease;
-	-o-transition: all @duration @ease;
-	transition: all @duration @ease;
-	background: #fdecea;
-}
-
-.alert-border-bar {
-	border: 2px solid rgba(244, 67, 54, 0.85) !important;
-	margin-top: 3px !important;
-	-webkit-transition: all @duration @ease;
-	-moz-transition: all @duration @ease;
-	-o-transition: all @duration @ease;
-	transition: all @duration @ease;
-}
-
-.alert-checkbox {
-	background: rgba(244, 67, 54, 0.75);
-	-webkit-transition: all @duration @ease;
-	-moz-transition: all @duration @ease;
-	-o-transition: all @duration @ease;
-	transition: all @duration @ease;
-}
-
-
-@media (max-width: 800px)  { 
-.alert-media-select {
-  width: calc(100% - 80px);
-  margin: 40px 40px 0px 40px;
-}
-}	
-	
-@media (min-width: 800px)  { 
-.alert-media-select {
-  width: calc(100% - 80px);
-  margin: 30px 30px 0px 40px;
-}
-}	
-
-@media (min-width: 1075px)  { 
-.alert-media-select {
-  width: calc(100% - 80px);
-  margin: 40px 40px 0px 40px;
-}
-}	
-
-@media (min-width: 1600px)  { 
-.alert-media-select {
-  width: calc(100% - 80px);
-  margin: 30px 30px 0px 40px;
-}
-}
-
-
-
-.closebtn {
-    margin-left: 15px;
-    color: white;
-    font-weight: bold;
-    float: right;
-    font-size: 22px;
-    line-height: 13px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.closebtn:hover {
-    color: #243040;
+.tutorial-get {
+	height: 200px;
+	width: 80%;
+	margin: 10px 10% 0px 10%;
+	background: url(../image/datenanalyse.png) no-repeat 0% 0%;
+	background-position: center center;
+	background-size: 100%; 
+	position: relative;
 }
 
 
