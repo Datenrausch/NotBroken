@@ -41,7 +41,15 @@ document.querySelector('#data_zusammenarbeit').addEventListener('input', functio
 
 
 function festfunction() {
-	var element = document.getElementById("tutorial-giv");
+	var element = document.getElementById("question-1");
+    element.classList.add("hide");
+    element.classList.remove("show");
+	
+	var element = document.getElementById("question-2");
+    element.classList.add("hide");
+    element.classList.remove("show");
+	
+	var element = document.getElementById("question-3");
     element.classList.add("hide");
     element.classList.remove("show");
 	
@@ -140,7 +148,15 @@ function festfunction() {
 };
 
 function pauschalfunction() {
-	var element = document.getElementById("tutorial-giv");
+	var element = document.getElementById("question-1");
+    element.classList.add("hide");
+    element.classList.remove("show");
+	
+	var element = document.getElementById("question-2");
+    element.classList.add("hide");
+    element.classList.remove("show");
+	
+	var element = document.getElementById("question-3");
     element.classList.add("hide");
     element.classList.remove("show");
 	
@@ -239,7 +255,15 @@ function pauschalfunction() {
 };
 
 function freifunction() {
-	var element = document.getElementById("tutorial-giv");
+	var element = document.getElementById("question-1");
+    element.classList.add("hide");
+    element.classList.remove("show");
+	
+	var element = document.getElementById("question-2");
+    element.classList.add("hide");
+    element.classList.remove("show");
+	
+	var element = document.getElementById("question-3");
     element.classList.add("hide");
     element.classList.remove("show");
 	
@@ -365,15 +389,61 @@ function videofunction() {
     element.classList.remove("hide");
 }
 
-function getfunction() {
+function getfunctionfest() {
 	var element = document.getElementById("analyse_submit");
     element.classList.add("show");
     element.classList.remove("hide");
 	
-	var element = document.getElementById("tutorial-get");
+	var element = document.getElementById("question-4");
+    element.classList.add("hide");
+    element.classList.remove("show");
+	
+	var element = document.getElementById("question-5");
+    element.classList.add("hide");
+    element.classList.remove("show");
+	
+	var element = document.getElementById("question-6");
     element.classList.add("hide");
     element.classList.remove("show");
 }
+
+function getfunctionpauschal() {
+	var element = document.getElementById("analyse_submit");
+    element.classList.add("show");
+    element.classList.remove("hide");
+	
+	var element = document.getElementById("question-4");
+    element.classList.add("hide");
+    element.classList.remove("show");
+	
+	var element = document.getElementById("question-5");
+    element.classList.add("hide");
+    element.classList.remove("show");
+	
+	var element = document.getElementById("question-6");
+    element.classList.add("hide");
+    element.classList.remove("show");
+}
+
+
+function getfunctionfrei() {
+	var element = document.getElementById("analyse_submit");
+    element.classList.add("show");
+    element.classList.remove("hide");
+	
+	var element = document.getElementById("question-4");
+    element.classList.add("hide");
+    element.classList.remove("show");
+	
+	var element = document.getElementById("question-5");
+    element.classList.add("hide");
+    element.classList.remove("show");
+	
+	var element = document.getElementById("question-6");
+    element.classList.add("hide");
+    element.classList.remove("show");
+}
+
 
 function analysefunction() {
 	var element = document.getElementById("result");

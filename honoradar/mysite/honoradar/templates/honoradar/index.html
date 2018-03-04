@@ -61,7 +61,7 @@
     <div class="panel">
 		<h1 class="head-title">Was verdienen Journalisten?</h1>
 		<h2 class="head-subtitle-1">Die JourMoney-Datenbank gibt die Antwort: Hier spenden Journalisten Gehaltsdaten und erfahren, was ihre Kollegen verdienen.</h2>
-		<h2 class="head-subtitle-2">Bisher spendeten 1.245 Daten über 123 Medien gespendet.</h2>
+		<h2 class="head-subtitle-2">Bisher spendeten Journalisten 1.245 Daten von 134 Medien.</h2>
 		<a href="#banderole" id="machmit" class="smooth clear-absolute"><h3 class="head-action">Mach mit!</h3></a>
 		<div class="head-box-1"></div>
 		<div class="head-box-2"></div>
@@ -128,10 +128,10 @@
     <form action="{% url 'honoradar:senddata' %}" method="post" name="firstbox" id="giv-form">
       {% csrf_token %}
 	
-	<div class="banner-left-1">Wie verdienst du dein Geld?</div><div class="banner-left-shadow"></div>
+	<div class="banner-left-1">Spende deine Gehaltdaten!</div><div class="banner-left-shadow"></div>
 
 <!-- Medium-Select -->	
-    <input name="mediumname" id="data_medium" class="media-select" list="medium" placeholder="Welches Medium?" type="text" />
+    <input name="mediumname" id="data_medium" class="media-select" list="medium" placeholder="Für welches Medium arbeitest du?" type="text" />
     <datalist id="medium">
 		<option value="Frankfurter Allgemeine Zeitung (FAZ)">
 		<option value="Spiegel">
@@ -146,18 +146,15 @@
 <!-- Switch-Select -->
 	<div class="switch-field switch-field-text-1 tooltip">
 		<input name="festfrei" type="radio" id="data_arbeitsverhaeltnis_fest" name="switch" value="fest" onclick="festfunction()"/>
-		<label for="data_arbeitsverhaeltnis_fest">Fest</label>
+		<label for="data_arbeitsverhaeltnis_fest">Fest<span id="question-1">?</span></label>
 		<input name="festfrei" type="radio" id="data_arbeitsverhaeltnis_pauschal" name="switch" value="pauschal" onclick="pauschalfunction()"/>
-		<label for="data_arbeitsverhaeltnis_pauschal">Pauschal</label>
+		<label for="data_arbeitsverhaeltnis_pauschal">Pauschal<span id="question-2">?</span></label>
 		<input name="festfrei" type="radio" id="data_arbeitsverhaeltnis_frei" name="switch" value="frei" onclick="freifunction()"/>
-		<label for="data_arbeitsverhaeltnis_frei">Frei</label>
+		<label for="data_arbeitsverhaeltnis_frei">Frei<span id="question-3">?</span></label>
 	</div>
 	
 	<div class="break"></div>
 	
-<!-- Tutorial-Giv-->
-	<div class="tutorial-giv" id="tutorial-giv"></div>
-
  <!-- Loan-Select -->
   	<input  name="gehalt" id="data_gehalt" class="loan-select hide" list="gehalt" placeholder="Gehalt pro Monat?" type="number"	min="0" oninput="validity.valid||(value='');" inputmode="numeric" />
 
@@ -239,10 +236,10 @@
     </div>
 
 	<div class="break"></div>
-    <div class="banner-left-2 zbanner-left hide" id="banner-left-2">Wie ist deine Arbeitssituation?</div><div id="banner-left-triangle" class="banner-left-shadow hide"></div>
+    <div class="banner-left-2 zbanner-left hide" id="banner-left-2">Kannst du noch mehr verraten?</div><div id="banner-left-triangle" class="banner-left-shadow hide"></div>
 
 <!-- Position-Select -->
-    <input name=cheforvolo id="data_position" class="position-select hide" list="position" placeholder="Welche Position?" type="text"/>
+    <input name=cheforvolo id="data_position" class="position-select hide" list="position" placeholder="Als was arbeitest du?" type="text"/>
     <datalist id="position">
         <option value="Chefredakteur">
         <option value="Ressortleiter">
@@ -294,10 +291,10 @@
 <!-- Output-Input-Box -->
     <div class="get">
     <form id="get">
-    <div class="banner-right-1">Welches Medium interessiert dich?</div><div class="banner-right-shadow"></div>
+    <div class="banner-right-1">So viel zahlen die Medien:</div><div class="banner-right-shadow"></div>
 
 <!-- Medium-Select -->
-    <input id="media-analyse" class="media-select" list="medium" placeholder="Welches Medium?" type="text"/>
+    <input id="media-analyse" class="media-select" list="medium" placeholder="Welches Medium interessiert dich?" type="text"/>
     <datalist id="medium-analyse">
         <option value="Frankfurter Allgemeine Zeitung (FAZ)">
         <option value="Spiegel">
@@ -311,21 +308,18 @@
 
 <!-- Switch-Select -->
     <div class="switch-field switch-field-text-1 tooltip">
-        <input type="radio" id="data_arbeitsverhaeltnis_fest-analyse" name="switch" value="fest" onclick="getfunction()"/>
-        <label for="data_arbeitsverhaeltnis_fest-analyse">Fest</label>
-        <input type="radio" id="data_arbeitsverhaeltnis_pauschal-analyse" name="switch" value="pauschal" onclick="getfunction()"/>
-        <label for="data_arbeitsverhaeltnis_pauschal-analyse">Pauschal</label>
-        <input type="radio" id="data_arbeitsverhaeltnis_frei-analyse" name="switch" value="frei" onclick="getfunction()"/>
-        <label for="data_arbeitsverhaeltnis_frei-analyse">Frei</label>
+        <input type="radio" id="data_arbeitsverhaeltnis_fest-analyse" name="switch" value="fest" onclick="getfunctionfest()"/>
+        <label for="data_arbeitsverhaeltnis_fest-analyse">Fest<span id="question-4">?</span></label>
+        <input type="radio" id="data_arbeitsverhaeltnis_pauschal-analyse" name="switch" value="pauschal" onclick="getfunctionpauschal()"/>
+        <label for="data_arbeitsverhaeltnis_pauschal-analyse">Pauschal<span id="question-5">?</span></label>
+        <input type="radio" id="data_arbeitsverhaeltnis_frei-analyse" name="switch" value="frei" onclick="getfunctionfrei()"/>
+        <label for="data_arbeitsverhaeltnis_frei-analyse">Frei<span id="question-6">?</span></label>
     </div>
 	
 	<div class="break"></div>
 	
-<!-- Tutorial-Get -->
-	<div class="tutorial-get" id="tutorial-get"></div>
-	
 <!-- Submit -->
-    <a href="#break-2" class="smooth" onclick="analysefunction()"><input type="submit" class="submit-giv hide" id="analyse_submit" value="Daten abfragen"/></a>
+    <a href="#break-2" class="smooth" onclick="analysefunction()"><input type="submit" class="submit-giv hide" id="analyse_submit" value="Daten auslesen"/></a>
 
     </form>
     </div>

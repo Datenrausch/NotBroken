@@ -151,28 +151,30 @@ main:before {
 
 .banner-left-1 {
 	height: 40px;
-	width: 300px;
-	background-color: #243040;
+	width: 400px;
+	background-color: #FF9F23;
 	margin-left: -20px;
-	font-family: 'Open Sans';
+	font-family: InknutAntiqua-Bold;
 	font-weight: bold;
 	padding-left: 20px;
-	line-height: 40px;
+	line-height: 1.8em;
 	color: #fff !important;
-	font-size: 0.7em;
+	font-size: 0.9em;
+	border-radius: 0px 4px 4px 0px;
 }
 
 .banner-left-2 {
 	height: 40px;
-	width: 300px;
-	background-color: #243040;
+	width: 440px;
+	background-color: #FF9F23;
 	margin-left: -20px;
-	font-family: 'Open Sans';
+	font-family: InknutAntiqua-Bold;
 	font-weight: bold;
 	padding-left: 20px;
-	line-height: 40px;
+	line-height: 1.8em;
 	color: #fff !important;
-	font-size: 0.7em;
+	font-size: 0.9em;
+	border-radius: 0px 4px 4px 0px;
 }
 
 @media (max-width: 460px)	  {
@@ -189,48 +191,33 @@ main:before {
 
 .banner-left-3 {
 	height: 40px;
-	width: 80%;
-	max-width: 400px;
-	background-color: #243040;
+	width: 540px;
+	background-color: #FF9F23;
 	margin-left: -20px;
-	font-family: 'Open Sans';
+	font-family: InknutAntiqua-Bold;
 	font-weight: bold;
 	padding-left: 20px;
-	line-height: 40px;
+	line-height: 1.8em;
 	color: #fff !important;
-	font-size: 0.7em;
+	font-size: 0.9em;
+	border-radius: 0px 4px 4px 0px;
 }
 
 @media (min-width: 460px)	  {
 .banner-right-1 {
 	height: 40px;
-	width: 340px;
-	background-color: #243040;
+	width: 400px;
+	background-color: #FF9F23;
 	float: right;
 	margin-right: -20px;
-	font-family: 'Open Sans';
+	font-family: InknutAntiqua-Bold;
     font-weight: bold;
 	padding-right: 20px;
-	line-height: 40px;
+	line-height: 1.8em;
 	text-align: right;
     color: #fff !important;
-	font-size: 0.7em;
-}
-
-.banner-right-2 {
-	height: 40px;
-	width: 30px;
-	background-color: #243040;
-	float: right;
-	margin-right: -20px;
-	font-family: 'Open Sans';
-    font-weight: bold;
-	padding-right: 20px;
-	line-height: 40px;
-	text-align: right;
-    color: #fff !important;
-	font-size: 0.7em;
-	clear: both;
+	font-size: 0.9em;
+	border-radius: 4px 0px 0px 4px;
 }
 
 .banner-right-shadow {
@@ -260,7 +247,7 @@ main:before {
 .banner-right-1 {
 	height: 40px;
 	width: 300px;
-	background-color: #243040;
+	background-color: #FF9F23;
 	margin-left: -20px;
 	font-family: 'Open Sans';
 	font-weight: bold;
@@ -268,33 +255,7 @@ main:before {
 	line-height: 40px;
 	color: #fff !important;
 	font-size: 0.6em;
-}
-
-.banner-right-2 {
-	height: 40px;
-	width: 300px;
-	background-color: #243040;
-	margin-left: -20px;
-	font-family: 'Open Sans';
-	font-weight: bold;
-	padding-left: 20px;
-	line-height: 40px;
-	color: #fff !important;
-	font-size: 0.6em;
-	
-}
-
-.banner-right-3 {
-	height: 40px;
-	width: 300px;
-	background-color: #243040;
-	margin-left: -20px;
-	font-family: 'Open Sans';
-	font-weight: bold;
-	padding-left: 20px;
-	line-height: 40px;
-	color: #fff !important;
-	font-size: 0.6em;
+	border-radius: 0px 4px 4px 0px;
 }
 
 .banner-right-shadow {
@@ -770,7 +731,7 @@ main:before {
   border-radius: 0 4px 4px 0;
 }
 
-
+/*
 .switch-field-text-1:before {
   position: absolute;
   content: 'Arbeitsverhältnis';
@@ -780,6 +741,7 @@ main:before {
   margin-top: -22px;
   margin-left: calc(1%);
 }
+*/
 
 .switch-field-text-2:before {
   position: absolute;
@@ -3031,7 +2993,7 @@ p a:hover:after{
 }
 
 .social-box:before {
-	content: 'Erzähle es deinen Kollegen weiter';
+	content: 'Erzähle es deinen Kollegen';
 	color: #fff;
 	font-size: 0.9em;
 	font-family: InknutAntiqua-Bold !important;
@@ -3040,7 +3002,7 @@ p a:hover:after{
 	z-index: -1;
 	padding: 15px;
 	background-color: #FF9F23;
-	border-radius: 0px;
+	border-radius: 4px 4px 4px 4px;
 }
 
 @media (max-width: 650px)  {
