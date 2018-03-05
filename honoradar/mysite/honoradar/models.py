@@ -44,7 +44,6 @@ class DataCollection(models.Model):
     JobPosition=models.CharField(default="None",max_length=200)
     EXPERIENCE = Choices("keineAngabe","1 Jahr","3 Jahre"," 5 Jahre")
     Experience = models.CharField(choices=EXPERIENCE, default=EXPERIENCE.keineAngabe, max_length=10)
-
     HoursPerWeekEmp=models.IntegerField(default=0)
     HoursSpentFree=models.IntegerField(default=0)
 
