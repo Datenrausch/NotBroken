@@ -331,8 +331,37 @@ def senddata(request):
                     )
 
     #return render(request, 'honoradar/index.html')
-
     return HttpResponseRedirect(reverse('honoradar:index'))
+
+def getdata(request):
+    print(request.GET)
+    MediumGet=(request.GET.get('mediumget'))
+    FreeOrEmployedGet=(request.GET.get('switch'))
+    print(MediumGet)
+    print(FreeOrEmployedGet)
+
+    try:
+        mediumobj=Medium.objects.get(
+        Q(mediumname=MediumGet),
+        Q(freeoremployed=FreeOrEmployedGet)
+        )
+        print(mediumobj.mediumname)
+        entries = DataCollection.objects.filter(Medium = mediumobj)
+        print("found")
+        for i in entries:
+            print(i.Happiness)
+
+
+        return HttpResponseRedirect(reverse('honoradar:index'))
+
+
+    except Medium.DoesNotExist:
+        print("Sorry, wir haben noch keine Daten")
+
+        return HttpResponseRedirect(reverse('honoradar:index'))
+
+
+
 
 class IndexView(generic.ListView):
     template_name = 'honoradar/index.html'

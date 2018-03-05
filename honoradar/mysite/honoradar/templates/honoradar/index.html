@@ -311,38 +311,44 @@
 
 <!-- Output-Input-Box -->
     <div class="get">
-    <form id="get">
-    <div class="banner-right-1">Welche Redaktion interessiert dich?</div><div class="banner-right-shadow"></div>
+      <form action="{% url 'honoradar:getdata' %}" method="get" name="firstbox" id="get">
+        {% csrf_token %}
 
-<!-- Medium-Select -->
-    <input id="data_33" class="media-select" list="medium" placeholder="Welches Medium?" type="text"/>
-    <datalist id="medium">
-        <option value="Frankfurter Allgemeine Zeitung (FAZ)">
-        <option value="Spiegel">
-        <option value="Spiegel TV">
-        <option value="Spiegel Online (SPON)">
-        <option value="Süddeutsche Zeitung (SZ)">
-        <option value="Südwestrundfunk (SWR)">
-        <option value="Tagesspiegel">
-        <option value="Zeit Online (ZON)">
-    </datalist>
+      <div class="banner-right-1">Welches Medium interessiert dich?</div><div class="banner-right-shadow"></div>
 
-<!-- Switch-Select -->
-    <div id="data_34">
-    <div class="switch-field switch-field-text-1">
-        <input type="radio" id="data_35" name="switch" value="fest" />
-        <label for="data_35">Fest</label>
-        <input type="radio" id="data_36" name="switch" value="pauschal"/>
-        <label for="data_36">Pauschal</label>
-        <input type="radio" id="data_37" name="switch" value="frei" />
-        <label for="data_37">Frei</label>
-    </div>
-    </div>
+  <!-- Medium-Select -->
+      <input name="mediumget" id="media-analyse" class="media-select" list="medium" placeholder="Welches Medium?" type="text"/>
+      <datalist id="medium-analyse">
+          <option value="Frankfurter Allgemeine Zeitung (FAZ)">
+          <option value="Spiegel">
+          <option value="Spiegel TV">
+          <option value="Spiegel Online (SPON)">
+          <option value="Süddeutsche Zeitung (SZ)">
+          <option value="Südwestrundfunk (SWR)">
+          <option value="Tagesspiegel">
+          <option value="Zeit Online (ZON)">
+      </datalist>
 
-<!-- Submit -->
-    <input type="submit" class="submit-giv hide" value="Daten abfragen"/>
+  <!-- Switch-Select -->
+      <div class="switch-field switch-field-text-1 tooltip">
+          <input type="radio" id="data_arbeitsverhaeltnis_fest-analyse" name="switch" value="fest" onclick="getfunction()"/>
+          <label for="data_arbeitsverhaeltnis_fest-analyse">Fest</label>
+          <input type="radio" id="data_arbeitsverhaeltnis_pauschal-analyse" name="switch" value="pauschal" onclick="getfunction()"/>
+          <label for="data_arbeitsverhaeltnis_pauschal-analyse">Pauschal</label>
+          <input type="radio" id="data_arbeitsverhaeltnis_frei-analyse" name="switch" value="frei" onclick="getfunction()"/>
+          <label for="data_arbeitsverhaeltnis_frei-analyse">Frei</label>
+      </div>
 
-    </form>
+    <div class="break"></div>
+
+  <!-- Tutorial-Get -->
+    <div class="tutorial-get" id="tutorial-get"></div>
+
+  <!-- Submit -->
+      <a href="#break-2" class="smooth" onclick="analysefunction()"><input type="submit" class="submit-giv hide" id="analyse_submit" value="Daten abfragen"/></a>
+
+      </form>
+
     </div>
 
 <!-- Grafic-Box -->
