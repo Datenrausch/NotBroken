@@ -7,21 +7,21 @@ from .models import *
 
 class DataCollection(admin.TabularInline):
     model = DataCollection
-    extra = 1
+    extra = 3
 
 
 
 class MediumAdmin(admin.ModelAdmin):
     fieldsets = [
     (None,               {'fields': ['mediumname'] }),
-    ('Jobstatus', {'fields': ['freeoremployed']}),
+    ('Jobstatus', {'fields': ['festfrei']}),
 
 ]
     inlines = [DataCollection]
     #this is for the question page
-    list_display = ['mediumname','freeoremployed']
+    list_display = ['mediumname','festfrei']
     #fields = ['pub_date', 'question_text']
-    list_filter = ['freeoremployed']
+    list_filter = ['festfrei']
     search_fields = ['mediumname']
 
 class ChoiceInline(admin.TabularInline):
