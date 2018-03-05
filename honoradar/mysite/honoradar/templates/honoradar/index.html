@@ -61,12 +61,12 @@
     <div class="panel">
 		<h1 class="head-title">Was verdienen Journalisten?</h1>
 		<h2 class="head-subtitle-1">Die JourMoney-Datenbank gibt die Antwort: Hier spenden Journalisten Gehaltsdaten und erfahren, was ihre Kollegen verdienen.</h2>
-		<h2 class="head-subtitle-2">Bisher spendeten Journalisten 1.245 Daten über 134 Medien.</h2>
+		<h2 class="head-subtitle-2">Bisher spendeten Journalisten 1.245 Daten von 134 Medien.</h2>
 		<a href="#banderole" id="machmit" class="smooth clear-absolute"><h3 class="head-action">Mach mit!</h3></a>
 		<div class="head-box-1"></div>
 		<div class="head-box-2"></div>
 		<div class="head-box-0"></div>
-		
+
     </div>
 
 <!-- Navbar -->
@@ -127,11 +127,11 @@
     <div class="giv">
     <form action="{% url 'honoradar:senddata' %}" method="post" name="firstbox" id="giv-form">
       {% csrf_token %}
-	
+
 	<div class="banner-left-1">Spende deine Gehaltdaten!</div><div class="banner-left-shadow"></div>
 
-<!-- Medium-Select -->	
-    <input name="mediumname" id="data_medium" class="media-select" list="medium" placeholder="Für welches Medium arbeitest du?" type="text" />
+<!-- Medium-Select -->
+    <input name="MediumName" id="data_medium" class="media-select" list="medium" placeholder="Für welches Medium arbeitest du?" type="text" />
     <datalist id="medium">
 		<option value="Frankfurter Allgemeine Zeitung (FAZ)">
 		<option value="Spiegel">
@@ -145,67 +145,67 @@
 
 <!-- Switch-Select -->
 	<div class="switch-field switch-field-text-1 tooltip">
-		<input name="festfrei" type="radio" id="data_arbeitsverhaeltnis_fest" name="switch" value="fest" onclick="festfunction()"/>
+		<input name="FreeOrEmployed" type="radio" id="data_arbeitsverhaeltnis_fest" name="switch" value="fest" onclick="festfunction()"/>
 		<label for="data_arbeitsverhaeltnis_fest">Fest<span id="question-1">?</span></label>
-		<input name="festfrei" type="radio" id="data_arbeitsverhaeltnis_pauschal" name="switch" value="pauschal" onclick="pauschalfunction()"/>
+		<input name="FreeOrEmployed" type="radio" id="data_arbeitsverhaeltnis_pauschal" name="switch" value="pauschal" onclick="pauschalfunction()"/>
 		<label for="data_arbeitsverhaeltnis_pauschal">Pauschal<span id="question-2">?</span></label>
-		<input name="festfrei" type="radio" id="data_arbeitsverhaeltnis_frei" name="switch" value="frei" onclick="freifunction()"/>
+		<input name="FreeOrEmployed" type="radio" id="data_arbeitsverhaeltnis_frei" name="switch" value="frei" onclick="freifunction()"/>
 		<label for="data_arbeitsverhaeltnis_frei">Frei<span id="question-3">?</span></label>
 	</div>
-	
+
 	<div class="break"></div>
-	
+
  <!-- Loan-Select -->
-  	<input  name="gehalt" id="data_gehalt" class="loan-select hide" list="gehalt" placeholder="Gehalt pro Monat?" type="number"	min="0" oninput="validity.valid||(value='');" inputmode="numeric" />
+  	<input  name="SalaryPerMonthEmpMix" id="data_gehalt" class="loan-select hide" list="gehalt" placeholder="Gehalt pro Monat?" type="number"	min="0" oninput="validity.valid||(value='');" inputmode="numeric" />
 
 <!-- Hour-Week-Select -->
     <div class="hour-week-select hide" id="pre-data_stunden_woche">
-    	<input id="data_stunden_woche" name="arbeitszeit" class="hour-week-bar alert-border" type="range" min="1" max="50" value="0"/>
+    	<input id="data_stunden_woche" name="HoursPerWeekEmp" class="hour-week-bar alert-border" type="range" min="1" max="50" value="0"/>
     </div>
     <div class="break hide" id="break-1"></div>
 
 <!-- Day-Month-Select -->
     <div class="day-month-select hide" id="pre-data_tag_monat">
-      	<input name="tageProMonat" id="data_tag_monat" class="day-month-bar" type="range" min="1" max="30" value="0"/>
+      	<input name="DaysPerMonthMix" id="data_tag_monat" class="day-month-bar" type="range" min="1" max="30" value="0"/>
     </div>
 
 <!-- Hour-Day-Select -->
     <div class="hour-day-select hide" id="pre-data_stunden_tag">
-        <input name="stundenProTag" id="data_stunden_tag" class="hour-day-bar" type="range" min="1" max="24" value="0"/>
+        <input name="HoursPerDayMix" id="data_stunden_tag" class="hour-day-bar" type="range" min="1" max="24" value="0"/>
     </div>
 
-<!-- Freelancer-Loan-Select -->
-    <input name="lohnProAuftrag" id="data_honorar" class="loan-select hide" list="gehalt" placeholder="Lohn für den Auftrag?" type="number"	min="0" oninput="validity.valid||(value='');" inputmode="numeric" />
+<!-- Freelancer-fee-Select -->
+    <input name="FeeFree" id="data_honorar" class="loan-select hide" list="gehalt" placeholder="Lohn für den Auftrag?" type="number"	min="0" oninput="validity.valid||(value='');" inputmode="numeric" />
 
 <!-- Unit-Select -->
     <div class="hide" id="pre-data_format_text_audio_video">
     <div class="switch-field switch-field-text-2 tooltip">
-        <input type="radio" id="data_format_text" name="videoAudioText" value="text" onclick="textfunction()"/>
+        <input type="radio" id="data_format_text" name="VideoAudioTextFree" value="text" onclick="textfunction()"/>
         <label for="data_format_text">Text</label>
-        <input type="radio" id="data_format_audio" name="videoAudioText" value="audio" onclick="audiofunction()"/>
+        <input type="radio" id="data_format_audio" name="VideoAudioTextFree" value="audio" onclick="audiofunction()"/>
         <label for="data_format_audio">Audio</label>
-        <input type="radio" id="data_format_video" name="videoAudioText"value="video" onclick="videofunction()"/>
+        <input type="radio" id="data_format_video" name="VideoAudioTextFree"value="video" onclick="videofunction()"/>
         <label for="data_format_video">Video</label>
     </div>
     </div>
 
 <!-- Text-Amount-Select -->
     <div class="text-amount-select hide" id="pre-data_laenge_text">
-        <input name="ZeichenProArtikel" id="data_laenge_text" class="amount-text-bar" type="range" min="100" max="10000" value="0" step="100"/>
+        <input name="CharPerArticleFree" id="data_laenge_text" class="amount-text-bar" type="range" min="100" max="10000" value="0" step="100"/>
     </div>
 
 <!-- Audio-Amount-Select -->
     <div class="audio-amount-select hide" id="pre-data_laenge_audio">
-		<input name="MinutenProAudio" id="data_laenge_audio" class="amount-audio-bar" type="range" min="0.5" max="90" value="0" step="0.5"/>
+		<input name="MinPerAudioFree" id="data_laenge_audio" class="amount-audio-bar" type="range" min="0.5" max="90" value="0" step="0.5"/>
     </div>
 
 <!-- Video-Amount-Select -->
     <div class="video-amount-select hide" id="pre-data_laenge_video">
-        <input name="MinutenProVideo" id="data_laenge_video" class="amount-video-bar" type="range" min="0.5" max="90" value="0" step="0.5"/>
+        <input name="MinPerVideoFree" id="data_laenge_video" class="amount-video-bar" type="range" min="0.5" max="90" value="0" step="0.5"/>
     </div>
 
 <!-- Genre-Select -->
-    <input name="ProductType" id="data_genre" class="genre-select hide" list="genre" placeholder="Welches Genre?" type="text"/>
+    <input name="Genre" id="data_genre" class="genre-select hide" list="genre" placeholder="Welches Genre?" type="text"/>
     <datalist id="genre">
         <option value="Bericht">
         <option value="Doku">
@@ -221,25 +221,25 @@
 <!-- Digitalization-Select -->
     <div id="pre-data_verbreitung_analog_digital_beides" class="hide">
     <div class="switch-field switch-field-text-3 tooltip">
-        <input name="Verwertung" type="radio" id="data_verbreitung_analog" name="switch-verbreitung" value="Analog"/>
+        <input name="AnalogDigitalFree" type="radio" id="data_verbreitung_analog" name="switch-verbreitung" value="Analog"/>
         <label for="data_verbreitung_analog">Analog</label>
-        <input name="Verwertung" type="radio" id="data_verbreitung_digital" name="switch-verbreitung" value="Digital"/>
+        <input name="AnalogDigitalFree" type="radio" id="data_verbreitung_digital" name="switch-verbreitung" value="Digital"/>
         <label for="data_verbreitung_digital">Digital</label>
-        <input name="Verwertung" type="radio" id="data_verbreitung_beides" name="switch-verbreitung" value="Analog & Digital"/>
+        <input name="AnalogDigitalFree" type="radio" id="data_verbreitung_beides" name="switch-verbreitung" value="Analog & Digital"/>
         <label for="data_verbreitung_beides">Beides</label>
     </div>
     </div>
 
 <!-- Time-Select -->
     <div class="time-select hide" id="pre-data_zeit">
-        <input name="Zeitaufwand"id="data_zeit" class="amount-time-bar" type="range" min="0.5" max="100" value="0" step="0.5"/>
+        <input name="HoursSpentFree"id="data_zeit" class="amount-time-bar" type="range" min="0.5" max="100" value="0" step="0.5"/>
     </div>
 
 	<div class="break"></div>
     <div class="banner-left-2 zbanner-left hide" id="banner-left-2">Deine Arbeitssituation:</div><div id="banner-left-triangle" class="banner-left-shadow hide"></div>
 
 <!-- Position-Select -->
-    <input name=cheforvolo id="data_position" class="position-select hide" list="position" placeholder="Als was arbeitest du?" type="text"/>
+    <input name="JobPosition" id="data_position" class="position-select hide" list="position" placeholder="Als was arbeitest du?" type="text"/>
     <datalist id="position">
         <option value="Chefredakteur">
         <option value="Ressortleiter">
@@ -250,11 +250,11 @@
 
 <!-- Experience-Select -->
     <div class="switch-field switch-field-text-4 hide" id="pre-data_erfahrung_jahr_1_3_5">
-		<input name="erfahrung" type="radio" id="data_erfahrung_jahr_1" name="switch" value="0"/>
+		<input name="ExperienceEmplMix" type="radio" id="data_erfahrung_jahr_1" name="switch" value="0"/>
         <label for="data_erfahrung_jahr_1">1 Jahr</label>
-        <input name="erfahrung" type="radio" id="data_erfahrung_jahr_3" name="switch" value="3"/>
+        <input name="ExperienceEmplMix" type="radio" id="data_erfahrung_jahr_3" name="switch" value="3"/>
         <label for="data_erfahrung_jahr_3">3 Jahre</label>
-        <input name="erfahrung" type="radio" id="data_erfahrung_jahr_5" name="switch" value="5"/>
+        <input name="ExperienceEmplMix" type="radio" id="data_erfahrung_jahr_5" name="switch" value="5"/>
         <label for="data_erfahrung_jahr_5">5 Jahre</label>
     </div>
 
@@ -267,20 +267,28 @@
 
 <!-- Comment-Select -->
     <div class="hide" id="pre-data_kommentar">
-        <textarea id="data_kommentar" class="comment-select" name="message" placeholder="Dein Kommentar ..." maxlength="250"></textarea>
+        <textarea id="data_kommentar" class="comment-select" name="Comment" placeholder="Dein Kommentar ..." maxlength="250"></textarea>
     </div>
     <span class="hide" id="disclaimer"><p class="disclaimer"><a href="#" class="clear-agb">!</a>Achte darauf, dass du deine Identität im Kommentar nicht verrätst!</p></span>
 
 <!-- Checkbox-Select -->
     <span class="hide" id="pre-data_checkbox">
-        <input name="agb"class="checkbox" type="checkbox" id="data_checkbox" />
-        <label class="checkboxlabel" for="data_checkbox"></label>
+        <input name="AGB"class="checkbox" type="checkbox" id="data_checkbox" />
+        <label class="checkboxlabel alert-checkbox " for="data_checkbox"></label>
         <p class="checkboxtext">Ich bin mit den <a href="#" target="_blank" class="clear-agb">AGBs</a> einverstanden.</p>
     </span>
 
+    {% if messages %}
+    {% for message in messages %}
+    <p>
+      Was fehlt:
+    </p>  <span class="alert {% if message.tags %} alert-{{ message.tags }}{% endif %}">{{ message|safe }}</span>
+    {% endfor %}
+    {% endif %}
+
 <!-- Submit -->
-	<div class="alert alert-media-select hide">
-		<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+	<div class="alert alert-media-select show">
+		<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
 		<strong>Achtung! </strong>Bitte fülle folgende Felder aus: Feld1, Feld2 und Feld2.
 	</div>
     <input type="submit" class="submit-get hide" id="data_submit" value="Daten spenden"/>
@@ -290,11 +298,12 @@
 
 <!-- Output-Input-Box -->
     <div class="get">
-    <form id="get">
+  <form action="{% url 'honoradar:getdata' %}" method="get" name="firstbox" id="get">
+    {% csrf_token %}
     <div class="banner-right-1">Erfahre, was Medien zahlen!</div><div class="banner-right-shadow"></div>
 
 <!-- Medium-Select -->
-    <input id="media-analyse" class="media-select" list="medium" placeholder="Welches Medium interessiert dich?" type="text"/>
+    <input name="mediumget" id="media-analyse" class="media-select" list="medium" placeholder="Welches Medium interessiert dich?" type="text"/>
     <datalist id="medium-analyse">
         <option value="Frankfurter Allgemeine Zeitung (FAZ)">
         <option value="Spiegel">
@@ -315,9 +324,9 @@
         <input type="radio" id="data_arbeitsverhaeltnis_frei-analyse" name="switch" value="frei" onclick="getfunctionfrei()"/>
         <label for="data_arbeitsverhaeltnis_frei-analyse">Frei<span id="question-6">?</span></label>
     </div>
-	
+
 	<div class="break"></div>
-	
+
 <!-- Submit -->
     <a href="#break-2" class="smooth" onclick="analysefunction()"><input type="submit" class="submit-giv hide" id="analyse_submit" value="Daten auslesen"/></a>
 
@@ -329,7 +338,7 @@
     <div class="result hide" id="result">
     <div class="banner-left-3">Gehalts- und Lohnreports</div><div class="banner-left-shadow"></div>
     </div>
-	
+
 <!-- Social Share -->
 	<div class="social-box">
 		<a target="_blank" href="https://twitter.com/intent/tweet?url=https://wasjournalistenverdienen.de&text=Was%20verdienen%20Journalisten?%20Die%20neue%20interaktive%20Datenbank%20der%20Freischreiber:"><div class="social-1 socialtile"></div></a>
@@ -338,7 +347,7 @@
 		<a href="fb-messenger://share/?link=https://wasjournalistenverdienen.de&app_id=123456789"><div class="social-4 socialtile"></div></a>
 		<a href="mailto:?subject=Interaktive Datenbank: Was verdienen Journalisten?&amp;body=Hallo, schau dir mal diese Seite an: https://wasjournalistenverdienen.de"><div class="social-5 socialtile"></div></a>
 	</div>
-   
+
 
 <!-- News -->
     <div class="nbox-1">
@@ -396,7 +405,7 @@
         </div>
     </div>
 	</div>
-	
+
 </main>
 
 
