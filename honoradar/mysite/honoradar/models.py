@@ -27,38 +27,18 @@ class Choice(models.Model):
 
 class Medium(models.Model):
     mediumname = models.CharField(max_length=200)
-    FREEOREMPLOYED = Choices("fest","pauschal","frei")
-    freeoremployed = models.CharField(choices=FREEOREMPLOYED, default=FREEOREMPLOYED.frei, max_length=10)
+    FESTFREI = Choices("fest","pauschal","frei")
+    festfrei = models.CharField(choices=FESTFREI, default=FESTFREI.frei, max_length=10)
 
     def __str__(self):
         return self.mediumname
 
 class DataCollection(models.Model):
+    medium = models.ForeignKey(Medium, on_delete=models.CASCADE)
 
-    Medium = models.ForeignKey(Medium, on_delete=models.CASCADE)
-    Happiness=models.IntegerField(default=0)
-    SalaryPerMonthEmpMix=models.IntegerField(default=0)
-    FeeFree=models.IntegerField(default=0)
-
-    #Have to change into buttons
-    JobPosition=models.CharField(default="None",max_length=200)
-    EXPERIENCE = Choices("keineAngabe","1 Jahr","3 Jahre"," 5 Jahre")
-    Experience = models.CharField(choices=EXPERIENCE, default=EXPERIENCE.keineAngabe, max_length=10)
-
-    HoursPerWeekEmp=models.IntegerField(default=0)
-    HoursSpentFree=models.IntegerField(default=0)
-
-    HoursPerDayMix=models.IntegerField(default=0)
-    DaysPerMonthMix=models.IntegerField(default=0)
-    Genre=models.CharField(default="None",max_length=200)
-    MinPerAudioFree=models.IntegerField(default=0)
-    MinPerVideoFree=models.IntegerField(default=0)
-    CharPerArticleFree=models.IntegerField(default=0)
-
-    Comment=models.CharField(default="Kein Kommentar",max_length=600)
-
+    salary_number=models.IntegerField(default=0)
+    rating_number=models.IntegerField(default=0)
 
 
     def __str__(self):
-        template = '{0.SalaryPerMonthEmpMix} {0.Happiness} {0.HoursPerWeekEmp}{0.Genre}'
-        return template.format(self)
+        return (self.salary_number,self.rating_number)

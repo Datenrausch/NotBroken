@@ -1,8 +1,4 @@
-/* -------------------------------- 
-
-Primary style
-
--------------------------------- */
+/*Primary style*/
 *, *::after, *::before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -28,21 +24,8 @@ body, html {
   overflow-x: hidden;
 }
 
-a {
-  color: #9cb3a8;
-  text-decoration: none;
-}
 
-
-a::visited {
-	outline: 0;
-}
-
-/* -------------------------------- 
-
-Main Components 
-
--------------------------------- */
+/*Main Components*/
 
 main {
   position: relative;
@@ -50,7 +33,7 @@ main {
   /* fix bug on iOS */
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
-  background-color: #e3e3e3;
+  background-color: #D8DBE2;
   /* Force Hardware Acceleration in WebKit */
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
@@ -160,21 +143,6 @@ main {
   height: 2px;
   background-color: #ffffff;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .cd-nav-trigger .cd-nav-icon::before, .cd-nav-trigger .cd-nav-icon:after {
   /* upper and lower lines of the menu icon */
@@ -352,7 +320,7 @@ main {
 
 .navtitle2 {
 	display:inline-block;
-    border-bottom:1px solid #394d66;
+    border-bottom: 1px solid #394d66;
     padding-bottom:20px;
 	bottom: -20px;
 }
@@ -404,7 +372,7 @@ main {
   display: block;
 }
 .cd-nav .cd-contact-info li, .cd-nav .cd-contact-info a, .cd-nav .cd-contact-info span {
-  font-size: 1.5vw;
+  font-size: 16px;
   font-family: 'InknutAntiqua-Regular';
 }
 @media only screen and (min-width: 1170px) {
