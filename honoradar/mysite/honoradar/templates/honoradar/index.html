@@ -125,6 +125,7 @@
 <!-- Input-Input-Box -->
     <div class="giv-get" id="giv-get">
     <div class="giv">
+
     <form action="{% url 'honoradar:senddata' %}" method="post" name="firstbox" id="giv-form">
       {% csrf_token %}
 
@@ -298,6 +299,7 @@
 
 <!-- Output-Input-Box -->
     <div class="get">
+
   <form action="{% url 'honoradar:getdata' %}" method="get" name="firstbox" id="get">
     {% csrf_token %}
     <div class="banner-right-1">Erfahre, was Medien zahlen!</div><div class="banner-right-shadow"></div>
@@ -328,7 +330,8 @@
 	<div class="break"></div>
 
 <!-- Submit -->
-    <a href="#break-2" class="smooth" onclick="analysefunction()"><input type="submit" class="submit-giv hide" id="analyse_submit" value="Daten auslesen"/></a>
+
+    <a href="#break-2" onclick="analysefunction()"><input type="submit" class="submit-giv hide" id="analyse_submit" value="Daten auslesen"/></a>
 
     </form>
     </div>

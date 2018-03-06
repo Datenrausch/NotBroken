@@ -76,13 +76,13 @@ def senddata(request):
                     sanitycheck=1
                     messages.info(request, 'Angabe zum Gehalt')
 
-                if int(Happiness) != 1:
+                if float(Happiness) != 1:
                     pass
                 else:
                     sanitycheck=1
                     messages.info(request, 'Angabe zur Zufriedenheit')
 
-                if int(HoursPerWeekEmp) != 1:
+                if float(HoursPerWeekEmp) != 1:
                     pass
                 else:
                     sanitycheck=1
@@ -91,9 +91,9 @@ def senddata(request):
                 #if all these data sanitychecks are okay, we bind the input to an existing medium
                 if(sanitycheck==0):
                     d = mediumobj.datacollection_set.create(
-                    SalaryPerMonthEmpMix=int(SalaryPerMonthEmpMix),
-                    Happiness=int(Happiness),
-                    HoursPerWeekEmp=int(HoursPerWeekEmp),
+                    SalaryPerMonthEmpMix=float(SalaryPerMonthEmpMix),
+                    Happiness=float(Happiness),
+                    HoursPerWeekEmp=float(HoursPerWeekEmp),
                     JobPosition=JobPosition,
                     Experience=Experience,
                     Comment=Comment
@@ -119,19 +119,19 @@ def senddata(request):
                     sanitycheck=1
                     messages.info(request, 'Angabe zum Gehalt')
 
-                if int(Happiness) != 1:
+                if float(Happiness) != 1:
                     pass
                 else:
                     sanitycheck=1
                     messages.info(request, 'Angabe zur Zufriedenheit')
 
-                if int(DaysPerMonthMix) != 1:
+                if float(DaysPerMonthMix) != 1:
                     pass
                 else:
                     sanitycheck=1
                     messages.info(request, 'Angabe zu Tagen pro Monat')
 
-                if int(HoursPerDayMix) != 1:
+                if float(HoursPerDayMix) != 1:
                     pass
                 else:
                     sanitycheck=1
@@ -140,12 +140,12 @@ def senddata(request):
                 #if all these data sanitychecks are okay, we bind the input to an existing medium
                 if(sanitycheck==0):
                     d = mediumobj.datacollection_set.create(
-                        SalaryPerMonthEmpMix=int(SalaryPerMonthEmpMix),
-                        DaysPerMonthMix=int(DaysPerMonthMix),
-                        HoursPerDayMix=int(HoursPerDayMix),
+                        SalaryPerMonthEmpMix=float(SalaryPerMonthEmpMix),
+                        DaysPerMonthMix=float(DaysPerMonthMix),
+                        HoursPerDayMix=float(HoursPerDayMix),
                         JobPosition=JobPosition,
                         Experience=Experience,
-                        Happiness=int(Happiness),
+                        Happiness=float(Happiness),
                         Comment=Comment,
                     )
                 else:
@@ -161,7 +161,7 @@ def senddata(request):
                 JobPosition=(request.POST.get("JobPosition"))
                 HoursSpentFree=(request.POST.get("HoursSpentFree"))
                 Experience=(request.POST.get("ExperienceEmplMix"))
-                Happiness=(request.POST.get("Luckiness"))
+                Happiness=(request.POST.get("Happiness"))
                 Comment=(request.POST.get("Comment"))
 
                 #check the compulsory four of them and send warning if they are missing
@@ -171,27 +171,27 @@ def senddata(request):
                     sanitycheck=1
                     messages.info(request, 'Angabe zum Honorar')
 
-                if int(Happiness) != 0:
+                if float(Happiness) != 0:
                     pass
                 else:
                     sanitycheck=1
                     messages.info(request, 'Angabe zur Zufriedenheit')
 
-                if int(HoursSpentFree) != 0.5:
+                if float(HoursSpentFree) != 0.5:
                     pass
                 else:
                     sanitycheck=1
                     messages.info(request, 'Angabe zum Zeitaufwand')
                 if(sanitycheck==0):
                     d = mediumobj.datacollection_set.create(
-                    FeeFree=int(FeeFree),
+                    FeeFree=float(FeeFree),
                     VideoAudioTextFree=VideoAudioTextFree,
                     Genre=Genre,
                     AnalogDigitalFree=AnalogDigitalFree,
                     JobPosition=JobPosition,
-                    HoursSpentFree=int(HoursSpentFree),
+                    HoursSpentFree=float(HoursSpentFree),
                     Experience=Experience,
-                    Happiness=int(Happiness),
+                    Happiness=float(Happiness),
                     Comment=Comment,
                     )
 
@@ -211,7 +211,7 @@ def senddata(request):
                 else:
                     sanitycheck=1
                     messages.info(request, 'Angabe zum Gehalt')
-                if int(Happiness) != 1:
+                if float(Happiness) != 1:
                     pass
                 else:
                     sanitycheck=1
@@ -223,9 +223,9 @@ def senddata(request):
                     mediumobj = Medium(mediumname=MediumName, freeoremployed=FreeOrEmployed)
                     mediumobj.save()
                     d = mediumobj.datacollection_set.create(
-                    SalaryPerMonthEmpMix=int(SalaryPerMonthEmpMix),
-                    Happiness=int(Happiness),
-                    HoursPerWeekEmp=int(HoursPerWeekEmp),
+                    SalaryPerMonthEmpMix=float(SalaryPerMonthEmpMix),
+                    Happiness=float(Happiness),
+                    HoursPerWeekEmp=float(HoursPerWeek),
                     JobPosition=JobPosition,
                     Experience=Experience,
                     Comment=Comment
@@ -254,13 +254,13 @@ def senddata(request):
                     sanitycheck=1
                     messages.info(request, 'Angabe zur Zufriedenheit')
 
-                if int(DaysPerMonthMix) != 1:
+                if float(DaysPerMonthMix) != 1:
                     pass
                 else:
                     sanitycheck=1
                     messages.info(request, 'Angabe zu Tagen pro Monat')
 
-                if int(HoursPerDayMix) != 1:
+                if float(HoursPerDayMix) != 1:
                     pass
                 else:
                     sanitycheck=1
@@ -272,12 +272,12 @@ def senddata(request):
                     mediumobj.save()
 
                     d = mediumobj.datacollection_set.create(
-                    SalaryPerMonthEmpMix=int(SalaryPerMonthEmpMix),
-                    DaysPerMonthMix=int(DaysPerMonthMix),
-                    HoursPerDayMix=int(HoursPerDayMix),
+                    SalaryPerMonthEmpMix=float(SalaryPerMonthEmpMix),
+                    DaysPerMonthMix=float(DaysPerMonthMix),
+                    HoursPerDayMix=float(HoursPerDayMix),
                     JobPosition=str(JobPosition),
                     Experience=str(Experience),
-                    Happiness=int(Happiness),
+                    Happiness=float(Happiness),
                     Comment=str(Comment),
                     )
 
@@ -290,7 +290,7 @@ def senddata(request):
                 JobPosition=(request.POST.get("JobPosition"))
                 HoursSpentFree=(request.POST.get("HoursSpentFree"))
                 Experience=(request.POST.get("ExperienceEmplMix"))
-                Happiness=(request.POST.get("Luckiness"))
+                Happiness=(request.POST.get("Happiness"))
                 Comment=(request.POST.get("Comment"))
 
                 #check the compulsory four of them and send warning if they are missing
@@ -306,7 +306,7 @@ def senddata(request):
                     sanitycheck=1
                     messages.info(request, 'Angabe zur Zufriedenheit')
 
-                if float(HoursSpentFree) != 0:
+                if float(HoursSpentFree) != 0.5:
                     pass
                 else:
                     sanitycheck=1
@@ -316,14 +316,14 @@ def senddata(request):
                     mediumobj.save()
 
                     d = mediumobj.datacollection_set.create(
-                    FeeFree=int(FeeFree),
+                    FeeFree=float(FeeFree),
                     VideoAudioTextFree=VideoAudioTextFree,
                     Genre=Genre,
                     AnalogDigitalFree=AnalogDigitalFree,
                     JobPosition=JobPosition,
-                    HoursSpentFree=int(HoursSpentFree),
+                    HoursSpentFree=float(HoursSpentFree),
                     Experience=Experience,
-                    Happiness=int(Happiness),
+                    Happiness=float(Happiness),
                     Comment=Comment,
                     )
 
