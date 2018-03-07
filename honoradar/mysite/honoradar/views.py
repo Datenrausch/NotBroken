@@ -326,9 +326,9 @@ def senddata(request):
                     Happiness=float(Happiness),
                     Comment=Comment,
                     )
-
-    #return render(request, 'honoradar/index.html')
-    return HttpResponseRedirect(reverse('honoradar:index'))
+    return render(request, 'honoradar/index.html')
+    #    latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    #return HttpResponseRedirect(reverse('honoradar:index'))
 
 def getdata(request):
     print(request.GET)
@@ -349,8 +349,11 @@ def getdata(request):
             print(i.Happiness)
 
 
-        return HttpResponseRedirect(reverse('honoradar:index'))
+        #   return HttpResponseRedirect(reverse('honoradar:index'))
+                #    return render(request, 'polls/index.html', context)
 
+        context = {'medium': mediumobj}
+        return render(request, 'honoradar/index.html', context)
 
     except Medium.DoesNotExist:
         print("Sorry, wir haben noch keine Daten")
@@ -394,4 +397,6 @@ def vote(request, question_id):
         # Always return an HttpResponseRedirect after successfully dealing
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
-        return HttpResponseRedirect(reverse('honoradar:results', args=(question.id,)))
+
+
+        #return HttpResponseRedirect(reverse('honoradar:results', args=(question.id,)))
