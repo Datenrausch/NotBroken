@@ -1,5 +1,5 @@
 main {
-	font-family: 'Open Sans', sans-serif;
+	font-family: OpenSans-Regular, sans-serif;
 }
 
 @media (min-width: 860px)  {
@@ -355,7 +355,7 @@ main:before {
 	font-size: 1.5em; 
 	font-size: calc(12px + 1.3vh);
 	line-height: 1.8em;
-	font-family: 'Open Sans';
+	font-family: OpenSans-Regular;
 	color: #fff;
 	z-index: 2;
 	display: inline-block;
@@ -369,7 +369,7 @@ main:before {
 	font-size: 1.5em; 
 	font-size: calc(12px + 1.3vh);
 	line-height: 1.8em;
-	font-family: 'Open Sans';
+	font-family: OpenSans-Regular;
 	color: #fff;
 	z-index: 2;
 	display: inline-block;
@@ -601,7 +601,7 @@ main:before {
 /*Input-Input Medienauswahl*/
 
 .media-select {
-  font-family: 'Open Sans';
+  font-family: OpenSans-Regular;
   font-size: 15px;
   height: 35px;
   border-radius: 4px 4px 4px 4px;
@@ -641,7 +641,7 @@ main:before {
 /*Input-Input Switchbutton*/
 
 .switch-field {
-  font-family: 'Open Sans';
+  font-family: OpenSans-Regular;
   padding: 30px 40px 20px 40px;
   overflow: hidden;
   float: left;
@@ -781,7 +781,7 @@ main:before {
 /*Input-Input Gehaltsangabe*/
 
 .loan-select {
-  font-family: 'Open Sans';
+  font-family: OpenSans-Regular;
   font-size: 15px;
   height: 35px;
   border-radius: 4px 4px 4px 4px;
@@ -1223,7 +1223,7 @@ input[type="range"]:before {
 /*Position-Select*/
 
 .position-select {
-  font-family: 'Open Sans';
+  font-family: OpenSans-Regular;
   margin: 30px 20px 0px 40px;
   font-size: 15px;
   height: 35px;
@@ -1314,7 +1314,7 @@ input[type="range"]:before {
 	resize: none;
 	height: 100px;
 	margin: 30px 30px 0px 40px;
-	font-family: 'Open Sans';
+	font-family: OpenSans-Regular;
 	font-size: 15px;
 	padding: 20px 30px 10px 30px;
 	color: #243040;
@@ -1357,7 +1357,7 @@ input[type="range"]:before {
   display: block;
   margin: 20px 0px 0px 40px;
   color: white;
-  font-family: 'Open Sans';
+  font-family: OpenSans-Regular;
   font-size: 15px;
   line-height: 20px;
 }
@@ -1893,7 +1893,7 @@ input[type="range"]:before {
 /*Genre-Select*/
 
 .genre-select {
-  font-family: 'Open Sans';
+  font-family: OpenSans-Regular;
   font-size: 15px;
   height: 35px;
   border-radius: 4px 4px 4px 4px;
@@ -2050,7 +2050,7 @@ input[type="range"]:before {
   display: block;
   margin: 7px 50px 20px 110px;
   color: white;
-  font-family: 'Open Sans';
+  font-family: OpenSans-Regular;
   font-size: 15px;
   line-height: 22px;
 }
@@ -2566,7 +2566,7 @@ a.news_1 {
 }
 
 .footer a {
-	font-family: 'Open Sans';
+	font-family: OpenSans-Regular;
 	font-size: 16px;
 	color: #fff;
 
