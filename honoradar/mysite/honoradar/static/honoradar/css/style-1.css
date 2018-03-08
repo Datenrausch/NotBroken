@@ -1,4 +1,36 @@
 
+
+
+.result-text {
+	font-size: 0.7em;
+	font-family: OpenSans-Regular;
+	color: #fff; 
+	margin: 30px 0px 0px 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*Microsoft*/
 
 input[type=range]::-ms-track {
