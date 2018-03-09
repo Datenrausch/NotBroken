@@ -1,0 +1,420 @@
+<!doctype html>
+
+<html lang="de">
+
+<head>
+    {% load static %}
+
+    <!-- Meta -->
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  	<meta name="description" content="Honorardar">
+  	<meta name="author" content="Michel Penke und Haluka Maier-Borst">
+  	<meta name="date" content="2017-11-18">
+  	<meta name="robots" content="index,follow">
+
+    <!-- Favicon final_redone: https://realfavicongenerator.net PLEASE DO NOT FORGET -->
+    <link rel="shortcut icon" type="image/x-icon" href="#">
+    <link rel="apple-touch-icon" sizes="180x180" href="#">
+    <link rel="icon" type="image/png" sizes="32x32" href="#">
+    <link rel="icon" type="image/png" sizes="16x16" href="#">
+    <link rel="manifest" href="{% static 'honoradar/manifest.json'%}">
+    <link rel="mask-icon" href="{% static 'honoradar/safari-pinned-tab.svg'%}" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static 'honoradar/css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'honoradar/css/style-1.css'%}">
+    <link rel="stylesheet" href="{% static 'honoradar/css/font.css'%}">
+    <link rel="stylesheet" href="{% static 'honoradar/navbar/css/reset.css'%}">
+    <link rel="stylesheet" href="{% static 'honoradar/navbar/css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'honoradar/lity/dist/lity.css'%}">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="XXX">
+    <meta name="twitter:description" content="XXX">
+    <meta name="twitter:url" content="XXX">
+    <meta name="twitter:image" content="XXX">
+
+    <!-- Facebook / Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:site_name" content="XXX">
+    <meta property="og:title" content="XXX">
+    <meta property="og:description" content="XXX">
+    <meta property="og:url" content="XXX">
+    <meta property="og:image" content="XXX">
+
+    <!-- General SEO -->
+    <meta name="author" content="Michel Penke und Haluka Maier-Borst">
+    <meta name="title" content="XXX">
+    <meta name="description" content="XXX">
+    <meta name="keywords" content="XXX">
+
+</head>
+
+<body>
+    <title>Honoradar</title>
+
+<!-- Parallax -->
+    <div class="panel">
+		<h1 class="head-title">Was verdienen Journalisten?</h1>
+		<h2 class="head-subtitle-1">Die JourMoney-Datenbank gibt die Antwort: Hier spenden Journalisten Gehaltsdaten und erfahren, was ihre Kollegen verdienen.</h2>
+		<h2 class="head-subtitle-2">Bisher spendeten Journalisten 1.245 Daten über 134 Medien.</h2>
+		<a href="#banderole" id="machmit" class="smooth clear-absolute"><h3 class="head-action">Mach mit!</h3></a>
+		<div class="head-box-1"></div>
+		<div class="head-box-2"></div>
+		<div class="head-box-0"></div>
+		
+    </div>
+
+<!-- Navbar -->
+    <a href="#cd-nav" class="cd-nav-trigger clear-fixed">Menu
+		<span class="cd-nav-icon"></span>
+		<svg x="0px" y="0px" width="54px" height="54px" viewBox="0 0 54 54">
+		<circle fill="transparent" stroke="#656e79" stroke-width="1" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
+		</svg>
+	</a>
+
+    <div id="cd-nav" class="cd-nav">
+    <div class="cd-navigation-wrapper">
+    <div class="cd-half-block">
+    <h2 class="navtitle1">Navigation</h2>
+        <nav>
+        <ul class="cd-primary-nav">
+            <li><a href="index.html" class="selected">Honoradar</a></li>
+            <li><a href="data.html">Rankings</a></li>
+            <li><a href="himmel-und-hoelle-preis.html">Himmel-Hölle-Preis</a></li>
+            <li><a href="#0">Newsletter</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+        </ul>
+        </nav>
+        </div>
+    <div class="cd-half-block">
+    <address>
+	<ul class="cd-contact-info">
+	<h2 class="navtitle2">Kontakt</h2>
+	<li><a href="mailto:kontakt@freischreiber.de" class="clear-navi">kontakt@freischreiber.de</a></li>
+	<li><a href="tel:04022867152" class="clear-navi">040 – 22 86 71 52</a></li>
+	<li><a href="//maps.google.com/maps?q=Hoheluftchaussee+53A,+20253+Hamburg/" class="clear-navi" data-lity>
+		<span>Büro Freischreiber e.V.</span>
+		<span>Hoheluftchaussee 53a</span>
+		<span>20253 Hamburg 24</span>
+	</a></li>
+	</ul>
+	</address>
+    </div>
+    </div>
+    </div>
+
+<!-- Main -->
+<main id="main">
+<!-- Banderole -->
+<div class="banderole" id="banderole"></div>
+
+<!-- Safe-Points -->
+	<div class="safe-box">
+		<a target="_blank" href="#"><div class="safe-1 safetile"></div></a>
+		<a target="_blank" href="#"><div class="safe-2 safetile"></div></a>
+		<a target="_blank" href="#"><div class="safe-3 safetile"></div></a>
+		<a target="_blank" href="#"><div class="safe-4 safetile"></div></a>
+		<a target="_blank" href="#"><div class="safe-5 safetile"></div></a>
+	</div>
+
+<!-- Input-Input-Box -->
+    <div class="giv-get" id="giv-get">
+    <div class="giv">
+    <form action="{% url 'honoradar:senddata' %}" method="post" name="firstbox" id="giv-form">
+      {% csrf_token %}
+	
+	<div class="banner-left-1">Spende deine Gehaltsdaten!</div><div class="banner-left-shadow"></div>
+
+<!-- Medium-Select -->	
+    <input name="mediumname" id="data_medium" class="media-select" list="medium" placeholder="Für welches Medium arbeitest du?" type="text" />
+    <datalist id="medium">
+		<option value="Frankfurter Allgemeine Zeitung (FAZ)">
+		<option value="Spiegel">
+		<option value="Spiegel TV">
+		<option value="Spiegel Online (SPON)">
+		<option value="Süddeutsche Zeitung (SZ)">
+		<option value="Südwestrundfunk (SWR)">
+		<option value="Tagesspiegel">
+		<option value="Zeit Online (ZON)">
+	</datalist>
+
+<!-- Switch-Select -->
+	<div class="switch-field switch-field-text-1 tooltip">
+		<input name="festfrei" type="radio" id="data_arbeitsverhaeltnis_fest" name="switch" value="fest" onclick="festfunction()"/>
+		<label for="data_arbeitsverhaeltnis_fest">Fest<span id="question-1">?</span></label>
+		<input name="festfrei" type="radio" id="data_arbeitsverhaeltnis_pauschal" name="switch" value="pauschal" onclick="pauschalfunction()"/>
+		<label for="data_arbeitsverhaeltnis_pauschal">Pauschal<span id="question-2">?</span></label>
+		<input name="festfrei" type="radio" id="data_arbeitsverhaeltnis_frei" name="switch" value="frei" onclick="freifunction()"/>
+		<label for="data_arbeitsverhaeltnis_frei">Frei<span id="question-3">?</span></label>
+	</div>
+	
+	<div class="break"></div>
+	
+ <!-- Loan-Select -->
+  	<input  name="gehalt" id="data_gehalt" class="loan-select hide" list="gehalt" placeholder="Gehalt pro Monat?" type="number"	min="0" oninput="validity.valid||(value='');" inputmode="numeric" />
+
+<!-- Hour-Week-Select -->
+    <div class="hour-week-select hide" id="pre-data_stunden_woche">
+    	<input id="data_stunden_woche" name="arbeitszeit" class="hour-week-bar alert-border" type="range" min="1" max="50" value="0"/>
+    </div>
+    <div class="break hide" id="break-1"></div>
+
+<!-- Day-Month-Select -->
+    <div class="day-month-select hide" id="pre-data_tag_monat">
+      	<input name="tageProMonat" id="data_tag_monat" class="day-month-bar" type="range" min="1" max="30" value="0"/>
+    </div>
+
+<!-- Hour-Day-Select -->
+    <div class="hour-day-select hide" id="pre-data_stunden_tag">
+        <input name="stundenProTag" id="data_stunden_tag" class="hour-day-bar" type="range" min="1" max="24" value="0"/>
+    </div>
+
+<!-- Freelancer-Loan-Select -->
+    <input name="lohnProAuftrag" id="data_honorar" class="loan-select hide" list="gehalt" placeholder="Lohn für den Auftrag?" type="number"	min="0" oninput="validity.valid||(value='');" inputmode="numeric" />
+
+<!-- Unit-Select -->
+    <div class="hide" id="pre-data_format_text_audio_video">
+    <div class="switch-field switch-field-text-2 tooltip">
+        <input type="radio" id="data_format_text" name="videoAudioText" value="text" onclick="textfunction()"/>
+        <label for="data_format_text">Text</label>
+        <input type="radio" id="data_format_audio" name="videoAudioText" value="audio" onclick="audiofunction()"/>
+        <label for="data_format_audio">Audio</label>
+        <input type="radio" id="data_format_video" name="videoAudioText"value="video" onclick="videofunction()"/>
+        <label for="data_format_video">Video</label>
+    </div>
+    </div>
+
+<!-- Text-Amount-Select -->
+    <div class="text-amount-select hide" id="pre-data_laenge_text">
+        <input name="ZeichenProArtikel" id="data_laenge_text" class="amount-text-bar" type="range" min="100" max="10000" value="0" step="100"/>
+    </div>
+
+<!-- Audio-Amount-Select -->
+    <div class="audio-amount-select hide" id="pre-data_laenge_audio">
+		<input name="MinutenProAudio" id="data_laenge_audio" class="amount-audio-bar" type="range" min="0.5" max="90" value="0" step="0.5"/>
+    </div>
+
+<!-- Video-Amount-Select -->
+    <div class="video-amount-select hide" id="pre-data_laenge_video">
+        <input name="MinutenProVideo" id="data_laenge_video" class="amount-video-bar" type="range" min="0.5" max="90" value="0" step="0.5"/>
+    </div>
+
+<!-- Genre-Select -->
+    <input name="ProductType" id="data_genre" class="genre-select hide" list="genre" placeholder="Welches Genre?" type="text"/>
+    <datalist id="genre">
+        <option value="Bericht">
+        <option value="Doku">
+        <option value="Feature">
+        <option value="Interview">
+        <option value="Kommentar">
+        <option value="Moderation">
+        <option value="Nachricht">
+        <option value="Portrait">
+        <option value="Reportage">
+    </datalist>
+
+<!-- Digitalization-Select -->
+    <div id="pre-data_verbreitung_analog_digital_beides" class="hide">
+    <div class="switch-field switch-field-text-3 tooltip">
+        <input name="Verwertung" type="radio" id="data_verbreitung_analog" name="switch-verbreitung" value="Analog"/>
+        <label for="data_verbreitung_analog">Analog</label>
+        <input name="Verwertung" type="radio" id="data_verbreitung_digital" name="switch-verbreitung" value="Digital"/>
+        <label for="data_verbreitung_digital">Digital</label>
+        <input name="Verwertung" type="radio" id="data_verbreitung_beides" name="switch-verbreitung" value="Analog & Digital"/>
+        <label for="data_verbreitung_beides">Beides</label>
+    </div>
+    </div>
+
+<!-- Time-Select -->
+    <div class="time-select hide" id="pre-data_zeit">
+        <input name="Zeitaufwand"id="data_zeit" class="amount-time-bar" type="range" min="0.5" max="100" value="0" step="0.5"/>
+    </div>
+
+	<div class="break"></div>
+    <div class="banner-left-2 zbanner-left hide" id="banner-left-2">Deine Arbeitssituation:</div><div id="banner-left-triangle" class="banner-left-shadow hide"></div>
+
+<!-- Position-Select -->
+    <input name=cheforvolo id="data_position" class="position-select hide" list="position" placeholder="Als was arbeitest du?" type="text"/>
+    <datalist id="position">
+        <option value="Chefredakteur">
+        <option value="Ressortleiter">
+        <option value="Chef vom Dienst (CvD)">
+        <option value="Redakteur">
+        <option value="Voluntär">
+    </datalist>
+
+<!-- Experience-Select -->
+    <div class="switch-field switch-field-text-4 hide" id="pre-data_erfahrung_jahr_1_3_5">
+		<input name="erfahrung" type="radio" id="data_erfahrung_jahr_1" name="switch" value="0"/>
+        <label for="data_erfahrung_jahr_1">1 Jahr</label>
+        <input name="erfahrung" type="radio" id="data_erfahrung_jahr_3" name="switch" value="3"/>
+        <label for="data_erfahrung_jahr_3">3 Jahre</label>
+        <input name="erfahrung" type="radio" id="data_erfahrung_jahr_5" name="switch" value="5"/>
+        <label for="data_erfahrung_jahr_5">5 Jahre</label>
+    </div>
+
+<!-- Happiness-Select -->
+    <div class="happiness-select hide" id="pre-data_athmosphaere">
+        <input name="happiness"id="data_athmosphaere" class="happiness-bar" type="range" min="1" max="10" value="0"/>
+    </div>
+
+	<div class="break"></div>
+
+<!-- Comment-Select -->
+    <div class="hide" id="pre-data_kommentar">
+        <textarea id="data_kommentar" class="comment-select" name="message" placeholder="Dein Kommentar ..." maxlength="250"></textarea>
+    </div>
+    <span class="hide" id="disclaimer"><p class="disclaimer"><a href="#" class="clear-agb">!</a>Achte darauf, dass du deine Identität im Kommentar nicht verrätst!</p></span>
+
+<!-- Checkbox-Select -->
+    <span class="hide" id="pre-data_checkbox">
+        <input name="agb"class="checkbox" type="checkbox" id="data_checkbox" />
+        <label class="checkboxlabel" for="data_checkbox"></label>
+        <p class="checkboxtext">Ich bin mit den <a href="#" target="_blank" class="clear-agb">AGBs</a> einverstanden.</p>
+    </span>
+
+<!-- Submit -->
+	<div class="alert alert-media-select hide">
+		<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+		<strong>Achtung! </strong>Bitte fülle folgende Felder aus: Feld1, Feld2 und Feld2.
+	</div>
+    <input type="submit" class="submit-get hide" id="data_submit" value="Daten spenden"/>
+
+    </form>
+    </div>
+
+<!-- Output-Input-Box -->
+    <div class="get">
+    <form id="get">
+    <div class="banner-right-1">Erfahre, was Medien zahlen!</div><div class="banner-right-shadow"></div>
+
+<!-- Medium-Select -->
+    <input id="media-analyse" class="media-select" list="medium" placeholder="Welches Medium interessiert dich?" type="text"/>
+    <datalist id="medium-analyse">
+        <option value="Frankfurter Allgemeine Zeitung (FAZ)">
+        <option value="Spiegel">
+        <option value="Spiegel TV">
+        <option value="Spiegel Online (SPON)">
+        <option value="Süddeutsche Zeitung (SZ)">
+        <option value="Südwestrundfunk (SWR)">
+        <option value="Tagesspiegel">
+        <option value="Zeit Online (ZON)">
+    </datalist>
+
+<!-- Switch-Select -->
+    <div class="switch-field switch-field-text-1 tooltip">
+        <input type="radio" id="data_arbeitsverhaeltnis_fest-analyse" name="switch" value="fest" onclick="getfunctionfest()"/>
+        <label for="data_arbeitsverhaeltnis_fest-analyse">Fest<span id="question-4">?</span></label>
+        <input type="radio" id="data_arbeitsverhaeltnis_pauschal-analyse" name="switch" value="pauschal" onclick="getfunctionpauschal()"/>
+        <label for="data_arbeitsverhaeltnis_pauschal-analyse">Pauschal<span id="question-5">?</span></label>
+        <input type="radio" id="data_arbeitsverhaeltnis_frei-analyse" name="switch" value="frei" onclick="getfunctionfrei()"/>
+        <label for="data_arbeitsverhaeltnis_frei-analyse">Frei<span id="question-6">?</span></label>
+    </div>
+	
+	<div class="break"></div>
+	
+<!-- Submit -->
+    <a href="#break-2" class="smooth" onclick="analysefunction()"><input type="submit" class="submit-giv hide" id="analyse_submit" value="Daten auslesen"/></a>
+
+    </form>
+    </div>
+
+<!-- Grafic-Box -->
+	<div class="break" id="break-2"></div>
+    <div class="result show" id="result">
+    <div class="banner-left-3">Gehalts- und Lohnreports</div><div class="banner-left-shadow"></div>
+	
+<!-- Infografiken - Text -->	
+	<div class="result-text">Otterfell ist sehr gut für Pelzmäntel geeignet.</div>
+	
+	
+    </div>
+	
+<!-- Social Share -->
+	<div class="social-box">
+		<a target="_blank" href="https://twitter.com/intent/tweet?url=https://wasjournalistenverdienen.de&text=Was%20verdienen%20Journalisten?%20Die%20neue%20interaktive%20Datenbank%20der%20Freischreiber:"><div class="social-1 socialtile"></div></a>
+		<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://wasjournalistenverdienen.de"><div class="social-2 socialtile"></div></a>
+		<a href="whatsapp://send?text=https://wasjournalistenverdienen.de"><div class="social-3 socialtile"></div></a>
+		<a href="fb-messenger://share/?link=https://wasjournalistenverdienen.de&app_id=123456789"><div class="social-4 socialtile"></div></a>
+		<a href="mailto:?subject=Interaktive Datenbank: Was verdienen Journalisten?&amp;body=Hallo, schau dir mal diese Seite an: https://wasjournalistenverdienen.de"><div class="social-5 socialtile"></div></a>
+	</div>
+   
+
+<!-- News -->
+    <div class="nbox-1">
+        <a href="#">
+            <div class="ntile-first news_1"><span class="news-title-head">Der große Gehalts-Report 2018</span></div>
+        </a>
+        <a href="#">
+            <div class="ntile-first news_2"><span class="news-title">Das sagt die Presse zum Gehalts-Report</span></div>
+        </a>
+        <a href="#">
+            <div class="ntile-first news_3"><span class="news-title">Was geschieht mit deinen Daten?</span></div>
+        </a>
+        <a href="#">
+			<div class="ntile-first news_4"><span class="news-title">Warum Daten spenden?</span></div>
+        </a>
+        <a href="#">
+            <div class="ntile-first news_5"><span class="news-title">Die Methodik dahinter</span></div>
+        </a>
+    </div>
+
+<!-- Freischreiber-Parallax -->
+    <a href="https://www.freischreiber.de" target="_blank" class="link"><div class="freischreiber-box"></div></a>
+
+<!-- News -->
+    <div class="nbox-2">
+        <a href="#">
+            <div class="ntile-second news_6"><span class="news-title">So verhandelst du dein Gehalt</span></div>
+        </a>
+        <a href="#">
+            <div class="ntile-second news_7"><span class="news-title">Dein Kollege verdient mehr?</span></div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=MiKw3uPGHB4" data-lity>
+            <div class="ntile-second news_8"><span class="news-title">Video: Tipps & Tricks</span></div>
+        </a>
+        <a href="#">
+            <div class="ntile-second news_9"><span class="news-title">Koalitionsvertrag: VG-Wort-Ausschüttungen?</span>
+        </div>
+		</a>
+    </div>
+
+<!-- Footer -->
+	<div class="footer">
+	<div class="footer-grid">
+        <div class="footer-grid-first">
+            <a href="../projekt"><p class="footer-item-first clear-footer">Über das Projekt</p></a>
+            <a href="../credits"><p class="footer-item clear-footer">Wer sind die Macher?</p></a>
+            <a href="../impressum"><p class="footer-item clear-footer">Rankings & Reports</p></a>
+            <a href="../newsletter"><p class="footer-item clear-footer">Newsletter</p></a>
+        </div>
+        <div class="footer-grid-second">
+            <a href="../datenschutz"><p class="footer-item-first clear-footer">Datenschutz</p></a>
+            <a href="../methodologie"><p class="footer-item clear-footer">Methodologie</p></a>
+            <a href="../kontakt"><p class="footer-item clear-footer">Kontakt & Fragen</p></a>
+            <a href="../impressum"><p class="footer-item clear-footer">Impressum</p></a>
+        </div>
+    </div>
+	</div>
+	
+</main>
+
+
+    <!-- Javascript -->
+    <script src="{% static 'honoradar/navbar/js/modernizr.js'%}"></script>
+    <script src="{% static 'honoradar/html5shiv.js'%}"></script>
+    <script src="{% static 'honoradar/lity/vendor/jquery.js'%}"></script>
+    <script src="{% static 'honoradar/lity/dist/lity.js'%}"></script>
+    <script src="{% static 'honoradar/js/jquery.js'%}"></script>
+    <script src="{% static 'honoradar/js/javascript.js'%}"></script>
+    <script src="{% static 'honoradar/js/javascript-new.js'%}"></script>
+    <script src="{% static 'honoradar/navbar/js/jquery-2.1.1.js'%}"></script>
+    <script src="{% static 'honoradar/navbar/js/main.js'%}"></script>
+</body>
+
+</html>
