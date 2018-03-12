@@ -2230,6 +2230,10 @@ input[type="range"]:before {
   -webkit-transition: background-color 0.4s;
    float: left;
   margin-left: 40px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;  
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
 }
 
 .checkboxlabel:after {
@@ -2245,10 +2249,18 @@ input[type="range"]:before {
 
 .checkbox:checked + .checkboxlabel {
   background: rgb(39, 173, 95);
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;  
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
 }
 .checkbox:checked + .checkboxlabel:after {
   left: auto;
   right: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;  
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
 }
 
 

@@ -156,10 +156,10 @@
 	<div class="break"></div>
 	
  <!-- Loan-Select -->
-  	<input  name="gehalt" id="data_gehalt" class="loan-select show" list="gehalt" placeholder="Gehalt pro Monat?" type="number"	min="0" oninput="validity.valid||(value='');" inputmode="numeric" onclick="alertoffdataloan()" ontouchstart="alertoffdataloan()"/>
+  	<input  name="gehalt" id="data_gehalt" class="loan-select hide" list="gehalt" placeholder="Gehalt pro Monat?" type="number"	min="0" oninput="validity.valid||(value='');" inputmode="numeric" onclick="alertoffdataloan()" ontouchstart="alertoffdataloan()"/>
 
 <!-- Hour-Week-Select -->
-    <div class="hour-week-select show pre-alert-bar-hour-week" id="pre-data_stunden_woche" onclick="alertoffdatahourweek()" ontouchstart="alertoffdatahourweek()">
+    <div class="hour-week-select hide pre-alert-bar-hour-week" id="pre-data_stunden_woche" onclick="alertoffdatahourweek()" ontouchstart="alertoffdatahourweek()">
     	<input id="data_stunden_woche" name="arbeitszeit" class="hour-week-bar alert-bar_stunden_woche" type="range" min="1" max="50" value="0"/>
     </div>
     <div class="break hide" id="break-1"></div>

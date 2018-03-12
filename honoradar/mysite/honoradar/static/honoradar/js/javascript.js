@@ -2,42 +2,34 @@
 
 window.onload=function(){
 document.querySelector('#data_stunden_woche').addEventListener('input', function rangeChange() {
-  // trigger the CSS to update
   this.setAttribute('value', this.value);
 });
 document.querySelector('#data_tag_monat').addEventListener('input', function rangeChange() {
-  // trigger the CSS to update
   this.setAttribute('value', this.value);
 });
 document.querySelector('#data_stunden_tag').addEventListener('input', function rangeChange() {
-  // trigger the CSS to update
   this.setAttribute('value', this.value);
 });
 document.querySelector('#data_laenge_text').addEventListener('input', function rangeChange() {
-  // trigger the CSS to update
   this.setAttribute('value', this.value);
 });
 document.querySelector('#data_laenge_audio').addEventListener('input', function rangeChange() {
-  // trigger the CSS to update
   this.setAttribute('value', this.value);
 });
 document.querySelector('#data_laenge_video').addEventListener('input', function rangeChange() {
-  // trigger the CSS to update
   this.setAttribute('value', this.value);
 });
 document.querySelector('#data_zeit').addEventListener('input', function rangeChange() {
-  // trigger the CSS to update
   this.setAttribute('value', this.value);
 });
 document.querySelector('#data_athmosphaere').addEventListener('input', function rangeChange() {
-  // trigger the CSS to update
   this.setAttribute('value', this.value);
 });
 document.querySelector('#data_zusammenarbeit').addEventListener('input', function rangeChange() {
-  // trigger the CSS to update
   this.setAttribute('value', this.value);
 });
 }
+
 
 
 function festfunction() {
