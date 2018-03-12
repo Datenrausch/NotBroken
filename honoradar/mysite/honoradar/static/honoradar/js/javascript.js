@@ -81,6 +81,9 @@ function festfunction() {
     element.classList.add("hide");
     element.classList.remove("show");
 	
+	var element = document.getElementById("data_format_text_audio_video");	
+	element.classList.remove("alert-switch");
+	
 	var element = document.getElementById("pre-data_laenge_text");
     element.classList.add("hide");
     element.classList.remove("show");
@@ -188,6 +191,9 @@ function pauschalfunction() {
     element.classList.add("hide");
     element.classList.remove("show");
 	
+	var element = document.getElementById("data_format_text_audio_video");	
+	element.classList.remove("alert-switch");
+	
 	var element = document.getElementById("pre-data_laenge_text");
     element.classList.add("hide");
     element.classList.remove("show");
@@ -293,8 +299,7 @@ function freifunction() {
 	
 	var element = document.getElementById("pre-data_format_text_audio_video");
     element.classList.add("show");
-    element.classList.remove("hide");
-	
+    element.classList.remove("hide");	
 	
 	var element = document.getElementById("data_genre");
     element.classList.add("show");
@@ -358,6 +363,9 @@ function textfunction() {
 	var element = document.getElementById("pre-data_laenge_video");
     element.classList.add("hide");
     element.classList.remove("show");
+
+	var element = document.getElementById("data_format_text_audio_video");	
+	element.classList.remove("alert-switch");
 	
 }
 
@@ -373,6 +381,9 @@ function audiofunction() {
 	var element = document.getElementById("pre-data_laenge_video");
     element.classList.add("hide");
     element.classList.remove("show");
+	
+	var element = document.getElementById("data_format_text_audio_video");	
+	element.classList.remove("alert-switch");
 }
 
 function videofunction() {
@@ -387,6 +398,9 @@ function videofunction() {
 	var element = document.getElementById("pre-data_laenge_video");
     element.classList.add("show");
     element.classList.remove("hide");
+	
+	var element = document.getElementById("data_format_text_audio_video");	
+	element.classList.remove("alert-switch");
 }
 
 function getfunctionfest() {
@@ -425,7 +439,6 @@ function getfunctionpauschal() {
     element.classList.remove("show");
 }
 
-
 function getfunctionfrei() {
 	var element = document.getElementById("analyse_submit");
     element.classList.add("show");
@@ -444,12 +457,105 @@ function getfunctionfrei() {
     element.classList.remove("show");
 }
 
-
 function analysefunction() {
 	var element = document.getElementById("result");
     element.classList.add("show");
     element.classList.remove("hide");
 }
+
+function alertoffdatamedium() {
+	var element = document.getElementById("data_medium");
+    element.classList.remove("alert");
+}
+
+function alertoffdataloan() {
+	var element = document.getElementById("data_gehalt");
+    element.classList.remove("alert");
+}
+
+function alertoffdataposition() {
+	var element = document.getElementById("data_position");
+    element.classList.remove("alert");
+}
+
+function alertoffalaysemedium() {
+	var element = document.getElementById("media-analyse");
+    element.classList.remove("alert");
+}
+
+function alertoffdatahourweek() {
+	var element = document.getElementById("pre-data_stunden_woche");
+    element.classList.remove("pre-alert-bar-hour-week");
+	
+	var element = document.getElementById("data_stunden_woche");
+    element.classList.remove("alert-bar_stunden_woche");
+}
+
+function alertoffdatahappiness() {
+	var element = document.getElementById("pre-data_athmosphaere");
+    element.classList.remove("pre-alert-bar-happiness");
+	
+	var element = document.getElementById("data_athmosphaere");
+    element.classList.remove("alert-bar_happiness");
+}
+
+function alertoffdatadaymonth() {
+	var element = document.getElementById("pre-data_tag_monat");
+    element.classList.remove("pre-alert-bar-day-month");
+	
+	var element = document.getElementById("data_tag_monat");
+    element.classList.remove("alert-bar_tag_monat");
+}
+
+function alertoffdatahourday() {
+	var element = document.getElementById("pre-data_stunden_tag");
+    element.classList.remove("pre-alert-bar-hour-day");
+	
+	var element = document.getElementById("data_stunden_tag");
+    element.classList.remove("alert-bar_stunde_tag");
+}
+
+function alertoffdatatime() {
+	var element = document.getElementById("pre-data_zeit");
+    element.classList.remove("pre-alert-bar-time");
+	
+	var element = document.getElementById("data_zeit");
+    element.classList.remove("alert-bar_time");
+}
+
+function alertoffdatatext() {
+	var element = document.getElementById("pre-data_laenge_text");
+    element.classList.remove("pre-alert-bar-text");
+	
+	var element = document.getElementById("data_laenge_text");
+    element.classList.remove("alert-text");
+}
+
+
+
+
+
+
+
+function alertoffdataaudio() {
+	var element = document.getElementById("pre-data_laenge_audio");
+    element.classList.remove("pre-alert-bar-audio");
+	
+	var element = document.getElementById("data_laenge_audio");
+    element.classList.remove("alert-audio");
+}
+
+function alertoffdatavideo() {
+	var element = document.getElementById("pre-data_laenge_video");
+    element.classList.remove("pre-alert-bar-video");
+	
+	var element = document.getElementById("data_laenge_video");
+    element.classList.remove("alert-video");
+}
+
+
+
+
 
 $('.smooth').on('click', function(e){
   var href = $(this).attr('href');

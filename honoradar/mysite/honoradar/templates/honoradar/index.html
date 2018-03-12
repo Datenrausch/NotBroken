@@ -73,7 +73,7 @@
     <a href="#cd-nav" class="cd-nav-trigger clear-fixed">Menu
 		<span class="cd-nav-icon"></span>
 		<svg x="0px" y="0px" width="54px" height="54px" viewBox="0 0 54 54">
-		<circle fill="transparent" stroke="#656e79" stroke-width="1" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
+		<circle fill="transparent" stroke="#2ecc71" stroke-width="2" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
 		</svg>
 	</a>
 
@@ -131,7 +131,7 @@
 	<div class="banner-left-1">Spende deine Gehaltsdaten!</div><div class="banner-left-shadow"></div>
 
 <!-- Medium-Select -->	
-    <input name="mediumname" id="data_medium" class="media-select" list="medium" placeholder="Für welches Medium arbeitest du?" type="text" />
+    <input name="mediumname" id="data_medium" class="media-select alert" list="medium" placeholder="Für welches Medium arbeitest du?" type="text" onclick="alertoffdatamedium()"/>
     <datalist id="medium">
 		<option value="Frankfurter Allgemeine Zeitung (FAZ)">
 		<option value="Spiegel">
@@ -156,22 +156,22 @@
 	<div class="break"></div>
 	
  <!-- Loan-Select -->
-  	<input  name="gehalt" id="data_gehalt" class="loan-select hide" list="gehalt" placeholder="Gehalt pro Monat?" type="number"	min="0" oninput="validity.valid||(value='');" inputmode="numeric" />
+  	<input  name="gehalt" id="data_gehalt" class="loan-select show" list="gehalt" placeholder="Gehalt pro Monat?" type="number"	min="0" oninput="validity.valid||(value='');" inputmode="numeric" onclick="alertoffdataloan()"/>
 
 <!-- Hour-Week-Select -->
-    <div class="hour-week-select hide" id="pre-data_stunden_woche">
-    	<input id="data_stunden_woche" name="arbeitszeit" class="hour-week-bar alert-border" type="range" min="1" max="50" value="0"/>
+    <div class="hour-week-select show pre-alert-bar-hour-week" id="pre-data_stunden_woche" onclick="alertoffdatahourweek()">
+    	<input id="data_stunden_woche" name="arbeitszeit" class="hour-week-bar alert-bar_stunden_woche" type="range" min="1" max="50" value="0"/>
     </div>
     <div class="break hide" id="break-1"></div>
 
 <!-- Day-Month-Select -->
-    <div class="day-month-select hide" id="pre-data_tag_monat">
-      	<input name="tageProMonat" id="data_tag_monat" class="day-month-bar" type="range" min="1" max="30" value="0"/>
+    <div class="day-month-select hide pre-alert-bar-day-month" id="pre-data_tag_monat">
+      	<input name="tageProMonat" id="data_tag_monat" class="day-month-bar alert-bar_tag_monat" type="range" min="1" max="30" value="0" onclick="alertoffdatadaymonth()"/>
     </div>
 
 <!-- Hour-Day-Select -->
-    <div class="hour-day-select hide" id="pre-data_stunden_tag">
-        <input name="stundenProTag" id="data_stunden_tag" class="hour-day-bar" type="range" min="1" max="24" value="0"/>
+    <div class="hour-day-select hide pre-alert-bar-hour-day" id="pre-data_stunden_tag">
+        <input name="stundenProTag" id="data_stunden_tag" class="hour-day-bar alert-bar_stunde_tag" type="range" min="1" max="24" value="0" onclick="alertoffdatahourday()"/>
     </div>
 
 <!-- Freelancer-Loan-Select -->
@@ -179,7 +179,7 @@
 
 <!-- Unit-Select -->
     <div class="hide" id="pre-data_format_text_audio_video">
-    <div class="switch-field switch-field-text-2 tooltip">
+    <div id="data_format_text_audio_video" class="switch-field switch-field-text-2 tooltip alert-switch">
         <input type="radio" id="data_format_text" name="videoAudioText" value="text" onclick="textfunction()"/>
         <label for="data_format_text">Text</label>
         <input type="radio" id="data_format_audio" name="videoAudioText" value="audio" onclick="audiofunction()"/>
@@ -190,18 +190,18 @@
     </div>
 
 <!-- Text-Amount-Select -->
-    <div class="text-amount-select hide" id="pre-data_laenge_text">
-        <input name="ZeichenProArtikel" id="data_laenge_text" class="amount-text-bar" type="range" min="100" max="10000" value="0" step="100"/>
+    <div class="text-amount-select hide pre-alert-bar-text" id="pre-data_laenge_text">
+        <input name="ZeichenProArtikel" id="data_laenge_text" class="amount-text-bar alert-bar_text" type="range" min="100" max="10000" value="0" step="100"/ onclick="alertoffdatatext()">
     </div>
 
 <!-- Audio-Amount-Select -->
-    <div class="audio-amount-select hide" id="pre-data_laenge_audio">
-		<input name="MinutenProAudio" id="data_laenge_audio" class="amount-audio-bar" type="range" min="0.5" max="90" value="0" step="0.5"/>
+    <div class="audio-amount-select hide pre-alert-bar-audio" id="pre-data_laenge_audio">
+		<input name="MinutenProAudio" id="data_laenge_audio" class="amount-audio-bar alert-bar_audio" type="range" min="0.5" max="90" value="0" step="0.5"/ onclick="alertoffdataaudio()">
     </div>
 
 <!-- Video-Amount-Select -->
-    <div class="video-amount-select hide" id="pre-data_laenge_video">
-        <input name="MinutenProVideo" id="data_laenge_video" class="amount-video-bar" type="range" min="0.5" max="90" value="0" step="0.5"/>
+    <div class="video-amount-select hide pre-alert-bar-video" id="pre-data_laenge_video">
+        <input name="MinutenProVideo" id="data_laenge_video" class="amount-video-bar alert-bar_video" type="range" min="0.5" max="90" value="0" step="0.5"/ onclick="alertoffdatavideo()">
     </div>
 
 <!-- Genre-Select -->
@@ -231,15 +231,15 @@
     </div>
 
 <!-- Time-Select -->
-    <div class="time-select hide" id="pre-data_zeit">
-        <input name="Zeitaufwand"id="data_zeit" class="amount-time-bar" type="range" min="0.5" max="100" value="0" step="0.5"/>
+    <div class="time-select hide pre-alert-bar-time" id="pre-data_zeit">
+        <input name="Zeitaufwand" id="data_zeit" class="amount-time-bar alert-bar_time" type="range" min="0.5" max="100" value="0" step="0.5" onclick="alertoffdatatime()"/>
     </div>
 
 	<div class="break"></div>
     <div class="banner-left-2 zbanner-left hide" id="banner-left-2">Deine Arbeitssituation:</div><div id="banner-left-triangle" class="banner-left-shadow hide"></div>
 
 <!-- Position-Select -->
-    <input name=cheforvolo id="data_position" class="position-select hide" list="position" placeholder="Als was arbeitest du?" type="text"/>
+    <input name=cheforvolo id="data_position" class="position-select hide alert" list="position" placeholder="Als was arbeitest du?" type="text" onclick="alertoffdataposition()"/>
     <datalist id="position">
         <option value="Chefredakteur">
         <option value="Ressortleiter">
@@ -259,8 +259,8 @@
     </div>
 
 <!-- Happiness-Select -->
-    <div class="happiness-select hide" id="pre-data_athmosphaere">
-        <input name="happiness"id="data_athmosphaere" class="happiness-bar" type="range" min="1" max="10" value="0"/>
+    <div class="happiness-select hide pre-alert-bar-happiness" id="pre-data_athmosphaere" onclick="alertoffdatahappiness()">
+        <input name="happiness" id="data_athmosphaere" class="happiness-bar alert-bar_happiness" type="range" min="1" max="10" value="0"/>
     </div>
 
 	<div class="break"></div>
@@ -273,8 +273,8 @@
 
 <!-- Checkbox-Select -->
     <span class="hide" id="pre-data_checkbox">
-        <input name="agb"class="checkbox" type="checkbox" id="data_checkbox" />
-        <label class="checkboxlabel" for="data_checkbox"></label>
+        <input name="agb" class="checkbox" type="checkbox" id="data_checkbox" />
+        <label class="checkboxlabel alert-checkbox" for="data_checkbox"></label>
         <p class="checkboxtext">Ich bin mit den <a href="#" target="_blank" class="clear-agb">AGBs</a> einverstanden.</p>
     </span>
 
@@ -294,7 +294,7 @@
     <div class="banner-right-1">Erfahre, was Medien zahlen!</div><div class="banner-right-shadow"></div>
 
 <!-- Medium-Select -->
-    <input id="media-analyse" class="media-select" list="medium" placeholder="Welches Medium interessiert dich?" type="text"/>
+    <input id="media-analyse" class="media-select alert" list="medium" placeholder="Welches Medium interessiert dich?" type="text" onclick="alertoffalaysemedium()"/>
     <datalist id="medium-analyse">
         <option value="Frankfurter Allgemeine Zeitung (FAZ)">
         <option value="Spiegel">
