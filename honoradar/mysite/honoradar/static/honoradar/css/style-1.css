@@ -34,7 +34,7 @@
 }
 
 .alert-bar_stunden_woche[type="range"] {
-	background: rgba(255, 255 ,255, 0.2);
+	background: rgba(255, 255, 255, 0.2);
 	background-image: url(../image/stunden-woche.png);
 	background-size: auto calc(100% - 2px);
 	background-position: calc(10px + 50%) center;
@@ -53,8 +53,55 @@
   -o-transition: all 0.3s ease-in-out;
 }
 
+
+@media (min-width: 1600px), (max-width: 1750px)  { 
+.alert-bar_stunden_woche[type="range"] {
+ 	background-size: auto calc(100% - 6px);
+}
+}
+
+@media (max-width: 1600px)  { 
+.alert-bar_stunden_woche[type="range"] {
+ 	background-size: auto calc(100% - 2px);
+}
+}
+
+@media (min-width: 1750px)  { 
+.alert-bar_stunden_woche[type="range"] {
+ 	background-size: auto calc(100% - 2px);	
+}
+}
+
+@media (max-width: 450px)  { 
+.alert-bar_stunden_woche[type="range"] {
+	background-size: auto calc(100% - 6px);
+	background-position: calc(10px + 50%) center;
+}
+}
+
+@media (max-width: 400px)  { 
+.alert-bar_stunden_woche[type="range"] {
+	background-size: auto calc(100% - 8px);
+	background-position: calc(10px + 50%) center;
+}
+}
+
+@media (max-width: 350px)  { 
+.alert-bar_stunden_woche[type="range"] {
+	background-size: auto calc(100% - 10px);
+	background-position: calc(11px + 50%) center;
+}
+}
+
+@media (max-width: 330px)  { 
+.alert-bar_stunden_woche[type="range"] {
+	background-size: auto calc(100% - 12px);
+	background-position: calc(11px + 50%) center;
+}
+}
+
 .alert-bar_happiness[type="range"] {
-	background: rgba(255, 255 ,255, 0.2);
+	background: rgba(255, 255, 255, 0.2);
 	background-image: url(../image/atmosphaere.png);
 	background-size: auto calc(100% - 2px);
 	background-position: calc(10px + 50%) center;
@@ -73,8 +120,29 @@
   -o-transition: all 0.3s ease-in-out;
 }
 
+@media (max-width: 450px)  { 
+.alert-bar_happiness[type="range"] {
+	background-size: auto calc(100% - 4px);
+	background-position: calc(10px + 50%) center;
+}
+}
+
+@media (max-width: 400px)  { 
+.alert-bar_happiness[type="range"] {
+	background-size: auto calc(100% - 6px);
+	background-position: calc(10px + 50%) center;
+}
+}
+
+@media (max-width: 350px)  { 
+.alert-bar_happiness[type="range"] {
+	background-size: auto calc(100% - 8px);
+	background-position: calc(10px + 50%) center;
+}
+}
+
 .alert-bar_tag_monat[type="range"] {
-	background: rgba(255, 255 ,255, 0.2);
+	background: rgba(255, 255, 255, 0.2);
 	background-image: url(../image/tage-monat.png);
 	background-size: auto calc(100% - 2px);
 	background-position: calc(10px + 50%) center;
@@ -93,8 +161,36 @@
   -o-transition: all 0.3s ease-in-out;
 }
 
+@media (max-width: 450px)  { 
+.alert-bar_tag_monat[type="range"] {
+	background-size: auto calc(100% - 4px);
+	background-position: calc(10px + 50%) center;
+}
+}
+
+@media (max-width: 400px)  { 
+.alert-bar_tag_monat[type="range"] {
+	background-size: auto calc(100% - 6px);
+	background-position: calc(10px + 50%) center;
+}
+}
+
+@media (max-width: 350px)  { 
+.alert-bar_tag_monat[type="range"] {
+	background-size: auto calc(100% - 8px);
+	background-position: calc(11px + 50%) center;
+}
+}
+
+@media (max-width: 330px)  { 
+.alert-bar_tag_monat[type="range"] {
+	background-size: auto calc(100% - 10px);
+	background-position: calc(11px + 50%) center;
+}
+}
+
 .alert-bar_stunde_tag[type="range"] {
-	background: rgba(255, 255 ,255, 0.2);
+	background: rgba(255, 255, 255, 0.2);
 	background-image: url(../image/stunden-tag.png);
 	background-size: auto calc(100% - 2px);
 	background-position: calc(10px + 50%) center;
@@ -113,8 +209,36 @@
   -o-transition: all 0.3s ease-in-out;
 }
 
+@media (max-width: 450px)  { 
+.alert-bar_stunde_tag[type="range"] {
+	background-size: auto calc(100% - 4px);
+	background-position: calc(10px + 50%) center;
+}
+}
+
+@media (max-width: 400px)  { 
+.alert-bar_stunde_tag[type="range"] {
+	background-size: auto calc(100% - 6px);
+	background-position: calc(10px + 50%) center;
+}
+}
+
+@media (max-width: 350px)  { 
+.alert-bar_stunde_tag[type="range"] {
+	background-size: auto calc(100% - 8px);
+	background-position: calc(11px + 50%) center;
+}
+}
+
+@media (max-width: 330px)  { 
+.alert-bar_stunde_tag[type="range"] {
+	background-size: auto calc(100% - 10px);
+	background-position: calc(11px + 50%) center;
+}
+}
+
 .alert-bar_time[type="range"] {
-	background: rgba(255, 255 ,255, 0.2);
+	background: rgba(255, 255, 255, 0.2);
 	background-image: url(../image/zeit.png);
 	background-size: auto calc(100% - 2px);
 	background-position: calc(10px + 50%) center;
@@ -133,8 +257,36 @@
   -o-transition: all 0.3s ease-in-out;
 }
 
+@media (max-width: 450px)  { 
+.alert-bar_time[type="range"] {
+	background-size: auto calc(100% - 4px);
+	background-position: calc(10px + 50%) center;
+}
+}
+
+@media (max-width: 400px)  { 
+.alert-bar_time[type="range"] {
+	background-size: auto calc(100% - 8px);
+	background-position: calc(10px + 50%) center;
+}
+}
+
+@media (max-width: 350px)  { 
+.alert-bar_time[type="range"] {
+	background-size: auto calc(100% - 10px);
+	background-position: calc(11px + 50%) center;
+}
+}
+
+@media (max-width: 330px)  { 
+.alert-bar_time[type="range"] {
+	background-size: auto calc(100% - 12px);
+	background-position: calc(11px + 50%) center;
+}
+}
+
 .alert-bar_text[type="range"] {
-	background: rgba(255, 255 ,255, 0.2);
+	background: rgba(255, 255, 255, 0.2);
 	background-image: url(../image/text.png);
 	background-size: auto calc(100% - 2px);
 	background-position: calc(10px + 50%) center;
@@ -153,8 +305,36 @@
   -o-transition: all 0.3s ease-in-out;
 }
 
+@media (max-width: 450px)  { 
+.alert-bar_text[type="range"] {
+	background-size: auto calc(100% - 4px);
+	background-position: calc(10px + 50%) center;
+}
+}
+
+@media (max-width: 400px)  { 
+.alert-bar_text[type="range"] {
+	background-size: auto calc(100% - 8px);
+	background-position: calc(10px + 50%) center;
+}
+}
+
+@media (max-width: 350px)  { 
+.alert-bar_text[type="range"] {
+	background-size: auto calc(100% - 10px);
+	background-position: calc(11px + 50%) center;
+}
+}
+
+@media (max-width: 330px)  { 
+.alert-bar_text[type="range"] {
+	background-size: auto calc(100% - 12px);
+	background-position: calc(11px + 50%) center;
+}
+}
+
 .alert-bar_audio[type="range"] {
-	background: rgba(255, 255 ,255, 0.2);
+	background: rgba(255, 255, 255, 0.2);
 	background-image: url(../image/audio.png);
 	background-size: auto calc(100% - 2px);
 	background-position: calc(10px + 50%) center;
@@ -173,8 +353,36 @@
   -o-transition: all 0.3s ease-in-out;
 }
 
+@media (max-width: 450px)  { 
+.alert-bar_audio[type="range"] {
+	background-size: auto calc(100% - 4px);
+	background-position: calc(10px + 50%) center;
+}
+}
+
+@media (max-width: 400px)  { 
+.alert-bar_audio[type="range"] {
+	background-size: auto calc(100% - 6px);
+	background-position: calc(10px + 50%) center;
+}
+}
+
+@media (max-width: 350px)  { 
+.alert-bar_audio[type="range"] {
+	background-size: auto calc(100% - 8px);
+	background-position: calc(11px + 50%) center;
+}
+}
+
+@media (max-width: 330px)  { 
+.alert-bar_audio[type="range"] {
+	background-size: auto calc(100% - 10px);
+	background-position: calc(11px + 50%) center;
+}
+}
+
 .alert-bar_video[type="range"] {
-	background: rgba(255, 255 ,255, 0.2);
+	background: rgba(255, 255, 255, 0.2);
 	background-image: url(../image/video.png);
 	background-size: auto calc(100% - 2px);
 	background-position: calc(10px + 50%) center;
@@ -191,6 +399,34 @@
   -moz-transition: all 0.3s ease-in-out;  
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 450px)  { 
+.alert-bar_video[type="range"] {
+	background-size: auto calc(100% - 4px);
+	background-position: calc(10px + 50%) center;
+}
+}
+
+@media (max-width: 400px)  { 
+.alert-bar_video[type="range"] {
+	background-size: auto calc(100% - 6px);
+	background-position: calc(10px + 50%) center;
+}
+}
+
+@media (max-width: 350px)  { 
+.alert-bar_video[type="range"] {
+	background-size: auto calc(100% - 8px);
+	background-position: calc(11px + 50%) center;
+}
+}
+
+@media (max-width: 330px)  { 
+.alert-bar_video[type="range"] {
+	background-size: auto calc(100% - 10px);
+	background-position: calc(11px + 50%) center;
+}
 }
 
 

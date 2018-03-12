@@ -131,7 +131,7 @@
 	<div class="banner-left-1">Spende deine Gehaltsdaten!</div><div class="banner-left-shadow"></div>
 
 <!-- Medium-Select -->	
-    <input name="mediumname" id="data_medium" class="media-select alert" list="medium" placeholder="Für welches Medium arbeitest du?" type="text" onclick="alertoffdatamedium()"/>
+    <input name="mediumname" id="data_medium" class="media-select alert" list="medium" placeholder="Für welches Medium arbeitest du?" type="text" onclick="alertoffdatamedium()" ontouchstart="alertoffdatamedium()"/>
     <datalist id="medium">
 		<option value="Frankfurter Allgemeine Zeitung (FAZ)">
 		<option value="Spiegel">
@@ -156,22 +156,22 @@
 	<div class="break"></div>
 	
  <!-- Loan-Select -->
-  	<input  name="gehalt" id="data_gehalt" class="loan-select show" list="gehalt" placeholder="Gehalt pro Monat?" type="number"	min="0" oninput="validity.valid||(value='');" inputmode="numeric" onclick="alertoffdataloan()"/>
+  	<input  name="gehalt" id="data_gehalt" class="loan-select show" list="gehalt" placeholder="Gehalt pro Monat?" type="number"	min="0" oninput="validity.valid||(value='');" inputmode="numeric" onclick="alertoffdataloan()" ontouchstart="alertoffdataloan()"/>
 
 <!-- Hour-Week-Select -->
-    <div class="hour-week-select show pre-alert-bar-hour-week" id="pre-data_stunden_woche" onclick="alertoffdatahourweek()">
+    <div class="hour-week-select show pre-alert-bar-hour-week" id="pre-data_stunden_woche" onclick="alertoffdatahourweek()" ontouchstart="alertoffdatahourweek()">
     	<input id="data_stunden_woche" name="arbeitszeit" class="hour-week-bar alert-bar_stunden_woche" type="range" min="1" max="50" value="0"/>
     </div>
     <div class="break hide" id="break-1"></div>
 
 <!-- Day-Month-Select -->
     <div class="day-month-select hide pre-alert-bar-day-month" id="pre-data_tag_monat">
-      	<input name="tageProMonat" id="data_tag_monat" class="day-month-bar alert-bar_tag_monat" type="range" min="1" max="30" value="0" onclick="alertoffdatadaymonth()"/>
+      	<input name="tageProMonat" id="data_tag_monat" class="day-month-bar alert-bar_tag_monat" type="range" min="1" max="30" value="0" onclick="alertoffdatadaymonth()" ontouchstart="alertoffdatadaymonth()"/>
     </div>
 
 <!-- Hour-Day-Select -->
     <div class="hour-day-select hide pre-alert-bar-hour-day" id="pre-data_stunden_tag">
-        <input name="stundenProTag" id="data_stunden_tag" class="hour-day-bar alert-bar_stunde_tag" type="range" min="1" max="24" value="0" onclick="alertoffdatahourday()"/>
+        <input name="stundenProTag" id="data_stunden_tag" class="hour-day-bar alert-bar_stunde_tag" type="range" min="1" max="24" value="0" onclick="alertoffdatahourday()" ontouchstart="alertoffdatahourday()"/>
     </div>
 
 <!-- Freelancer-Loan-Select -->
@@ -191,17 +191,17 @@
 
 <!-- Text-Amount-Select -->
     <div class="text-amount-select hide pre-alert-bar-text" id="pre-data_laenge_text">
-        <input name="ZeichenProArtikel" id="data_laenge_text" class="amount-text-bar alert-bar_text" type="range" min="100" max="10000" value="0" step="100"/ onclick="alertoffdatatext()">
+        <input name="ZeichenProArtikel" id="data_laenge_text" class="amount-text-bar alert-bar_text" type="range" min="100" max="10000" value="0" step="100"/ onclick="alertoffdatatext()" ontouchstart="alertoffdatatext()">
     </div>
 
 <!-- Audio-Amount-Select -->
     <div class="audio-amount-select hide pre-alert-bar-audio" id="pre-data_laenge_audio">
-		<input name="MinutenProAudio" id="data_laenge_audio" class="amount-audio-bar alert-bar_audio" type="range" min="0.5" max="90" value="0" step="0.5"/ onclick="alertoffdataaudio()">
+		<input name="MinutenProAudio" id="data_laenge_audio" class="amount-audio-bar alert-bar_audio" type="range" min="0.5" max="90" value="0" step="0.5"/ onclick="alertoffdataaudio()" ontouchstart="alertoffdataaudio()">
     </div>
 
 <!-- Video-Amount-Select -->
     <div class="video-amount-select hide pre-alert-bar-video" id="pre-data_laenge_video">
-        <input name="MinutenProVideo" id="data_laenge_video" class="amount-video-bar alert-bar_video" type="range" min="0.5" max="90" value="0" step="0.5"/ onclick="alertoffdatavideo()">
+        <input name="MinutenProVideo" id="data_laenge_video" class="amount-video-bar alert-bar_video" type="range" min="0.5" max="90" value="0" step="0.5"/ onclick="alertoffdatavideo()" ontouchstart="alertoffdatavideo()">
     </div>
 
 <!-- Genre-Select -->
@@ -232,14 +232,14 @@
 
 <!-- Time-Select -->
     <div class="time-select hide pre-alert-bar-time" id="pre-data_zeit">
-        <input name="Zeitaufwand" id="data_zeit" class="amount-time-bar alert-bar_time" type="range" min="0.5" max="100" value="0" step="0.5" onclick="alertoffdatatime()"/>
+        <input name="Zeitaufwand" id="data_zeit" class="amount-time-bar alert-bar_time" type="range" min="0.5" max="100" value="0" step="0.5" onclick="alertoffdatatime()" ontouchstart="alertoffdatatime()"/>
     </div>
 
 	<div class="break"></div>
     <div class="banner-left-2 zbanner-left hide" id="banner-left-2">Deine Arbeitssituation:</div><div id="banner-left-triangle" class="banner-left-shadow hide"></div>
 
 <!-- Position-Select -->
-    <input name=cheforvolo id="data_position" class="position-select hide alert" list="position" placeholder="Als was arbeitest du?" type="text" onclick="alertoffdataposition()"/>
+    <input name=cheforvolo id="data_position" class="position-select hide alert" list="position" placeholder="Als was arbeitest du?" type="text" onclick="alertoffdataposition()" ontouchstart="alertoffdataposition()"/>
     <datalist id="position">
         <option value="Chefredakteur">
         <option value="Ressortleiter">
@@ -259,8 +259,8 @@
     </div>
 
 <!-- Happiness-Select -->
-    <div class="happiness-select hide pre-alert-bar-happiness" id="pre-data_athmosphaere" onclick="alertoffdatahappiness()">
-        <input name="happiness" id="data_athmosphaere" class="happiness-bar alert-bar_happiness" type="range" min="1" max="10" value="0"/>
+    <div class="happiness-select hide pre-alert-bar-happiness" id="pre-data_athmosphaere">
+        <input name="happiness" id="data_athmosphaere" class="happiness-bar alert-bar_happiness" type="range" min="1" max="10" value="0" onclick="alertoffdatahappiness()" ontouchstart="alertoffdatahappiness()"/>
     </div>
 
 	<div class="break"></div>
