@@ -8,6 +8,11 @@
 	src: url("../font/InknutAntiqua-Bold.ttf"); 
 }
 
+@font-face {
+	font-family: "InknutAntiqua-Bold"; 
+	src: url("../font/InknutAntiqua-Bold.eot"); 
+}
+
 
 @font-face {
 	font-family: "InknutAntiqua-ExtraBold"; 
@@ -83,6 +88,11 @@
 }
 
 @font-face {
+	font-family: "OpenSans-Regular"; 
+	src: url("../font/OpenSans-Regular.eot"); 
+}
+
+@font-face {
 	font-family: "OpenSans-SemiBold"; 
 	src: url("../font/OpenSans-SemiBold.ttf"); 
 }
@@ -91,3 +101,31 @@
 	font-family: "OpenSans-SemiBoldItalic"; 
 	src: url("../font/OpenSans-SemiBoldItalicd.ttf"); 
 }
+
+
+@font-face {
+	font-family: "InknutAntiqua-Bold"; 
+	src: url("../font/InknutAntiqua-Bold.eot"); 
+}
+
+/*
+@font-face {
+  font-family: 'InknutAntiqua-Bold';
+  src: url('../font/InknutAntiqua-Bold.eot'); 
+  src: url('../font/InknutAntiqua-Bold.eot?#iefix') format('embedded-opentype'), 
+	   url('../font/InknutAntiqua-Bold.woff2') format('woff2'), 
+       url('../font/InknutAntiqua-Bold.woff') format('woff'), 
+       url('../font/InknutAntiqua-Bold.ttf')  format('truetype'),
+       url('../font/InknutAntiqua-Bold.svg#svgFontName') format('svg'); 
+}
+
+@font-face {
+  font-family: 'OpenSans-Regular';
+  src: url('../font/OpenSans-Regular.eot'); 
+  src: url('../font/OpenSans-Regular.eot?#iefix') format('embedded-opentype'), 
+	   url('../font/OpenSans-Regular.woff2') format('woff2'), 
+       url('../font/OpenSans-Regular.woff') format('woff'), 
+       url('../font/OpenSans-Regular.ttf')  format('truetype'), 
+       url('../font/OpenSans-Regular.svg#svgFontName') format('svg'); 
+}
+*/

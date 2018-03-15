@@ -60,7 +60,7 @@
 <!-- Parallax -->
     <div class="panel">
 		<h1 class="head-title">Was verdienen Journalisten?</h1>
-		<h2 class="head-subtitle-1">Die JourMoney-Datenbank gibt die Antwort: Hier spenden Journalisten Gehaltsdaten und erfahren, was ihre Kollegen verdienen.</h2>
+		<h2 class="head-subtitle-1">Die JourMoney-Datenbank gibt die Antwort: Hier spenden Journalisten Lohndaten und erfahren, was ihre Kollegen verdienen.</h2>
 		<h2 class="head-subtitle-2">Bisher spendeten Journalisten 1.245 Daten über 134 Medien.</h2>
 		<a href="#banderole" id="machmit" class="smooth clear-absolute"><h3 class="head-action">Mach mit!</h3></a>
 		<div class="head-box-1"></div>
@@ -117,7 +117,7 @@
 	<div class="safe-box">
 		<a target="_blank" href="#"><div class="safe-1 safetile"></div></a>
 		<a target="_blank" href="#"><div class="safe-2 safetile"></div></a>
-		<a target="_blank" href="#"><div class="safe-3 safetile"></div></a>
+		<a target="_blank" href="#"><div class="safe-3 safetile-gross"></div></a>
 		<a target="_blank" href="#"><div class="safe-4 safetile"></div></a>
 		<a target="_blank" href="#"><div class="safe-5 safetile"></div></a>
 	</div>
@@ -128,7 +128,7 @@
     <form action="{% url 'honoradar:senddata' %}" method="post" name="firstbox" id="giv-form">
       {% csrf_token %}
 	
-	<div class="banner-left-1">Spende deine Gehaltsdaten!</div><div class="banner-left-shadow"></div>
+	<div class="banner-left-1">Spende deine Lohndaten!</div><div class="banner-left-shadow"></div>
 
 <!-- Medium-Select -->	
     <input name="mediumname" id="data_medium" class="media-select alert" list="medium" placeholder="Für welches Medium arbeitest du?" type="text" onclick="alertoffdatamedium()" ontouchstart="alertoffdatamedium()"/>
@@ -198,7 +198,7 @@
 <!-- Text-Amount-Select -->
     <div class="text-amount-select hide pre-alert-bar-text" id="pre-data_laenge_text">
 		<style id="style-text" scoped></style>
-        <input name="ZeichenProArtikel" id="data_laenge_text" class="range amount-text-bar alert-bar_text" type="range" min="0" max="10000" value="0" step="100"/ onmousedown="alertoffdatatext()" ontouchstart="alertoffdatatext()">
+        <input name="ZeichenProArtikel" id="data_laenge_text" class="range amount-text-bar alert-bar_text" type="range" min="0" max="20000" value="0" step="100"/ onmousedown="alertoffdatatext()" ontouchstart="alertoffdatatext()">
 		<p id="outputtext" class="output">0</p> 
 	</div>
 
@@ -260,6 +260,7 @@
         <option value="Chef vom Dienst (CvD)">
         <option value="Redakteur">
         <option value="Voluntär">
+        <option value="Praktikant">
     </datalist>
 
 <!-- Experience-Select -->
@@ -273,7 +274,7 @@
     </div>
 	
 <!-- Happiness-Select-->
-    <div class="happiness-select pre-alert-bar-happiness" id="pre-data_athmosphaere">
+    <div class="happiness-select hide pre-alert-bar-happiness" id="pre-data_athmosphaere">
 	<style id="style-happiness" scoped></style>
 		<input name="happiness" id="data_athmosphaere" class="range happiness-bar alert-bar_happiness" type="range" min="0" max="10" value="0" onmousedown="alertoffdatahappiness()" ontouchstart="alertoffdatahappiness()" ontouchmove="alertoffdatahappiness()"/>
 		<p id="outputhappiness" class="output">0</p>
@@ -341,7 +342,7 @@
 
 <!-- Grafic-Box -->
 	<div class="break" id="break-2"></div>
-    <div class="result show" id="result">
+    <div class="result hide" id="result">
     <div class="banner-left-3">Gehalts- und Lohnreports</div><div class="banner-left-shadow"></div>
 	
 <!-- Infografiken - Text -->	
