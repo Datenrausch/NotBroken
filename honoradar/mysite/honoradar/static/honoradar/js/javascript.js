@@ -1,5 +1,106 @@
 
+var css = '.range::-webkit-slider-runnable-track{background:linear-gradient(90deg,#3498db {value}%,#ecf0f1 0)}'
+var outputhappiness = document.getElementById('outputhappiness')
+var inputhappiness = document.getElementById('data_athmosphaere')
+var stylehappiness = document.getElementById('style-happiness')
 
+var outputtime = document.getElementById('outputtime')
+var inputtime = document.getElementById('data_zeit')
+var styletime = document.getElementById('style-time')
+
+var outputtext = document.getElementById('outputtext')
+var inputtext = document.getElementById('data_laenge_text')
+var styletext = document.getElementById('style-text')
+
+var outputaudio = document.getElementById('outputaudio')
+var inputaudio = document.getElementById('data_laenge_audio')
+var styleaudio = document.getElementById('style-audio')
+
+var outputvideo = document.getElementById('outputvideo')
+var inputvideo = document.getElementById('data_laenge_video')
+var stylevideo = document.getElementById('style-audio')
+
+var outputhourweek = document.getElementById('outputhourweek')
+var inputhourweek = document.getElementById('data_stunden_woche')
+var stylehourweek = document.getElementById('style-hour-week')
+
+var outputdaymonth = document.getElementById('outputdaymonth')
+var inputdaymonth = document.getElementById('data_tag_monat')
+var styledaymonth = document.getElementById('style-day-month')
+
+var outputhourday = document.getElementById('outputhourday')
+var inputhourday = document.getElementById('data_stunden_tag')
+var stylehourday = document.getElementById('style-hour-day')
+
+inputhappiness.addEventListener('input', rangehappiness)
+inputhappiness.addEventListener('change', rangehappiness)
+
+inputtime.addEventListener('input', rangetime)
+inputtime.addEventListener('change', rangetime)
+
+inputtext.addEventListener('input', rangetext)
+inputtext.addEventListener('change', rangetext)
+
+inputaudio.addEventListener('input', rangeaudio)
+inputaudio.addEventListener('change', rangeaudio)
+
+inputvideo.addEventListener('input', rangevideo)
+inputvideo.addEventListener('change', rangevideo)
+
+inputhourweek.addEventListener('input', rangehourweek)
+inputhourweek.addEventListener('change', rangehourweek)
+
+inputdaymonth.addEventListener('input', rangedaymonth)
+inputdaymonth.addEventListener('change', rangedaymonth)
+
+inputhourday.addEventListener('input', rangehourday)
+inputhourday.addEventListener('change', rangehourday)
+
+function rangehappiness(event) {
+  outputhappiness.textContent = event.target.value
+  stylehappiness.textContent = css.replace('{value}', Math.round(event.target.value / 3.6))
+}
+
+function rangetime(event) {
+  outputtime.textContent = event.target.value
+  styletime.textContent = css.replace('{value}', Math.round(event.target.value / 3.6))
+}
+
+function rangetext(event) {
+  outputtext.textContent = event.target.value
+  styletext.textContent = css.replace('{value}', Math.round(event.target.value / 3.6))
+}
+
+function rangeaudio(event) {
+  outputaudio.textContent = event.target.value
+  styleaudio.textContent = css.replace('{value}', Math.round(event.target.value / 3.6))
+}
+
+function rangevideo(event) {
+  outputvideo.textContent = event.target.value
+  stylevideo.textContent = css.replace('{value}', Math.round(event.target.value / 3.6))
+}
+
+function rangehourweek(event) {
+  outputhourweek.textContent = event.target.value
+  stylevideo.textContent = css.replace('{value}', Math.round(event.target.value / 3.6))
+}
+
+function rangedaymonth(event) {
+  outputdaymonth.textContent = event.target.value
+  stylevideo.textContent = css.replace('{value}', Math.round(event.target.value / 3.6))
+}
+
+function rangehourday(event) {
+  outputhourday.textContent = event.target.value
+  stylevideo.textContent = css.replace('{value}', Math.round(event.target.value / 3.6))
+}
+
+
+
+
+
+/*
 window.onload=function(){
 document.querySelector('#data_stunden_woche').addEventListener('input', function rangeChange() {
   this.setAttribute('value', this.value);
@@ -29,6 +130,9 @@ document.querySelector('#data_zusammenarbeit').addEventListener('input', functio
   this.setAttribute('value', this.value);
 });
 }
+
+*/
+
 
 
 
@@ -520,21 +624,15 @@ function alertoffdatatext() {
     element.classList.remove("pre-alert-bar-text");
 	
 	var element = document.getElementById("data_laenge_text");
-    element.classList.remove("alert-text");
+    element.classList.remove("alert-bar_text");
 }
-
-
-
-
-
-
 
 function alertoffdataaudio() {
 	var element = document.getElementById("pre-data_laenge_audio");
     element.classList.remove("pre-alert-bar-audio");
 	
 	var element = document.getElementById("data_laenge_audio");
-    element.classList.remove("alert-audio");
+    element.classList.remove("alert-bar_audio");
 }
 
 function alertoffdatavideo() {
@@ -542,11 +640,8 @@ function alertoffdatavideo() {
     element.classList.remove("pre-alert-bar-video");
 	
 	var element = document.getElementById("data_laenge_video");
-    element.classList.remove("alert-video");
+    element.classList.remove("alert-bar_video");
 }
-
-
-
 
 
 $('.smooth').on('click', function(e){

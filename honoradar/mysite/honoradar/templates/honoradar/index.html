@@ -159,20 +159,26 @@
   	<input  name="gehalt" id="data_gehalt" class="loan-select hide" list="gehalt" placeholder="Gehalt pro Monat?" type="number"	min="0" oninput="validity.valid||(value='');" inputmode="numeric" onclick="alertoffdataloan()" ontouchstart="alertoffdataloan()"/>
 
 <!-- Hour-Week-Select -->
-    <div class="hour-week-select hide pre-alert-bar-hour-week" id="pre-data_stunden_woche" onclick="alertoffdatahourweek()" ontouchstart="alertoffdatahourweek()">
-    	<input id="data_stunden_woche" name="arbeitszeit" class="hour-week-bar alert-bar_stunden_woche" type="range" min="1" max="50" value="0"/>
+    <div class="hour-week-select hide pre-alert-bar-hour-week" id="pre-data_stunden_woche" onmousedown="alertoffdatahourweek()" ontouchstart="alertoffdatahourweek()">
+		<style id="style-hour-week" scoped></style>
+    	<input id="data_stunden_woche" name="arbeitszeit" class="hour-week-bar alert-bar_stunden_woche" type="range" min="0" max="50" value="0"/>
+		<p id="outputhourweek" class="output">0</p> 
     </div>
     <div class="break hide" id="break-1"></div>
 
 <!-- Day-Month-Select -->
     <div class="day-month-select hide pre-alert-bar-day-month" id="pre-data_tag_monat">
-      	<input name="tageProMonat" id="data_tag_monat" class="day-month-bar alert-bar_tag_monat" type="range" min="1" max="30" value="0" onclick="alertoffdatadaymonth()" ontouchstart="alertoffdatadaymonth()"/>
-    </div>
+		<style id="style-day-month" scoped></style>
+      	<input name="tageProMonat" id="data_tag_monat" class="day-month-bar alert-bar_tag_monat" type="range" min="0" max="30" value="0" onmousedown="alertoffdatadaymonth()" ontouchstart="alertoffdatadaymonth()"/>
+		<p id="outputdaymonth" class="output">0</p> 
+	</div>
 
 <!-- Hour-Day-Select -->
-    <div class="hour-day-select hide pre-alert-bar-hour-day" id="pre-data_stunden_tag">
-        <input name="stundenProTag" id="data_stunden_tag" class="hour-day-bar alert-bar_stunde_tag" type="range" min="1" max="24" value="0" onclick="alertoffdatahourday()" ontouchstart="alertoffdatahourday()"/>
-    </div>
+    <div class="hour-day-select hide pre-alert-bar-hour-day" id="pre-data_stunden_tag">		
+		<style id="style-hour-day" scoped></style>
+        <input name="stundenProTag" id="data_stunden_tag" class="hour-day-bar alert-bar_stunde_tag" type="range" min="0" max="24" value="0" onmousedown="alertoffdatahourday()" ontouchstart="alertoffdatahourday()"/>
+		<p id="outputhourday" class="output">0</p> 
+	</div>
 
 <!-- Freelancer-Loan-Select -->
     <input name="lohnProAuftrag" id="data_honorar" class="loan-select hide" list="gehalt" placeholder="Lohn für den Auftrag?" type="number"	min="0" oninput="validity.valid||(value='');" inputmode="numeric" />
@@ -191,18 +197,24 @@
 
 <!-- Text-Amount-Select -->
     <div class="text-amount-select hide pre-alert-bar-text" id="pre-data_laenge_text">
-        <input name="ZeichenProArtikel" id="data_laenge_text" class="amount-text-bar alert-bar_text" type="range" min="100" max="10000" value="0" step="100"/ onclick="alertoffdatatext()" ontouchstart="alertoffdatatext()">
-    </div>
+		<style id="style-text" scoped></style>
+        <input name="ZeichenProArtikel" id="data_laenge_text" class="range amount-text-bar alert-bar_text" type="range" min="0" max="10000" value="0" step="100"/ onmousedown="alertoffdatatext()" ontouchstart="alertoffdatatext()">
+		<p id="outputtext" class="output">0</p> 
+	</div>
 
 <!-- Audio-Amount-Select -->
     <div class="audio-amount-select hide pre-alert-bar-audio" id="pre-data_laenge_audio">
-		<input name="MinutenProAudio" id="data_laenge_audio" class="amount-audio-bar alert-bar_audio" type="range" min="0.5" max="90" value="0" step="0.5"/ onclick="alertoffdataaudio()" ontouchstart="alertoffdataaudio()">
-    </div>
+		<style id="style-audio" scoped></style>
+		<input name="MinutenProAudio" id="data_laenge_audio" class="range amount-audio-bar alert-bar_audio" type="range" min="0" max="90" value="0" step="0.5"/ onmousedown="alertoffdataaudio()" ontouchstart="alertoffdataaudio()">
+		<p id="outputaudio" class="output">0</p>   
+	</div>
 
 <!-- Video-Amount-Select -->
     <div class="video-amount-select hide pre-alert-bar-video" id="pre-data_laenge_video">
-        <input name="MinutenProVideo" id="data_laenge_video" class="amount-video-bar alert-bar_video" type="range" min="0.5" max="90" value="0" step="0.5"/ onclick="alertoffdatavideo()" ontouchstart="alertoffdatavideo()">
-    </div>
+	<style id="style-video" scoped></style>
+        <input name="MinutenProVideo" id="data_laenge_video" class="range amount-video-bar alert-bar_video" type="range" min="0" max="90" value="0" step="0.5"/ onmousedown="alertoffdatavideo()" ontouchstart="alertoffdatavideo()">
+	<p id="outputvideo" class="output">0</p>
+	</div>
 
 <!-- Genre-Select -->
     <input name="ProductType" id="data_genre" class="genre-select hide" list="genre" placeholder="Welches Genre?" type="text"/>
@@ -232,14 +244,16 @@
 
 <!-- Time-Select -->
     <div class="time-select hide pre-alert-bar-time" id="pre-data_zeit">
-        <input name="Zeitaufwand" id="data_zeit" class="amount-time-bar alert-bar_time" type="range" min="0.5" max="100" value="0" step="0.5" onclick="alertoffdatatime()" ontouchstart="alertoffdatatime()"/>
-    </div>
+		<style id="style-time" scoped></style>
+        <input name="Zeitaufwand" id="data_zeit" class="range amount-time-bar alert-bar_time" type="range" min="0" max="100" value="0" step="0.5" onmousedown="alertoffdatatime()" ontouchstart="alertoffdatatime()"/>
+		<p id="outputtime" class="output">0</p>
+	</div>		
 
 	<div class="break"></div>
     <div class="banner-left-2 zbanner-left hide" id="banner-left-2">Deine Arbeitssituation:</div><div id="banner-left-triangle" class="banner-left-shadow hide"></div>
 
 <!-- Position-Select -->
-    <input name=cheforvolo id="data_position" class="position-select hide alert" list="position" placeholder="Als was arbeitest du?" type="text" onclick="alertoffdataposition()" ontouchstart="alertoffdataposition()"/>
+    <input name="cheforvolo" id="data_position" class="position-select hide alert" list="position" placeholder="Als was arbeitest du?" type="text" onmousedown="alertoffdataposition()" ontouchstart="alertoffdataposition()"/>
     <datalist id="position">
         <option value="Chefredakteur">
         <option value="Ressortleiter">
@@ -257,12 +271,13 @@
         <input name="erfahrung" type="radio" id="data_erfahrung_jahr_5" name="switch" value="5"/>
         <label for="data_erfahrung_jahr_5">5 Jahre</label>
     </div>
-
-<!-- Happiness-Select -->
-    <div class="happiness-select hide pre-alert-bar-happiness" id="pre-data_athmosphaere">
-        <input name="happiness" id="data_athmosphaere" class="happiness-bar alert-bar_happiness" type="range" min="1" max="10" value="0" onclick="alertoffdatahappiness()" ontouchstart="alertoffdatahappiness()"/>
-    </div>
-
+	
+<!-- Happiness-Select-->
+    <div class="happiness-select pre-alert-bar-happiness" id="pre-data_athmosphaere">
+	<style id="style-happiness" scoped></style>
+		<input name="happiness" id="data_athmosphaere" class="range happiness-bar alert-bar_happiness" type="range" min="0" max="10" value="0" onmousedown="alertoffdatahappiness()" ontouchstart="alertoffdatahappiness()" ontouchmove="alertoffdatahappiness()"/>
+		<p id="outputhappiness" class="output">0</p>
+	</div>
 	<div class="break"></div>
 
 <!-- Comment-Select -->
@@ -331,8 +346,6 @@
 	
 <!-- Infografiken - Text -->	
 	<div class="result-text">Otterfell ist sehr gut für Pelzmäntel geeignet.</div>
-	
-	
     </div>
 	
 <!-- Social Share -->
@@ -415,6 +428,8 @@
     <script src="{% static 'honoradar/js/javascript-new.js'%}"></script>
     <script src="{% static 'honoradar/navbar/js/jquery-2.1.1.js'%}"></script>
     <script src="{% static 'honoradar/navbar/js/main.js'%}"></script>
+	
+
 </body>
 
 </html>
