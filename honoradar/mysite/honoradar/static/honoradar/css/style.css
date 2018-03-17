@@ -667,9 +667,8 @@ margin-top: 90px !important;
   background-size: 700px ;
   background-color: #ffffff;  
   background-repeat: no-repeat;
-  background-image: url(../image/Freischreiberlogo.png);
+  background-image: url("../image/Freischreiberlogo.png");
   background-position: 50% 30%;
-  background-attachment: fixed;
   justify-content: left;
   position: relative;
   z-index: 2;
@@ -689,7 +688,9 @@ margin-top: 90px !important;
   -webkit-transition-duration: 0.5s;
   -moz-transition-duration: 0.5s;
    transition-duration: 0.5s; 
+    background-attachment: fixed;
 }
+
 
 .freischreiber-box:hover {
 	cursor: pointer;
