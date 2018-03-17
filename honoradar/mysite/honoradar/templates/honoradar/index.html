@@ -126,7 +126,7 @@
     <div class="giv-get" id="giv-get">
     <div class="giv">
 
-    <form action="{% url 'honoradar:senddata' %}" method="post" name="firstbox" id="giv-form">
+    <form action="{% url 'honoradar:senddata' %}" method="post" data-url="{% url 'honoradar:senddata' %}" name="firstbox" id="giv-form">
       {% csrf_token %}
 
 	<div class="banner-left-1">Spende deine Gehaltdaten!</div><div class="banner-left-shadow"></div>
@@ -336,13 +336,18 @@
     </div>
 
 <!-- Grafic-Box -->
-	<div class="break" id="break-2"></div>
-    <div class="result {% if medium %} show {% else %} hide {% endif %}" id="result">
-      <span class="news-title">    {% if medium %}{{ medium.mediumname }} {% endif %}</span>
 
-    <div class="banner-left-3">Gehalts- und Lohnreports</div><div class="banner-left-shadow"></div>
-    </div>
+    <!-- Grafic-Box -->
+    	<div class="break" id="break-2"></div>
+      <div class="result {% if medium %} show {% else %} hide {% endif %}" id="result">
+        <div class="banner-left-3">Gehalts- und Lohnreports</div><div class="banner-left-shadow"></div>
 
+        <!-- Infografiken - Text -->
+        <div class="result-text"> {% if medium %}{{ medium.mediumname }} {% endif %}</div>
+        <div class="result-text"> {% if avghappiness %}{{ avghappiness}} {% endif %}</div>
+
+
+      </div>
 <!-- Social Share -->
 	<div class="social-box">
 		<a target="_blank" href="https://twitter.com/intent/tweet?url=https://wasjournalistenverdienen.de&text=Was%20verdienen%20Journalisten?%20Die%20neue%20interaktive%20Datenbank%20der%20Freischreiber:"><div class="social-1 socialtile"></div></a>
@@ -414,6 +419,8 @@
 
 
     <!-- Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
     <script src="{% static 'honoradar/navbar/js/modernizr.js'%}"></script>
     <script src="{% static 'honoradar/html5shiv.js'%}"></script>
     <script src="{% static 'honoradar/lity/vendor/jquery.js'%}"></script>
@@ -423,6 +430,65 @@
     <script src="{% static 'honoradar/js/javascript-new.js'%}"></script>
     <script src="{% static 'honoradar/navbar/js/jquery-2.1.1.js'%}"></script>
     <script src="{% static 'honoradar/navbar/js/main.js'%}"></script>
+    <!-- jQuery (required for this Ajax tutorial) -->
+    <script> function getCookie(name) {
+          var cookieValue = null;
+          if (document.cookie && document.cookie !== '') {
+              var cookies = document.cookie.split(';');
+              for (var i = 0; i < cookies.length; i++) {
+                  var cookie = jQuery.trim(cookies[i]);
+                  // Does this cookie string begin with the name we want?
+                  if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                      cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                      break;
+                  }
+              }
+          }
+          return cookieValue;
+      }
+
+      var csrftoken = getCookie('csrftoken');
+
+      function csrfSafeMethod(method) {
+          // these HTTP methods do not require CSRF protection
+          return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+      }
+      $.ajaxSetup({
+          beforeSend: function(xhr, settings) {
+              if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                  xhr.setRequestHeader("X-CSRFToken", csrftoken);
+              }
+          }
+      });
+    </script>
+    {%block javascript2 %}
+    <script>
+    $(document).ready(function(){
+        var $myForm = $("#giv-form")
+        $myForm.submit(function(event){
+            event.preventDefault()
+            var $formData = $(this).serialize()
+            console.log($formData)
+            var $name = $myForm.attr('name')
+            console.log($name)
+            var $url = $myForm.attr('data-url')
+            console.log($url)
+            $.ajax({
+            method: "POST",
+            url: $url,
+            data: $formData,
+
+
+
+        })
+
+        })
+
+    })
+    </script>
+    {%endblock javascript2 %}
+
+
 </body>
 
 </html>

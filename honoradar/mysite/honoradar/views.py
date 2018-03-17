@@ -9,361 +9,371 @@ from django.template.defaultfilters import slugify
 import datetime
 from .models import *
 from django.db.models import *
+from django.http import JsonResponse
 
 #this entire view handles the process of sending data, checking it and saving it in the backend
 def senddata(request):
     #this variable checks if all compulsory fields are filled and hence, a new instance should be created in the backend
-    sanitycheck=0
-
-    if request.method == 'POST':
-        print("senddata")
-        print("Messages here")
-        for i in list(messages.get_messages(request)):
-            print(i)
-
-        #we get the three categories that all entries have in common regardless of
-        #freelance, pauschalist or employed
-        MediumName=(request.POST.get('MediumName'))
-        FreeOrEmployed=(request.POST.get('FreeOrEmployed'))
-        Comment=(request.POST.get('Comment'))
-        AGB=(request.POST.get('AGB'))
+    if request.is_ajax():
+        print("this is ajax")
         print(request.POST)
 
+        data = {
+            'message': "Successfully submitted form data."
+        }
+        return JsonResponse(data)
+    else:
 
-        # if the mediumname or the AGB is not given, we set the sanitycheck to 1
-        #and create a warning message that will pop-up
-        if MediumName:
-            pass
-        else:
-            print("No Mediumname!!")
-            sanitycheck=1
-            messages.info(request, 'Medium')
+        sanitycheck=0
 
-        if AGB=="on":
-            pass
-        else:
-            print("No AGB!!")
-            sanitycheck=1
-            messages.info(request, 'AGB fehlen')
+        if request.method == 'POST':
+            print("senddata")
+            print(request.POST)
 
-
-        #CHECKING WHETHER THERE ARE ALREADY ENTIRES WITH THIS MEDIUM
-        try:
-            mediumobj=Medium.objects.get(
-            Q(mediumname=MediumName),
-            Q(freeoremployed=FreeOrEmployed)
-            )
-            print("Found it")
-            print(mediumobj)
+            #we get the three categories that all entries have in common regardless of
+            #freelance, pauschalist or employed
+            MediumName=(request.POST.get('MediumName'))
+            FreeOrEmployed=(request.POST.get('FreeOrEmployed'))
+            Comment=(request.POST.get('Comment'))
+            AGB=(request.POST.get('AGB'))
+            print(request.POST)
 
 
+            # if the mediumname or the AGB is not given, we set the sanitycheck to 1
+            #and create a warning message that will pop-up
+            if MediumName:
+                pass
+            else:
+                print("No Mediumname!!")
+                sanitycheck=1
+                messages.info(request, 'Medium')
 
-            #CHECKING FOR FEST, PAUSCHAL, FREI
-            #if the criteria for free or employed is "fest",
-            #we get the data relevant for this case
-            if FreeOrEmployed=="fest":
-                SalaryPerMonthEmpMix=(request.POST.get('SalaryPerMonthEmpMix'))
-                Happiness=(request.POST.get("Happiness"))
-                HoursPerWeekEmp=(request.POST.get("HoursPerWeekEmp"))
-                JobPosition=(request.POST.get("JobPosition"))
-                Experience=(request.POST.get("ExperienceEmplMix"))
-                print(request.POST)
-
-                #check the compulsory three of them and send warning if they are missing
-                if SalaryPerMonthEmpMix:
-                    pass
-                else:
-                    sanitycheck=1
-                    messages.info(request, 'Angabe zum Gehalt')
+            if AGB=="on":
+                pass
+            else:
+                print("No AGB!!")
+                sanitycheck=1
+                messages.info(request, 'AGB fehlen')
 
 
-                if float(HoursPerWeekEmp) != 1:
-                    pass
-                else:
-                    sanitycheck=1
-                    messages.info(request, 'Angabe zur Arbeitszeit')
-
-                #if all these data sanitychecks are okay, we bind the input to an existing medium
-                if(sanitycheck==0):
-                    d = mediumobj.datacollection_set.create(
-                    SalaryPerMonthEmpMix=float(SalaryPerMonthEmpMix),
-                    Happiness=float(Happiness),
-                    HoursPerWeekEmp=float(HoursPerWeekEmp),
-                    JobPosition=JobPosition,
-                    Experience=Experience,
-                    Comment=Comment
-                    )
-                else:
-                    pass
-
-            #if the criteria for free or employed is "pauschal",
-            #we get the data relevant for this case
-            if FreeOrEmployed=="pauschal":
-                SalaryPerMonthEmpMix=(request.POST.get('SalaryPerMonthEmpMix'))
-                DaysPerMonthMix=(request.POST.get("DaysPerMonthMix"))
-                HoursPerDayMix=(request.POST.get("HoursPerDayMix"))
-                JobPosition=(request.POST.get("JobPosition"))
-                Experience=(request.POST.get("ExperienceEmplMix"))
-                Happiness=(request.POST.get("Happiness"))
-                Comment=(request.POST.get("Comment"))
-
-                #check the compulsory four of them and send warning if they are missing
-                if SalaryPerMonthEmpMix:
-                    pass
-                else:
-                    sanitycheck=1
-                    messages.info(request, 'Angabe zum Gehalt')
+            #CHECKING WHETHER THERE ARE ALREADY ENTIRES WITH THIS MEDIUM
+            try:
+                mediumobj=Medium.objects.get(
+                Q(mediumname=MediumName),
+                Q(freeoremployed=FreeOrEmployed)
+                )
+                print("Found it")
+                print(mediumobj)
 
 
-                if float(DaysPerMonthMix) != 1:
-                    pass
-                else:
-                    sanitycheck=1
-                    messages.info(request, 'Angabe zu Tagen pro Monat')
 
-                if float(HoursPerDayMix) != 1:
-                    pass
-                else:
-                    sanitycheck=1
-                    messages.info(request, 'Angabe zu Stunden pro Tag')
+                #CHECKING FOR FEST, PAUSCHAL, FREI
+                #if the criteria for free or employed is "fest",
+                #we get the data relevant for this case
+                if FreeOrEmployed=="fest":
+                    SalaryPerMonthEmpMix=(request.POST.get('SalaryPerMonthEmpMix'))
+                    Happiness=(request.POST.get("Happiness"))
+                    HoursPerWeekEmp=(request.POST.get("HoursPerWeekEmp"))
+                    JobPosition=(request.POST.get("JobPosition"))
+                    Experience=(request.POST.get("ExperienceEmplMix"))
+                    print(request.POST)
 
-                #if all these data sanitychecks are okay, we bind the input to an existing medium
-                if(sanitycheck==0):
-                    d = mediumobj.datacollection_set.create(
+                    #check the compulsory three of them and send warning if they are missing
+                    if SalaryPerMonthEmpMix:
+                        pass
+                    else:
+                        sanitycheck=1
+                        messages.info(request, 'Angabe zum Gehalt')
+
+
+                    if float(HoursPerWeekEmp) != 1:
+                        pass
+                    else:
+                        sanitycheck=1
+                        messages.info(request, 'Angabe zur Arbeitszeit')
+
+                    #if all these data sanitychecks are okay, we bind the input to an existing medium
+                    if(sanitycheck==0):
+                        d = mediumobj.datacollection_set.create(
                         SalaryPerMonthEmpMix=float(SalaryPerMonthEmpMix),
-                        DaysPerMonthMix=float(DaysPerMonthMix),
-                        HoursPerDayMix=float(HoursPerDayMix),
+                        Happiness=float(Happiness),
+                        HoursPerWeekEmp=float(HoursPerWeekEmp),
                         JobPosition=JobPosition,
+                        Experience=Experience,
+                        Comment=Comment
+                        )
+                    else:
+                        pass
+
+                #if the criteria for free or employed is "pauschal",
+                #we get the data relevant for this case
+                if FreeOrEmployed=="pauschal":
+                    SalaryPerMonthEmpMix=(request.POST.get('SalaryPerMonthEmpMix'))
+                    DaysPerMonthMix=(request.POST.get("DaysPerMonthMix"))
+                    HoursPerDayMix=(request.POST.get("HoursPerDayMix"))
+                    JobPosition=(request.POST.get("JobPosition"))
+                    Experience=(request.POST.get("ExperienceEmplMix"))
+                    Happiness=(request.POST.get("Happiness"))
+                    Comment=(request.POST.get("Comment"))
+
+                    #check the compulsory four of them and send warning if they are missing
+                    if SalaryPerMonthEmpMix:
+                        pass
+                    else:
+                        sanitycheck=1
+                        messages.info(request, 'Angabe zum Gehalt')
+
+
+                    if float(DaysPerMonthMix) != 1:
+                        pass
+                    else:
+                        sanitycheck=1
+                        messages.info(request, 'Angabe zu Tagen pro Monat')
+
+                    if float(HoursPerDayMix) != 1:
+                        pass
+                    else:
+                        sanitycheck=1
+                        messages.info(request, 'Angabe zu Stunden pro Tag')
+
+                    #if all these data sanitychecks are okay, we bind the input to an existing medium
+                    if(sanitycheck==0):
+                        d = mediumobj.datacollection_set.create(
+                            SalaryPerMonthEmpMix=float(SalaryPerMonthEmpMix),
+                            DaysPerMonthMix=float(DaysPerMonthMix),
+                            HoursPerDayMix=float(HoursPerDayMix),
+                            JobPosition=JobPosition,
+                            Experience=Experience,
+                            Happiness=float(Happiness),
+                            Comment=Comment,
+                        )
+                    else:
+                        pass
+
+
+                if FreeOrEmployed=="frei":
+
+                    FeeFree=(request.POST.get('FeeFree'))
+                    VideoAudioTextFree=(request.POST.get("VideoAudioTextFree"))
+                    Genre=(request.POST.get("Genre"))
+                    AnalogDigitalFree=(request.POST.get("AnalogDigitalFree"))
+                    JobPosition=(request.POST.get("JobPosition"))
+                    HoursSpentFree=(request.POST.get("HoursSpentFree"))
+                    Experience=(request.POST.get("ExperienceEmplMix"))
+                    Happiness=(request.POST.get("Happiness"))
+                    Comment=(request.POST.get("Comment"))
+
+                    #check the compulsory four of them and send warning if they are missing
+                    if FeeFree:
+                        pass
+                    else:
+                        sanitycheck=1
+                        messages.info(request, 'Angabe zum Honorar')
+
+
+                    if float(HoursSpentFree) != 0.5:
+                        pass
+                    else:
+                        sanitycheck=1
+                        messages.info(request, 'Angabe zum Zeitaufwand')
+
+                    if VideoAudioTextFree:
+                        pass
+                    else:
+                        sanitycheck=1
+                        messages.info(request, 'Angabe zur Mediumsart fehlen')
+
+                    if VideoAudioTextFree == "video":
+                        if float(MinPerVideoFree) != 0.5:
+                            pass
+                        else:
+                            sanitycheck=1
+                            messages.info(request, 'Angabe zu Beitragsminuten fehlen')
+
+                    if VideoAudioTextFree == "audio":
+                        if float(MinPerVideoFree) != 0.5:
+                            pass
+                        else:
+                            sanitycheck=1
+                            messages.info(request, 'Angabe zu Beitragsminuten fehlen')
+
+                    if VideoAudioTextFree == "text":
+                        if float(CharPerArticleFree) != 100:
+                            pass
+                        else:
+                            sanitycheck=1
+                            messages.info(request, 'Angabe zur Anzahl an Zeichen fehlen')
+
+
+
+
+                    if(sanitycheck==0):
+                        d = mediumobj.datacollection_set.create(
+                        FeeFree=float(FeeFree),
+                        VideoAudioTextFree=VideoAudioTextFree,
+                        Genre=Genre,
+                        AnalogDigitalFree=AnalogDigitalFree,
+                        JobPosition=JobPosition,
+                        HoursSpentFree=float(HoursSpentFree),
                         Experience=Experience,
                         Happiness=float(Happiness),
                         Comment=Comment,
-                    )
-                else:
-                    pass
+                        )
 
+            except Medium.DoesNotExist:
 
-            if FreeOrEmployed=="frei":
+                if FreeOrEmployed=="fest":
+                    SalaryPerMonthEmpMix=(request.POST.get('SalaryPerMonthEmpMix'))
+                    Happiness=(request.POST.get("Happiness"))
+                    HoursPerWeekEmp=(request.POST.get("HoursPerWeekEmp"))
+                    JobPosition=(request.POST.get("JobPosition"))
+                    Experience=(request.POST.get("ExperienceEmplMix"))
+                    print(request.POST)
 
-                FeeFree=(request.POST.get('FeeFree'))
-                VideoAudioTextFree=(request.POST.get("VideoAudioTextFree"))
-                Genre=(request.POST.get("Genre"))
-                AnalogDigitalFree=(request.POST.get("AnalogDigitalFree"))
-                JobPosition=(request.POST.get("JobPosition"))
-                HoursSpentFree=(request.POST.get("HoursSpentFree"))
-                Experience=(request.POST.get("ExperienceEmplMix"))
-                Happiness=(request.POST.get("Happiness"))
-                Comment=(request.POST.get("Comment"))
-
-                #check the compulsory four of them and send warning if they are missing
-                if FeeFree:
-                    pass
-                else:
-                    sanitycheck=1
-                    messages.info(request, 'Angabe zum Honorar')
-
-
-                if float(HoursSpentFree) != 0.5:
-                    pass
-                else:
-                    sanitycheck=1
-                    messages.info(request, 'Angabe zum Zeitaufwand')
-
-                if VideoAudioTextFree:
-                    pass
-                else:
-                    sanitycheck=1
-                    messages.info(request, 'Angabe zur Mediumsart fehlen')
-
-                if VideoAudioTextFree == "video":
-                    if float(MinPerVideoFree) != 0.5:
+                    #check the compulsory three of them and send warning if they are missing
+                    if SalaryPerMonthEmpMix:
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zu Beitragsminuten fehlen')
+                        messages.info(request, 'Angabe zum Gehalt')
 
-                if VideoAudioTextFree == "audio":
-                    if float(MinPerVideoFree) != 0.5:
+
+                    #if all these data sanitychecks are okay, we bind the input to an existing medium
+                    if(sanitycheck==0):
+                        mediumobj = Medium(mediumname=MediumName, freeoremployed=FreeOrEmployed)
+                        mediumobj.save()
+                        d = mediumobj.datacollection_set.create(
+                        SalaryPerMonthEmpMix=float(SalaryPerMonthEmpMix),
+                        Happiness=float(Happiness),
+                        HoursPerWeekEmp=float(HoursPerWeek),
+                        JobPosition=JobPosition,
+                        Experience=Experience,
+                        Comment=Comment
+                        )
+
+
+
+                if FreeOrEmployed=="pauschal":
+                    SalaryPerMonthEmpMix=(request.POST.get('SalaryPerMonthEmpMix'))
+                    DaysPerMonthMix=(request.POST.get("DaysPerMonthMix"))
+                    HoursPerDayMix=(request.POST.get("HoursPerDayMix"))
+                    JobPosition=(request.POST.get("JobPosition"))
+                    Experience=(request.POST.get("ExperienceEmplMix"))
+                    Happiness=(request.POST.get("Happiness"))
+                    Comment=(request.POST.get("Comment"))
+                    #check the compulsory four of them and send warning if they are missing
+                    if SalaryPerMonthEmpMix:
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zu Beitragsminuten fehlen')
+                        messages.info(request, 'Angabe zum Gehalt')
 
-                if VideoAudioTextFree == "text":
-                    if float(CharPerArticleFree) != 100:
+
+                    if float(DaysPerMonthMix) != 1:
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zur Anzahl an Zeichen fehlen')
+                        messages.info(request, 'Angabe zu Tagen pro Monat')
 
-
-
-
-                if(sanitycheck==0):
-                    d = mediumobj.datacollection_set.create(
-                    FeeFree=float(FeeFree),
-                    VideoAudioTextFree=VideoAudioTextFree,
-                    Genre=Genre,
-                    AnalogDigitalFree=AnalogDigitalFree,
-                    JobPosition=JobPosition,
-                    HoursSpentFree=float(HoursSpentFree),
-                    Experience=Experience,
-                    Happiness=float(Happiness),
-                    Comment=Comment,
-                    )
-
-        except Medium.DoesNotExist:
-
-            if FreeOrEmployed=="fest":
-                SalaryPerMonthEmpMix=(request.POST.get('SalaryPerMonthEmpMix'))
-                Happiness=(request.POST.get("Happiness"))
-                HoursPerWeekEmp=(request.POST.get("HoursPerWeekEmp"))
-                JobPosition=(request.POST.get("JobPosition"))
-                Experience=(request.POST.get("ExperienceEmplMix"))
-                print(request.POST)
-
-                #check the compulsory three of them and send warning if they are missing
-                if SalaryPerMonthEmpMix:
-                    pass
-                else:
-                    sanitycheck=1
-                    messages.info(request, 'Angabe zum Gehalt')
-
-
-                #if all these data sanitychecks are okay, we bind the input to an existing medium
-                if(sanitycheck==0):
-                    mediumobj = Medium(mediumname=MediumName, freeoremployed=FreeOrEmployed)
-                    mediumobj.save()
-                    d = mediumobj.datacollection_set.create(
-                    SalaryPerMonthEmpMix=float(SalaryPerMonthEmpMix),
-                    Happiness=float(Happiness),
-                    HoursPerWeekEmp=float(HoursPerWeek),
-                    JobPosition=JobPosition,
-                    Experience=Experience,
-                    Comment=Comment
-                    )
-
-
-
-            if FreeOrEmployed=="pauschal":
-                SalaryPerMonthEmpMix=(request.POST.get('SalaryPerMonthEmpMix'))
-                DaysPerMonthMix=(request.POST.get("DaysPerMonthMix"))
-                HoursPerDayMix=(request.POST.get("HoursPerDayMix"))
-                JobPosition=(request.POST.get("JobPosition"))
-                Experience=(request.POST.get("ExperienceEmplMix"))
-                Happiness=(request.POST.get("Happiness"))
-                Comment=(request.POST.get("Comment"))
-                #check the compulsory four of them and send warning if they are missing
-                if SalaryPerMonthEmpMix:
-                    pass
-                else:
-                    sanitycheck=1
-                    messages.info(request, 'Angabe zum Gehalt')
-
-
-                if float(DaysPerMonthMix) != 1:
-                    pass
-                else:
-                    sanitycheck=1
-                    messages.info(request, 'Angabe zu Tagen pro Monat')
-
-                if float(HoursPerDayMix) != 1:
-                    pass
-                else:
-                    sanitycheck=1
-                    messages.info(request, 'Angabe zu Stunden pro Tag')
-
-                if(sanitycheck==0):
-
-                    mediumobj = Medium(mediumname=MediumName, freeoremployed=FreeOrEmployed)
-                    mediumobj.save()
-
-                    d = mediumobj.datacollection_set.create(
-                    SalaryPerMonthEmpMix=float(SalaryPerMonthEmpMix),
-                    DaysPerMonthMix=float(DaysPerMonthMix),
-                    HoursPerDayMix=float(HoursPerDayMix),
-                    JobPosition=str(JobPosition),
-                    Experience=str(Experience),
-                    Happiness=float(Happiness),
-                    Comment=str(Comment),
-                    )
-
-
-            if FreeOrEmployed=="frei":
-                FeeFree=(request.POST.get('FeeFree'))
-                VideoAudioTextFree=(request.POST.get("VideoAudioTextFree"))
-                Genre=(request.POST.get("Genre"))
-                AnalogDigitalFree=(request.POST.get("AnalogDigitalFree"))
-                JobPosition=(request.POST.get("JobPosition"))
-                HoursSpentFree=(request.POST.get("HoursSpentFree"))
-                Experience=(request.POST.get("ExperienceEmplMix"))
-                Happiness=(request.POST.get("Happiness"))
-                Comment=(request.POST.get("Comment"))
-                CharPerArticleFree=(request.POST.get("CharPerArticleFree"))
-                MinPerAudioFree=(request.POST.get("MinPerAudioFree"))
-                MinPerVideoFree=(request.POST.get("MinPerVideoFree"))
-
-
-                #check the compulsory four of them and send warning if they are missing
-                if FeeFree:
-                    pass
-                else:
-                    sanitycheck=1
-                    messages.info(request, 'Angabe zum Honorar')
-
-
-                if float(HoursSpentFree) != 0.5:
-                    pass
-                else:
-                    sanitycheck=1
-                    messages.info(request, 'Angabe zum Zeitaufwand')
-
-                if VideoAudioTextFree:
-                    pass
-                else:
-                    sanitycheck=1
-                    messages.info(request, 'Angabe zur Mediumsart fehlen')
-
-                if VideoAudioTextFree == "video":
-                    if float(MinPerVideoFree) != 0.5:
+                    if float(HoursPerDayMix) != 1:
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zu Beitragsminuten fehlen')
+                        messages.info(request, 'Angabe zu Stunden pro Tag')
 
-                if VideoAudioTextFree == "audio":
-                    if float(MinPerVideoFree) != 0.5:
+                    if(sanitycheck==0):
+
+                        mediumobj = Medium(mediumname=MediumName, freeoremployed=FreeOrEmployed)
+                        mediumobj.save()
+
+                        d = mediumobj.datacollection_set.create(
+                        SalaryPerMonthEmpMix=float(SalaryPerMonthEmpMix),
+                        DaysPerMonthMix=float(DaysPerMonthMix),
+                        HoursPerDayMix=float(HoursPerDayMix),
+                        JobPosition=str(JobPosition),
+                        Experience=str(Experience),
+                        Happiness=float(Happiness),
+                        Comment=str(Comment),
+                        )
+
+
+                if FreeOrEmployed=="frei":
+                    FeeFree=(request.POST.get('FeeFree'))
+                    VideoAudioTextFree=(request.POST.get("VideoAudioTextFree"))
+                    Genre=(request.POST.get("Genre"))
+                    AnalogDigitalFree=(request.POST.get("AnalogDigitalFree"))
+                    JobPosition=(request.POST.get("JobPosition"))
+                    HoursSpentFree=(request.POST.get("HoursSpentFree"))
+                    Experience=(request.POST.get("ExperienceEmplMix"))
+                    Happiness=(request.POST.get("Happiness"))
+                    Comment=(request.POST.get("Comment"))
+                    CharPerArticleFree=(request.POST.get("CharPerArticleFree"))
+                    MinPerAudioFree=(request.POST.get("MinPerAudioFree"))
+                    MinPerVideoFree=(request.POST.get("MinPerVideoFree"))
+
+
+                    #check the compulsory four of them and send warning if they are missing
+                    if FeeFree:
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zu Beitragsminuten fehlen')
+                        messages.info(request, 'Angabe zum Honorar')
 
-                if VideoAudioTextFree == "text":
-                    if float(CharPerArticleFree) != 100:
+
+                    if float(HoursSpentFree) != 0.5:
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zur Anzahl an Zeichen fehlen')
+                        messages.info(request, 'Angabe zum Zeitaufwand')
+
+                    if VideoAudioTextFree:
+                        pass
+                    else:
+                        sanitycheck=1
+                        messages.info(request, 'Angabe zur Mediumsart fehlen')
+
+                    if VideoAudioTextFree == "video":
+                        if float(MinPerVideoFree) != 0.5:
+                            pass
+                        else:
+                            sanitycheck=1
+                            messages.info(request, 'Angabe zu Beitragsminuten fehlen')
+
+                    if VideoAudioTextFree == "audio":
+                        if float(MinPerVideoFree) != 0.5:
+                            pass
+                        else:
+                            sanitycheck=1
+                            messages.info(request, 'Angabe zu Beitragsminuten fehlen')
+
+                    if VideoAudioTextFree == "text":
+                        if float(CharPerArticleFree) != 100:
+                            pass
+                        else:
+                            sanitycheck=1
+                            messages.info(request, 'Angabe zur Anzahl an Zeichen fehlen')
 
 
 
 
 
-                if(sanitycheck==0):
-                    mediumobj = Medium(mediumname=MediumName, freeoremployed=FreeOrEmployed)
-                    mediumobj.save()
+                    if(sanitycheck==0):
+                        mediumobj = Medium(mediumname=MediumName, freeoremployed=FreeOrEmployed)
+                        mediumobj.save()
 
-                    d = mediumobj.datacollection_set.create(
-                    FeeFree=float(FeeFree),
-                    VideoAudioTextFree=VideoAudioTextFree,
-                    Genre=Genre,
-                    AnalogDigitalFree=AnalogDigitalFree,
-                    JobPosition=JobPosition,
-                    HoursSpentFree=float(HoursSpentFree),
-                    Experience=Experience,
-                    Happiness=float(Happiness),
-                    Comment=Comment,
-                    )
-    return render(request, 'honoradar/index.html')
+                        d = mediumobj.datacollection_set.create(
+                        FeeFree=float(FeeFree),
+                        VideoAudioTextFree=VideoAudioTextFree,
+                        Genre=Genre,
+                        AnalogDigitalFree=AnalogDigitalFree,
+                        JobPosition=JobPosition,
+                        HoursSpentFree=float(HoursSpentFree),
+                        Experience=Experience,
+                        Happiness=float(Happiness),
+                        Comment=Comment,
+                        )
+        return render(request, 'honoradar/index.html')
+
     #    latest_question_list = Question.objects.order_by('-pub_date')[:5]
     #return HttpResponseRedirect(reverse('honoradar:index'))
 
@@ -379,20 +389,27 @@ def getdata(request):
         Q(mediumname=MediumGet),
         Q(freeoremployed=FreeOrEmployedGet)
         )
-        print(mediumobj.mediumname)
+        print(mediumobj)
         entries = DataCollection.objects.filter(Medium = mediumobj)
         print("found")
-        avghappiness=entries.aggregate(Avg('Happiness'))
-        print(avghappiness['Happiness__avg'])
-        counter=0
-        for i in entries:
-            counter+=1
+        counter=(entries.count())
+        print(counter)
+        if (counter>1):
+            print("more than one")
+            if FreeOrEmployed=="fest":
+                avghappiness=entries.aggregate(Avg('Happiness'))
+                avghappiness=(avghappiness['Happiness__avg'])
+                context = {'medium': mediumobj, "avghappiness": avghappiness}
+                return render(request, 'honoradar/index.html', context)
+        else:
+            print("uns fehlen noch daten")
+            return render(request, 'honoradar/index.html', context)
+
 
         #   return HttpResponseRedirect(reverse('honoradar:index'))
                 #    return render(request, 'polls/index.html', context)
 
-        context = {'medium': mediumobj}
-        return render(request, 'honoradar/index.html', context)
+
 
     except Medium.DoesNotExist:
         print("Sorry, wir haben noch keine Daten")
