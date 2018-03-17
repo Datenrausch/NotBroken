@@ -530,6 +530,7 @@ margin-top: 90px !important;
 	margin-top: 0px !important;
 }
 }
+
 @supports (-ms-ime-align: auto) {
 .panel { 
 	align-items: flex-start;
@@ -542,6 +543,28 @@ margin-top: 90px !important;
 }
 }
 }
+
+@media (-ms-high-contrast: active) and (-ms-high-contrast: none) {
+.head-subtitle-1 { 
+	margin-top: 0vh !important;
+}
+}
+
+@media (min-width: 900px) and (-ms-high-contrast: active) and (-ms-high-contrast: none) {
+.head-title {
+	margin-top: -36vh !important;
+}
+.head-subtitle-1 { 
+	margin-top: -68vh !important;
+}
+.head-subtitle-2 { 
+	margin-top: -16vh !important;
+}
+.head-action {
+	margin-top: -15vh !important;
+}
+}
+
 
 @media (min-width: 900px)  {
 .panel {
@@ -959,19 +982,6 @@ input[type=range]::-moz-range-thumb {
 input[type=range]:-moz-focusring{
     outline: 2px solid #27ae60;
     outline-offset: 0px;   
-}
-
-input[type=range].alert-bar_happiness:-moz-focusring,
-input[type=range].alert-bar_stunden_woche:-moz-focusring,
-input[type=range].alert-bar_tag_monat:-moz-focusring,
-input[type=range].alert-bar_stunde_tag:-moz-focusring,
-input[type=range].alert-bar_time:-moz-focusring,
-input[type=range].alert-bar_text:-moz-focusring,
-input[type=range].alert-bar_audio:-moz-focusring,
-input[type=range].alert-bar_video:-moz-focusring {
-    outline: 3px solid #F44336;
-    outline-offset: 0px;  
-	-moz-transition: none;  
 }
 
 .hour-week-select {
@@ -3554,6 +3564,19 @@ p a:hover:after{
   -o-transition: all 0.3s ease-in-out;
 }
 
+input[type=range].alert-bar_happiness:-moz-focusring,
+input[type=range].alert-bar_stunden_woche:-moz-focusring,
+input[type=range].alert-bar_tag_monat:-moz-focusring,
+input[type=range].alert-bar_stunde_tag:-moz-focusring,
+input[type=range].alert-bar_time:-moz-focusring,
+input[type=range].alert-bar_text:-moz-focusring,
+input[type=range].alert-bar_audio:-moz-focusring,
+input[type=range].alert-bar_video:-moz-focusring {
+    outline: 3px solid #F44336;
+    outline-offset: 0px;  
+	-moz-transition: none;  
+}
+
 .alert-bar_stunden_woche[type="range"] {
 	background: rgba(255, 255, 255, 0.2);
 	background-image: url(../image/stunden-woche.png);
@@ -4014,6 +4037,12 @@ p a:hover:after{
 
 .closebtn:hover {
     color: #243040;
+}
+
+@media (max-width: 360px)  {
+.alert-pre-submit {
+  	font-size: 12px !important;
+}
 }
 
 /*Slider-JS*/

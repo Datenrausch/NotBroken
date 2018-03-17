@@ -14,7 +14,7 @@ html * {
 
 body {
   font-size: 1.6rem;
-  font-family: "Open Sans", sans-serif;
+  font-family: OpenSans-Regular;
   color: #243040;
   background-color: #ffffff;
 }
@@ -355,7 +355,7 @@ main {
   margin: 1.6em 0;
 }
 .cd-nav .cd-primary-nav a {
-  font-family: 'InknutAntiqua-SemiBold';
+  font-family: InknutAntiqua-Bold;
   font-size: 1.4rem;
   color: rgba(255, 255, 255, 0.3);
   display: inline-block;
@@ -370,7 +370,7 @@ main {
   margin-top: 50px;
 }
 .cd-nav .cd-contact-info li {
-  font-family: 'InknutAntiqua-SemiBold';
+  font-family: InknutAntiqua-Bold;
   margin-bottom: 1.5em;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.3);
@@ -383,7 +383,7 @@ main {
 }
 .cd-nav .cd-contact-info li, .cd-nav .cd-contact-info a, .cd-nav .cd-contact-info span {
   font-size: 16px;
-  font-family: 'InknutAntiqua-Regular';
+  font-family: InknutAntiqua-Bold;
 }
 @media only screen and (min-width: 1170px) {
   .cd-nav .cd-navigation-wrapper  {
