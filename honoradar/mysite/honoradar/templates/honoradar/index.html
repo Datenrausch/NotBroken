@@ -286,6 +286,14 @@
     </p>  <span class="alert {% if message.tags %} alert-{{ message.tags }}{% endif %}">{{ message|safe }}</span>
     {% endfor %}
     {% endif %}
+    <div id="WARNING">
+      {% for key, value in testdict %}
+          <tr>
+              <td> {{ key }}: </td> <td> {{ value }} </td>
+          </tr>
+      {% endfor %}
+      </div>
+
 
 <!-- Submit -->
 	<div class="alert alert-media-select hide">
@@ -477,13 +485,40 @@
             method: "POST",
             url: $url,
             data: $formData,
-
-
-
-        })
+            success: handleFormSuccess,
+            error: handleFormError,
 
         })
 
+      })
+      function handleFormSuccess(data, textStatus, jqXHR){
+              console.log(data)
+              console.log("hey")
+              console.log(data["message1"])
+              document.getElementById('WARNING').innerHTML = ""
+              const size = Object.keys(data).length;
+              console.log(size)
+              const $Warning = $("#WARNING")
+
+              for(i = 0; i < size; i++){
+                console.log(i);
+                keyname=String("message"+String(i))
+
+                $Warning.append('<span>'+String(data[keyname])+'</span>');
+
+
+
+              }
+              console.log(textStatus)
+              console.log(jqXHR)
+              $myForm[0].reset(); // reset form data
+          }
+
+      function handleFormError(jqXHR, textStatus, errorThrown){
+          console.log(jqXHR)
+          console.log(textStatus)
+          console.log(errorThrown)
+          }
     })
     </script>
     {%endblock javascript2 %}
