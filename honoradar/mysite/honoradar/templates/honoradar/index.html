@@ -564,15 +564,16 @@
         $(document).ready(function() {
             var $getForm = $("#get-form")
             console.log($getForm)
+            console.log($getForm[0])
+
             $getForm.submit(function(event) {
 
               event.preventDefault()
-              
+
                 var $getFormData = $(this).serialize()
-                console.log($getFormData)
-                var $name = $getFormData.attr('name')
+                var $name = $getForm[0]['name']
                 console.log($name)
-                var $url = $getFormData.attr('data-url')
+                var $url = $getForm[0]['data-url']
                 console.log($url)
                 $.ajax({
                     method: "GET",
@@ -589,7 +590,7 @@
                 console.log(data)
                 console.log(textStatus)
                 console.log(jqXHR)
-                $myForm[0].reset(); // reset form data
+                $getForm[0].reset(); // reset form data
                 }
 
             function handleFormErrorGet(jqXHR, textStatus, errorThrown) {
