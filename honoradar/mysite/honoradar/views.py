@@ -37,14 +37,14 @@ def senddata(request):
             else:
                 print("No Mediumname!!")
                 sanitycheck=1
-                messages.info(request, 'Medium')
+                messages.info(request, 'Mediumname')
 
             if AGB=="on":
                 pass
             else:
                 print("No AGB!!")
                 sanitycheck=1
-                messages.info(request, 'AGB fehlen')
+                messages.info(request, 'AGB')
 
 
             #CHECKING WHETHER THERE ARE ALREADY ENTIRES WITH THIS MEDIUM
@@ -74,14 +74,14 @@ def senddata(request):
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zum Gehalt')
+                        messages.info(request, 'Gehalt')
 
 
                     if float(HoursPerWeekEmp) != 1:
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zur Arbeitszeit')
+                        messages.info(request, 'Arbeitszeit')
 
                     #if all these data sanitychecks are okay, we bind the input to an existing medium
                     if(sanitycheck==0):
@@ -112,20 +112,20 @@ def senddata(request):
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zum Gehalt')
+                        messages.info(request, 'Gehalt')
 
 
                     if float(DaysPerMonthMix) != 1:
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zu Tagen pro Monat')
+                        messages.info(request, 'gearbeiteten Tagen pro Monat')
 
                     if float(HoursPerDayMix) != 1:
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zu Stunden pro Tag')
+                        messages.info(request, 'gearbeiteten Stunden pro Tag')
 
                     #if all these data sanitychecks are okay, we bind the input to an existing medium
                     if(sanitycheck==0):
@@ -159,41 +159,41 @@ def senddata(request):
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zum Honorar')
+                        messages.info(request, 'Honorar')
 
 
                     if float(HoursSpentFree) != 0.5:
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zum Zeitaufwand')
+                        messages.info(request, 'Zeitaufwand')
 
                     if VideoAudioTextFree:
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zur Mediumsart fehlen')
+                        messages.info(request, 'Mediumsart')
 
                     if VideoAudioTextFree == "video":
                         if float(MinPerVideoFree) != 0.5:
                             pass
                         else:
                             sanitycheck=1
-                            messages.info(request, 'Angabe zu Beitragsminuten fehlen')
+                            messages.info(request, 'Beitragsminuten')
 
                     if VideoAudioTextFree == "audio":
                         if float(MinPerVideoFree) != 0.5:
                             pass
                         else:
                             sanitycheck=1
-                            messages.info(request, 'Angabe zu Beitragsminuten fehlen')
+                            messages.info(request, 'Beitragsminuten')
 
                     if VideoAudioTextFree == "text":
                         if float(CharPerArticleFree) != 100:
                             pass
                         else:
                             sanitycheck=1
-                            messages.info(request, 'Angabe zur Anzahl an Zeichen fehlen')
+                            messages.info(request, 'Anzahl an Zeichen')
 
 
 
@@ -226,7 +226,7 @@ def senddata(request):
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zum Gehalt')
+                        messages.info(request, 'Gehalt')
 
 
                     #if all these data sanitychecks are okay, we bind the input to an existing medium
@@ -257,20 +257,20 @@ def senddata(request):
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zum Gehalt')
+                        messages.info(request, 'Gehalt')
 
 
                     if float(DaysPerMonthMix) != 1:
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zu Tagen pro Monat')
+                        messages.info(request, 'gearbeiteten Tagen pro Monat')
 
                     if float(HoursPerDayMix) != 1:
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zu Stunden pro Tag')
+                        messages.info(request, 'gearbeiteten Stunden pro Tag')
 
                     if(sanitycheck==0):
 
@@ -308,41 +308,41 @@ def senddata(request):
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zum Honorar')
+                        messages.info(request, 'Honorar')
 
 
                     if float(HoursSpentFree) != 0.5:
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zum Zeitaufwand')
+                        messages.info(request, 'Zeitaufwand')
 
                     if VideoAudioTextFree:
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zur Mediumsart fehlen')
+                        messages.info(request, 'Mediumsart')
 
                     if VideoAudioTextFree == "video":
                         if float(MinPerVideoFree) != 0.5:
                             pass
                         else:
                             sanitycheck=1
-                            messages.info(request, 'Angabe zu Beitragsminuten fehlen')
+                            messages.info(request, 'Beitragsminuten')
 
                     if VideoAudioTextFree == "audio":
                         if float(MinPerVideoFree) != 0.5:
                             pass
                         else:
                             sanitycheck=1
-                            messages.info(request, 'Angabe zu Beitragsminuten fehlen')
+                            messages.info(request, 'Beitragsminuten')
 
                     if VideoAudioTextFree == "text":
                         if float(CharPerArticleFree) != 100:
                             pass
                         else:
                             sanitycheck=1
-                            messages.info(request, 'Angabe zur Anzahl an Zeichen fehlen')
+                            messages.info(request, 'Anzahl an Zeichen')
 
 
 
@@ -394,7 +394,7 @@ def senddata(request):
             if MediumName:
                 pass
             else:
-                print("No Mediumname!!")
+                print("Mediumname")
                 sanitycheck=1
                 messages.info(request, 'Medium')
 
@@ -403,7 +403,7 @@ def senddata(request):
             else:
                 print("No AGB!!")
                 sanitycheck=1
-                messages.info(request, 'AGB fehlen')
+                messages.info(request, 'Zustimmung zu AGB')
 
 
             #CHECKING WHETHER THERE ARE ALREADY ENTIRES WITH THIS MEDIUM
@@ -433,14 +433,14 @@ def senddata(request):
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zum Gehalt')
+                        messages.info(request, 'Gehalt')
 
 
                     if float(HoursPerWeekEmp) != 1:
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zur Arbeitszeit')
+                        messages.info(request, 'Arbeitszeit')
 
                     #if all these data sanitychecks are okay, we bind the input to an existing medium
                     if(sanitycheck==0):
@@ -471,20 +471,20 @@ def senddata(request):
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zum Gehalt')
+                        messages.info(request, 'Gehalt')
 
 
                     if float(DaysPerMonthMix) != 1:
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zu Tagen pro Monat')
+                        messages.info(request, 'gearbeiteten Tagen pro Monat')
 
                     if float(HoursPerDayMix) != 1:
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zu Stunden pro Tag')
+                        messages.info(request, 'gearbeiteten Stunden pro Tag')
 
                     #if all these data sanitychecks are okay, we bind the input to an existing medium
                     if(sanitycheck==0):
@@ -518,41 +518,41 @@ def senddata(request):
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zum Honorar')
+                        messages.info(request, 'Honorar')
 
 
                     if float(HoursSpentFree) != 0.5:
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zum Zeitaufwand')
+                        messages.info(request, 'Zeitaufwand')
 
                     if VideoAudioTextFree:
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zur Mediumsart fehlen')
+                        messages.info(request, 'Mediumsart')
 
                     if VideoAudioTextFree == "video":
                         if float(MinPerVideoFree) != 0.5:
                             pass
                         else:
                             sanitycheck=1
-                            messages.info(request, 'Angabe zu Beitragsminuten fehlen')
+                            messages.info(request, 'Beitragsminuten')
 
                     if VideoAudioTextFree == "audio":
                         if float(MinPerVideoFree) != 0.5:
                             pass
                         else:
                             sanitycheck=1
-                            messages.info(request, 'Angabe zu Beitragsminuten fehlen')
+                            messages.info(request, 'Beitragsminuten')
 
                     if VideoAudioTextFree == "text":
                         if float(CharPerArticleFree) != 100:
                             pass
                         else:
                             sanitycheck=1
-                            messages.info(request, 'Angabe zur Anzahl an Zeichen fehlen')
+                            messages.info(request, 'Anzahl an Zeichen')
 
 
 
@@ -585,7 +585,7 @@ def senddata(request):
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zum Gehalt')
+                        messages.info(request, 'Gehalt')
 
 
                     #if all these data sanitychecks are okay, we bind the input to an existing medium
@@ -616,20 +616,20 @@ def senddata(request):
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zum Gehalt')
+                        messages.info(request, 'AGehalt')
 
 
                     if float(DaysPerMonthMix) != 1:
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zu Tagen pro Monat')
+                        messages.info(request, 'gearbeiteten Tagen pro Monat')
 
                     if float(HoursPerDayMix) != 1:
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zu Stunden pro Tag')
+                        messages.info(request, 'gearbeiteten Stunden pro Tag')
 
                     if(sanitycheck==0):
 
@@ -667,41 +667,41 @@ def senddata(request):
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zum Honorar')
+                        messages.info(request, 'Honorar')
 
 
                     if float(HoursSpentFree) != 0.5:
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zum Zeitaufwand')
+                        messages.info(request, 'Zeitaufwand')
 
                     if VideoAudioTextFree:
                         pass
                     else:
                         sanitycheck=1
-                        messages.info(request, 'Angabe zur Mediumsart fehlen')
+                        messages.info(request, 'Mediumsart')
 
                     if VideoAudioTextFree == "video":
                         if float(MinPerVideoFree) != 0.5:
                             pass
                         else:
                             sanitycheck=1
-                            messages.info(request, 'Angabe zu Beitragsminuten fehlen')
+                            messages.info(request, 'Beitragsminuten')
 
                     if VideoAudioTextFree == "audio":
                         if float(MinPerVideoFree) != 0.5:
                             pass
                         else:
                             sanitycheck=1
-                            messages.info(request, 'Angabe zu Beitragsminuten fehlen')
+                            messages.info(request, 'Beitragsminuten')
 
                     if VideoAudioTextFree == "text":
                         if float(CharPerArticleFree) != 100:
                             pass
                         else:
                             sanitycheck=1
-                            messages.info(request, 'Angabe zur Anzahl an Zeichen fehlen')
+                            messages.info(request, 'Anzahl an Zeichen')
 
 
 
@@ -728,43 +728,85 @@ def senddata(request):
     #return HttpResponseRedirect(reverse('honoradar:index'))
 
 def getdata(request):
-    print(request.GET)
-    MediumGet=(request.GET.get('mediumget'))
-    FreeOrEmployedGet=(request.GET.get('switch'))
-    print(MediumGet)
-    print(FreeOrEmployedGet)
+    if request.is_ajax():
+        print("this is ajax")
+        print(request.GET)
+        MediumName=(request.GET.get('mediumget'))
+        FreeOrEmployed=(request.GET.get('switch'))
+        print(MediumName)
+        print(FreeOrEmployed)
 
-    try:
-        mediumobj=Medium.objects.get(
-        Q(mediumname=MediumGet),
-        Q(freeoremployed=FreeOrEmployedGet)
-        )
-        print(mediumobj)
-        entries = DataCollection.objects.filter(Medium = mediumobj)
-        print("found")
-        counter=(entries.count())
-        print(counter)
-        if (counter>1):
-            print("more than one")
-            if FreeOrEmployed=="fest":
-                avghappiness=entries.aggregate(Avg('Happiness'))
-                avghappiness=(avghappiness['Happiness__avg'])
-                context = {'medium': mediumobj, "avghappiness": avghappiness}
+        try:
+            mediumobj=Medium.objects.get(
+            Q(mediumname=MediumName),
+            Q(freeoremployed=FreeOrEmployed)
+            )
+            print(mediumobj)
+            entries = DataCollection.objects.filter(Medium = mediumobj)
+            print("found")
+            counter=(entries.count())
+            print(counter)
+            if (counter>1):
+                print("more than one")
+                if FreeOrEmployed=="fest":
+                    avghappiness=entries.aggregate(Avg('Happiness'))
+                    avghappiness=(avghappiness['Happiness__avg'])
+                    context = {'medium': mediumobj, "avghappiness": avghappiness}
+                    return render(request, 'honoradar/index.html', context)
+            else:
+                print("uns fehlen noch daten")
                 return render(request, 'honoradar/index.html', context)
-        else:
-            print("uns fehlen noch daten")
-            return render(request, 'honoradar/index.html', context)
 
 
-        #   return HttpResponseRedirect(reverse('honoradar:index'))
-                #    return render(request, 'polls/index.html', context)
+            #   return HttpResponseRedirect(reverse('honoradar:index'))
+                    #    return render(request, 'polls/index.html', context)
 
 
 
-    except Medium.DoesNotExist:
-        print("Sorry, wir haben noch keine Daten")
+        except Medium.DoesNotExist:
+            print("Sorry, wir haben noch keine Daten")
 
-        return HttpResponseRedirect(reverse('honoradar:index'))
+            return HttpResponseRedirect(reverse('honoradar:index'))
+
+    else:
+        print(request.GET)
+        MediumName=(request.GET.get('mediumget'))
+        FreeOrEmployed=(request.GET.get('switch'))
+        print(MediumName)
+        print(FreeOrEmployed)
+
+        try:
+            mediumobj=Medium.objects.get(
+            Q(mediumname=MediumName),
+            Q(freeoremployed=FreeOrEmployed)
+            )
+            print(mediumobj)
+            entries = DataCollection.objects.filter(Medium = mediumobj)
+            print("found")
+            counter=(entries.count())
+            print(counter)
+            if (counter>1):
+                print("more than one")
+                if FreeOrEmployed=="fest":
+                    avghappiness=entries.aggregate(Avg('Happiness'))
+                    avghappiness=(avghappiness['Happiness__avg'])
+                    context = {'medium': mediumobj, "avghappiness": avghappiness}
+                    return render(request, 'honoradar/index.html', context)
+            else:
+                print("uns fehlen noch daten")
+                return render(request, 'honoradar/index.html', context)
+
+
+            #   return HttpResponseRedirect(reverse('honoradar:index'))
+                    #    return render(request, 'polls/index.html', context)
+
+
+
+        except Medium.DoesNotExist:
+            print("Sorry, wir haben noch keine Daten")
+
+            return HttpResponseRedirect(reverse('honoradar:index'))
+
 
 
 
