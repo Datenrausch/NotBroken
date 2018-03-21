@@ -125,7 +125,8 @@
 <!-- Input-Input-Box -->
     <div class="giv-get" id="giv-get">
     <div class="giv">
-    <form action="{% url 'honoradar:senddata' %}" method="post" name="firstbox" id="giv-form">
+
+    <form action="{% url 'honoradar:senddata' %}" method="post" data-url="{% url 'honoradar:senddata' %}" name="firstbox" id="giv-form">
       {% csrf_token %}
 
 	<div class="banner-left-1">Spende deine Gehaltdaten!</div><div class="banner-left-shadow"></div>
@@ -260,7 +261,7 @@
 
 <!-- Happiness-Select -->
     <div class="happiness-select hide" id="pre-data_athmosphaere">
-        <input name="happiness"id="data_athmosphaere" class="happiness-bar" type="range" min="1" max="10" value="0"/>
+        <input name="Happiness"id="data_athmosphaere" class="happiness-bar" type="range" min="1" max="10" value="0"/>
     </div>
 
 	<div class="break"></div>
@@ -285,9 +286,17 @@
     </p>  <span class="alert {% if message.tags %} alert-{{ message.tags }}{% endif %}">{{ message|safe }}</span>
     {% endfor %}
     {% endif %}
+    <div>
+      {% for key, value in testdict %}
+          <tr>
+              <td> {{ key }}: </td> <td> {{ value }} </td>
+          </tr>
+      {% endfor %}
+      </div>
+
 
 <!-- Submit -->
-	<div class="alert alert-media-select hide">
+	<div class="alert alert-media-select hide" id="WARNING">
 		<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
 		<strong>Achtung! </strong>Bitte fülle folgende Felder aus: Feld1, Feld2 und Feld2.
 	</div>
@@ -298,8 +307,8 @@
 
 <!-- Output-Input-Box -->
     <div class="get">
-  <form action="{% url 'honoradar:getdata' %}" method="get" name="firstbox" id="get">
-    {% csrf_token %}
+
+      <form action="{% url 'honoradar:getdata' %}" method="get" data-url-get="{% url 'honoradar:getdata' %}" name-get="firstbox" id="get-form">
     <div class="banner-right-1">Erfahre, was Medien zahlen!</div><div class="banner-right-shadow"></div>
 
 <!-- Medium-Select -->
@@ -328,16 +337,25 @@
 	<div class="break"></div>
 
 <!-- Submit -->
-    <a href="#break-2" class="smooth" onclick="analysefunction()"><input type="submit" class="submit-giv hide" id="analyse_submit" value="Daten auslesen"/></a>
+
+    <a href="#break-2" onclick="analysefunction()"><input type="submit" class="submit-giv hide" id="analyse_submit" value="Daten auslesen"/></a>
 
     </form>
     </div>
 
 <!-- Grafic-Box -->
-	<div class="break" id="break-2"></div>
-    <div class="result hide" id="result">
-    <div class="banner-left-3">Gehalts- und Lohnreports</div><div class="banner-left-shadow"></div>
-    </div>
+
+    <!-- Grafic-Box -->
+    	<div class="break" id="break-2"></div>
+      <div class="result hide" id="result">
+
+        <!-- Infografiken - Text -->
+        <div class="result-text"> {% if medium %}{{ medium.mediumname }} {% endif %}</div>
+        <div class="result-text"> {% if avghappiness %}{{ avghappiness}} {% endif %}</div>
+
+
+      </div>
+      <div class="banner-left-3">Gehalts- und Lohnreports</div><div class="banner-left-shadow"></div>
 
 <!-- Social Share -->
 	<div class="social-box">
@@ -410,6 +428,8 @@
 
 
     <!-- Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
     <script src="{% static 'honoradar/navbar/js/modernizr.js'%}"></script>
     <script src="{% static 'honoradar/html5shiv.js'%}"></script>
     <script src="{% static 'honoradar/lity/vendor/jquery.js'%}"></script>
@@ -419,6 +439,150 @@
     <script src="{% static 'honoradar/js/javascript-new.js'%}"></script>
     <script src="{% static 'honoradar/navbar/js/jquery-2.1.1.js'%}"></script>
     <script src="{% static 'honoradar/navbar/js/main.js'%}"></script>
+    <!-- jQuery (required for this Ajax tutorial) -->
+    <script> function getCookie(name) {
+          var cookieValue = null;
+          if (document.cookie && document.cookie !== '') {
+              var cookies = document.cookie.split(';');
+              for (var i = 0; i < cookies.length; i++) {
+                  var cookie = jQuery.trim(cookies[i]);
+                  // Does this cookie string begin with the name we want?
+                  if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                      cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                      break;
+                  }
+              }
+          }
+          return cookieValue;
+      }
+
+      var csrftoken = getCookie('csrftoken');
+
+      function csrfSafeMethod(method) {
+          // these HTTP methods do not require CSRF protection
+          return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+      }
+      $.ajaxSetup({
+          beforeSend: function(xhr, settings) {
+              if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                  xhr.setRequestHeader("X-CSRFToken", csrftoken);
+              }
+          }
+      });
+    </script>
+    {%block javascript2 %}
+    <script>
+    $(document).ready(function(){
+        var $myForm = $("#giv-form")
+        $myForm.submit(function(event){
+            event.preventDefault()
+            var $formData = $(this).serialize()
+            console.log($formData)
+            var $name = $myForm.attr('name')
+            console.log($name)
+            var $url = $myForm.attr('data-url')
+            console.log($url)
+            $.ajax({
+            method: "POST",
+            url: $url,
+            data: $formData,
+            success: handleFormSuccessPost,
+            error: handleFormErrorPost,
+
+        })
+
+      })
+      function handleFormSuccessPost(data, textStatus, jqXHR) {
+          console.log(data)
+          const alertdiv = document.getElementById('WARNING')
+
+          alertdiv.innerHTML = ""
+          alertdiv.innerHTML = "<strong>Achtung! </strong>Es fehlen noch Angaben zu folgenden Pflicht-Feldern: "
+          const size = Object.keys(data).length;
+          console.log(size)
+          const $Warning = $("#WARNING")
+
+
+          for (i = 0; i < size; i++) {
+              console.log(i);
+              alertdiv.classList.add("show");
+              alertdiv.classList.remove("hide");
+              keyname = String("message" + String(i));
+              if (i == 0) {
+                  $Warning.append('<span>' + String(data[keyname]) + '</span>');
+              } else {
+                  $Warning.append('<span>, ' + String(data[keyname]) + ' </span>');
+
+              }
+
+          }
+          console.log(textStatus)
+          console.log(jqXHR)
+          $myForm[0].reset(); // reset form data
+      }
+
+      function handleFormErrorPost(jqXHR, textStatus, errorThrown) {
+          console.log(jqXHR)
+          console.log(textStatus)
+          console.log(errorThrown)
+      }
+  })
+</script>
+    {%endblock javascript2 %}
+    {%block javascript3 %}
+    <script>
+    $(document).ready(function(){
+        var $myForm = $("#get-form")
+        $myForm.submit(function(event){
+            event.preventDefault()
+            var $formData = $(this).serialize()
+            console.log($formData)
+            var $name = $myForm.attr('name-get')
+            console.log($name)
+            var $url = $myForm.attr('data-url-get')
+            console.log($url)
+            $.ajax({
+            method: "GET",
+            url: $url,
+            data: $formData,
+            success: handleFormSuccessGet,
+            error: handleFormErrorGet,
+
+        })
+
+      })
+      function handleFormSuccessGet(data, textStatus, jqXHR) {
+          console.log(data)
+          const resultsdiv = document.getElementById('result')
+
+          const size = Object.keys(data).length;
+          console.log(size)
+          resultsdiv.innerHTML = ""
+
+          const $result = $("#result")
+          resultsdiv.classList.add("show");
+          resultsdiv.classList.remove("hide");
+          $result.append('<div class="result-text">' +String(data["mediumname"])+'</div>' )
+          $result.append('<div class="result-text">' +String(data["avghappiness"])+'</div>' )
+
+
+
+          console.log(textStatus)
+          console.log(jqXHR)
+          $myForm[0].reset(); // reset form data
+      }
+
+      function handleFormErrorGet(jqXHR, textStatus, errorThrown) {
+          console.log(jqXHR)
+          console.log(textStatus)
+          console.log(errorThrown)
+      }
+  })
+</script>
+    {%endblock javascript3 %}
+
+
+
 </body>
 
 </html>
