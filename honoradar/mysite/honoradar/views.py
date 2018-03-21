@@ -751,11 +751,11 @@ def getdata(request):
                 if FreeOrEmployed=="fest":
                     avghappiness=entries.aggregate(Avg('Happiness'))
                     avghappiness=(avghappiness['Happiness__avg'])
-                    context = {'medium': mediumobj, "avghappiness": avghappiness}
-                    return render(request, 'honoradar/index.html', context)
+                    context = {'mediumname': MediumName, "avghappiness": avghappiness}
+                    return JsonResponse(context)
             else:
                 print("uns fehlen noch daten")
-                return render(request, 'honoradar/index.html', context)
+                return JsonResponse(context)
 
 
             #   return HttpResponseRedirect(reverse('honoradar:index'))
