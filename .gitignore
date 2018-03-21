@@ -1,7 +1,7 @@
- */*.pyc
- *.pyc
+*/*.pyc
+*.pyc
 *_credentials.py
- */*.DS
- *.DS
- */*.DS_Store
+*/*.DS
+*.DS
+*/*.DS_Store
 *.DS_Store
