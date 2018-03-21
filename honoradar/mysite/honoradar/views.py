@@ -20,6 +20,7 @@ def senddata(request):
         if request.method == 'POST':
             print("senddata")
             print(request.POST)
+            sanitycheck=0
 
             #we get the three categories that all entries have in common regardless of
             #freelance, pauschalist or employed
@@ -212,7 +213,7 @@ def senddata(request):
                         )
 
             except Medium.DoesNotExist:
-
+                sanitycheck=0
                 if FreeOrEmployed=="fest":
                     SalaryPerMonthEmpMix=(request.POST.get('SalaryPerMonthEmpMix'))
                     Happiness=(request.POST.get("Happiness"))
@@ -236,7 +237,7 @@ def senddata(request):
                         d = mediumobj.datacollection_set.create(
                         SalaryPerMonthEmpMix=float(SalaryPerMonthEmpMix),
                         Happiness=float(Happiness),
-                        HoursPerWeekEmp=float(HoursPerWeek),
+                        HoursPerWeekEmp=float(HoursPerWeekEmp),
                         JobPosition=JobPosition,
                         Experience=Experience,
                         Comment=Comment
@@ -755,6 +756,7 @@ def getdata(request):
                     return JsonResponse(context)
             else:
                 print("uns fehlen noch daten")
+                context={"missingdata":"yes"}
                 return JsonResponse(context)
 
 
