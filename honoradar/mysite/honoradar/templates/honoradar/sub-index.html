@@ -3,8 +3,6 @@
 <html lang="de">
 
 <head>
-    {% load static %}
-
     <!-- Meta -->
   	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -18,17 +16,17 @@
     <link rel="apple-touch-icon" sizes="180x180" href="#">
     <link rel="icon" type="image/png" sizes="32x32" href="#">
     <link rel="icon" type="image/png" sizes="16x16" href="#">
-    <link rel="manifest" href="{% static 'honoradar/manifest.json'%}">
-    <link rel="mask-icon" href="{% static 'honoradar/safari-pinned-tab.svg'%}" color="#5bbad5">
+    <link rel="manifest" href="../honoradar/manifest.json">
+    <link rel="mask-icon" href="../honoradar/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="theme-color" content="#ffffff">
 
     <!-- Style -->
-    <link rel="stylesheet" href="{% static 'honoradar/css/style.css'%}">
-    <link rel="stylesheet" href="{% static 'honoradar/css/style-1.css'%}">
-    <link rel="stylesheet" href="{% static 'honoradar/css/font.css'%}">
-    <link rel="stylesheet" href="{% static 'honoradar/navbar/css/reset.css'%}">
-    <link rel="stylesheet" href="{% static 'honoradar/navbar/css/style.css'%}">
-    <link rel="stylesheet" href="{% static 'honoradar/lity/dist/lity.css'%}">
+    <link rel="stylesheet" href="../honoradar/css/style.css">
+    <link rel="stylesheet" href="../honoradar/css/style-1.css">
+    <link rel="stylesheet" href="../honoradar/css/font.css">
+    <link rel="stylesheet" href="../honoradar/navbar/css/reset.css">
+    <link rel="stylesheet" href="../honoradar/navbar/css/style.css">
+    <link rel="stylesheet" href="../honoradar/lity/dist/lity.css">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
@@ -126,7 +124,6 @@
     <div class="giv-get" id="giv-get">
     <div class="giv">
     <form action="{% url 'honoradar:senddata' %}" method="post" name="firstbox" id="giv-form">
-      {% csrf_token %}
 	
 	<div class="banner-left-1">Spende deine Gehaltsdaten!</div><div class="banner-left-shadow"></div>
 
@@ -406,15 +403,15 @@
 
 
     <!-- Javascript -->
-    <script src="{% static 'honoradar/navbar/js/modernizr.js'%}"></script>
-    <script src="{% static 'honoradar/html5shiv.js'%}"></script>
-    <script src="{% static 'honoradar/lity/vendor/jquery.js'%}"></script>
-    <script src="{% static 'honoradar/lity/dist/lity.js'%}"></script>
-    <script src="{% static 'honoradar/js/jquery.js'%}"></script>
-    <script src="{% static 'honoradar/js/javascript.js'%}"></script>
-    <script src="{% static 'honoradar/js/javascript-new.js'%}"></script>
-    <script src="{% static 'honoradar/navbar/js/jquery-2.1.1.js'%}"></script>
-    <script src="{% static 'honoradar/navbar/js/main.js'%}"></script>
+    <script src="../honoradar/navbar/js/modernizr.js"></script>
+    <script src="../honoradar/js/html5shiv.js"></script>
+    <script src="../honoradar/lity/vendor/jquery.js"></script>
+    <script src="../honoradar/lity/dist/lity.js"></script>
+    <script src="../honoradar/js/jquery.js"></script>
+    <script src="../honoradar/js/javascript.js"></script>
+    <script src="../honoradar/js/javascript-new.js"></script>
+    <script src="../honoradar/navbar/js/jquery-2.1.1.js"></script>
+    <script src="../honoradar/navbar/js/main.js"></script>
 </body>
 
 </html>
