@@ -14,7 +14,7 @@ html * {
 
 body {
   font-size: 1.6rem;
-  font-family: "Open Sans", sans-serif;
+  font-family: OpenSans-Regular;
   color: #243040;
   background-color: #ffffff;
 }
@@ -35,11 +35,9 @@ main {
   -webkit-overflow-scrolling: touch;
   background-color: #D8DBE2;
   /* Force Hardware Acceleration in WebKit */
-  -webkit-transform: translateZ(0);
-  -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -o-transform: translateZ(0);
-  transform: translateZ(0);
+
+  -ms-transform: translateZ(0); 
+  -o-transform: translateZ(0); 
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-transition: -webkit-transform 0.5s;
@@ -98,6 +96,16 @@ main {
    transition-duration: 0.5s;
 }
 
+@media only screen and (min-width: 500px) {
+  main {
+  }
+  main h1 {
+    font-size: 1.6rem;
+  }
+  main p {
+    font-size: 1rem;
+  }
+}
 
 @media only screen and (min-width: 768px) {
   main {
@@ -345,7 +353,7 @@ main {
   margin: 1.6em 0;
 }
 .cd-nav .cd-primary-nav a {
-  font-family: 'InknutAntiqua-SemiBold';
+  font-family: InknutAntiqua-Bold;
   font-size: 1.4rem;
   color: rgba(255, 255, 255, 0.3);
   display: inline-block;
@@ -360,7 +368,7 @@ main {
   margin-top: 50px;
 }
 .cd-nav .cd-contact-info li {
-  font-family: 'InknutAntiqua-SemiBold';
+  font-family: InknutAntiqua-Bold;
   margin-bottom: 1.5em;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.3);
@@ -373,7 +381,7 @@ main {
 }
 .cd-nav .cd-contact-info li, .cd-nav .cd-contact-info a, .cd-nav .cd-contact-info span {
   font-size: 16px;
-  font-family: 'InknutAntiqua-Regular';
+  font-family: InknutAntiqua-Bold;
 }
 @media only screen and (min-width: 1170px) {
   .cd-nav .cd-navigation-wrapper  {
@@ -443,4 +451,22 @@ address {
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
   transform: translateX(0);
+}
+
+@media (max-width: 450px)  { 
+.cd-navigation-wrapper {
+padding-left: 40px !important;
+}
+
+.cd-primary-nav li {
+	margin: 0.6em 0 !important;
+}
+
+.cd-primary-nav a {
+	line-height: 1.1em;
+}
+
+.cd-nav h2 {
+	font-size: 0.6em;
+}
 }
