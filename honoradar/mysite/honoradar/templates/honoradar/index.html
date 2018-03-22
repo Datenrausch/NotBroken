@@ -579,8 +579,16 @@
           resultsdiv.classList.remove("hide");
           $result.append('<div class="banner-left-3">Gehalts- und Lohnreports</div><div class="banner-left-shadow"></div>')
 
-          $result.append('<div class="result-text">' +String(data["mediumname"])+'</div>' )
-          $result.append('<div class="result-text">' +String(data["avghappiness"])+'</div>' )
+          if (data["missingdata"]!=undefined){
+            $result.append('<div class="result-text">' +String(data["missingdata"])+'</div>' );
+
+          }
+          else{
+            $result.append('<div class="result-text">' +String(data["mediumname"])+'</div>' );
+            $result.append('<div class="result-text">Der Durchschnittliche Stundenlohn liegt bei: ' +String(data["avgwageperhour"])+'</div>' );
+
+            $result.append('<div class="result-text">Und die Zufriedenheit bei ' +String(data["avghappiness"])+'</div>' );}
+
 
 
 

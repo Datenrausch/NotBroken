@@ -750,13 +750,37 @@ def getdata(request):
             if (counter>1):
                 print("more than one")
                 if FreeOrEmployed=="fest":
+                    avgHoursPerWeekEmp=entries.aggregate(Avg('HoursPerWeekEmp'))
+                    avgHoursPerWeekEmp=(avgHoursPerWeekEmp['HoursPerWeekEmp__avg'])
+
+                    avgSalaryPerMonthEmpMix=entries.aggregate(Avg('SalaryPerMonthEmpMix'))
+                    avgSalaryPerMonthEmpMix=(avgSalaryPerMonthEmpMix['SalaryPerMonthEmpMix__avg'])
+
                     avghappiness=entries.aggregate(Avg('Happiness'))
                     avghappiness=(avghappiness['Happiness__avg'])
-                    context = {'mediumname': MediumName, "avghappiness": avghappiness}
+
+                    avgwageperhour=avgSalaryPerMonthEmpMix/(avgHoursPerWeekEmp*4)
+
+
+
+                    context = {'mediumname': MediumName,
+                    "avgSalaryPerMonthEmpMix": avgSalaryPerMonthEmpMix,
+                    "avgHoursPerWeekEmp": avgHoursPerWeekEmp,
+                    "avghappiness": avghappiness,
+                    "avgwageperhour": avgwageperhour
+
+                    }
+                    print(context)
                     return JsonResponse(context)
+                if FreeOrEmployed=="pauschal":
+                    pass
+                if FreeOrEmployed=="frei":
+                    pass
+
+
             else:
-                print("uns fehlen noch daten")
-                context={"missingdata":"yes"}
+                print("Nur eine")
+                context={"missingdata":"Wir haben noch nicht genügend Daten für dieses Medium"}
                 return JsonResponse(context)
 
 
@@ -766,9 +790,10 @@ def getdata(request):
 
 
         except Medium.DoesNotExist:
-            print("Sorry, wir haben noch keine Daten")
+            print("Gar keine Daten")
+            context={"missingdata":"Wir haben noch nicht genügend Daten für dieses Medium"}
 
-            return HttpResponseRedirect(reverse('honoradar:index'))
+            return JsonResponse(context)
 
     else:
         print(request.GET)
