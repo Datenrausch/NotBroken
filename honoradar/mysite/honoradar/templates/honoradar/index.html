@@ -129,7 +129,7 @@
     <form action="{% url 'honoradar:senddata' %}" method="post" data-url="{% url 'honoradar:senddata' %}" name="firstbox" id="giv-form">
       {% csrf_token %}
 
-	<div class="banner-left-1">Spende deine Lohndaten!</div><div class="banner-left-shadow"></div>
+	<div class="banner-left-1">Erzähle, was du verdienst!</div><div class="banner-left-shadow"></div>
 
 <!-- Medium-Select -->
     <input name="MediumName" id="data_medium" class="media-select" list="medium" placeholder="Für welches Medium arbeitest du?" type="text" />
@@ -160,8 +160,10 @@
   	<input  name="SalaryPerMonthEmpMix" id="data_gehalt" class="loan-select hide" list="gehalt" placeholder="Gehalt pro Monat?" type="number"	min="0" oninput="validity.valid||(value='');" inputmode="numeric" />
 
 <!-- Hour-Week-Select -->
-    <div class="hour-week-select hide" id="pre-data_stunden_woche">
-    	<input id="data_stunden_woche" name="HoursPerWeekEmp" class="hour-week-bar" type="range" min="1" max="50" value="0"/>
+    <div class="day-month-select hide pre-alert-bar-day-month" id="pre-data_stunden_woche">
+		<style id="style-hour-week" scoped></style>
+    	<input id="data_stunden_woche" name="HoursPerWeekEmp" class="hour-week-bar alert-bar_stunden_woche" type="range" min="1" max="50" value="0"/>
+	<p id="outputhourweek" class="output">0</p>
     </div>
     <div class="break hide" id="break-1"></div>
 
@@ -267,16 +269,16 @@
 		<input name="ExperienceEmplMix" type="radio" id="data_erfahrung_jahr_1" name="switch" value="0"/>
         <label for="data_erfahrung_jahr_1">1 Jahr</label>
         <input name="ExperienceEmplMix" type="radio" id="data_erfahrung_jahr_3" name="switch" value="3"/>
-        <label for="data_erfahrung_jahr_3">3 Jahre</label>
+        <label for="data_erfahrung_jahr_3">5 Jahre</label>
         <input name="ExperienceEmplMix" type="radio" id="data_erfahrung_jahr_5" name="switch" value="5"/>
-        <label for="data_erfahrung_jahr_5">5 Jahre</label>
+        <label for="data_erfahrung_jahr_5">10 Jahre</label>
     </div>
 
 <!-- Happiness-Select-->
-    <div class="happiness-select hide pre-alert-bar-happiness" id="pre-data_athmosphaere">
+    <div class="happiness-select pre-alert-bar-happiness" id="pre-data_athmosphaere">
 	<style id="style-happiness" scoped></style>
-		<input name="Happiness" id="data_athmosphaere" class="range happiness-bar alert-bar_happiness" type="range" min="0" max="10" value="0" onmousedown="alertoffdatahappiness()" ontouchstart="alertoffdatahappiness()" ontouchmove="alertoffdatahappiness()"/>
-		<p id="outputhappiness" class="output">0</p>
+	<input name="Happiness" id="data_athmosphaere" class="range happiness-bar alert-bar_happiness" type="range" min="1" max="10" value="0"onmousedown="alertoffdatahappiness()" ontouchstart="alertoffdatahappiness()" ontouchmove="alertoffdatahappiness()"/>
+	<p id="outputhappiness" class="fav-output fav-output-0"></p>
 	</div>
 	<div class="break"></div>
 
@@ -284,13 +286,13 @@
     <div class="hide" id="pre-data_kommentar">
         <textarea id="data_kommentar" class="comment-select" name="Comment" placeholder="Dein Kommentar ..." maxlength="250"></textarea>
     </div>
-    <span class="hide" id="disclaimer"><p class="disclaimer"><a href="#" class="clear-agb">!</a>Achte darauf, dass du deine Identität im Kommentar nicht verrätst!</p></span>
+    <span class="hide" id="disclaimer"><p class="disclaimer"><a href="#" class="clear-agb">!</a>Dein Kommentar ist anonym. Achte darauf, dass du deine Identität nicht verrätst!</p></span>
 
 <!-- Checkbox-Select -->
     <span class="hide" id="pre-data_checkbox">
         <input name="AGB" class="checkbox" type="checkbox" id="data_checkbox" />
         <label class="checkboxlabel alert-checkbox" for="data_checkbox"></label>
-        <p class="checkboxtext">Ich bin mit den <a href="#" target="_blank" class="clear-agb">AGBs</a> einverstanden.</p>
+        <p class="checkboxtext">Ich habe den <a href="#" target="_blank" class="clear-agb">Hinweis</a> gelesen.</p>
     </span>
 
     {% if messages %}

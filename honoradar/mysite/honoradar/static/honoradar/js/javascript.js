@@ -1,8 +1,10 @@
 
 var css = '.range::-webkit-slider-runnable-track{background:linear-gradient(90deg,#3498db {value}%,#ecf0f1 0)}'
+/*
 var outputhappiness = document.getElementById('outputhappiness')
 var inputhappiness = document.getElementById('data_athmosphaere')
 var stylehappiness = document.getElementById('style-happiness')
+*/
 
 var outputtime = document.getElementById('outputtime')
 var inputtime = document.getElementById('data_zeit')
@@ -32,8 +34,10 @@ var outputhourday = document.getElementById('outputhourday')
 var inputhourday = document.getElementById('data_stunden_tag')
 var stylehourday = document.getElementById('style-hour-day')
 
+/*
 inputhappiness.addEventListener('input', rangehappiness)
 inputhappiness.addEventListener('change', rangehappiness)
+*/
 
 inputtime.addEventListener('input', rangetime)
 inputtime.addEventListener('change', rangetime)
@@ -56,10 +60,12 @@ inputdaymonth.addEventListener('change', rangedaymonth)
 inputhourday.addEventListener('input', rangehourday)
 inputhourday.addEventListener('change', rangehourday)
 
+/*
 function rangehappiness(event) {
   outputhappiness.textContent = event.target.value
   stylehappiness.textContent = css.replace('{value}', Math.round(event.target.value / 3.6))
 }
+*/
 
 function rangetime(event) {
   outputtime.textContent = event.target.value
@@ -651,3 +657,74 @@ $('.smooth').on('click', function(e){
   },'slow');
   e.preventDefault();
 })
+
+var slide = document.getElementById("data_athmosphaere");
+var text = document.getElementById("outputhappiness");
+slide.onchange = function() {
+slide.innerHTML = this.value;
+slidervalue=(slide.value)
+
+if (slidervalue ==1){
+	console.log(slidervalue)
+	text.classList.add("fav-output-1");
+	text.classList.remove("fav-output-0", "fav-output-2", "fav-output-3", "fav-output-4", "fav-output-5", "fav-output-6", "fav-output-7", "fav-output-8", "fav-output-9", "fav-output-10");
+}
+
+if (slidervalue ==2) {
+	console.log(slidervalue)
+	text.classList.add("fav-output-2");
+	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-3", "fav-output-4", "fav-output-5", "fav-output-6", "fav-output-7", "fav-output-8", "fav-output-9", "fav-output-10");
+} 
+
+if (slidervalue ==3) {
+	console.log(slidervalue)
+	text.classList.add("fav-output-3");
+	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-2", "fav-output-4", "fav-output-5", "fav-output-6", "fav-output-7", "fav-output-8", "fav-output-9", "fav-output-10");
+} 
+
+if (slidervalue ==4) {
+	console.log(slidervalue)
+	text.classList.add("fav-output-4");
+	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-2", "fav-output-3", "fav-output-5", "fav-output-6", "fav-output-7", "fav-output-8", "fav-output-9", "fav-output-10");
+} 
+
+if (slidervalue ==5) {
+	console.log(slidervalue)
+	text.classList.add("fav-output-5");
+	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-2", "fav-output-3", "fav-output-4", "fav-output-6", "fav-output-7", "fav-output-8", "fav-output-9", "fav-output-10");
+} 
+
+if (slidervalue ==6) {
+	console.log(slidervalue)
+	text.classList.add("fav-output-6");
+	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-2", "fav-output-3", "fav-output-4", "fav-output-5", "fav-output-7", "fav-output-8", "fav-output-9", "fav-output-10");
+} 
+
+if (slidervalue ==7) {
+	console.log(slidervalue)
+	text.classList.add("fav-output-7");
+	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-2", "fav-output-3", "fav-output-4", "fav-output-5", "fav-output-6", "fav-output-8", "fav-output-9", "fav-output-10");
+} 
+
+if (slidervalue ==8) {
+	console.log(slidervalue)
+	text.classList.add("fav-output-8");
+	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-2", "fav-output-3", "fav-output-4", "fav-output-5", "fav-output-6", "fav-output-7", "fav-output-9", "fav-output-10");
+} 
+
+if (slidervalue ==9) {
+	console.log(slidervalue)
+	text.classList.add("fav-output-9");
+	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-2", "fav-output-3", "fav-output-4", "fav-output-5", "fav-output-6", "fav-output-7", "fav-output-8", "fav-output-10");
+} 
+
+else if (slidervalue ==10) {
+	console.log(slidervalue)
+	text.classList.add("fav-output-10");
+	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-2", "fav-output-3", "fav-output-4", "fav-output-5", "fav-output-6", "fav-output-7", "fav-output-8", "fav-output-9");
+} 
+
+}
+
+
+
