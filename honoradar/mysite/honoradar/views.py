@@ -795,22 +795,18 @@ def getdata(request):
                 print("more than one")
                 if FreeOrEmployed=="fest":
 
-                    column='HoursPerWeekEmp'
-                    print(StdAvgFunction(entries,'HoursPerWeekEmp')["avg"])
-                    print(StdAvgFunction(entries,column)["std"])
                     avgHoursPerWeekEmp=StdAvgFunction(entries,'HoursPerWeekEmp')["avg"]
                     stdHoursPerWeekEmp=StdAvgFunction(entries,'HoursPerWeekEmp')["std"]
 
-
-
-
-
-                    avgSalaryPerMonthEmpMix=entries.aggregate(Avg('SalaryPerMonthEmpMix'))
-                    avgSalaryPerMonthEmpMix=(avgSalaryPerMonthEmpMix['SalaryPerMonthEmpMix__avg'])
+                    avgSalaryPerMonthEmpMix=StdAvgFunction(entries,'SalaryPerMonthEmpMix')["avg"]
+                    stdSalaryPerMonthEmpMix=StdAvgFunction(entries,'SalaryPerMonthEmpMix')["std"]
 
                     avghappiness=entries.aggregate(Avg('Happiness'))
                     avghappiness=(avghappiness['Happiness__avg'])
 
+                    counthappiness=entries.aggregate(Count('Happiness'))
+                    counthappiness=(counthappiness['Happiness__count'])
+                    print(counthappiness)
                     avgwageperhour=avgSalaryPerMonthEmpMix/(avgHoursPerWeekEmp*4)
 
 
