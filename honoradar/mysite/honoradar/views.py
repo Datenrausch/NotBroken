@@ -13,45 +13,65 @@ from django.http import JsonResponse
 import math
 
 def StdAvgFunction(entries,column):
-    avg=entries.aggregate(Avg(column))
-    columnavg=str(column)+"__avg"
-    avg=(avg[columnavg])
-    count=0
-    sqdiff=0
-    for entry in entries:
-        diff=(getattr(entry,column)-avg)
-        sqdiff+=math.pow(diff,2)
-        count+=1
-    variance=sqdiff/count
-    std=round(math.sqrt(variance),2)
-    result={}
-    result["avg"]=avg
-    result["std"]=std
+    count=entries.aggregate(Count(column))
+    columncount=str(column)+"__count"
+    count=(count[columncount])
+    if count>1:
+        avg=entries.aggregate(Avg(column))
+        columnavg=str(column)+"__avg"
+        avg=(avg[columnavg])
+        count=0
+        sqdiff=0
+        for entry in entries:
+            diff=(getattr(entry,column)-avg)
+            sqdiff+=math.pow(diff,2)
+            count+=1
+        variance=sqdiff/count
+        std=round(math.sqrt(variance),2)
+        result={}
+        avg=round(avg,2)
+        result["avg"]=avg
+        result["std"]=std
+        result["status"]="Success"
+    else:
+        result["status"]="Failed"
     return(result)
 
 def StdAvgTwoColumnsFunction(entries,column1, column2):
-    divisionsum=0
-    count=0
-    for entry in entries:
-        column1=getattr(entry,column1)
-        column2=getattr(entry,column2)
-        divisionsum+=column1/column2
-        count+=1
-    avgtwocolumns=divisionsum/count
-    count=0
-    sqdiff=0
-    for entry in entries:
-        column1=getattr(entry,column1)
-        column2=getattr(entry,column2)
-        division=column1/column2
-        diff=division-avgtwocolumns
-        sqdiff+=math.pow(diff,2)
-        count+=1
-    variance=sqdiff/count
-    std=round(math.sqrt(variance),2)
-    result={}
-    result["avg"]=avgtwocolumns
-    result["std"]=std
+    count1=entries.aggregate(Count(column1))
+    columncount1=str(column1)+"__count"
+    count1=(count1[columncount1])
+    count2=entries.aggregate(Count(column2))
+    columncount2=str(column2)+"__count"
+    count2=(count2[columncount2])
+
+    if (count1>1 )and (count2>1):
+        divisionsum=0
+        count=0
+        for entry in entries:
+            column1val=getattr(entry,str(column1))
+            column2val=getattr(entry,str(column2))
+            divisionsum+=column1val/column2val
+            count+=1
+        avgtwocolumns=divisionsum/count
+        count=0
+        sqdiff=0
+        for entry in entries:
+            column1val=getattr(entry,str(column1))
+            column2val=getattr(entry,str(column2))
+            division=column1val/column2val
+            diff=division-avgtwocolumns
+            sqdiff+=math.pow(diff,2)
+            count+=1
+        variance=sqdiff/count
+        std=round(math.sqrt(variance),2)
+        result={}
+        avgtwocolumns=round(avgtwocolumns,2)
+        result["avg"]=avgtwocolumns
+        result["std"]=std
+        result["status"]="Success"
+    else:
+        result["status"]="Failed"
     return(result)
 
 
@@ -791,32 +811,27 @@ def getdata(request):
             print("found")
             counter=(entries.count())
             print(counter)
+
             if (counter>1):
                 print("more than one")
                 if FreeOrEmployed=="fest":
+                    SalaryPerMonthEmpMix=StdAvgFunction(entries,'SalaryPerMonthEmpMix')
 
-                    avgHoursPerWeekEmp=StdAvgFunction(entries,'HoursPerWeekEmp')["avg"]
-                    stdHoursPerWeekEmp=StdAvgFunction(entries,'HoursPerWeekEmp')["std"]
+                    HoursPerWeekEmp=StdAvgFunction(entries,'HoursPerWeekEmp')
 
-                    avgSalaryPerMonthEmpMix=StdAvgFunction(entries,'SalaryPerMonthEmpMix')["avg"]
-                    stdSalaryPerMonthEmpMix=StdAvgFunction(entries,'SalaryPerMonthEmpMix')["std"]
+                    SalaryPerHours=StdAvgTwoColumnsFunction(entries,'SalaryPerMonthEmpMix','HoursPerWeekEmp')
+                    if SalaryPerHours["status"]=="Success":
+                        SalaryPerHours["avg"]=round((SalaryPerHours["avg"]/4),2)
+                        SalaryPerHours["std"]=round((SalaryPerHours["std"]/4),2)
 
-                    avghappiness=entries.aggregate(Avg('Happiness'))
-                    avghappiness=(avghappiness['Happiness__avg'])
-
-                    counthappiness=entries.aggregate(Count('Happiness'))
-                    counthappiness=(counthappiness['Happiness__count'])
-                    print(counthappiness)
-                    avgwageperhour=avgSalaryPerMonthEmpMix/(avgHoursPerWeekEmp*4)
+                    Happiness=StdAvgFunction(entries,'Happiness')
 
 
 
                     context = {'mediumname': MediumName,
-                    "avgSalaryPerMonthEmpMix": avgSalaryPerMonthEmpMix,
-                    "avgHoursPerWeekEmp": avgHoursPerWeekEmp,
-                    "avghappiness": avghappiness,
-                    "avgwageperhour": avgwageperhour
-
+                    "SalaryPerHours": SalaryPerHours,
+                    "HoursPerWeekEmp": HoursPerWeekEmp,
+                    "Happiness": Happiness,
                     }
                     print(context)
                     return JsonResponse(context)

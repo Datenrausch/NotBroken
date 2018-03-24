@@ -585,10 +585,13 @@
           }
           else{
             $result.append('<div class="result-text">' +String(data["mediumname"])+'</div>' );
-            $result.append('<div class="result-text">Der Durchschnittliche Stundenlohn liegt bei: ' +String(data["avgwageperhour"])+'</div>' );
+            if (data["SalaryPerHours"]["status"]=="Success"){
+              $result.append('<div class="result-text">Der Durchschnittliche Stundenlohn liegt bei: ' +String(data["SalaryPerHours"]["avg"])+" Euro  plusminus "+String(data["SalaryPerHours"]["std"])+'</div>' );}
 
-            $result.append('<div class="result-text">Und die Zufriedenheit bei ' +String(data["avghappiness"])+'</div>' );}
+            if (data["Happiness"]["status"]=="Success"){
 
+            $result.append('<div class="result-text">Und die Zufriedenheit bei ' +String(data["Happiness"]["avg"])+" plusminus "+String(data["Happiness"]["std"])+'</div>' );}
+;}
 
 
 
