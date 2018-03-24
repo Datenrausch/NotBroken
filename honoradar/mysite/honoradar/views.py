@@ -10,6 +10,50 @@ import datetime
 from .models import *
 from django.db.models import *
 from django.http import JsonResponse
+import math
+
+def StdAvgFunction(entries,column):
+    avg=entries.aggregate(Avg(column))
+    columnavg=str(column)+"__avg"
+    avg=(avg[columnavg])
+    count=0
+    sqdiff=0
+    for entry in entries:
+        diff=(getattr(entry,column)-avg)
+        sqdiff+=math.pow(diff,2)
+        count+=1
+    variance=sqdiff/count
+    std=round(math.sqrt(variance),2)
+    result={}
+    result["avg"]=avg
+    result["std"]=std
+    return(result)
+
+def StdAvgTwoColumnsFunction(entries,column1, column2):
+    divisionsum=0
+    count=0
+    for entry in entries:
+        column1=getattr(entry,column1)
+        column2=getattr(entry,column2)
+        divisionsum+=column1/column2
+        count+=1
+    avgtwocolumns=divisionsum/count
+    count=0
+    sqdiff=0
+    for entry in entries:
+        column1=getattr(entry,column1)
+        column2=getattr(entry,column2)
+        division=column1/column2
+        diff=division-avgtwocolumns
+        sqdiff+=math.pow(diff,2)
+        count+=1
+    variance=sqdiff/count
+    std=round(math.sqrt(variance),2)
+    result={}
+    result["avg"]=avgtwocolumns
+    result["std"]=std
+    return(result)
+
 
 #this entire view handles the process of sending data, checking it and saving it in the backend
 def senddata(request):
@@ -750,8 +794,16 @@ def getdata(request):
             if (counter>1):
                 print("more than one")
                 if FreeOrEmployed=="fest":
-                    avgHoursPerWeekEmp=entries.aggregate(Avg('HoursPerWeekEmp'))
-                    avgHoursPerWeekEmp=(avgHoursPerWeekEmp['HoursPerWeekEmp__avg'])
+
+                    column='HoursPerWeekEmp'
+                    print(StdAvgFunction(entries,'HoursPerWeekEmp')["avg"])
+                    print(StdAvgFunction(entries,column)["std"])
+                    avgHoursPerWeekEmp=StdAvgFunction(entries,'HoursPerWeekEmp')["avg"]
+                    stdHoursPerWeekEmp=StdAvgFunction(entries,'HoursPerWeekEmp')["std"]
+
+
+
+
 
                     avgSalaryPerMonthEmpMix=entries.aggregate(Avg('SalaryPerMonthEmpMix'))
                     avgSalaryPerMonthEmpMix=(avgSalaryPerMonthEmpMix['SalaryPerMonthEmpMix__avg'])
