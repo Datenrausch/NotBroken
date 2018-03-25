@@ -4154,3 +4154,133 @@ input[type=range].alert-bar_video:-moz-focusring {
 	margin: 10px 8px 0px 0px;
 }
 }
+
+/*Smiley-Slider*/
+
+.fav-output {
+	margin: 0px 9px 0px 0px;
+	background-size: 100%;
+	background-position: 100% center;
+	background-repeat: no-repeat;
+	margin-left: calc(100% - 34px);
+	width: 30px;
+	height: 31px;
+}
+
+.fav-output-0 {
+	background-image: url(../image/fav-output-0.png);
+}
+
+.fav-output-1 {
+	background-image: url(../image/fav-output-1.png);
+}
+
+.fav-output-2 {
+	background-image: url(../image/fav-output-2.png);
+}
+
+.fav-output-3 {
+	background-image: url(../image/fav-output-3.png);
+}
+
+.fav-output-4 {
+	background-image: url(../image/fav-output-4.png);
+}
+
+.fav-output-5 {
+	background-image: url(../image/fav-output-5.png);
+}
+
+.fav-output-6 {
+	background-image: url(../image/fav-output-6.png);
+}
+
+.fav-output-7 {
+	background-image: url(../image/fav-output-7.png);
+}
+
+.fav-output-8 {
+	background-image: url(../image/fav-output-8.png);
+}
+
+.fav-output-9 {
+	background-image: url(../image/fav-output-9.png);
+}
+
+.fav-output-10 {
+	background-image: url(../image/fav-output-10.png);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Microsoft*/
+
+input[type=range] {
+	padding: 0;
+}
+
+input[type=range]::-ms-track {
+    width: 100%;
+    /*remove bg colour from the track, use ms-fill-lower and ms-fill-upper instead */
+    background: transparent;
+    
+    /*leave room for the larger thumb to overflow with a transparent border */
+    border-color: transparent;
+    border-width: 6px 0;
+
+    /*remove default tick marks*/
+    color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+    border-radius: 10px;
+}
+
+input[type=range]::-ms-tooltip { 
+	display: none; 
+}
+
+input[type=range]::-ms-fill-upper {
+    border-radius: 0px;
+}
+input[type=range]::-ms-thumb {
+    border: none;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background: #ecf0f1;
+}
+input[type=range]:focus::-ms-fill-lower {
+    background: rgba(255, 255, 255, 0) !important;
+}
+input[type=range]:focus::-ms-fill-upper {
+    background: rgba(255, 255, 255, 0) !important;
+}
+
+
+

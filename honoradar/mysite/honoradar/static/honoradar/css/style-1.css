@@ -1,11 +1,11 @@
 .fav-output {
-	margin: 0px 8px 0px 0px;
+	margin: 0px 9px 0px 0px;
 	background-size: 100%;
 	background-position: 100% center;
 	background-repeat: no-repeat;
 	margin-left: calc(100% - 34px);
 	width: 30px;
-	height: 33px;
+	height: 31px;
 }
 
 .fav-output-0 {
@@ -121,4 +121,22 @@ input[type=range]:focus::-ms-fill-upper {
     background: rgba(255, 255, 255, 0) !important;
 }
 
+
+
+
+
+.autorenbox {
+	border-radius: 100%; 
+	width: 150px;
+	height: 150px; 
+	display: inline-block; 	
+	background-size: auto auto;
+	background-repeat: no-repeat;
+	background-position: center center;	
+	
+}
+
+.autor-michel {
+	background-image: url(../image/fav-output-1.png);
+}
 
