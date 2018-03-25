@@ -34,11 +34,12 @@ def StdAvgFunction(entries, column):
         result["avg"] = avg
         result["std"] = std
         result["status"] = "Success"
+        if (float(result["avg"]) == 0) and (float(result["std"]) == 0):
+            result["status"] = "Failed"
     else:
         result["status"] = "Failed"
-    if (avg ==0)and (std ==0):
-        result["status"] = "Failed"
 
+        print("check")
     return(result)
 
 
@@ -56,23 +57,18 @@ def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
         for entry in entries:
             column1val = float(getattr(entry, str(column1)))
             column2val = float(getattr(entry, str(column2)))
-            print(column1val,column2val)
-            if (column1val == 0) or (column2val == 0):
-                result = {}
-                result["status"] = "Failed"
-            else:
+            print(column1,column1val,column2,column1val)
+            if (column1val != 0) and (column2val != 0):
                 if operator == "/":
                     productsum += column1val / column2val
                 if operator == "*":
                     productsum += column1val*column2val
                 count += 1
+            else:
+                result = {}
+                result["status"] = "Failed"
 
-        print(count)
-        if count==0:
-            result = {}
-            result["status"] = "Failed"
-
-        else:
+        if count !=0:
             avgtwocolumns = productsum / count
             count = 0
             sqdiff = 0
@@ -93,7 +89,15 @@ def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
             result["avg"] = avgtwocolumns
             result["std"] = std
             result["status"] = "Success"
+            if (float(result["avg"]) == 0) and (float(result["std"]) == 0):
+                result = {}
+                result["status"] = "Failed"
+                print("check")
 
+
+        else:
+            result = {}
+            result["status"] = "Failed"
 
 
 
@@ -101,6 +105,7 @@ def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
     else:
         result = {}
         result["status"] = "Failed"
+
     return(result)
 
 
@@ -306,6 +311,9 @@ def senddata(request):
                             SalaryPerMonth=float(SalaryPerMonth),
                             FeeFree=float(FeeFree),
                             VideoAudioTextFree=str(VideoAudioTextFree),
+                            MinPerAudioFree=float(MinPerAudioFree),
+                            MinPerVideoFree=float(MinPerVideoFree),
+                            CharPerArticleFree=float(CharPerArticleFree),
                             Genre=Genre,
                             AnalogDigitalFree=AnalogDigitalFree,
                             JobPosition=JobPosition,
@@ -468,7 +476,10 @@ def senddata(request):
                             SalaryPerHour=float(SalaryPerHour),
                             SalaryPerMonth=float(SalaryPerMonth),
                             FeeFree=float(FeeFree),
-                            VideoAudioTextFree=VideoAudioTextFree,
+                            VideoAudioTextFree=str(VideoAudioTextFree),
+                            MinPerAudioFree=float(MinPerAudioFree),
+                            MinPerVideoFree=float(MinPerVideoFree),
+                            CharPerArticleFree=float(CharPerArticleFree),
                             Genre=Genre,
                             AnalogDigitalFree=AnalogDigitalFree,
                             JobPosition=JobPosition,
@@ -682,7 +693,10 @@ def senddata(request):
                             SalaryPerHour=float(SalaryPerHour),
                             SalaryPerMonth=float(SalaryPerMonth),
                             FeeFree=float(FeeFree),
-                            VideoAudioTextFree=VideoAudioTextFree,
+                            VideoAudioTextFree=str(VideoAudioTextFree),
+                            MinPerAudioFree=float(MinPerAudioFree),
+                            MinPerVideoFree=float(MinPerVideoFree),
+                            CharPerArticleFree=float(CharPerArticleFree),
                             Genre=Genre,
                             AnalogDigitalFree=AnalogDigitalFree,
                             JobPosition=JobPosition,
@@ -845,7 +859,10 @@ def senddata(request):
                             SalaryPerHour=float(SalaryPerHour),
                             SalaryPerMonth=float(SalaryPerMonth),
                             FeeFree=float(FeeFree),
-                            VideoAudioTextFree=VideoAudioTextFree,
+                            VideoAudioTextFree=str(VideoAudioTextFree),
+                            MinPerAudioFree=float(MinPerAudioFree),
+                            MinPerVideoFree=float(MinPerVideoFree),
+                            CharPerArticleFree=float(CharPerArticleFree),
                             Genre=Genre,
                             AnalogDigitalFree=AnalogDigitalFree,
                             JobPosition=JobPosition,
