@@ -51,35 +51,48 @@ def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
         productsum = 0
         count = 0
         for entry in entries:
-            column1val = getattr(entry, str(column1))
-            column2val = getattr(entry, str(column2))
-            if operator == "/":
-                productsum += column1val / column2val
-            if operator == "*":
-                productsum += column1val*column2val
+            column1val = float(getattr(entry, str(column1)))
+            column2val = float(getattr(entry, str(column2)))
+            if (column1val != 0) and (column2val != 0):
+                if operator == "/":
+                    productsum += column1val / column2val
+                if operator == "*":
+                    productsum += column1val*column2val
+                count += 1
+            else:
+                result = {}
+                result["status"] = "Failed"
 
-            count += 1
-        avgtwocolumns = productsum / count
-        count = 0
-        sqdiff = 0
-        for entry in entries:
-            column1val = getattr(entry, str(column1))
-            column2val = getattr(entry, str(column2))
-            if operator == "/":
-                product = column1val / column2val
-            if operator == "*":
-                product = column1val*column2val
-            diff = product - avgtwocolumns
-            sqdiff += math.pow(diff, 2)
-            count += 1
-        variance = sqdiff / count
-        std = round(math.sqrt(variance), 2)
-        result = {}
-        avgtwocolumns = round(avgtwocolumns, 2)
-        result["avg"] = avgtwocolumns
-        result["std"] = std
-        result["status"] = "Success"
+        if count !=0:
+            avgtwocolumns = productsum / count
+            count = 0
+            sqdiff = 0
+            for entry in entries:
+                column1val = getattr(entry, str(column1))
+                column2val = getattr(entry, str(column2))
+                if operator == "/":
+                    product = column1val / column2val
+                if operator == "*":
+                    product = column1val*column2val
+                diff = product - avgtwocolumns
+                sqdiff += math.pow(diff, 2)
+                count += 1
+            variance = sqdiff / count
+            std = round(math.sqrt(variance), 2)
+            result = {}
+            avgtwocolumns = round(avgtwocolumns, 2)
+            result["avg"] = avgtwocolumns
+            result["std"] = std
+            result["status"] = "Success"
+        else:
+            result = {}
+            result["status"] = "Failed"
+
+
+
+
     else:
+        result = {}
         result["status"] = "Failed"
     return(result)
 
@@ -157,7 +170,7 @@ def senddata(request):
                     # if all these data sanitychecks are okay, we bind the input to an existing medium
                     if(sanitycheck == 0):
                         SalaryPerHour=float(SalaryPerMonthEmpMix)/(float(HoursPerWeekEmp)*4)
-                        SalaryPerMonth=SalaryPerHour*40
+                        SalaryPerMonth=SalaryPerHour*160
 
                         d = mediumobj.datacollection_set.create(
                             SalaryPerHour=float(SalaryPerHour),
@@ -167,7 +180,7 @@ def senddata(request):
                             HoursPerWeekEmp=float(HoursPerWeekEmp),
                             JobPosition=JobPosition,
                             Experience=Experience,
-                            Comment=Comment
+                            Comment=Comment,
                         )
                     else:
                         pass
@@ -207,7 +220,7 @@ def senddata(request):
                     # if all these data sanitychecks are okay, we bind the input to an existing medium
                     if(sanitycheck == 0):
                         SalaryPerHour=float(SalaryPerMonthEmpMix)/(float(DaysPerMonthMix)*float(HoursPerDayMix))
-                        SalaryPerMonth=SalaryPerHour*40
+                        SalaryPerMonth=SalaryPerHour*160
                         d = mediumobj.datacollection_set.create(
                             SalaryPerHour=float(SalaryPerHour),
                             SalaryPerMonth=float(SalaryPerMonth),
@@ -226,6 +239,9 @@ def senddata(request):
 
                     FeeFree = (request.POST.get('FeeFree'))
                     VideoAudioTextFree = (request.POST.get("VideoAudioTextFree"))
+                    MinPerVideoFree = (request.POST.get("MinPerVideoFree"))
+                    MinPerAudioFree = (request.POST.get("MinPerAudioFree"))
+                    CharPerArticleFree = (request.POST.get("CharPerArticleFree"))
                     Genre = (request.POST.get("Genre"))
                     AnalogDigitalFree = (request.POST.get("AnalogDigitalFree"))
                     JobPosition = (request.POST.get("JobPosition"))
@@ -261,7 +277,7 @@ def senddata(request):
                             messages.info(request, 'Beitragsminuten')
 
                     if VideoAudioTextFree == "audio":
-                        if float(MinPerVideoFree) != 0.5:
+                        if float(MinPerAudioFree) != 0.5:
                             pass
                         else:
                             sanitycheck = 1
@@ -277,12 +293,12 @@ def senddata(request):
                     SalaryPerMonth=0
                     if(sanitycheck == 0):
                         SalaryPerHour=float(FeeFree)/float(HoursSpentFree)
-                        SalaryPerMonth=SalaryPerHour*40
+                        SalaryPerMonth=SalaryPerHour*160
                         d = mediumobj.datacollection_set.create(
                             SalaryPerHour=float(SalaryPerHour),
                             SalaryPerMonth=float(SalaryPerMonth),
                             FeeFree=float(FeeFree),
-                            VideoAudioTextFree=VideoAudioTextFree,
+                            VideoAudioTextFree=str(VideoAudioTextFree),
                             Genre=Genre,
                             AnalogDigitalFree=AnalogDigitalFree,
                             JobPosition=JobPosition,
@@ -314,7 +330,7 @@ def senddata(request):
                     if(sanitycheck == 0):
 
                         SalaryPerHour=float(SalaryPerMonthEmpMix)/(float(HoursPerWeekEmp)*4)
-                        SalaryPerMonth=SalaryPerHour*40
+                        SalaryPerMonth=SalaryPerHour*160
                         mediumobj = Medium(
                             mediumname=MediumName, freeoremployed=FreeOrEmployed)
 
@@ -327,7 +343,7 @@ def senddata(request):
                             HoursPerWeekEmp=float(HoursPerWeekEmp),
                             JobPosition=JobPosition,
                             Experience=Experience,
-                            Comment=Comment
+                            Comment=Comment,
                         )
 
                 if FreeOrEmployed == "pauschal":
@@ -366,7 +382,7 @@ def senddata(request):
                         mediumobj.save()
 
                         SalaryPerHour=float(SalaryPerMonthEmpMix)/(float(DaysPerMonthMix)*float(HoursPerDayMix))
-                        SalaryPerMonth=SalaryPerHour*40
+                        SalaryPerMonth=SalaryPerHour*160
                         d = mediumobj.datacollection_set.create(
                             SalaryPerHour=float(SalaryPerHour),
                             SalaryPerMonth=float(SalaryPerMonth),
@@ -440,7 +456,7 @@ def senddata(request):
                             mediumname=MediumName, freeoremployed=FreeOrEmployed)
                         mediumobj.save()
                         SalaryPerHour=float(FeeFree)/float(HoursSpentFree)
-                        SalaryPerMonth=SalaryPerHour*40
+                        SalaryPerMonth=SalaryPerHour*160
                         d = mediumobj.datacollection_set.create(
                             SalaryPerHour=float(SalaryPerHour),
                             SalaryPerMonth=float(SalaryPerMonth),
@@ -534,7 +550,7 @@ def senddata(request):
                     # if all these data sanitychecks are okay, we bind the input to an existing medium
                     if(sanitycheck == 0):
                         SalaryPerHour=SalaryPerMonthEmpMix/(HoursPerWeekEmp*4)
-                        SalaryPerMonth=SalaryPerHour*40
+                        SalaryPerMonth=SalaryPerHour*160
 
                         d = mediumobj.datacollection_set.create(
                             SalaryPerHour=float(SalaryPerHour),
@@ -584,7 +600,7 @@ def senddata(request):
                     # if all these data sanitychecks are okay, we bind the input to an existing medium
                     if(sanitycheck == 0):
                         SalaryPerHour=SalaryPerMonthEmpMix/(DaysPerMonthMix*HoursPerDayMix)
-                        SalaryPerMonth=SalaryPerHour*40
+                        SalaryPerMonth=SalaryPerHour*160
                         d = mediumobj.datacollection_set.create(
                             SalaryPerHour=float(SalaryPerHour),
                             SalaryPerMonth=float(SalaryPerMonth),
@@ -654,7 +670,7 @@ def senddata(request):
                     SalaryPerMonth=0
                     if(sanitycheck == 0):
                         SalaryPerHour=float(FeeFree)/float(HoursSpentFree)
-                        SalaryPerMonth=SalaryPerHour*40
+                        SalaryPerMonth=SalaryPerHour*160
                         d = mediumobj.datacollection_set.create(
                             SalaryPerHour=float(SalaryPerHour),
                             SalaryPerMonth=float(SalaryPerMonth),
@@ -691,7 +707,7 @@ def senddata(request):
                     if(sanitycheck == 0):
 
                         SalaryPerHour=SalaryPerMonthEmpMix/(HoursPerWeekEmp*4)
-                        SalaryPerMonth=SalaryPerHour*40
+                        SalaryPerMonth=SalaryPerHour*160
                         mediumobj = Medium(
                             mediumname=MediumName, freeoremployed=FreeOrEmployed)
 
@@ -743,7 +759,7 @@ def senddata(request):
                         mediumobj.save()
 
                         SalaryPerHour=SalaryPerMonthEmpMix/(DaysPerMonthMix*HoursPerDayMix)
-                        SalaryPerMonth=SalaryPerHour*40
+                        SalaryPerMonth=SalaryPerHour*160
                         d = mediumobj.datacollection_set.create(
                             SalaryPerHour=float(SalaryPerHour),
                             SalaryPerMonth=float(SalaryPerMonth),
@@ -817,7 +833,7 @@ def senddata(request):
                             mediumname=MediumName, freeoremployed=FreeOrEmployed)
                         mediumobj.save()
                         SalaryPerHour=float(FeeFree)/float(HoursSpentFree)
-                        SalaryPerMonth=SalaryPerHour*40
+                        SalaryPerMonth=SalaryPerHour*160
                         d = mediumobj.datacollection_set.create(
                             SalaryPerHour=float(SalaryPerHour),
                             SalaryPerMonth=float(SalaryPerMonth),
@@ -859,51 +875,86 @@ def getdata(request):
 
             if (counter > 1):
                 print("more than one")
+
                 if FreeOrEmployed == "fest":
-                    SalaryPerMonthEmpMix = StdAvgFunction(
-                        entries, 'SalaryPerMonthEmpMix')
 
-                    HoursPerWeekEmp = StdAvgFunction(
-                        entries, 'HoursPerWeekEmp')
 
-                    SalaryPerHours = StdAvgTwoColumnsFunction(
-                        entries, 'SalaryPerMonthEmpMix', 'HoursPerWeekEmp',"/")
-                    if SalaryPerHours["status"] == "Success":
-                        SalaryPerHours["avg"] = round(
-                            (SalaryPerHours["avg"] / 4), 2)
-                        SalaryPerHours["std"] = round(
-                            (SalaryPerHours["std"] / 4), 2)
+                    SalaryPerHour = StdAvgFunction(entries, 'SalaryPerHour')
+                    SalaryPerMonth = StdAvgFunction(entries, 'SalaryPerMonth')
+                    HoursPerWeekEmp = StdAvgFunction(entries, 'HoursPerWeekEmp')
 
                     Happiness = StdAvgFunction(entries, 'Happiness')
 
                     context = {'mediumname': MediumName,
-                    "SalaryPerMonthEmpMix":SalaryPerMonthEmpMix,
-                               "SalaryPerHours": SalaryPerHours,
+                               "SalaryPerHour": SalaryPerHour,
+                               "SalaryPerMonth":SalaryPerMonth,
                                "HoursPerWeekEmp": HoursPerWeekEmp,
                                "Happiness": Happiness,
                                }
                     print(context)
                     return JsonResponse(context)
+
                 if FreeOrEmployed == "pauschal":
-                    SalaryPerMonthEmpMix = StdAvgFunction(entries, 'SalaryPerMonthEmpMix')
+                    SalaryPerHour = StdAvgFunction(entries, 'SalaryPerHour')
+                    SalaryPerMonth = StdAvgFunction(entries, 'SalaryPerMonth')
+
                     DaysPerMonthMix = StdAvgFunction(entries, 'DaysPerMonthMix')
                     HoursPerDayMix = StdAvgFunction(entries, 'HoursPerDayMix')
-                    HoursPerMonth = StdAvgTwoColumnsFunction(
-                        entries, 'DaysPerMonthMix', 'HoursPerMonth',"*")
+                    HoursPerMonth = StdAvgTwoColumnsFunction(entries, 'DaysPerMonthMix', 'HoursPerDayMix',"*")
 
                     Happiness = StdAvgFunction(entries, 'Happiness')
-                    context = {'mediumname': MediumName,
-                    "SalaryPerMonthEmpMix":SalaryPerMonthEmpMix,
-                               "DaysPerMonthMix": DaysPerMonthMix,
-                               "HoursPerDayMix": HoursPerDayMix,
-                               "Happiness": Happiness,
+                    context = {
+                    'mediumname': MediumName,
+                    "SalaryPerHour": SalaryPerHour,
+                    "SalaryPerMonth":SalaryPerMonth,
+                    "DaysPerMonthMix": DaysPerMonthMix,
+                    "HoursPerDayMix": HoursPerDayMix,
+                    "HoursPerMonth":HoursPerMonth,
+
+                    "Happiness": Happiness,
                                }
 
 
                     print(context)
                     return JsonResponse(context)
+
                 if FreeOrEmployed == "frei":
-                    pass
+
+
+                    SalaryPerHour = StdAvgFunction(entries, 'SalaryPerHour')
+                    SalaryPerMonth = StdAvgFunction(entries, 'SalaryPerMonth')
+
+                    FeeFree = StdAvgFunction(entries, 'FeeFree')
+                    HoursSpentFree = StdAvgFunction(entries, 'HoursSpentFree')
+
+                    MinPerVideoFree =StdAvgFunction(entries, 'MinPerVideoFree')
+                    VideoFeePerMin = StdAvgTwoColumnsFunction(entries, 'FeeFree', 'MinPerVideoFree',"/")
+
+                    MinPerAudioFree=StdAvgFunction(entries, 'MinPerAudioFree')
+                    AudioFeePerMin = StdAvgTwoColumnsFunction(entries, 'FeeFree', 'MinPerAudioFree',"/")
+
+                    CharPerArticleFree=StdAvgFunction(entries, 'CharPerArticleFree')
+                    ArticleFeePerChar = StdAvgTwoColumnsFunction(entries, 'FeeFree', 'CharPerArticleFree',"/")
+
+                    Happiness = StdAvgFunction(entries, 'Happiness')
+                    context = {
+                    'mediumname': MediumName,
+                    "SalaryPerHour": SalaryPerHour,
+                    "SalaryPerMonth":SalaryPerMonth,
+                    "FeeFree": FeeFree,
+                    "HoursSpentFree": HoursSpentFree,
+                    "MinPerVideoFree": MinPerVideoFree,
+                    "VideoFeePerMin":VideoFeePerMin,
+                    "MinPerAudioFree": MinPerAudioFree,
+                    "AudioFeePerMin":AudioFeePerMin,
+                    "CharPerArticleFree": CharPerArticleFree,
+                    "ArticleFeePerChar":ArticleFeePerChar,
+                    "Happiness": Happiness,
+                               }
+
+
+                    print(context)
+                    return JsonResponse(context)
 
             else:
                 print("Nur eine")

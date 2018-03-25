@@ -46,7 +46,7 @@ class DataCollection(models.Model):
     #Have to change into buttons
     JobPosition=models.CharField(default="None",max_length=200)
     EXPERIENCE = Choices("keineAngabe","1 Jahr","3 Jahre"," 5 Jahre")
-    Experience = models.CharField(choices=EXPERIENCE, default=EXPERIENCE.keineAngabe, max_length=10)
+    Experience = models.CharField(choices=EXPERIENCE, default=EXPERIENCE.keineAngabe, max_length=10, null=True)
 
     HoursPerWeekEmp=models.IntegerField(default=0)
     HoursSpentFree=models.IntegerField(default=0)
@@ -54,11 +54,19 @@ class DataCollection(models.Model):
     HoursPerDayMix=models.IntegerField(default=0)
     DaysPerMonthMix=models.IntegerField(default=0)
     Genre=models.CharField(default="None",max_length=200)
+
+    VATF = Choices("keineAngabe","text","audio"," video")
+    VideoAudioTextFree = models.CharField(choices=VATF, default=VATF.keineAngabe, max_length=10, null=True)
+
+    ANALOGDIGITAL = Choices("keineAngabe","Analog","Digital","Analog & Digital")
+    AnalogDigitalFree = models.CharField(choices=ANALOGDIGITAL, default=ANALOGDIGITAL.keineAngabe, max_length=10, null=True)
+
+
     MinPerAudioFree=models.IntegerField(default=0)
     MinPerVideoFree=models.IntegerField(default=0)
     CharPerArticleFree=models.IntegerField(default=0)
 
-    Comment=models.CharField(default="Kein Kommentar",max_length=600)
+    Comment=models.CharField(default="Kein Kommentar",max_length=600, null=True)
 
 
 
