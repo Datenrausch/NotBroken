@@ -213,6 +213,10 @@ function festfunction() {
 	var element = document.getElementById("banner-left-2");
     element.classList.add("show");
     element.classList.remove("hide");
+	
+	var element = document.getElementById("banner-left-shadow-2");
+    element.classList.add("show");
+    element.classList.remove("hide");
 
 	var element = document.getElementById("banner-left-triangle");
     element.classList.add("show");
@@ -323,6 +327,10 @@ function pauschalfunction() {
 	var element = document.getElementById("banner-left-2");
     element.classList.add("show");
     element.classList.remove("hide");
+	
+	var element = document.getElementById("banner-left-shadow-2");
+    element.classList.add("show");
+    element.classList.remove("hide");
 
 	var element = document.getElementById("banner-left-triangle");
     element.classList.add("show");
@@ -416,6 +424,10 @@ function freifunction() {
     element.classList.remove("hide");
 
 	var element = document.getElementById("banner-left-2");
+    element.classList.add("show");
+    element.classList.remove("hide");
+	
+	var element = document.getElementById("banner-left-shadow-2");
     element.classList.add("show");
     element.classList.remove("hide");
 
@@ -650,13 +662,6 @@ function alertoffdatavideo() {
 }
 
 
-$('.smooth').on('click', function(e){
-  var href = $(this).attr('href');
-  $('html, body').animate({
-    scrollTop:$(href).offset().top
-  },'slow');
-  e.preventDefault();
-})
 
 var slide = document.getElementById("data_athmosphaere");
 var text = document.getElementById("outputhappiness");
@@ -667,64 +672,104 @@ slidervalue=(slide.value)
 if (slidervalue ==1){
 	console.log(slidervalue)
 	text.classList.add("fav-output-1");
-	text.classList.remove("fav-output-0", "fav-output-2", "fav-output-3", "fav-output-4", "fav-output-5", "fav-output-6", "fav-output-7", "fav-output-8", "fav-output-9", "fav-output-10");
+	text.classList.remove("fav-output-0", "fav-output-2", "fav-output-3", "fav-output-4", "fav-output-5", "fav-output-6", "fav-output-7", "fav-output-8", "fav-output-9");
 }
 
 if (slidervalue ==2) {
 	console.log(slidervalue)
 	text.classList.add("fav-output-2");
-	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-3", "fav-output-4", "fav-output-5", "fav-output-6", "fav-output-7", "fav-output-8", "fav-output-9", "fav-output-10");
+	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-3", "fav-output-4", "fav-output-5", "fav-output-6", "fav-output-7", "fav-output-8", "fav-output-9");
 } 
 
 if (slidervalue ==3) {
 	console.log(slidervalue)
 	text.classList.add("fav-output-3");
-	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-2", "fav-output-4", "fav-output-5", "fav-output-6", "fav-output-7", "fav-output-8", "fav-output-9", "fav-output-10");
+	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-2", "fav-output-4", "fav-output-5", "fav-output-6", "fav-output-7", "fav-output-8", "fav-output-9");
 } 
 
 if (slidervalue ==4) {
 	console.log(slidervalue)
 	text.classList.add("fav-output-4");
-	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-2", "fav-output-3", "fav-output-5", "fav-output-6", "fav-output-7", "fav-output-8", "fav-output-9", "fav-output-10");
+	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-2", "fav-output-3", "fav-output-5", "fav-output-6", "fav-output-7", "fav-output-8", "fav-output-9");
 } 
 
 if (slidervalue ==5) {
 	console.log(slidervalue)
 	text.classList.add("fav-output-5");
-	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-2", "fav-output-3", "fav-output-4", "fav-output-6", "fav-output-7", "fav-output-8", "fav-output-9", "fav-output-10");
+	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-2", "fav-output-3", "fav-output-4", "fav-output-6", "fav-output-7", "fav-output-8", "fav-output-9");
 } 
 
 if (slidervalue ==6) {
 	console.log(slidervalue)
 	text.classList.add("fav-output-6");
-	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-2", "fav-output-3", "fav-output-4", "fav-output-5", "fav-output-7", "fav-output-8", "fav-output-9", "fav-output-10");
+	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-2", "fav-output-3", "fav-output-4", "fav-output-5", "fav-output-7", "fav-output-8", "fav-output-9");
 } 
 
 if (slidervalue ==7) {
 	console.log(slidervalue)
 	text.classList.add("fav-output-7");
-	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-2", "fav-output-3", "fav-output-4", "fav-output-5", "fav-output-6", "fav-output-8", "fav-output-9", "fav-output-10");
+	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-2", "fav-output-3", "fav-output-4", "fav-output-5", "fav-output-6", "fav-output-8", "fav-output-9");
 } 
 
 if (slidervalue ==8) {
 	console.log(slidervalue)
 	text.classList.add("fav-output-8");
-	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-2", "fav-output-3", "fav-output-4", "fav-output-5", "fav-output-6", "fav-output-7", "fav-output-9", "fav-output-10");
+	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-2", "fav-output-3", "fav-output-4", "fav-output-5", "fav-output-6", "fav-output-7", "fav-output-9");
 } 
 
-if (slidervalue ==9) {
+else if (slidervalue ==9) {
 	console.log(slidervalue)
 	text.classList.add("fav-output-9");
-	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-2", "fav-output-3", "fav-output-4", "fav-output-5", "fav-output-6", "fav-output-7", "fav-output-8", "fav-output-10");
-} 
-
-else if (slidervalue ==10) {
-	console.log(slidervalue)
-	text.classList.add("fav-output-10");
-	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-2", "fav-output-3", "fav-output-4", "fav-output-5", "fav-output-6", "fav-output-7", "fav-output-8", "fav-output-9");
+	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-2", "fav-output-3", "fav-output-4", "fav-output-5", "fav-output-6", "fav-output-7", "fav-output-8");
 } 
 
 }
 
+function reload() {
+	var element = document.getElementById("ACCEPTED");
+    element.classList.add("hide");
+    element.classList.remove("show");
+	
+	var element = document.getElementById("banner-left-1");
+    element.classList.add("show");
+    element.classList.remove("hide");
+
+	var element = document.getElementById("banner-left-4");
+    element.classList.add("hide");
+    element.classList.remove("show");
+	
+	var element = document.getElementById("data_medium");
+    element.classList.add("show");
+    element.classList.remove("hide");
+
+	var element = document.getElementById("data_arbeitsverhaeltnis");
+    element.classList.add("show");
+    element.classList.remove("hide");
+	
+	var element = document.getElementById("newsletter_submit");
+    element.classList.add("hide");
+    element.classList.remove("show");
+	
+	var element = document.getElementById("reload_submit");
+    element.classList.add("hide");
+    element.classList.remove("show");
+	
+	var element = document.getElementById("after-submit-text-1");
+    element.classList.add("hide");
+    element.classList.remove("show");
+	
+	var element = document.getElementById("after-submit-text-2");
+    element.classList.add("hide");
+    element.classList.remove("show");
+	
+	
+};
 
 
+$('.smooth').on('click', function(e){
+  var href = $(this).attr('href');
+  $('html, body').animate({
+    scrollTop:$(href).offset().top
+  },'slow');
+  e.preventDefault();
+})

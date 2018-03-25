@@ -60,7 +60,7 @@
 <!-- Parallax -->
     <div class="panel">
 		<h1 class="head-title">Was verdienen Journalisten?</h1>
-		<h2 class="head-subtitle-1">Die JourMoney-Datenbank gibt die Antwort: Hier spenden Journalisten Lohndaten und erfahren, was ihre Kollegen verdienen.</h2>
+		<h2 class="head-subtitle-1">Die <span class="f-top"><span>:</span>F</span>-Datenbank gibt die Antwort: Hier spenden Journalisten Gehalts- und Lohndaten und erfahren, was ihre Kollegen verdienen.</h2>
 		<h2 class="head-subtitle-2">Bisher spendeten Journalisten 1.245 Daten über 134 Medien.</h2>
 		<a href="#banderole" id="machmit" class="smooth clear-absolute"><h3 class="head-action">Mach mit!</h3></a>
 		<div class="head-box-1"></div>
@@ -129,10 +129,13 @@
     <form action="{% url 'honoradar:senddata' %}" method="post" data-url="{% url 'honoradar:senddata' %}" name="firstbox" id="giv-form">
       {% csrf_token %}
 
-	<div class="banner-left-1">Erzähle, was du verdienst!</div><div class="banner-left-shadow"></div>
+	<div class="banner-left-1 hide" id="banner-left-1">Erzähle, was du verdienst!</div>
+	<div class="banner-left-4" id="banner-left-4">Vielen Dank!</div>
+	<div class="banner-left-shadow"></div>
+	<div id="banner-left-triangle" class="banner-left-shadow hide"></div>
 
 <!-- Medium-Select -->
-    <input name="MediumName" id="data_medium" class="media-select" list="medium" placeholder="Für welches Medium arbeitest du?" type="text" />
+    <input name="MediumName" id="data_medium" class="media-select hide" list="medium" placeholder="Für welches Medium arbeitest du?" type="text" />
     <datalist id="medium">
 		<option value="Frankfurter Allgemeine Zeitung (FAZ)">
 		<option value="Spiegel">
@@ -145,7 +148,7 @@
 	</datalist>
 
 <!-- Switch-Select -->
-	<div class="switch-field switch-field-text-1 tooltip">
+	<div class="switch-field switch-field-text-1 tooltip hide" id="data_arbeitsverhaeltnis">
 		<input name="FreeOrEmployed" type="radio" id="data_arbeitsverhaeltnis_fest" name="switch" value="fest" onclick="festfunction()"/>
 		<label for="data_arbeitsverhaeltnis_fest">Fest<span id="question-1">?</span></label>
 		<input name="FreeOrEmployed" type="radio" id="data_arbeitsverhaeltnis_pauschal" name="switch" value="pauschal" onclick="pauschalfunction()"/>
@@ -160,9 +163,9 @@
   	<input  name="SalaryPerMonthEmpMix" id="data_gehalt" class="loan-select hide" list="gehalt" placeholder="Gehalt pro Monat?" type="number"	min="0" oninput="validity.valid||(value='');" inputmode="numeric" />
 
 <!-- Hour-Week-Select -->
-    <div class="day-month-select hide pre-alert-bar-day-month" id="pre-data_stunden_woche">
+    <div class="day-month-select hide pre-alert-bar-hour-week" id="pre-data_stunden_woche">
 		<style id="style-hour-week" scoped></style>
-    	<input id="data_stunden_woche" name="HoursPerWeekEmp" class="hour-week-bar alert-bar_stunden_woche" type="range" min="1" max="50" value="0"/>
+    	<input id="data_stunden_woche" name="HoursPerWeekEmp" class="hour-week-bar alert-bar_stunden_woche" type="range" min="1" max="50" value="0" onmousedown="alertoffdatahourweek()" ontouchstart="alertoffdatahourweek()"/>
 	<p id="outputhourweek" class="output">0</p>
     </div>
     <div class="break hide" id="break-1"></div>
@@ -251,7 +254,9 @@
 	</div>
 
 	<div class="break"></div>
-    <div class="banner-left-2 zbanner-left hide" id="banner-left-2">Deine Arbeitssituation:</div><div id="banner-left-triangle" class="banner-left-shadow hide"></div>
+    <div class="banner-left-2 zbanner-left hide" id="banner-left-2">Deine Arbeitssituation:</div>
+	<div class="banner-left-shadow hide" id="banner-left-shadow-2"></div>
+	<div id="banner-left-triangle" class="banner-left-shadow hide"></div>
 
 <!-- Position-Select -->
     <input name="JobPosition" id="data_position" class="position-select hide alert" list="position" placeholder="Als was arbeitest du?" type="text" onmousedown="alertoffdataposition()" ontouchstart="alertoffdataposition()"/>
@@ -275,9 +280,9 @@
     </div>
 
 <!-- Happiness-Select-->
-    <div class="happiness-select pre-alert-bar-happiness" id="pre-data_athmosphaere">
+    <div class="happiness-select hide pre-alert-bar-happiness" id="pre-data_athmosphaere">
 	<style id="style-happiness" scoped></style>
-	<input name="Happiness" id="data_athmosphaere" class="range happiness-bar alert-bar_happiness" type="range" min="1" max="9" value="0"onmousedown="alertoffdatahappiness()" ontouchstart="alertoffdatahappiness()" ontouchmove="alertoffdatahappiness()"/>
+	<input name="Happiness" id="data_athmosphaere" class="range happiness-bar alert-bar_happiness" type="range" min="1" max="9" value="0" onmousedown="alertoffdatahappiness()" ontouchstart="alertoffdatahappiness()" ontouchmove="alertoffdatahappiness()"/>
 	<p id="outputhappiness" class="fav-output fav-output-0"></p>
 	</div>
 	<div class="break"></div>
@@ -312,13 +317,35 @@
 
 
 <!-- Submit -->
-  <div class="alert alert-media-select hide" id="WARNING">
+	<div class="alert-denied alert-media-select hide" id="WARNING">
 		<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
 		<strong>Achtung! </strong>Bitte fülle folgende Felder aus: Feld1, Feld2 und Feld2.
 	</div>
     <input type="submit" class="submit-get hide" id="data_submit" value="Daten spenden"/>
 
     </form>
+
+<!-- After-Submit Accpeted -->
+	  <div class="alert alert-accepted alert-media-select show" id="ACCEPTED">
+		<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+		Wir haben deine Infos geprüft und in die Datenbank aufgenommen.
+	</div>
+
+<!-- Newsletter-Anmeldung -->
+	<p class="after-submit-text" id="after-submit-text-1">Einmal im Jahr werten wir alle Daten aus und veröffentlichen einen Gehaltsreport – inklusive der besten Arbeitgeber. Falls gewünscht, informieren wir dich via Newsletter.
+	</p>
+	<a href="/newsletter">
+    <input type="submit" class="submit" id="newsletter_submit" value="Newsletter-Abo"/>
+	</a>
+	
+<!-- Reload -->
+	<p class="after-submit-text" id="after-submit-text-2">Wenn du noch mehr Daten spenden möchtest, freuen wir uns natürlich riesig. Je mehr, desto besser für alle. Vielleicht wäre die <span class="f"><span>:</span>F</span>-Datenbank ja auch was für deine Kollegen. 
+	</p>
+
+	<a href="#banderole" class="smooth">
+    <input type="submit" class="submit smooth" id="reload_submit" value="Erneut spenden" onmousedown="reload()" ontouchstart="reload()"/>
+	</a>
+
     </div>
 
 <!-- Output-Input-Box -->
@@ -328,7 +355,7 @@
     <div class="banner-right-1">Erfahre, was Medien zahlen!</div><div class="banner-right-shadow"></div>
 
 <!-- Medium-Select -->
-    <input name="mediumget" id="media-analyse" class="media-select alert" list="medium" placeholder="Welches Medium interessiert dich?" type="text" onclick="alertoffalaysemedium()"/>
+    <input name="mediumget" id="media-analyse" class="media-select" list="medium" placeholder="Welches Medium interessiert dich?" type="text" onclick="alertoffalaysemedium()"/>
     <datalist id="medium-analyse">
         <option value="Frankfurter Allgemeine Zeitung (FAZ)">
         <option value="Spiegel">
