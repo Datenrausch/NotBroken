@@ -36,6 +36,9 @@ def StdAvgFunction(entries, column):
         result["status"] = "Success"
     else:
         result["status"] = "Failed"
+    if (avg ==0)and (std ==0):
+        result["status"] = "Failed"
+
     return(result)
 
 
@@ -53,17 +56,23 @@ def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
         for entry in entries:
             column1val = float(getattr(entry, str(column1)))
             column2val = float(getattr(entry, str(column2)))
-            if (column1val != 0) and (column2val != 0):
+            print(column1val,column2val)
+            if (column1val == 0) or (column2val == 0):
+                result = {}
+                result["status"] = "Failed"
+            else:
                 if operator == "/":
                     productsum += column1val / column2val
                 if operator == "*":
                     productsum += column1val*column2val
                 count += 1
-            else:
-                result = {}
-                result["status"] = "Failed"
 
-        if count !=0:
+        print(count)
+        if count==0:
+            result = {}
+            result["status"] = "Failed"
+
+        else:
             avgtwocolumns = productsum / count
             count = 0
             sqdiff = 0
@@ -84,9 +93,7 @@ def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
             result["avg"] = avgtwocolumns
             result["std"] = std
             result["status"] = "Success"
-        else:
-            result = {}
-            result["status"] = "Failed"
+
 
 
 
