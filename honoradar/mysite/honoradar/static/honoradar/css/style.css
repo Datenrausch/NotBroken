@@ -4345,6 +4345,10 @@ input[type=range].alert-bar_video:-moz-focusring {
 	border: solid 3px #27ae60;
 }
 
+.submit-reload {
+	margin: 30px 0px 0px calc(50% - 125px);
+}
+
 .submit:hover {
 	background: #fff;
 	color: #27ae60;
