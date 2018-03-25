@@ -39,6 +39,9 @@ class DataCollection(models.Model):
     Happiness=models.IntegerField(default=0)
     SalaryPerMonthEmpMix=models.IntegerField(default=0)
     FeeFree=models.IntegerField(default=0)
+    SalaryPerHour=models.IntegerField(default=0)
+    SalaryPerMonth=models.IntegerField(default=0)
+
 
     #Have to change into buttons
     JobPosition=models.CharField(default="None",max_length=200)
