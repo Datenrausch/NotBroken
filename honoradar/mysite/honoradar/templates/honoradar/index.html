@@ -135,8 +135,9 @@
 	<div id="banner-left-triangle" class="banner-left-shadow hide"></div>
 
 <!-- Medium-Select -->
-    <input name="MediumName" id="data_medium" class="media-select hide" list="medium" placeholder="Für welches Medium arbeitest du?" type="text" />
+    <input name="MediumName" id="data_medium" class="media-select dropdown hide" list="medium" placeholder="Für welches Medium arbeitest du?" type="text" />
     <datalist id="medium">
+	<!--[if lte IE 9]><select data-datalist="samples"><![endif]-->
 		<option value="Frankfurter Allgemeine Zeitung (FAZ)">
 		<option value="Spiegel">
 		<option value="Spiegel TV">
@@ -145,7 +146,9 @@
 		<option value="Südwestrundfunk (SWR)">
 		<option value="Tagesspiegel">
 		<option value="Zeit Online (ZON)">
+    <!--[if lte IE 9]></select><![endif]-->
 	</datalist>
+	<!-- Support Safari? https://stackoverflow.com/questions/27494084/html5-datalist-tag-is-not-populating-in-safari?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa -->
 
 <!-- Switch-Select -->
 	<div class="switch-field switch-field-text-1 tooltip hide" id="data_arbeitsverhaeltnis">
@@ -223,15 +226,30 @@
 <!-- Genre-Select -->
     <input name="Genre" id="data_genre" class="genre-select hide" list="genre" placeholder="Welches Genre?" type="text"/>
     <datalist id="genre">
+	<!--[if lte IE 9]><select data-datalist="samples"><![endif]-->
+		<option value="Analyse">
         <option value="Bericht">
-        <option value="Doku">
+        <option value="Dokumentation">
+		<option value="Editorial">
+		<option value="Essay">
         <option value="Feature">
+		<option value="Foto">
+		<option value="Gebauter Beitrag">
+		<option value="Glosse">
+		<option value="Infografik">
         <option value="Interview">
+		<option value="Kolumne">
         <option value="Kommentar">
+		<option value="Kritik">
+		<option value="Leitartikel">
         <option value="Moderation">
         <option value="Nachricht">
-        <option value="Portrait">
+		<option value="Podcast">
+        <option value="Porträt">
         <option value="Reportage">
+		<option value="Rezension">
+		<option value="Servicetext">
+	<!--[if lte IE 9]></select><![endif]-->
     </datalist>
 
 <!-- Digitalization-Select -->
@@ -261,12 +279,14 @@
 <!-- Position-Select -->
     <input name="JobPosition" id="data_position" class="position-select hide alert" list="position" placeholder="Als was arbeitest du?" type="text" onmousedown="alertoffdataposition()" ontouchstart="alertoffdataposition()"/>
     <datalist id="position">
+	<!--[if lte IE 9]><select data-datalist="samples"><![endif]-->
         <option value="Chefredakteur">
         <option value="Ressortleiter">
         <option value="Chef vom Dienst (CvD)">
         <option value="Redakteur">
         <option value="Voluntär">
         <option value="Praktikant">
+	<!--[if lte IE 9]></select><![endif]-->
     </datalist>
 
 <!-- Experience-Select -->
@@ -317,7 +337,7 @@
 
 
 <!-- Submit -->
-	<div class="alert-denied alert-media-select hide" id="WARNING">
+	<div class="alert-denied alert-media-select show" id="WARNING">
 		<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
 		<strong>Achtung! </strong>Bitte fülle folgende Felder aus: Feld1, Feld2 und Feld2.
 	</div>
@@ -356,7 +376,9 @@
 
 <!-- Medium-Select -->
     <input name="mediumget" id="media-analyse" class="media-select" list="medium" placeholder="Welches Medium interessiert dich?" type="text" onclick="alertoffalaysemedium()"/>
+	
     <datalist id="medium-analyse">
+	<!--[if lte IE 9]><select data-datalist="samples"><![endif]-->
         <option value="Frankfurter Allgemeine Zeitung (FAZ)">
         <option value="Spiegel">
         <option value="Spiegel TV">
@@ -365,6 +387,7 @@
         <option value="Südwestrundfunk (SWR)">
         <option value="Tagesspiegel">
         <option value="Zeit Online (ZON)">
+    <!--[if lte IE 9]></select><![endif]-->
     </datalist>
 
 <!-- Switch-Select -->
@@ -471,19 +494,34 @@
 </main>
 
 
-    <!-- Javascript -->
+<!-- Javascript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-    <script src="{% static 'honoradar/navbar/js/modernizr.js'%}"></script>
-    <script src="{% static 'honoradar/html5shiv.js'%}"></script>
-    <script src="{% static 'honoradar/lity/vendor/jquery.js'%}"></script>
-    <script src="{% static 'honoradar/lity/dist/lity.js'%}"></script>
     <script src="{% static 'honoradar/js/jquery.js'%}"></script>
     <script src="{% static 'honoradar/js/javascript.js'%}"></script>
     <script src="{% static 'honoradar/js/javascript-new.js'%}"></script>
+    <script src="{% static 'honoradar/js/datalist.polyfill.js'%}"></script>
+    <script src="{% static 'honoradar/js/datalist.polyfill.min.js'%}"></script>
+    <script src="{% static 'honoradar/navbar/js/modernizr.js'%}"></script>
     <script src="{% static 'honoradar/navbar/js/jquery-2.1.1.js'%}"></script>
     <script src="{% static 'honoradar/navbar/js/main.js'%}"></script>
-    <!-- jQuery (required for this Ajax tutorial) -->
+    <script src="{% static 'honoradar/lity/vendor/jquery.js'%}"></script>
+    <script src="{% static 'honoradar/lity/dist/lity.js'%}"></script>
+
+<!-- Datalist Fix -->
+<script>
+	(function() {
+		var inputs = document.getElementsByTagName('input');
+		for( var i = 0; i < inputs.length; i++ ) {
+			var input = inputs[i];
+			input.onchange = function(evt) {
+				var elem = evt ? evt.target : window.event.srcElement;
+			};
+		}
+	}());
+</script>	
+
+<!-- jQuery (required for this Ajax tutorial) -->
     <script> function getCookie(name) {
           var cookieValue = null;
           if (document.cookie && document.cookie !== '') {
