@@ -661,6 +661,17 @@ function alertoffdatavideo() {
     element.classList.remove("alert-bar_video");
 }
 
+/*Datalist Fix*/
+
+(function() {
+	var inputs = document.getElementsByTagName('input');
+	for( var i = 0; i < inputs.length; i++ ) {
+		var input = inputs[i];
+		input.onchange = function(evt) {
+		var elem = evt ? evt.target : window.event.srcElement;
+		};
+	}
+}())
 
 
 var slide = document.getElementById("data_athmosphaere");
