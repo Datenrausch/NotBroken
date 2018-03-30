@@ -13,6 +13,7 @@ from django.http import JsonResponse
 import math
 
 
+
 def StdAvgFunction(entries, column):
     count = entries.aggregate(Count(column))
     columncount = str(column) + "__count"

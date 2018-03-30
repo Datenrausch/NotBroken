@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="{% static 'honoradar/navbar/css/reset.css'%}">
     <link rel="stylesheet" href="{% static 'honoradar/navbar/css/style.css'%}">
     <link rel="stylesheet" href="{% static 'honoradar/lity/dist/lity.css'%}">
+    <link rel="stylesheet" href="{% static 'honoradar/css/easy-autocomplete.min.css'%}"></link>
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
@@ -141,19 +142,11 @@
 
                     <div class="banner-left-1">Spende deine Lohndaten!</div>
                     <div class="banner-left-shadow"></div>
+                    <input id="basics" />
+
 
                     <!-- Medium-Select -->
-                    <input name="MediumName" id="data_medium" class="media-select" list="medium" placeholder="Für welches Medium arbeitest du?" type="text" />
-                    <datalist id="medium">
-		<option value="Frankfurter Allgemeine Zeitung (FAZ)">
-		<option value="Spiegel">
-		<option value="Spiegel TV">
-		<option value="Spiegel Online (SPON)">
-		<option value="Süddeutsche Zeitung (SZ)">
-		<option value="Südwestrundfunk (SWR)">
-		<option value="Tagesspiegel">
-		<option value="Zeit Online (ZON)">
-	</datalist>
+                    <input name="MediumName" id="data_medium" class="media-select"  placeholder="Für welches Medium arbeitest du?" type="text" />
 
                     <!-- Switch-Select -->
                     <div class="switch-field switch-field-text-1 tooltip">
@@ -496,6 +489,23 @@
     <script src="{% static 'honoradar/js/ajax-setup.js'%}"></script>
     <script src="{% static 'honoradar/js/ajax-senddata.js'%}"></script>
     <script src="{% static 'honoradar/js/ajax-getdata.js'%}"></script>
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+
+    <script src="{% static 'honoradar/js/jquery.easy-autocomplete.min.js'%}"></script>
+    <script> var options = {
+      url: "{% static 'honoradar/mediumsname.json'%}",
+
+	getValue: "name",
+
+	list: {
+		match: {
+			enabled: true
+		}
+	}
+};
+
+$("#data_medium").easyAutocomplete(options);
+</script>
 
 </body>
 

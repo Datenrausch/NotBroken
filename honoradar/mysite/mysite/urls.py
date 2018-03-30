@@ -21,4 +21,5 @@ urlpatterns = [
     path('honoradar/', include('honoradar.urls')),
     path('admin/', admin.site.urls),
     url(r'^', include('honoradar.urls')),
+    
 ]
