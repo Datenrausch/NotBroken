@@ -11,7 +11,7 @@ from .models import *
 from django.db.models import *
 from django.http import JsonResponse
 import math
-
+import json
 
 
 def StdAvgFunction(entries, column):
@@ -491,6 +491,24 @@ def senddata(request):
                         )
         testdict = {}
         counter = 0
+        print(MediumName)
+
+
+        with open('honoradar/static/honoradar/mediumsname.json') as json_file:
+            data = json.load(json_file)
+
+            newjsondata=data
+            for p in newjsondata:
+                print('Name: ' + p['name'])
+                print('code: ' + p['code'])
+            p={"name":MediumName,"code":MediumName}
+            newjsondata.append(p)
+            print(newjsondata)
+            for p in newjsondata:
+                print('Name: ' + p['name'])
+                print('code: ' + p['code'])
+            with open('honoradar/static/honoradar/mediumsname.json', 'w') as outfile:
+                json.dump(newjsondata, outfile)
         for i in list(messages.get_messages(request)):
             bla = str(i)
             testdict["message" + str(counter)] = bla

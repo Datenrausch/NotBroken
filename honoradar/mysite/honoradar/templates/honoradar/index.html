@@ -492,16 +492,26 @@
     <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 
     <script src="{% static 'honoradar/js/jquery.easy-autocomplete.min.js'%}"></script>
+
     <script> var options = {
       url: "{% static 'honoradar/mediumsname.json'%}",
 
-	getValue: "name",
-
-	list: {
+	getValue: function(element) {
+	return element.name;
+},
+requestDelay: 1000,
+list: {
+  maxNumberOfElements: 5,
 		match: {
 			enabled: true
-		}
-	}
+		},
+
+  onSelectItemEvent: function() {
+    var value = $("#data_medium").getSelectedItemData().code;
+
+    $("#data_medium").val(value).trigger("change");
+  }
+}
 };
 
 $("#data_medium").easyAutocomplete(options);
