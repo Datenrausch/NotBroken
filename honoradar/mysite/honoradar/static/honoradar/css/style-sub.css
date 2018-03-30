@@ -1,0 +1,177 @@
+/*Layout-Korrekturen*/
+.social-box-abstand {
+  margin: 150px 0px 70px 0px;	
+}
+
+/*Text-Design*/
+
+.text-feld {
+	z-index: -1;
+	background-color: #fff;
+	width: 95%;
+	margin: 70px 2.5% 70px 2.5%;
+	padding: 70px 2.5% 120px 2.5%;
+	border-radius: 10px;
+}
+
+.text-title {
+	font-size: 2.5em;
+	font-size: calc(25px + 1.4vw);
+	line-height: 1.5em;
+	font-family: InknutAntiqua-Bold;
+	color: #27ae60;
+	z-index: 1;
+	border-radius: 10px;
+	text-align: left;	
+	padding-left: 10%;
+	padding-right: 5%;
+	margin-bottom: 50px;
+}
+
+.teaser-box {
+	font-family: InknutAntiqua-Bold;
+	line-height: 1.5em;
+	width: 100%;
+	max-width: 1000px;
+	padding-left: 15%;
+	padding-right: 5%;
+}
+
+.teaser-box::first-letter { 
+	font-size: 2em;
+	color: #27ae60;
+	float: left;
+	font-size: 75px;
+	line-height: 0.8em;
+	padding-top: 10px;
+	padding-right: 8px;
+	padding-left: 3px;
+}
+
+.autoren-box {
+	border-radius: 100%; 
+	width: 150px;
+	height: 150px; 
+	display: inline-block; 	
+	background-size: auto auto;
+	background-repeat: no-repeat;
+	background-position: center center;	
+	
+}
+
+.text-box {
+	line-height: 1.6em;
+	font-family: OpenSans-Regular;
+	font-size: 0.8em;
+	margin: 30px 0px 70px 0px;
+	width: 70%;
+	max-width: 800px;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+@media (max-width: 1200px)  {
+.teaser-box {
+	font-size: 0.9em;
+}
+.teaser-box::first-letter { 
+	font-size: 2.9em;
+	line-height: 0.8em;
+}
+.text-box {
+	font-size: .75em;	
+}
+}
+
+@media (max-width: 900px)  {
+.teaser-box {
+	font-size: 0.85em;
+}
+.teaser-box::first-letter { 
+	font-size: 2.9em;
+	line-height: 0.8em;
+}
+.text-box {
+	font-size: .7em;	
+}
+}
+
+@media (max-width: 	700px)  {
+.text-title {
+	padding-left: 5%;	
+}
+.teaser-box {
+	font-size: 0.8em;
+	padding-left: 5%;
+}
+.teaser-box::first-letter { 
+	font-size: 2.9em;
+	line-height: 0.8em;
+}
+.text-box {
+	font-size: .7em;		
+}
+}
+
+
+.offset-1 {
+	margin-left: 10%;	
+}
+
+.offset-2 {
+	margin-left: 20%;
+}
+
+.offset-3{
+	margin-left: 30%;
+}
+
+@media (max-width: 	650px)  {
+.offset-1, .offset-2, .offset-3 {
+	margin-left: 0%;
+	width: 100%;
+}	
+}
+
+h2 {
+	padding-left: 5% !important;
+	line-height: 1.5em !important;
+	font-family: InknutAntiqua-Bold !important;
+	color: #27ae60;	
+}
+
+/*Artikel-Parallax*/
+.parallax-box {
+	margin: 50px 0px 50px 0px;
+  height: 450px;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: center center;
+  justify-content: left;
+  position: relative;
+  z-index: 2;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: -webkit-transform 0.5s;
+  -moz-transition: -moz-transform 0.5s;
+  transition: transform 0.5s;
+  -webkit-transition-timing-function: cubic-bezier(0.91, 0.01, 0.6, 0.99);
+  -moz-transition-timing-function: cubic-bezier(0.91, 0.01, 0.6, 0.99);
+  transition-timing-function: cubic-bezier(0.91, 0.01, 0.6, 0.99);
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+   transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+   transition-duration: 0.5s;
+	background-attachment: fixed;
+}
+
+
