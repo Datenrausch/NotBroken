@@ -16,7 +16,7 @@
 
 .text-title {
 	font-size: 2.5em;
-	font-size: calc(25px + 1.4vw);
+	font-size: calc(30px + 1vw);
 	line-height: 1.5em;
 	font-family: InknutAntiqua-Bold;
 	color: #27ae60;
@@ -48,17 +48,6 @@
 	padding-left: 3px;
 }
 
-.autoren-box {
-	border-radius: 100%; 
-	width: 150px;
-	height: 150px; 
-	display: inline-block; 	
-	background-size: auto auto;
-	background-repeat: no-repeat;
-	background-position: center center;	
-	
-}
-
 .text-box {
 	line-height: 1.6em;
 	font-family: OpenSans-Regular;
@@ -69,6 +58,31 @@
 	padding-left: 5%;
 	padding-right: 5%;
 }
+
+/*Auorenbox*/
+
+.autoren-box {
+	border-radius: 100%; 
+	width: 90px;
+	height: 90px; 
+	display: inline-block; 	
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center center;	
+	margin: 50px auto 30px auto;
+}
+
+.offset-autorenbox {
+	margin-left: 30%;
+}
+
+@media (max-width: 	650px)  {
+.offset-autorenbox {
+	margin-left: 5%;
+}	
+}
+
+/*Responsiv Design Text-Elements*/
 
 @media (max-width: 1200px)  {
 .teaser-box {
@@ -133,11 +147,12 @@
 }	
 }
 
-h2 {
+.zwischentitel {
 	padding-left: 5% !important;
+	padding-right: 5%;
 	line-height: 1.5em !important;
 	font-family: InknutAntiqua-Bold !important;
-	color: #27ae60;	
+	color: #FF9F23;	
 }
 
 /*Artikel-Parallax*/
@@ -172,6 +187,43 @@ h2 {
   -moz-transition-duration: 0.5s;
    transition-duration: 0.5s;
 	background-attachment: fixed;
+}
+
+/*Infografik*/
+
+.infografik {
+	width: 90%;
+	margin: 30px auto 30px auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+	background-position: center center;
+    height: 0;
+    padding-top: 33.33%;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+
+@media (max-width: 	950px)  {
+.infografik:hover {
+	margin: 30px auto 30px auto;
+	transform: scale(1.5);
+	-webkit-transform: scale(1.5);
+	-o-transform: scale(1.5);
+	-moz-transform: scale(1.5);
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition-delay: all 400ms ease;
+	-webkit-transition-delay: all 400ms ease;
+	-moz-transition-delay: all 400ms ease;
+	-o-transition-delay: all 400ms ease;
+  overflow: hidden;
+	width: 75%;
+}
 }
 
 
