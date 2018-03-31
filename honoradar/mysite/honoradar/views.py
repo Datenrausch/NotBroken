@@ -507,7 +507,9 @@ def senddata(request):
                 print('Name: ' + p['name'])
                 print('code: ' + p['code'])
             with io.open('honoradar/static/honoradar/mediumsname.json', 'w') as outfile:
-                json.dump(newjsondata, outfile)
+                data=json.dumps(newjsondata, ensure_ascii=False)
+                outfile.write(data)
+
         for i in list(messages.get_messages(request)):
             bla = str(i)
             testdict["message" + str(counter)] = bla
@@ -917,7 +919,7 @@ def getdata(request):
                 Q(freeoremployed=FreeOrEmployed)
             )
             print(allmediums)
-            
+
             if (counter > 1):
                 print("more than one")
 
