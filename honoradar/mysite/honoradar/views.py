@@ -494,21 +494,23 @@ def senddata(request):
 
 
         with open('honoradar/static/honoradar/mediumsname.json') as json_file:
-            data = json.load(json_file)
-
-            newjsondata=data
-            for p in newjsondata:
+            oldjsondata = json.load(json_file)
+            inthere=0
+            for p in oldjsondata:
                 print('Name: ' + p['name'])
                 print('code: ' + p['code'])
-            p={"name":MediumName,"code":MediumName}
-            newjsondata.append(p)
-            print(newjsondata)
-            for p in newjsondata:
-                print('Name: ' + p['name'])
-                print('code: ' + p['code'])
-            with io.open('honoradar/static/honoradar/mediumsname.json', 'w') as outfile:
-                data=json.dumps(newjsondata, ensure_ascii=False)
-                outfile.write(data)
+                if p['name']==MediumName:
+                    inthere=1
+            newentry={"name":MediumName,"code":MediumName}
+            if inthere !=1:
+                newjsondata=oldjsondata
+                newjsondata.append(newentry)
+                for p in newjsondata:
+                    print('Name: ' + p['name'])
+                    print('code: ' + p['code'])
+                with io.open('honoradar/static/honoradar/mediumsname.json', 'w') as outfile:
+                    data=json.dumps(newjsondata, ensure_ascii=False)
+                    outfile.write(data)
 
         for i in list(messages.get_messages(request)):
             bla = str(i)
