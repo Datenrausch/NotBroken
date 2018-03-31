@@ -172,7 +172,7 @@ def senddata(request):
                         sanitycheck = 1
                         messages.info(request, 'Gehalt')
 
-                    if float(HoursPerWeekEmp) != 1:
+                    if float(HoursPerWeekEmp) != 0:
                         pass
                     else:
                         sanitycheck = 1
@@ -217,13 +217,13 @@ def senddata(request):
                         sanitycheck = 1
                         messages.info(request, 'Gehalt')
 
-                    if float(DaysPerMonthMix) != 1:
+                    if float(DaysPerMonthMix) != 0:
                         pass
                     else:
                         sanitycheck = 1
                         messages.info(request, 'gearbeiteten Tagen pro Monat')
 
-                    if float(HoursPerDayMix) != 1:
+                    if float(HoursPerDayMix) != 0:
                         pass
                     else:
                         sanitycheck = 1
@@ -270,7 +270,7 @@ def senddata(request):
                         sanitycheck = 1
                         messages.info(request, 'Honorar')
 
-                    if float(HoursSpentFree) != 0.5:
+                    if float(HoursSpentFree) != 0:
                         pass
                     else:
                         sanitycheck = 1
@@ -283,21 +283,21 @@ def senddata(request):
                         messages.info(request, 'Mediumsart')
 
                     if VideoAudioTextFree == "video":
-                        if float(MinPerVideoFree) != 0.5:
+                        if float(MinPerVideoFree) != 0:
                             pass
                         else:
                             sanitycheck = 1
                             messages.info(request, 'Beitragsminuten')
 
                     if VideoAudioTextFree == "audio":
-                        if float(MinPerAudioFree) != 0.5:
+                        if float(MinPerAudioFree) != 0:
                             pass
                         else:
                             sanitycheck = 1
                             messages.info(request, 'Beitragsminuten')
 
                     if VideoAudioTextFree == "text":
-                        if float(CharPerArticleFree) != 100:
+                        if float(CharPerArticleFree) != 0:
                             pass
                         else:
                             sanitycheck = 1
@@ -325,7 +325,6 @@ def senddata(request):
                         )
 
             except Medium.DoesNotExist:
-                sanitycheck = 0
                 if FreeOrEmployed == "fest":
                     SalaryPerMonthEmpMix = (request.POST.get('SalaryPerMonthEmpMix'))
                     Happiness = (request.POST.get("Happiness"))
@@ -377,13 +376,13 @@ def senddata(request):
                         sanitycheck = 1
                         messages.info(request, 'Gehalt')
 
-                    if float(DaysPerMonthMix) != 1:
+                    if float(DaysPerMonthMix) != 0:
                         pass
                     else:
                         sanitycheck = 1
                         messages.info(request, 'gearbeiteten Tagen pro Monat')
 
-                    if float(HoursPerDayMix) != 1:
+                    if float(HoursPerDayMix) != 0:
                         pass
                     else:
                         sanitycheck = 1
@@ -432,7 +431,7 @@ def senddata(request):
                         sanitycheck = 1
                         messages.info(request, 'Honorar')
 
-                    if float(HoursSpentFree) != 0.5:
+                    if float(HoursSpentFree) != 0:
                         pass
                     else:
                         sanitycheck = 1
@@ -445,21 +444,21 @@ def senddata(request):
                         messages.info(request, 'Mediumsart')
 
                     if VideoAudioTextFree == "video":
-                        if float(MinPerVideoFree) != 0.5:
+                        if float(MinPerVideoFree) != 0:
                             pass
                         else:
                             sanitycheck = 1
                             messages.info(request, 'Beitragsminuten')
 
                     if VideoAudioTextFree == "audio":
-                        if float(MinPerVideoFree) != 0.5:
+                        if float(MinPerVideoFree) != 0:
                             pass
                         else:
                             sanitycheck = 1
                             messages.info(request, 'Beitragsminuten')
 
                     if VideoAudioTextFree == "text":
-                        if float(CharPerArticleFree) != 100:
+                        if float(CharPerArticleFree) != 0:
                             pass
                         else:
                             sanitycheck = 1
@@ -576,7 +575,7 @@ def senddata(request):
                         sanitycheck = 1
                         messages.info(request, 'Gehalt')
 
-                    if float(HoursPerWeekEmp) != 1:
+                    if float(HoursPerWeekEmp) != 0:
                         pass
                     else:
                         sanitycheck = 1
@@ -621,13 +620,13 @@ def senddata(request):
                         sanitycheck = 1
                         messages.info(request, 'Gehalt')
 
-                    if float(DaysPerMonthMix) != 1:
+                    if float(DaysPerMonthMix) != 0:
                         pass
                     else:
                         sanitycheck = 1
                         messages.info(request, 'gearbeiteten Tagen pro Monat')
 
-                    if float(HoursPerDayMix) != 1:
+                    if float(HoursPerDayMix) != 0:
                         pass
                     else:
                         sanitycheck = 1
@@ -671,7 +670,7 @@ def senddata(request):
                         sanitycheck = 1
                         messages.info(request, 'Honorar')
 
-                    if float(HoursSpentFree) != 0.5:
+                    if float(HoursSpentFree) != 0:
                         pass
                     else:
                         sanitycheck = 1
@@ -684,21 +683,21 @@ def senddata(request):
                         messages.info(request, 'Mediumsart')
 
                     if VideoAudioTextFree == "video":
-                        if float(MinPerVideoFree) != 0.5:
+                        if float(MinPerVideoFree) != 0:
                             pass
                         else:
                             sanitycheck = 1
                             messages.info(request, 'Beitragsminuten')
 
                     if VideoAudioTextFree == "audio":
-                        if float(MinPerVideoFree) != 0.5:
+                        if float(MinPerVideoFree) != 0:
                             pass
                         else:
                             sanitycheck = 1
                             messages.info(request, 'Beitragsminuten')
 
                     if VideoAudioTextFree == "text":
-                        if float(CharPerArticleFree) != 100:
+                        if float(CharPerArticleFree) != 0:
                             pass
                         else:
                             sanitycheck = 1
@@ -726,7 +725,6 @@ def senddata(request):
                         )
 
             except Medium.DoesNotExist:
-                sanitycheck = 0
                 if FreeOrEmployed == "fest":
                     SalaryPerMonthEmpMix = (request.POST.get('SalaryPerMonthEmpMix'))
                     Happiness = (request.POST.get("Happiness"))
@@ -778,13 +776,13 @@ def senddata(request):
                         sanitycheck = 1
                         messages.info(request, 'Gehalt')
 
-                    if float(DaysPerMonthMix) != 1:
+                    if float(DaysPerMonthMix) != 0:
                         pass
                     else:
                         sanitycheck = 1
                         messages.info(request, 'gearbeiteten Tagen pro Monat')
 
-                    if float(HoursPerDayMix) != 1:
+                    if float(HoursPerDayMix) != 0:
                         pass
                     else:
                         sanitycheck = 1
@@ -833,7 +831,7 @@ def senddata(request):
                         sanitycheck = 1
                         messages.info(request, 'Honorar')
 
-                    if float(HoursSpentFree) != 0.5:
+                    if float(HoursSpentFree) != 0:
                         pass
                     else:
                         sanitycheck = 1
@@ -846,21 +844,21 @@ def senddata(request):
                         messages.info(request, 'Mediumsart')
 
                     if VideoAudioTextFree == "video":
-                        if float(MinPerVideoFree) != 0.5:
+                        if float(MinPerVideoFree) != 0:
                             pass
                         else:
                             sanitycheck = 1
                             messages.info(request, 'Beitragsminuten')
 
                     if VideoAudioTextFree == "audio":
-                        if float(MinPerVideoFree) != 0.5:
+                        if float(MinPerVideoFree) != 0:
                             pass
                         else:
                             sanitycheck = 1
                             messages.info(request, 'Beitragsminuten')
 
                     if VideoAudioTextFree == "text":
-                        if float(CharPerArticleFree) != 100:
+                        if float(CharPerArticleFree) != 0:
                             pass
                         else:
                             sanitycheck = 1
