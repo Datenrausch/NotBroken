@@ -142,7 +142,6 @@
 
                     <div class="banner-left-1">Spende deine Lohndaten!</div>
                     <div class="banner-left-shadow"></div>
-                    <input id="basics" />
 
 
                     <!-- Medium-Select -->
@@ -490,11 +489,11 @@
     <script src="{% static 'honoradar/js/ajax-senddata.js'%}"></script>
     <script src="{% static 'honoradar/js/ajax-getdata.js'%}"></script>
     <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-
+    <script src="{% static 'honoradar/js/jquery.easy-autocomplete.min.js'%}"></script>
     <script src="{% static 'honoradar/js/jquery.easy-autocomplete.min.js'%}"></script>
 
     <script> var options = {
-      url: "{% static 'honoradar/mediumsname.json'%}",
+      url: "static/honoradar/mediumsname.json",
 
 	getValue: function(element) {
 	return element.name;

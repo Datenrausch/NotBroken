@@ -12,7 +12,7 @@ from django.db.models import *
 from django.http import JsonResponse
 import math
 import json
-
+import io
 
 def StdAvgFunction(entries, column):
     count = entries.aggregate(Count(column))
@@ -507,7 +507,7 @@ def senddata(request):
             for p in newjsondata:
                 print('Name: ' + p['name'])
                 print('code: ' + p['code'])
-            with open('honoradar/static/honoradar/mediumsname.json', 'w') as outfile:
+            with io.open('honoradar/static/honoradar/mediumsname.json', 'w') as outfile:
                 json.dump(newjsondata, outfile)
         for i in list(messages.get_messages(request)):
             bla = str(i)
