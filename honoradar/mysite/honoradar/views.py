@@ -922,6 +922,10 @@ def getdata(request):
             )
             print(allmediums)
 
+            #allmediums = DataCollection.objects.select_related().filter(freeoremployed=FreeOrEmployed)
+
+            print(allmediums)
+
             if (counter > 1):
                 print("more than one")
 
