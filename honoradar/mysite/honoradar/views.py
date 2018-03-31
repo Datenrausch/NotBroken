@@ -913,7 +913,11 @@ def getdata(request):
             print("found")
             counter = (entries.count())
             print(counter)
-
+            allmediums = Medium.objects.filter(
+                Q(freeoremployed=FreeOrEmployed)
+            )
+            print(allmediums)
+            
             if (counter > 1):
                 print("more than one")
 

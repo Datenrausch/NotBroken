@@ -12,7 +12,7 @@ match: {
 },
 
 onSelectItemEvent: function() {
-var value = $("#data_medium").getSelectedItemData().code;
+var value = $("#media-analyse").getSelectedItemData().code;
 
 $("#media-analyse").val(value).trigger("change");
 }
