@@ -114,11 +114,11 @@
 
 <!-- Safe-Points -->
 	<div class="safe-box">
-		<a target="_blank" href="#"><div class="safe-1 safetile"></div></a>
-		<a target="_blank" href="#"><div class="safe-2 safetile"></div></a>
-		<a target="_blank" href="#"><div class="safe-3 safetile-gross"></div></a>
-		<a target="_blank" href="#"><div class="safe-4 safetile"></div></a>
-		<a target="_blank" href="#"><div class="safe-5 safetile"></div></a>
+		<a target="_blank" href="#"><div class="safe safe-1 safetile"></div></a>
+		<a target="_blank" href="#"><div class="safe safe-2 safetile"></div></a>
+		<a target="_blank" href="#"><div class="safe safe-3 safetile-gross"></div></a>
+		<a target="_blank" href="#"><div class="safe safe-4 safetile"></div></a>
+		<a target="_blank" href="#"><div class="safe safe-5 safetile"></div></a>
 	</div>
 
 <!-- Input-Input-Box -->
@@ -150,7 +150,7 @@
 	<!-- Support Safari? https://stackoverflow.com/questions/27494084/html5-datalist-tag-is-not-populating-in-safari?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa -->
 
 <!-- Switch-Select -->
-	<div class="switch-field switch-field-text-1 tooltip hide" id="data_arbeitsverhaeltnis">
+	<div class="switch-field switch-field-text switch-field-text-1 tooltip hide" id="data_arbeitsverhaeltnis">
 		<input name="FreeOrEmployed" type="radio" id="data_arbeitsverhaeltnis_fest" name="switch" value="fest" onclick="festfunction()"/>
 		<label for="data_arbeitsverhaeltnis_fest">Fest<span id="question-1">?</span></label>
 		<input name="FreeOrEmployed" type="radio" id="data_arbeitsverhaeltnis_pauschal" name="switch" value="pauschal" onclick="pauschalfunction()"/>
@@ -191,7 +191,7 @@
 
 <!-- Unit-Select -->
     <div class="hide" id="pre-data_format_text_audio_video">
-    <div id="data_format_text_audio_video" class="switch-field switch-field-text-2 tooltip alert-switch">
+    <div id="data_format_text_audio_video" class="switch-field switch-field-text switch-field-text-2 tooltip alert-switch">
         <input type="radio" id="data_format_text" name="VideoAudioTextFree" value="text" onclick="textfunction()"/>
         <label for="data_format_text">Text</label>
         <input type="radio" id="data_format_audio" name="VideoAudioTextFree" value="audio" onclick="audiofunction()"/>
@@ -289,7 +289,7 @@
     </datalist>
 
 <!-- Experience-Select -->
-    <div class="switch-field switch-field-text-4 hide" id="pre-data_erfahrung_jahr_1_3_5">
+    <div class="switch-field switch-field-text switch-field-text-4 hide" id="pre-data_erfahrung_jahr_1_3_5">
 		<input name="ExperienceEmplMix" type="radio" id="data_erfahrung_jahr_1" name="switch" value="0"/>
         <label for="data_erfahrung_jahr_1">> 1 Jahr</label>
         <input name="ExperienceEmplMix" type="radio" id="data_erfahrung_jahr_3" name="switch" value="3"/>
@@ -374,9 +374,9 @@
     <div class="banner-right-1">Erfahre, was Medien zahlen!</div><div class="banner-right-shadow"></div>
 
 <!-- Medium-Select -->
-    <input name="mediumget" id="media-analyse" class="media-select" list="medium" placeholder="Welches Medium interessiert dich?" type="text" onclick="alertoffalaysemedium()"/>
+    <input name="mediumget" id="media-analyse" class="media-select" list="medium" placeholder="Welches Medium interessiert dich?" type="text" onclick="getfunction()"/>
 	
-    <datalist id="medium-analyse">
+    <datalist id="medium-analyse" >
 	<!--[if lte IE 9]><select data-datalist="samples"><![endif]-->
         <option value="Frankfurter Allgemeine Zeitung (FAZ)">
         <option value="Spiegel">
@@ -389,7 +389,7 @@
     <!--[if lte IE 9]></select><![endif]-->
     </datalist>
 
-<!-- Switch-Select -->
+<!-- Switch-Select 
     <div class="switch-field switch-field-text-1 tooltip">
         <input type="radio" id="data_arbeitsverhaeltnis_fest-analyse" name="switch" value="fest" onclick="getfunctionfest()"/>
         <label for="data_arbeitsverhaeltnis_fest-analyse">Fest<span id="question-4">?</span></label>
@@ -397,7 +397,7 @@
         <label for="data_arbeitsverhaeltnis_pauschal-analyse">Pauschal<span id="question-5">?</span></label>
         <input type="radio" id="data_arbeitsverhaeltnis_frei-analyse" name="switch" value="frei" onclick="getfunctionfrei()"/>
         <label for="data_arbeitsverhaeltnis_frei-analyse">Frei<span id="question-6">?</span></label>
-    </div>
+    </div>-->
 
 	<div class="break"></div>
 
@@ -425,30 +425,30 @@
 
 <!-- Social Share -->
 	<div class="social-box">
-		<a target="_blank" href="https://twitter.com/intent/tweet?url=https://wasjournalistenverdienen.de&text=Was%20verdienen%20Journalisten?%20Die%20neue%20interaktive%20Datenbank%20der%20Freischreiber:"><div class="social-1 socialtile"></div></a>
-		<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://wasjournalistenverdienen.de"><div class="social-2 socialtile"></div></a>
-		<a href="whatsapp://send?text=https://wasjournalistenverdienen.de"><div class="social-3 socialtile"></div></a>
-		<a href="fb-messenger://share/?link=https://wasjournalistenverdienen.de&app_id=123456789"><div class="social-4 socialtile"></div></a>
-		<a href="mailto:?subject=Interaktive Datenbank: Was verdienen Journalisten?&amp;body=Hallo, schau dir mal diese Seite an: https://wasjournalistenverdienen.de"><div class="social-5 socialtile"></div></a>
+		<a target="_blank" href="https://twitter.com/intent/tweet?url=https://wasjournalistenverdienen.de&text=Was%20verdienen%20Journalisten?%20Die%20neue%20interaktive%20Datenbank%20der%20Freischreiber:"><div class="social social-1 socialtile"></div></a>
+		<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://wasjournalistenverdienen.de"><div class="social social-2 socialtile"></div></a>
+		<a href="whatsapp://send?text=https://wasjournalistenverdienen.de"><div class="social social-3 socialtile"></div></a>
+		<a href="fb-messenger://share/?link=https://wasjournalistenverdienen.de&app_id=123456789"><div class="social social-4 socialtile"></div></a>
+		<a href="mailto:?subject=Interaktive Datenbank: Was verdienen Journalisten?&amp;body=Hallo, schau dir mal diese Seite an: https://wasjournalistenverdienen.de"><div class="social social-5 socialtile"></div></a>
 	</div>
 
 
 <!-- News -->
     <div class="nbox-1">
         <a href="#">
-            <div class="ntile-first news_1"><span class="news-title-head">Der große Gehalts-Report 2018</span></div>
+            <div class="ntile-first news news_1"><span class="news-title-head">Der große Gehalts-Report 2018</span></div>
         </a>
         <a href="#">
-            <div class="ntile-first news_2"><span class="news-title">Das sagt die Presse zum Gehalts-Report</span></div>
+            <div class="ntile-first news news_2"><span class="news-title">Das sagt die Presse zum Gehalts-Report</span></div>
         </a>
         <a href="#">
-            <div class="ntile-first news_3"><span class="news-title">Was geschieht mit deinen Daten?</span></div>
+            <div class="ntile-first news news_3"><span class="news-title">Was geschieht mit deinen Daten?</span></div>
         </a>
         <a href="#">
-			<div class="ntile-first news_4"><span class="news-title">Warum Daten spenden?</span></div>
+			<div class="ntile-first news news_4"><span class="news-title">Warum Daten spenden?</span></div>
         </a>
         <a href="#">
-            <div class="ntile-first news_5"><span class="news-title">Die Methodik dahinter</span></div>
+            <div class="ntile-first news news_5"><span class="news-title">Die Methodik dahinter</span></div>
         </a>
     </div>
 
@@ -458,16 +458,16 @@
 <!-- News -->
     <div class="nbox-2">
         <a href="#">
-            <div class="ntile-second news_6"><span class="news-title">So verhandelst du dein Gehalt</span></div>
+            <div class="ntile-second news news_6"><span class="news-title">So verhandelst du dein Gehalt</span></div>
         </a>
         <a href="#">
-            <div class="ntile-second news_7"><span class="news-title">Dein Kollege verdient mehr?</span></div>
+            <div class="ntile-second news news_7"><span class="news-title">Dein Kollege verdient mehr?</span></div>
         </a>
         <a href="https://www.youtube.com/watch?v=MiKw3uPGHB4" data-lity>
-            <div class="ntile-second news_8"><span class="news-title">Video: Tipps & Tricks</span></div>
+            <div class="ntile-second news news_8"><span class="news-title">Video: Tipps & Tricks</span></div>
         </a>
         <a href="#">
-            <div class="ntile-second news_9"><span class="news-title">Koalitionsvertrag: VG-Wort-Ausschüttungen?</span>
+            <div class="ntile-second news news_9"><span class="news-title">Koalitionsvertrag: VG-Wort-Ausschüttungen?</span>
         </div>
 		</a>
     </div>

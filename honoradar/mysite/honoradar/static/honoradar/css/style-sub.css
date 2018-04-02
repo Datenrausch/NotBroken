@@ -1,6 +1,6 @@
 /*Layout-Korrekturen*/
 .social-box-abstand {
-  margin: 150px 0px 70px 0px;	
+	margin: 150px 0px 70px 0px;	
 }
 
 /*Text-Design*/
@@ -16,7 +16,7 @@
 
 .text-title {
 	font-size: 2.5em;
-	font-size: calc(30px + 1vw);
+	font-size: calc(30px + 1.5vw);
 	line-height: 1.5em;
 	font-family: InknutAntiqua-Bold;
 	color: #27ae60;
@@ -25,7 +25,7 @@
 	text-align: left;	
 	padding-left: 10%;
 	padding-right: 5%;
-	margin-bottom: 50px;
+	margin: 50px auto 90px auto;
 }
 
 .teaser-box {
@@ -76,7 +76,7 @@
 	margin-left: 30%;
 }
 
-@media (max-width: 	650px)  {
+@media (max-width: 	650px)	{
 .offset-autorenbox {
 	margin-left: 5%;
 }	
@@ -84,7 +84,7 @@
 
 /*Responsiv Design Text-Elements*/
 
-@media (max-width: 1200px)  {
+@media (max-width: 1200px)	{
 .teaser-box {
 	font-size: 0.9em;
 }
@@ -97,7 +97,7 @@
 }
 }
 
-@media (max-width: 900px)  {
+@media (max-width: 900px)	{
 .teaser-box {
 	font-size: 0.85em;
 }
@@ -110,7 +110,7 @@
 }
 }
 
-@media (max-width: 	700px)  {
+@media (max-width: 	700px)	{
 .text-title {
 	padding-left: 5%;	
 }
@@ -123,7 +123,7 @@
 	line-height: 0.8em;
 }
 .text-box {
-	font-size: .7em;		
+	font-size: .7em;	
 }
 }
 
@@ -140,7 +140,7 @@
 	margin-left: 30%;
 }
 
-@media (max-width: 	650px)  {
+@media (max-width: 	650px)	{
 .offset-1, .offset-2, .offset-3 {
 	margin-left: 0%;
 	width: 100%;
@@ -158,34 +158,34 @@
 /*Artikel-Parallax*/
 .parallax-box {
 	margin: 50px 0px 50px 0px;
-  height: 450px;
-  width: 100%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-color: #ffffff;
-  background-repeat: no-repeat;
-  background-position: center center;
-  justify-content: left;
-  position: relative;
-  z-index: 2;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transition: -webkit-transform 0.5s;
-  -moz-transition: -moz-transform 0.5s;
-  transition: transform 0.5s;
-  -webkit-transition-timing-function: cubic-bezier(0.91, 0.01, 0.6, 0.99);
-  -moz-transition-timing-function: cubic-bezier(0.91, 0.01, 0.6, 0.99);
-  transition-timing-function: cubic-bezier(0.91, 0.01, 0.6, 0.99);
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-   transition-duration: 0.5s;
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-   transition-duration: 0.5s;
+	height: 450px;
+	width: 100%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-color: #ffffff;
+	background-repeat: no-repeat;
+	background-position: center center;
+	justify-content: left;
+	position: relative;
+	z-index: 2;
+	overflow-y: hidden;
+	-webkit-overflow-scrolling: touch;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transition: -webkit-transform 0.5s;
+	-moz-transition: -moz-transform 0.5s;
+	transition: transform 0.5s;
+	-webkit-transition-timing-function: cubic-bezier(0.91, 0.01, 0.6, 0.99);
+	-moz-transition-timing-function: cubic-bezier(0.91, 0.01, 0.6, 0.99);
+	transition-timing-function: cubic-bezier(0.91, 0.01, 0.6, 0.99);
+	-webkit-transition-duration: 0.5s;
+	-moz-transition-duration: 0.5s;
+	 transition-duration: 0.5s;
+	-webkit-transition-duration: 0.5s;
+	-moz-transition-duration: 0.5s;
+	 transition-duration: 0.5s;
 	background-attachment: fixed;
 }
 
@@ -194,19 +194,19 @@
 .infografik {
 	width: 90%;
 	margin: 30px auto 30px auto;
-    background-size: contain;
-    background-repeat: no-repeat;
+	background-size: contain;
+	background-repeat: no-repeat;
 	background-position: center center;
-    height: 0;
-    padding-top: 33.33%;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
+	height: 0;
+	padding-top: 33.33%;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
 }
 
 
-@media (max-width: 	950px)  {
+@media (max-width: 	950px)	{
 .infografik:hover {
 	margin: 30px auto 30px auto;
 	transform: scale(1.5);
@@ -221,7 +221,7 @@
 	-webkit-transition-delay: all 400ms ease;
 	-moz-transition-delay: all 400ms ease;
 	-o-transition-delay: all 400ms ease;
-  overflow: hidden;
+	overflow: hidden;
 	width: 75%;
 }
 }

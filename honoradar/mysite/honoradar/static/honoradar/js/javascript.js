@@ -517,24 +517,13 @@ function videofunction() {
 	element.classList.remove("alert-switch");
 }
 
-function getfunctionfest() {
+function getfunction() {
 	var element = document.getElementById("analyse_submit");
     element.classList.add("show");
     element.classList.remove("hide");
-
-	var element = document.getElementById("question-4");
-    element.classList.add("hide");
-    element.classList.remove("show");
-
-	var element = document.getElementById("question-5");
-    element.classList.add("hide");
-    element.classList.remove("show");
-
-	var element = document.getElementById("question-6");
-    element.classList.add("hide");
-    element.classList.remove("show");
 }
 
+/*
 function getfunctionpauschal() {
 	var element = document.getElementById("analyse_submit");
     element.classList.add("show");
@@ -570,6 +559,7 @@ function getfunctionfrei() {
     element.classList.add("hide");
     element.classList.remove("show");
 }
+*/
 
 function analysefunction() {
 	var element = document.getElementById("result");
@@ -592,7 +582,7 @@ function alertoffdataposition() {
     element.classList.remove("alert");
 }
 
-function alertoffalaysemedium() {
+function alertoffanalaysemedium() {
 	var element = document.getElementById("media-analyse");
     element.classList.remove("alert");
 }
