@@ -4,8 +4,10 @@ const margin = {
   bottom: 10,
   left: 100
 };
-let width = 1000;
+let width = 1000 / 2;
 let height = 500;
+
+barwidth = width / 25;
 
 function elipticboxplot(responsejson) {
   console.log(margin);
@@ -55,7 +57,7 @@ function elipticboxplot(responsejson) {
   yscale = d3
     .scaleLinear()
     .domain([minY, maxY])
-    .range([height, 0]);
+    .range([height, 0 + margin.top]);
 
   var xAxis = d3.axisBottom(xscale);
 
@@ -74,7 +76,7 @@ function elipticboxplot(responsejson) {
     .enter()
     .append("rect")
     .attr("class", "bar")
-    .attr("width", width / 25)
+    .attr("width", barwidth)
     .attr("y", height);
 
   new_bars
@@ -87,12 +89,13 @@ function elipticboxplot(responsejson) {
       return yscale(d.max);
     })
     .attr("x", function(d) {
-      return xscale(d.category) - margin.left + step / 2 - width / 25 / 2;
+      return xscale(d.category) - margin.left + step / 2 - barwidth / 2;
     })
     .attr("fill", function(d) {
       return colorscale(d.category);
     })
-    .attr("opacity", 0.6);
+    .attr("opacity", 0.6)
+    .attr("stroke", "black");
 
   var meancircles = freischreiberchart
     .selectAll(".meancircles")
@@ -103,13 +106,7 @@ function elipticboxplot(responsejson) {
     .transition()
     .attr("r", 0)
     .attr("cx", function(d) {
-      return (
-        xscale(d.category) +
-        width / 25 / 2 -
-        margin.left +
-        step / 2 -
-        width / 25 / 2
-      );
+      return xscale(d.category) - margin.left + step / 2;
     })
     .attr("cy", function(d) {
       return height - yscale(d.mean);
@@ -122,13 +119,7 @@ function elipticboxplot(responsejson) {
     .attr("class", "meancircles")
     .attr("r", 0)
     .attr("cx", function(d) {
-      return (
-        xscale(d.category) +
-        width / 25 / 2 -
-        margin.left +
-        step / 2 -
-        width / 25 / 2
-      );
+      return xscale(d.category) - margin.left + step / 2;
     })
     .attr("cy", function(d) {
       return height - yscale(d.mean);
@@ -141,19 +132,13 @@ function elipticboxplot(responsejson) {
     })
 
     .attr("x", function(d) {
-      return (
-        xscale(d.category) +
-        width / 25 / 2 -
-        margin.left +
-        step / 2 -
-        width / 25 / 2
-      );
+      return xscale(d.category) - margin.left + step / 2;
     })
     .attr("fill", function(d) {
       return colorscale(d.category);
     })
     .attr("opacity", 0.9)
-    .attr("r", width / 20);
+    .attr("r", width / 50);
 
   freischreiberchart
     .append("g")
@@ -172,7 +157,7 @@ function elipticboxplot(responsejson) {
 let responsejson = [
   {
     category: "Medium",
-    min: 9.2,
+    min: 9.6,
     max: 10.4,
     mean: 10
   },
@@ -184,7 +169,7 @@ let responsejson = [
   },
   {
     category: "Freischreiber",
-    min: 9.2,
+    min: 12,
     max: 12,
     mean: 12
   }
