@@ -253,7 +253,7 @@
 
 <!-- Digitalization-Select -->
     <div id="pre-data_verbreitung_analog_digital_beides" class="hide">
-    <div class="switch-field switch-field-text-3 tooltip">
+    <div class="switch-field switch-field-text switch-field-text-3 tooltip">
         <input name="AnalogDigitalFree" type="radio" id="data_verbreitung_analog" name="switch-verbreitung" value="Analog"/>
         <label for="data_verbreitung_analog">Analog</label>
         <input name="AnalogDigitalFree" type="radio" id="data_verbreitung_digital" name="switch-verbreitung" value="Digital"/>
@@ -276,7 +276,7 @@
 	<div id="banner-left-triangle" class="banner-left-shadow hide"></div>
 
 <!-- Position-Select -->
-    <input name="JobPosition" id="data_position" class="position-select hide alert" list="position" placeholder="Als was arbeitest du?" type="text" onmousedown="alertoffdataposition()" ontouchstart="alertoffdataposition()"/>
+    <input name="JobPosition" id="data_position" class="position-select hide alert" list="position" placeholder="Als was arbeitest du?" type="text" onclick="alertoffdataposition()"/>
     <datalist id="position">
 	<!--[if lte IE 9]><select data-datalist="samples"><![endif]-->
         <option value="Chefredakteur">
@@ -374,7 +374,7 @@
     <div class="banner-right-1">Erfahre, was Medien zahlen!</div><div class="banner-right-shadow"></div>
 
 <!-- Medium-Select -->
-    <input name="mediumget" id="media-analyse" class="media-select" list="medium" placeholder="Welches Medium interessiert dich?" type="text" onclick="getfunction()"/>
+    <input name="mediumget" id="media-analyse" class="media-select alert" list="medium" placeholder="Welches Medium interessiert dich?" type="text" onclick="getfunction()"/>
 	
     <datalist id="medium-analyse" >
 	<!--[if lte IE 9]><select data-datalist="samples"><![endif]-->
@@ -477,13 +477,13 @@
 	<div class="footer-grid">
         <div class="footer-grid-first">
             <a href="../projekt"><p class="footer-item-first clear-footer">Über das Projekt</p></a>
-            <a href="../credits"><p class="footer-item clear-footer">Wer sind die Macher?</p></a>
-            <a href="../impressum"><p class="footer-item clear-footer">Rankings & Reports</p></a>
-            <a href="../newsletter"><p class="footer-item clear-footer">Newsletter</p></a>
+            <a href="../credits"><p class="footer-item clear-footer">Die Macher</p></a>
+            <a href="../rankings"><p class="footer-item clear-footer">Rankings & Reports</p></a>
+            <a href="../methodologie"><p class="footer-item clear-footer">Methodologie</p></a>
         </div>
         <div class="footer-grid-second">
-            <a href="../datenschutz"><p class="footer-item-first clear-footer">Datenschutz</p></a>
-            <a href="../methodologie"><p class="footer-item clear-footer">Methodologie</p></a>
+            <a href="../newsletter"><p class="footer-item-first clear-footer">Newsletter-Abo</p></a>
+            <a href="../datenschutz"><p class="footer-item clear-footer">Datenschutz</p></a>
             <a href="../kontakt"><p class="footer-item clear-footer">Kontakt & Fragen</p></a>
             <a href="../impressum"><p class="footer-item clear-footer">Impressum</p></a>
         </div>
