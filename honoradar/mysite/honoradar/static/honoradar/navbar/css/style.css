@@ -4,7 +4,7 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-
+test
 html {
 }
 html * {
@@ -120,7 +120,7 @@ main {
 
 .cd-nav-trigger {
   position: fixed;
-  z-index: 3;
+  z-index: 3 !important;
   right: 5%;
   top: 20px;
   height: 54px;
@@ -213,6 +213,8 @@ main {
   -webkit-transition: stroke-dashoffset 0.4s 0s;
   -moz-transition: stroke-dashoffset 0.4s 0s;
   transition: stroke-dashoffset 0.4s 0s;
+  stroke: rgb(46, 204, 113);
+  stroke-width: 2;
 }
 .navigation-is-open .cd-nav-trigger {
   /* rotate trigger when navigation becomes visible */
@@ -322,13 +324,13 @@ main {
   margin-bottom: 70px;
   font-size: 1.3rem;
   font-weight: 800;
-  color: #394d66;
+  color: #394d66 !important;
   text-transform: uppercase;
 }
 
 .navtitle2 {
 	display:inline-block;
-    border-bottom: 1px solid #394d66;
+    border-bottom: 1px solid #27ae60;
     padding-bottom:20px;
 	bottom: -20px;
 }

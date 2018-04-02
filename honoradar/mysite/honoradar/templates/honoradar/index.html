@@ -24,7 +24,6 @@
 
     <!-- Style -->
     <link rel="stylesheet" href="{% static 'honoradar/css/style.css'%}">
-    <link rel="stylesheet" href="{% static 'honoradar/css/style-1.css'%}">
     <link rel="stylesheet" href="{% static 'honoradar/css/font.css'%}">
     <link rel="stylesheet" href="{% static 'honoradar/navbar/css/reset.css'%}">
     <link rel="stylesheet" href="{% static 'honoradar/navbar/css/style.css'%}">
@@ -60,7 +59,7 @@
 <!-- Parallax -->
     <div class="panel">
 		<h1 class="head-title">Was verdienen Journalisten?</h1>
-		<h2 class="head-subtitle-1">Die JourMoney-Datenbank gibt die Antwort: Hier spenden Journalisten Lohndaten und erfahren, was ihre Kollegen verdienen.</h2>
+		<h2 class="head-subtitle-1">Die <span class="f-top"><span>:</span>F</span>-Datenbank gibt die Antwort: Hier spenden Journalisten Gehalts- und Lohndaten und erfahren, was ihre Kollegen verdienen.</h2>
 		<h2 class="head-subtitle-2">Bisher spendeten Journalisten 1.245 Daten über 134 Medien.</h2>
 		<a href="#banderole" id="machmit" class="smooth clear-absolute"><h3 class="head-action">Mach mit!</h3></a>
 		<div class="head-box-1"></div>
@@ -115,11 +114,11 @@
 
 <!-- Safe-Points -->
 	<div class="safe-box">
-		<a target="_blank" href="#"><div class="safe-1 safetile"></div></a>
-		<a target="_blank" href="#"><div class="safe-2 safetile"></div></a>
-		<a target="_blank" href="#"><div class="safe-3 safetile-gross"></div></a>
-		<a target="_blank" href="#"><div class="safe-4 safetile"></div></a>
-		<a target="_blank" href="#"><div class="safe-5 safetile"></div></a>
+		<a target="_blank" href="#"><div class="safe safe-1 safetile"></div></a>
+		<a target="_blank" href="#"><div class="safe safe-2 safetile"></div></a>
+		<a target="_blank" href="#"><div class="safe safe-3 safetile-gross"></div></a>
+		<a target="_blank" href="#"><div class="safe safe-4 safetile"></div></a>
+		<a target="_blank" href="#"><div class="safe safe-5 safetile"></div></a>
 	</div>
 
 <!-- Input-Input-Box -->
@@ -129,11 +128,15 @@
     <form action="{% url 'honoradar:senddata' %}" method="post" data-url="{% url 'honoradar:senddata' %}" name="firstbox" id="giv-form">
       {% csrf_token %}
 
-	<div class="banner-left-1">Spende deine Lohndaten!</div><div class="banner-left-shadow"></div>
+	<div class="banner-left-1 hide" id="banner-left-1">Erzähle, was du verdienst!</div>
+	<div class="banner-left-4" id="banner-left-4">Vielen Dank!</div>
+	<div class="banner-left-shadow"></div>
+	<div id="banner-left-triangle" class="banner-left-shadow hide"></div>
 
 <!-- Medium-Select -->
-    <input name="MediumName" id="data_medium" class="media-select" list="medium" placeholder="Für welches Medium arbeitest du?" type="text" />
+    <input name="MediumName" id="data_medium" class="media-select dropdown hide" list="medium" placeholder="Für welches Medium arbeitest du?" type="text" />
     <datalist id="medium">
+	<!--[if lte IE 9]><select data-datalist="samples"><![endif]-->
 		<option value="Frankfurter Allgemeine Zeitung (FAZ)">
 		<option value="Spiegel">
 		<option value="Spiegel TV">
@@ -142,10 +145,12 @@
 		<option value="Südwestrundfunk (SWR)">
 		<option value="Tagesspiegel">
 		<option value="Zeit Online (ZON)">
+    <!--[if lte IE 9]></select><![endif]-->
 	</datalist>
+	<!-- Support Safari? https://stackoverflow.com/questions/27494084/html5-datalist-tag-is-not-populating-in-safari?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa -->
 
 <!-- Switch-Select -->
-	<div class="switch-field switch-field-text-1 tooltip">
+	<div class="switch-field switch-field-text switch-field-text-1 tooltip hide" id="data_arbeitsverhaeltnis">
 		<input name="FreeOrEmployed" type="radio" id="data_arbeitsverhaeltnis_fest" name="switch" value="fest" onclick="festfunction()"/>
 		<label for="data_arbeitsverhaeltnis_fest">Fest<span id="question-1">?</span></label>
 		<input name="FreeOrEmployed" type="radio" id="data_arbeitsverhaeltnis_pauschal" name="switch" value="pauschal" onclick="pauschalfunction()"/>
@@ -160,8 +165,10 @@
   	<input  name="SalaryPerMonthEmpMix" id="data_gehalt" class="loan-select hide" list="gehalt" placeholder="Gehalt pro Monat?" type="number"	min="0" oninput="validity.valid||(value='');" inputmode="numeric" />
 
 <!-- Hour-Week-Select -->
-    <div class="hour-week-select hide" id="pre-data_stunden_woche">
-    	<input id="data_stunden_woche" name="HoursPerWeekEmp" class="hour-week-bar" type="range" min="1" max="50" value="0"/>
+    <div class="day-month-select hide pre-alert-bar-hour-week" id="pre-data_stunden_woche">
+		<style id="style-hour-week" scoped></style>
+    	<input id="data_stunden_woche" name="HoursPerWeekEmp" class="hour-week-bar alert-bar_stunden_woche" type="range" min="1" max="50" value="0" onmousedown="alertoffdatahourweek()" ontouchstart="alertoffdatahourweek()"/>
+	<p id="outputhourweek" class="output">0</p>
     </div>
     <div class="break hide" id="break-1"></div>
 
@@ -184,7 +191,7 @@
 
 <!-- Unit-Select -->
     <div class="hide" id="pre-data_format_text_audio_video">
-    <div id="data_format_text_audio_video" class="switch-field switch-field-text-2 tooltip alert-switch">
+    <div id="data_format_text_audio_video" class="switch-field switch-field-text switch-field-text-2 tooltip alert-switch">
         <input type="radio" id="data_format_text" name="VideoAudioTextFree" value="text" onclick="textfunction()"/>
         <label for="data_format_text">Text</label>
         <input type="radio" id="data_format_audio" name="VideoAudioTextFree" value="audio" onclick="audiofunction()"/>
@@ -218,15 +225,30 @@
 <!-- Genre-Select -->
     <input name="Genre" id="data_genre" class="genre-select hide" list="genre" placeholder="Welches Genre?" type="text"/>
     <datalist id="genre">
+	<!--[if lte IE 9]><select data-datalist="samples"><![endif]-->
+		<option value="Analyse">
         <option value="Bericht">
-        <option value="Doku">
+        <option value="Dokumentation">
+		<option value="Editorial">
+		<option value="Essay">
         <option value="Feature">
+		<option value="Foto">
+		<option value="Gebauter Beitrag">
+		<option value="Glosse">
+		<option value="Infografik">
         <option value="Interview">
+		<option value="Kolumne">
         <option value="Kommentar">
+		<option value="Kritik">
+		<option value="Leitartikel">
         <option value="Moderation">
         <option value="Nachricht">
-        <option value="Portrait">
+		<option value="Podcast">
+        <option value="Porträt">
         <option value="Reportage">
+		<option value="Rezension">
+		<option value="Servicetext">
+	<!--[if lte IE 9]></select><![endif]-->
     </datalist>
 
 <!-- Digitalization-Select -->
@@ -249,34 +271,38 @@
 	</div>
 
 	<div class="break"></div>
-    <div class="banner-left-2 zbanner-left hide" id="banner-left-2">Deine Arbeitssituation:</div><div id="banner-left-triangle" class="banner-left-shadow hide"></div>
+    <div class="banner-left-2 zbanner-left hide" id="banner-left-2">Deine Arbeitssituation:</div>
+	<div class="banner-left-shadow hide" id="banner-left-shadow-2"></div>
+	<div id="banner-left-triangle" class="banner-left-shadow hide"></div>
 
 <!-- Position-Select -->
     <input name="JobPosition" id="data_position" class="position-select hide alert" list="position" placeholder="Als was arbeitest du?" type="text" onmousedown="alertoffdataposition()" ontouchstart="alertoffdataposition()"/>
     <datalist id="position">
+	<!--[if lte IE 9]><select data-datalist="samples"><![endif]-->
         <option value="Chefredakteur">
         <option value="Ressortleiter">
         <option value="Chef vom Dienst (CvD)">
         <option value="Redakteur">
         <option value="Voluntär">
         <option value="Praktikant">
+	<!--[if lte IE 9]></select><![endif]-->
     </datalist>
 
 <!-- Experience-Select -->
-    <div class="switch-field switch-field-text-4 hide" id="pre-data_erfahrung_jahr_1_3_5">
+    <div class="switch-field switch-field-text switch-field-text-4 hide" id="pre-data_erfahrung_jahr_1_3_5">
 		<input name="ExperienceEmplMix" type="radio" id="data_erfahrung_jahr_1" name="switch" value="0"/>
-        <label for="data_erfahrung_jahr_1">1 Jahr</label>
+        <label for="data_erfahrung_jahr_1">> 1 Jahr</label>
         <input name="ExperienceEmplMix" type="radio" id="data_erfahrung_jahr_3" name="switch" value="3"/>
-        <label for="data_erfahrung_jahr_3">3 Jahre</label>
+        <label for="data_erfahrung_jahr_3">> 5 Jahre</label>
         <input name="ExperienceEmplMix" type="radio" id="data_erfahrung_jahr_5" name="switch" value="5"/>
-        <label for="data_erfahrung_jahr_5">5 Jahre</label>
+        <label for="data_erfahrung_jahr_5">> 10 Jahre</label>
     </div>
 
 <!-- Happiness-Select-->
     <div class="happiness-select hide pre-alert-bar-happiness" id="pre-data_athmosphaere">
 	<style id="style-happiness" scoped></style>
-		<input name="Happiness" id="data_athmosphaere" class="range happiness-bar alert-bar_happiness" type="range" min="0" max="10" value="0" onmousedown="alertoffdatahappiness()" ontouchstart="alertoffdatahappiness()" ontouchmove="alertoffdatahappiness()"/>
-		<p id="outputhappiness" class="output">0</p>
+	<input name="Happiness" id="data_athmosphaere" class="range happiness-bar alert-bar_happiness" type="range" min="1" max="9" value="0" onmousedown="alertoffdatahappiness()" ontouchstart="alertoffdatahappiness()" ontouchmove="alertoffdatahappiness()"/>
+	<p id="outputhappiness" class="fav-output fav-output-0"></p>
 	</div>
 	<div class="break"></div>
 
@@ -284,13 +310,13 @@
     <div class="hide" id="pre-data_kommentar">
         <textarea id="data_kommentar" class="comment-select" name="Comment" placeholder="Dein Kommentar ..." maxlength="250"></textarea>
     </div>
-    <span class="hide" id="disclaimer"><p class="disclaimer"><a href="#" class="clear-agb">!</a>Achte darauf, dass du deine Identität im Kommentar nicht verrätst!</p></span>
+    <span class="hide" id="disclaimer"><p class="disclaimer"><a href="#" class="clear-agb">!</a>Dein Kommentar ist anonym. Achte darauf, dass du deine Identität nicht verrätst!</p></span>
 
 <!-- Checkbox-Select -->
     <span class="hide" id="pre-data_checkbox">
         <input name="AGB" class="checkbox" type="checkbox" id="data_checkbox" />
         <label class="checkboxlabel alert-checkbox" for="data_checkbox"></label>
-        <p class="checkboxtext">Ich bin mit den <a href="#" target="_blank" class="clear-agb">AGBs</a> einverstanden.</p>
+        <p class="checkboxtext">Ich habe den <a href="#" target="_blank" class="clear-agb">Hinweis</a> gelesen.</p>
     </span>
 
     {% if messages %}
@@ -310,13 +336,35 @@
 
 
 <!-- Submit -->
-  <div class="alert alert-media-select hide" id="WARNING">
+	<div class="alert-denied alert-media-select show" id="WARNING">
 		<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
 		<strong>Achtung! </strong>Bitte fülle folgende Felder aus: Feld1, Feld2 und Feld2.
 	</div>
     <input type="submit" class="submit-get hide" id="data_submit" value="Daten spenden"/>
 
     </form>
+
+<!-- After-Submit Accpeted -->
+	  <div class="alert alert-accepted alert-media-select show" id="ACCEPTED">
+		<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+		Wir haben deine Infos geprüft und in die Datenbank aufgenommen.
+	</div>
+
+<!-- Newsletter-Anmeldung -->
+	<p class="after-submit-text" id="after-submit-text-1">Einmal im Jahr werten wir alle Daten aus und veröffentlichen einen Gehaltsreport – inklusive der besten Arbeitgeber. Falls gewünscht, informieren wir dich via Newsletter.
+	</p>
+	<a href="/newsletter">
+    <input type="submit" class="submit" id="newsletter_submit" value="Newsletter-Abo"/>
+	</a>
+	
+<!-- Reload -->
+	<p class="after-submit-text" id="after-submit-text-2">Wenn du noch mehr Daten spenden möchtest, freuen wir uns natürlich riesig. Je mehr, desto besser für alle. Vielleicht wäre die <span class="f"><span>:</span>F</span>-Datenbank ja auch was für deine Kollegen. 
+	</p>
+
+	<a href="#banderole" class="smooth">
+    <input type="submit" class="submit submit-reload" id="reload_submit" value="Erneut spenden" onmousedown="reload()" ontouchstart="reload()"/>
+	</a>
+
     </div>
 
 <!-- Output-Input-Box -->
@@ -326,8 +374,10 @@
     <div class="banner-right-1">Erfahre, was Medien zahlen!</div><div class="banner-right-shadow"></div>
 
 <!-- Medium-Select -->
-    <input name="mediumget" id="media-analyse" class="media-select alert" list="medium" placeholder="Welches Medium interessiert dich?" type="text" onclick="alertoffalaysemedium()"/>
-    <datalist id="medium-analyse">
+    <input name="mediumget" id="media-analyse" class="media-select" list="medium" placeholder="Welches Medium interessiert dich?" type="text" onclick="getfunction()"/>
+	
+    <datalist id="medium-analyse" >
+	<!--[if lte IE 9]><select data-datalist="samples"><![endif]-->
         <option value="Frankfurter Allgemeine Zeitung (FAZ)">
         <option value="Spiegel">
         <option value="Spiegel TV">
@@ -336,9 +386,10 @@
         <option value="Südwestrundfunk (SWR)">
         <option value="Tagesspiegel">
         <option value="Zeit Online (ZON)">
+    <!--[if lte IE 9]></select><![endif]-->
     </datalist>
 
-<!-- Switch-Select -->
+<!-- Switch-Select 
     <div class="switch-field switch-field-text-1 tooltip">
         <input type="radio" id="data_arbeitsverhaeltnis_fest-analyse" name="switch" value="fest" onclick="getfunctionfest()"/>
         <label for="data_arbeitsverhaeltnis_fest-analyse">Fest<span id="question-4">?</span></label>
@@ -346,7 +397,7 @@
         <label for="data_arbeitsverhaeltnis_pauschal-analyse">Pauschal<span id="question-5">?</span></label>
         <input type="radio" id="data_arbeitsverhaeltnis_frei-analyse" name="switch" value="frei" onclick="getfunctionfrei()"/>
         <label for="data_arbeitsverhaeltnis_frei-analyse">Frei<span id="question-6">?</span></label>
-    </div>
+    </div>-->
 
 	<div class="break"></div>
 
@@ -374,30 +425,30 @@
 
 <!-- Social Share -->
 	<div class="social-box">
-		<a target="_blank" href="https://twitter.com/intent/tweet?url=https://wasjournalistenverdienen.de&text=Was%20verdienen%20Journalisten?%20Die%20neue%20interaktive%20Datenbank%20der%20Freischreiber:"><div class="social-1 socialtile"></div></a>
-		<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://wasjournalistenverdienen.de"><div class="social-2 socialtile"></div></a>
-		<a href="whatsapp://send?text=https://wasjournalistenverdienen.de"><div class="social-3 socialtile"></div></a>
-		<a href="fb-messenger://share/?link=https://wasjournalistenverdienen.de&app_id=123456789"><div class="social-4 socialtile"></div></a>
-		<a href="mailto:?subject=Interaktive Datenbank: Was verdienen Journalisten?&amp;body=Hallo, schau dir mal diese Seite an: https://wasjournalistenverdienen.de"><div class="social-5 socialtile"></div></a>
+		<a target="_blank" href="https://twitter.com/intent/tweet?url=https://wasjournalistenverdienen.de&text=Was%20verdienen%20Journalisten?%20Die%20neue%20interaktive%20Datenbank%20der%20Freischreiber:"><div class="social social-1 socialtile"></div></a>
+		<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://wasjournalistenverdienen.de"><div class="social social-2 socialtile"></div></a>
+		<a href="whatsapp://send?text=https://wasjournalistenverdienen.de"><div class="social social-3 socialtile"></div></a>
+		<a href="fb-messenger://share/?link=https://wasjournalistenverdienen.de&app_id=123456789"><div class="social social-4 socialtile"></div></a>
+		<a href="mailto:?subject=Interaktive Datenbank: Was verdienen Journalisten?&amp;body=Hallo, schau dir mal diese Seite an: https://wasjournalistenverdienen.de"><div class="social social-5 socialtile"></div></a>
 	</div>
 
 
 <!-- News -->
     <div class="nbox-1">
         <a href="#">
-            <div class="ntile-first news_1"><span class="news-title-head">Der große Gehalts-Report 2018</span></div>
+            <div class="ntile-first news news_1"><span class="news-title-head">Der große Gehalts-Report 2018</span></div>
         </a>
         <a href="#">
-            <div class="ntile-first news_2"><span class="news-title">Das sagt die Presse zum Gehalts-Report</span></div>
+            <div class="ntile-first news news_2"><span class="news-title">Das sagt die Presse zum Gehalts-Report</span></div>
         </a>
         <a href="#">
-            <div class="ntile-first news_3"><span class="news-title">Was geschieht mit deinen Daten?</span></div>
+            <div class="ntile-first news news_3"><span class="news-title">Was geschieht mit deinen Daten?</span></div>
         </a>
         <a href="#">
-			<div class="ntile-first news_4"><span class="news-title">Warum Daten spenden?</span></div>
+			<div class="ntile-first news news_4"><span class="news-title">Warum Daten spenden?</span></div>
         </a>
         <a href="#">
-            <div class="ntile-first news_5"><span class="news-title">Die Methodik dahinter</span></div>
+            <div class="ntile-first news news_5"><span class="news-title">Die Methodik dahinter</span></div>
         </a>
     </div>
 
@@ -407,16 +458,16 @@
 <!-- News -->
     <div class="nbox-2">
         <a href="#">
-            <div class="ntile-second news_6"><span class="news-title">So verhandelst du dein Gehalt</span></div>
+            <div class="ntile-second news news_6"><span class="news-title">So verhandelst du dein Gehalt</span></div>
         </a>
         <a href="#">
-            <div class="ntile-second news_7"><span class="news-title">Dein Kollege verdient mehr?</span></div>
+            <div class="ntile-second news news_7"><span class="news-title">Dein Kollege verdient mehr?</span></div>
         </a>
         <a href="https://www.youtube.com/watch?v=MiKw3uPGHB4" data-lity>
-            <div class="ntile-second news_8"><span class="news-title">Video: Tipps & Tricks</span></div>
+            <div class="ntile-second news news_8"><span class="news-title">Video: Tipps & Tricks</span></div>
         </a>
         <a href="#">
-            <div class="ntile-second news_9"><span class="news-title">Koalitionsvertrag: VG-Wort-Ausschüttungen?</span>
+            <div class="ntile-second news news_9"><span class="news-title">Koalitionsvertrag: VG-Wort-Ausschüttungen?</span>
         </div>
 		</a>
     </div>
@@ -442,19 +493,26 @@
 </main>
 
 
-    <!-- Javascript -->
+<!-- Javascript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-    <script src="{% static 'honoradar/navbar/js/modernizr.js'%}"></script>
-    <script src="{% static 'honoradar/html5shiv.js'%}"></script>
-    <script src="{% static 'honoradar/lity/vendor/jquery.js'%}"></script>
-    <script src="{% static 'honoradar/lity/dist/lity.js'%}"></script>
     <script src="{% static 'honoradar/js/jquery.js'%}"></script>
     <script src="{% static 'honoradar/js/javascript.js'%}"></script>
     <script src="{% static 'honoradar/js/javascript-new.js'%}"></script>
+    <script src="{% static 'honoradar/js/datalist.polyfill.js'%}"></script>
+    <script src="{% static 'honoradar/js/datalist.polyfill.min.js'%}"></script>
+    <script src="{% static 'honoradar/navbar/js/modernizr.js'%}"></script>
     <script src="{% static 'honoradar/navbar/js/jquery-2.1.1.js'%}"></script>
     <script src="{% static 'honoradar/navbar/js/main.js'%}"></script>
-    <!-- jQuery (required for this Ajax tutorial) -->
+    <script src="{% static 'honoradar/lity/vendor/jquery.js'%}"></script>
+    <script src="{% static 'honoradar/lity/dist/lity.js'%}"></script>
+
+<!-- Datalist Fix -->
+<script>
+
+</script>	
+
+<!-- jQuery (required for this Ajax tutorial) -->
     <script> function getCookie(name) {
           var cookieValue = null;
           if (document.cookie && document.cookie !== '') {
