@@ -356,9 +356,9 @@
 	<a href="/newsletter">
     <input type="submit" class="submit" id="newsletter_submit" value="Newsletter-Abo"/>
 	</a>
-	
+
 <!-- Reload -->
-	<p class="after-submit-text" id="after-submit-text-2">Wenn du noch mehr Daten spenden möchtest, freuen wir uns natürlich riesig. Je mehr, desto besser für alle. Vielleicht wäre die <span class="f"><span>:</span>F</span>-Datenbank ja auch was für deine Kollegen. 
+	<p class="after-submit-text" id="after-submit-text-2">Wenn du noch mehr Daten spenden möchtest, freuen wir uns natürlich riesig. Je mehr, desto besser für alle. Vielleicht wäre die <span class="f"><span>:</span>F</span>-Datenbank ja auch was für deine Kollegen.
 	</p>
 
 	<a href="#banderole" class="smooth">
@@ -375,7 +375,7 @@
 
 <!-- Medium-Select -->
     <input name="mediumget" id="media-analyse" class="media-select alert" list="medium" placeholder="Welches Medium interessiert dich?" type="text" onclick="getfunction()"/>
-	
+
     <datalist id="medium-analyse" >
 	<!--[if lte IE 9]><select data-datalist="samples"><![endif]-->
         <option value="Frankfurter Allgemeine Zeitung (FAZ)">
@@ -389,7 +389,7 @@
     <!--[if lte IE 9]></select><![endif]-->
     </datalist>
 
-<!-- Switch-Select 
+<!-- Switch-Select
     <div class="switch-field switch-field-text-1 tooltip">
         <input type="radio" id="data_arbeitsverhaeltnis_fest-analyse" name="switch" value="fest" onclick="getfunctionfest()"/>
         <label for="data_arbeitsverhaeltnis_fest-analyse">Fest<span id="question-4">?</span></label>
@@ -414,23 +414,23 @@
 	<div class="result-banner-left"></div>
 	<div class="result-banner-right"></div>
 	<div class="result-mediumname">Nürnberger Nachrichten</div>
-	  
+
 <!-- Result Flexbox -->
-	<div class="result-grid">  
-	  
-<!-- Result Frei-Box -->	  
+	<div class="result-grid">
+
+<!-- Result Frei-Box -->
 	<div class="result-item result-item-thin">
 
 	<div class="result-box-frei-titel">Freie Journalisten</div>
     <div class="happiness-result" id="">
 		<input name="" id="result_athmosphaere-frei" class="range result_happiness-bar result_happiness-3" type="range" min="1" max="9" value="3" disabled/>
-	</div>	
+	</div>
 	<div class="infografik">
 		<img src="https://datavizcatalogue.com/methods/images/anatomy/box_plot.png">
 	</div>
-	
+
 <!-- Unit-Select -->
-	<p class="result_format-text">Welches Format interessiert dich?</p>	
+	<p class="result_format-text">Welches Format interessiert dich?</p>
     <div class="show" id="pre-data_format_text_audio_video">
     <div id="data_format_text_audio_video" class="switch-field result_switch-field switch-field-text result_switch-field-text result_switch-field-text-5">
 		<input type="radio" id="result_format_text" name="result_format" value="text" onclick="xxxfunction()" checked/>
@@ -440,12 +440,12 @@
         <input type="radio" id="result_format_video" name="result_format"value="video" onclick="xxxfunction()"/>
         <label for="result_format_video">Video</label>
     </div>
-    </div>	
+    </div>
 		<div class="infografik">
 		<img src="https://datavizcatalogue.com/methods/images/anatomy/box_plot.png">
 	</div>
-	</div>		
-	  
+	</div>
+
 <!-- Result Pauschal-Box -->
 
 	<div class="result-item result-item-large">
@@ -453,7 +453,7 @@
 	<div class="result-box-pauschal-titel">Pauschalisten</div>
 	<div class="happiness-result" id="">
 		<input name="" id="result_athmosphaere-pauschal" class="range result_happiness-bar result_happiness-5" type="range" min="1" max="9" value="5" disabled/>
-	</div>	
+	</div>
 	<div class="infografik">
 		<img src="https://datavizcatalogue.com/methods/images/anatomy/box_plot.png">
 	</div>
@@ -466,7 +466,7 @@
 	<div class="result-box-inner result-box-fest-titel">Festangestellte</div>
     <div class="happiness-result" id="">
 		<input name="" id="result_athmosphaere-fest" class="range result_happiness-bar result_happiness-8" type="range" min="1" max="9" value="8" disabled/>
-	</div>	
+	</div>
 	<div class="infografik">
 		<img src="https://datavizcatalogue.com/methods/images/anatomy/box_plot.png">
 	</div>
@@ -474,7 +474,7 @@
 	</div>
 	</div>
 	</div>
-	
+
 <!-- Result "Daten & Fakten"-Box -->
 
 	<div class="result-item result-item-superlarge">
@@ -484,18 +484,18 @@
 	Code of Fairness<br>
 	Einteilung als was?<br>
 	Comments
-	
+
 	</div>
-	</div>	   
-	
-	</div>    
+	</div>
+
+	</div>
 
 <!-- Infografiken - Text -->
 	<div class="result-text"> {% if medium %}{{ medium.mediumname }} {% endif %}</div>
 	<div class="result-text"> {% if avghappiness %}{{ avghappiness}} {% endif %}</div>
 
-	
-	
+
+
 
       </div>
 
@@ -569,170 +569,30 @@
 </main>
 
 
-<!-- Javascript -->
+
+    <!-- Javascript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
+    <script src="{% static 'honoradar/navbar/js/modernizr.js'%}"></script>
+    <script src="{% static 'honoradar/js/html5shiv.js'%}"></script>
+    <script src="{% static 'honoradar/lity/vendor/jquery.js'%}"></script>
+    <script src="{% static 'honoradar/lity/dist/lity.js'%}"></script>
     <script src="{% static 'honoradar/js/jquery.js'%}"></script>
     <script src="{% static 'honoradar/js/javascript.js'%}"></script>
     <script src="{% static 'honoradar/js/javascript-new.js'%}"></script>
-    <script src="{% static 'honoradar/js/datalist.polyfill.js'%}"></script>
-    <script src="{% static 'honoradar/js/datalist.polyfill.min.js'%}"></script>
-    <script src="{% static 'honoradar/navbar/js/modernizr.js'%}"></script>
     <script src="{% static 'honoradar/navbar/js/jquery-2.1.1.js'%}"></script>
     <script src="{% static 'honoradar/navbar/js/main.js'%}"></script>
-    <script src="{% static 'honoradar/lity/vendor/jquery.js'%}"></script>
-    <script src="{% static 'honoradar/lity/dist/lity.js'%}"></script>
+    <script src="{% static 'honoradar/js/ajax-setup.js'%}"></script>
+    <script src="{% static 'honoradar/js/ajax-senddata.js'%}"></script>
+    <script src="{% static 'honoradar/js/ajax-getdata.js'%}"></script>
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="{% static 'honoradar/js/jquery.easy-autocomplete.min.js'%}"></script>
 
-<!-- Datalist Fix -->
-<script>
-
-</script>	
-
-<!-- jQuery (required for this Ajax tutorial) -->
-    <script> function getCookie(name) {
-          var cookieValue = null;
-          if (document.cookie && document.cookie !== '') {
-              var cookies = document.cookie.split(';');
-              for (var i = 0; i < cookies.length; i++) {
-                  var cookie = jQuery.trim(cookies[i]);
-                  // Does this cookie string begin with the name we want?
-                  if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                      cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                      break;
-                  }
-              }
-          }
-          return cookieValue;
-      }
-
-      var csrftoken = getCookie('csrftoken');
-
-      function csrfSafeMethod(method) {
-          // these HTTP methods do not require CSRF protection
-          return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
-      }
-      $.ajaxSetup({
-          beforeSend: function(xhr, settings) {
-              if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-                  xhr.setRequestHeader("X-CSRFToken", csrftoken);
-              }
-          }
-      });
-    </script>
-    {%block javascript2 %}
-    <script>
-    $(document).ready(function(){
-        var $myForm = $("#giv-form")
-        $myForm.submit(function(event){
-            event.preventDefault()
-            var $formData = $(this).serialize()
-            console.log($formData)
-            var $name = $myForm.attr('name')
-            console.log($name)
-            var $url = $myForm.attr('data-url')
-            console.log($url)
-            $.ajax({
-            method: "POST",
-            url: $url,
-            data: $formData,
-            success: handleFormSuccessPost,
-            error: handleFormErrorPost,
-
-        })
-
-      })
-      function handleFormSuccessPost(data, textStatus, jqXHR) {
-          console.log(data)
-          const alertdiv = document.getElementById('WARNING')
-
-          alertdiv.innerHTML = ""
-          alertdiv.innerHTML = "<strong>Achtung! </strong>Es fehlen noch Angaben zu folgenden Pflicht-Feldern: "
-          const size = Object.keys(data).length;
-          console.log(size)
-          const $Warning = $("#WARNING")
+    <script src="static/honoradar/js/autocomplete-giv.js"></script>
+    <script src="static/honoradar/js/autocomplete-get.js"></script>
 
 
-          for (i = 0; i < size; i++) {
-              console.log(i);
-              alertdiv.classList.add("show");
-              alertdiv.classList.remove("hide");
-              keyname = String("message" + String(i));
-              if (i == 0) {
-                  $Warning.append('<span>' + String(data[keyname]) + '</span>');
-              } else {
-                  $Warning.append('<span>, ' + String(data[keyname]) + ' </span>');
-
-              }
-
-          }
-          console.log(textStatus)
-          console.log(jqXHR)
-          $myForm[0].reset(); // reset form data
-      }
-
-      function handleFormErrorPost(jqXHR, textStatus, errorThrown) {
-          console.log(jqXHR)
-          console.log(textStatus)
-          console.log(errorThrown)
-      }
-  })
 </script>
-    {%endblock javascript2 %}
-    {%block javascript3 %}
-    <script>
-    $(document).ready(function(){
-        var $myForm = $("#get-form")
-        $myForm.submit(function(event){
-            event.preventDefault()
-            var $formData = $(this).serialize()
-            console.log($formData)
-            var $name = $myForm.attr('name-get')
-            console.log($name)
-            var $url = $myForm.attr('data-url-get')
-            console.log($url)
-            $.ajax({
-            method: "GET",
-            url: $url,
-            data: $formData,
-            success: handleFormSuccessGet,
-            error: handleFormErrorGet,
-
-        })
-
-      })
-      function handleFormSuccessGet(data, textStatus, jqXHR) {
-          console.log(data)
-          const resultsdiv = document.getElementById('result')
-
-          const size = Object.keys(data).length;
-          console.log(size)
-          resultsdiv.innerHTML = ""
-
-          const $result = $("#result")
-          resultsdiv.classList.add("show");
-          resultsdiv.classList.remove("hide");
-          $result.append('<div class="banner-left-3">Gehalts- und Lohnreports</div><div class="banner-left-shadow"></div>')
-
-          $result.append('<div class="result-text">' +String(data["mediumname"])+'</div>' )
-          $result.append('<div class="result-text">' +String(data["avghappiness"])+'</div>' )
-
-
-
-          console.log(textStatus)
-          console.log(jqXHR)
-          $myForm[0].reset(); // reset form data
-      }
-
-      function handleFormErrorGet(jqXHR, textStatus, errorThrown) {
-          console.log(jqXHR)
-          console.log(textStatus)
-          console.log(errorThrown)
-      }
-  })
-</script>
-    {%endblock javascript3 %}
-
-
 
 </body>
 
