@@ -521,6 +521,9 @@ function getfunction() {
 	var element = document.getElementById("analyse_submit");
     element.classList.add("show");
     element.classList.remove("hide");
+	
+	var element = document.getElementById("media-analyse");
+    element.classList.remove("alert");
 }
 
 /*
@@ -579,11 +582,6 @@ function alertoffdataloan() {
 
 function alertoffdataposition() {
 	var element = document.getElementById("data_position");
-    element.classList.remove("alert");
-}
-
-function alertoffanalaysemedium() {
-	var element = document.getElementById("media-analyse");
     element.classList.remove("alert");
 }
 

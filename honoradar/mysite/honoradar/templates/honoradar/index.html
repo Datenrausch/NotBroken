@@ -129,7 +129,7 @@
       {% csrf_token %}
 
 	<div class="banner-left-1 hide" id="banner-left-1">Erzähle, was du verdienst!</div>
-	<div class="banner-left-4" id="banner-left-4">Vielen Dank!</div>
+	<div class="banner-left-3" id="banner-left-4">Vielen Dank!</div>
 	<div class="banner-left-shadow"></div>
 	<div id="banner-left-triangle" class="banner-left-shadow hide"></div>
 
@@ -151,17 +151,17 @@
 
 <!-- Switch-Select -->
 	<div class="switch-field switch-field-text switch-field-text-1 tooltip hide" id="data_arbeitsverhaeltnis">
-		<input name="FreeOrEmployed" type="radio" id="data_arbeitsverhaeltnis_fest" name="switch" value="fest" onclick="festfunction()"/>
-		<label for="data_arbeitsverhaeltnis_fest">Fest<span id="question-1">?</span></label>
-		<input name="FreeOrEmployed" type="radio" id="data_arbeitsverhaeltnis_pauschal" name="switch" value="pauschal" onclick="pauschalfunction()"/>
-		<label for="data_arbeitsverhaeltnis_pauschal">Pauschal<span id="question-2">?</span></label>
 		<input name="FreeOrEmployed" type="radio" id="data_arbeitsverhaeltnis_frei" name="switch" value="frei" onclick="freifunction()"/>
 		<label for="data_arbeitsverhaeltnis_frei">Frei<span id="question-3">?</span></label>
+		<input name="FreeOrEmployed" type="radio" id="data_arbeitsverhaeltnis_pauschal" name="switch" value="pauschal" onclick="pauschalfunction()"/>
+		<label for="data_arbeitsverhaeltnis_pauschal">Pauschal<span id="question-2">?</span></label>
+		<input name="FreeOrEmployed" type="radio" id="data_arbeitsverhaeltnis_fest" name="switch" value="fest" onclick="festfunction()"/>
+		<label for="data_arbeitsverhaeltnis_fest">Fest<span id="question-1">?</span></label>
 	</div>
 
 	<div class="break"></div>
 
- <!-- Loan-Select -->
+<!-- Loan-Select -->
   	<input  name="SalaryPerMonthEmpMix" id="data_gehalt" class="loan-select hide" list="gehalt" placeholder="Gehalt pro Monat?" type="number"	min="0" oninput="validity.valid||(value='');" inputmode="numeric" />
 
 <!-- Hour-Week-Select -->
@@ -253,7 +253,7 @@
 
 <!-- Digitalization-Select -->
     <div id="pre-data_verbreitung_analog_digital_beides" class="hide">
-    <div class="switch-field switch-field-text-3 tooltip">
+    <div class="switch-field switch-field-text switch-field-text-3 tooltip">
         <input name="AnalogDigitalFree" type="radio" id="data_verbreitung_analog" name="switch-verbreitung" value="Analog"/>
         <label for="data_verbreitung_analog">Analog</label>
         <input name="AnalogDigitalFree" type="radio" id="data_verbreitung_digital" name="switch-verbreitung" value="Digital"/>
@@ -276,7 +276,7 @@
 	<div id="banner-left-triangle" class="banner-left-shadow hide"></div>
 
 <!-- Position-Select -->
-    <input name="JobPosition" id="data_position" class="position-select hide alert" list="position" placeholder="Als was arbeitest du?" type="text" onmousedown="alertoffdataposition()" ontouchstart="alertoffdataposition()"/>
+    <input name="JobPosition" id="data_position" class="position-select hide alert" list="position" placeholder="Als was arbeitest du?" type="text" onclick="alertoffdataposition()"/>
     <datalist id="position">
 	<!--[if lte IE 9]><select data-datalist="samples"><![endif]-->
         <option value="Chefredakteur">
@@ -310,13 +310,13 @@
     <div class="hide" id="pre-data_kommentar">
         <textarea id="data_kommentar" class="comment-select" name="Comment" placeholder="Dein Kommentar ..." maxlength="250"></textarea>
     </div>
-    <span class="hide" id="disclaimer"><p class="disclaimer"><a href="#" class="clear-agb">!</a>Dein Kommentar ist anonym. Achte darauf, dass du deine Identität nicht verrätst!</p></span>
+    <span class="hide" id="disclaimer"><span class="disclaimer"><a href="#" class="clear-agb">!</a>Dein Kommentar ist anonym. Achte darauf, dass du deine Identität nicht verrätst!</span></span>
 
 <!-- Checkbox-Select -->
     <span class="hide" id="pre-data_checkbox">
         <input name="AGB" class="checkbox" type="checkbox" id="data_checkbox" />
         <label class="checkboxlabel alert-checkbox" for="data_checkbox"></label>
-        <p class="checkboxtext">Ich habe den <a href="#" target="_blank" class="clear-agb">Hinweis</a> gelesen.</p>
+        <span class="checkboxtext">Ich habe den <a href="#" target="_blank" class="clear-agb">Hinweis</a> gelesen.</span>
     </span>
 
     {% if messages %}
@@ -374,7 +374,7 @@
     <div class="banner-right-1">Erfahre, was Medien zahlen!</div><div class="banner-right-shadow"></div>
 
 <!-- Medium-Select -->
-    <input name="mediumget" id="media-analyse" class="media-select" list="medium" placeholder="Welches Medium interessiert dich?" type="text" onclick="getfunction()"/>
+    <input name="mediumget" id="media-analyse" class="media-select alert" list="medium" placeholder="Welches Medium interessiert dich?" type="text" onclick="getfunction()"/>
 	
     <datalist id="medium-analyse" >
 	<!--[if lte IE 9]><select data-datalist="samples"><![endif]-->
@@ -402,24 +402,100 @@
 	<div class="break"></div>
 
 <!-- Submit -->
-
     <a href="#break-2" onclick="analysefunction()"><input type="submit" class="submit-giv hide" id="analyse_submit" value="Daten auslesen"/></a>
 
     </form>
     </div>
 
-<!-- Grafic-Box -->
+<!-- Grafik-Box -->
+	<div class="result show" id="result">
 
-    <!-- Grafic-Box -->
-    	<div class="break" id="break-2"></div>
+<!-- Mediumname -->
+	<div class="result-banner-left"></div>
+	<div class="result-banner-right"></div>
+	<div class="result-mediumname">Nürnberger Nachrichten</div>
+	  
+<!-- Result Flexbox -->
+	<div class="result-grid">  
+	  
+<!-- Result Frei-Box -->	  
+	<div class="result-item result-item-thin">
 
-      <div class="result hide" id="result">
+	<div class="result-box-frei-titel">Freie Journalisten</div>
+    <div class="happiness-result" id="">
+		<input name="" id="result_athmosphaere-frei" class="range result_happiness-bar result_happiness-3" type="range" min="1" max="9" value="3" disabled/>
+	</div>	
+	<div class="infografik">
+		<img src="https://datavizcatalogue.com/methods/images/anatomy/box_plot.png">
+	</div>
+	
+<!-- Unit-Select -->
+	<p class="result_format-text">Welches Format interessiert dich?</p>	
+    <div class="show" id="pre-data_format_text_audio_video">
+    <div id="data_format_text_audio_video" class="switch-field result_switch-field switch-field-text result_switch-field-text result_switch-field-text-5">
+		<input type="radio" id="result_format_text" name="result_format" value="text" onclick="xxxfunction()" checked/>
+        <label for="result_format_text">Text</label>
+        <input type="radio" id="result_format_audio" name="result_format" value="audio" onclick="xxxfunction()"/>
+        <label for="result_format_audio">Audio</label>
+        <input type="radio" id="result_format_video" name="result_format"value="video" onclick="xxxfunction()"/>
+        <label for="result_format_video">Video</label>
+    </div>
+    </div>	
+		<div class="infografik">
+		<img src="https://datavizcatalogue.com/methods/images/anatomy/box_plot.png">
+	</div>
+	</div>		
+	  
+<!-- Result Pauschal-Box -->
 
+	<div class="result-item result-item-large">
+	<div class="result-item-large-first">
+	<div class="result-box-pauschal-titel">Pauschalisten</div>
+	<div class="happiness-result" id="">
+		<input name="" id="result_athmosphaere-pauschal" class="range result_happiness-bar result_happiness-5" type="range" min="1" max="9" value="5" disabled/>
+	</div>	
+	<div class="infografik">
+		<img src="https://datavizcatalogue.com/methods/images/anatomy/box_plot.png">
+	</div>
+	<div class="result-item-text">Durchschnittliches Monatsgehalt: XXXX
+	</div>
+	</div>
 
-        <!-- Infografiken - Text -->
-        <div class="result-text"> {% if medium %}{{ medium.mediumname }} {% endif %}</div>
-        <div class="result-text"> {% if avghappiness %}{{ avghappiness}} {% endif %}</div>
+<!-- Result Fest-Box -->
+	<div class="result-item-large-second">
+	<div class="result-box-inner result-box-fest-titel">Festangestellte</div>
+    <div class="happiness-result" id="">
+		<input name="" id="result_athmosphaere-fest" class="range result_happiness-bar result_happiness-8" type="range" min="1" max="9" value="8" disabled/>
+	</div>	
+	<div class="infografik">
+		<img src="https://datavizcatalogue.com/methods/images/anatomy/box_plot.png">
+	</div>
+	<div class="result-item-text">Durchschnittliches Monatsgehalt: XXXX
+	</div>
+	</div>
+	</div>
+	
+<!-- Result "Daten & Fakten"-Box -->
 
+	<div class="result-item result-item-superlarge">
+	<div class="result-box-fest-titel">Daten & Fakten</div>
+	<div class="fact-text">
+	Anzahl der Quellen<br>
+	Code of Fairness<br>
+	Einteilung als was?<br>
+	Comments
+	
+	</div>
+	</div>	   
+	
+	</div>    
+
+<!-- Infografiken - Text -->
+	<div class="result-text"> {% if medium %}{{ medium.mediumname }} {% endif %}</div>
+	<div class="result-text"> {% if avghappiness %}{{ avghappiness}} {% endif %}</div>
+
+	
+	
 
       </div>
 
@@ -477,13 +553,13 @@
 	<div class="footer-grid">
         <div class="footer-grid-first">
             <a href="../projekt"><p class="footer-item-first clear-footer">Über das Projekt</p></a>
-            <a href="../credits"><p class="footer-item clear-footer">Wer sind die Macher?</p></a>
-            <a href="../impressum"><p class="footer-item clear-footer">Rankings & Reports</p></a>
-            <a href="../newsletter"><p class="footer-item clear-footer">Newsletter</p></a>
+            <a href="../credits"><p class="footer-item clear-footer">Die Macher</p></a>
+            <a href="../rankings"><p class="footer-item clear-footer">Rankings & Reports</p></a>
+            <a href="../methodologie"><p class="footer-item clear-footer">Methodologie</p></a>
         </div>
         <div class="footer-grid-second">
-            <a href="../datenschutz"><p class="footer-item-first clear-footer">Datenschutz</p></a>
-            <a href="../methodologie"><p class="footer-item clear-footer">Methodologie</p></a>
+            <a href="../newsletter"><p class="footer-item-first clear-footer">Newsletter-Abo</p></a>
+            <a href="../datenschutz"><p class="footer-item clear-footer">Datenschutz</p></a>
             <a href="../kontakt"><p class="footer-item clear-footer">Kontakt & Fragen</p></a>
             <a href="../impressum"><p class="footer-item clear-footer">Impressum</p></a>
         </div>
