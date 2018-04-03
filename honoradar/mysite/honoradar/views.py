@@ -903,7 +903,7 @@ def getdata(request):
         print("this is ajax")
         print(request.GET)
         MediumName = (request.GET.get('mediumget'))
-        FreeOrEmployed = (request.GET.get('switch'))
+        FreeOrEmployed = "fest"
         print(MediumName)
         print(FreeOrEmployed)
 
@@ -914,17 +914,15 @@ def getdata(request):
             )
             print(mediumobj)
             entries = DataCollection.objects.filter(Medium=mediumobj)
+            print(entries)
+            mediumallclasses=DataCollection.objects.filter(Medium__mediumname=MediumName)
+            print(mediumallclasses)
             print("found")
             counter = (entries.count())
             print(counter)
-            allmediums = Medium.objects.filter(
-                Q(freeoremployed=FreeOrEmployed)
-            )
-            print(allmediums)
+            allfest=DataCollection.objects.filter(Medium__freeoremployed="fest")
+            print(allfest)
 
-            #allmediums = DataCollection.objects.select_related().filter(freeoremployed=FreeOrEmployed)
-
-            print(allmediums)
 
             if (counter > 1):
                 print("more than one")
