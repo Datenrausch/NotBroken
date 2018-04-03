@@ -2,6 +2,29 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*Microsoft*/
 
 input[type=range] {
@@ -45,4 +68,22 @@ input[type=range]:focus::-ms-fill-upper {
     background: rgba(255, 255, 255, 0) !important;
 }
 
+
+
+
+
+.autorenbox {
+	border-radius: 100%; 
+	width: 150px;
+	height: 150px; 
+	display: inline-block; 	
+	background-size: auto auto;
+	background-repeat: no-repeat;
+	background-position: center center;	
+	
+}
+
+.autor-michel {
+	background-image: url(../image/fav-output-1.png);
+}
 

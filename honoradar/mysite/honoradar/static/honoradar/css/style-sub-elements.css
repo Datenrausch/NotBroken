@@ -1,0 +1,45 @@
+
+/* Autoren*/
+
+.autor-michel:after, .autor-haluka:after {
+	color: #243040;
+	font-family: OpenSans-Italic;
+	font-size: 1.2rem;
+	position: absolute;
+	margin: calc(45px - 1.2rem) 10% auto 110px;
+	line-height: 1.5;
+}
+
+@media (max-width: 	450px)  {
+.autor-michel:after, .autor-haluka:after {
+	margin: 0px 10% auto 110px;
+}
+}
+
+.autor-michel {
+	background-image: url(../image/michel_penke.jpg);
+}
+
+.autor-michel:after {
+	content:"Michel Penke ※ Journalist & Frontend Designer";
+}
+
+.autor-haluka {
+	background-image: url(../image/haluka_maier-borst.jpg);
+}
+
+.autor-haluka:after {
+	content:"Haluka Maier-Borst ※ Datenjournalist & Python-Entwickler";
+}
+
+/*Parallax-Bilder*/
+
+.parallax-box {
+  background-image: url(../image/artikelbild-1.jpg);
+}
+
+/*Infografik-Bilder*/
+
+.infografik-1 {
+  background-image: url(../image/infografik-1.jpg);
+}
