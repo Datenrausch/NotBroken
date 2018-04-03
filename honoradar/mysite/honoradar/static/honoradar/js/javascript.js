@@ -478,7 +478,7 @@ function textfunction() {
     element.classList.add("hide");
     element.classList.remove("show");
 
-	var element = document.getElementById("data_format_text_audio_video");	
+	var element = document.getElementById("data_format_text_audio_video");
 	element.classList.remove("alert-switch");
 
 }
