@@ -213,7 +213,7 @@ function festfunction() {
 	var element = document.getElementById("banner-left-2");
     element.classList.add("show");
     element.classList.remove("hide");
-	
+
 	var element = document.getElementById("banner-left-shadow-2");
     element.classList.add("show");
     element.classList.remove("hide");
@@ -327,7 +327,7 @@ function pauschalfunction() {
 	var element = document.getElementById("banner-left-2");
     element.classList.add("show");
     element.classList.remove("hide");
-	
+
 	var element = document.getElementById("banner-left-shadow-2");
     element.classList.add("show");
     element.classList.remove("hide");
@@ -426,7 +426,7 @@ function freifunction() {
 	var element = document.getElementById("banner-left-2");
     element.classList.add("show");
     element.classList.remove("hide");
-	
+
 	var element = document.getElementById("banner-left-shadow-2");
     element.classList.add("show");
     element.classList.remove("hide");
@@ -521,7 +521,7 @@ function getfunction() {
 	var element = document.getElementById("analyse_submit");
     element.classList.add("show");
     element.classList.remove("hide");
-	
+
 	var element = document.getElementById("media-analyse");
     element.classList.remove("alert");
 }
@@ -564,11 +564,7 @@ function getfunctionfrei() {
 }
 */
 
-function analysefunction() {
-	var element = document.getElementById("result");
-    element.classList.add("show");
-    element.classList.remove("hide");
-}
+
 
 function alertoffdatamedium() {
 	var element = document.getElementById("data_medium");
@@ -678,49 +674,49 @@ if (slidervalue ==2) {
 	console.log(slidervalue)
 	text.classList.add("fav-output-2");
 	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-3", "fav-output-4", "fav-output-5", "fav-output-6", "fav-output-7", "fav-output-8", "fav-output-9");
-} 
+}
 
 if (slidervalue ==3) {
 	console.log(slidervalue)
 	text.classList.add("fav-output-3");
 	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-2", "fav-output-4", "fav-output-5", "fav-output-6", "fav-output-7", "fav-output-8", "fav-output-9");
-} 
+}
 
 if (slidervalue ==4) {
 	console.log(slidervalue)
 	text.classList.add("fav-output-4");
 	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-2", "fav-output-3", "fav-output-5", "fav-output-6", "fav-output-7", "fav-output-8", "fav-output-9");
-} 
+}
 
 if (slidervalue ==5) {
 	console.log(slidervalue)
 	text.classList.add("fav-output-5");
 	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-2", "fav-output-3", "fav-output-4", "fav-output-6", "fav-output-7", "fav-output-8", "fav-output-9");
-} 
+}
 
 if (slidervalue ==6) {
 	console.log(slidervalue)
 	text.classList.add("fav-output-6");
 	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-2", "fav-output-3", "fav-output-4", "fav-output-5", "fav-output-7", "fav-output-8", "fav-output-9");
-} 
+}
 
 if (slidervalue ==7) {
 	console.log(slidervalue)
 	text.classList.add("fav-output-7");
 	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-2", "fav-output-3", "fav-output-4", "fav-output-5", "fav-output-6", "fav-output-8", "fav-output-9");
-} 
+}
 
 if (slidervalue ==8) {
 	console.log(slidervalue)
 	text.classList.add("fav-output-8");
 	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-2", "fav-output-3", "fav-output-4", "fav-output-5", "fav-output-6", "fav-output-7", "fav-output-9");
-} 
+}
 
 else if (slidervalue ==9) {
 	console.log(slidervalue)
 	text.classList.add("fav-output-9");
 	text.classList.remove("fav-output-0", "fav-output-1", "fav-output-2", "fav-output-3", "fav-output-4", "fav-output-5", "fav-output-6", "fav-output-7", "fav-output-8");
-} 
+}
 
 }
 
@@ -728,7 +724,7 @@ function reload() {
 	var element = document.getElementById("ACCEPTED");
     element.classList.add("hide");
     element.classList.remove("show");
-	
+
 	var element = document.getElementById("banner-left-1");
     element.classList.add("show");
     element.classList.remove("hide");
@@ -736,7 +732,7 @@ function reload() {
 	var element = document.getElementById("banner-left-4");
     element.classList.add("hide");
     element.classList.remove("show");
-	
+
 	var element = document.getElementById("data_medium");
     element.classList.add("show");
     element.classList.remove("hide");
@@ -744,24 +740,24 @@ function reload() {
 	var element = document.getElementById("data_arbeitsverhaeltnis");
     element.classList.add("show");
     element.classList.remove("hide");
-	
+
 	var element = document.getElementById("newsletter_submit");
     element.classList.add("hide");
     element.classList.remove("show");
-	
+
 	var element = document.getElementById("reload_submit");
     element.classList.add("hide");
     element.classList.remove("show");
-	
+
 	var element = document.getElementById("after-submit-text-1");
     element.classList.add("hide");
     element.classList.remove("show");
-	
+
 	var element = document.getElementById("after-submit-text-2");
     element.classList.add("hide");
     element.classList.remove("show");
-	
-	
+
+
 };
 
 
