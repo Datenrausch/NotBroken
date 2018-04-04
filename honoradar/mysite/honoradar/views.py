@@ -58,7 +58,6 @@ def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
         for entry in entries:
             column1val = float(getattr(entry, str(column1)))
             column2val = float(getattr(entry, str(column2)))
-            print(column1,column1val,column2,column1val)
             if (column1val != 0) and (column2val != 0):
                 if operator == "/":
                     productsum += column1val / column2val
@@ -901,127 +900,162 @@ def senddata(request):
 def getdata(request):
     if request.is_ajax():
         print("this is ajax")
-        print(request.GET)
         MediumName = (request.GET.get('mediumget'))
-        FreeOrEmployed = "fest"
-        print(MediumName)
-        print(FreeOrEmployed)
+        Mediumdict={'mediumname': MediumName}
+        MediumFestContext={}
+        MediumPauschalContext={}
+        MediumFreiContext={}
+        MediumNoDataAtAll={"nodata":"Es gibt keine Daten"}
 
-        try:
-            mediumobj = Medium.objects.get(
-                Q(mediumname=MediumName),
-                Q(freeoremployed=FreeOrEmployed)
-            )
-            print(mediumobj)
-            entries = DataCollection.objects.filter(Medium=mediumobj)
-            print(entries)
-            mediumallclasses=DataCollection.objects.filter(Medium__mediumname=MediumName)
-            print(mediumallclasses)
-            print("found")
-            counter = (entries.count())
-            print(counter)
-            allfest=DataCollection.objects.filter(Medium__freeoremployed="fest")
-            print(allfest)
+        DoesMediumExist=DataCollection.objects.filter(Medium__mediumname=MediumName)
+        if (DoesMediumExist.count())==0:
+            print("this should trigger, no data at all")
+            Mediumdict.update(MediumNoDataAtAll)
 
 
-            if (counter > 1):
-                print("more than one")
-
-                if FreeOrEmployed == "fest":
 
 
-                    SalaryPerHour = StdAvgFunction(entries, 'SalaryPerHour')
-                    SalaryPerMonth = StdAvgFunction(entries, 'SalaryPerMonth')
-                    HoursPerWeekEmp = StdAvgFunction(entries, 'HoursPerWeekEmp')
+        MediumFest=DataCollection.objects.filter(Medium__mediumname=MediumName, Medium__freeoremployed="fest")
+        AllFest=DataCollection.objects.filter(Medium__freeoremployed="fest")
+        if ((MediumFest.count()) > 1):
+            print("more than one for fest")
 
-                    Happiness = StdAvgFunction(entries, 'Happiness')
+            MediumFestSalaryPerHour = StdAvgFunction(MediumFest, 'SalaryPerHour')
+            MediumFestSalaryPerMonth= StdAvgFunction(MediumFest, 'SalaryPerMonth')
+            MediumFestHoursPerWeekEmp = StdAvgFunction(MediumFest, 'HoursPerWeekEmp')
+            MediumFestHappiness = StdAvgFunction(MediumFest, 'Happiness')
 
-                    context = {'mediumname': MediumName,
-                               "SalaryPerHour": SalaryPerHour,
-                               "SalaryPerMonth":SalaryPerMonth,
-                               "HoursPerWeekEmp": HoursPerWeekEmp,
-                               "Happiness": Happiness,
-                               }
-                    print(context)
-                    return JsonResponse(context)
-
-                if FreeOrEmployed == "pauschal":
-                    SalaryPerHour = StdAvgFunction(entries, 'SalaryPerHour')
-                    SalaryPerMonth = StdAvgFunction(entries, 'SalaryPerMonth')
-
-                    DaysPerMonthMix = StdAvgFunction(entries, 'DaysPerMonthMix')
-                    HoursPerDayMix = StdAvgFunction(entries, 'HoursPerDayMix')
-                    HoursPerMonth = StdAvgTwoColumnsFunction(entries, 'DaysPerMonthMix', 'HoursPerDayMix',"*")
-
-                    Happiness = StdAvgFunction(entries, 'Happiness')
-                    context = {
-                    'mediumname': MediumName,
-                    "SalaryPerHour": SalaryPerHour,
-                    "SalaryPerMonth":SalaryPerMonth,
-                    "DaysPerMonthMix": DaysPerMonthMix,
-                    "HoursPerDayMix": HoursPerDayMix,
-                    "HoursPerMonth":HoursPerMonth,
-
-                    "Happiness": Happiness,
-                               }
+            AllFestSalaryPerHour = StdAvgFunction(AllFest, 'SalaryPerHour')
+            AllFestSalaryPerMonth= StdAvgFunction(AllFest, 'SalaryPerMonth')
+            AllFestHoursPerWeekEmp = StdAvgFunction(AllFest, 'HoursPerWeekEmp')
+            AllFestHappiness = StdAvgFunction(AllFest, 'Happiness')
 
 
-                    print(context)
-                    return JsonResponse(context)
+            MediumFestContext = {
+                       "MediumFestSalaryPerHour": MediumFestSalaryPerHour,
+                       "MediumFestSalaryPerMonth":MediumFestSalaryPerMonth,
+                       "MediumFestHoursPerWeekEmp": MediumFestHoursPerWeekEmp,
+                       "MediumFestHappiness": MediumFestHappiness,
 
-                if FreeOrEmployed == "frei":
-
-
-                    SalaryPerHour = StdAvgFunction(entries, 'SalaryPerHour')
-                    SalaryPerMonth = StdAvgFunction(entries, 'SalaryPerMonth')
-
-                    FeeFree = StdAvgFunction(entries, 'FeeFree')
-                    HoursSpentFree = StdAvgFunction(entries, 'HoursSpentFree')
-
-                    MinPerVideoFree =StdAvgFunction(entries, 'MinPerVideoFree')
-                    VideoFeePerMin = StdAvgTwoColumnsFunction(entries, 'FeeFree', 'MinPerVideoFree',"/")
-
-                    MinPerAudioFree=StdAvgFunction(entries, 'MinPerAudioFree')
-                    AudioFeePerMin = StdAvgTwoColumnsFunction(entries, 'FeeFree', 'MinPerAudioFree',"/")
-
-                    CharPerArticleFree=StdAvgFunction(entries, 'CharPerArticleFree')
-                    ArticleFeePerChar = StdAvgTwoColumnsFunction(entries, 'FeeFree', 'CharPerArticleFree',"/")
-
-                    Happiness = StdAvgFunction(entries, 'Happiness')
-                    context = {
-                    'mediumname': MediumName,
-                    "SalaryPerHour": SalaryPerHour,
-                    "SalaryPerMonth":SalaryPerMonth,
-                    "FeeFree": FeeFree,
-                    "HoursSpentFree": HoursSpentFree,
-                    "MinPerVideoFree": MinPerVideoFree,
-                    "VideoFeePerMin":VideoFeePerMin,
-                    "MinPerAudioFree": MinPerAudioFree,
-                    "AudioFeePerMin":AudioFeePerMin,
-                    "CharPerArticleFree": CharPerArticleFree,
-                    "ArticleFeePerChar":ArticleFeePerChar,
-                    "Happiness": Happiness,
-                               }
+                       "AllFestSalaryPerHour":AllFestSalaryPerHour,
+                       "AllFestSalaryPerMonth":AllFestSalaryPerMonth,
+                       "AllFestHoursPerWeekEmp":AllFestHoursPerWeekEmp,
+                       "AllFestHappiness":AllFestHappiness,
+                       }
+            print("Enough Data Fest")
+            Mediumdict.update(MediumFestContext)
 
 
-                    print(context)
-                    return JsonResponse(context)
 
-            else:
-                print("Nur eine")
-                context = {
-                    "missingdata": "Wir haben noch nicht genügend Daten für dieses Medium"}
-                return JsonResponse(context)
+        MediumPauschal=DataCollection.objects.filter(Medium__mediumname=MediumName, Medium__freeoremployed="pauschal")
+        AllPauschal=DataCollection.objects.filter(Medium__freeoremployed="pauschal")
+
+        if ((MediumPauschal.count()) > 1):
+            MediumPauschalSalaryPerHour = StdAvgFunction(MediumPauschal, 'SalaryPerHour')
+            MediumPauschalSalaryPerMonth = StdAvgFunction(MediumPauschal, 'SalaryPerMonth')
+            MediumPauschalDaysPerMonthMix = StdAvgFunction(MediumPauschal, 'DaysPerMonthMix')
+            MediumPauschalHoursPerDayMix = StdAvgFunction(MediumPauschal, 'HoursPerDayMix')
+            MediumPauschalHoursPerMonth = StdAvgTwoColumnsFunction(MediumPauschal, 'DaysPerMonthMix', 'HoursPerDayMix',"*")
+            MediumPauschalHappiness = StdAvgFunction(MediumPauschal, 'Happiness')
+
+            AllPauschalSalaryPerHour = StdAvgFunction(AllPauschal, 'SalaryPerHour')
+            AllPauschalSalaryPerMonth = StdAvgFunction(AllPauschal, 'SalaryPerMonth')
+            AllPauschalDaysPerMonthMix = StdAvgFunction(AllPauschal, 'DaysPerMonthMix')
+            AllPauschalHoursPerDayMix = StdAvgFunction(AllPauschal, 'HoursPerDayMix')
+            AllPauschalHoursPerMonth = StdAvgTwoColumnsFunction(AllPauschal, 'DaysPerMonthMix', 'HoursPerDayMix',"*")
+            AllPauschalHappiness = StdAvgFunction(AllPauschal, 'Happiness')
+
+
+            MediumPauschalContext = {
+            "MediumPauschalSalaryPerHour": MediumPauschalSalaryPerHour,
+            "MediumPauschalSalaryPerMonth":MediumPauschalSalaryPerMonth,
+            "MediumPauschalDaysPerMonthMix": MediumPauschalDaysPerMonthMix,
+            "MediumPauschalHoursPerDayMix": MediumPauschalHoursPerDayMix,
+            "MediumPauschalHoursPerMonth": MediumPauschalHoursPerMonth,
+            "MediumPauschalHappiness": MediumPauschalHappiness,
+
+            "AllPauschalSalaryPerHour": AllPauschalSalaryPerHour,
+            "AllPauschalSalaryPerMonth":AllPauschalSalaryPerMonth,
+            "AllPauschalDaysPerMonthMix": AllPauschalDaysPerMonthMix,
+            "AllPauschalHoursPerDayMix": AllPauschalHoursPerDayMix,
+            "AllPauschalHoursPerMonth": AllPauschalHoursPerMonth,
+            "AllPauschalHappiness": AllPauschalHappiness,
+                       }
+            print("Enough Data Pauschal")
+
+            Mediumdict.update(MediumPauschalContext)
+
+        MediumFrei=DataCollection.objects.filter(Medium__mediumname=MediumName, Medium__freeoremployed="frei")
+        AllFrei=DataCollection.objects.filter(Medium__freeoremployed="frei")
+
+        if ((MediumFrei.count()) > 1):
+
+
+            MediumFreiSalaryPerHour = StdAvgFunction(MediumFrei, 'SalaryPerHour')
+            MediumFreiSalaryPerMonth = StdAvgFunction(MediumFrei, 'SalaryPerMonth')
+            MediumFreiFeeFree = StdAvgFunction(MediumFrei, 'FeeFree')
+            MediumFreiHoursSpentFree = StdAvgFunction(MediumFrei, 'HoursSpentFree')
+            MediumFreiMinPerVideoFree =StdAvgFunction(MediumFrei, 'MinPerVideoFree')
+            MediumFreiVideoFeePerMin = StdAvgTwoColumnsFunction(MediumFrei, 'FeeFree', 'MinPerVideoFree',"/")
+            MediumFreiMinPerAudioFree=StdAvgFunction(MediumFrei, 'MinPerAudioFree')
+            MediumFreiAudioFeePerMin = StdAvgTwoColumnsFunction(MediumFrei, 'FeeFree', 'MinPerAudioFree',"/")
+            MediumFreiCharPerArticleFree=StdAvgFunction(MediumFrei, 'CharPerArticleFree')
+            MediumFreiArticleFeePerChar = StdAvgTwoColumnsFunction(MediumFrei, 'FeeFree', 'CharPerArticleFree',"/")
+            MediumFreiHappiness = StdAvgFunction(MediumFrei, 'Happiness')
+
+            AllFreiSalaryPerHour = StdAvgFunction(AllFrei, 'SalaryPerHour')
+            AllFreiSalaryPerMonth = StdAvgFunction(AllFrei, 'SalaryPerMonth')
+            AllFreiFeeFree = StdAvgFunction(AllFrei, 'FeeFree')
+            AllFreiHoursSpentFree = StdAvgFunction(AllFrei, 'HoursSpentFree')
+            AllFreiMinPerVideoFree =StdAvgFunction(AllFrei, 'MinPerVideoFree')
+            AllFreiVideoFeePerMin = StdAvgTwoColumnsFunction(AllFrei, 'FeeFree', 'MinPerVideoFree',"/")
+            AllFreiMinPerAudioFree=StdAvgFunction(AllFrei, 'MinPerAudioFree')
+            AllFreiAudioFeePerMin = StdAvgTwoColumnsFunction(AllFrei, 'FeeFree', 'MinPerAudioFree',"/")
+            AllFreiCharPerArticleFree=StdAvgFunction(AllFrei, 'CharPerArticleFree')
+            AllFreiArticleFeePerChar = StdAvgTwoColumnsFunction(AllFrei, 'FeeFree', 'CharPerArticleFree',"/")
+            AllFreiHappiness = StdAvgFunction(AllFrei, 'Happiness')
+
+
+            MediumFreiContext = {
+            'mediumname': MediumName,
+            "MediumFreiSalaryPerHour": MediumFreiSalaryPerHour,
+            "MediumFreiSalaryPerMonth":MediumFreiSalaryPerMonth,
+            "MediumFreiFeeFree": MediumFreiFeeFree,
+            "MediumFreiHoursSpentFree": MediumFreiHoursSpentFree,
+            "MediumFreiMinPerVideoFree": MediumFreiMinPerVideoFree,
+            "MediumFreiVideoFeePerMin":MediumFreiVideoFeePerMin,
+            "MediumFreiMinPerAudioFree": MediumFreiMinPerAudioFree,
+            "MediumFreiAudioFeePerMin":MediumFreiAudioFeePerMin,
+            "MediumFreiCharPerArticleFree": MediumFreiCharPerArticleFree,
+            "MediumFreiArticleFeePerChar":MediumFreiArticleFeePerChar,
+            "MediumFreiHappiness": MediumFreiHappiness,
+
+            "AllFreiSalaryPerHour": AllFreiSalaryPerHour,
+            "AllFreiSalaryPerMonth":AllFreiSalaryPerMonth,
+            "AllFreiFeeFree": AllFreiFeeFree,
+            "AllFreiHoursSpentFree": AllFreiHoursSpentFree,
+            "AllFreiMinPerVideoFree": AllFreiMinPerVideoFree,
+            "AllFreiVideoFeePerMin":AllFreiVideoFeePerMin,
+            "AllFreiMinPerAudioFree": AllFreiMinPerAudioFree,
+            "AllFreiAudioFeePerMin":AllFreiAudioFeePerMin,
+            "AllFreiCharPerArticleFree": AllFreiCharPerArticleFree,
+            "AllFreiArticleFeePerChar":AllFreiArticleFeePerChar,
+            "AllFreiHappiness": AllFreiHappiness,
+
+                       }
+
+            print("Enough Data Frei")
+            Mediumdict.update(MediumFreiContext)
+
+        print(Mediumdict)
+        return JsonResponse(Mediumdict)
+
+
 
             #   return HttpResponseRedirect(reverse('honoradar:index'))
                 #    return render(request, 'polls/index.html', context)
 
-        except Medium.DoesNotExist:
-            print("Gar keine Daten")
-            context = {
-                "missingdata": "Wir haben noch nicht genügend Daten für dieses Medium"}
 
-            return JsonResponse(context)
 
     else:
         print(request.GET)
