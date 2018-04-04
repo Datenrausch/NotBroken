@@ -22,29 +22,41 @@ $(document).ready(function() {
     function handleFormSuccessGet(data, textStatus, jqXHR) {
         console.log(data)
         const resultsdiv = document.getElementById('result')
+        const $result = $("#result")
+        const $resultfrei = $("#resultfrei")
+        const $resultpauschal = $("#resultpauschal")
+        const $resultfest = $("#resultfest")
+
 
         const size = Object.keys(data).length;
         console.log(size)
-        resultsdiv.innerHTML = ""
 
-        const $result = $("#result")
+        const resultfrei = document.getElementById("resultfrei")
+        const resultpauschal = document.getElementById("resultpauschal")
+        const resultfest = document.getElementById("resultfest")
+        console.log(resultfest)
+
         resultsdiv.classList.add("show");
         resultsdiv.classList.remove("hide");
+
+
         $result.append('<div class="banner-left-3">Gehalts- und Lohnreports</div><div class="banner-left-shadow"></div>')
 
-        if (data["missingdata"] != undefined) {
+        if (data["nodata"] != undefined) {
             $result.append('<div class="result-text">' + String(data["missingdata"]) + '</div>');
 
         } else {
+          console.log("Guten Tag")
             $result.append('<div class="result-text">' + String(data["mediumname"]) + '</div>');
-            if (data["SalaryPerHour"]) {
-                if (data["SalaryPerHour"]["status"] == "Success") {
-                    $result.append('<div class="result-text">Der Durchschnittliche Stundenlohn liegt bei: ' + String(data["SalaryPerHour"]["avg"]) + " Euro  plusminus " + String(data["SalaryPerHour"]["std"]) + '</div>');
+            //frei
+            if (data["MediumFestSalaryPerHour"]) {
+                if (data["MediumFestSalaryPerHour"]["status"] == "Success") {
+                    $resultfest.append('<div class="result-text">Der durchschnittliche Stundenlohn liegt bei: ' + String(data["MediumFestSalaryPerHour"]["avg"]) + " Euro  plusminus " + String(data["MediumFestSalaryPerHour"]["std"]) + '</div>');
                 };
             }
-            if (data["SalaryPerMonth"]) {
-                if (data["SalaryPerMonth"]["status"] == "Success") {
-                    $result.append('<div class="result-text">Der Monatslohn bei einer 40 Stunden Woche würde bei: ' + String(data["SalaryPerMonth"]["avg"]) + " Euro  plusminus " + String(data["SalaryPerMonth"]["std"]) + " liegen." +
+            if (data["MediumFreiSalaryPerMonth"]) {
+                if (data["MediumFreiSalaryPerMonth"]["status"] == "Success") {
+                    $resultfrei.append('<div class="result-text">Der Monatslohn bei einer 40 Stunden Woche würde bei: ' + String(data["MediumFreiSalaryPerMonth"]["avg"]) + " Euro  plusminus " + String(data["MediumFreiSalaryPerMonth"]["std"]) + " liegen." +
                         '</div>');
                 };
             }
