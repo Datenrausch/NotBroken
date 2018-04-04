@@ -32,26 +32,26 @@ $(document).ready(function() {
         console.log(size)
 
         const resultfrei = document.getElementById("resultfrei")
-        console.log
-        const resultpauschal = document.getElementById("resultpauschaö")
+        const resultpauschal = document.getElementById("resultpauschal")
         const resultfest = document.getElementById("resultfest")
+        console.log(resultfest)
 
         resultsdiv.classList.add("show");
         resultsdiv.classList.remove("hide");
 
 
-
         $result.append('<div class="banner-left-3">Gehalts- und Lohnreports</div><div class="banner-left-shadow"></div>')
 
-        if (data["missingdata"] != undefined) {
+        if (data["nodata"] != undefined) {
             $result.append('<div class="result-text">' + String(data["missingdata"]) + '</div>');
 
         } else {
+          console.log("Guten Tag")
             $result.append('<div class="result-text">' + String(data["mediumname"]) + '</div>');
             //frei
-            if (data["MediumFreiSalaryPerHour"]) {
-                if (data["MediumFreiSalaryPerHour"]["status"] == "Success") {
-                    $resultfrei.append('<div class="result-text">Der durchschnittliche Stundenlohn liegt bei: ' + String(data["MediumFreiSalaryPerHour"]["avg"]) + " Euro  plusminus " + String(data["MediumFreiSalaryPerHour"]["std"]) + '</div>');
+            if (data["MediumFestSalaryPerHour"]) {
+                if (data["MediumFestSalaryPerHour"]["status"] == "Success") {
+                    $resultfest.append('<div class="result-text">Der durchschnittliche Stundenlohn liegt bei: ' + String(data["MediumFestSalaryPerHour"]["avg"]) + " Euro  plusminus " + String(data["MediumFestSalaryPerHour"]["std"]) + '</div>');
                 };
             }
             if (data["MediumFreiSalaryPerMonth"]) {

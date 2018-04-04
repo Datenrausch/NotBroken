@@ -564,11 +564,7 @@ function getfunctionfrei() {
 }
 */
 
-function analysefunction() {
-	var element = document.getElementById("result");
-    element.classList.add("show");
-    element.classList.remove("hide");
-}
+
 
 function alertoffdatamedium() {
 	var element = document.getElementById("data_medium");
