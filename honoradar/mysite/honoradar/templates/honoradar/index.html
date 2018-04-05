@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="de">
 
 <head>
@@ -141,16 +142,17 @@
                     <div class="banner-left-3" id="banner-left-4">Vielen Dank!</div>
                     <div class="banner-left-shadow"></div>
                     <div id="banner-left-triangle" class="banner-left-shadow hide"></div>
+					<div class="break"></div>
 
                     <!-- Medium-Select -->
-                    <!-- Michel please style this -->
-
+					<div class="media-select-container">
                     <input name="MediumName" id="data_medium" class="media-select dropdown hide" list="medium" placeholder="Für welches Medium arbeitest du?" type="text" />
                     <datalist id="medium">
 	<!--[if lte IE 9]><select data-datalist="samples"><![endif]-->
 
     <!--[if lte IE 9]></select><![endif]-->
 	</datalist>
+	</div>
                     <!-- Support Safari? https://stackoverflow.com/questions/27494084/html5-datalist-tag-is-not-populating-in-safari?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa -->
 
                     <!-- Switch-Select -->
@@ -374,8 +376,10 @@
                 <form action="{% url 'honoradar:getdata' %}" method="get" data-url-get="{% url 'honoradar:getdata' %}" name-get="firstbox" id="get-form">
                     <div class="banner-right-1">Erfahre, was Medien zahlen!</div>
                     <div class="banner-right-shadow"></div>
+					<div class="break"></div>
 
                     <!-- Medium-Select -->
+					<div class="media-select-container">
                     <input name="mediumget" id="media-analyse" class="media-select alert" list="medium" placeholder="Welches Medium interessiert dich?" type="text" onclick="getfunction()" />
 
                     <datalist id="medium-analyse">
@@ -383,6 +387,7 @@
 
     <!--[if lte IE 9]></select><![endif]-->
     </datalist>
+	</div>
 
                     <!-- Switch-Select
     <div class="switch-field switch-field-text-1 tooltip">
@@ -403,11 +408,9 @@
             </div>
 
             <!-- Grafik-Box -->
-            <div class="result hide" id="result">
+            <div class="result show" id="result">
 
                 <!-- Mediumname -->
-                <div class="result-banner-left"></div>
-                <div class="result-banner-right"></div>
                 <div class="result-mediumname">Nürnberger Nachrichten</div>
 
                 <!-- Result Flexbox -->
@@ -416,7 +419,7 @@
                     <!-- Result Frei-Box -->
                     <div class="result-item result-item-thin" id="resultfrei">
 
-                        <div class="result-box-frei-titel">Freie Journalisten</div>
+                        <div class="result-box-frei-titel">Freiberufler</div>
                         <div class="happiness-result" id="">
                             <input name="" id="result_athmosphaere-frei" class="range result_happiness-bar result_happiness-3" type="range" min="1" max="9" value="3" disabled/>
                         </div>
