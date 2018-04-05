@@ -20,6 +20,7 @@ def StdAvgFunction(entries, column):
     count = (count[columncount])
     if count > 1:
         avg = entries.aggregate(Avg(column))
+        print(avg)
         columnavg = str(column) + "__avg"
         avg = (avg[columnavg])
         count = 0
@@ -43,6 +44,7 @@ def StdAvgFunction(entries, column):
         print("check")
     return(result)
 
+            #MediumFreiArticleFeePerChar = StdAvgTwoColumnsFunction(MediumFrei, 'FeeFree', 'CharPerArticleFree',"/")
 
 def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
     count1 = entries.aggregate(Count(column1))
@@ -69,6 +71,8 @@ def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
                 result["status"] = "Failed"
 
         if count !=0:
+            print(productsum)
+            print(count)
             avgtwocolumns = productsum / count
             count = 0
             sqdiff = 0
@@ -76,7 +80,10 @@ def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
                 column1val = getattr(entry, str(column1))
                 column2val = getattr(entry, str(column2))
                 if operator == "/":
-                    product = column1val / column2val
+                    if (column1val != 0)and (column2val != 0):
+                        product = column1val / column2val
+                    else:
+                        product = 0
                 if operator == "*":
                     product = column1val*column2val
                 diff = product - avgtwocolumns
