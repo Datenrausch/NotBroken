@@ -363,7 +363,7 @@
                 </p>
 
                 <a href="#banderole" class="smooth">
-                    <input type="submit" class="submit submit-reload" id="reload_submit" value="Erneut spenden" onmousedown="reload()" ontouchstart="reload()" />
+                    <input type="submit" linktdirection="#result" class="submit submit-reload" id="reload_submit" value="Erneut spenden" onmousedown="reload()" ontouchstart="reload()" />
                 </a>
 
             </div>
@@ -408,7 +408,7 @@
                 <!-- Mediumname -->
                 <div class="result-banner-left"></div>
                 <div class="result-banner-right"></div>
-                <div class="result-mediumname">Nürnberger Nachrichten</div>
+                <div class="result-mediumname" id="result-mediumname">Nürnberger Nachrichten</div>
 
                 <!-- Result Flexbox -->
                 <div class="result-grid">
@@ -594,6 +594,7 @@
 
     <!-- Javascript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 
     <script src="{% static 'honoradar/navbar/js/modernizr.js'%}"></script>
     <script src="{% static 'honoradar/js/html5shiv.js'%}"></script>
@@ -607,7 +608,6 @@
     <script src="{% static 'honoradar/js/ajax-setup.js'%}"></script>
     <script src="{% static 'honoradar/js/ajax-senddata.js'%}"></script>
     <script src="{% static 'honoradar/js/ajax-getdata.js'%}"></script>
-    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="{% static 'honoradar/js/jquery.easy-autocomplete.min.js'%}"></script>
 
     <script src="static/honoradar/js/autocomplete-giv.js"></script>

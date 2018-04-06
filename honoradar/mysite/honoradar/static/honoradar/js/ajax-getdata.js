@@ -26,12 +26,12 @@ $(document).ready(function() {
         const $resultfrei = $("#resultfrei")
         const $resultpauschal = $("#resultpauschal")
         const $resultfest = $("#resultfest")
-
-
+        const mediumname= document.getElementById("result-mediumname")
+        console.log(mediumname)
         const size = Object.keys(data).length;
-        console.log(size)
+        mediumname.innerHTML = ""
 
-
+        mediumname.innerHTML=(String(data["mediumname"]))
         $resultfrei.innerHTML = ""
         $resultpauschal.innerHTML = ""
         $resultfest.innerHTML = ""
@@ -41,14 +41,13 @@ $(document).ready(function() {
         resultsdiv.classList.remove("hide");
 
 
-        $result.append('<div class="banner-left-3">Gehalts- und Lohnreports</div><div class="banner-left-shadow"></div>')
+        $result.append('<div class="result-text">' + String(data["mediumname"]) + '</div>');
 
         if (data["nodata"] != undefined) {
             $result.append('<div class="result-text">' + String(data["missingdata"]) + '</div>');
 
         } else {
           console.log("Guten Tag")
-            $result.append('<div class="result-text">' + String(data["mediumname"]) + '</div>');
             //frei
             if (data["MediumFestSalaryPerHour"]) {
                 if (data["MediumFestSalaryPerHour"]["status"] == "Success") {
@@ -126,6 +125,7 @@ $(document).ready(function() {
         console.log(textStatus)
         console.log(jqXHR)
         $myForm[0].reset(); // reset form data
+        smoothfunction()
     }
 
     function handleFormErrorGet(jqXHR, textStatus, errorThrown) {

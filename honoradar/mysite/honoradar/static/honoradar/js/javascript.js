@@ -762,9 +762,16 @@ function reload() {
 
 
 $('.smooth').on('click', function(e){
-  var href = $(this).attr('href');
+
+})
+function smoothfunction(){
+  console.log("this is smooth")
+  var button = document.getElementById("reload_submit");
+  console.log(button)
+
+  var href = $(button).attr('linktdirection');
+  console.log(href)
   $('html, body').animate({
     scrollTop:$(href).offset().top
   },'slow');
-  e.preventDefault();
-})
+}
