@@ -44,26 +44,31 @@ $(document).ready(function() {
 
             }
         } else {
-            
+            alertdiv.innerHTML = ""
+            alertdiv.classList.add("hide");
+            alertdiv.classList.remove("show");
+
             var element = document.getElementById("ACCEPTED");
             element.classList.add("show");
             element.classList.remove("hide");
 
+
+
             var element = document.getElementById("banner-left-1");
-              element.classList.add("hide");
-              element.classList.remove("show");
+              if(element!=null){element.classList.add("hide");
+              element.classList.remove("show");}
 
             var element = document.getElementById("banner-left-4");
               element.classList.add("show");
               element.classList.remove("hide");
 
             var element = document.getElementById("data_medium");
-              element.classList.add("hide");
-              element.classList.remove("show");
+              if(element!=null){element.classList.add("hide");
+              element.classList.remove("show");}
 
             var element = document.getElementById("data_arbeitsverhaeltnis");
-              element.classList.add("hide");
-              element.classList.remove("show");
+              if(element!=null){element.classList.add("hide");
+              element.classList.remove("show");}
 
             var element = document.getElementById("newsletter_submit");
               element.classList.add("show");
@@ -81,8 +86,141 @@ $(document).ready(function() {
               element.classList.add("show");
               element.classList.remove("hide");
 
-        }
 
+
+                  var element = document.getElementById("pre-data_tag_monat");
+                  if(element!=null){element.classList.add("hide");
+                  element.classList.remove("show");}
+
+
+                  var element = document.getElementById("pre-data_format_text_audio_video");
+                  if(element!=null){element.classList.add("hide");
+                  element.classList.remove("show");}
+
+
+                  var element = document.getElementById("pre-data_laenge_text");
+                  if(element!=null){element.classList.add("hide");
+                  element.classList.remove("show");}
+
+
+                  var element = document.getElementById("pre-data_laenge_video");
+                  if(element!=null){element.classList.add("hide");
+                  element.classList.remove("show");}
+
+                  var element = document.getElementById("data_genre");
+                  if(element!=null){element.classList.add("hide");
+                  element.classList.remove("show");}
+
+
+                  var element = document.getElementById("banner-left-2");
+                  if(element!=null){element.classList.add("hide");
+                  element.classList.remove("show");}
+
+
+                  var element = document.getElementById("data_position");
+                  if(element!=null){element.classList.add("hide");
+                  element.classList.remove("show");}
+
+                  var element = document.getElementById("pre-data_kommentar");
+                  if(element!=null){element.classList.add("hide");
+                  element.classList.remove("show");}
+
+                  var element = document.getElementById("question-3");
+                  if(element!=null){element.classList.add("hide");
+                  element.classList.remove("show");}
+
+                  var element = document.getElementById("data_gehalt");
+                  if(element!=null){element.classList.add("hide");
+                  element.classList.remove("show");}
+
+
+                  if(element!=null){element.classList.add("hide");
+                  element.classList.remove("show");}
+
+                  var element = document.getElementById("break-1");
+                  if(element!=null){element.classList.add("hide");
+                  element.classList.remove("show");}
+
+                  var element = document.getElementById("data_honorar");
+                  if(element!=null){element.classList.add("hide");
+                  element.classList.remove("show");}
+
+          
+                  if(element!=null){element.classList.add("hide");
+                  element.classList.remove("show");}
+
+                  var element = document.getElementById("pre-data_laenge_audio");
+                  if(element!=null){element.classList.add("hide");
+                  element.classList.remove("show");}
+
+                  var element = document.getElementById("pre-data_zeit");
+                  if(element!=null){element.classList.add("hide");
+                  element.classList.remove("show");}
+
+                  var element = document.getElementById("pre-data_erfahrung_jahr_1_3_5");
+                  if(element!=null){element.classList.add("hide");
+                  element.classList.remove("show");}
+
+
+                  var element = document.getElementById("banner-left-triangle");
+
+                  if(element!=null){element.classList.add("hide");
+                  element.classList.remove("show");}
+                  element.classList.remove("experience-right");
+
+                  var element = document.getElementById("pre-data_athmosphaere");
+                  if(element!=null){element.classList.add("hide");
+                  element.classList.remove("show");}
+
+                  var element = document.getElementById("pre-data_checkbox");
+                  if(element!=null){element.classList.add("hide");
+                  element.classList.remove("show");}
+
+                  var element = document.getElementById("data_submit");
+                  if(element!=null){element.classList.add("hide");
+                  element.classList.remove("show");}
+
+                  var element = document.getElementById("question-1");
+                  if(element!=null){element.classList.add("hide");
+                  element.classList.remove("show");}
+
+                  var element = document.getElementById("question-2");
+                  if(element!=null){element.classList.add("hide");
+                  element.classList.remove("show");}
+
+                  var element = document.getElementById("question-3");
+                  if(element!=null){element.classList.add("hide");
+                  element.classList.remove("show");}
+
+
+                  var element = document.getElementById("pre-data_stunden_woche");
+                  if(element!=null){element.classList.add("hide");
+                  element.classList.remove("show");}
+
+                  var element = document.getElementById("pre-data_stunden_tag");
+                  if(element!=null){element.classList.add("hide");
+                  element.classList.remove("show");}
+
+
+                  var element = document.getElementById("pre-data_verbreitung_analog_digital_beides");
+                  if(element!=null){element.classList.add("hide");
+                  element.classList.remove("show");}
+
+                  var element = document.getElementById("banner-left-shideow-2");
+                  if(element!=null){element.classList.add("hide");
+                  element.classList.remove("show");}
+
+                  var element = document.getElementById("pre-data_erfahrung_jahr_1_3_5");
+                  element.classList.add("experience-right");
+                  if(element!=null){{element.classList.add("hide");
+                  element.classList.remove("show");}
+
+                  var element = document.getElementById("disclaimer");
+                  if(element!=null){element.classList.add("hide");
+                  element.classList.remove("show");
+                  }
+              }
+}
         console.log(textStatus)
         console.log(jqXHR)
         $myForm[0].reset(); // reset form data
