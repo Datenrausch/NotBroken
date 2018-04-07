@@ -36,6 +36,8 @@ def StdAvgFunction(entries, column):
         result["avg"] = avg
         result["std"] = std
         result["status"] = "Success"
+        result["id"] = str(column)
+
         if (float(result["avg"]) == 0) and (float(result["std"]) == 0):
             result["status"] = "Failed"
     else:
