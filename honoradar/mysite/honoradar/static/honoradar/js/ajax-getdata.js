@@ -84,14 +84,14 @@ $(document).ready(function() {
             }
 
             if (data["MediumFreiVideoFeePerMin"]) {
-                if (data["VideoFeePerMin"]["status"] == "Success") {
-                    $resultfrei.append('<div class="result-text">Das entspricht einem Honorar von ' + String(data["VideoFeePerMin"]["avg"]) + " Euro pro Sendeminute  plusminus " + String(data["VideoFeePerMin"]["std"]) + "." + '</div>');
+                if (data["MediumFreiVideoFeePerMin"]["status"] == "Success") {
+                    $resultfrei.append('<div class="result-text">Das entspricht einem Honorar von ' + String(data["MediumFreiVideoFeePerMin"]["avg"]) + " Euro pro Sendeminute  plusminus " + String(data["MediumFreiVideoFeePerMin"]["std"]) + "." + '</div>');
                 };
             }
 
             if (data["MediumFreiAudioFeePerMin"]) {
-                if (data["AudioFeePerMin"]["status"] == "Success") {
-                    $resultfrei.append('<div class="result-text">Das entspricht einem Honorar von ' + String(data["AudioFeePerMin"]["avg"]) + " Euro pro Sendeminute  plusminus " + String(data["AudioFeePerMin"]["std"]) + "." + '</div>');
+                if (data["MediumFreiAudioFeePerMin"]["status"] == "Success") {
+                    $resultfrei.append('<div class="result-text">Das entspricht einem Honorar von ' + String(data["MediumFreiAudioFeePerMin"]["avg"]) + " Euro pro Sendeminute  plusminus " + String(data["MediumFreiAudioFeePerMin"]["std"]) + "." + '</div>');
                 };
             }
 
@@ -153,7 +153,7 @@ $(document).ready(function() {
                         max: parseFloat(data["MediumPauschalSalaryPerHour"]["avg"]) + parseFloat(data["MediumPauschalSalaryPerHour"]["std"]),
                         mean: parseFloat(data["MediumPauschalSalaryPerHour"]["avg"])
                     }, {
-                        id: "AllFestSalaryPerHour",
+                        id: "AllPauschalSalaryPerHour",
                         category: "Ø \n alle \n Pauschalisten",
                         min: parseFloat(data["AllPauschalSalaryPerHour"]["avg"]) - parseFloat(data["AllPauschalSalaryPerHour"]["std"]),
                         max: parseFloat(data["AllPauschalSalaryPerHour"]["avg"]) + parseFloat(data["AllPauschalSalaryPerHour"]["std"]),
@@ -166,6 +166,110 @@ $(document).ready(function() {
                         mean: 25
                     }];
                     elementid = "pauschalistgrafik1"
+
+                    gradientboxplot(d3festjson, elementid)
+                }
+            };
+            if ((data["MediumFreiSalaryPerHour"]) && (data["AllFreiSalaryPerHour"])) {
+                if ((data["MediumFreiSalaryPerHour"]["status"] == "Success") && (data["AllFreiSalaryPerHour"]["status"] == "Success")) {
+                    let d3festjson = [{
+                        id: "MediumFreiSalaryPerHour",
+                        category: String(data["mediumname"]),
+                        min: parseFloat(data["MediumFreiSalaryPerHour"]["avg"]) - parseFloat(data["MediumFreiSalaryPerHour"]["std"]),
+                        max: parseFloat(data["MediumFreiSalaryPerHour"]["avg"]) + parseFloat(data["MediumFreiSalaryPerHour"]["std"]),
+                        mean: parseFloat(data["MediumFreiSalaryPerHour"]["avg"])
+                    }, {
+                        id: "AllFreiSalaryPerHour",
+                        category: "Ø \n alle \n Freiberufler",
+                        min: parseFloat(data["AllFreiSalaryPerHour"]["avg"]) - parseFloat(data["AllFreiSalaryPerHour"]["std"]),
+                        max: parseFloat(data["AllFreiSalaryPerHour"]["avg"]) + parseFloat(data["AllFreiSalaryPerHour"]["std"]),
+                        mean: parseFloat(data["AllFreiSalaryPerHour"]["avg"])
+                    }, {
+                        id: "FreischreiberFreiSalaryPerHour",
+                        category: "Freischreiber Empfehlung",
+                        min: 25,
+                        max: 25,
+                        mean: 25
+                    }];
+                    elementid = "freigrafik1"
+
+                    gradientboxplot(d3festjson, elementid)
+                }
+            };
+            if ((data["MediumFreiVideoFeePerMin"]) && (data["AllFreiVideoFeePerMin"])) {
+                if ((data["MediumFreiVideoFeePerMin"]["status"] == "Success") && (data["AllFreiVideoFeePerMin"]["status"] == "Success")) {
+                    let d3festjson = [{
+                        id: "MediumFreiVideoFeePerMin",
+                        category: String(data["mediumname"]),
+                        min: parseFloat(data["MediumFreiVideoFeePerMin"]["avg"]) - parseFloat(data["MediumFreiVideoFeePerMin"]["std"]),
+                        max: parseFloat(data["MediumFreiVideoFeePerMin"]["avg"]) + parseFloat(data["MediumFreiVideoFeePerMin"]["std"]),
+                        mean: parseFloat(data["MediumFreiVideoFeePerMin"]["avg"])
+                    }, {
+                        id: "AllFreiVideoFeePerMin",
+                        category: "Ø \n alle \n Freiberufler",
+                        min: parseFloat(data["AllFreiVideoFeePerMin"]["avg"]) - parseFloat(data["AllFreiVideoFeePerMin"]["std"]),
+                        max: parseFloat(data["AllFreiVideoFeePerMin"]["avg"]) + parseFloat(data["AllFreiVideoFeePerMin"]["std"]),
+                        mean: parseFloat(data["AllFreiVideoFeePerMin"]["avg"])
+                    }, {
+                        id: "FreischreiberFreiSalaryPerHour",
+                        category: "Freischreiber Empfehlung",
+                        min: 25,
+                        max: 25,
+                        mean: 25
+                    }];
+                    elementid = "freigrafikvideo"
+
+                    gradientboxplot(d3festjson, elementid)
+                }
+            };
+            if ((data["MediumFreiAudioFeePerMin"]) && (data["AllFreiAudioFeePerMin"])) {
+                if ((data["MediumFreiAudioFeePerMin"]["status"] == "Success") && (data["AllFreiAudioFeePerMin"]["status"] == "Success")) {
+                    let d3festjson = [{
+                        id: "MediumFreiAudioFeePerMin",
+                        category: String(data["mediumname"]),
+                        min: parseFloat(data["MediumFreiAudioFeePerMin"]["avg"]) - parseFloat(data["MediumFreiAudioFeePerMin"]["std"]),
+                        max: parseFloat(data["MediumFreiAudioFeePerMin"]["avg"]) + parseFloat(data["MediumFreiAudioFeePerMin"]["std"]),
+                        mean: parseFloat(data["MediumFreiAudioFeePerMin"]["avg"])
+                    }, {
+                        id: "AllFreiAudioFeePerMin",
+                        category: "Ø \n alle \n Freiberufler",
+                        min: parseFloat(data["AllFreiAudioFeePerMin"]["avg"]) - parseFloat(data["AllFreiAudioFeePerMin"]["std"]),
+                        max: parseFloat(data["AllFreiAudioFeePerMin"]["avg"]) + parseFloat(data["AllFreiAudioFeePerMin"]["std"]),
+                        mean: parseFloat(data["AllFreiAudioFeePerMin"]["avg"])
+                    }, {
+                        id: "FreischreiberAudioFeePerMin",
+                        category: "Freischreiber Empfehlung",
+                        min: 25,
+                        max: 25,
+                        mean: 25
+                    }];
+                    elementid = "freigrafikaudio"
+
+                    gradientboxplot(d3festjson, elementid)
+                }
+            };
+            if ((data["MediumFreiArticleFeePerChar"]) && (data["AllFreiArticleFeePerChar"])) {
+                if ((data["MediumFreiArticleFeePerChar"]["status"] == "Success") && (data["AllFreiArticleFeePerChar"]["status"] == "Success")) {
+                    let d3festjson = [{
+                        id: "MediumFreiArticleFeePerChar",
+                        category: String(data["mediumname"]),
+                        min: parseFloat(data["MediumFreiArticleFeePerChar"]["avg"]) - parseFloat(data["MediumFreiArticleFeePerChar"]["std"]),
+                        max: parseFloat(data["MediumFreiArticleFeePerChar"]["avg"]) + parseFloat(data["MediumFreiArticleFeePerChar"]["std"]),
+                        mean: parseFloat(data["MediumFreiArticleFeePerChar"]["avg"])
+                    }, {
+                        id: "AllFreiArticleFeePerChar",
+                        category: "Ø \n alle \n Freiberufler",
+                        min: parseFloat(data["AllFreiArticleFeePerChar"]["avg"]) - parseFloat(data["AllFreiArticleFeePerChar"]["std"]),
+                        max: parseFloat(data["AllFreiArticleFeePerChar"]["avg"]) + parseFloat(data["AllFreiArticleFeePerChar"]["std"]),
+                        mean: parseFloat(data["AllFreiArticleFeePerChar"]["avg"])
+                    }, {
+                        id: "FreischreiberArticleFeePerChar",
+                        category: "Freischreiber Empfehlung",
+                        min: 0.1,
+                        max: 0.1,
+                        mean: 0.1
+                    }];
+                    elementid = "freigrafikprint"
 
                     gradientboxplot(d3festjson, elementid)
                 }
