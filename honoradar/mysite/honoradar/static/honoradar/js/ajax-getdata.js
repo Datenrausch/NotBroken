@@ -26,12 +26,12 @@ $(document).ready(function() {
         const $resultfrei = $("#resultfrei")
         const $resultpauschal = $("#resultpauschal")
         const $resultfest = $("#resultfest")
-        const mediumname= document.getElementById("result-mediumname")
+        const mediumname = document.getElementById("result-mediumname")
         console.log(mediumname)
         const size = Object.keys(data).length;
         mediumname.innerHTML = ""
 
-        mediumname.innerHTML=(String(data["mediumname"]))
+        mediumname.innerHTML = (String(data["mediumname"]))
         $resultfrei.innerHTML = ""
         $resultpauschal.innerHTML = ""
         $resultfest.innerHTML = ""
@@ -47,8 +47,8 @@ $(document).ready(function() {
             $result.append('<div class="result-text">' + String(data["missingdata"]) + '</div>');
 
         } else {
-          console.log("Guten Tag")
-            //frei
+            console.log("Guten Tag")
+                //frei
             if (data["MediumFestSalaryPerHour"]) {
                 if (data["MediumFestSalaryPerHour"]["status"] == "Success") {
                     $resultfest.append('<div class="result-text">Der durchschnittliche Stundenlohn für Festangestelllte liegt bei: ' + String(data["MediumFestSalaryPerHour"]["avg"]) + " Euro  plusminus " + String(data["MediumFestSalaryPerHour"]["std"]) + '</div>');
@@ -102,7 +102,8 @@ $(document).ready(function() {
                 };
             }
             if (data["MediumFestHappiness"]) {
-                if (data["MediumFestHappiness"]["status"] == "Success") {+
+                if (data["MediumFestHappiness"]["status"] == "Success") {
+                    +
                     $resultfest.append('<div class="result-text">Und die Zufriedenheit liegt bei ' + String(data["MediumFestHappiness"]["avg"]) + " plusminus " + String(data["MediumFestHappiness"]["std"]) + '</div>');
                 };
             };
@@ -117,6 +118,33 @@ $(document).ready(function() {
                     $resultfrei.append('<div class="result-text">Und die Zufriedenheit liegt bei ' + String(data["MediumFreiHappiness"]["avg"]) + " plusminus " + String(data["MediumFreiHappiness"]["std"]) + '</div>');
                 };
             };
+            if ((data["MediumFestSalaryPerHour"]) && (data["AllFestSalaryPerHour"])) {
+                if ((data["MediumFestSalaryPerHour"]["status"] == "Success") && (data["MediumFestSalaryPerHour"]["status"] == "Success")) {
+                  console.log("d3data")
+                    let d3festjson = [{
+                        id: "MediumFestSalaryPerHour",
+                        category: String(data["mediumname"]),
+                        min: parseFloat(data["MediumFestSalaryPerHour"]["avg"]) - parseFloat(data["MediumFestSalaryPerHour"]["std"]),
+                        max: parseFloat(data["MediumFestSalaryPerHour"]["avg"]) + parseFloat(data["MediumFestSalaryPerHour"]["std"]),
+                        mean: parseFloat(data["MediumFestSalaryPerHour"]["avg"])
+                    }, {
+                        id: "AllFestSalaryPerHour",
+                        category: "Alle Festanstellungen",
+                        min: parseFloat(data["AllFestSalaryPerHour"]["avg"]) - parseFloat(data["AllFestSalaryPerHour"]["std"]),
+                        max: parseFloat(data["AllFestSalaryPerHour"]["avg"]) + parseFloat(data["AllFestSalaryPerHour"]["std"]),
+                        mean: parseFloat(data["AllFestSalaryPerHour"]["avg"])
+                    }, {
+                        id: "FreischreiberFestSalaryPerHour",
+                        category: "Freischreiber \n Empfehlung",
+                        min: 25,
+                        max: 25,
+                        mean: 25
+                    }];
+                    elementid = "festegrafik1"
+
+                    gradientboxplot(d3festjson, elementid)
+                }
+            }
         }
 
 

@@ -420,9 +420,13 @@
                         <div class="happiness-result" id="">
                             <input name="" id="result_athmosphaere-frei" class="range result_happiness-bar result_happiness-3" type="range" min="1" max="9" value="3" disabled/>
                         </div>
-                        <div class="infografik">
+                        <div class="infografik" id="freiegraph1">
                             <img src="https://datavizcatalogue.com/methods/images/anatomy/box_plot.png">
                         </div>
+                        <div class="infografik" id="freiegraph2">
+                            <img src="https://datavizcatalogue.com/methods/images/anatomy/box_plot.png">
+                        </div>
+
 
                         <!-- Unit-Select -->
                         <p class="result_format-text">Welches Format interessiert dich?</p>
@@ -451,7 +455,7 @@
                             <div class="happiness-result" id="">
                                 <input name="" id="result_athmosphaere-pauschal" class="range result_happiness-bar result_happiness-5" type="range" min="1" max="9" value="5" disabled/>
                             </div>
-                            <div class="infografik">
+                            <div class="infografik" id="pauschalistgrafik1">
                                 <img src="https://datavizcatalogue.com/methods/images/anatomy/box_plot.png">
                             </div>
                             <div class="result-item-text" id="result-text-pauschal">Durchschnittliches Monatsgehalt: XXXX
@@ -464,7 +468,7 @@
                             <div class="happiness-result" id="">
                                 <input name="" id="result_athmosphaere-fest" class="range result_happiness-bar result_happiness-8" type="range" min="1" max="9" value="8" disabled/>
                             </div>
-                            <div class="infografik">
+                            <div class="infografik" id="festegrafik1">
                                 <img src="https://datavizcatalogue.com/methods/images/anatomy/box_plot.png">
                             </div>
                             <div class="result-item-text" id="result-text-fest">Durchschnittliches Monatsgehalt: XXXX
@@ -606,6 +610,10 @@
     <script src="{% static 'honoradar/navbar/js/jquery-2.1.1.js'%}"></script>
     <script src="{% static 'honoradar/navbar/js/main.js'%}"></script>
     <script src="{% static 'honoradar/js/ajax-setup.js'%}"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <script src="{% static 'honoradar/js/gradientboxplot.js'%}"></script>
+
     <script src="{% static 'honoradar/js/ajax-senddata.js'%}"></script>
     <script src="{% static 'honoradar/js/ajax-getdata.js'%}"></script>
     <script src="{% static 'honoradar/js/jquery.easy-autocomplete.min.js'%}"></script>
