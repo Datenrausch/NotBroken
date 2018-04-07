@@ -42,7 +42,7 @@ function gradientboxplot(responsejson, elementid) {
         .attr("y", 0)
         .attr("stroke", "white")
         .attr("fill", "white")
-        .attr("font-size", "1.1em")
+        .attr("font-size", "1.2em")
         .style("text-anchor", "left")
         .text("Share of Seats / Comments / Reactions in %");
 
@@ -260,7 +260,7 @@ function gradientboxplot(responsejson, elementid) {
         .selectAll("text")
         .style("stroke", "white")
         .style("fill", "white")
-        .style('font-size', '12')
+        .style('font-size', '1.2em')
 
 
         .style('font-family', 'Open Sans')

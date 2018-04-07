@@ -119,8 +119,7 @@ $(document).ready(function() {
                 };
             };
             if ((data["MediumFestSalaryPerHour"]) && (data["AllFestSalaryPerHour"])) {
-                if ((data["MediumFestSalaryPerHour"]["status"] == "Success") && (data["MediumFestSalaryPerHour"]["status"] == "Success")) {
-                  console.log("d3data")
+                if ((data["MediumFestSalaryPerHour"]["status"] == "Success") && (data["AllFestSalaryPerHour"]["status"] == "Success")) {
                     let d3festjson = [{
                         id: "MediumFestSalaryPerHour",
                         category: String(data["mediumname"]),
@@ -129,7 +128,7 @@ $(document).ready(function() {
                         mean: parseFloat(data["MediumFestSalaryPerHour"]["avg"])
                     }, {
                         id: "AllFestSalaryPerHour",
-                        category: "Alle Festanstellungen",
+                        category: "Ø \n alle \n Festangestellte",
                         min: parseFloat(data["AllFestSalaryPerHour"]["avg"]) - parseFloat(data["AllFestSalaryPerHour"]["std"]),
                         max: parseFloat(data["AllFestSalaryPerHour"]["avg"]) + parseFloat(data["AllFestSalaryPerHour"]["std"]),
                         mean: parseFloat(data["AllFestSalaryPerHour"]["avg"])
@@ -141,6 +140,32 @@ $(document).ready(function() {
                         mean: 25
                     }];
                     elementid = "festegrafik1"
+
+                    gradientboxplot(d3festjson, elementid)
+                }
+            };
+            if ((data["MediumPauschalSalaryPerHour"]) && (data["AllPauschalSalaryPerHour"])) {
+                if ((data["MediumPauschalSalaryPerHour"]["status"] == "Success") && (data["AllPauschalSalaryPerHour"]["status"] == "Success")) {
+                    let d3festjson = [{
+                        id: "MediumPauschalSalaryPerHour",
+                        category: String(data["mediumname"]),
+                        min: parseFloat(data["MediumPauschalSalaryPerHour"]["avg"]) - parseFloat(data["MediumPauschalSalaryPerHour"]["std"]),
+                        max: parseFloat(data["MediumPauschalSalaryPerHour"]["avg"]) + parseFloat(data["MediumPauschalSalaryPerHour"]["std"]),
+                        mean: parseFloat(data["MediumPauschalSalaryPerHour"]["avg"])
+                    }, {
+                        id: "AllFestSalaryPerHour",
+                        category: "Ø \n alle \n Pauschalisten",
+                        min: parseFloat(data["AllPauschalSalaryPerHour"]["avg"]) - parseFloat(data["AllPauschalSalaryPerHour"]["std"]),
+                        max: parseFloat(data["AllPauschalSalaryPerHour"]["avg"]) + parseFloat(data["AllPauschalSalaryPerHour"]["std"]),
+                        mean: parseFloat(data["AllPauschalSalaryPerHour"]["avg"])
+                    }, {
+                        id: "FreischreiberPauschalSalaryPerHour",
+                        category: "Freischreiber Empfehlung",
+                        min: 25,
+                        max: 25,
+                        mean: 25
+                    }];
+                    elementid = "pauschalistgrafik1"
 
                     gradientboxplot(d3festjson, elementid)
                 }
