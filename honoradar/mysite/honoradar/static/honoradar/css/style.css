@@ -4210,6 +4210,8 @@ input[type=range].alert-bar_video:-moz-focusring {
 	width: 90%;
 	display: inline-block;
 	margin: 15px 0px 15px 0px;
+	min-width: 100px;
+	min-height: 100px;
 }
 
 .infografik img {
