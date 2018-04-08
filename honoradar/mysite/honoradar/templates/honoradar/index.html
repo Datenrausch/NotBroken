@@ -317,7 +317,7 @@
                     <div class="hide" id="pre-data_kommentar">
                         <textarea id="data_kommentar" class="comment-select" name="Comment" placeholder="Dein Kommentar ..." maxlength="250"></textarea>
                     </div>
-                    <span class="hide" id="disclaimer"><span class="disclaimer"><a href="#" class="clear-agb">!</a>Dein Kommentar ist anonym. Achte darauf, dass du deine Identität nicht verrätst!</span></span>
+                    <span id="disclaimer" class="disclaimer hide">Dein Kommentar ist anonym. Achte darauf, dass du deine Identität nicht verrätst!</span></span>
 
                     <!-- Checkbox-Select -->
                     <span class="hide" id="pre-data_checkbox">
@@ -341,7 +341,7 @@
 
 
                     <!-- Submit -->
-                    <div class="alert-denied alert-media-select show" id="WARNING">
+                    <div class="alert-denied alert-media-select hide" id="WARNING">
                         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
                         <strong>Achtung! </strong>Bitte fülle folgende Felder aus: Feld1, Feld2 und Feld2.
                     </div>
@@ -390,15 +390,10 @@
     </datalist>
 	</div>
 
-                    <!-- Switch-Select
-    <div class="switch-field switch-field-text-1 tooltip">
-        <input type="radio" id="data_arbeitsverhaeltnis_fest-analyse" name="switch" value="fest" onclick="getfunctionfest()"/>
-        <label for="data_arbeitsverhaeltnis_fest-analyse">Fest<span id="question-4">?</span></label>
-        <input type="radio" id="data_arbeitsverhaeltnis_pauschal-analyse" name="switch" value="pauschal" onclick="getfunctionpauschal()"/>
-        <label for="data_arbeitsverhaeltnis_pauschal-analyse">Pauschal<span id="question-5">?</span></label>
-        <input type="radio" id="data_arbeitsverhaeltnis_frei-analyse" name="switch" value="frei" onclick="getfunctionfrei()"/>
-        <label for="data_arbeitsverhaeltnis_frei-analyse">Frei<span id="question-6">?</span></label>
-    </div>-->
+                    <!-- Bedingung -->
+					<div class="bedingung-container" id="">
+                        <span id="bedingung" class="bedingung">Wir zeigen die Analyse nur, wenn mindestens zwei Datensätze vorliegen! </span>
+                    </div>
 
                     <div class="break"></div>
 
@@ -413,8 +408,8 @@
 
                 <!-- Mediumname -->
                 <div class="result-mediumname">Nürnberger Nachrichten</div>
-
-                <!-- Result Flexbox -->
+				
+				<!-- Result Flexbox -->
                 <div class="result-grid">
 
                     <!-- Result Frei-Box -->
@@ -422,6 +417,8 @@
 
                         <div class="result-box-frei-titel">Freiberufler</div>
                         <div class="infografik">
+							<div id="nodata-1" class="nodata hide">&times;
+							</div>
                         </div>
                         <div class="show" id="pre-data_format_text_audio_video">
                             <div id="data_format_text_audio_video" class="switch-field result_switch-field switch-field-text result_switch-field-text result_switch-field-text-5">
@@ -434,6 +431,8 @@
                             </div>
                         </div>
                         <div class="infografik">
+							<div id="nodata-2" class="nodata hide">&times;
+							</div>
                         </div>
                     </div>
 
@@ -443,6 +442,8 @@
                         <div class="result-item-large-first">
                             <div class="result-box-pauschal-titel">Pauschalisten</div>
                             <div class="infografik">
+								<div id="nodata-3" class="nodata hide">&times;
+								</div>
                             </div>
                             <div class="result-item-text" id="result-text-pauschal">Durchschnittliches Monatsgehalt: XXXX
                             </div>
@@ -452,6 +453,8 @@
                         <div class="result-item-large-second" id="resultfest">
                             <div class="result-box-inner result-box-fest-titel">Festangestellte</div>
                             <div class="infografik">
+								<div id="nodata-4" class="nodata hide">&times;
+								</div>
                             </div>
                             <div class="result-item-text" id="result-text-fest">Durchschnittliches Monatsgehalt: XXXX
                             </div>
@@ -461,7 +464,7 @@
                     <!-- Result "Daten & Meinungen"-Box -->
 
                     <div class="result-item result-item-superlarge">
-                        <div class="result-box-facts-titel">Daten & Meinungen</div>
+                        <div class="result-box-facts-titel">Arbeitsatmosphäre</div>
                         <div class="fact-text">
 						<div class="result-happiness-grid" >
 							<div class="happiness-result happiness-result-frei" id="">
@@ -473,15 +476,12 @@
 							<div class="happiness-result happiness-result-fest" id="">
 								<input name="" id="result_athmosphaere-fest" class="range result_happiness-bar result_happiness-8" type="range" min="1" max="9" value="8" disabled/>
 							</div>
-						</div>
-                            Anzahl der Quellen<br> 
-							Code of Fairness<br> 
-							Hat Mindestgrenze angegeben?
-						
+						</div>			
 							
-						<div class="result-comments">wgdvdfv wefwefesf we fwef
+						<div class="result-comments">
+							<p>Hier erscheinen später gespendete Kommentare der User. Hier erscheinen später gespendete Kommentare der User. Hier erscheinen später gespendete Kommentare der User. 
+							</p>
 						</div>
-
                         </div>
                     </div>
 
