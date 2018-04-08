@@ -136,6 +136,8 @@ def senddata(request):
             FreeOrEmployed = (request.POST.get('FreeOrEmployed'))
             Comment = (request.POST.get('Comment'))
             AGB = (request.POST.get('AGB'))
+            Happiness = (request.POST.get('Happiness'))
+            print(Happiness)
             print(request.POST)
 
             # if the mediumname or the AGB is not given, we set the sanitycheck to 1
@@ -153,6 +155,13 @@ def senddata(request):
                 print("No AGB!!")
                 sanitycheck = 1
                 messages.info(request, 'AGB')
+
+            if float(Happiness) != 1:
+                pass
+            else:
+                sanitycheck = 1
+                messages.info(request, 'Zufriedenheit')
+
 
             # CHECKING WHETHER THERE ARE ALREADY ENTIRES WITH THIS MEDIUM
             try:
@@ -296,21 +305,21 @@ def senddata(request):
                             pass
                         else:
                             sanitycheck = 1
-                            messages.info(request, 'Beitragsminuten')
+                            messages.info(request, 'Beitragsminuten für den Videobeitrag')
 
                     if VideoAudioTextFree == "audio":
                         if float(MinPerAudioFree) != 0:
                             pass
                         else:
                             sanitycheck = 1
-                            messages.info(request, 'Beitragsminuten')
+                            messages.info(request, 'Beitragsminuten für den Audiobeitrag')
 
                     if VideoAudioTextFree == "text":
                         if float(CharPerArticleFree) != 0:
                             pass
                         else:
                             sanitycheck = 1
-                            messages.info(request, 'Anzahl an Zeichen')
+                            messages.info(request, 'Anzahl an Zeichen für den Artikel')
                     SalaryPerHour=0
                     SalaryPerMonth=0
                     if(sanitycheck == 0):

@@ -31,7 +31,7 @@ $(document).ready(function() {
             alertdiv.innerHTML = "<strong>Achtung! </strong>Es fehlen noch Angaben zu folgenden Pflicht-Feldern: "
             console.log(size)
             const $Warning = $("#WARNING")
-
+            $Warning.removeAttr("style");
             for (i = 0; i < size; i++) {
                 console.log(i);
                 alertdiv.classList.add("show");
@@ -63,6 +63,9 @@ $(document).ready(function() {
                 if ((String(data[keyname]))=="Honorar"){
                   document.getElementById('data_honorar').classList.add("alert");
                 };
+                if ((String(data[keyname]))=="Gehalt"){
+                  document.getElementById('data_gehalt').classList.add("alert");
+                }
                 if ((String(data[keyname]))=="Mediumsart"){
                   document.getElementById('data_format_text_audio_video').classList.add("alert-switch");
                 };
@@ -81,15 +84,16 @@ $(document).ready(function() {
 
                 if ((String(data[keyname]))=="Zeitaufwand"){
                   document.getElementById('pre-data_zeit').classList.add("pre-alert-bar-time");
-                  document.getElementById('pre-data_zeit').classList.add("alert-bar_time");
+                  document.getElementById('data_zeit').classList.add("alert-bar_time");
                 };
-                if ((String(data[keyname]))=="Zufriedenheit"){
+                if ((String(data[keyname]))=="Arbeitsatmosphäre"){
                   document.getElementById('data_athmosphaere').classList.add("alert-bar_happiness");
                   document.getElementById('pre-data_athmosphaere').classList.add("pre-alert-bar-happiness");
-                }
+                };
                 if ((String(data[keyname]))=="AGB"){
                   document.getElementById('data_checkbox').classList.add("alert-checkbox");
-                }
+                };
+
             }
         } else {
             alertdiv.innerHTML = ""
