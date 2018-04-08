@@ -316,12 +316,17 @@
                     <div class="hide" id="pre-data_kommentar">
                         <textarea id="data_kommentar" class="comment-select" name="Comment" placeholder="Dein Kommentar ..." maxlength="250"></textarea>
                     </div>
-                    <span class="hide" id="disclaimer"><span class="disclaimer"><a href="#" class="clear-agb">!</a>Dein Kommentar ist anonym. Achte darauf, dass du deine Identität nicht verrätst!</span></span>
+                    <span id="disclaimer" class="disclaimer hide">Dein Kommentar ist anonym. Achte darauf, dass du deine Identität nicht verrätst!</span></span>
 
                     <!-- Checkbox-Select -->
                     <span class="hide" id="pre-data_checkbox">
+<<<<<<< HEAD
+        <input name="AGB" class="checkbox" type="checkbox" id="data_checkbox" />
+        <label class="checkboxlabel " for="data_checkbox"></label>
+=======
                       <input name="AGB" class="checkbox" type="checkbox" id="data_checkbox" />
                       <label class="checkboxlabel alert-checkbox" for="data_checkbox"></label>
+>>>>>>> haluka
         <span class="checkboxtext">Ich habe den <a href="#" target="_blank" class="clear-agb">Hinweis</a> gelesen.</span>
                     </span>
 
@@ -341,7 +346,11 @@
 
                     <!-- Submit -->
                     <div class="alert-denied alert-media-select hide" id="WARNING">
+<<<<<<< HEAD
+                        <span class="closebtn" onclick="hidedenied()">&times;</span>
+=======
                         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+>>>>>>> haluka
                         <strong>Achtung! </strong>Bitte fülle folgende Felder aus: Feld1, Feld2 und Feld2.
                     </div>
                     <input type="submit" class="submit-get hide" id="data_submit" value="Daten spenden" />
@@ -349,7 +358,11 @@
                 </form>
 
                 <!-- After-Submit Accpeted -->
+<<<<<<< HEAD
+                <div class="alert alert-accepted alert-media-select show" id="ACCEPTED">
+=======
                 <div class="alert alert-accepted alert-media-select hide" id="ACCEPTED">
+>>>>>>> haluka
                     <span class="closebtn" onclick="hideaccepted()">&times;</span> Wir haben deine Infos geprüft und in die Datenbank aufgenommen.
                 </div>
 
@@ -389,15 +402,10 @@
     </datalist>
 	</div>
 
-                    <!-- Switch-Select
-    <div class="switch-field switch-field-text-1 tooltip">
-        <input type="radio" id="data_arbeitsverhaeltnis_fest-analyse" name="switch" value="fest" onclick="getfunctionfest()"/>
-        <label for="data_arbeitsverhaeltnis_fest-analyse">Fest<span id="question-4">?</span></label>
-        <input type="radio" id="data_arbeitsverhaeltnis_pauschal-analyse" name="switch" value="pauschal" onclick="getfunctionpauschal()"/>
-        <label for="data_arbeitsverhaeltnis_pauschal-analyse">Pauschal<span id="question-5">?</span></label>
-        <input type="radio" id="data_arbeitsverhaeltnis_frei-analyse" name="switch" value="frei" onclick="getfunctionfrei()"/>
-        <label for="data_arbeitsverhaeltnis_frei-analyse">Frei<span id="question-6">?</span></label>
-    </div>-->
+                    <!-- Bedingung -->
+					<div class="bedingung-container" id="">
+                        <span id="bedingung" class="bedingung">Wir zeigen die Analyse nur, wenn mindestens zwei Datensätze vorliegen! </span>
+                    </div>
 
                     <div class="break"></div>
 
@@ -411,18 +419,30 @@
             <div class="result show" id="result">
 
                 <!-- Mediumname -->
+<<<<<<< HEAD
+                <div class="result-mediumname">Nürnberger Nachrichten</div>
+				
+				<!-- Result Flexbox -->
+=======
                 <div class="result-mediumname" id="result-mediumname">Nürnberger Nachrichten</div>
 
                 <!-- Result Flexbox -->
+>>>>>>> haluka
                 <div class="result-grid">
 
                     <!-- Result Frei-Box -->
                     <div class="result-item result-item-thin" id="resultfrei">
 
                         <div class="result-box-frei-titel">Freiberufler</div>
+<<<<<<< HEAD
+                        <div class="infografik">
+							<div id="nodata-1" class="nodata hide">&times;
+							</div>
+=======
                         <div class="infografik" id="freigrafik1">
                         </div>
                         <div class="result-item-text" id="result-text-frei">Durchschnittliches Monatsgehalt: XXXX
+>>>>>>> haluka
                         </div>
                         <div class="show" id="pre-data_format_text_audio_video">
                             <div id="data_format_text_audio_video" class="switch-field result_switch-field switch-field-text result_switch-field-text result_switch-field-text-5">
@@ -434,11 +454,17 @@
                                 <label for="result_format_video">Video</label>
                             </div>
                         </div>
+<<<<<<< HEAD
+                        <div class="infografik">
+							<div id="nodata-2" class="nodata hide">&times;
+							</div>
+=======
                         <div class="infografik" id="freigrafikprint" >
                         </div>
                         <div class="infografik" id="freigrafikaudio" >
                         </div>
                         <div class="infografik" id="freigrafikvideo" >
+>>>>>>> haluka
                         </div>
                     </div>
 
@@ -447,7 +473,13 @@
                     <div class="result-item result-item-large" >
                         <div class="result-item-large-first" id="resultpauschal">
                             <div class="result-box-pauschal-titel">Pauschalisten</div>
+<<<<<<< HEAD
+                            <div class="infografik">
+								<div id="nodata-3" class="nodata hide">&times;
+								</div>
+=======
                             <div class="infografik" id="pauschalgrafik1">
+>>>>>>> haluka
                             </div>
                             <div class="result-item-text" id="result-text-pauschal">Durchschnittliches Monatsgehalt: XXXX
                             </div>
@@ -456,7 +488,13 @@
                         <!-- Result Fest-Box -->
                         <div class="result-item-large-second" id="resultfest">
                             <div class="result-box-inner result-box-fest-titel">Festangestellte</div>
+<<<<<<< HEAD
+                            <div class="infografik">
+								<div id="nodata-4" class="nodata hide">&times;
+								</div>
+=======
                             <div class="infografik" id="festgrafik1">
+>>>>>>> haluka
                             </div>
                             <div class="result-item-text" id="result-text-fest">Durchschnittliches Monatsgehalt: XXXX
                             </div>
@@ -466,7 +504,7 @@
                     <!-- Result "Daten & Meinungen"-Box -->
 
                     <div class="result-item result-item-superlarge">
-                        <div class="result-box-facts-titel">Daten & Meinungen</div>
+                        <div class="result-box-facts-titel">Arbeitsatmosphäre</div>
                         <div class="fact-text">
 						<div class="result-happiness-grid" >
 							<div class="happiness-result happiness-result-frei" id="">
@@ -478,6 +516,13 @@
 							<div class="happiness-result happiness-result-fest" id="">
 								<input name="" id="result_athmosphaere-fest" class="range result_happiness-bar result_happiness-1" type="range" min="1" max="9" value="1" disabled/>
 							</div>
+<<<<<<< HEAD
+						</div>			
+							
+						<div class="result-comments">
+							<p>Hier erscheinen später gespendete Kommentare der User. Hier erscheinen später gespendete Kommentare der User. Hier erscheinen später gespendete Kommentare der User. 
+							</p>
+=======
 						</div>
                             Anzahl der Quellen<br>
 							Code of Fairness<br>
@@ -485,8 +530,8 @@
 
 
 						<div class="result-comments">wgdvdfv wefwefesf we fwef
+>>>>>>> haluka
 						</div>
-
                         </div>
                     </div>
 
@@ -523,20 +568,20 @@
 
             <!-- News -->
             <div class="nbox-1">
-                <a href="#">
-                    <div class="ntile-first news news_1"><span class="news-title-head">Der große Gehalts-Report 2018</span></div>
+                <a href="{% static "/honoradar/artikel/xxx.html"%}">
+                    <div class="ntile-first news news_1"><span class="news-title-head">Hier erscheint noch ein Titel</span></div>
                 </a>
-                <a href="#">
-                    <div class="ntile-first news news_2"><span class="news-title">Das sagt die Presse zum Gehalts-Report</span></div>
+                <a href="{% static "/honoradar/artikel/xxx.html"%}">
+                    <div class="ntile-first news news_2"><span class="news-title">Hier erscheint noch ein Titel</span></div>
                 </a>
-                <a href="#">
-                    <div class="ntile-first news news_3"><span class="news-title">Was geschieht mit deinen Daten?</span></div>
+                <a href="{% static "/honoradar/artikel/xxx.html"%}">
+                    <div class="ntile-first news news_3"><span class="news-title">Hier erscheint noch ein Titel</span></div>
                 </a>
-                <a href="#">
-                    <div class="ntile-first news news_4"><span class="news-title">Warum Daten spenden?</span></div>
+                <a href="{% static "/honoradar/artikel/xxx.html"%}">
+                    <div class="ntile-first news news_4"><span class="news-title">Hier erscheint noch ein Titel</span></div>
                 </a>
-                <a href="#">
-                    <div class="ntile-first news news_5"><span class="news-title">Die Methodik dahinter</span></div>
+                <a href="{% static "/honoradar/artikel/xxx.html"%}">
+                    <div class="ntile-first news news_5"><span class="news-title">Hier erscheint noch ein Titel</span></div>
                 </a>
             </div>
 
@@ -547,17 +592,17 @@
 
             <!-- News -->
             <div class="nbox-2">
-                <a href="#">
+                <a href="{% static "/honoradar/artikel/unschlagbar-verhandeln-in-10-schritten.html"%}">
                     <div class="ntile-second news news_6"><span class="news-title">Verhandeln in 10 Schritten</span></div>
                 </a>
-                <a href="#">
+                <a href="{% static "/honoradar/artikel/interview-carola-dorner.html"%}">
                     <div class="ntile-second news news_7"><span class="news-title">„Honorare zu verschweigen, schadet uns allen“</span></div>
                 </a>
                 <a href="https://www.youtube.com/watch?v=QyRBdONqZWk" data-lity>
                     <div class="ntile-second news news_8"><span class="news-title">Video: Herr Frei will mehr</span></div>
                 </a>
-                <a href="#">
-                    <div class="ntile-second news news_9"><span class="news-title">Koalitionsvertrag: VG-Wort-Ausschüttungen?</span>
+                <a href="{% static "/honoradar/artikel/xxx.html"%}">
+                    <div class="ntile-second news news_9"><span class="news-title">Hier erscheint noch ein Titel</span>
                     </div>
                 </a>
             </div>
@@ -569,27 +614,27 @@
 				<a href="{% static "/honoradar/artikel/projekt.html"%}">
 				<p class="footer-item-first footer-item clear-footer">Über das Projekt</p>
 				</a>
-				<a href="../../../templates/honoradar/artikel/credits.html">
+				<a href="{% static "/honoradar/artikel/credits.html"%}">
 				<p class="footer-item clear-footer">Die Macher</p>
 				</a>
-				<a href="../../../templates/honoradar/artikel/rankings.html">
+				<a href="{% static "/honoradar/artikel/rankings.html"%}">
 				<p class="footer-item clear-footer">Rankings & Reports</p>
 				</a>
-				<a href="../../../templates/honoradar/artikel/methodologie.html">
+				<a href="{% static "/honoradar/artikel/methodologie.html"%}">
 				<p class="footer-item clear-footer">Methodologie</p>
 				</a>
 			</div>
 			<div class="footer-grid-second">
-				<a href="../../../templates/honoradar/artikel/newsletter.html">
+				<a href="{% static "/honoradar/artikel/newsletter.html"%}">
 				<p class="footer-item-first footer-item clear-footer">Newsletter</p>
 				</a>
-				<a href="../../../templates/honoradar/artikel/datenschutz.html">
+				<a href="{% static "/honoradar/artikel/datenschutz.html"%}">
 				<p class="footer-item clear-footer">Datenschutz</p>
 				</a>
-				<a href="../../../templates/honoradar/artikel/kontakt.html">
+				<a href="{% static "/honoradar/artikel/kontakt.html"%}">
 				<p class="footer-item clear-footer">Kontakt & Fragen</p>
 				</a>
-				<a href="../../../templates/honoradar/artikel/impressum.html">
+				<a href="{% static "/honoradar/artikel/impressum.html"%}">
 				<p class="footer-item clear-footer">Impressum</p>
 				</a>
 			</div>

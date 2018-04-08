@@ -160,7 +160,7 @@ def senddata(request):
                 pass
             else:
                 sanitycheck = 1
-                messages.info(request, 'Zufriedenheit')
+                messages.info(request, 'Arbeitsatmosphäre')
 
 
             # CHECKING WHETHER THERE ARE ALREADY ENTIRES WITH THIS MEDIUM

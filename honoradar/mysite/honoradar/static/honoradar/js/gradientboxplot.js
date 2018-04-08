@@ -268,8 +268,7 @@ function gradientboxplot(responsejson, elementid) {
         .style("stroke", "white")
         .style("fill", "white")
         .style('font-size', '1.2em')
-        .style('font-family', 'Open Sans')
-;
+        .style('font-family', 'Open Sans');
 
     svg
         .selectAll("line")
