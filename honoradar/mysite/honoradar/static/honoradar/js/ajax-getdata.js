@@ -137,7 +137,9 @@ $(document).ready(function() {
                         category: "Freischreiber \n Empfehlung",
                         min: 25,
                         max: 25,
-                        mean: 25
+                        mean: 25,
+                        charttitle: "Stundenlohn für Festangestellt in Euro"
+
                     }];
                     elementid = "festegrafik1"
 
@@ -163,7 +165,9 @@ $(document).ready(function() {
                         category: "Freischreiber Empfehlung",
                         min: 25,
                         max: 25,
-                        mean: 25
+                        mean: 25,
+                        charttitle: "Stundenlohn für Pauaschalisten in Euro"
+
                     }];
                     elementid = "pauschalistgrafik1"
 
@@ -189,7 +193,9 @@ $(document).ready(function() {
                         category: "Freischreiber Empfehlung",
                         min: 25,
                         max: 25,
-                        mean: 25
+                        mean: 25,
+                        charttitle: "Stundenlohn für Freie in Euro"
+
                     }];
                     elementid = "freigrafik1"
 
@@ -215,7 +221,9 @@ $(document).ready(function() {
                         category: "Freischreiber Empfehlung",
                         min: 25,
                         max: 25,
-                        mean: 25
+                        mean: 25,
+                        charttitle: "Honorar pro Videominute in Euro"
+
                     }];
                     elementid = "freigrafikvideo"
 
@@ -241,7 +249,9 @@ $(document).ready(function() {
                         category: "Freischreiber Empfehlung",
                         min: 25,
                         max: 25,
-                        mean: 25
+                        mean: 25,
+                        charttitle: "Honorar pro Audiominute in Euro"
+
                     }];
                     elementid = "freigrafikaudio"
 
@@ -253,21 +263,23 @@ $(document).ready(function() {
                     let d3festjson = [{
                         id: "MediumFreiArticleFeePerChar",
                         category: String(data["mediumname"]),
-                        min: parseFloat(data["MediumFreiArticleFeePerChar"]["avg"]) - parseFloat(data["MediumFreiArticleFeePerChar"]["std"]),
-                        max: parseFloat(data["MediumFreiArticleFeePerChar"]["avg"]) + parseFloat(data["MediumFreiArticleFeePerChar"]["std"]),
-                        mean: parseFloat(data["MediumFreiArticleFeePerChar"]["avg"])
+                        min: parseFloat(data["MediumFreiArticleFeePerChar"]["avg"]*100) - parseFloat(data["MediumFreiArticleFeePerChar"]["std"]*100),
+                        max: parseFloat(data["MediumFreiArticleFeePerChar"]["avg"]*100) + parseFloat(data["MediumFreiArticleFeePerChar"]["std"]*100),
+                        mean: parseFloat(data["MediumFreiArticleFeePerChar"]["avg"]*100),
                     }, {
                         id: "AllFreiArticleFeePerChar",
                         category: "Ø \n alle \n Freiberufler",
-                        min: parseFloat(data["AllFreiArticleFeePerChar"]["avg"]) - parseFloat(data["AllFreiArticleFeePerChar"]["std"]),
-                        max: parseFloat(data["AllFreiArticleFeePerChar"]["avg"]) + parseFloat(data["AllFreiArticleFeePerChar"]["std"]),
-                        mean: parseFloat(data["AllFreiArticleFeePerChar"]["avg"])
+                        min: parseFloat(data["AllFreiArticleFeePerChar"]["avg"]*100) - parseFloat(data["AllFreiArticleFeePerChar"]["std"]*100),
+                        max: parseFloat(data["AllFreiArticleFeePerChar"]["avg"]*100) + parseFloat(data["AllFreiArticleFeePerChar"]["std"]*100),
+                        mean: parseFloat(data["AllFreiArticleFeePerChar"]["avg"]*100)
                     }, {
                         id: "FreischreiberArticleFeePerChar",
                         category: "Freischreiber Empfehlung",
-                        min: 0.1,
-                        max: 0.1,
-                        mean: 0.1
+                        min: 10,
+                        max: 10,
+                        mean: 100,
+                        charttitle: "Honorar pro hundert Zeichen in Euro"
+
                     }];
                     elementid = "freigrafikprint"
 
