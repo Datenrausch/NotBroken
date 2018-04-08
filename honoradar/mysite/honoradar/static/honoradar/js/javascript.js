@@ -769,23 +769,14 @@ $('.smooth').on('click', function(e){
   e.preventDefault();
 })
 
+function hidedenied() {
+	var element = document.getElementById("WARNING");
+    element.classList.add("hide");
+    element.classList.remove("show");
+};
 
-
-$(function() {
-  showMessage("Daten fehlen: Bitte fülle dieses Feld aus!");
-});
-
-function showMessage(s) {
-  var m = $("#alert");
-  m.html(s);
-  
-  m.addClass("show");
-  setTimeout(function() {
-    m.removeClass("show");
-    m.addClass("hide");
-    setTimeout(function() {
-      m.addClass("hide");
-    }, 5000);
-  }, 7000);
-}
-
+function hideaccepted() {
+	var element = document.getElementById("ACCEPTED");
+    element.classList.add("hide");
+    element.classList.remove("show");
+};
