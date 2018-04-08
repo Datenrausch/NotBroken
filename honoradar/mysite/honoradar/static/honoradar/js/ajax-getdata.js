@@ -26,15 +26,34 @@ $(document).ready(function() {
         const $resultfrei = $("#result-text-frei")
         const $resultpauschal = $("#result-text-pauschal")
         const $resultfest = $("#result-text-fest")
+
+        var element=document.getElementById("result-text-frei")
+        element.innerHTML=""
+        var element=document.getElementById("result-text-pauschal")
+        element.innerHTML=""
+        var element=document.getElementById("result-text-fest")
+        element.innerHTML=""
+
+
+        var element=document.getElementById("festgrafik1")
+        element.innerHTML=""
+        var element=document.getElementById("pauschalgrafik1")
+        element.innerHTML=""
+        var element=document.getElementById("freigrafik1")
+        element.innerHTML=""
+        var element=document.getElementById("freigrafikvideo")
+        element.innerHTML=""
+        var element=document.getElementById("freigrafikaudio")
+        element.innerHTML=""
+        var element=document.getElementById("freigrafikprint")
+        element.innerHTML=""
         const mediumname = document.getElementsByClassName("result-mediumname")
         console.log(mediumname)
         const size = Object.keys(data).length;
         mediumname.innerHTML = ""
 
         mediumname.innerHTML = (String(data["mediumname"]))
-        $resultfrei.innerHTML = ""
-        $resultpauschal.innerHTML = ""
-        $resultfest.innerHTML = ""
+
 
 
         resultsdiv.classList.add("show");

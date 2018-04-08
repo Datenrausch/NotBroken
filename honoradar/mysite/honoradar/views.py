@@ -64,9 +64,9 @@ def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
             column2val = float(getattr(entry, str(column2)))
             if (column1val != 0) and (column2val != 0):
                 if operator == "/":
-                    productsum += column1val / column2val
+                    productsum += (column1val / column2val)
                 if operator == "*":
-                    productsum += column1val*column2val
+                    productsum += (column1val*column2val)
                 count += 1
             else:
                 result = {}
@@ -77,22 +77,23 @@ def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
             print(count)
             avgtwocolumns = productsum / count
             count = 0
-            sqdiff = 0
+            stdsumSQ = 0
             for entry in entries:
                 column1val = getattr(entry, str(column1))
                 column2val = getattr(entry, str(column2))
                 if operator == "/":
                     if (column1val != 0)and (column2val != 0):
-                        product = column1val / column2val
+                        stdsumSQ += math.pow(((column1val / column2val)-avgtwocolumns),2)
+                        count+=1
                     else:
                         product = 0
                 if operator == "*":
-                    product = column1val*column2val
-                diff = product - avgtwocolumns
-                sqdiff += math.pow(diff, 2)
-                count += 1
-            variance = sqdiff / count
+                    stdsumSQ += math.pow(((column1val*column2val)-avgtwocolumns),2)
+                    count+=1
+
+            variance = stdsumSQ / count
             std = round(math.sqrt(variance), 2)
+            print(std)
             result = {}
             avgtwocolumns = round(avgtwocolumns, 2)
             result["avg"] = avgtwocolumns

@@ -14,6 +14,7 @@ function gradientboxplot(responsejson, elementid) {
         bottom: 20,
         left: 30
     };
+
     barwidth = width / 25;
     elementid = "#" + elementid
     console.log(elementid)
