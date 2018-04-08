@@ -72,6 +72,21 @@
 	margin: 50px auto 30px auto;
 }
 
+.autoren-box:after {
+	color: #243040;
+	font-family: OpenSans-Italic;
+	font-size: 1.2rem;
+	position: absolute;
+	margin: calc(45px - 1.2rem) 10% auto 110px;
+	line-height: 1.5;
+}
+
+@media (max-width: 	450px)  {
+.autoren-box:after {
+	margin: 0px 10% auto 110px;
+}
+}
+
 .offset-autorenbox {
 	margin-left: 30%;
 }
@@ -155,6 +170,13 @@
 	font-family: InknutAntiqua-Bold !important;
 	color: #FF9F23;	
 	max-width: 800px;
+}
+
+.interviewfrage {
+	font-family: InknutAntiqua-Bold !important;
+	max-width: 800px;
+	margin: 20px 0px 20px 0px;
+	display:block;
 }
 
 /*Artikel-Parallax*/
