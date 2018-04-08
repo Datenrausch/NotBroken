@@ -303,7 +303,7 @@
 
 .easy-autocomplete-container {
     left: 0;
-    position: absolute;
+    position: absolute !important;
     width: 100%;
     z-index: 2
 }
@@ -361,7 +361,7 @@
 }
 
 .eac-description .eac-item span {
-    color: #aaa;
+    color: #fff;
     font-style: italic;
     font-size: 0.9em
 }
@@ -384,6 +384,3 @@
     right: -4px;
     top: -8px
 }
-
-
-/*# sourceMappingURL=easy-autocomplete.min.css.map */

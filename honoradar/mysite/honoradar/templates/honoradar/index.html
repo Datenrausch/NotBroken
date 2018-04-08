@@ -23,6 +23,7 @@
 
     <!-- Style -->
     <link rel="stylesheet" href="{% static 'honoradar/css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'honoradar/css/style-elements.css'%}">
     <link rel="stylesheet" href="{% static 'honoradar/css/font.css'%}">
     <link rel="stylesheet" href="{% static 'honoradar/navbar/css/reset.css'%}">
     <link rel="stylesheet" href="{% static 'honoradar/navbar/css/style.css'%}">
@@ -58,7 +59,7 @@
     <!-- Parallax -->
     <div class="panel">
         <h1 class="head-title">Was verdienen Journalisten?</h1>
-        <h2 class="head-subtitle-1">Die <span class="f-top"><span>:</span>F</span>-Datenbank gibt die Antwort: Hier spenden Journalisten Gehalts- und Lohndaten und erfahren, was ihre Kollegen verdienen.</h2>
+        <h2 class="head-subtitle-1">Die Antwort gibt's hier: Erfahre, was deine Kollegen verdienen – oder spende selber deine Honorar-Daten.</h2>
         <h2 class="head-subtitle-2">Bisher spendeten Journalisten 1.245 Daten über 134 Medien.</h2>
         <a href="#banderole" id="machmit" class="smooth clear-absolute"><h3 class="head-action">Mach mit!</h3></a>
         <div class="head-box-1"></div>
@@ -83,8 +84,8 @@
                     <ul class="cd-primary-nav">
                         <li><a href="index.html" class="selected">Honoradar</a></li>
                         <li><a href="data.html">Rankings</a></li>
-                        <li><a href="himmel-und-hoelle-preis.html">Himmel-Hölle-Preis</a></li>
-                        <li><a href="#0">Newsletter</a></li>
+                        <li><a href="methodologie">Wie funktioniert's?</a></li>
+                        <li><a href="#">Newsletter</a></li>
                         <li><a href="impressum.html">Impressum</a></li>
                     </ul>
                 </nav>
@@ -141,16 +142,17 @@
                     <div class="banner-left-3" id="banner-left-4">Vielen Dank!</div>
                     <div class="banner-left-shadow"></div>
                     <div id="banner-left-triangle" class="banner-left-shadow hide"></div>
+					<div class="break"></div>
 
                     <!-- Medium-Select -->
-                    <!-- Michel please style this -->
-
+					<div class="media-select-container">
                     <input name="MediumName" id="data_medium" class="media-select dropdown hide" list="medium" placeholder="Für welches Medium arbeitest du?" type="text" />
                     <datalist id="medium">
 	<!--[if lte IE 9]><select data-datalist="samples"><![endif]-->
 
     <!--[if lte IE 9]></select><![endif]-->
 	</datalist>
+	</div>
                     <!-- Support Safari? https://stackoverflow.com/questions/27494084/html5-datalist-tag-is-not-populating-in-safari?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa -->
 
                     <!-- Switch-Select -->
@@ -374,8 +376,10 @@
                 <form action="{% url 'honoradar:getdata' %}" method="get" data-url-get="{% url 'honoradar:getdata' %}" name-get="firstbox" id="get-form">
                     <div class="banner-right-1">Erfahre, was Medien zahlen!</div>
                     <div class="banner-right-shadow"></div>
+					<div class="break"></div>
 
                     <!-- Medium-Select -->
+					<div class="media-select-container">
                     <input name="mediumget" id="media-analyse" class="media-select alert" list="medium" placeholder="Welches Medium interessiert dich?" type="text" onclick="getfunction()" />
 
                     <datalist id="medium-analyse">
@@ -383,6 +387,7 @@
 
     <!--[if lte IE 9]></select><![endif]-->
     </datalist>
+	</div>
 
                     <!-- Switch-Select
     <div class="switch-field switch-field-text-1 tooltip">
@@ -403,12 +408,10 @@
             </div>
 
             <!-- Grafik-Box -->
-            <div class="result hide" id="result">
+            <div class="result show" id="result">
 
                 <!-- Mediumname -->
-                <div class="result-banner-left"></div>
-                <div class="result-banner-right"></div>
-                <div class="result-mediumname" id="result-mediumname">Nürnberger Nachrichten</div>
+                <div class="result-mediumname">Nürnberger Nachrichten</div>
 
                 <!-- Result Flexbox -->
                 <div class="result-grid">
@@ -416,17 +419,9 @@
                     <!-- Result Frei-Box -->
                     <div class="result-item result-item-thin" id="resultfrei">
 
-                        <div class="result-box-frei-titel">Freie Journalisten</div>
-                        <div class="happiness-result" id="">
-                            <input name="" id="result_athmosphaere-frei" class="range result_happiness-bar result_happiness-3" type="range" min="1" max="9" value="3" disabled/>
+                        <div class="result-box-frei-titel">Freiberufler</div>
+                        <div class="infografik">
                         </div>
-                        <div class="infografik" id="freigrafik1">
-                            <img src="https://datavizcatalogue.com/methods/images/anatomy/box_plot.png">
-                        </div>
-
-
-                        <!-- Unit-Select -->
-                        <p class="result_format-text">Welches Format interessiert dich?</p>
                         <div class="show" id="pre-data_format_text_audio_video">
                             <div id="data_format_text_audio_video" class="switch-field result_switch-field switch-field-text result_switch-field-text result_switch-field-text-5">
                                 <input type="radio" id="result_format_text" name="result_format" value="text" onclick="xxxfunction()" checked/>
@@ -437,16 +432,7 @@
                                 <label for="result_format_video">Video</label>
                             </div>
                         </div>
-                        <div class="infografik" id="freigrafikvideo">
-                            <img src="https://datavizcatalogue.com/methods/images/anatomy/box_plot.png">
-                        </div>
-                        <div class="infografik" id="freigrafikaudio">
-                            <img src="https://datavizcatalogue.com/methods/images/anatomy/box_plot.png">
-                        </div>
-                        <div class="infografik" id="freigrafikprint">
-                            <img src="https://datavizcatalogue.com/methods/images/anatomy/box_plot.png">
-                        </div>
-                        <div class="result-item-text" id="result-text-frei">Durchschnittliches Monatsgehalt: XXXX
+                        <div class="infografik">
                         </div>
                     </div>
 
@@ -455,11 +441,7 @@
                     <div class="result-item result-item-large" >
                         <div class="result-item-large-first" id="resultpauschal">
                             <div class="result-box-pauschal-titel">Pauschalisten</div>
-                            <div class="happiness-result" id="">
-                                <input name="" id="result_athmosphaere-pauschal" class="range result_happiness-bar result_happiness-5" type="range" min="1" max="9" value="5" disabled/>
-                            </div>
-                            <div class="infografik" id="pauschalistgrafik1">
-                                <img src="https://datavizcatalogue.com/methods/images/anatomy/box_plot.png">
+                            <div class="infografik">
                             </div>
                             <div class="result-item-text" id="result-text-pauschal">Durchschnittliches Monatsgehalt: XXXX
                             </div>
@@ -468,23 +450,36 @@
                         <!-- Result Fest-Box -->
                         <div class="result-item-large-second" id="resultfest">
                             <div class="result-box-inner result-box-fest-titel">Festangestellte</div>
-                            <div class="happiness-result" id="">
-                                <input name="" id="result_athmosphaere-fest" class="range result_happiness-bar result_happiness-8" type="range" min="1" max="9" value="8" disabled/>
-                            </div>
-                            <div class="infografik" id="festegrafik1">
-                                <img src="https://datavizcatalogue.com/methods/images/anatomy/box_plot.png">
+                            <div class="infografik">
                             </div>
                             <div class="result-item-text" id="result-text-fest">Durchschnittliches Monatsgehalt: XXXX
                             </div>
                         </div>
                     </div>
 
-                    <!-- Result "Daten & Fakten"-Box -->
+                    <!-- Result "Daten & Meinungen"-Box -->
 
                     <div class="result-item result-item-superlarge">
-                        <div class="result-box-fest-titel">Daten & Fakten</div>
+                        <div class="result-box-facts-titel">Daten & Meinungen</div>
                         <div class="fact-text">
-                            Anzahl der Quellen<br> Code of Fairness<br> Einteilung als was?<br> Comments
+						<div class="result-happiness-grid" >
+							<div class="happiness-result happiness-result-frei" id="">
+								<input name="" id="result_athmosphaere-frei" class="range result_happiness-bar result_happiness-3" type="range" min="1" max="9" value="3" disabled/>
+							</div>
+							<div class="happiness-result happiness-result-pauschal" id="">
+								<input name="" id="result_athmosphaere-pauschal" class="range result_happiness-bar result_happiness-5" type="range" min="1" max="9" value="5" disabled/>
+							</div>
+							<div class="happiness-result happiness-result-fest" id="">
+								<input name="" id="result_athmosphaere-fest" class="range result_happiness-bar result_happiness-8" type="range" min="1" max="9" value="8" disabled/>
+							</div>
+						</div>
+                            Anzahl der Quellen<br>
+							Code of Fairness<br>
+							Hat Mindestgrenze angegeben?
+
+
+						<div class="result-comments">wgdvdfv wefwefesf we fwef
+						</div>
 
                         </div>
                     </div>
@@ -547,13 +542,13 @@
             <!-- News -->
             <div class="nbox-2">
                 <a href="#">
-                    <div class="ntile-second news news_6"><span class="news-title">So verhandelst du dein Gehalt</span></div>
+                    <div class="ntile-second news news_6"><span class="news-title">Verhandeln in 10 Schritten</span></div>
                 </a>
                 <a href="#">
-                    <div class="ntile-second news news_7"><span class="news-title">Dein Kollege verdient mehr?</span></div>
+                    <div class="ntile-second news news_7"><span class="news-title">„Honorare zu verschweigen, schadet uns allen“</span></div>
                 </a>
-                <a href="https://www.youtube.com/watch?v=MiKw3uPGHB4" data-lity>
-                    <div class="ntile-second news news_8"><span class="news-title">Video: Tipps & Tricks</span></div>
+                <a href="https://www.youtube.com/watch?v=QyRBdONqZWk" data-lity>
+                    <div class="ntile-second news news_8"><span class="news-title">Video: Herr Frei will mehr</span></div>
                 </a>
                 <a href="#">
                     <div class="ntile-second news news_9"><span class="news-title">Koalitionsvertrag: VG-Wort-Ausschüttungen?</span>
@@ -562,38 +557,38 @@
             </div>
 
             <!-- Footer -->
-            <div class="footer">
-                <div class="footer-grid">
-                    <div class="footer-grid-first">
-                        <a href="../projekt">
-                            <p class="footer-item-first clear-footer">Über das Projekt</p>
-                        </a>
-                        <a href="../credits">
-                            <p class="footer-item clear-footer">Die Macher</p>
-                        </a>
-                        <a href="../rankings">
-                            <p class="footer-item clear-footer">Rankings & Reports</p>
-                        </a>
-                        <a href="../methodologie">
-                            <p class="footer-item clear-footer">Methodologie</p>
-                        </a>
-                    </div>
-                    <div class="footer-grid-second">
-                        <a href="../newsletter">
-                            <p class="footer-item-first clear-footer">Newsletter-Abo</p>
-                        </a>
-                        <a href="../datenschutz">
-                            <p class="footer-item clear-footer">Datenschutz</p>
-                        </a>
-                        <a href="../kontakt">
-                            <p class="footer-item clear-footer">Kontakt & Fragen</p>
-                        </a>
-                        <a href="../impressum">
-                            <p class="footer-item clear-footer">Impressum</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
+		<div class="footer">
+		<div class="footer-grid">
+			<div class="footer-grid-first">
+				<a href="../../../templates/honoradar/artikel/projekt.html">
+				<p class="footer-item-first footer-item clear-footer">Über das Projekt</p>
+				</a>
+				<a href="../../../templates/honoradar/artikel/credits.html">
+				<p class="footer-item clear-footer">Die Macher</p>
+				</a>
+				<a href="../../../templates/honoradar/artikel/rankings.html">
+				<p class="footer-item clear-footer">Rankings & Reports</p>
+				</a>
+				<a href="../../../templates/honoradar/artikel/methodologie.html">
+				<p class="footer-item clear-footer">Methodologie</p>
+				</a>
+			</div>
+			<div class="footer-grid-second">
+				<a href="../../../templates/honoradar/artikel/newsletter.html">
+				<p class="footer-item-first footer-item clear-footer">Newsletter</p>
+				</a>
+				<a href="../../../templates/honoradar/artikel/datenschutz.html">
+				<p class="footer-item clear-footer">Datenschutz</p>
+				</a>
+				<a href="../../../templates/honoradar/artikel/kontakt.html">
+				<p class="footer-item clear-footer">Kontakt & Fragen</p>
+				</a>
+				<a href="../../../templates/honoradar/artikel/impressum.html">
+				<p class="footer-item clear-footer">Impressum</p>
+				</a>
+			</div>
+		</div>
+		</div>
 
     </main>
 
@@ -609,7 +604,6 @@
     <script src="{% static 'honoradar/lity/dist/lity.js'%}"></script>
     <script src="{% static 'honoradar/js/jquery.js'%}"></script>
     <script src="{% static 'honoradar/js/javascript.js'%}"></script>
-    <script src="{% static 'honoradar/js/javascript-new.js'%}"></script>
     <script src="{% static 'honoradar/navbar/js/jquery-2.1.1.js'%}"></script>
     <script src="{% static 'honoradar/navbar/js/main.js'%}"></script>
     <script src="{% static 'honoradar/js/ajax-setup.js'%}"></script>
