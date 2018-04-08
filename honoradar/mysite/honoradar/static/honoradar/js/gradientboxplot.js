@@ -7,7 +7,7 @@ function gradientboxplot(responsejson, elementid) {
     console.log(document.getElementById(elementid))
     width = document.getElementById(elementid).offsetWidth;
 
-    height = document.getElementById(elementid).offsetHeight;
+    height = 400;
     const margin = {
         top: 50,
         right: 10,
@@ -18,6 +18,9 @@ function gradientboxplot(responsejson, elementid) {
     elementid = "#" + elementid
     console.log(elementid)
     console.log(responsejson);
+    console.log(width);
+    console.log(height);
+
 
     var svg = d3
         .select(elementid)

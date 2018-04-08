@@ -22,11 +22,11 @@ $(document).ready(function() {
     function handleFormSuccessGet(data, textStatus, jqXHR) {
         console.log(data)
         const resultsdiv = document.getElementById('result')
-        const $result = $("#result")
-        const $resultfrei = $("#resultfrei")
-        const $resultpauschal = $("#resultpauschal")
-        const $resultfest = $("#resultfest")
-        const mediumname = document.getElementById("result-mediumname")
+        const $result = $(".result")
+        const $resultfrei = $("#result-text-frei")
+        const $resultpauschal = $("#result-text-pauschal")
+        const $resultfest = $("#result-text-fest")
+        const mediumname = document.getElementsByClassName("result-mediumname")
         console.log(mediumname)
         const size = Object.keys(data).length;
         mediumname.innerHTML = ""
@@ -118,6 +118,8 @@ $(document).ready(function() {
                     $resultfrei.append('<div class="result-text">Und die Zufriedenheit liegt bei ' + String(data["MediumFreiHappiness"]["avg"]) + " plusminus " + String(data["MediumFreiHappiness"]["std"]) + '</div>');
                 };
             };
+            let elementid = "festgrafik1"
+
             if ((data["MediumFestSalaryPerHour"]) && (data["AllFestSalaryPerHour"])) {
                 if ((data["MediumFestSalaryPerHour"]["status"] == "Success") && (data["AllFestSalaryPerHour"]["status"] == "Success")) {
                     let d3festjson = [{
@@ -141,11 +143,19 @@ $(document).ready(function() {
                         charttitle: "Stundenlohn für Festangestellt in Euro"
 
                     }];
-                    elementid = "festegrafik1"
 
                     gradientboxplot(d3festjson, elementid)
+                }else{
+                  graphicdiv=(document.getElementById(elementid))
+                  graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
                 }
+            }else{
+              graphicdiv=(document.getElementById(elementid))
+              graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
+
             };
+             elementid = "pauschalgrafik1"
+
             if ((data["MediumPauschalSalaryPerHour"]) && (data["AllPauschalSalaryPerHour"])) {
                 if ((data["MediumPauschalSalaryPerHour"]["status"] == "Success") && (data["AllPauschalSalaryPerHour"]["status"] == "Success")) {
                     let d3festjson = [{
@@ -169,11 +179,19 @@ $(document).ready(function() {
                         charttitle: "Stundenlohn für Pauaschalisten in Euro"
 
                     }];
-                    elementid = "pauschalistgrafik1"
 
                     gradientboxplot(d3festjson, elementid)
-                }
-            };
+                  }else{
+                    graphicdiv=(document.getElementById(elementid))
+                    graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
+                  }
+              }else{
+                graphicdiv=(document.getElementById(elementid))
+                graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
+
+              };
+               elementid = "freigrafik1"
+
             if ((data["MediumFreiSalaryPerHour"]) && (data["AllFreiSalaryPerHour"])) {
                 if ((data["MediumFreiSalaryPerHour"]["status"] == "Success") && (data["AllFreiSalaryPerHour"]["status"] == "Success")) {
                     let d3festjson = [{
@@ -197,11 +215,19 @@ $(document).ready(function() {
                         charttitle: "Stundenlohn für Freie in Euro"
 
                     }];
-                    elementid = "freigrafik1"
 
                     gradientboxplot(d3festjson, elementid)
+                }else{
+                  graphicdiv=(document.getElementById(elementid))
+                  graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
                 }
-            };
+              }else{
+                graphicdiv=(document.getElementById(elementid))
+                graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
+
+              };
+               elementid = "freigrafikvideo"
+
             if ((data["MediumFreiVideoFeePerMin"]) && (data["AllFreiVideoFeePerMin"])) {
                 if ((data["MediumFreiVideoFeePerMin"]["status"] == "Success") && (data["AllFreiVideoFeePerMin"]["status"] == "Success")) {
                     let d3festjson = [{
@@ -225,11 +251,18 @@ $(document).ready(function() {
                         charttitle: "Honorar pro Videominute in Euro"
 
                     }];
-                    elementid = "freigrafikvideo"
 
                     gradientboxplot(d3festjson, elementid)
+                }else{
+                  graphicdiv=(document.getElementById(elementid))
+                  graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
                 }
-            };
+              }else{
+                graphicdiv=(document.getElementById(elementid))
+                graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
+              };
+               elementid = "freigrafikaudio"
+
             if ((data["MediumFreiAudioFeePerMin"]) && (data["AllFreiAudioFeePerMin"])) {
                 if ((data["MediumFreiAudioFeePerMin"]["status"] == "Success") && (data["AllFreiAudioFeePerMin"]["status"] == "Success")) {
                     let d3festjson = [{
@@ -253,11 +286,19 @@ $(document).ready(function() {
                         charttitle: "Honorar pro Audiominute in Euro"
 
                     }];
-                    elementid = "freigrafikaudio"
 
                     gradientboxplot(d3festjson, elementid)
+                }else{
+                  graphicdiv=(document.getElementById(elementid))
+                  graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
                 }
-            };
+              }else{
+                graphicdiv=(document.getElementById(elementid))
+                graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
+
+              };
+               elementid = "freigrafikprint"
+
             if ((data["MediumFreiArticleFeePerChar"]) && (data["AllFreiArticleFeePerChar"])) {
                 if ((data["MediumFreiArticleFeePerChar"]["status"] == "Success") && (data["AllFreiArticleFeePerChar"]["status"] == "Success")) {
                     let d3festjson = [{
@@ -281,11 +322,16 @@ $(document).ready(function() {
                         charttitle: "Honorar pro hundert Zeichen in Euro"
 
                     }];
-                    elementid = "freigrafikprint"
 
                     gradientboxplot(d3festjson, elementid)
+                }else{
+                  graphicdiv=(document.getElementById(elementid))
+                  graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
                 }
-            }
+              }else{
+                graphicdiv=(document.getElementById(elementid))
+                graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
+              };
         }
 
 
