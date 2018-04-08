@@ -322,7 +322,7 @@
                     <!-- Checkbox-Select -->
                     <span class="hide" id="pre-data_checkbox">
         <input name="AGB" class="checkbox" type="checkbox" id="data_checkbox" />
-        <label class="checkboxlabel alert-checkbox" for="data_checkbox"></label>
+        <label class="checkboxlabel " for="data_checkbox"></label>
         <span class="checkboxtext">Ich habe den <a href="#" target="_blank" class="clear-agb">Hinweis</a> gelesen.</span>
                     </span>
 
@@ -342,7 +342,7 @@
 
                     <!-- Submit -->
                     <div class="alert-denied alert-media-select hide" id="WARNING">
-                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                        <span class="closebtn" onclick="hidedenied()">&times;</span>
                         <strong>Achtung! </strong>Bitte fülle folgende Felder aus: Feld1, Feld2 und Feld2.
                     </div>
                     <input type="submit" class="submit-get hide" id="data_submit" value="Daten spenden" />
@@ -351,7 +351,7 @@
 
                 <!-- After-Submit Accpeted -->
                 <div class="alert alert-accepted alert-media-select show" id="ACCEPTED">
-                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> Wir haben deine Infos geprüft und in die Datenbank aufgenommen.
+                    <span class="closebtn" onclick="hideaccepted()">&times;</span> Wir haben deine Infos geprüft und in die Datenbank aufgenommen.
                 </div>
 
                 <!-- Newsletter-Anmeldung -->

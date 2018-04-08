@@ -769,5 +769,14 @@ $('.smooth').on('click', function(e){
   e.preventDefault();
 })
 
+function hidedenied() {
+	var element = document.getElementById("WARNING");
+    element.classList.add("hide");
+    element.classList.remove("show");
+};
 
-
+function hideaccepted() {
+	var element = document.getElementById("ACCEPTED");
+    element.classList.add("hide");
+    element.classList.remove("show");
+};
