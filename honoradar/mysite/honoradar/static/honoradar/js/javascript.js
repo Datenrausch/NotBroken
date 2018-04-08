@@ -775,3 +775,15 @@ function smoothfunction(){
     scrollTop:$(href).offset().top
   },'slow');
 }
+
+function hidedenied() {
+	var element = document.getElementById("WARNING");
+    element.classList.add("hide");
+    element.classList.remove("show");
+};
+
+function hideaccepted() {
+	var element = document.getElementById("ACCEPTED");
+    element.classList.add("hide");
+    element.classList.remove("show");
+};

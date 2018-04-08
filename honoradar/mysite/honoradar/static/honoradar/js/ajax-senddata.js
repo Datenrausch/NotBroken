@@ -23,6 +23,8 @@ $(document).ready(function() {
         console.log(data)
         const alertdiv = document.getElementById('WARNING')
 
+        alertdiv.classList.add("show");
+        alertdiv.classList.remove("hide");
         const size = Object.keys(data).length;
         if (size > 0) {
             alertdiv.innerHTML = ""
@@ -145,7 +147,7 @@ $(document).ready(function() {
                   if(element!=null){element.classList.add("hide");
                   element.classList.remove("show");}
 
-          
+
                   if(element!=null){element.classList.add("hide");
                   element.classList.remove("show");}
 
