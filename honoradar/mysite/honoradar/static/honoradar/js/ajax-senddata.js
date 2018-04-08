@@ -38,12 +38,58 @@ $(document).ready(function() {
                 alertdiv.classList.remove("hide");
                 keyname = String("message" + String(i));
                 if (i == 0) {
-                    $Warning.append('<span>' + String(data[keyname]) + '</span>');
-                } else {
-                    $Warning.append('<span>, ' + String(data[keyname]) + ' </span>');
+                                    $Warning.append('<span>' + String(data[keyname]) + '</span>');
+                                } else {
+                                    $Warning.append('<span>, ' + String(data[keyname]) + ' </span>');
+                                  };
+                if ((String(data[keyname]))=="Medienname"){
+                  document.getElementById('data_medium').classList.add("alert");
+                };
+                if ((String(data[keyname]))=="Arbeitsverhältnis"){
+                  document.getElementById('data_arbeitsverhaeltnis_frei').classList.add("alert-switch");
+                };
+                if ((String(data[keyname]))=="Arbeitszeit"){
+                  document.getElementById('pre-data_stunden_woche').classList.add("pre-alert-bar-hour-week");
+                  document.getElementById('data_stunden_woche').classList.add("alert-bar_stunden_woche")
+                };
+                if ((String(data[keyname]))=="gearbeiteten Tagen pro Monat"){
+                  document.getElementById('pre-data_tag_monat').classList.add("pre-alert-bar-day-month");
+                  document.getElementById('data_tag_monat').classList.add("alert-bar_tag_monat");
 
+                };
+                if ((String(data[keyname]))=="gearbeiteten Stunden pro Tag"){
+                  document.getElementById('data_stunden_tag').classList.add("alert-bar_stunde_tag");
+                };
+                if ((String(data[keyname]))=="Honorar"){
+                  document.getElementById('data_honorar').classList.add("alert");
+                };
+                if ((String(data[keyname]))=="Mediumsart"){
+                  document.getElementById('data_format_text_audio_video').classList.add("alert-switch");
+                };
+                if ((String(data[keyname]))=="Anzahl an Zeichen für den Artikel"){
+                  document.getElementById('pre-data_laenge_text').classList.add("pre-alert-bar-text");
+                  document.getElementById('data_laenge_text').classList.add("alert-bar_text");
+                };
+                if ((String(data[keyname]))=="Beitragsminuten für den Audiobeitrag"){
+                  document.getElementById('pre-data_laenge_audio').classList.add("pre-alert-bar-audio");
+                  document.getElementById('data_laenge_audio').classList.add("alert-bar_audio");
+                };
+                if ((String(data[keyname]))=="Beitragsminuten für den Videobeitrag"){
+                  document.getElementById('pre-data_laenge_video').classList.add("pre-alert-bar-video");
+                  document.getElementById('data_laenge_video').classList.add("alert-bar_video");
+                };
+
+                if ((String(data[keyname]))=="Zeitaufwand"){
+                  document.getElementById('pre-data_zeit').classList.add("pre-alert-bar-time");
+                  document.getElementById('pre-data_zeit').classList.add("alert-bar_time");
+                };
+                if ((String(data[keyname]))=="Zufriedenheit"){
+                  document.getElementById('data_athmosphaere').classList.add("alert-bar_happiness");
+                  document.getElementById('pre-data_athmosphaere').classList.add("pre-alert-bar-happiness");
                 }
-
+                if ((String(data[keyname]))=="AGB"){
+                  document.getElementById('data_checkbox').classList.add("alert-checkbox");
+                }
             }
         } else {
             alertdiv.innerHTML = ""
