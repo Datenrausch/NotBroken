@@ -9,9 +9,9 @@ function gradientboxplot(responsejson, elementid) {
 
     height = 400;
     const margin = {
-        top: 50,
+        top: 30,
         right: 10,
-        bottom: 20,
+        bottom: 30,
         left: 30
     };
 
@@ -46,6 +46,7 @@ function gradientboxplot(responsejson, elementid) {
         .attr("stroke", "white")
         .attr("fill", "white")
         .attr("font-size", "12")
+
         .style("text-anchor", "left")
         .text(responsejson[2].charttitle);
 
@@ -61,13 +62,14 @@ function gradientboxplot(responsejson, elementid) {
 
     function wrap(text, width) {
       console.log(width)
+
       text.each(function() {
         var text = d3.select(this),
             words = text.text().split(/\s+/).reverse(),
             word,
             line = [],
             lineNumber = 0,
-            lineHeight = 1.1, // ems
+            lineHeight = 1.9, // ems
             y = text.attr("y"),
             dy = parseFloat(text.attr("dy")),
             tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
@@ -248,13 +250,26 @@ function gradientboxplot(responsejson, elementid) {
         .call(xAxis)
         .selectAll(".tick text")
 
-      .call(wrap, (xscale.bandwidth()*2));
+          .style("stroke", "white")
+          .style("fill", "white")
+          .style('font-size', '1.2em')
+          .style('font-family', 'Open Sans')
+
+
+      .call(wrap, (xscale.bandwidth()));
 
     svg
         .append("g")
         .attr("class", "y_axis")
         .attr("transform", "translate(0, " + "0" + ")")
-        .call(yAxis);
+        .call(yAxis)
+        .selectAll(".tick text")
+
+        .style("stroke", "white")
+        .style("fill", "white")
+        .style('font-size', '1.2em')
+        .style('font-family', 'Open Sans')
+;
 
     svg
         .selectAll("line")
@@ -262,12 +277,7 @@ function gradientboxplot(responsejson, elementid) {
     svg
         .selectAll("path")
         .style("stroke", "white");
-    svg
-        .selectAll("text")
-        .style("stroke", "white")
-        .style("fill", "white")
-        .style('font-size', '1.2em')
-        .style('font-family', 'Open Sans');
+
 
         svg
             .selectAll(".title")

@@ -230,7 +230,7 @@ $(document).ready(function() {
                         mean: parseFloat(data["MediumFreiSalaryPerHour"]["avg"])
                     }, {
                         id: "AllFreiSalaryPerHour",
-                        category: "Ø \n alle \n Freiberufler",
+                        category: "Ø alle Freiberufler",
                         min: parseFloat(data["AllFreiSalaryPerHour"]["avg"]) - parseFloat(data["AllFreiSalaryPerHour"]["std"]),
                         max: parseFloat(data["AllFreiSalaryPerHour"]["avg"]) + parseFloat(data["AllFreiSalaryPerHour"]["std"]),
                         mean: parseFloat(data["AllFreiSalaryPerHour"]["avg"])

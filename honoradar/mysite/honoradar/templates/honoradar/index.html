@@ -138,15 +138,15 @@
                 <form action="{% url 'honoradar:senddata' %}" method="post" data-url="{% url 'honoradar:senddata' %}" name="firstbox" id="giv-form">
                     {% csrf_token %}
 
-                    <div class="banner-left-1 hide" id="banner-left-1">Erzähle, was du verdienst!</div>
-                    <div class="banner-left-3" id="banner-left-4">Vielen Dank!</div>
+                    <div class="banner-left-1 show" id="banner-left-1">Erzähle, was du verdienst!</div>
+                    <div class="banner-left-3 hide" id="banner-left-4">Vielen Dank!</div>
                     <div class="banner-left-shadow"></div>
                     <div id="banner-left-triangle" class="banner-left-shadow hide"></div>
 					<div class="break"></div>
 
                     <!-- Medium-Select -->
 					<div class="media-select-container">
-                    <input name="MediumName" id="data_medium" class="media-select dropdown hide" list="medium" placeholder="Für welches Medium arbeitest du?" type="text" />
+                    <input name="MediumName" id="data_medium" class="media-select dropdown" list="medium" placeholder="Für welches Medium arbeitest du?" type="text" />
                     <datalist id="medium">
 	<!--[if lte IE 9]><select data-datalist="samples"><![endif]-->
 
@@ -156,7 +156,7 @@
                     <!-- Support Safari? https://stackoverflow.com/questions/27494084/html5-datalist-tag-is-not-populating-in-safari?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa -->
 
                     <!-- Switch-Select -->
-                    <div class="switch-field switch-field-text switch-field-text-1 tooltip hide" id="data_arbeitsverhaeltnis">
+                    <div class="switch-field switch-field-text switch-field-text-1 tooltip show" id="data_arbeitsverhaeltnis">
                         <input name="FreeOrEmployed" type="radio" id="data_arbeitsverhaeltnis_frei" name="switch" value="frei" onclick="freifunction()" />
                         <label for="data_arbeitsverhaeltnis_frei">Frei<span id="question-3">?</span></label>
                         <input name="FreeOrEmployed" type="radio" id="data_arbeitsverhaeltnis_pauschal" name="switch" value="pauschal" onclick="pauschalfunction()" />
@@ -320,8 +320,8 @@
 
                     <!-- Checkbox-Select -->
                     <span class="hide" id="pre-data_checkbox">
-        <input name="AGB" class="checkbox" type="checkbox" />
-        <label class="checkboxlabel " id="data_checkbox" for="data_checkbox"></label>
+                      <input name="AGB" class="checkbox" type="checkbox" id="data_checkbox" />
+                      <label class="checkboxlabel alert-checkbox" for="data_checkbox"></label>
         <span class="checkboxtext">Ich habe den <a href="#" target="_blank" class="clear-agb">Hinweis</a> gelesen.</span>
                     </span>
 
@@ -340,7 +340,7 @@
 
 
                     <!-- Submit -->
-                    <div class="alert-denied alert-media-select show" id="WARNING">
+                    <div class="alert-denied alert-media-select hide" id="WARNING">
                         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
                         <strong>Achtung! </strong>Bitte fülle folgende Felder aus: Feld1, Feld2 und Feld2.
                     </div>
@@ -349,23 +349,23 @@
                 </form>
 
                 <!-- After-Submit Accpeted -->
-                <div class="alert alert-accepted alert-media-select show" id="ACCEPTED">
+                <div class="alert alert-accepted alert-media-select hide" id="ACCEPTED">
                     <span class="closebtn" onclick="hideaccepted()">&times;</span> Wir haben deine Infos geprüft und in die Datenbank aufgenommen.
                 </div>
 
                 <!-- Newsletter-Anmeldung -->
-                <p class="after-submit-text" id="after-submit-text-1">Einmal im Jahr werten wir alle Daten aus und veröffentlichen einen Gehaltsreport – inklusive der besten Arbeitgeber. Falls gewünscht, informieren wir dich via Newsletter.
+                <p class="after-submit-text hide" id="after-submit-text-1">Einmal im Jahr werten wir alle Daten aus und veröffentlichen einen Gehaltsreport – inklusive der besten Arbeitgeber. Falls gewünscht, informieren wir dich via Newsletter.
                 </p>
                 <a href="/newsletter">
-                    <input type="submit" class="submit" id="newsletter_submit" value="Newsletter-Abo" />
+                    <input type="submit" class="submit hide" id="newsletter_submit" value="Newsletter-Abo" />
                 </a>
 
                 <!-- Reload -->
-                <p class="after-submit-text" id="after-submit-text-2">Wenn du noch mehr Daten spenden möchtest, freuen wir uns natürlich riesig. Je mehr, desto besser für alle. Vielleicht wäre die <span class="f"><span>:</span>F</span>-Datenbank ja auch was für deine Kollegen.
+                <p class="after-submit-text hide" id="after-submit-text-2">Wenn du noch mehr Daten spenden möchtest, freuen wir uns natürlich riesig. Je mehr, desto besser für alle. Vielleicht wäre die <span class="f"><span>:</span>F</span>-Datenbank ja auch was für deine Kollegen.
                 </p>
 
                 <a href="#banderole" class="smooth">
-                    <input type="submit" linktdirection="#result" class="submit submit-reload" id="reload_submit" value="Erneut spenden" onmousedown="reload()" ontouchstart="reload()" />
+                    <input type="submit" linktdirection="#result" class="submit submit-reload hide" id="reload_submit" value="Erneut spenden" onmousedown="reload()" ontouchstart="reload()" />
                 </a>
 
             </div>
