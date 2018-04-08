@@ -47,7 +47,7 @@ $(document).ready(function() {
         element.innerHTML=""
         var element=document.getElementById("freigrafikprint")
         element.innerHTML=""
-        const mediumname = document.getElementsByClassName("result-mediumname")
+        const mediumname = document.getElementById("result-mediumname")
         console.log(mediumname)
         const size = Object.keys(data).length;
         mediumname.innerHTML = ""
@@ -60,7 +60,6 @@ $(document).ready(function() {
         resultsdiv.classList.remove("hide");
 
 
-        $result.append('<div class="result-text">' + String(data["mediumname"]) + '</div>');
 
         if (data["nodata"] != undefined) {
             $result.append('<div class="result-text">' + String(data["missingdata"]) + '</div>');
@@ -122,21 +121,32 @@ $(document).ready(function() {
             }
             if (data["MediumFestHappiness"]) {
                 if (data["MediumFestHappiness"]["status"] == "Success") {
-                    +
                     $resultfest.append('<div class="result-text">Und die Zufriedenheit liegt bei ' + String(data["MediumFestHappiness"]["avg"]) + " plusminus " + String(data["MediumFestHappiness"]["std"]) + '</div>');
+                    var element=document.getElementById("result_athmosphaere-fest")
+                    element.setAttribute("value",Math.round((data["MediumFestHappiness"]["avg"])))
+                    element.setAttribute("class","range result_happiness-bar result_happiness-"+String(Math.round((data["MediumFestHappiness"]["avg"]))))
                 };
             };
             if (data["MediumPauschalHappiness"]) {
                 if (data["MediumPauschalHappiness"]["status"] == "Success") {
                     $resultpauschal.append('<div class="result-text">Und die Zufriedenheit liegt bei ' + String(data["MediumPauschalHappiness"]["avg"]) + " plusminus " + String(data["MediumPauschalHappiness"]["std"]) + '</div>');
+                    var element=document.getElementById("result_athmosphaere-pauschal")
+                    element.setAttribute("value",Math.round((data["MediumPauschalHappiness"]["avg"])))
+                    element.setAttribute("class","range result_happiness-bar result_happiness-"+String(Math.round((data["MediumPauschalHappiness"]["avg"]))))
+
                 };
             };
 
             if (data["MediumFreiHappiness"]) {
                 if (data["MediumFreiHappiness"]["status"] == "Success") {
                     $resultfrei.append('<div class="result-text">Und die Zufriedenheit liegt bei ' + String(data["MediumFreiHappiness"]["avg"]) + " plusminus " + String(data["MediumFreiHappiness"]["std"]) + '</div>');
+                    var element=document.getElementById("result_athmosphaere-frei")
+                    element.setAttribute("value",Math.round((data["MediumFreiHappiness"]["avg"])))
+                    element.setAttribute("class","range result_happiness-bar result_happiness-"+String(Math.round((data["MediumFreiHappiness"]["avg"]))))
+
                 };
             };
+
             let elementid = "festgrafik1"
 
             if ((data["MediumFestSalaryPerHour"]) && (data["AllFestSalaryPerHour"])) {
