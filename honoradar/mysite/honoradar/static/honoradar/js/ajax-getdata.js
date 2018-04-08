@@ -146,12 +146,12 @@ $(document).ready(function() {
 
                     gradientboxplot(d3festjson, elementid)
                 }else{
-                  graphicdiv=(document.getElementById(elementid))
-                  graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
+                  $graphicdiv = $("#"+elementid)
+                  $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
                 }
             }else{
-              graphicdiv=(document.getElementById(elementid))
-              graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
+              $graphicdiv = $("#"+elementid)
+              $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
 
             };
              elementid = "pauschalgrafik1"
@@ -182,14 +182,13 @@ $(document).ready(function() {
 
                     gradientboxplot(d3festjson, elementid)
                   }else{
-                    graphicdiv=(document.getElementById(elementid))
-                    graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
+                    $graphicdiv = $("#"+elementid)
+                    $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
                   }
               }else{
-                graphicdiv=(document.getElementById(elementid))
-                graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
-
-              };
+                $graphicdiv = $("#"+elementid)
+                $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
+                };
                elementid = "freigrafik1"
 
             if ((data["MediumFreiSalaryPerHour"]) && (data["AllFreiSalaryPerHour"])) {
@@ -218,13 +217,12 @@ $(document).ready(function() {
 
                     gradientboxplot(d3festjson, elementid)
                 }else{
-                  graphicdiv=(document.getElementById(elementid))
-                  graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
+                  $graphicdiv = $("#"+elementid)
+                  $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
                 }
               }else{
-                graphicdiv=(document.getElementById(elementid))
-                graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
-
+                $graphicdiv = $("#"+elementid)
+                $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
               };
                elementid = "freigrafikvideo"
 
@@ -254,12 +252,12 @@ $(document).ready(function() {
 
                     gradientboxplot(d3festjson, elementid)
                 }else{
-                  graphicdiv=(document.getElementById(elementid))
-                  graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
+                  $graphicdiv = $("#"+elementid)
+                  $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
                 }
               }else{
-                graphicdiv=(document.getElementById(elementid))
-                graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
+                $graphicdiv = $("#"+elementid)
+                $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
               };
                elementid = "freigrafikaudio"
 
@@ -289,13 +287,12 @@ $(document).ready(function() {
 
                     gradientboxplot(d3festjson, elementid)
                 }else{
-                  graphicdiv=(document.getElementById(elementid))
-                  graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
+                  $graphicdiv = $("#"+elementid)
+                  $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
                 }
               }else{
-                graphicdiv=(document.getElementById(elementid))
-                graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
-
+                $graphicdiv = $("#"+elementid)
+                $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
               };
                elementid = "freigrafikprint"
 
@@ -325,12 +322,12 @@ $(document).ready(function() {
 
                     gradientboxplot(d3festjson, elementid)
                 }else{
-                  graphicdiv=(document.getElementById(elementid))
-                  graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
+                  $graphicdiv = $("#"+elementid)
+                  $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
                 }
               }else{
-                graphicdiv=(document.getElementById(elementid))
-                graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
+                $graphicdiv = $("#"+elementid)
+                $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
               };
         }
 
