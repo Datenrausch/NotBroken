@@ -764,7 +764,7 @@ function reload() {
 $('.smooth').on('click', function(e){
 
 })
-f
+
 
 function hidedenied() {
 	var element = document.getElementById("WARNING");
@@ -778,7 +778,7 @@ function hideaccepted() {
     element.classList.remove("show");
 };
 
-unction smoothfunction(){
+function smoothfunction(){
   console.log("this is smooth")
   var button = document.getElementById("reload_submit");
   console.log(button)
@@ -789,16 +789,11 @@ unction smoothfunction(){
     scrollTop:$(href).offset().top
   },'slow');
 }
-function machmitsmoothfunction(){
-  console.log("this is smooth")
-  var linkel = document.getElementById("machmit");
-  console.log(linkel)
 
-  var href = $(linkel).attr('href');
-  console.log(href)
+$('.smooth').on('click', function(e){
+  var href = $(this).attr('href');
   $('html, body').animate({
     scrollTop:$(href).offset().top
   },'slow');
-  linkel.preventDefault();
-
-}
+  e.preventDefault();
+})
