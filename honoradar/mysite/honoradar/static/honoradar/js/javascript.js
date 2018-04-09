@@ -764,17 +764,7 @@ function reload() {
 $('.smooth').on('click', function(e){
 
 })
-function smoothfunction(){
-  console.log("this is smooth")
-  var button = document.getElementById("reload_submit");
-  console.log(button)
-
-  var href = $(button).attr('linktdirection');
-  console.log(href)
-  $('html, body').animate({
-    scrollTop:$(href).offset().top
-  },'slow');
-};
+f
 
 function hidedenied() {
 	var element = document.getElementById("WARNING");
@@ -788,44 +778,27 @@ function hideaccepted() {
     element.classList.remove("show");
 };
 
-function textamountloan() {
-	var element = document.getElementById("freigrafikprint");
-    element.classList.add("show");
-    element.classList.remove("hide");
-	
-	var element = document.getElementById("freigrafikaudio");
-    element.classList.add("hide");
-    element.classList.remove("show");
-	
-	var element = document.getElementById("freigrafikvideo");
-    element.classList.add("hide");
-    element.classList.remove("show");
-};
+unction smoothfunction(){
+  console.log("this is smooth")
+  var button = document.getElementById("reload_submit");
+  console.log(button)
 
-function audioamountloan() {
-	var element = document.getElementById("freigrafikprint");
-    element.classList.add("hide");
-    element.classList.remove("show");
-	
-	var element = document.getElementById("freigrafikaudio");
-    element.classList.add("show");
-    element.classList.remove("hide");
-	
-	var element = document.getElementById("freigrafikvideo");
-    element.classList.add("hide");
-    element.classList.remove("show");
-};
+  var href = $(button).attr('linktdirection');
+  console.log(href)
+  $('html, body').animate({
+    scrollTop:$(href).offset().top
+  },'slow');
+}
+function machmitsmoothfunction(){
+  console.log("this is smooth")
+  var linkel = document.getElementById("machmit");
+  console.log(linkel)
 
-function videoamountloan() {
-	var element = document.getElementById("freigrafikprint");
-    element.classList.add("hide");
-    element.classList.remove("show");
-	
-	var element = document.getElementById("freigrafikaudio");
-    element.classList.add("hide");
-    element.classList.remove("show");
-	
-	var element = document.getElementById("freigrafikvideo");
-    element.classList.add("show");
-    element.classList.remove("hide");
-};
+  var href = $(linkel).attr('href');
+  console.log(href)
+  $('html, body').animate({
+    scrollTop:$(href).offset().top
+  },'slow');
+  linkel.preventDefault();
+
+}
