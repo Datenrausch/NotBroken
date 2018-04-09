@@ -42,7 +42,7 @@ $(document).ready(function() {
                                 } else {
                                     $Warning.append('<span>, ' + String(data[keyname]) + ' </span>');
                                   };
-                if ((String(data[keyname]))=="Medienname"){
+                if ((String(data[keyname]))=="Mediumname"){
                   document.getElementById('data_medium').classList.add("alert");
                 };
                 if ((String(data[keyname]))=="Arbeitsverhältnis"){
@@ -165,6 +165,14 @@ $(document).ready(function() {
 
 
                   var element = document.getElementById("banner-left-2");
+                  if(element!=null){element.classList.add("hide");
+                  element.classList.remove("show");}
+
+                  var element = document.getElementById("banner-left-shadow-2");
+                  if(element!=null){element.classList.add("hide");
+                  element.classList.remove("show");}
+
+                  var element = document.getElementById("banner-left-triangle2");
                   if(element!=null){element.classList.add("hide");
                   element.classList.remove("show");}
 

@@ -205,7 +205,7 @@ $(document).ready(function() {
                         min: 25,
                         max: 25,
                         mean: 25,
-                        charttitle: "Stundenlohn für Pauaschalisten in Euro"
+                        charttitle: "Stundenlohn für Pauschalisten in Euro"
 
                     }];
 
