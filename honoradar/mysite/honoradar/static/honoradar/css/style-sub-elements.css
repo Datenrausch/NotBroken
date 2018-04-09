@@ -35,18 +35,14 @@
 
 /*Parallax-Bilder*/
 
-.parallax-name {
-	background-image: url(../image/carola-dorner.jpg);
+.parallax-box {
+  background-image: url(../image/artikelbild-1.jpg);
 }
 
 /*Infografik-Bilder*/
 
-.artikelbild-carola {
-	background-image: url(../image/carola-dorner.jpg);
-}
-
-.artikelbild-carola:after {
-	content: 'Carola Dorner';
+.infografik-1 {
+  background-image: url(../image/infografik-1.jpg);
 }
 
 /*News*/
@@ -80,12 +76,13 @@
 
 .news_6 {
 	background-image: url(../image/news_6.jpg);
-	padding: calc(120px) 0px 0px calc(50% - 150px);
+	padding: 175px 0px 0px calc(50% - 150px);
 }
 
 .news_7 {
 	background-image: url(../image/news_7.jpg);
-	padding: 160px 30px 0px calc(4%);
+	padding: 150px 50px 0px calc(4%);
+	text-align: right;
 }
 
 .news_8 {
@@ -95,5 +92,5 @@
 
 .news_9 {
 	background-image: url(../image/news_9.jpg);
-	padding: 50px 50px 0px calc(4%);
+	padding: 20px 50px 0px calc(4%);
 }
