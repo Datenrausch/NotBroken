@@ -1,19 +1,25 @@
-const margin = {
-  top: 100,
-  right: 10,
-  bottom: 10,
-  left: 100
-};
-let width = 1000 / 2;
-let height = 500;
-
-barwidth = width / 25;
 
 
 
 
 
-function gradientboxplot(responsejson) {
+function gradientboxplot(responsejson, elementid) {
+
+  var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+  var width = document.getElementById(elementid).offsetWidth;
+
+  var height = document.getElementById(elementid).offsetHeight;
+
+  const margin = {
+    top: 100,
+    right: 10,
+    bottom: 10,
+    left: 100
+  };
+  barwidth = width / 25;
+
+
   console.log(margin);
   console.log(responsejson);
   var svg = d3
@@ -190,7 +196,7 @@ function gradientboxplot(responsejson) {
     })
     .attr("opacity", 0.9)
     .attr("r", width / 100)
-    .attr("stroke", "grey");
+    .attr("stroke", "black");
 
   svg
     .append("g")
@@ -229,4 +235,5 @@ let responsejson = [
     mean: 12
   }
 ];
-gradientboxplot(responsejson);
+elementid="#graph"
+gradientboxplot(responsejson, elementid);

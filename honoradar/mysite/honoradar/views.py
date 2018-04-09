@@ -20,6 +20,7 @@ def StdAvgFunction(entries, column):
     count = (count[columncount])
     if count > 1:
         avg = entries.aggregate(Avg(column))
+        print(avg)
         columnavg = str(column) + "__avg"
         avg = (avg[columnavg])
         count = 0
@@ -35,6 +36,8 @@ def StdAvgFunction(entries, column):
         result["avg"] = avg
         result["std"] = std
         result["status"] = "Success"
+        result["id"] = str(column)
+
         if (float(result["avg"]) == 0) and (float(result["std"]) == 0):
             result["status"] = "Failed"
     else:
@@ -43,6 +46,7 @@ def StdAvgFunction(entries, column):
         print("check")
     return(result)
 
+            #MediumFreiArticleFeePerChar = StdAvgTwoColumnsFunction(MediumFrei, 'FeeFree', 'CharPerArticleFree',"/")
 
 def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
     count1 = entries.aggregate(Count(column1))
@@ -60,30 +64,36 @@ def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
             column2val = float(getattr(entry, str(column2)))
             if (column1val != 0) and (column2val != 0):
                 if operator == "/":
-                    productsum += column1val / column2val
+                    productsum += (column1val / column2val)
                 if operator == "*":
-                    productsum += column1val*column2val
+                    productsum += (column1val*column2val)
                 count += 1
             else:
                 result = {}
                 result["status"] = "Failed"
 
         if count !=0:
+            print(productsum)
+            print(count)
             avgtwocolumns = productsum / count
             count = 0
-            sqdiff = 0
+            stdsumSQ = 0
             for entry in entries:
                 column1val = getattr(entry, str(column1))
                 column2val = getattr(entry, str(column2))
                 if operator == "/":
-                    product = column1val / column2val
+                    if (column1val != 0)and (column2val != 0):
+                        stdsumSQ += math.pow(((column1val / column2val)-avgtwocolumns),2)
+                        count+=1
+                    else:
+                        product = 0
                 if operator == "*":
-                    product = column1val*column2val
-                diff = product - avgtwocolumns
-                sqdiff += math.pow(diff, 2)
-                count += 1
-            variance = sqdiff / count
+                    stdsumSQ += math.pow(((column1val*column2val)-avgtwocolumns),2)
+                    count+=1
+
+            variance = stdsumSQ / count
             std = round(math.sqrt(variance), 2)
+            print(std)
             result = {}
             avgtwocolumns = round(avgtwocolumns, 2)
             result["avg"] = avgtwocolumns
@@ -126,6 +136,8 @@ def senddata(request):
             FreeOrEmployed = (request.POST.get('FreeOrEmployed'))
             Comment = (request.POST.get('Comment'))
             AGB = (request.POST.get('AGB'))
+            Happiness = (request.POST.get('Happiness'))
+            print(Happiness)
             print(request.POST)
 
             # if the mediumname or the AGB is not given, we set the sanitycheck to 1
@@ -143,6 +155,13 @@ def senddata(request):
                 print("No AGB!!")
                 sanitycheck = 1
                 messages.info(request, 'AGB')
+
+            if float(Happiness) != 1:
+                pass
+            else:
+                sanitycheck = 1
+                messages.info(request, 'Arbeitsatmosphäre')
+
 
             # CHECKING WHETHER THERE ARE ALREADY ENTIRES WITH THIS MEDIUM
             try:
@@ -286,21 +305,21 @@ def senddata(request):
                             pass
                         else:
                             sanitycheck = 1
-                            messages.info(request, 'Beitragsminuten')
+                            messages.info(request, 'Beitragsminuten für den Videobeitrag')
 
                     if VideoAudioTextFree == "audio":
                         if float(MinPerAudioFree) != 0:
                             pass
                         else:
                             sanitycheck = 1
-                            messages.info(request, 'Beitragsminuten')
+                            messages.info(request, 'Beitragsminuten für den Audiobeitrag')
 
                     if VideoAudioTextFree == "text":
                         if float(CharPerArticleFree) != 0:
                             pass
                         else:
                             sanitycheck = 1
-                            messages.info(request, 'Anzahl an Zeichen')
+                            messages.info(request, 'Anzahl an Zeichen für den Artikel')
                     SalaryPerHour=0
                     SalaryPerMonth=0
                     if(sanitycheck == 0):
