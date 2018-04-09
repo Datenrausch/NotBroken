@@ -774,7 +774,7 @@ function smoothfunction(){
   $('html, body').animate({
     scrollTop:$(href).offset().top
   },'slow');
-}
+};
 
 function hidedenied() {
 	var element = document.getElementById("WARNING");
@@ -786,4 +786,46 @@ function hideaccepted() {
 	var element = document.getElementById("ACCEPTED");
     element.classList.add("hide");
     element.classList.remove("show");
+};
+
+function textamountloan() {
+	var element = document.getElementById("freigrafikprint");
+    element.classList.add("show");
+    element.classList.remove("hide");
+	
+	var element = document.getElementById("freigrafikaudio");
+    element.classList.add("hide");
+    element.classList.remove("show");
+	
+	var element = document.getElementById("freigrafikvideo");
+    element.classList.add("hide");
+    element.classList.remove("show");
+};
+
+function audioamountloan() {
+	var element = document.getElementById("freigrafikprint");
+    element.classList.add("hide");
+    element.classList.remove("show");
+	
+	var element = document.getElementById("freigrafikaudio");
+    element.classList.add("show");
+    element.classList.remove("hide");
+	
+	var element = document.getElementById("freigrafikvideo");
+    element.classList.add("hide");
+    element.classList.remove("show");
+};
+
+function videoamountloan() {
+	var element = document.getElementById("freigrafikprint");
+    element.classList.add("hide");
+    element.classList.remove("show");
+	
+	var element = document.getElementById("freigrafikaudio");
+    element.classList.add("hide");
+    element.classList.remove("show");
+	
+	var element = document.getElementById("freigrafikvideo");
+    element.classList.add("show");
+    element.classList.remove("hide");
 };
