@@ -61,11 +61,10 @@
         <h1 class="head-title">Was verdienen Journalisten?</h1>
         <h2 class="head-subtitle-1">Die Antwort gibt's hier: Erfahre, was deine Kollegen verdienen – oder spende selber deine Honorar-Daten.</h2>
         <h2 class="head-subtitle-2">Bisher spendeten Journalisten 1.245 Daten über 134 Medien.</h2>
-        <a href="#banderole" id="machmit" class="smooth clear-absolute"><h3 class="head-action">Mach mit!</h3></a>
+        <a href="#banderole" id="machmit" class="smooth clear-absolute" ><h3 class="head-action">Mach mit!</h3></a>
         <div class="head-box-1"></div>
         <div class="head-box-2"></div>
         <div class="head-box-0"></div>
-
     </div>
 
     <!-- Navbar -->
@@ -82,11 +81,11 @@
                 <h2 class="navtitle1">Navigation</h2>
                 <nav>
                     <ul class="cd-primary-nav">
-                        <li><a href="index.html" class="selected">Honoradar</a></li>
-                        <li><a href="data.html">Rankings</a></li>
-                        <li><a href="methodologie">Wie funktioniert's?</a></li>
-                        <li><a href="#">Newsletter</a></li>
-                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="{% static "../../../"%}" class="selected">Honoradar</a></li>
+                        <li><a href="{% static "/honoradar/artikel/rankings.html"%}">Rankings</a></li>
+                        <li><a href="{% static "/honoradar/artikel/methodologie.html"%}">Wie funktioniert's?</a></li>
+                        <li><a href="{% static "/honoradar/artikel/newsletter.html"%}">Newsletter</a></li>
+                        <li><a href="{% static "/honoradar/artikel/impressum.html"%}">Impressum</a></li>
                     </ul>
                 </nav>
             </div>
@@ -279,7 +278,7 @@
                     <div class="break"></div>
                     <div class="banner-left-2 zbanner-left hide" id="banner-left-2">Deine Arbeitssituation:</div>
                     <div class="banner-left-shadow hide" id="banner-left-shadow-2"></div>
-                    <div class="banner-left-shadow hide" id="banner-left-triangle2" ></div>
+                    <div id="banner-left-triangle" class="banner-left-shadow hide"></div>
 
                     <!-- Position-Select -->
                     <input name="JobPosition" id="data_position" class="position-select hide" list="position" placeholder="Als was arbeitest du?" type="text" onclick="alertoffdataposition()" />
@@ -380,7 +379,7 @@
 
                     <!-- Medium-Select -->
 					<div class="media-select-container">
-                    <input name="mediumget" id="media-analyse" class="media-select alert" list="medium" placeholder="Welches Medium interessiert dich?" type="text" onclick="getfunction()" />
+                    <input name="mediumget" id="media-analyse" class="media-select" list="medium" placeholder="Welches Medium interessiert dich?" type="text" onclick="getfunction()" />
 
                     <datalist id="medium-analyse">
 	<!--[if lte IE 9]><select data-datalist="samples"><![endif]-->
@@ -403,7 +402,7 @@
             </div>
 
             <!-- Grafik-Box -->
-            <div class="result show" id="result">
+            <div class="result hide" id="result">
 
                 <!-- Mediumname -->
                 <div class="result-mediumname" id="result-mediumname">Nürnberger Nachrichten</div>
@@ -421,19 +420,19 @@
                         </div>
                         <div class="show" id="pre-data_format_text_audio_video">
                             <div id="data_format_text_audio_video" class="switch-field result_switch-field switch-field-text result_switch-field-text result_switch-field-text-5">
-                                <input type="radio" id="result_format_text" name="result_format" value="text" onclick="xxxfunction()" checked/>
+                                <input type="radio" id="result_format_text" name="result_format" value="text" onclick="textamountloan()" checked/>
                                 <label for="result_format_text">Text</label>
-                                <input type="radio" id="result_format_audio" name="result_format" value="audio" onclick="xxxfunction()" />
+                                <input type="radio" id="result_format_audio" name="result_format" value="audio" onclick="audioamountloan()" />
                                 <label for="result_format_audio">Audio</label>
-                                <input type="radio" id="result_format_video" name="result_format" value="video" onclick="xxxfunction()" />
+                                <input type="radio" id="result_format_video" name="result_format" value="video" onclick="videoamountloan()" />
                                 <label for="result_format_video">Video</label>
                             </div>
                         </div>
-                        <div class="infografik" id="freigrafikprint" >
+                        <div class="infografik show" id="freigrafikprint">
                         </div>
-                        <div class="infografik" id="freigrafikaudio" >
+                        <div class="infografik hide" id="freigrafikaudio">
                         </div>
-                        <div class="infografik" id="freigrafikvideo" >
+                        <div class="infografik hide" id="freigrafikvideo">
                         </div>
                     </div>
 
@@ -543,7 +542,7 @@
                     <div class="ntile-second news news_6"><span class="news-title">Verhandeln in 10 Schritten</span></div>
                 </a>
                 <a href="{% static "/honoradar/artikel/interview-carola-dorner.html"%}">
-                    <div class="ntile-second news news_7"><span class="news-title">„Honorare zu verschweigen, schadet uns allen“</span></div>
+                    <div class="ntile-second news news_7"><span class="news-title">„Honorare zu verschweigen schadet uns allen“</span></div>
                 </a>
                 <a href="https://www.youtube.com/watch?v=QyRBdONqZWk" data-lity>
                     <div class="ntile-second news news_8"><span class="news-title">Video: Herr Frei will mehr</span></div>

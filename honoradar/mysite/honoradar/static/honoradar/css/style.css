@@ -4078,11 +4078,7 @@ input[type=range].alert-bar_video:-moz-focusring {
 	background-color: #FF9F23;
 	width: 360px;
 	text-align: center;
-<<<<<<< HEAD
-	margin: 10px calc(50% - (360px / 2)) 20px calc(50% - (360px / 2));
-=======
 	margin: 0px calc(50% - (360px / 2)) 30px calc(50% - (360px / 2));
->>>>>>> haluka
 }
 
 @media (max-width: 650px)	{
@@ -4714,6 +4710,10 @@ input[type=range].result_happiness-9::-ms-thumb {
 
 .show {
 	display: block;
+}
+
+.show.infografik{
+	display: inline-block;
 }
 
 /*Bedingung Get*/
