@@ -275,7 +275,7 @@ $(document).ready(function() {
                         min: 25,
                         max: 25,
                         mean: 25,
-                        charttitle: "Honorar pro Videominute in Euro"
+                        charttitle: "Honorar pro Videominute (€)"
 
                     }];
 
@@ -310,7 +310,7 @@ $(document).ready(function() {
                         min: 25,
                         max: 25,
                         mean: 25,
-                        charttitle: "Honorar pro Audiominute in Euro"
+                        charttitle: "Honorar pro Audiominute (€)"
 
                     }];
 
@@ -345,7 +345,7 @@ $(document).ready(function() {
                         min: 10,
                         max: 10,
                         mean: 100,
-                        charttitle: "Honorar pro hundert Zeichen in Euro"
+                        charttitle: "Honorar pro hundert Zeichen (€)"
 
                     }];
 
