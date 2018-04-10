@@ -1,13 +1,21 @@
 function gradientboxplot(responsejson, elementid) {
+  var element = document.getElementById(elementid);
+    element.classList.add("show");
+    element.classList.remove("hide");
 
     let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     let height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
     console.log(elementid)
     elementstr = "'" + elementid + "'"
     console.log(document.getElementById(elementid))
     width = document.getElementById(elementid).offsetWidth;
 
     height = 400;
+    
+    element.classList.add("hide");
+    element.classList.remove("show");
+
     const margin = {
         top: 30,
         right: 10,

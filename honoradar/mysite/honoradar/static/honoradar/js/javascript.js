@@ -778,6 +778,7 @@ function hideaccepted() {
     element.classList.remove("show");
 };
 
+
 function smoothfunction(){
   console.log("this is smooth")
   var button = document.getElementById("reload_submit");
@@ -789,9 +790,60 @@ function smoothfunction(){
     scrollTop:$(href).offset().top
   },'slow');
 }
+function textamountloan() {
+	var element = document.getElementById("freigrafikprint");
+    element.classList.add("show");
+    element.classList.remove("hide");
 
-$('.smooth').on('click', function(e){
-  e.preventDefault();
+	var element = document.getElementById("freigrafikaudio");
+    element.classList.add("hide");
+    element.classList.remove("show");
+
+	var element = document.getElementById("freigrafikvideo");
+    element.classList.add("hide");
+    element.classList.remove("show");
+};
+
+function audioamountloan() {
+	var element = document.getElementById("freigrafikprint");
+    element.classList.add("hide");
+    element.classList.remove("show");
+
+	var element = document.getElementById("freigrafikaudio");
+    element.classList.add("show");
+    element.classList.remove("hide");
+
+	var element = document.getElementById("freigrafikvideo");
+    element.classList.add("hide");
+    element.classList.remove("show");
+};
+
+function videoamountloan() {
+	var element = document.getElementById("freigrafikprint");
+    element.classList.add("hide");
+    element.classList.remove("show");
+
+	var element = document.getElementById("freigrafikaudio");
+    element.classList.add("hide");
+    element.classList.remove("show");
+
+	var element = document.getElementById("freigrafikvideo");
+    element.classList.add("show");
+    element.classList.remove("hide");
+};
+function smoothfunction(){
+  console.log("this is smooth")
+  var button = document.getElementById("reload_submit");
+  console.log(button)
+
+  var href = $(button).attr('linktdirection');
+  console.log(href)
+  $('html, body').animate({
+    scrollTop:$(href).offset().top
+  },'slow');
+};
+$('#machmit').on('click', function(event){
+  event.preventDefault();
 
   var href = $(this).attr('href');
   $('html, body').animate({
