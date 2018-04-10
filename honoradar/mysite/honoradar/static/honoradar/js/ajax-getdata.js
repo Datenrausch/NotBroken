@@ -353,6 +353,7 @@ $(document).ready(function() {
                 }else{
                   $graphicdiv = $("#"+elementid)
                   $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
+
                 }
               }else{
                 $graphicdiv = $("#"+elementid)
@@ -360,7 +361,9 @@ $(document).ready(function() {
               };
         }
 
-
+        var element = document.getElementById("freigrafikprint");
+          element.classList.add("show");
+          element.classList.remove("hide");
 
 
         console.log(textStatus)
