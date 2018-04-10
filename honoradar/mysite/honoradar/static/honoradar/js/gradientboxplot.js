@@ -154,7 +154,7 @@ function gradientboxplot(responsejson, elementid) {
 
     yscale = d3
         .scaleLinear()
-        .domain([0, maxY])
+        .domain([0, maxY*1.1])
         .range([height, 0 + margin.top]);
 
 
