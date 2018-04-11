@@ -73,11 +73,38 @@ $(document).ready(function() {
           var element=document.getElementById("NoDataAtAllMessage");
           if (element!=undefined){element.innerHTML=""
           console.log(element)}
-          
+
           var element=document.getElementsByClassName("result-grid")[0];
           console.log(element)
           element.classList.add("show");
           element.classList.remove("hide");
+
+          if (data["MediumFestHappiness"]) {
+              if (data["MediumFestHappiness"]["status"] == "Success") {
+                  var element=document.getElementById("result_athmosphaere-fest")
+                  element.setAttribute("value",Math.round((data["MediumFestHappiness"]["avg"])))
+                  element.setAttribute("class","range result_happiness-bar result_happiness-"+String(Math.round((data["MediumFestHappiness"]["avg"]))))
+              };
+          };
+          if (data["MediumPauschalHappiness"]) {
+              if (data["MediumPauschalHappiness"]["status"] == "Success") {
+                  var element=document.getElementById("result_athmosphaere-pauschal")
+                  element.setAttribute("value",Math.round((data["MediumPauschalHappiness"]["avg"])))
+                  element.setAttribute("class","range result_happiness-bar result_happiness-"+String(Math.round((data["MediumPauschalHappiness"]["avg"]))))
+
+              };
+          };
+
+          if (data["MediumFreiHappiness"]) {
+              if (data["MediumFreiHappiness"]["status"] == "Success") {
+                  var element=document.getElementById("result_athmosphaere-frei")
+                  element.setAttribute("value",Math.round((data["MediumFreiHappiness"]["avg"])))
+                  element.setAttribute("class","range result_happiness-bar result_happiness-"+String(Math.round((data["MediumFreiHappiness"]["avg"]))))
+
+              };
+          };
+
+
 
             let elementid = "festgrafik1"
 
