@@ -62,90 +62,22 @@ $(document).ready(function() {
 
 
         if (data["nodata"] != undefined) {
-            $result.append('<div class="result-text">' + String(data["missingdata"]) + '</div>');
+            $result.append('<div class="result-text" id="NoDataAtAllMessage">' + 'Leider haben wir für dieses Medium noch keine Daten parat.' + '</div>');
+            var element=document.getElementsByClassName("result-grid")[0];
+            console.log(element)
 
+            element.classList.add("hide");
+            element.classList.remove("show");
         } else {
-            console.log("Guten Tag")
-                //frei
-            if (data["MediumFestSalaryPerHour"]) {
-                if (data["MediumFestSalaryPerHour"]["status"] == "Success") {
-                    $resultfest.append('<div class="result-text">Der durchschnittliche Stundenlohn für Festangestelllte liegt bei: ' + String(data["MediumFestSalaryPerHour"]["avg"]) + " Euro  plusminus " + String(data["MediumFestSalaryPerHour"]["std"]) + '</div>');
-                };
-            }
-            if (data["MediumPauschalSalaryPerHour"]) {
-                if (data["MediumPauschalSalaryPerHour"]["status"] == "Success") {
-                    $resultpauschal.append('<div class="result-text">Der durchschnittliche Stundenlohn für Pauschalisten  liegt bei: ' + String(data["MediumPauschalSalaryPerHour"]["avg"]) + " Euro  plusminus " + String(data["MediumPauschalSalaryPerHour"]["std"]) + '</div>');
-                };
-            }
-            if (data["MediumFreiSalaryPerHour"]) {
-                if (data["MediumFreiSalaryPerHour"]["status"] == "Success") {
-                    $resultfrei.append('<div class="result-text">Der durchschnittliche Stundenlohn für Freiangestelllte liegt bei: ' + String(data["MediumFreiSalaryPerHour"]["avg"]) + " Euro  plusminus " + String(data["MediumFreiSalaryPerHour"]["std"]) + '</div>');
-                };
-            }
-            if (data["MediumFestSalaryPerMonth"]) {
-                if (data["MediumFestSalaryPerMonth"]["status"] == "Success") {
-                    $resultfest.append('<div class="result-text">Der Monatslohn bei einer 40 Stunden Woche für Festangestelllte würde bei: ' + String(data["MediumFestSalaryPerMonth"]["avg"]) + " Euro  plusminus " + String(data["MediumFestSalaryPerMonth"]["std"]) + " liegen." +
-                        '</div>');
-                };
-            }
-            if (data["MediumPauschalSalaryPerMonth"]) {
-                if (data["MediumPauschalSalaryPerMonth"]["status"] == "Success") {
-                    $resultpauschal.append('<div class="result-text">Der Monatslohn bei einer 40 Stunden Woche würde für Pauschalisten  bei: ' + String(data["MediumPauschalSalaryPerMonth"]["avg"]) + " Euro  plusminus " + String(data["MediumPauschalSalaryPerMonth"]["std"]) + " liegen." +
-                        '</div>');
-                };
-            }
-            if (data["MediumFreiSalaryPerMonth"]) {
-                if (data["MediumFreiSalaryPerMonth"]["status"] == "Success") {
-                    $resultfrei.append('<div class="result-text">Der Monatslohn bei einer 40 Stunden Woche würde für Freiangestelllte bei: ' + String(data["MediumFreiSalaryPerMonth"]["avg"]) + " Euro  plusminus " + String(data["MediumFreiSalaryPerMonth"]["std"]) + " liegen." +
-                        '</div>');
-                };
-            }
 
-            if (data["MediumFreiVideoFeePerMin"]) {
-                if (data["MediumFreiVideoFeePerMin"]["status"] == "Success") {
-                    $resultfrei.append('<div class="result-text">Das entspricht einem Honorar von ' + String(data["MediumFreiVideoFeePerMin"]["avg"]) + " Euro pro Sendeminute  plusminus " + String(data["MediumFreiVideoFeePerMin"]["std"]) + "." + '</div>');
-                };
-            }
-
-            if (data["MediumFreiAudioFeePerMin"]) {
-                if (data["MediumFreiAudioFeePerMin"]["status"] == "Success") {
-                    $resultfrei.append('<div class="result-text">Das entspricht einem Honorar von ' + String(data["MediumFreiAudioFeePerMin"]["avg"]) + " Euro pro Sendeminute  plusminus " + String(data["MediumFreiAudioFeePerMin"]["std"]) + "." + '</div>');
-                };
-            }
-
-            if (data["MediumFreiArticleFeePerChar"]) {
-
-                if (data["MediumFreiArticleFeePerChar"]["status"] == "Success") {
-                    $resultfrei.append('<div class="result-text">Das entspricht einem Honorar von ' + String(data["MediumFreiArticleFeePerChar"]["avg"]) + " Euro pro Zeichen plusminus " + String(data["MediumFreiArticleFeePerChar"]["std"]) + "." + '</div>');
-                };
-            }
-            if (data["MediumFestHappiness"]) {
-                if (data["MediumFestHappiness"]["status"] == "Success") {
-                    $resultfest.append('<div class="result-text">Und die Zufriedenheit liegt bei ' + String(data["MediumFestHappiness"]["avg"]) + " plusminus " + String(data["MediumFestHappiness"]["std"]) + '</div>');
-                    var element=document.getElementById("result_athmosphaere-fest")
-                    element.setAttribute("value",Math.round((data["MediumFestHappiness"]["avg"])))
-                    element.setAttribute("class","range result_happiness-bar result_happiness-"+String(Math.round((data["MediumFestHappiness"]["avg"]))))
-                };
-            };
-            if (data["MediumPauschalHappiness"]) {
-                if (data["MediumPauschalHappiness"]["status"] == "Success") {
-                    $resultpauschal.append('<div class="result-text">Und die Zufriedenheit liegt bei ' + String(data["MediumPauschalHappiness"]["avg"]) + " plusminus " + String(data["MediumPauschalHappiness"]["std"]) + '</div>');
-                    var element=document.getElementById("result_athmosphaere-pauschal")
-                    element.setAttribute("value",Math.round((data["MediumPauschalHappiness"]["avg"])))
-                    element.setAttribute("class","range result_happiness-bar result_happiness-"+String(Math.round((data["MediumPauschalHappiness"]["avg"]))))
-
-                };
-            };
-
-            if (data["MediumFreiHappiness"]) {
-                if (data["MediumFreiHappiness"]["status"] == "Success") {
-                    $resultfrei.append('<div class="result-text">Und die Zufriedenheit liegt bei ' + String(data["MediumFreiHappiness"]["avg"]) + " plusminus " + String(data["MediumFreiHappiness"]["std"]) + '</div>');
-                    var element=document.getElementById("result_athmosphaere-frei")
-                    element.setAttribute("value",Math.round((data["MediumFreiHappiness"]["avg"])))
-                    element.setAttribute("class","range result_happiness-bar result_happiness-"+String(Math.round((data["MediumFreiHappiness"]["avg"]))))
-
-                };
-            };
+          var element=document.getElementById("NoDataAtAllMessage");
+          if (element!=undefined){element.innerHTML=""
+          console.log(element)}
+          
+          var element=document.getElementsByClassName("result-grid")[0];
+          console.log(element)
+          element.classList.add("show");
+          element.classList.remove("hide");
 
             let elementid = "festgrafik1"
 

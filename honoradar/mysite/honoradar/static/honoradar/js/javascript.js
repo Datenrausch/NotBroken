@@ -790,6 +790,17 @@ function smoothfunction(){
     scrollTop:$(href).offset().top
   },'slow');
 }
+function smoothfunction_submit(){
+  console.log("this is smooth")
+  var button = document.getElementById("data_submit");
+  console.log(button)
+
+  var href = $(button).attr('linkdirection');
+  console.log(href)
+  $('html, body').animate({
+    scrollTop:$(href).offset().top
+  },'slow');
+}
 function textamountloan() {
 	var element = document.getElementById("freigrafikprint");
     element.classList.add("show");

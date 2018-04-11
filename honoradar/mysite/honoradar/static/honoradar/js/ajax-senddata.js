@@ -284,6 +284,7 @@ $(document).ready(function() {
         console.log(textStatus)
         console.log(jqXHR)
         $myForm[0].reset(); // reset form data
+        smoothfunction_submit()
     }
 
     function handleFormErrorPost(jqXHR, textStatus, errorThrown) {
