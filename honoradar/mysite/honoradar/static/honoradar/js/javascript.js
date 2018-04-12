@@ -847,7 +847,7 @@ function smoothfunction(){
   var button = document.getElementById("reload_submit");
   console.log(button)
 
-  var href = $(button).attr('linktdirection');
+  var href = $(button).attr('linkdirection');
   console.log(href)
   $('html, body').animate({
     scrollTop:$(href).offset().top

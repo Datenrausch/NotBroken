@@ -323,7 +323,17 @@ $(document).ready(function() {
         var element = document.getElementById("freigrafikprint");
           element.classList.add("show");
           element.classList.remove("hide");
+        var element = document.getElementById("pauschalgrafik1");
+            element.classList.add("show");
+            element.classList.remove("hide");
+        var element = document.getElementById("festgrafik1");
+              element.classList.add("show");
+              element.classList.remove("hide");
+        var element = document.getElementById("freigrafik1");
+        console.log(element)
 
+            element.classList.add("show");
+            element.classList.remove("hide");
 
         console.log(textStatus)
         console.log(jqXHR)
