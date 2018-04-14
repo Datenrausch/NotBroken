@@ -2329,6 +2329,11 @@ input[type=range]:focus::-ms-fill-upper {
 	flex-wrap: wrap;
 }
 
+.nbox-1, .nbox-2 a {
+	outline: none;
+	text-decoration: none;
+}
+
 .ntile-first {
 	height: 250px;
 	min-width: 260px;
@@ -3204,7 +3209,7 @@ p a:hover:after{
 /*News Grid Störer*/
 
 .nbox-1:before {
-	content: 'News und Rankings';
+	content: 'News und Reports';
 	color: #fff;
 	font-size: 0.9em;
 	font-family: InknutAntiqua-Bold !important;
@@ -3264,7 +3269,14 @@ p a:hover:after{
 
 @media (max-width: 650px)	{
 	.nbox-2:before {
-		margin: 50px 0px 0px calc(-50% + 120px);
+		margin: 50px 0px 0px calc(-50% + 150px);
+		font-size: .7em;
+	}
+}
+
+@media (max-width: 450px)	{
+	.nbox-2:before {
+		margin: 50px 0px 0px calc(-50% + 130px);
 		font-size: .7em;
 	}
 }
@@ -3980,17 +3992,6 @@ input[type=range].alert-bar_video:-moz-focusring {
 	z-index: 2;
 	width: calc(100% - 80px);
 	margin: 0px 40px 0px 40px;
-}
-
-.f {
-	border: solid 2px #fff;
-	border-radius: 20px;
-	padding: 1px 6px 1px 6px;
-	margin-right: 4px;
-	margin-left: 4px;
-	text-decoration: none;
-	color: #fff;
-	 background: rgb(39, 173, 95);
 }
 
 .submit {

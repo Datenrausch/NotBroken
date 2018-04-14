@@ -59,7 +59,7 @@
     <!-- Parallax -->
     <div class="panel">
         <h1 class="head-title">Was verdienen Journalisten?</h1>
-        <h2 class="head-subtitle-1">Die Antwort gibt's hier: Erfahre, was deine Kollegen verdienen – oder spende selber deine Honorar-Daten.</h2>
+        <h2 class="head-subtitle-1">Die Antwort gibt's hier: Erfahre, was deine Kollegen verdienen – oder spende selber deine Daten.</h2>
         <h2 class="head-subtitle-2">Bisher spendeten Journalisten 1.245 Daten über 134 Medien.</h2>
 
         <a href="#banderole" id="machmit" class="smooth clear-absolute" ><h3 class="head-action">Mach mit!</h3></a>
@@ -81,10 +81,10 @@
             <div class="cd-half-block">
                 <h2 class="navtitle1">Navigation</h2>
                 <nav>
-                    <ul class="cd-primary-nav">
-                        <li><a href="{% static "../../../"%}" class="selected">Honoradar</a></li>
-                        <li><a href="{% static "/honoradar/artikel/rankings.html"%}">Rankings</a></li>
-                        <li><a href="{% static "/honoradar/artikel/methodologie.html"%}">Wie funktioniert's?</a></li>
+                    <ul class="cd-primary-nav">	
+                        <li><a href="{% static "../../../"%}" class="selected">Startseite</a></li>
+                        <li><a href="{% static "/honoradar/artikel/projekt.html"%}">Über das Projekt</a></li>
+                        <li><a href="{% static "/honoradar/artikel/reports.html"%}">Freischreiber-Reports</a></li>
                         <li><a href="{% static "/honoradar/artikel/newsletter.html"%}">Newsletter</a></li>
                         <li><a href="{% static "/honoradar/artikel/impressum.html"%}">Impressum</a></li>
                     </ul>
@@ -146,7 +146,7 @@
 
                     <!-- Medium-Select -->
 					<div class="media-select-container">
-                    <input name="MediumName" id="data_medium" class="media-select dropdown" list="medium" placeholder="Für welches Medium arbeitest du?" type="text" />
+                    <input name="MediumName" id="data_medium" class="media-select dropdown" list="medium" placeholder="Für welches Medium arbeitest du?" type="text" onclick="alertoffdatamedium()"/>
                     <datalist id="medium">
 	<!--[if lte IE 9]><select data-datalist="samples"><![endif]-->
 
@@ -168,7 +168,7 @@
                     <div class="break"></div>
 
                     <!-- Loan-Select -->
-                    <input name="SalaryPerMonthEmpMix" id="data_gehalt" class="loan-select hide" list="gehalt" placeholder="Gehalt pro Monat?" type="number" min="0" oninput="validity.valid||(value='');" inputmode="numeric" />
+                    <input name="SalaryPerMonthEmpMix" id="data_gehalt" class="loan-select hide" list="gehalt" placeholder="Gehalt pro Monat?" type="number" min="0" oninput="validity.valid||(value='');" inputmode="numeric" onclick="alertoffdatasalary()"/>
 
                     <!-- Hour-Week-Select -->
                     <div class="day-month-select hide" id="pre-data_stunden_woche">
@@ -193,7 +193,7 @@
                     </div>
 
                     <!-- Freelancer-fee-Select -->
-                    <input name="FeeFree" id="data_honorar" class="loan-select hide" list="gehalt" placeholder="Lohn für den Auftrag?" type="number" min="0" oninput="validity.valid||(value='');" inputmode="numeric" />
+                    <input name="FeeFree" id="data_honorar" class="loan-select hide" list="gehalt" placeholder="Lohn für den Auftrag?" type="number" min="0" oninput="validity.valid||(value='');" inputmode="numeric" onclick="alertoffdataloan()"/>
 
                     <!-- Unit-Select -->
                     <div class="hide" id="pre-data_format_text_audio_video">
@@ -289,7 +289,7 @@
         <option value="Ressortleiter">
         <option value="Chef vom Dienst (CvD)">
         <option value="Redakteur">
-        <option value="Voluntär">
+        <option value="Volontär">
         <option value="Praktikant">
 	<!--[if lte IE 9]></select><![endif]-->
     </datalist>
@@ -354,14 +354,14 @@
                 </div>
 
                 <!-- Newsletter-Anmeldung -->
-                <p class="after-submit-text hide" id="after-submit-text-1">Einmal im Jahr werten wir alle Daten aus und veröffentlichen einen Gehaltsreport – inklusive der besten Arbeitgeber. Falls gewünscht, informieren wir dich via Newsletter.
+                <p class="after-submit-text hide" id="after-submit-text-1">Einmal im Jahr werten wir alle Daten aus und veröffentlichen den Freischreiber-Report – inklusive der besten Arbeitgeber. Falls gewünscht, informieren wir dich via Newsletter.
                 </p>
-                <a href="/newsletter">
+				<a href="{% static "/honoradar/artikel/newsletter.html"%}">
                     <input type="submit" class="submit hide" id="newsletter_submit" value="Newsletter-Abo" />
                 </a>
 
                 <!-- Reload -->
-                <p class="after-submit-text hide" id="after-submit-text-2">Wenn du noch mehr Daten spenden möchtest, freuen wir uns natürlich riesig. Je mehr, desto besser für alle. Vielleicht wäre die <span class="f"><span>:</span>F</span>-Datenbank ja auch was für deine Kollegen.
+                <p class="after-submit-text hide" id="after-submit-text-2">Wenn du noch mehr Daten spenden möchtest, freuen wir uns natürlich. Oder erzähl deinen Kollegen hiervon, sodass sie auch Daten spenden. Je mehr, desto besser für alle.
                 </p>
 
                 <a href="#banderole" class="smooth">
@@ -515,8 +515,8 @@
 
             <!-- News -->
             <div class="nbox-1">
-                <a href="{% static "/honoradar/artikel/xxx.html"%}">
-                    <div class="ntile-first news news_1"><span class="news-title-head">Hier erscheint noch ein Titel</span></div>
+                <a href="{% static "/honoradar/artikel/freischreiber-report-ankuendigung.html"%}">
+                    <div class="ntile-first news news_1"><span class="news-title-head">Einmal im Jahr: <br>Freischreiber-Report startet 2019</span></div>
                 </a>
                 <a href="{% static "/honoradar/artikel/xxx.html"%}">
                     <div class="ntile-first news news_2"><span class="news-title">Hier erscheint noch ein Titel</span></div>
@@ -543,13 +543,13 @@
                     <div class="ntile-second news news_6"><span class="news-title">Verhandeln in 10 Schritten</span></div>
                 </a>
                 <a href="{% static "/honoradar/artikel/interview-carola-dorner.html"%}">
-                    <div class="ntile-second news news_7"><span class="news-title">„Honorare zu verschweigen schadet uns allen“</span></div>
+                    <div class="ntile-second news news_7"><span class="news-title">Interview: „Honorare zu verschweigen schadet uns allen“</span></div>
                 </a>
                 <a href="https://www.youtube.com/watch?v=QyRBdONqZWk" data-lity>
                     <div class="ntile-second news news_8"><span class="news-title">Video: Herr Frei will mehr</span></div>
                 </a>
-                <a href="{% static "/honoradar/artikel/xxx.html"%}">
-                    <div class="ntile-second news news_9"><span class="news-title">Hier erscheint noch ein Titel</span>
+                <a href="{% static "/honoradar/artikel/honorarberechnung.html"%}">
+                    <div class="ntile-second news news_9"><span class="news-title">Wie kalkuliere ich <br>meinen Stundenlohn?</span>
                     </div>
                 </a>
             </div>
@@ -564,11 +564,11 @@
 				<a href="{% static "/honoradar/artikel/credits.html"%}">
 				<p class="footer-item clear-footer">Die Macher</p>
 				</a>
-				<a href="{% static "/honoradar/artikel/rankings.html"%}">
-				<p class="footer-item clear-footer">Rankings & Reports</p>
+				<a href="{% static "/honoradar/artikel/reports.html"%}">
+				<p class="footer-item clear-footer">Freischreiber-Reports</p>
 				</a>
-				<a href="{% static "/honoradar/artikel/methodologie.html"%}">
-				<p class="footer-item clear-footer">Methodologie</p>
+				<a href="{% static "/honoradar/artikel/methodik.html"%}">
+				<p class="footer-item clear-footer">Methodik</p>
 				</a>
 			</div>
 			<div class="footer-grid-second">

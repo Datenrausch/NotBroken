@@ -572,6 +572,11 @@ function alertoffdatamedium() {
 }
 
 function alertoffdataloan() {
+	var element = document.getElementById("data_honorar");
+    element.classList.remove("alert");
+}
+
+function alertoffdatasalary() {
 	var element = document.getElementById("data_gehalt");
     element.classList.remove("alert");
 }
