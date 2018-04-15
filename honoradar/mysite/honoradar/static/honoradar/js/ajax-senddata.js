@@ -47,24 +47,29 @@ $(document).ready(function() {
                 if ((String(data[keyname])) == "Arbeitsverhältnis") {
                     document.getElementById('data_arbeitsverhaeltnis_frei').classList.add("alert-switch");
                 };
-                if ((String(data[keyname])) == "Arbeitszeit") {
-                    document.getElementById('pre-data_stunden_woche').classList.add("pre-alert-bar-hour-week");
-                    document.getElementById('data_stunden_woche').classList.add("alert-bar_stunden_woche")
-                };
+
                 if ((String(data[keyname])) == "gearbeiteten Tagen pro Monat") {
                     document.getElementById('pre-data_tag_monat').classList.add("pre-alert-bar-day-month");
                     document.getElementById('data_tag_monat').classList.add("alert-bar_tag_monat");
                 };
                 if ((String(data[keyname])) == "gearbeiteten Stunden pro Tag") {
+                    document.getElementById('pre-data_stunden_tag').classList.add("pre-alert-bar-hour-day");
                     document.getElementById('data_stunden_tag').classList.add("alert-bar_stunde_tag");
+
                 };
+                if ((String(data[keyname])) == "gearbeiteten Stunden pro Woche") {
+                    document.getElementById('pre-data_stunden_woche').classList.add("pre-alert-bar-hour-week");
+                    document.getElementById('data_stunden_woche').classList.add("alert-bar_stunden_woche");
+
+                };
+
                 if ((String(data[keyname])) == "Honorar") {
                     document.getElementById('data_honorar').classList.add("alert");
                 };
                 if ((String(data[keyname])) == "Gehalt") {
                     document.getElementById('data_gehalt').classList.add("alert");
                 }
-                if ((String(data[keyname])) == "Mediumsart") {
+                if ((String(data[keyname])) == "Mediumformat") {
                     document.getElementById('data_format_text_audio_video').classList.add("alert-switch");
                 };
                 if ((String(data[keyname])) == "Anzahl an Zeichen für den Artikel") {

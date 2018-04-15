@@ -98,6 +98,19 @@ $(document).ready(function() {
           element.classList.add("show");
           element.classList.remove("hide");
 
+          var element=document.getElementById("result_athmosphaere-fest")
+          element.setAttribute("value", 5)
+          element.setAttribute("class","range result_happiness-bar result_happiness-5")
+
+          var element=document.getElementById("result_athmosphaere-pauschal")
+          element.setAttribute("value",5)
+          element.setAttribute("class","range result_happiness-bar result_happiness-5")
+
+          var element=document.getElementById("result_athmosphaere-frei")
+          element.setAttribute("value",5)
+          element.setAttribute("class","range result_happiness-bar result_happiness-5")
+
+
           if (data["MediumFestHappiness"]) {
               if (data["MediumFestHappiness"]["status"] == "Success") {
                   var element=document.getElementById("result_athmosphaere-fest")
