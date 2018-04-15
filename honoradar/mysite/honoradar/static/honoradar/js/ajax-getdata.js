@@ -2,12 +2,25 @@ $(document).ready(function() {
     var $myForm = $("#get-form")
     $myForm.submit(function(event) {
         event.preventDefault()
+
         var $formData = $(this).serialize()
         console.log($formData)
         var $name = $myForm.attr('name-get')
         console.log($name)
         var $url = $myForm.attr('data-url-get')
         console.log($url)
+
+        var $data_medium=$myForm.find('input[name="mediumget"]').val()
+        console.log($data_medium);
+        document.getElementById('media-analyse').classList.remove("alert");
+
+        if ($data_medium == ""){
+          console.log("Empty")
+          document.getElementById('media-analyse').classList.add("alert");
+
+
+        }
+        else{
         $.ajax({
             method: "GET",
             url: $url,
@@ -16,6 +29,7 @@ $(document).ready(function() {
             error: handleFormErrorGet,
 
         })
+        ;}
 
     })
 

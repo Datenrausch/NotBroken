@@ -39,7 +39,7 @@ $(document).ready(function() {
                 if (i == 0) {
                     $Warning.append('<span>' + String(data[keyname]) + '</span>');
                 } else {
-                    $Warning.append('<span>, ' + String(data[keyname]) + ' </span>');
+                    $Warning.append('<span>, ' + String(data[keyname]) + '</span>');
                 };
                 if ((String(data[keyname])) == "Mediumname") {
                     document.getElementById('data_medium').classList.add("alert");
