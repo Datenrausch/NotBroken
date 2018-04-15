@@ -62,7 +62,7 @@
         <h2 class="head-subtitle-1">Die Antwort gibt's hier: Erfahre, was deine Kollegen verdienen – oder spende selber deine Daten.</h2>
         <h2 class="head-subtitle-2">Bisher spendeten Journalisten 1.245 Daten über 134 Medien.</h2>
 
-        <a href="#banderole" id="machmit" class="smooth clear-absolute" ><h3 class="head-action">Mach mit!</h3></a>
+        <a href="#banderole" id="machmit" class="smooth clear-absolute"><h3 class="head-action">Mach mit!</h3></a>
         <div class="head-box-1"></div>
         <div class="head-box-2"></div>
         <div class="head-box-0"></div>
@@ -81,12 +81,12 @@
             <div class="cd-half-block">
                 <h2 class="navtitle1">Navigation</h2>
                 <nav>
-                    <ul class="cd-primary-nav">	
-                        <li><a href="{% static "../../../"%}" class="selected">Startseite</a></li>
-                        <li><a href="{% static "/honoradar/artikel/projekt.html"%}">Über das Projekt</a></li>
-                        <li><a href="{% static "/honoradar/artikel/reports.html"%}">Freischreiber-Reports</a></li>
-                        <li><a href="{% static "/honoradar/artikel/newsletter.html"%}">Newsletter</a></li>
-                        <li><a href="{% static "/honoradar/artikel/impressum.html"%}">Impressum</a></li>
+                    <ul class="cd-primary-nav">
+                        <li><a href="{% static " ../../../ "%}" class="selected">Startseite</a></li>
+                        <li><a href="{% static " /honoradar/artikel/projekt.html "%}">Über das Projekt</a></li>
+                        <li><a href="{% static " /honoradar/artikel/reports.html "%}">Freischreiber-Reports</a></li>
+                        <li><a href="{% static " /honoradar/artikel/newsletter.html "%}">Newsletter</a></li>
+                        <li><a href="{% static " /honoradar/artikel/impressum.html "%}">Impressum</a></li>
                     </ul>
                 </nav>
             </div>
@@ -142,17 +142,13 @@
                     <div class="banner-left-3 hide" id="banner-left-4">Vielen Dank!</div>
                     <div class="banner-left-shadow"></div>
                     <div id="banner-left-triangle" class="banner-left-shadow hide"></div>
-					<div class="break"></div>
+                    <div class="break"></div>
 
                     <!-- Medium-Select -->
-					<div class="media-select-container">
-                    <input name="MediumName" id="data_medium" class="media-select dropdown" list="medium" placeholder="Für welches Medium arbeitest du?" type="text" onclick="alertoffdatamedium()"/>
-                    <datalist id="medium">
-	<!--[if lte IE 9]><select data-datalist="samples"><![endif]-->
+                    <div class="media-select-container">
+                        <input name="MediumName" id="data_medium" class="media-select dropdown" list="medium" placeholder="Für welches Medium arbeitest du?" type="text" onclick="alertoffdatamedium()" />
 
-    <!--[if lte IE 9]></select><![endif]-->
-	</datalist>
-	</div>
+                    </div>
                     <!-- Support Safari? https://stackoverflow.com/questions/27494084/html5-datalist-tag-is-not-populating-in-safari?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa -->
 
                     <!-- Switch-Select -->
@@ -168,7 +164,7 @@
                     <div class="break"></div>
 
                     <!-- Loan-Select -->
-                    <input name="SalaryPerMonthEmpMix" id="data_gehalt" class="loan-select hide" list="gehalt" placeholder="Gehalt pro Monat?" type="number" min="0" oninput="validity.valid||(value='');" inputmode="numeric" onclick="alertoffdatasalary()"/>
+                    <input name="SalaryPerMonthEmpMix" id="data_gehalt" class="loan-select hide" list="gehalt" placeholder="Gehalt pro Monat?" type="number" min="0" oninput="validity.valid||(value='');" inputmode="numeric" onclick="alertoffdatasalary()" />
 
                     <!-- Hour-Week-Select -->
                     <div class="day-month-select hide" id="pre-data_stunden_woche">
@@ -193,7 +189,7 @@
                     </div>
 
                     <!-- Freelancer-fee-Select -->
-                    <input name="FeeFree" id="data_honorar" class="loan-select hide" list="gehalt" placeholder="Lohn für den Auftrag?" type="number" min="0" oninput="validity.valid||(value='');" inputmode="numeric" onclick="alertoffdataloan()"/>
+                    <input name="FeeFree" id="data_honorar" class="loan-select hide" list="gehalt" placeholder="Lohn für den Auftrag?" type="number" min="0" oninput="validity.valid||(value='');" inputmode="numeric" onclick="alertoffdataloan()" />
 
                     <!-- Unit-Select -->
                     <div class="hide" id="pre-data_format_text_audio_video">
@@ -230,32 +226,6 @@
 
                     <!-- Genre-Select -->
                     <input name="Genre" id="data_genre" class="genre-select hide" list="genre" placeholder="Welches Genre?" type="text" />
-                    <datalist id="genre">
-	<!--[if lte IE 9]><select data-datalist="samples"><![endif]-->
-		<option value="Analyse">
-        <option value="Bericht">
-        <option value="Dokumentation">
-		<option value="Editorial">
-		<option value="Essay">
-        <option value="Feature">
-		<option value="Foto">
-		<option value="Gebauter Beitrag">
-		<option value="Glosse">
-		<option value="Infografik">
-        <option value="Interview">
-		<option value="Kolumne">
-        <option value="Kommentar">
-		<option value="Kritik">
-		<option value="Leitartikel">
-        <option value="Moderation">
-        <option value="Nachricht">
-		<option value="Podcast">
-        <option value="Porträt">
-        <option value="Reportage">
-		<option value="Rezension">
-		<option value="Servicetext">
-	<!--[if lte IE 9]></select><![endif]-->
-    </datalist>
 
                     <!-- Digitalization-Select -->
                     <div id="pre-data_verbreitung_analog_digital_beides" class="hide">
@@ -283,16 +253,7 @@
 
                     <!-- Position-Select -->
                     <input name="JobPosition" id="data_position" class="position-select hide" list="position" placeholder="Als was arbeitest du?" type="text" onclick="alertoffdataposition()" />
-                    <datalist id="position">
-	<!--[if lte IE 9]><select data-datalist="samples"><![endif]-->
-        <option value="Chefredakteur">
-        <option value="Ressortleiter">
-        <option value="Chef vom Dienst (CvD)">
-        <option value="Redakteur">
-        <option value="Volontär">
-        <option value="Praktikant">
-	<!--[if lte IE 9]></select><![endif]-->
-    </datalist>
+
 
                     <!-- Experience-Select -->
                     <div class="switch-field switch-field-text switch-field-text-4 hide" id="pre-data_erfahrung_jahr_1_3_5">
@@ -344,7 +305,7 @@
                         <span class="closebtn" onclick="hidedenied()">&times;</span>
                         <strong>Achtung! </strong>Bitte fülle folgende Felder aus: Feld1, Feld2 und Feld2.
                     </div>
-                    <input type="submit" linkdirection="#banderole"class="submit-get hide" id="data_submit" value="Daten spenden" />
+                    <input type="submit" linkdirection="#banderole" class="submit-get hide" id="data_submit" value="Daten spenden" />
 
                 </form>
 
@@ -356,7 +317,7 @@
                 <!-- Newsletter-Anmeldung -->
                 <p class="after-submit-text hide" id="after-submit-text-1">Einmal im Jahr werten wir alle Daten aus und veröffentlichen den Freischreiber-Report – inklusive der besten Arbeitgeber. Falls gewünscht, informieren wir dich via Newsletter.
                 </p>
-				<a href="{% static "/honoradar/artikel/newsletter.html"%}">
+                <a href="{% static " /honoradar/artikel/newsletter.html "%}">
                     <input type="submit" class="submit hide" id="newsletter_submit" value="Newsletter-Abo" />
                 </a>
 
@@ -376,28 +337,28 @@
                 <form action="{% url 'honoradar:getdata' %}" method="get" data-url-get="{% url 'honoradar:getdata' %}" name-get="firstbox" id="get-form">
                     <div class="banner-right-1">Erfahre, was Medien zahlen!</div>
                     <div class="banner-right-shadow"></div>
-					<div class="break"></div>
+                    <div class="break"></div>
 
                     <!-- Medium-Select -->
-					<div class="media-select-container">
-                    <input name="mediumget" id="media-analyse" class="media-select" list="medium" placeholder="Welches Medium interessiert dich?" type="text" onclick="getfunction()" />
+                    <div class="media-select-container">
+                        <input name="mediumget" id="media-analyse" class="media-select" list="medium" placeholder="Welches Medium interessiert dich?" type="text" onclick="getfunction()" />
 
-                    <datalist id="medium-analyse">
+                        <datalist id="medium-analyse">
 	<!--[if lte IE 9]><select data-datalist="samples"><![endif]-->
 
     <!--[if lte IE 9]></select><![endif]-->
     </datalist>
-	</div>
+                    </div>
 
                     <!-- Bedingung -->
-					<div class="bedingung-container" id="">
+                    <div class="bedingung-container" id="">
                         <span id="bedingung" class="bedingung">Wir zeigen die Analyse nur, wenn mindestens zwei Datensätze vorliegen! </span>
                     </div>
 
                     <div class="break"></div>
 
                     <!-- Submit -->
-                    <a href="#break-2" ><input type="submit" class="submit-giv hide" id="analyse_submit" value="Daten auslesen" /></a>
+                    <a href="#break-2"><input type="submit" class="submit-giv hide" id="analyse_submit" value="Daten auslesen" /></a>
 
                 </form>
             </div>
@@ -439,7 +400,7 @@
 
                     <!-- Result Pauschal-Box -->
 
-                    <div class="result-item result-item-large" >
+                    <div class="result-item result-item-large">
                         <div class="result-item-large-first" id="resultpauschal">
                             <div class="result-box-pauschal-titel">Pauschalisten</div>
                             <div class="infografik" id="pauschalgrafik1">
@@ -463,22 +424,22 @@
                     <div class="result-item result-item-superlarge">
                         <div class="result-box-facts-titel">Arbeitsatmosphäre</div>
                         <div class="fact-text">
-						<div class="result-happiness-grid" >
-							<div class="happiness-result happiness-result-frei" id="">
-								<input name="" id="result_athmosphaere-frei" class="range result_happiness-bar result_happiness-1" type="range" min="1" max="9" value="1" disabled/>
-							</div>
-							<div class="happiness-result happiness-result-pauschal" id="">
-								<input name="" id="result_athmosphaere-pauschal" class="range result_happiness-bar result_happiness-1" type="range" min="1" max="9" value="1" disabled/>
-							</div>
-							<div class="happiness-result happiness-result-fest" id="">
-								<input name="" id="result_athmosphaere-fest" class="range result_happiness-bar result_happiness-1" type="range" min="1" max="9" value="1" disabled/>
-							</div>
-						</div>
+                            <div class="result-happiness-grid">
+                                <div class="happiness-result happiness-result-frei" id="">
+                                    <input name="" id="result_athmosphaere-frei" class="range result_happiness-bar result_happiness-1" type="range" min="1" max="9" value="1" disabled/>
+                                </div>
+                                <div class="happiness-result happiness-result-pauschal" id="">
+                                    <input name="" id="result_athmosphaere-pauschal" class="range result_happiness-bar result_happiness-1" type="range" min="1" max="9" value="1" disabled/>
+                                </div>
+                                <div class="happiness-result happiness-result-fest" id="">
+                                    <input name="" id="result_athmosphaere-fest" class="range result_happiness-bar result_happiness-1" type="range" min="1" max="9" value="1" disabled/>
+                                </div>
+                            </div>
 
-						<div class="result-comments">
-							<p>Hier erscheinen später gespendete Kommentare der User. Hier erscheinen später gespendete Kommentare der User. Hier erscheinen später gespendete Kommentare der User.
-							</p>
-						</div>
+                            <div class="result-comments">
+                                <p>Hier erscheinen später gespendete Kommentare der User. Hier erscheinen später gespendete Kommentare der User. Hier erscheinen später gespendete Kommentare der User.
+                                </p>
+                            </div>
                         </div>
                     </div>
 
@@ -515,19 +476,19 @@
 
             <!-- News -->
             <div class="nbox-1">
-                <a href="{% static "/honoradar/artikel/freischreiber-report-ankuendigung.html"%}">
+                <a href="{% static " /honoradar/artikel/freischreiber-report-ankuendigung.html "%}">
                     <div class="ntile-first news news_1"><span class="news-title-head">Einmal im Jahr:<br>Freischreiber-Report startet 2019</span></div>
                 </a>
-                <a href="{% static "/honoradar/artikel/xxx.html"%}">
+                <a href="{% static " /honoradar/artikel/xxx.html "%}">
                     <div class="ntile-first news news_2"><span class="news-title">Hier erscheint ein Titel</span></div>
                 </a>
-                <a href="{% static "/honoradar/artikel/xxx.html"%}">
+                <a href="{% static " /honoradar/artikel/xxx.html "%}">
                     <div class="ntile-first news news_3"><span class="news-title">Hier erscheint ein Titel</span></div>
                 </a>
-                <a href="{% static "/honoradar/artikel/xxx.html"%}">
+                <a href="{% static " /honoradar/artikel/xxx.html "%}">
                     <div class="ntile-first news news_4"><span class="news-title">Hier erscheint ein Titel</span></div>
                 </a>
-                <a href="{% static "/honoradar/artikel/xxx.html"%}">
+                <a href="{% static " /honoradar/artikel/xxx.html "%}">
                     <div class="ntile-first news news_5"><span class="news-title">Hier erscheint ein Titel</span></div>
                 </a>
             </div>
@@ -539,54 +500,54 @@
 
             <!-- News -->
             <div class="nbox-2">
-                <a href="{% static "/honoradar/artikel/unschlagbar-verhandeln-in-10-schritten.html"%}">
+                <a href="{% static " /honoradar/artikel/unschlagbar-verhandeln-in-10-schritten.html "%}">
                     <div class="ntile-second news news_6"><span class="news-title">Verhandeln in 10 Schritten</span></div>
                 </a>
-                <a href="{% static "/honoradar/artikel/interview-carola-dorner.html"%}">
+                <a href="{% static " /honoradar/artikel/interview-carola-dorner.html "%}">
                     <div class="ntile-second news news_7"><span class="news-title">„Honorare zu verschweigen schadet uns allen“</span></div>
                 </a>
                 <a href="https://www.youtube.com/watch?v=QyRBdONqZWk" data-lity>
                     <div class="ntile-second news news_8"><span class="news-title">Video: Mies gelaufen!</span></div>
                 </a>
-                <a href="{% static "/honoradar/artikel/honorarberechnung.html"%}">
+                <a href="{% static " /honoradar/artikel/honorarberechnung.html "%}">
                     <div class="ntile-second news news_9"><span class="news-title">Wie kalkuliere ich<br>meinen Stundenlohn?</span>
                     </div>
                 </a>
             </div>
 
             <!-- Footer -->
-		<div class="footer">
-		<div class="footer-grid">
-			<div class="footer-grid-first">
-				<a href="{% static "/honoradar/artikel/projekt.html"%}">
-				<p class="footer-item-first footer-item clear-footer">Über das Projekt</p>
-				</a>
-				<a href="{% static "/honoradar/artikel/credits.html"%}">
-				<p class="footer-item clear-footer">Die Macher</p>
-				</a>
-				<a href="{% static "/honoradar/artikel/reports.html"%}">
-				<p class="footer-item clear-footer">Freischreiber-Reports</p>
-				</a>
-				<a href="{% static "/honoradar/artikel/methodik.html"%}">
-				<p class="footer-item clear-footer">Methodik</p>
-				</a>
-			</div>
-			<div class="footer-grid-second">
-				<a href="{% static "/honoradar/artikel/newsletter.html"%}">
-				<p class="footer-item-first footer-item clear-footer">Newsletter</p>
-				</a>
-				<a href="{% static "/honoradar/artikel/datenschutz.html"%}">
-				<p class="footer-item clear-footer">Datenschutz</p>
-				</a>
-				<a href="{% static "/honoradar/artikel/kontakt.html"%}">
-				<p class="footer-item clear-footer">Kontakt & Fragen</p>
-				</a>
-				<a href="{% static "/honoradar/artikel/impressum.html"%}">
-				<p class="footer-item clear-footer">Impressum</p>
-				</a>
-			</div>
-		</div>
-		</div>
+            <div class="footer">
+                <div class="footer-grid">
+                    <div class="footer-grid-first">
+                        <a href="{% static " /honoradar/artikel/projekt.html "%}">
+                            <p class="footer-item-first footer-item clear-footer">Über das Projekt</p>
+                        </a>
+                        <a href="{% static " /honoradar/artikel/credits.html "%}">
+                            <p class="footer-item clear-footer">Die Macher</p>
+                        </a>
+                        <a href="{% static " /honoradar/artikel/reports.html "%}">
+                            <p class="footer-item clear-footer">Freischreiber-Reports</p>
+                        </a>
+                        <a href="{% static " /honoradar/artikel/methodik.html "%}">
+                            <p class="footer-item clear-footer">Methodik</p>
+                        </a>
+                    </div>
+                    <div class="footer-grid-second">
+                        <a href="{% static " /honoradar/artikel/newsletter.html "%}">
+                            <p class="footer-item-first footer-item clear-footer">Newsletter</p>
+                        </a>
+                        <a href="{% static " /honoradar/artikel/datenschutz.html "%}">
+                            <p class="footer-item clear-footer">Datenschutz</p>
+                        </a>
+                        <a href="{% static " /honoradar/artikel/kontakt.html "%}">
+                            <p class="footer-item clear-footer">Kontakt & Fragen</p>
+                        </a>
+                        <a href="{% static " /honoradar/artikel/impressum.html "%}">
+                            <p class="footer-item clear-footer">Impressum</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
     </main>
 
@@ -615,6 +576,8 @@
 
     <script src="static/honoradar/js/autocomplete-giv.js"></script>
     <script src="static/honoradar/js/autocomplete-get.js"></script>
+    <script src="static/honoradar/js/autocomplete-genre.js"></script>
+    <script src="static/honoradar/js/autocomplete-position.js"></script>
 
 
     </script>
