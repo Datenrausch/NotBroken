@@ -730,6 +730,22 @@ function reload() {
     element.classList.add("hide");
     element.classList.remove("show");
 
+    var element = document.getElementById("outputtime");
+      element.innerHTML="0";
+
+      var element = document.getElementById("outputdaymonth");
+        element.innerHTML="0";
+
+        var element = document.getElementById("outputhourday");
+          element.innerHTML="0";
+
+          var element = document.getElementById("outputhourweek");
+            element.innerHTML="0";
+
+
+
+
+
 	var element = document.getElementById("banner-left-1");
     element.classList.add("show");
     element.classList.remove("hide");
