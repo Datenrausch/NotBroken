@@ -656,7 +656,7 @@ em {
 .freischreiber-box {
 	height: 250px;
 	width: 100%;
-	background-size: 700px ;
+	background-size: 700px;
 	background-color: #ffffff;
 	background-repeat: no-repeat;
 	background-image: url("../image/Freischreiberlogo.png");
@@ -681,6 +681,18 @@ em {
 	-moz-transition-duration: 0.5s;
 	 transition-duration: 0.5s;
 	background-attachment: fixed;
+}
+
+@media (max-width: 550px)	{
+	.freischreiber-box {
+		background-size: 500px ;
+	}
+}
+
+@media (max-width: 350px)	{
+	.freischreiber-box {
+		background-size: 450px ;
+	}
 }
 
 
