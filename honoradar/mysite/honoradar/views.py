@@ -442,6 +442,8 @@ def senddata(request):
                     CharPerArticleFree = (request.POST.get("CharPerArticleFree"))
                     MinPerAudioFree = (request.POST.get("MinPerAudioFree"))
                     MinPerVideoFree = (request.POST.get("MinPerVideoFree"))
+                    print("check fails")
+                    print(MinPerAudioFree)
 
                     # check the compulsory four of them and send warning if they are missing
                     if FeeFree:
@@ -467,14 +469,14 @@ def senddata(request):
                             pass
                         else:
                             sanitycheck = 1
-                            messages.info(request, 'Beitragsminuten')
+                            messages.info(request, 'Beitragsminuten für den Videobeitrag')
 
                     if VideoAudioTextFree == "audio":
-                        if float(MinPerVideoFree) != 0:
+                        if float(MinPerAudioFree) != 0:
                             pass
                         else:
                             sanitycheck = 1
-                            messages.info(request, 'Beitragsminuten')
+                            messages.info(request, 'Beitragsminuten für den Audiobeitrag')
 
                     if VideoAudioTextFree == "text":
                         if float(CharPerArticleFree) != 0:
@@ -516,17 +518,13 @@ def senddata(request):
             oldjsondata = json.load(json_file)
             inthere=0
             for p in oldjsondata:
-                print('Name: ' + p['name'])
-                print('code: ' + p['code'])
                 if p['name']==MediumName:
                     inthere=1
             newentry={"name":MediumName,"code":MediumName}
             if inthere !=1:
                 newjsondata=oldjsondata
                 newjsondata.append(newentry)
-                for p in newjsondata:
-                    print('Name: ' + p['name'])
-                    print('code: ' + p['code'])
+
                 with io.open('honoradar/static/honoradar/mediumsname.json', 'w') as outfile:
                     data=json.dumps(newjsondata, ensure_ascii=False)
                     outfile.write(data)
@@ -710,14 +708,14 @@ def senddata(request):
                             pass
                         else:
                             sanitycheck = 1
-                            messages.info(request, 'Beitragsminuten')
+                            messages.info(request, 'Beitragsminuten für den Videobeitrag')
 
                     if VideoAudioTextFree == "audio":
-                        if float(MinPerVideoFree) != 0:
+                        if float(MinPerAudioFree) != 0:
                             pass
                         else:
                             sanitycheck = 1
-                            messages.info(request, 'Beitragsminuten')
+                            messages.info(request, 'Beitragsminuten für den Audiobeitrag')
 
                     if VideoAudioTextFree == "text":
                         if float(CharPerArticleFree) != 0:
@@ -871,14 +869,14 @@ def senddata(request):
                             pass
                         else:
                             sanitycheck = 1
-                            messages.info(request, 'Beitragsminuten')
+                            messages.info(request, 'Beitragsminuten für den Videobeitrag')
 
                     if VideoAudioTextFree == "audio":
-                        if float(MinPerVideoFree) != 0:
+                        if float(MinPerAudioFree) != 0:
                             pass
                         else:
                             sanitycheck = 1
-                            messages.info(request, 'Beitragsminuten')
+                            messages.info(request, 'Beitragsminuten für den Audiobeitrag')
 
                     if VideoAudioTextFree == "text":
                         if float(CharPerArticleFree) != 0:
