@@ -2456,7 +2456,7 @@
   },
   {  
     "name":"Spiegel Daily",
-    "code":"Spiegel Daily"
+    "code":"Spiegel Daily Online"
   },
   {  
     "name":"Spiegel",
@@ -2531,20 +2531,28 @@
     "code":"Stern Online"
   },
   {  
+    "name":"Golem.de",
+    "code":"Golem Online"
+  },
+  {  
     "name":"Golem",
-    "code":"Golem"
+    "code":"Golem Online"
   },
   {  
     "name":"Der Postillon",
-    "code":"Der Postillon"
+    "code":"Der Postillon Online"
   },
   {  
     "name":"Heise Online",
     "code":"Heise Online"
   },
   {  
+    "name":"Tagesschau Online",
+    "code":"Tagesschau Online"
+  },
+  {  
     "name":"Tagesschau.de",
-    "code":"Tagesschau.de"
+    "code":"Tagesschau Online"
   },
   {  
     "name":"Deutsche Wirtschafts Nachrichten",
@@ -2604,11 +2612,11 @@
   },
   {  
     "name":"Wired Germany",
-    "code":"Wired Germany"
+    "code":"Wired Germany Online"
   },
   {  
     "name":"Wired.de",
-    "code":"Wired Germany"
+    "code":"Wired Germany Online"
   },
   {  
     "name":"Vice Online",
