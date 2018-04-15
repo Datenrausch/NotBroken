@@ -17,10 +17,15 @@ $(document).ready(function() {
         if ($data_medium == ""){
           console.log("Empty")
           document.getElementById('media-analyse').classList.add("alert");
+          document.getElementById('WARNING_getdata').classList.add("show");
+          document.getElementById('WARNING_getdata').classList.remove("hide");
+
 
 
         }
         else{
+          document.getElementById('WARNING_getdata').classList.add("hide");
+          document.getElementById('WARNING_getdata').classList.remove("show");
         $.ajax({
             method: "GET",
             url: $url,
