@@ -1,18 +1,24 @@
 function gradientboxplot(responsejson, elementid) {
+  var element = document.getElementById(elementid);
+    element.classList.add("show");
+    element.classList.remove("hide");
 
     let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     let height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
     console.log(elementid)
     elementstr = "'" + elementid + "'"
     console.log(document.getElementById(elementid))
     width = document.getElementById(elementid).offsetWidth;
 
     height = 400;
+
+
     const margin = {
         top: 30,
-        right: 10,
+        right: 5,
         bottom: 30,
-        left: 30
+        left: 30,
     };
 
     barwidth = width / 25;
@@ -57,8 +63,8 @@ function gradientboxplot(responsejson, elementid) {
     let minY = d3.min(responsejson, function(d) {
         return +d.min;
     });
-    height = height - margin.top;
-
+    height = height - margin.top-margin.bottom;
+    width   = width- margin.left-margin.right;
 
     function wrap(text, width) {
       console.log(width)
@@ -111,13 +117,13 @@ function gradientboxplot(responsejson, elementid) {
             .append("stop")
             .attr("stop-color", colour)
             .attr("class", "middle")
-            .attr("offset", "15%")
+            .attr("offset", "20%")
             .attr("stop-opacity", op2);
         d3.select(idtag)
             .append("stop")
             .attr("stop-color", colour)
             .attr("class", "middle")
-            .attr("offset", "85%")
+            .attr("offset", "80%")
             .attr("stop-opacity", op2);
         //and the finish
         d3.select(idtag)
@@ -148,8 +154,9 @@ function gradientboxplot(responsejson, elementid) {
 
     yscale = d3
         .scaleLinear()
-        .domain([minY, maxY])
+        .domain([0, maxY*1.1])
         .range([height, 0 + margin.top]);
+
 
     var xAxis = d3.axisBottom(xscale);
 
@@ -285,6 +292,8 @@ function gradientboxplot(responsejson, elementid) {
             .style('font-size', '0.7em')
             .style('font-family', 'Open Sans');
 
+            element.classList.add("hide");
+            element.classList.remove("show");
 
 
 }
