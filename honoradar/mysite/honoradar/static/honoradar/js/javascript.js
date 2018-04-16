@@ -779,6 +779,18 @@ function reload() {
     element.classList.remove("show");
 
 
+
+      console.log("this is smooth")
+      var button = document.getElementById("reload_submit");
+      console.log(button)
+
+      var href = $(button).attr('linkdirectionup');
+      console.log(href)
+      $('html, body').animate({
+        scrollTop:$(href).offset().top
+      },'slow');
+
+
 };
 
 
