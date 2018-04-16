@@ -223,7 +223,7 @@
                         <input name="MinPerVideoFree" id="data_laenge_video" class="range amount-video-bar" type="range" min="0" max="90" value="0" step="0.5" / onmousedown="alertoffdatavideo()" ontouchstart="alertoffdatavideo()">
                         <p id="outputvideo" class="output">0</p>
                     </div>
-
+<div class="genre-select-container">
                     <input name="Genre" id="data_genre" class="genre-select hide" list="genre" placeholder="Welches Genre?" type="text" />
                     <datalist id="genre">
 	<!--[if lte IE 9]><select data-datalist="samples"><![endif]-->
@@ -251,6 +251,7 @@
 		<option value="Servicetext">
 	<!--[if lte IE 9]></select><![endif]-->
     </datalist>
+    </div>
                     <!-- Digitalization-Select -->
                     <div id="pre-data_verbreitung_analog_digital_beides" class="hide">
                         <div class="switch-field switch-field-text switch-field-text-3 tooltip">
@@ -276,17 +277,22 @@
                     <div class="banner-left-shadow hide"></div>
 
                     <!-- Position-Select -->
+					<div class="media-select-container">
                     <input name="JobPosition" id="data_position" class="position-select hide" list="position" placeholder="Als was arbeitest du?" type="text" onclick="alertoffdataposition()" />
                     <datalist id="position">
-	<!--[if lte IE 9]><select data-datalist="samples"><![endif]-->
-        <option value="Chefredakteur">
-        <option value="Ressortleiter">
-        <option value="Chef vom Dienst (CvD)">
-        <option value="Redakteur">
-        <option value="Volontär">
-        <option value="Praktikant">
-	<!--[if lte IE 9]></select><![endif]-->
-    </datalist>
+                    <!--[if lte IE 9]><select data-datalist="samples"><![endif]-->
+                    <option value="Chefredakteur">
+                    <option value="Ressortleiter">
+                    <option value="Chef vom Dienst (CvD)">
+                    <option value="Redakteur">
+                    <option value="Volontär">
+                    <option value="Praktikant">
+                    <!--[if lte IE 9]></select><![endif]-->
+                    </datalist>
+
+          </div>
+
+
                     <!-- Experience-Select -->
                     <div class="switch-field switch-field-text switch-field-text-4 hide" id="pre-data_erfahrung_jahr_1_3_5">
                         <input name="ExperienceEmplMix" type="radio" id="data_erfahrung_jahr_1" name="switch" value="0" />
@@ -409,6 +415,7 @@
 
                         <div class="result-box-frei-titel">Freiberufler</div>
                         <div class="infografik" id="freigrafik1">
+						<div class="nodata show" id="nodata-frei-1">&times;</div>
                         </div>
                         <div class="result-item-text" id="result-text-frei">Durchschnittliches Monatsgehalt:
                         </div>
@@ -423,10 +430,13 @@
                             </div>
                         </div>
                         <div class="infografik hide" id="freigrafikprint">
+						<div class="nodata hide" id="nodata-frei-2">&times;</div>
                         </div>
                         <div class="infografik hide" id="freigrafikaudio">
+						<div class="nodata hide" id="nodata-frei-3">&times;</div>
                         </div>
                         <div class="infografik hide" id="freigrafikvideo">
+						<div class="nodata hide" id="nodata-frei-4">&times;</div>
                         </div>
                     </div>
 
@@ -436,6 +446,7 @@
                         <div class="result-item-large-first" id="resultpauschal">
                             <div class="result-box-pauschal-titel">Pauschalisten</div>
                             <div class="infografik" id="pauschalgrafik1">
+							<div class="nodata hide" id="nodata-pauschal-1">&times;</div>
                             </div>
                             <div class="result-item-text" id="result-text-pauschal">Durchschnittliches Monatsgehalt: XXXX
                             </div>
@@ -445,6 +456,7 @@
                         <div class="result-item-large-second" id="resultfest">
                             <div class="result-box-inner result-box-fest-titel">Festangestellte</div>
                             <div class="infografik" id="festgrafik1">
+							<div class="nodata hide" id="nodata-fest-1">&times;</div>
                             </div>
                             <div class="result-item-text" id="result-text-fest">Durchschnittliches Monatsgehalt: XXXX
                             </div>
@@ -458,13 +470,13 @@
                         <div class="fact-text">
                             <div class="result-happiness-grid">
                                 <div class="happiness-result happiness-result-frei" id="">
-                                    <input name="" id="result_athmosphaere-frei" class="range result_happiness-bar result_happiness-1" type="range" min="1" max="9" value="1" disabled/>
+                                    <input name="" id="result_athmosphaere-frei" class="range result_happiness-bar result_happiness-1" type="range" min="1" max="9" value="0" disabled/>
                                 </div>
                                 <div class="happiness-result happiness-result-pauschal" id="">
-                                    <input name="" id="result_athmosphaere-pauschal" class="range result_happiness-bar result_happiness-1" type="range" min="1" max="9" value="1" disabled/>
+                                    <input name="" id="result_athmosphaere-pauschal" class="range result_happiness-bar result_happiness-1" type="range" min="1" max="9" value="0" disabled/>
                                 </div>
                                 <div class="happiness-result happiness-result-fest" id="">
-                                    <input name="" id="result_athmosphaere-fest" class="range result_happiness-bar result_happiness-1" type="range" min="1" max="9" value="1" disabled/>
+                                    <input name="" id="result_athmosphaere-fest" class="range result_happiness-bar result_happiness-1" type="range" min="1" max="9" value="0" disabled/>
                                 </div>
                             </div>
 

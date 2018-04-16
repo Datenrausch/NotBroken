@@ -76,7 +76,7 @@ $(document).ready(function() {
 
 
         if (data["nodata"] != undefined) {
-            $result.append('<div class="result-text" id="NoDataAtAllMessage">' + 'Leider haben wir für dieses Medium noch keine Daten parat.' + '</div>');
+          
             var element=document.getElementsByClassName("result-grid")[0];
             console.log(element)
 
