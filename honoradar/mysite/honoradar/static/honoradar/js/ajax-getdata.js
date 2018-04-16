@@ -76,7 +76,7 @@ $(document).ready(function() {
 
 
         if (data["nodata"] != undefined) {
-          
+
             var element=document.getElementsByClassName("result-grid")[0];
             console.log(element)
 
@@ -94,16 +94,16 @@ $(document).ready(function() {
           element.classList.remove("hide");
 
           var element=document.getElementById("result_athmosphaere-fest")
-          element.setAttribute("value", 5)
-          element.setAttribute("class","range result_happiness-bar result_happiness-5")
+          element.setAttribute("value", 0)
+          element.setAttribute("class","range result_happiness-bar result_happiness-0")
 
           var element=document.getElementById("result_athmosphaere-pauschal")
-          element.setAttribute("value",5)
-          element.setAttribute("class","range result_happiness-bar result_happiness-5")
+          element.setAttribute("value",0)
+          element.setAttribute("class","range result_happiness-bar result_happiness-0")
 
           var element=document.getElementById("result_athmosphaere-frei")
-          element.setAttribute("value",5)
-          element.setAttribute("class","range result_happiness-bar result_happiness-5")
+          element.setAttribute("value",0)
+          element.setAttribute("class","range result_happiness-bar result_happiness-0")
 
 
           if (data["MediumFestHappiness"]) {
