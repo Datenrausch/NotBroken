@@ -223,7 +223,7 @@
                         <input name="MinPerVideoFree" id="data_laenge_video" class="range amount-video-bar" type="range" min="0" max="90" value="0" step="0.5" / onmousedown="alertoffdatavideo()" ontouchstart="alertoffdatavideo()">
                         <p id="outputvideo" class="output">0</p>
                     </div>
-
+<div class="genre-select-container">
                     <input name="Genre" id="data_genre" class="genre-select hide" list="genre" placeholder="Welches Genre?" type="text" />
                     <datalist id="genre">
 	<!--[if lte IE 9]><select data-datalist="samples"><![endif]-->
@@ -251,6 +251,7 @@
 		<option value="Servicetext">
 	<!--[if lte IE 9]></select><![endif]-->
     </datalist>
+    </div>
                     <!-- Digitalization-Select -->
                     <div id="pre-data_verbreitung_analog_digital_beides" class="hide">
                         <div class="switch-field switch-field-text switch-field-text-3 tooltip">
@@ -276,17 +277,22 @@
                     <div class="banner-left-shadow hide"></div>
 
                     <!-- Position-Select -->
+					<div class="media-select-container">
                     <input name="JobPosition" id="data_position" class="position-select hide" list="position" placeholder="Als was arbeitest du?" type="text" onclick="alertoffdataposition()" />
                     <datalist id="position">
-	<!--[if lte IE 9]><select data-datalist="samples"><![endif]-->
-        <option value="Chefredakteur">
-        <option value="Ressortleiter">
-        <option value="Chef vom Dienst (CvD)">
-        <option value="Redakteur">
-        <option value="Volontär">
-        <option value="Praktikant">
-	<!--[if lte IE 9]></select><![endif]-->
-    </datalist>
+                    <!--[if lte IE 9]><select data-datalist="samples"><![endif]-->
+                    <option value="Chefredakteur">
+                    <option value="Ressortleiter">
+                    <option value="Chef vom Dienst (CvD)">
+                    <option value="Redakteur">
+                    <option value="Volontär">
+                    <option value="Praktikant">
+                    <!--[if lte IE 9]></select><![endif]-->
+                    </datalist>
+
+          </div>
+
+
                     <!-- Experience-Select -->
                     <div class="switch-field switch-field-text switch-field-text-4 hide" id="pre-data_erfahrung_jahr_1_3_5">
                         <input name="ExperienceEmplMix" type="radio" id="data_erfahrung_jahr_1" name="switch" value="0" />
