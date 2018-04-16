@@ -37,6 +37,8 @@ $(document).ready(function() {
                 alertdiv.classList.remove("hide");
                 keyname = String("message" + String(i));
                 if (i == 0) {
+                    $Warning.append('<span class="closebtn" onclick="hidedenied()">&times;</span>')
+
                     $Warning.append('<span>' + String(data[keyname]) + '</span>');
                 } else {
                     $Warning.append('<span>, ' + String(data[keyname]) + '</span>');
