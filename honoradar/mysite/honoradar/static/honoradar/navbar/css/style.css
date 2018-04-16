@@ -149,7 +149,7 @@ main {
 	transform: translateX(-50%) translateY(-50%);
 	width: 22px;
 	height: 2px;
-	background-color: #ffffff;
+	background-color: #fff;
 }
 
 .cd-nav-trigger .cd-nav-icon::before, .cd-nav-trigger .cd-nav-icon:after {
@@ -198,10 +198,10 @@ main {
 	transform: translateY(6px);
 }
 .no-touch .cd-nav-trigger:hover .cd-nav-icon::after {
-	top: 2px;
+	top: 3px;
 }
 .no-touch .cd-nav-trigger:hover .cd-nav-icon::before {
-	top: -2px;
+	top: -3px;
 }
 .cd-nav-trigger svg {
 	position: absolute;
@@ -247,7 +247,7 @@ main {
 	transform: rotate(-45deg);
 }
 .no-touch .navigation-is-open .cd-nav-trigger:hover .cd-nav-icon::after, .no-touch .navigation-is-open .cd-nav-trigger:hover .cd-nav-icon::before {
-	top: 0;
+	top: 0;	
 }
 .navigation-is-open .cd-nav-trigger circle {
 	stroke-dashoffset: 0;
@@ -391,8 +391,6 @@ main {
 	.cd-nav .cd-navigation-wrapper	{
 		padding: 62px 20%;
 	}
-	
-	
 	.cd-nav .cd-navigation-wrapper::after {
 		clear: both;
 		content: "";
@@ -403,15 +401,12 @@ main {
 		float: left;
 	text-align: left;
 	}
-	
-address {
-	padding-top:400px;
-}
-	
+	address {
+		padding-top:400px;
+	}
 	.cd-primary-nav {
 		margin-top: 0;
 	}
-	
 	.cd-nav .cd-primary-nav {
 		margin-top: 0;
 	}
@@ -446,6 +441,7 @@ address {
 	position: static;
 	visibility: visible;
 }
+
 .no-js .cd-nav .cd-navigation-wrapper {
 	height: auto;
 	overflow: visible;
@@ -461,15 +457,12 @@ address {
 .cd-navigation-wrapper {
 padding-left: 40px !important;
 }
-
 .cd-primary-nav li {
 	margin: 0.6em 0 !important;
 }
-
 .cd-primary-nav a {
 	line-height: 1.1em;
 }
-
 .cd-nav h2 {
 	font-size: 0.6em;
 }
