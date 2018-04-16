@@ -133,6 +133,8 @@ def senddata(request):
             # we get the three categories that all entries have in common regardless of
             #freelance, pauschalist or employed
             MediumName = (request.POST.get('MediumName'))
+            MediumName=MediumName.title()
+            print(MediumName)
             FreeOrEmployed = (request.POST.get('FreeOrEmployed'))
             Comment = (request.POST.get('Comment'))
             print(Comment)
@@ -150,18 +152,6 @@ def senddata(request):
                 sanitycheck = 1
                 messages.info(request, 'Mediumname')
 
-            if AGB == "on":
-                pass
-            else:
-                print("No AGB!!")
-                sanitycheck = 1
-                messages.info(request, 'AGB')
-
-            if float(Happiness) != 1:
-                pass
-            else:
-                sanitycheck = 1
-                messages.info(request, 'Arbeitsatmosphäre')
 
 
             # CHECKING WHETHER THERE ARE ALREADY ENTIRES WITH THIS MEDIUM
@@ -191,11 +181,24 @@ def senddata(request):
                         sanitycheck = 1
                         messages.info(request, 'Gehalt')
 
-                    if float(HoursPerWeekEmp) != 0:
+                    if float(HoursPerWeekEmp) != 1:
                         pass
                     else:
                         sanitycheck = 1
-                        messages.info(request, 'Arbeitszeit')
+                        messages.info(request, 'gearbeiteten Stunden pro Woche')
+
+                    if float(Happiness) != 1:
+                        pass
+                    else:
+                        sanitycheck = 1
+                        messages.info(request, 'Arbeitsatmosphäre')
+
+                    if AGB == "on":
+                        pass
+                    else:
+                        print("No AGB!!")
+                        sanitycheck = 1
+                        messages.info(request, 'AGB')
 
                     SalaryPerHour=0
                     SalaryPerMonth=0
@@ -247,6 +250,21 @@ def senddata(request):
                     else:
                         sanitycheck = 1
                         messages.info(request, 'gearbeiteten Stunden pro Tag')
+
+                    if float(Happiness) != 1:
+                        pass
+                    else:
+                        sanitycheck = 1
+                        messages.info(request, 'Arbeitsatmosphäre')
+
+                    if AGB == "on":
+                        pass
+                    else:
+                        print("No AGB!!")
+                        sanitycheck = 1
+                        messages.info(request, 'AGB')
+
+
                     SalaryPerHour=0
                     SalaryPerMonth=0
                     # if all these data sanitychecks are okay, we bind the input to an existing medium
@@ -289,17 +307,13 @@ def senddata(request):
                         sanitycheck = 1
                         messages.info(request, 'Honorar')
 
-                    if float(HoursSpentFree) != 0:
-                        pass
-                    else:
-                        sanitycheck = 1
-                        messages.info(request, 'Zeitaufwand')
 
                     if VideoAudioTextFree:
                         pass
                     else:
                         sanitycheck = 1
                         messages.info(request, 'Mediumsart')
+
 
                     if VideoAudioTextFree == "video":
                         if float(MinPerVideoFree) != 0:
@@ -321,6 +335,26 @@ def senddata(request):
                         else:
                             sanitycheck = 1
                             messages.info(request, 'Anzahl an Zeichen für den Artikel')
+
+                    if float(HoursSpentFree) != 0:
+                        pass
+                    else:
+                        sanitycheck = 1
+                        messages.info(request, 'Zeitaufwand')
+
+                    if float(Happiness) != 1:
+                        pass
+                    else:
+                        sanitycheck = 1
+                        messages.info(request, 'Arbeitsatmosphäre')
+
+                    if AGB == "on":
+                        pass
+                    else:
+                        print("No AGB!!")
+                        sanitycheck = 1
+                        messages.info(request, 'AGB')
+
                     SalaryPerHour=0
                     SalaryPerMonth=0
                     if(sanitycheck == 0):
@@ -358,6 +392,27 @@ def senddata(request):
                     else:
                         sanitycheck = 1
                         messages.info(request, 'Gehalt')
+
+                    if float(HoursPerWeekEmp)!=1:
+                        pass
+                    else:
+                        sanitycheck = 1
+                        messages.info(request, 'gearbeiteten Stunden pro Woche')
+
+
+                    if float(Happiness) != 1:
+                        pass
+                    else:
+                        sanitycheck = 1
+                        messages.info(request, 'Arbeitsatmosphäre')
+
+                    if AGB == "on":
+                        pass
+                    else:
+                        print("No AGB!!")
+                        sanitycheck = 1
+                        messages.info(request, 'AGB')
+
                     SalaryPerHour=0
                     SalaryPerMonth=0
                     # if all these data sanitychecks are okay, we bind the input to an existing medium
@@ -407,6 +462,20 @@ def senddata(request):
                         sanitycheck = 1
                         messages.info(request, 'gearbeiteten Stunden pro Tag')
 
+                    if float(Happiness) != 1:
+                        pass
+                    else:
+                        sanitycheck = 1
+                        messages.info(request, 'Arbeitsatmosphäre')
+
+                    if AGB == "on":
+                        pass
+                    else:
+                        print("No AGB!!")
+                        sanitycheck = 1
+                        messages.info(request, 'AGB')
+
+
                     SalaryPerHour=0
                     SalaryPerMonth=0
                     if(sanitycheck == 0):
@@ -452,17 +521,13 @@ def senddata(request):
                         sanitycheck = 1
                         messages.info(request, 'Honorar')
 
-                    if float(HoursSpentFree) != 0:
-                        pass
-                    else:
-                        sanitycheck = 1
-                        messages.info(request, 'Zeitaufwand')
 
                     if VideoAudioTextFree:
                         pass
                     else:
                         sanitycheck = 1
-                        messages.info(request, 'Mediumsart')
+                        messages.info(request, 'Mediumformat')
+
 
                     if VideoAudioTextFree == "video":
                         if float(MinPerVideoFree) != 0:
@@ -484,6 +549,26 @@ def senddata(request):
                         else:
                             sanitycheck = 1
                             messages.info(request, 'Anzahl an Zeichen')
+
+                    if float(HoursSpentFree) != 0:
+                        pass
+                    else:
+                        sanitycheck = 1
+                        messages.info(request, 'Zeitaufwand')
+
+                    if float(Happiness) != 1:
+                        pass
+                    else:
+                        sanitycheck = 1
+                        messages.info(request, 'Arbeitsatmosphäre')
+
+                    if AGB == "on":
+                        pass
+                    else:
+                        print("No AGB!!")
+                        sanitycheck = 1
+                        messages.info(request, 'AGB')
+
 
                     SalaryPerHour=0
                     SalaryPerMonth=0
@@ -548,6 +633,9 @@ def senddata(request):
             # we get the three categories that all entries have in common regardless of
             #freelance, pauschalist or employed
             MediumName = (request.POST.get('MediumName'))
+            MediumName=MediumName.title()
+            print(MediumName)
+
             FreeOrEmployed = (request.POST.get('FreeOrEmployed'))
             Comment = (request.POST.get('Comment'))
             AGB = (request.POST.get('AGB'))
@@ -596,11 +684,11 @@ def senddata(request):
                         sanitycheck = 1
                         messages.info(request, 'Gehalt')
 
-                    if float(HoursPerWeekEmp) != 0:
+                    if float(HoursPerWeekEmp) != 1:
                         pass
                     else:
                         sanitycheck = 1
-                        messages.info(request, 'Arbeitszeit')
+                        messages.info(request, 'gearbeiteten Stunden pro Woche')
 
                     SalaryPerHour=0
                     SalaryPerMonth=0
@@ -703,6 +791,19 @@ def senddata(request):
                         sanitycheck = 1
                         messages.info(request, 'Mediumsart')
 
+                        if float(Happiness) != 1:
+                            pass
+                        else:
+                            sanitycheck = 1
+                            messages.info(request, 'Arbeitsatmosphäre')
+
+                        if AGB == "on":
+                            pass
+                        else:
+                            print("No AGB!!")
+                            sanitycheck = 1
+                            messages.info(request, 'AGB')
+
                     if VideoAudioTextFree == "video":
                         if float(MinPerVideoFree) != 0:
                             pass
@@ -760,6 +861,14 @@ def senddata(request):
                     else:
                         sanitycheck = 1
                         messages.info(request, 'Gehalt')
+
+                    if float(HoursPerWeekEmp)!=1:
+                        pass
+                    else:
+                        sanitycheck = 1
+                        messages.info(request, 'gearbeiteten Stunden pro Woche')
+
+
                     SalaryPerHour=0
                     SalaryPerMonth=0
                     # if all these data sanitychecks are okay, we bind the input to an existing medium
@@ -863,6 +972,19 @@ def senddata(request):
                     else:
                         sanitycheck = 1
                         messages.info(request, 'Mediumsart')
+                        if float(Happiness) != 1:
+                            pass
+                        else:
+                            sanitycheck = 1
+                            messages.info(request, 'Arbeitsatmosphäre')
+
+                        if AGB == "on":
+                            pass
+                        else:
+                            print("No AGB!!")
+                            sanitycheck = 1
+                            messages.info(request, 'AGB')
+
 
                     if VideoAudioTextFree == "video":
                         if float(MinPerVideoFree) != 0:
@@ -870,6 +992,18 @@ def senddata(request):
                         else:
                             sanitycheck = 1
                             messages.info(request, 'Beitragsminuten für den Videobeitrag')
+                        if float(Happiness) != 1:
+                            pass
+                        else:
+                            sanitycheck = 1
+                            messages.info(request, 'Arbeitsatmosphäre')
+
+                        if AGB == "on":
+                            pass
+                        else:
+                            print("No AGB!!")
+                            sanitycheck = 1
+                            messages.info(request, 'AGB')
 
                     if VideoAudioTextFree == "audio":
                         if float(MinPerAudioFree) != 0:
@@ -878,12 +1012,40 @@ def senddata(request):
                             sanitycheck = 1
                             messages.info(request, 'Beitragsminuten für den Audiobeitrag')
 
+                        if float(Happiness) != 1:
+                            pass
+                        else:
+                            sanitycheck = 1
+                            messages.info(request, 'Arbeitsatmosphäre')
+
+                        if AGB == "on":
+                            pass
+                        else:
+                            print("No AGB!!")
+                            sanitycheck = 1
+                            messages.info(request, 'AGB')
+
+
                     if VideoAudioTextFree == "text":
                         if float(CharPerArticleFree) != 0:
                             pass
                         else:
                             sanitycheck = 1
                             messages.info(request, 'Anzahl an Zeichen')
+
+                        if float(Happiness) != 1:
+                            pass
+                        else:
+                            sanitycheck = 1
+                            messages.info(request, 'Arbeitsatmosphäre')
+
+                        if AGB == "on":
+                            pass
+                        else:
+                            print("No AGB!!")
+                            sanitycheck = 1
+                            messages.info(request, 'AGB')
+
 
                     SalaryPerHour=0
                     SalaryPerMonth=0
