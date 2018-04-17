@@ -177,28 +177,28 @@ em {
 }
 
 .banner-left-1 {
-	width: 380px;
+	width: 390px;
 }
 
 .banner-left-2 {
-	width: 350px;
+	width: 360px;
 }
 
 .banner-left-3 {
-	width: 215px;
+	width: 225px;
 }
 
 .banner-left-4 {
-	width: 245px;
+	width: 255px;
 }
 
 
 @-moz-document url-prefix() {
 	.banner-left-1 {
-		width: 390px;
+		width: 400px;
 	}
 	.banner-left-2 {
-		width: 360px;
+		width: 370px;
 	}
 }
 
@@ -206,22 +206,22 @@ em {
 @media (max-width: 460px)	{
 	.banner-left-1 {
 		font-size: 0.7em;
-		width: 300px;
+		width: 310px;
 		line-height: 2.3em;
 	}
 	.banner-left-2 {
 		font-size: 0.7em;
-		width: 280px;
+		width: 290px;
 		line-height: 2.3em;
 	}
 	.banner-left-3 {
 		font-size: 0.7em;
-		width: 170px;
+		width: 180px;
 		line-height: 2.3em;
 	}
 	.banner-left-4 {
 		font-size: 0.7em;
-		width: 310px;
+		width: 320px;
 		line-height: 2.3em;
 	}
 }
@@ -229,7 +229,7 @@ em {
 @media (min-width: 460px)	{
 	.banner-right-1 {
 		height: 40px;
-		width: 415px;
+		width: 425px;
 		background-color: #FF9F23;
 		float: right;
 		margin-right: -20px;
@@ -848,8 +848,8 @@ em {
 	position: absolute;
 	display: block;
 	color: white;
-	font-size: 13px;
-	margin-top: -22px;
+	font-size: 15px;
+	margin-top: -23px;
 	margin-left: calc(1%);
 }
 
@@ -864,6 +864,13 @@ em {
 .switch-field-text-4:before {
 	content: 'Arbeitserfahrung';
 }
+
+@media (max-width: 800px)	{
+	.switch-field-text:before {
+		font-size: 13px;
+	}
+}
+
 
 
 
@@ -1496,27 +1503,43 @@ input[type=range]:focus::-ms-fill-upper {
 	-o-transition: all 0.3s ease-in-out;
 }
 
+.happiness-select:before {
+	position: absolute;
+	display: block;
+	color: white;
+	font-size: 15px;
+	margin-top: -23px;
+	margin-left: calc(1%);
+}
+
+.happiness-select:before {
+	content: 'Wie angenehm war die Zusammenarbeit?';
+}
+
 @media (max-width: 800px)	{
 	.happiness-select {
-		margin: 40px 40px 0px 40px;
+		margin: 50px 40px 0px 40px;
+	}
+	.happiness-select:before {
+		font-size: 13px;
 	}
 }
 
 @media (min-width: 800px)	{
 	.happiness-select {
-		margin: 30px 40px 0px 40px;
+		margin: 40px 40px 0px 40px;
 	}
 }
 
 @media (min-width: 900px)	{
 	.happiness-select {
-		margin: 40px 40px 0px 40px;
+		margin: 50px 40px 0px 40px;
 	}
 }
 
 @media (min-width: 1600px)	{
 	.happiness-select {
-		margin: 30px 40px 0px 40px;
+		margin: 40px 40px 0px 40px;
 	}
 }
 
@@ -4527,6 +4550,10 @@ input[type=range].result_happiness-bar::-ms-thumb {
 }
 
 /*Webkit*/
+input[type=range].result_happiness-0::-webkit-slider-thumb  {
+	background-image: url(../image/fav-output-0.png);
+}
+
 input[type=range].result_happiness-1::-webkit-slider-thumb  {
 	background-image: url(../image/fav-output-1.png);
 }
@@ -4564,6 +4591,10 @@ input[type=range].result_happiness-9::-webkit-slider-thumb {
 }
 
 /*Moz*/
+input[type=range].result_happiness-0::-moz-range-thumb {
+	background-image: url(../image/fav-output-0.png);
+}
+
 input[type=range].result_happiness-1::-moz-range-thumb {
 	background-image: url(../image/fav-output-1.png);
 }
@@ -4601,6 +4632,10 @@ input[type=range].result_happiness-9::-moz-range-thumb {
 }
 
 /*IE*/
+input[type=range].result_happiness-0::-ms-thumb {
+	background-image: url(../image/fav-output-0.png);
+}
+
 input[type=range].result_happiness-1::-ms-thumb {
 	background-image: url(../image/fav-output-1.png);
 }
@@ -4832,5 +4867,20 @@ input[type=range].result_happiness-9::-ms-thumb {
 @media (max-width: 360px)	{
 	.codeoffairness {
 
+	}
+}
+/*Input Fontsize*/
+
+@media (max-width: 400px)	{
+	.select-font {
+		font-size: 13px;
+		padding-left: 12px;
+	}
+}
+
+@media (max-width: 350px)	{
+	.select-font {
+		font-size: 13px;
+		padding-left: 8px;
 	}
 }

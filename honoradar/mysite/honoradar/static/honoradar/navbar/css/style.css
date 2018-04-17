@@ -134,6 +134,7 @@ main {
 	-webkit-transition: -webkit-transform 0.5s;
 	-moz-transition: -moz-transform 0.5s;
 	transition: transform 0.5s;
+	border: 3px solid white;
 }
 .cd-nav-trigger .cd-nav-icon {
 	/* icon created in CSS */
@@ -149,7 +150,8 @@ main {
 	transform: translateX(-50%) translateY(-50%);
 	width: 22px;
 	height: 2px;
-	background-color: #fff;
+	background-color: #fff;	
+	border: 3px solid t;
 }
 
 .cd-nav-trigger .cd-nav-icon::before, .cd-nav-trigger .cd-nav-icon:after {
@@ -173,6 +175,7 @@ main {
 	-moz-transition: -moz-transform 0.5s, width 0.5s, top 0.3s;
 	transition: transform 0.5s, width 0.5s, top 0.3s;
 }
+
 .cd-nav-trigger .cd-nav-icon::before {
 	-webkit-transform-origin: right top;
 	-moz-transform-origin: right top;
@@ -185,6 +188,7 @@ main {
 	-o-transform: translateY(-6px);
 	transform: translateY(-6px);
 }
+
 .cd-nav-trigger .cd-nav-icon::after {
 	-webkit-transform-origin: right bottom;
 	-moz-transform-origin: right bottom;
@@ -197,25 +201,30 @@ main {
 	-o-transform: translateY(6px);
 	transform: translateY(6px);
 }
+
 .no-touch .cd-nav-trigger:hover .cd-nav-icon::after {
 	top: 3px;
 }
+
 .no-touch .cd-nav-trigger:hover .cd-nav-icon::before {
 	top: -3px;
 }
+
 .cd-nav-trigger svg {
 	position: absolute;
 	top: 0;
 	left: 0;
 }
+
 .cd-nav-trigger circle {
 	/* circle border animation */
 	-webkit-transition: stroke-dashoffset 0.4s 0s;
 	-moz-transition: stroke-dashoffset 0.4s 0s;
 	transition: stroke-dashoffset 0.4s 0s;
 	stroke: rgb(46, 204, 113);
-	stroke-width: 2;
+	stroke-width: 5;
 }
+
 .navigation-is-open .cd-nav-trigger {
 	/* rotate trigger when navigation becomes visible */
 	-webkit-transform: rotate(180deg);
@@ -223,15 +232,18 @@ main {
 	-ms-transform: rotate(180deg);
 	-o-transform: rotate(180deg);
 	transform: rotate(180deg);
+	border: 3px solid transparent;
 }
+
 .navigation-is-open .cd-nav-trigger .cd-nav-icon::after,
 .navigation-is-open .cd-nav-trigger .cd-nav-icon::before {
 	/* animate arrow --> from hamburger to arrow */
-	width: 50%;
+	width: 50%; 
 	-webkit-transition: -webkit-transform 0.5s, width 0.5s;
 	-moz-transition: -moz-transform 0.5s, width 0.5s;
 	transition: transform 0.5s, width 0.5s;
 }
+
 .navigation-is-open .cd-nav-trigger .cd-nav-icon::before {
 	-webkit-transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
@@ -251,9 +263,9 @@ main {
 }
 .navigation-is-open .cd-nav-trigger circle {
 	stroke-dashoffset: 0;
-	-webkit-transition: stroke-dashoffset 0.4s 0.3s;
-	-moz-transition: stroke-dashoffset 0.4s 0.3s;
-	transition: stroke-dashoffset 0.4s 0.3s;
+	-webkit-transition: stroke-dashoffset .7s 0.3s;
+	-moz-transition: stroke-dashoffset .7s 0.3s;
+	transition: stroke-dashoffset .7s 0.3s;
 }
 @media only screen and (min-width: 1170px) {
 	.cd-nav-trigger {
