@@ -305,6 +305,8 @@
 
                     <!-- Submit -->
                     <div class="alert-denied alert-media-select hide" id="WARNING">
+                        <span class="closebtn" onclick="hidedenied()">&times;</span>
+                        <strong>Achtung! </strong>Bitte fülle folgende Felder aus: Feld1, Feld2 und Feld2.
                     </div>
                     <input type="submit" linkdirection="#banderole" class="submit-get hide" id="data_submit" value="Daten spenden" />
 
@@ -327,7 +329,7 @@
                 </p>
 
                 <a href="#banderole" class="smooth">
-                    <input type="submit" linkdirection="#result" linkdirectionup="#banderole" class="submit submit-reload hide" id="reload_submit" value="Erneut spenden" onmousedown="reload()" ontouchstart="reload()" />
+                    <input type="submit" linkdirection="#result" class="submit submit-reload hide" id="reload_submit" value="Erneut spenden" onmousedown="reload()" ontouchstart="reload()" />
                 </a>
 
             </div>
@@ -344,27 +346,31 @@
                     <div class="media-select-container">
                         <input name="mediumget" id="media-analyse" class="media-select select-font" list="medium" placeholder="Welches Medium interessiert dich?" type="text" onclick="getfunction()" />
 
+                        <datalist id="medium-analyse">
 	<!--[if lte IE 9]><select data-datalist="samples"><![endif]-->
 
     <!--[if lte IE 9]></select><![endif]-->
+    </datalist>
                     </div>
-
 
                     <!-- Bedingung -->
-                    <div class="bedingung-container" id="">
-                        <span id="bedingung" class="bedingung">Wir zeigen die Analyse nur, wenn mindestens zwei Datensätze vorliegen! </span>
-                    </div>
 
-                    <div class="break"></div>
-                    <div class="alert-denied alert-media-select hide" id="WARNING_getdata">
-                    <span class="closebtn" onclick="hidedenied2()">&times;</span>
-                    <strong>Achtung! </strong>Du musst ein Medium definieren.
-                    </div>
-                    <!-- Submit -->
-                    <a href="#break-2"><input type="submit" class="submit-giv hide" id="analyse_submit" value="Daten auslesen" /></a>
+                                        <!-- Bedingung -->
+                                        <div class="bedingung-container" id="">
+                                            <span id="bedingung" class="bedingung">Wir zeigen die Analyse nur, wenn mindestens zwei Datensätze vorliegen! </span>
+                                        </div>
 
-                </form>
-            </div>
+                                        <div class="break"></div>
+                                        <div class="alert-denied alert-media-select hide" id="WARNING_getdata">
+                                        <span class="closebtn" onclick="hidedenied2()">&times;</span>
+                                        <strong>Achtung! </strong>Du musst ein Medium definieren.
+                                        </div>
+                                        <!-- Submit -->
+                                        <!--<a href="#break-2">--><input type="submit" class="submit-giv hide" id="analyse_submit" value="Daten auslesen" /><!--</a>-->
+
+                                    </form>
+                                </div>
+
 
             <!-- Grafik-Box -->
             <div class="result hide" id="result">
@@ -435,13 +441,13 @@
                         <div class="fact-text">
                             <div class="result-happiness-grid">
                                 <div class="happiness-result happiness-result-frei" id="">
-                                    <input name="" id="result_athmosphaere-frei" class="range result_happiness-bar result_happiness-0" type="range" min="1" max="9" value="0" disabled/>
+                                    <input name="" id="result_athmosphaere-frei" class="range result_happiness-bar result_happiness-1" type="range" min="1" max="9" value="0" disabled/>
                                 </div>
                                 <div class="happiness-result happiness-result-pauschal" id="">
-                                    <input name="" id="result_athmosphaere-pauschal" class="range result_happiness-bar result_happiness-0" type="range" min="1" max="9" value="0" disabled/>
+                                    <input name="" id="result_athmosphaere-pauschal" class="range result_happiness-bar result_happiness-1" type="range" min="1" max="9" value="0" disabled/>
                                 </div>
                                 <div class="happiness-result happiness-result-fest" id="">
-                                    <input name="" id="result_athmosphaere-fest" class="range result_happiness-bar result_happiness-0" type="range" min="1" max="9" value="0" disabled/>
+                                    <input name="" id="result_athmosphaere-fest" class="range result_happiness-bar result_happiness-1" type="range" min="1" max="9" value="0" disabled/>
                                 </div>
                             </div>
 
@@ -585,8 +591,8 @@
 
     <script src="static/honoradar/js/autocomplete-giv.js"></script>
     <script src="static/honoradar/js/autocomplete-get.js"></script>
-    <!---<script src="static/honoradar/js/autocomplete-genre.js"></script>
-    <script src="static/honoradar/js/autocomplete-position.js"></script>--->
+    <script src="static/honoradar/js/autocomplete-genre.js"></script>
+    <script src="static/honoradar/js/autocomplete-position.js"></script>
 
 
     </script>
