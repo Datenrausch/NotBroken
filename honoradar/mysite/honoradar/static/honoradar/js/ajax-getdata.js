@@ -81,6 +81,13 @@ $(document).ready(function() {
 
 
         if (data["nodata"] != undefined) {
+          var element=document.getElementById("NoDataAtAllMessage")
+          console.log(element)
+          if (element!=null){
+            element.parentNode.removeChild(element);
+          }
+
+          $result.append('<div class="result-text" id="NoDataAtAllMessage">' + 'Leider haben wir für dieses Medium noch keine Daten parat.' + '</div>');
 
             var element=document.getElementsByClassName("result-grid")[0];
             console.log(element)
