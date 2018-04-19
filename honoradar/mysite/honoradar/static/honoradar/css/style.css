@@ -4854,7 +4854,7 @@ input[type=range].result_happiness-9::-ms-thumb {
 	width: auto;
 	height: auto;
 	margin-top: calc(50% - 100px);
-	display: inline-block !important;
+	display: inline-block;
 	font-size: 3em;
 	color: white;
 	padding: 0px 15px 0px 15px;
