@@ -842,7 +842,7 @@ function smoothfunction_submit(){
   },'slow');
 }
 function textamountloan() {
-	var element = document.getElementById("freigrafikprint");
+	var element = document.getElementById("freigrafiktext");
     element.classList.add("show");
     element.classList.remove("hide");
 
@@ -856,7 +856,7 @@ function textamountloan() {
 };
 
 function audioamountloan() {
-	var element = document.getElementById("freigrafikprint");
+	var element = document.getElementById("freigrafiktext");
     element.classList.add("hide");
     element.classList.remove("show");
 
@@ -870,7 +870,7 @@ function audioamountloan() {
 };
 
 function videoamountloan() {
-	var element = document.getElementById("freigrafikprint");
+	var element = document.getElementById("freigrafiktext");
     element.classList.add("hide");
     element.classList.remove("show");
 
@@ -882,6 +882,7 @@ function videoamountloan() {
     element.classList.add("show");
     element.classList.remove("hide");
 };
+
 function smoothfunction(){
   console.log("this is smooth")
   var button = document.getElementById("reload_submit");
