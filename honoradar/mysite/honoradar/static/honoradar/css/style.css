@@ -4871,9 +4871,17 @@ input[type=range].result_happiness-9::-ms-thumb {
 	margin: 110px auto auto -120px;
 }
 
+#freigrafiktext, #freigrafikaudio, #freigrafikvideo {
+	display: inline-block;
+}
+
 /*Mechanics*/
 
 .hide {
+	display: none;
+}
+
+#freigrafiktext.hide, #freigrafikaudio.hide, #freigrafikvideo.hide {
 	display: none;
 }
 
@@ -4881,6 +4889,6 @@ input[type=range].result_happiness-9::-ms-thumb {
 	display: block;
 }
 
-.nodata.show{
+.nodata.show {
 	display: inline-block !important;
 }
