@@ -54,18 +54,38 @@ $(document).ready(function() {
         element.innerHTML=""
 
 
-        var element=document.getElementById("festgrafik1")
-        element.innerHTML=""
-        var element=document.getElementById("pauschalgrafik1")
-        element.innerHTML=""
-        var element=document.getElementById("freigrafik1")
-        element.innerHTML=""
-        var element=document.getElementById("freigrafikvideo")
-        element.innerHTML=""
-        var element=document.getElementById("freigrafikaudio")
-        element.innerHTML=""
-        var element=document.getElementById("freigrafikprint")
-        element.innerHTML=""
+        d3.select("#festgrafik1_svg").remove();
+        d3.select("#pauschalgrafik1_svg").remove();
+        d3.select("#freigrafik1_svg").remove();
+        d3.select("#freigrafikvideo_svg").remove();
+        d3.select("#freigrafikaudio_svg").remove();
+        d3.select("#freigrafiktext_svg").remove();
+
+        var element=document.getElementById("nodata-frei-1")
+        element.classList.add("hide");
+        element.classList.remove("show");
+
+        var element=document.getElementById("nodata-frei-2")
+        element.classList.add("hide");
+        element.classList.remove("show");
+
+        var element=document.getElementById("nodata-frei-3")
+        element.classList.add("hide");
+        element.classList.remove("show");
+
+        var element=document.getElementById("nodata-frei-4")
+        element.classList.add("hide");
+        element.classList.remove("show");
+
+        var element=document.getElementById("nodata-pauschal-1")
+        element.classList.add("hide");
+        element.classList.remove("show");
+
+        var element=document.getElementById("nodata-fest-1")
+        element.classList.add("hide");
+        element.classList.remove("show");
+
+
         const mediumname = document.getElementById("result-mediumname")
         console.log(mediumname)
         const size = Object.keys(data).length;
@@ -87,13 +107,44 @@ $(document).ready(function() {
             element.parentNode.removeChild(element);
           }
 
-          $result.append('<div class="result-text" id="NoDataAtAllMessage">' + 'Leider haben wir für dieses Medium noch keine Daten parat.' + '</div>');
+          var element=document.getElementById("result-grid");
+          console.log(element)
+          element.classList.add("show");
+          element.classList.remove("hide");
+          console.log(element)
 
-            var element=document.getElementsByClassName("result-grid")[0];
-            console.log(element)
+                  var element=document.getElementById("nodata-frei-1")
+                  element.classList.add("show");
+                  element.classList.remove("hide");
 
-            element.classList.add("hide");
-            element.classList.remove("show");
+                  var element=document.getElementById("nodata-frei-2")
+                  element.classList.add("show");
+                  element.classList.remove("hide");
+
+
+                  var element=document.getElementById("nodata-frei-3")
+                  element.classList.add("show");
+                  element.classList.remove("hide");
+
+
+                  var element=document.getElementById("nodata-frei-4")
+                  element.classList.add("show");
+                  element.classList.remove("hide");
+
+
+                  var element=document.getElementById("nodata-pauschal-1")
+                  element.classList.add("show");
+                  element.classList.remove("hide");
+
+
+                  var element=document.getElementById("nodata-fest-1")
+                  element.classList.add("show");
+                  element.classList.remove("hide");
+
+
+
+
+
         } else {
 
           var element=document.getElementById("NoDataAtAllMessage");
@@ -173,14 +224,17 @@ $(document).ready(function() {
 
                     gradientboxplot(d3festjson, elementid)
                 }else{
-                  $graphicdiv = $("#"+elementid)
-                  $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
+                  var element=document.getElementById("nodata-fest-1")
+                  element.classList.add("show");
+                  element.classList.remove("hide");
+
                 }
             }else{
-              $graphicdiv = $("#"+elementid)
-              $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
-
+              var element=document.getElementById("nodata-fest-1")
+              element.classList.add("show");
+              element.classList.remove("hide");
             };
+
              elementid = "pauschalgrafik1"
 
             if ((data["MediumPauschalSalaryPerHour"]) && (data["AllPauschalSalaryPerHour"])) {
@@ -209,13 +263,18 @@ $(document).ready(function() {
 
                     gradientboxplot(d3festjson, elementid)
                   }else{
-                    $graphicdiv = $("#"+elementid)
-                    $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
+                    var element=document.getElementById("nodata-pauschal-1")
+                    element.classList.add("show");
+                    element.classList.remove("hide");
+
                   }
               }else{
-                $graphicdiv = $("#"+elementid)
-                $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
-                };
+                var element=document.getElementById("nodata-pauschal-1")
+                element.classList.add("show");
+                element.classList.remove("hide");
+              };
+
+
                elementid = "freigrafik1"
 
             if ((data["MediumFreiSalaryPerHour"]) && (data["AllFreiSalaryPerHour"])) {
@@ -243,14 +302,18 @@ $(document).ready(function() {
                     }];
 
                     gradientboxplot(d3festjson, elementid)
-                }else{
-                  $graphicdiv = $("#"+elementid)
-                  $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
-                }
+                  }else{
+                    var element=document.getElementById("nodata-frei-1")
+                    element.classList.add("show");
+                    element.classList.remove("hide");
+
+                  }
               }else{
-                $graphicdiv = $("#"+elementid)
-                $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
+                var element=document.getElementById("nodata-frei-1")
+                element.classList.add("show");
+                element.classList.remove("hide");
               };
+
                elementid = "freigrafikvideo"
 
             if ((data["MediumFreiVideoFeePerMin"]) && (data["AllFreiVideoFeePerMin"])) {
@@ -278,13 +341,16 @@ $(document).ready(function() {
                     }];
 
                     gradientboxplot(d3festjson, elementid)
-                }else{
-                  $graphicdiv = $("#"+elementid)
-                  $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
-                }
+                  }else{
+                    var element=document.getElementById("nodata-frei-4")
+                    element.classList.add("show");
+                    element.classList.remove("hide");
+
+                  }
               }else{
-                $graphicdiv = $("#"+elementid)
-                $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
+                var element=document.getElementById("nodata-frei-4")
+                element.classList.add("show");
+                element.classList.remove("hide");
               };
                elementid = "freigrafikaudio"
 
@@ -313,15 +379,19 @@ $(document).ready(function() {
                     }];
 
                     gradientboxplot(d3festjson, elementid)
-                }else{
-                  $graphicdiv = $("#"+elementid)
-                  $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
-                }
+                  }else{
+                    var element=document.getElementById("nodata-frei-3")
+                    element.classList.add("show");
+                    element.classList.remove("hide");
+
+                  }
               }else{
-                $graphicdiv = $("#"+elementid)
-                $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
+                var element=document.getElementById("nodata-frei-3")
+                element.classList.add("show");
+                element.classList.remove("hide");
               };
-               elementid = "freigrafikprint"
+
+               elementid = "freigrafiktext"
 
             if ((data["MediumFreiArticleFeePerChar"]) && (data["AllFreiArticleFeePerChar"])) {
                 if ((data["MediumFreiArticleFeePerChar"]["status"] == "Success") && (data["AllFreiArticleFeePerChar"]["status"] == "Success")) {
@@ -348,18 +418,21 @@ $(document).ready(function() {
                     }];
 
                     gradientboxplot(d3festjson, elementid)
-                }else{
-                  $graphicdiv = $("#"+elementid)
-                  $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
+                  }else{
+                    var element=document.getElementById("nodata-frei-2")
+                    element.classList.add("show");
+                    element.classList.remove("hide");
 
-                }
+                  }
               }else{
-                $graphicdiv = $("#"+elementid)
-                $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
+                var element=document.getElementById("nodata-frei-2")
+                element.classList.add("show");
+                element.classList.remove("hide");
               };
+
         }
 
-        var element = document.getElementById("freigrafikprint");
+        var element = document.getElementById("freigrafiktext");
           element.classList.add("show");
           element.classList.remove("hide");
         var element = document.getElementById("pauschalgrafik1");

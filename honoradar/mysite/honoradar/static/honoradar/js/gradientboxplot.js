@@ -22,7 +22,7 @@ function gradientboxplot(responsejson, elementid) {
     };
 
     barwidth = width / 25;
-    elementid = "#" + elementid
+    elementidhash = "#" + elementid
     console.log(elementid)
     console.log(responsejson);
     console.log(width);
@@ -30,8 +30,9 @@ function gradientboxplot(responsejson, elementid) {
 
 
     var svg = d3
-        .select(elementid)
+        .select(elementidhash)
         .append("svg")
+        .attr("id",(String(elementid)+"_svg"))
         .attr('xmlns', 'http://www.w3.org/2000/svg')
         .attr('xmlns', 'http://www.w3.org/1999/xlink')
         .attr('version', '1.1')
