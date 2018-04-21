@@ -59,8 +59,8 @@
     <!-- Parallax -->
     <div class="panel">
         <h1 class="head-title">Was verdienen Journalisten?</h1>
-        <h2 class="head-subtitle-1">Die Antwort gibt's hier: Erfahre, was deine Kollegen verdienen – oder spende selber deine Daten.</h2>
-        <h2 class="head-subtitle-2">Bisher spendeten Journalisten 1.245 Daten über 134 Medien.</h2>
+        <h2 class="head-subtitle-1">Die Antwort gibt's hier: Erfahre, was deine Kollegen verdienen – oder spende selbst deine Daten.</h2>
+        <h2 class="head-subtitle-2">Bisher spendeten Journalisten 1.245 Daten zu 134 Medien.</h2>
 
         <a href="#banderole" id="machmit" class="smooth clear-absolute"><h3 class="head-action">Mach mit!</h3></a>
         <div class="head-box-1"></div>
@@ -84,7 +84,7 @@
                     <ul class="cd-primary-nav">
                         <li><a href="{% static "../../../ "%}" class="selected">Startseite</a></li>
                         <li><a href="{% static "/honoradar/artikel/projekt.html "%}">Über das Projekt</a></li>
-                        <li><a href="{% static "/honoradar/artikel/reports.html"%}">Freischreiber-Reports</a></li>
+                        <li><a href="{% static "/honoradar/artikel/reports.html"%}">Freischreiber-Report</a></li>
                         <li><a href="{% static "/honoradar/artikel/newsletter.html"%}">Newsletter</a></li>
                         <li><a href="{% static "/honoradar/artikel/impressum.html"%}">Impressum</a></li>
                     </ul>
@@ -154,22 +154,22 @@
                     <!-- Switch-Select -->
                     <div class="switch-field switch-field-text switch-field-text-1 tooltip show" id="data_arbeitsverhaeltnis">
                         <input name="FreeOrEmployed" type="radio" id="data_arbeitsverhaeltnis_frei" name="switch" value="frei" onclick="freifunction()" />
-                        <label for="data_arbeitsverhaeltnis_frei">Frei<span id="question-3">?</span></label>
+                        <label for="data_arbeitsverhaeltnis_frei">Frei</label>
                         <input name="FreeOrEmployed" type="radio" id="data_arbeitsverhaeltnis_pauschal" name="switch" value="pauschal" onclick="pauschalfunction()" />
-                        <label for="data_arbeitsverhaeltnis_pauschal">Pauschal<span id="question-2">?</span></label>
+                        <label for="data_arbeitsverhaeltnis_pauschal">Pauschal</label>
                         <input name="FreeOrEmployed" type="radio" id="data_arbeitsverhaeltnis_fest" name="switch" value="fest" onclick="festfunction()" />
-                        <label for="data_arbeitsverhaeltnis_fest">Fest<span id="question-1">?</span></label>
+                        <label for="data_arbeitsverhaeltnis_fest">Fest</label>
                     </div>
 
                     <div class="break"></div>
 
                     <!-- Loan-Select -->
-                    <input name="SalaryPerMonthEmpMix" id="data_gehalt" class="loan-select select-font hide" list="gehalt" placeholder="Gehalt pro Monat?" type="number" min="0" oninput="validity.valid||(value='');" inputmode="numeric" onclick="alertoffdatasalary()" />
+                    <input name="SalaryPerMonthEmpMix" id="data_gehalt" class="loan-select select-font hide" list="gehalt" placeholder="Gehalt pro Monat? (Brutto)" type="number" min="0" oninput="validity.valid||(value='');" inputmode="numeric" onclick="alertoffdatasalary()" />
 
                     <!-- Hour-Week-Select -->
                     <div class="day-month-select hide" id="pre-data_stunden_woche">
                         <style id="style-hour-week" scoped></style>
-                        <input id="data_stunden_woche" name="HoursPerWeekEmp" class="hour-week-bar" type="range" min="1" max="50" value="0" onmousedown="alertoffdatahourweek()" ontouchstart="alertoffdatahourweek()" />
+                        <input id="data_stunden_woche" name="HoursPerWeekEmp" class="hour-week-bar" type="range" min="1" max="80" value="0" onmousedown="alertoffdatahourweek()" ontouchstart="alertoffdatahourweek()" />
                         <p id="outputhourweek" class="output">0</p>
                     </div>
                     <div class="break hide" id="break-1"></div>
@@ -189,7 +189,7 @@
                     </div>
 
                     <!-- Freelancer-fee-Select -->
-                    <input name="FeeFree" id="data_honorar" class="loan-select select-font hide" list="gehalt" placeholder="Lohn für den Auftrag?" type="number" min="0" oninput="validity.valid||(value='');" inputmode="numeric" onclick="alertoffdataloan()" />
+                    <input name="FeeFree" id="data_honorar" class="loan-select select-font hide" list="gehalt" placeholder="Lohn für den Auftrag? (Brutto)" type="number" min="0" oninput="validity.valid||(value='');" inputmode="numeric" onclick="alertoffdataloan()" />
 
                     <!-- Unit-Select -->
                     <div class="hide" id="pre-data_format_text_audio_video">
@@ -278,7 +278,7 @@
 
                     <!-- Comment-Select -->
                     <div class="hide" id="pre-data_kommentar">
-                        <textarea id="data_kommentar" class="comment-select" name="Comment" placeholder="Dein Kommentar ..." maxlength="250"></textarea>
+                        <textarea id="data_kommentar" class="comment-select" name="Comment" placeholder="Dein Kommentar zur Arbeitsatmosphäre, Korrekturschleifen oder ..." maxlength="250"></textarea>
                     </div>
                     <span id="disclaimer" class="disclaimer hide">Dein Kommentar ist anonym. Achte darauf, dass du deine Identität nicht verrätst!</span></span>
 
@@ -312,7 +312,7 @@
 
                 <!-- After-Submit Accpeted -->
                 <div class="alert alert-accepted alert-media-select hide" id="ACCEPTED">
-                    <span class="closebtn" onclick="hideaccepted()">&times;</span> Wir haben deine Infos geprüft und in die Datenbank aufgenommen.
+                    <span class="closebtn" onclick="hideaccepted()">&times;</span> Wir haben deine Infos	 in die Datenbank aufgenommen.
                 </div>
 
                 <!-- Newsletter-Anmeldung -->
@@ -367,7 +367,7 @@
             </div>
 
             <!-- Grafik-Box -->
-            <div class="result show" id="result">
+            <div class="result hide" id="result">
 
                 <!-- Mediumname -->
                 <div class="result-mediumname" id="result-mediumname">Nürnberger Nachrichten</div>
@@ -535,7 +535,7 @@
                             <p class="footer-item clear-footer">Die Macher</p>
                         </a>
                         <a href="{% static "/honoradar/artikel/reports.html"%}">
-                            <p class="footer-item clear-footer">Freischreiber-Reports</p>
+                            <p class="footer-item clear-footer">Freischreiber-Report</p>
                         </a>
                         <a href="{% static " /honoradar/artikel/methodik.html "%}">
                             <p class="footer-item clear-footer">Methodik</p>

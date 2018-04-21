@@ -143,18 +143,6 @@ document.querySelector('#data_zusammenarbeit').addEventListener('input', functio
 
 
 function festfunction() {
-	var element = document.getElementById("question-1");
-    element.classList.add("hide");
-    element.classList.remove("show");
-
-	var element = document.getElementById("question-2");
-    element.classList.add("hide");
-    element.classList.remove("show");
-
-	var element = document.getElementById("question-3");
-    element.classList.add("hide");
-    element.classList.remove("show");
-
 	var element = document.getElementById("data_gehalt");
     element.classList.add("show");
     element.classList.remove("hide");
@@ -257,18 +245,6 @@ function festfunction() {
 };
 
 function pauschalfunction() {
-	var element = document.getElementById("question-1");
-    element.classList.add("hide");
-    element.classList.remove("show");
-
-	var element = document.getElementById("question-2");
-    element.classList.add("hide");
-    element.classList.remove("show");
-
-	var element = document.getElementById("question-3");
-    element.classList.add("hide");
-    element.classList.remove("show");
-
 	var element = document.getElementById("data_gehalt");
     element.classList.add("show");
     element.classList.remove("hide");
@@ -371,18 +347,6 @@ function pauschalfunction() {
 };
 
 function freifunction() {
-	var element = document.getElementById("question-1");
-    element.classList.add("hide");
-    element.classList.remove("show");
-
-	var element = document.getElementById("question-2");
-    element.classList.add("hide");
-    element.classList.remove("show");
-
-	var element = document.getElementById("question-3");
-    element.classList.add("hide");
-    element.classList.remove("show");
-
 	var element = document.getElementById("data_gehalt");
     element.classList.add("hide");
     element.classList.remove("show");

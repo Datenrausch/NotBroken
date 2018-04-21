@@ -862,7 +862,7 @@ em {
 }
 
 .switch-field-text-4:before {
-	content: 'Arbeitserfahrung';
+	content: 'Berufserfahrung';
 }
 
 @media (max-width: 800px)	{
@@ -3123,7 +3123,7 @@ p a:hover:after{
 }
 
 .social-box:before {
-	content: 'Erzähle es deinen Kollegen!';
+	content: 'Erzähle es weiter!';
 	color: #fff;
 	font-size: 0.9em;
 	font-family: InknutAntiqua-Bold !important;
