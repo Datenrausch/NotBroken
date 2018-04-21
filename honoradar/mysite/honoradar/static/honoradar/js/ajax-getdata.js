@@ -172,15 +172,15 @@ $(document).ready(function() {
           if (data["MediumFestHappiness"]) {
               if (data["MediumFestHappiness"]["status"] == "Success") {
                   var element=document.getElementById("result_athmosphaere-fest")
-                  element.setAttribute("value",Math.round((data["MediumFestHappiness"]["avg"])))
-                  element.setAttribute("class","range result_happiness-bar result_happiness-"+String(Math.round((data["MediumFestHappiness"]["avg"]))))
+                  element.setAttribute("value",Math.round((data["MediumFestHappiness"]["median"])))
+                  element.setAttribute("class","range result_happiness-bar result_happiness-"+String(Math.round((data["MediumFestHappiness"]["median"]))))
               };
           };
           if (data["MediumPauschalHappiness"]) {
               if (data["MediumPauschalHappiness"]["status"] == "Success") {
                   var element=document.getElementById("result_athmosphaere-pauschal")
-                  element.setAttribute("value",Math.round((data["MediumPauschalHappiness"]["avg"])))
-                  element.setAttribute("class","range result_happiness-bar result_happiness-"+String(Math.round((data["MediumPauschalHappiness"]["avg"]))))
+                  element.setAttribute("value",Math.round((data["MediumPauschalHappiness"]["median"])))
+                  element.setAttribute("class","range result_happiness-bar result_happiness-"+String(Math.round((data["MediumPauschalHappiness"]["median"]))))
 
               };
           };
@@ -188,8 +188,8 @@ $(document).ready(function() {
           if (data["MediumFreiHappiness"]) {
               if (data["MediumFreiHappiness"]["status"] == "Success") {
                   var element=document.getElementById("result_athmosphaere-frei")
-                  element.setAttribute("value",Math.round((data["MediumFreiHappiness"]["avg"])))
-                  element.setAttribute("class","range result_happiness-bar result_happiness-"+String(Math.round((data["MediumFreiHappiness"]["avg"]))))
+                  element.setAttribute("value",Math.round((data["MediumFreiHappiness"]["median"])))
+                  element.setAttribute("class","range result_happiness-bar result_happiness-"+String(Math.round((data["MediumFreiHappiness"]["median"]))))
 
               };
           };
@@ -203,15 +203,15 @@ $(document).ready(function() {
                     let d3festjson = [{
                         id: "MediumFestSalaryPerHour",
                         category: String(data["mediumname"]),
-                        min: parseFloat(data["MediumFestSalaryPerHour"]["avg"]) - parseFloat(data["MediumFestSalaryPerHour"]["std"]),
-                        max: parseFloat(data["MediumFestSalaryPerHour"]["avg"]) + parseFloat(data["MediumFestSalaryPerHour"]["std"]),
-                        mean: parseFloat(data["MediumFestSalaryPerHour"]["avg"])
+                        min: parseFloat(data["MediumFestSalaryPerHour"]["lower"]),
+                        max: parseFloat(data["MediumFestSalaryPerHour"]["upper"]),
+                        mean: parseFloat(data["MediumFestSalaryPerHour"]["median"])
                     }, {
                         id: "AllFestSalaryPerHour",
                         category: "Ø \n alle \n Festangestellte",
-                        min: parseFloat(data["AllFestSalaryPerHour"]["avg"]) - parseFloat(data["AllFestSalaryPerHour"]["std"]),
-                        max: parseFloat(data["AllFestSalaryPerHour"]["avg"]) + parseFloat(data["AllFestSalaryPerHour"]["std"]),
-                        mean: parseFloat(data["AllFestSalaryPerHour"]["avg"])
+                        min: parseFloat(data["AllFestSalaryPerHour"]["lower"]),
+                        max: parseFloat(data["AllFestSalaryPerHour"]["upper"]),
+                        mean: parseFloat(data["AllFestSalaryPerHour"]["median"])
                     }, {
                         id: "FreischreiberFestSalaryPerHour",
                         category: "Freischreiber \n Empfehlung",
@@ -242,15 +242,15 @@ $(document).ready(function() {
                     let d3festjson = [{
                         id: "MediumPauschalSalaryPerHour",
                         category: String(data["mediumname"]),
-                        min: parseFloat(data["MediumPauschalSalaryPerHour"]["avg"]) - parseFloat(data["MediumPauschalSalaryPerHour"]["std"]),
-                        max: parseFloat(data["MediumPauschalSalaryPerHour"]["avg"]) + parseFloat(data["MediumPauschalSalaryPerHour"]["std"]),
-                        mean: parseFloat(data["MediumPauschalSalaryPerHour"]["avg"])
+                        min: parseFloat(data["MediumPauschalSalaryPerHour"]["lower"]),
+                        max: parseFloat(data["MediumPauschalSalaryPerHour"]["upper"]),
+                        mean: parseFloat(data["MediumPauschalSalaryPerHour"]["median"])
                     }, {
                         id: "AllPauschalSalaryPerHour",
                         category: "Ø \n alle \n Pauschalisten",
-                        min: parseFloat(data["AllPauschalSalaryPerHour"]["avg"]) - parseFloat(data["AllPauschalSalaryPerHour"]["std"]),
-                        max: parseFloat(data["AllPauschalSalaryPerHour"]["avg"]) + parseFloat(data["AllPauschalSalaryPerHour"]["std"]),
-                        mean: parseFloat(data["AllPauschalSalaryPerHour"]["avg"])
+                        min: parseFloat(data["AllPauschalSalaryPerHour"]["lower"]),
+                        max: parseFloat(data["AllPauschalSalaryPerHour"]["upper"]),
+                        mean: parseFloat(data["AllPauschalSalaryPerHour"]["median"])
                     }, {
                         id: "FreischreiberPauschalSalaryPerHour",
                         category: "Freischreiber Empfehlung",
@@ -282,15 +282,15 @@ $(document).ready(function() {
                     let d3festjson = [{
                         id: "MediumFreiSalaryPerHour",
                         category: String(data["mediumname"]),
-                        min: parseFloat(data["MediumFreiSalaryPerHour"]["avg"]) - parseFloat(data["MediumFreiSalaryPerHour"]["std"]),
-                        max: parseFloat(data["MediumFreiSalaryPerHour"]["avg"]) + parseFloat(data["MediumFreiSalaryPerHour"]["std"]),
-                        mean: parseFloat(data["MediumFreiSalaryPerHour"]["avg"])
+                        min: parseFloat(data["MediumFreiSalaryPerHour"]["lower"]),
+                        max: parseFloat(data["MediumFreiSalaryPerHour"]["upper"]),
+                        mean: parseFloat(data["MediumFreiSalaryPerHour"]["median"])
                     }, {
                         id: "AllFreiSalaryPerHour",
                         category: "Ø alle Freiberufler",
-                        min: parseFloat(data["AllFreiSalaryPerHour"]["avg"]) - parseFloat(data["AllFreiSalaryPerHour"]["std"]),
-                        max: parseFloat(data["AllFreiSalaryPerHour"]["avg"]) + parseFloat(data["AllFreiSalaryPerHour"]["std"]),
-                        mean: parseFloat(data["AllFreiSalaryPerHour"]["avg"])
+                        min: parseFloat(data["AllFreiSalaryPerHour"]["lower"]),
+                        max: parseFloat(data["AllFreiSalaryPerHour"]["upper"]),
+                        mean: parseFloat(data["AllFreiSalaryPerHour"]["median"])
                     }, {
                         id: "FreischreiberFreiSalaryPerHour",
                         category: "Freischreiber Empfehlung",
@@ -321,15 +321,15 @@ $(document).ready(function() {
                     let d3festjson = [{
                         id: "MediumFreiVideoFeePerMin",
                         category: String(data["mediumname"]),
-                        min: parseFloat(data["MediumFreiVideoFeePerMin"]["avg"]) - parseFloat(data["MediumFreiVideoFeePerMin"]["std"]),
-                        max: parseFloat(data["MediumFreiVideoFeePerMin"]["avg"]) + parseFloat(data["MediumFreiVideoFeePerMin"]["std"]),
-                        mean: parseFloat(data["MediumFreiVideoFeePerMin"]["avg"])
+                        min: parseFloat(data["MediumFreiVideoFeePerMin"]["lower"]),
+                        max: parseFloat(data["MediumFreiVideoFeePerMin"]["upper"]),
+                        mean: parseFloat(data["MediumFreiVideoFeePerMin"]["median"])
                     }, {
                         id: "AllFreiVideoFeePerMin",
                         category: "Ø \n alle \n Freiberufler",
-                        min: parseFloat(data["AllFreiVideoFeePerMin"]["avg"]) - parseFloat(data["AllFreiVideoFeePerMin"]["std"]),
-                        max: parseFloat(data["AllFreiVideoFeePerMin"]["avg"]) + parseFloat(data["AllFreiVideoFeePerMin"]["std"]),
-                        mean: parseFloat(data["AllFreiVideoFeePerMin"]["avg"])
+                        min: parseFloat(data["AllFreiVideoFeePerMin"]["lower"]),
+                        max: parseFloat(data["AllFreiVideoFeePerMin"]["upper"]),
+                        mean: parseFloat(data["AllFreiVideoFeePerMin"]["median"])
                     }, {
                         id: "FreischreiberFreiSalaryPerHour",
                         category: "Freischreiber Empfehlung",
@@ -359,15 +359,15 @@ $(document).ready(function() {
                     let d3festjson = [{
                         id: "MediumFreiAudioFeePerMin",
                         category: String(data["mediumname"]),
-                        min: parseFloat(data["MediumFreiAudioFeePerMin"]["avg"]) - parseFloat(data["MediumFreiAudioFeePerMin"]["std"]),
-                        max: parseFloat(data["MediumFreiAudioFeePerMin"]["avg"]) + parseFloat(data["MediumFreiAudioFeePerMin"]["std"]),
-                        mean: parseFloat(data["MediumFreiAudioFeePerMin"]["avg"])
+                        min: parseFloat(data["MediumFreiAudioFeePerMin"]["lower"]),
+                        max: parseFloat(data["MediumFreiAudioFeePerMin"]["upper"]),
+                        mean: parseFloat(data["MediumFreiAudioFeePerMin"]["median"])
                     }, {
                         id: "AllFreiAudioFeePerMin",
                         category: "Ø \n alle \n Freiberufler",
-                        min: parseFloat(data["AllFreiAudioFeePerMin"]["avg"]) - parseFloat(data["AllFreiAudioFeePerMin"]["std"]),
-                        max: parseFloat(data["AllFreiAudioFeePerMin"]["avg"]) + parseFloat(data["AllFreiAudioFeePerMin"]["std"]),
-                        mean: parseFloat(data["AllFreiAudioFeePerMin"]["avg"])
+                        min: parseFloat(data["AllFreiAudioFeePerMin"]["lower"]),
+                        max: parseFloat(data["AllFreiAudioFeePerMin"]["upper"]),
+                        mean: parseFloat(data["AllFreiAudioFeePerMin"]["median"])
                     }, {
                         id: "FreischreiberAudioFeePerMin",
                         category: "Freischreiber Empfehlung",
@@ -398,15 +398,15 @@ $(document).ready(function() {
                     let d3festjson = [{
                         id: "MediumFreiArticleFeePerChar",
                         category: String(data["mediumname"]),
-                        min: parseFloat(data["MediumFreiArticleFeePerChar"]["avg"]*100) - parseFloat(data["MediumFreiArticleFeePerChar"]["std"]*100),
-                        max: parseFloat(data["MediumFreiArticleFeePerChar"]["avg"]*100) + parseFloat(data["MediumFreiArticleFeePerChar"]["std"]*100),
-                        mean: parseFloat(data["MediumFreiArticleFeePerChar"]["avg"]*100),
+                        min: parseFloat(data["MediumFreiArticleFeePerChar"]["lower"]*100),
+                        max: parseFloat(data["MediumFreiArticleFeePerChar"]["upper"]*100),
+                        mean: parseFloat(data["MediumFreiArticleFeePerChar"]["median"]*100),
                     }, {
                         id: "AllFreiArticleFeePerChar",
                         category: "Ø \n alle \n Freiberufler",
-                        min: parseFloat(data["AllFreiArticleFeePerChar"]["avg"]*100) - parseFloat(data["AllFreiArticleFeePerChar"]["std"]*100),
-                        max: parseFloat(data["AllFreiArticleFeePerChar"]["avg"]*100) + parseFloat(data["AllFreiArticleFeePerChar"]["std"]*100),
-                        mean: parseFloat(data["AllFreiArticleFeePerChar"]["avg"]*100)
+                        min: parseFloat(data["AllFreiArticleFeePerChar"]["lower"]*100),
+                        max: parseFloat(data["AllFreiArticleFeePerChar"]["upper"]*100),
+                        mean: parseFloat(data["AllFreiArticleFeePerChar"]["median"]*100)
                     }, {
                         id: "FreischreiberArticleFeePerChar",
                         category: "Freischreiber Empfehlung",

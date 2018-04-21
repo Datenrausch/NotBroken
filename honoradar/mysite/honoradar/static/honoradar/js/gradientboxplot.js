@@ -261,7 +261,7 @@ function gradientboxplot(responsejson, elementid) {
           .style("stroke", "white")
           .style("fill", "white")
           .style('font-size', '1.2em')
-          .style('font-family', 'Open Sans')
+          .style('font-family', 'OpenSans-Regular')
 
 
       .call(wrap, (xscale.bandwidth()));
@@ -276,7 +276,7 @@ function gradientboxplot(responsejson, elementid) {
         .style("stroke", "white")
         .style("fill", "white")
         .style('font-size', '1.2em')
-        .style('font-family', 'Open Sans');
+        .style('font-family', 'OpenSans-Regular');
 
     svg
         .selectAll("line")
@@ -291,7 +291,7 @@ function gradientboxplot(responsejson, elementid) {
             .style("stroke", "white")
             .style("fill", "white")
             .style('font-size', '0.7em')
-            .style('font-family', 'Open Sans');
+            .style('font-family', 'OpenSans-Regular');
 
             element.classList.add("hide");
             element.classList.remove("show");
