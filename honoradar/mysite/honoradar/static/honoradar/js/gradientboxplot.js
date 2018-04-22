@@ -3,8 +3,8 @@ function gradientboxplot(responsejson, elementid) {
     element.classList.add("show");
     element.classList.remove("hide");
 
-    let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    let height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
     console.log(elementid)
     elementstr = "'" + elementid + "'"
@@ -40,7 +40,7 @@ function gradientboxplot(responsejson, elementid) {
     }
 
 
-    let margin = {
+    var margin = {
         top: 30,
         right: 10,
         bottom: 30,
@@ -73,10 +73,10 @@ function gradientboxplot(responsejson, elementid) {
 
 
 
-    let maxY = d3.max(responsejson, function(d) {
+    var maxY = d3.max(responsejson, function(d) {
         return +d.max;
     });
-    let minY = d3.min(responsejson, function(d) {
+    var minY = d3.min(responsejson, function(d) {
         return +d.min;
     });
     height = height - margin.top-margin.bottom;

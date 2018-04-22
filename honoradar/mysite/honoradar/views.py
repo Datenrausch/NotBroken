@@ -121,7 +121,7 @@ def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
     median=0
     lowerboundary=0
     upperboundary=0
-    if n>2:
+    if n>3:
         ids=sorted(combinelist)
         n = len(ids)
 
@@ -130,7 +130,7 @@ def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
             print("even values")
             print(ids[int(n/2-1)],ids[int(n/2)])
 
-            median=((ids[int(n/2-1)] + ids[int(n/2)])/2.0)
+            median=((ids[int(n/2-2)] + ids[int(n/2-1)] + ids[int(n/2)]+ ids[int(n/2+1)])/4.0)
         else:
             print("uneven values")
             print(ids[int(n/2-1)],ids[int(n/2)],ids[int(n/2+1)])

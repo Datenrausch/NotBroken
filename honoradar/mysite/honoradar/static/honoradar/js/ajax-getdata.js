@@ -196,11 +196,11 @@ $(document).ready(function() {
 
 
 
-            let elementid = "festgrafik1"
+            var elementid = "festgrafik1"
 
             if ((data["MediumFestSalaryPerHour"]) && (data["AllFestSalaryPerHour"])) {
                 if ((data["MediumFestSalaryPerHour"]["status"] == "Success") && (data["AllFestSalaryPerHour"]["status"] == "Success")&& (data["MediumFestSalaryPerHour"]["median"] != 0) && (data["AllFestSalaryPerHour"]["median"] != 0)){
-                    let d3festjson = [{
+                    var d3festjson = [{
                         id: "MediumFestSalaryPerHour",
                         category: String(data["mediumname"]),
                         min: parseFloat(data["MediumFestSalaryPerHour"]["lower"]),
@@ -232,7 +232,7 @@ $(document).ready(function() {
 
             if ((data["MediumPauschalSalaryPerHour"]) && (data["AllPauschalSalaryPerHour"])) {
                 if ((data["MediumPauschalSalaryPerHour"]["status"] == "Success") && (data["AllPauschalSalaryPerHour"]["status"] == "Success")&& (data["MediumPauschalSalaryPerHour"]["median"] != 0) && (data["AllPauschalSalaryPerHour"]["median"] != 0)) {
-                    let d3festjson = [{
+                    var d3festjson = [{
                         id: "MediumPauschalSalaryPerHour",
                         category: String(data["mediumname"]),
                         min: parseFloat(data["MediumPauschalSalaryPerHour"]["lower"]),
@@ -265,7 +265,7 @@ $(document).ready(function() {
 
             if ((data["MediumFreiSalaryPerHour"]) && (data["AllFreiSalaryPerHour"])) {
                 if ((data["MediumFreiSalaryPerHour"]["status"] == "Success") && (data["AllFreiSalaryPerHour"]["status"] == "Success")&& (data["MediumFreiSalaryPerHour"]["median"] != 0) && (data["AllFreiSalaryPerHour"]["median"] != 0))  {
-                    let d3festjson = [{
+                    var d3festjson = [{
                         id: "MediumFreiSalaryPerHour",
                         category: String(data["mediumname"]),
                         min: parseFloat(data["MediumFreiSalaryPerHour"]["lower"]),
@@ -297,7 +297,7 @@ $(document).ready(function() {
 
             if ((data["MediumFreiVideoFeePerMin"]) && (data["AllFreiVideoFeePerMin"])) {
                 if ((data["MediumFreiVideoFeePerMin"]["status"] == "Success") && (data["AllFreiVideoFeePerMin"]["status"] == "Success")&& (data["MediumFreiVideoFeePerMin"]["median"] != 0) && (data["AllFreiVideoFeePerMin"]["median"] != 0)) {
-                    let d3festjson = [{
+                    var d3festjson = [{
                         id: "MediumFreiVideoFeePerMin",
                         category: String(data["mediumname"]),
                         min: parseFloat(data["MediumFreiVideoFeePerMin"]["lower"]),
@@ -328,7 +328,7 @@ $(document).ready(function() {
 
             if ((data["MediumFreiAudioFeePerMin"]) && (data["AllFreiAudioFeePerMin"])) {
                 if ((data["MediumFreiAudioFeePerMin"]["status"] == "Success") && (data["AllFreiAudioFeePerMin"]["status"] == "Success")&& (data["MediumFreiAudioFeePerMin"]["median"] != 0) && (data["AllFreiAudioFeePerMin"]["median"] != 0)) {
-                    let d3festjson = [{
+                    var d3festjson = [{
                         id: "MediumFreiAudioFeePerMin",
                         category: String(data["mediumname"]),
                         min: parseFloat(data["MediumFreiAudioFeePerMin"]["lower"]),
@@ -360,7 +360,7 @@ $(document).ready(function() {
 
             if ((data["MediumFreiArticleFeePerChar"]) && (data["AllFreiArticleFeePerChar"])) {
                 if ((data["MediumFreiArticleFeePerChar"]["status"] == "Success") && (data["AllFreiArticleFeePerChar"]["status"] == "Success")&& (data["MediumFreiArticleFeePerChar"]["median"] != 0) && (data["MediumFreiArticleFeePerChar"]["median"] != 0)) {
-                    let d3festjson = [{
+                    var d3festjson = [{
                         id: "MediumFreiArticleFeePerChar",
                         category: String(data["mediumname"]),
                         min: parseFloat(data["MediumFreiArticleFeePerChar"]["lower"]*1000),
