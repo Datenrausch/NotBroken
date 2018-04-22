@@ -97,13 +97,13 @@
 
 .news_3 {
 	background-image: url(../image/news_3.jpg);
-	padding: 20px 50px 0px calc(3.5%);
+	padding: 50px 50px 0px calc(6%);
 	background-position: center bottom;	
 }
 
 .news_4 {
 	background-image: url(../image/news_4.jpg);
-	padding: 150px 10px 0px 10px;
+	padding: 150px 10px 0px 20px;
 	background-position: top right;	
 }
 

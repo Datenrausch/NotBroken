@@ -685,22 +685,31 @@ function reload() {
 	var element = document.getElementById("ACCEPTED");
     element.classList.add("hide");
     element.classList.remove("show");
-
+	
+	var element = document.getElementById("data_submit");
+    element.classList.add("show");
+    element.classList.remove("hide");
+	element.disabled = true;
+	
+	var element = document.getElementById("pre-data_genre");
+    element.classList.add("hide");
+    element.classList.remove("show");
+	
+	var element = document.getElementById("pre-data_position");
+    element.classList.add("hide");
+    element.classList.remove("show");
+	
     var element = document.getElementById("outputtime");
-      element.innerHTML="0";
+	element.innerHTML="0";
 
-      var element = document.getElementById("outputdaymonth");
-        element.innerHTML="0";
+	var element = document.getElementById("outputdaymonth");
+	element.innerHTML="0";
 
-        var element = document.getElementById("outputhourday");
-          element.innerHTML="0";
+	var element = document.getElementById("outputhourday");
+	element.innerHTML="0";
 
-          var element = document.getElementById("outputhourweek");
-            element.innerHTML="0";
-
-
-
-
+	var element = document.getElementById("outputhourweek");
+	element.innerHTML="0";
 
 	var element = document.getElementById("banner-left-1");
     element.classList.add("show");
@@ -734,16 +743,14 @@ function reload() {
     element.classList.add("hide");
     element.classList.remove("show");
 
+	console.log("this is smooth")
+	var button = document.getElementById("reload_submit");
+	console.log(button)
 
-
-      console.log("this is smooth")
-      var button = document.getElementById("reload_submit");
-      console.log(button)
-
-      var href = $(button).attr('linkdirectionup');
-      console.log(href)
-      $('html, body').animate({
-        scrollTop:$(href).offset().top
+	var href = $(button).attr('linkdirectionup');
+	console.log(href)
+	$('html, body').animate({
+	scrollTop:$(href).offset().top
       },'slow');
 
 
