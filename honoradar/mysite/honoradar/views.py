@@ -15,9 +15,43 @@ import json
 import io
 
 def StdAvgFunction(entries, column):
+    ids = list(entries.values_list(column, flat=True))
+    ids=list(filter((float(0)).__ne__, ids))
+    ids=sorted(ids)
+    n = len(ids)
+    median=0
+    lowerboundary=0
+    upperboundary=0
+    print(n)
+    if n>2:
+        if n % 2 == 0:
+            print("even values")
+            print(ids[int(n/2-1)],ids[int(n/2)])
+
+            median=((ids[int(n/2-1)] + ids[int(n/2)])/2.0)
+        else:
+            print("uneven values")
+            print(ids[int(n/2-1)],ids[int(n/2)],ids[int(n/2+1)])
+
+            median=((ids[int(n/2-1)] + ids[int(n/2)]+ ids[int(n/2+1)])/3.0)
+
+        print(column)
+
+        print("1")
+        print(ids)
+        print(median)
+        lowerboundary=median
+        upperboundary=median
+    if n>5:
+        lowerboundary=((ids[int(0)] + ids[int(1)]+ ids[int(2)])/3.0)
+        upperboundary=((ids[int(n-1)] + ids[int(n-2)]+ ids[int(n-3)])/3.0)
+        print(lowerboundary)
+        print(upperboundary)
+
     count = entries.aggregate(Count(column))
     columncount = str(column) + "__count"
     count = (count[columncount])
+
     if count > 1:
         avg = entries.aggregate(Avg(column))
         print(avg)
@@ -35,6 +69,10 @@ def StdAvgFunction(entries, column):
         avg = round(avg, 2)
         result["avg"] = avg
         result["std"] = std
+        result["median"] = median
+        result["upper"] = upperboundary
+        result["lower"] = lowerboundary
+
         result["status"] = "Success"
         result["id"] = str(column)
 
@@ -49,12 +87,66 @@ def StdAvgFunction(entries, column):
             #MediumFreiArticleFeePerChar = StdAvgTwoColumnsFunction(MediumFrei, 'FeeFree', 'CharPerArticleFree',"/")
 
 def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
+
     count1 = entries.aggregate(Count(column1))
     columncount1 = str(column1) + "__count"
     count1 = (count1[columncount1])
     count2 = entries.aggregate(Count(column2))
     columncount2 = str(column2) + "__count"
     count2 = (count2[columncount2])
+    combinelist=[]
+    value=0
+    print(combinelist)
+
+
+    n=0
+    for entry in entries:
+        print(combinelist)
+        column1val = float(getattr(entry, str(column1)))
+        column2val = float(getattr(entry, str(column2)))
+        print(column1,column2)
+        print(column1val,column2val)
+        if (column1val != 0) and (column2val != 0):
+            if operator == "/":
+                value = (column1val / column2val)
+            if operator == "*":
+                value = (column1val*column2val)
+            n += 1
+            print(combinelist)
+            print(value)
+            combinelist.append(value)
+            print(combinelist)
+
+
+    median=0
+    lowerboundary=0
+    upperboundary=0
+    if n>2:
+        ids=sorted(combinelist)
+        n = len(ids)
+
+        print(n)
+        if n % 2 == 0:
+            print("even values")
+            print(ids[int(n/2-1)],ids[int(n/2)])
+
+            median=((ids[int(n/2-1)] + ids[int(n/2)])/2.0)
+        else:
+            print("uneven values")
+            print(ids[int(n/2-1)],ids[int(n/2)],ids[int(n/2+1)])
+
+            median=((ids[int(n/2-1)] + ids[int(n/2)]+ ids[int(n/2+1)])/3.0)
+
+
+        print(median)
+        lowerboundary=median
+        upperboundary=median
+    if n>5:
+        lowerboundary=((ids[int(0)] + ids[int(1)]+ ids[int(2)])/3.0)
+        upperboundary=((ids[int(n-1)] + ids[int(n-2)]+ ids[int(n-3)])/3.0)
+        print(lowerboundary)
+        print(upperboundary)
+
 
     if (count1 > 1)and (count2 > 1):
         productsum = 0
@@ -98,6 +190,10 @@ def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
             avgtwocolumns = round(avgtwocolumns, 2)
             result["avg"] = avgtwocolumns
             result["std"] = std
+            result["median"] = median
+            result["upper"] = upperboundary
+            result["lower"] = lowerboundary
+
             result["status"] = "Success"
             if (float(result["avg"]) == 0) and (float(result["std"]) == 0):
                 result = {}

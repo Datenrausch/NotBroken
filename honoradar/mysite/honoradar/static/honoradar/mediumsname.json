@@ -1778,55 +1778,55 @@
     "name": "Online Marketing Rockstars",
     "code": "Online Marketing Rockstars"
 }, {
-    "name": "Radio Bremen",
+    "name": "Radio Bremen (Fernsehen & Online)",
     "code": "Radio Bremen"
 }, {
-    "name": "Hessischer Rundfunk",
+    "name": "Hessischer Rundfunk (Fernsehen & Online)",
     "code": "Hessischer Rundfunk"
 }, {
-    "name": "HR",
+    "name": "HR (Fernsehen & Online)",
     "code": "Hessischer Rundfunk"
 }, {
-    "name": "Saarländischer Rundfunk",
+    "name": "Saarländischer Rundfunk (Fernsehen & Online)",
     "code": "Saarländischer Rundfunk"
 }, {
-    "name": "SR",
+    "name": "SR (Fernsehen & Online)",
     "code": "Saarländischer Rundfunk"
 }, {
-    "name": "Mitteldeutscher Rundfunk",
+    "name": "Mitteldeutscher Rundfunk (Fernsehen & Online)",
     "code": "Mitteldeutscher Rundfunk"
 }, {
-    "name": "MDR",
+    "name": "MDR (Fernsehen & Online)",
     "code": "Mitteldeutscher Rundfunk"
 }, {
-    "name": "WDR",
+    "name": "WDR (Fernsehen & Online)",
     "code": "Westdeutscher Rundfunk"
 }, {
-    "name": "Westdeutscher Rundfunk",
+    "name": "Westdeutscher Rundfunk (Fernsehen & Online)",
     "code": "Westdeutscher Rundfunk"
 }, {
-    "name": "NDR",
+    "name": "NDR (Fernsehen & Online)",
     "code": "Norddeutscher Rundfunk"
 }, {
-    "name": "Norddeutscher Rundfunk",
+    "name": "Norddeutscher Rundfunk (Fernsehen & Online)",
     "code": "Norddeutscher Rundfunk"
 }, {
-    "name": "BR",
+    "name": "BR (Fernsehen & Online)",
     "code": "Bayerischer Rundfunk"
 }, {
-    "name": "Bayerischer Rundfunk",
+    "name": "Bayerischer Rundfunk (Fernsehen & Online)",
     "code": "Bayerischer Rundfunk"
 }, {
-    "name": "Südwestrundfunk",
+    "name": "Südwestrundfunk (Fernsehen & Online)",
     "code": "Südwestrundfunk"
 }, {
-    "name": "SWR",
+    "name": "SWR (Fernsehen & Online)",
     "code": "Südwestrundfunk"
 }, {
-    "name": "Rundfunk Berlin-Brandenburg",
+    "name": "Rundfunk Berlin-Brandenburg (Fernsehen & Online)",
     "code": "Rundfunk Berlin-Brandenburg"
 }, {
-    "name": "RBB",
+    "name": "RBB (Fernsehen & Online)",
     "code": "Rundfunk Berlin-Brandenburg"
 }, {
     "name": "FAZ Online",
@@ -1985,43 +1985,43 @@
     "name": "Turi2.de",
     "code": "Turi2 Online"
 }, {
-    "name": "Zweite Deutsche Fernsehen",
+    "name": "Zweite Deutsche Fernsehen (Fernsehen & Online)",
     "code": "ZDF"
 }, {
-    "name": "ZDF",
+    "name": "ZDF (Fernsehen & Online)",
     "code": "ZDF"
 }, {
-    "name": "Das Zweite",
+    "name": "Das Zweite (Fernsehen & Online)",
     "code": "ZDF"
 }, {
-    "name": "Das Erste",
+    "name": "Das Erste (Fernsehen & Online)",
     "code": "Das Erste"
 }, {
-    "name": "ARD",
+    "name": "ARD (Fernsehen & Online)",
     "code": "ARD"
 }, {
-    "name": "RTL",
+    "name": "RTL (Fernsehen & Online)",
     "code": "RTL"
 }, {
-    "name": "RTL II",
+    "name": "RTL II (Fernsehen & Online)",
     "code": "RTL II"
 }, {
-    "name": "RTL 2",
+    "name": "RTL 2 (Fernsehen & Online)",
     "code": "RTL II"
 }, {
-    "name": "Super RTL",
+    "name": "Super RTL (Fernsehen & Online)",
     "code": "Super RTL"
 }, {
-    "name": "Prosieben",
+    "name": "Prosieben (Fernsehen & Online)",
     "code": "Prosieben"
 }, {
-    "name": "Sat.1",
+    "name": "Sat.1 (Fernsehen & Online)",
     "code": "Sat.1"
 }, {
-    "name": "Sat1",
+    "name": "Sat1 (Fernsehen & Online)",
     "code": "Sat.1"
 }, {
-    "name": "Kabel Eins",
+    "name": "Kabel Eins (Fernsehen & Online)",
     "code": "Kabel Eins"
 }, {
     "name": "T-Online",
@@ -2046,16 +2046,16 @@
     "code": "Süddeutsche Online"
 }, {
     "name": "NTV Online",
-    "code": "NTV Online"
+    "code": "N-tv"
 }, {
     "name": "n-tv.de",
-    "code": "NTV Online"
+    "code": "N-tv"
 }, {
     "name": "RTL Online",
-    "code": "RTL Online"
+    "code": "RTL"
 }, {
     "name": "Rtl.de",
-    "code": "RTL Online"
+    "code": "RTL"
 }, {
     "name": "Die Titanic",
     "code": "Die Titanic"
@@ -2195,2308 +2195,2308 @@
     "name": "Gründerszene",
     "code": "Gründerszene Online"
 }, {
-    "name": "Deutschlandfunk",
+    "name": "Deutschlandfunk (Radio & Online)",
     "code": "Deutschlandfunk"
 }, {
-    "name": "Deutschlandfunk Kultur",
+    "name": "Deutschlandfunk Kultur (Radio & Online)",
     "code": "Deutschlandfunk Kultur"
 }, {
-    "name": "Dokumente und Debatten",
+    "name": "Dokumente und Debatten (Radio & Online)",
     "code": "Dokumente und Debatten"
 }, {
-    "name": "Deutschlandfunk Nova",
+    "name": "Deutschlandfunk Nova (Radio & Online)",
     "code": "Deutschlandfunk Nova"
 }, {
-    "name": "B5 aktuell",
+    "name": "B5 aktuell (Radio & Online)",
     "code": "B5 aktuell"
 }, {
-    "name": "B5 plus",
+    "name": "B5 plus (Radio & Online)",
     "code": "B5 plus"
 }, {
-    "name": "Bayern 1",
+    "name": "Bayern 1 (Radio & Online)",
     "code": "Bayern 1"
 }, {
-    "name": "Bayern 2",
+    "name": "Bayern 2 (Radio & Online)",
     "code": "Bayern 2"
 }, {
-    "name": "Bayern 3",
+    "name": "Bayern 3 (Radio & Online)",
     "code": "Bayern 3"
 }, {
-    "name": "Bayern plus",
+    "name": "Bayern plus (Radio & Online)",
     "code": "Bayern plus"
 }, {
-    "name": "BR Heimat",
+    "name": "BR Heimat (Radio & Online)",
     "code": "BR Heimat"
 }, {
-    "name": "BR-Klassik",
+    "name": "BR-Klassik (Radio & Online)",
     "code": "BR-Klassik"
 }, {
-    "name": "BR Verkehr",
+    "name": "BR Verkehr (Radio & Online)",
     "code": "BR Verkehr"
 }, {
-    "name": "PULS",
+    "name": "PULS (Radio & Online)",
     "code": "PULS"
 }, {
-    "name": "Hr1",
+    "name": "Hr1 (Radio & Online)",
     "code": "Hr1"
 }, {
-    "name": "Hr2",
+    "name": "Hr2 (Radio & Online)",
     "code": "Hr2"
 }, {
-    "name": "Hr3",
+    "name": "Hr3 (Radio & Online)",
     "code": "Hr3"
 }, {
-    "name": "Hr4",
+    "name": "Hr4 (Radio & Online)",
     "code": "Hr4"
 }, {
-    "name": "Hr-info",
+    "name": "Hr-info (Radio & Online)",
     "code": "Hr-info"
 }, {
-    "name": "You FM",
+    "name": "You FM (Radio & Online)",
     "code": "You FM"
 }, {
-    "name": "MDR Sachsen",
+    "name": "MDR Sachsen (Radio & Online)",
     "code": "MDR Sachsen"
 }, {
-    "name": "MDR Sachsen-Anhalt",
+    "name": "MDR Sachsen-Anhalt (Radio & Online)",
     "code": "MDR Sachsen-Anhalt"
 }, {
-    "name": "MDR Thüringen",
+    "name": "MDR Thüringen (Radio & Online)",
     "code": "MDR Thüringen"
 }, {
-    "name": "Sorbischer Rundfunk",
+    "name": "Sorbischer Rundfunk (Radio & Online)",
     "code": "Sorbischer Rundfunk"
 }, {
-    "name": "MDR Aktuell",
+    "name": "MDR Aktuell (Radio & Online)",
     "code": "MDR Aktuell"
 }, {
-    "name": "MDR Jump",
+    "name": "MDR Jump (Radio & Online)",
     "code": "MDR Jump"
 }, {
-    "name": "MDR Klassik",
+    "name": "MDR Klassik (Radio & Online)",
     "code": "MDR Klassik"
 }, {
-    "name": "MDR Kultur",
+    "name": "MDR Kultur (Radio & Online)",
     "code": "MDR Kultur"
 }, {
-    "name": "MDR Schlagerwelt",
+    "name": "MDR Schlagerwelt (Radio & Online)",
     "code": "MDR Schlagerwelt"
 }, {
-    "name": "MDR Sputnik",
+    "name": "MDR Sputnik (Radio & Online)",
     "code": "MDR Sputnik"
 }, {
-    "name": "NDR 1 Niedersachsen",
+    "name": "NDR 1 Niedersachsen (Radio & Online)",
     "code": "NDR 1 Niedersachsen"
 }, {
-    "name": "NDR 1 Radio MV",
+    "name": "NDR 1 Radio MV (Radio & Online)",
     "code": "NDR 1 Radio MV"
 }, {
-    "name": "NDR 1 Welle Nord",
+    "name": "NDR 1 Welle Nord (Radio & Online)",
     "code": "NDR 1 Welle Nord"
 }, {
-    "name": "NDR 90,3",
+    "name": "NDR 90,3 (Radio & Online)",
     "code": "NDR 90,3"
 }, {
-    "name": "NDR 2",
+    "name": "NDR 2 (Radio & Online)",
     "code": "NDR 2"
 }, {
-    "name": "NDR Blue",
+    "name": "NDR Blue (Radio & Online)",
     "code": "NDR Blue"
 }, {
-    "name": "NDR Info",
+    "name": "NDR Info (Radio & Online)",
     "code": "Bremen Fünf / NDR Info"
 }, {
-    "name": "NDR Info Spezial",
+    "name": "NDR Info Spezial (Radio & Online)",
     "code": "NDR Info Spezial"
 }, {
-    "name": "NDR Kultur",
+    "name": "NDR Kultur (Radio & Online)",
     "code": "NDR Kultur"
 }, {
-    "name": "NDR Plus",
+    "name": "NDR Plus (Radio & Online)",
     "code": "NDR Plus"
 }, {
-    "name": "N-Joy",
+    "name": "N-Joy (Radio & Online)",
     "code": "N-Joy"
 }, {
-    "name": "Bremen Eins",
+    "name": "Bremen Eins (Radio & Online)",
     "code": "Bremen Eins"
 }, {
-    "name": "Bremen Zwei",
+    "name": "Bremen Zwei (Radio & Online)",
     "code": "Bremen Zwei"
 }, {
-    "name": "Bremen Next",
+    "name": "Bremen Next (Radio & Online)",
     "code": "Bremen Next"
 }, {
-    "name": "Bremen Vier",
+    "name": "Bremen Vier (Radio & Online)",
     "code": "Bremen Vier"
 }, {
-    "name": "Bremen COSMO",
+    "name": "Bremen COSMO (Radio & Online)",
     "code": "Bremen COSMO"
 }, {
-    "name": "Bremen Fünf",
+    "name": "Bremen Fünf (Radio & Online)",
     "code": "Bremen Fünf / NDR Info"
 }, {
-    "name": "Antenne Brandenburg",
+    "name": "Antenne Brandenburg (Radio & Online)",
     "code": "Antenne Brandenburg"
 }, {
-    "name": "COSMO",
+    "name": "COSMO (Radio & Online)",
     "code": "COSMO"
 }, {
-    "name": "Fritz",
+    "name": "Fritz (Radio & Online)",
     "code": "Fritz"
 }, {
-    "name": "Inforadio",
+    "name": "Inforadio (Radio & Online)",
     "code": "Inforadio"
 }, {
-    "name": "Kulturradio",
+    "name": "Kulturradio (Radio & Online)",
     "code": "Kulturradio"
 }, {
-    "name": "Radio Berlin 88,8",
+    "name": "Radio Berlin 88,8 (Radio & Online)",
     "code": "Radio Berlin 88,8"
 }, {
-    "name": "Radio Eins",
+    "name": "Radio Eins (Radio & Online)",
     "code": "Radio Eins"
 }, {
-    "name": "Antenne Saar",
+    "name": "Antenne Saar (Radio & Online)",
     "code": "Antenne Saar"
 }, {
-    "name": "SR 1 Europawelle",
+    "name": "SR 1 Europawelle (Radio & Online)",
     "code": "SR 1 Europawelle"
 }, {
-    "name": "SR 2 Kulturradio",
+    "name": "SR 2 Kulturradio (Radio & Online)",
     "code": "SR 2 Kulturradio"
 }, {
-    "name": "SR 3 Saarlandwelle",
+    "name": "SR 3 Saarlandwelle (Radio & Online)",
     "code": "SR 3 Saarlandwelle"
 }, {
-    "name": "Unser Ding",
+    "name": "Unser Ding (Radio & Online)",
     "code": "Unser Ding"
 }, {
-    "name": "Dasding",
+    "name": "Dasding (Radio & Online)",
     "code": "Dasding"
 }, {
-    "name": "SWR1 Baden-Württemberg",
+    "name": "SWR1 Baden-Württemberg (Radio & Online)",
     "code": "SWR1 Baden-Württemberg"
 }, {
-    "name": "SWR1 Rheinland-Pfalz",
+    "name": "SWR1 Rheinland-Pfalz (Radio & Online)",
     "code": "SWR1 Rheinland-Pfalz"
 }, {
-    "name": "SWR2",
+    "name": "SWR2 (Radio & Online)",
     "code": "SWR2"
 }, {
-    "name": "SWR3",
+    "name": "SWR3 (Radio & Online)",
     "code": "SWR3"
 }, {
-    "name": "SWR4 Baden-Württemberg",
+    "name": "SWR4 Baden-Württemberg (Radio & Online)",
     "code": "SWR4 Baden-Württemberg"
 }, {
-    "name": "SWR4 Rheinland-Pfalz",
+    "name": "SWR4 Rheinland-Pfalz (Radio & Online)",
     "code": "SWR4 Rheinland-Pfalz"
 }, {
-    "name": "SWR Aktuell",
+    "name": "SWR Aktuell (Radio & Online)",
     "code": "SWR Aktuell"
 }, {
-    "name": "1 Live",
+    "name": "1 Live (Radio & Online)",
     "code": "1 Live"
 }, {
-    "name": "1 Live diggi",
+    "name": "1 Live diggi (Radio & Online)",
     "code": "1 Live diggi"
 }, {
-    "name": "KiRaKa",
+    "name": "KiRaKa (Radio & Online)",
     "code": "KiRaKa"
 }, {
-    "name": "WDR 2",
+    "name": "WDR 2 (Radio & Online)",
     "code": "WDR 2"
 }, {
-    "name": "WDR 3",
+    "name": "WDR 3 (Radio & Online)",
     "code": "WDR 3"
 }, {
-    "name": "WDR 4",
+    "name": "WDR 4 (Radio & Online)",
     "code": "WDR 4"
 }, {
-    "name": "WDR 5",
+    "name": "WDR 5 (Radio & Online)",
     "code": "WDR 5"
 }, {
-    "name": "WDR Event",
+    "name": "WDR Event (Radio & Online)",
     "code": "WDR Event"
 }, {
-    "name": "WDR VERA",
+    "name": "WDR VERA (Radio & Online)",
     "code": "WDR VERA"
 }, {
-    "name": "Absolut relax",
+    "name": "Absolut relax (Radio & Online)",
     "code": "Absolut relax"
 }, {
-    "name": "Energy DAB+",
+    "name": "Energy DAB+ (Radio & Online)",
     "code": "Energy DAB+"
 }, {
-    "name": "ERF Plus",
+    "name": "ERF Plus (Radio & Online)",
     "code": "ERF Plus"
 }, {
-    "name": "Klassik Radio",
+    "name": "Klassik Radio (Radio & Online)",
     "code": "Klassik Radio"
 }, {
-    "name": "Radio Bob",
+    "name": "Radio Bob (Radio & Online)",
     "code": "Radio Bob"
 }, {
-    "name": "Radio Horeb",
+    "name": "Radio Horeb (Radio & Online)",
     "code": "Radio Horeb"
 }, {
-    "name": "Radio Schlagerparadies",
+    "name": "Radio Schlagerparadies (Radio & Online)",
     "code": "Radio Schlagerparadies"
 }, {
-    "name": "RTL – Deutschlands Hit-Radio",
+    "name": "RTL – Deutschlands Hit-Radio (Radio & Online)",
     "code": "RTL – Deutschlands Hit-Radio"
 }, {
-    "name": "Schwarzwaldradio",
+    "name": "Schwarzwaldradio (Radio & Online)",
     "code": "Schwarzwaldradio"
 }, {
-    "name": "Sunshine live",
+    "name": "Sunshine live (Radio & Online)",
     "code": "Sunshine live"
 }, {
-    "name": "Antenne 1",
+    "name": "Antenne 1 (Radio & Online)",
     "code": "Antenne 1"
 }, {
-    "name": "BigFM",
+    "name": "BigFM (Radio & Online)",
     "code": "BigFM"
 }, {
-    "name": "EgoFM",
+    "name": "EgoFM (Radio & Online)",
     "code": "EgoFM"
 }, {
-    "name": "Radio 7",
+    "name": "Radio 7 (Radio & Online)",
     "code": "Radio 7"
 }, {
-    "name": "Radio Regenbogen",
+    "name": "Radio Regenbogen (Radio & Online)",
     "code": "Radio Regenbogen"
 }, {
-    "name": "Radio Teddy",
+    "name": "Radio Teddy (Radio & Online)",
     "code": "Radio Teddy"
 }, {
-    "name": "Baden.fm",
+    "name": "Baden.fm (Radio & Online)",
     "code": "Baden.fm"
 }, {
-    "name": "Das neue Radio Neckarburg",
+    "name": "Das neue Radio Neckarburg (Radio & Online)",
     "code": "Das neue Radio Neckarburg"
 }, {
-    "name": "Die Neue 107.7",
+    "name": "Die Neue 107.7 (Radio & Online)",
     "code": "Die Neue 107.7"
 }, {
-    "name": "Die neue Welle",
+    "name": "Die neue Welle (Radio & Online)",
     "code": "Die neue Welle"
 }, {
-    "name": "Donau 3 FM",
+    "name": "Donau 3 FM (Radio & Online)",
     "code": "Donau 3 FM"
 }, {
-    "name": "Energy Stuttgart",
+    "name": "Energy Stuttgart (Radio & Online)",
     "code": "Energy Stuttgart"
 }, {
-    "name": "Hitradio Ohr",
+    "name": "Hitradio Ohr (Radio & Online)",
     "code": "Hitradio Ohr"
 }, {
-    "name": "Metropol FM",
+    "name": "Metropol FM (Radio & Online)",
     "code": "Metropol FM"
 }, {
-    "name": "Neckaralb Live",
+    "name": "Neckaralb Live (Radio & Online)",
     "code": "Neckaralb Live"
 }, {
-    "name": "Radio Seefunk",
+    "name": "Radio Seefunk (Radio & Online)",
     "code": "Radio Seefunk"
 }, {
-    "name": "Radio Ton",
+    "name": "Radio Ton (Radio & Online)",
     "code": "Radio Ton"
 }, {
-    "name": "Regenbogen 2",
+    "name": "Regenbogen 2 (Radio & Online)",
     "code": "Regenbogen 2"
 }, {
-    "name": "Absolut HOT",
+    "name": "Absolut HOT (Radio & Online)",
     "code": "Absolut HOT"
 }, {
-    "name": "Antenne Bayern",
+    "name": "Antenne Bayern (Radio & Online)",
     "code": "Antenne Bayern"
 }, {
-    "name": "Kultradio",
+    "name": "Kultradio (Radio & Online)",
     "code": "Kultradio"
 }, {
-    "name": "Megaradio Bayern",
+    "name": "Megaradio Bayern (Radio & Online)",
     "code": "Megaradio Bayern"
 }, {
-    "name": "Pure FM Bayern",
+    "name": "Pure FM Bayern (Radio & Online)",
     "code": "Pure FM Bayern"
 }, {
-    "name": "Radio Galaxy",
+    "name": "Radio Galaxy (Radio & Online)",
     "code": "Radio Galaxy"
 }, {
-    "name": "Rock Antenne",
+    "name": "Rock Antenne (Radio & Online)",
     "code": "Rock Antenne"
 }, {
-    "name": "106.4 Top FM",
+    "name": "106.4 Top FM (Radio & Online)",
     "code": "106.4 Top FM"
 }, {
-    "name": "Be4 Classic Rock",
+    "name": "Be4 Classic Rock (Radio & Online)",
     "code": "Be4 Classic Rock"
 }, {
-    "name": "Christliches Radio München",
+    "name": "Christliches Radio München (Radio & Online)",
     "code": "Christliches Radio München"
 }, {
-    "name": "Energy München",
+    "name": "Energy München (Radio & Online)",
     "code": "Energy München"
 }, {
-    "name": "Münchner Kirchenradio",
+    "name": "Münchner Kirchenradio (Radio & Online)",
     "code": "Münchner Kirchenradio"
 }, {
-    "name": "Radio 2Day",
+    "name": "Radio 2Day (Radio & Online)",
     "code": "Radio 2Day"
 }, {
-    "name": "Radio Arabella",
+    "name": "Radio Arabella (Radio & Online)",
     "code": "Radio Arabella"
 }, {
-    "name": "Radio Charivari",
+    "name": "Radio Charivari (Radio & Online)",
     "code": "Radio Charivari"
 }, {
-    "name": "Radio Feierwerk",
+    "name": "Radio Feierwerk (Radio & Online)",
     "code": "Radio Feierwerk"
 }, {
-    "name": "Radio Gong 96,3",
+    "name": "Radio Gong 96,3 (Radio & Online)",
     "code": "Radio Gong 96,3"
 }, {
-    "name": "Camillo 92,9",
+    "name": "Camillo 92,9 (Radio & Online)",
     "code": "Camillo 92,9"
 }, {
-    "name": "Charivari 98,6",
+    "name": "Charivari 98,6 (Radio & Online)",
     "code": "Charivari 98,6"
 }, {
-    "name": "Energy Nürnberg",
+    "name": "Energy Nürnberg (Radio & Online)",
     "code": "Energy Nürnberg"
 }, {
-    "name": "Hit Radio N1",
+    "name": "Hit Radio N1 (Radio & Online)",
     "code": "Hit Radio N1"
 }, {
-    "name": "Jazztime Nürnberg",
+    "name": "Jazztime Nürnberg (Radio & Online)",
     "code": "Jazztime Nürnberg"
 }, {
-    "name": "Pirate Gong",
+    "name": "Pirate Gong (Radio & Online)",
     "code": "Pirate Gong"
 }, {
-    "name": "PN Eins Urban",
+    "name": "PN Eins Urban (Radio & Online)",
     "code": "PN Eins Urban"
 }, {
-    "name": "Pray 92,9",
+    "name": "Pray 92,9 (Radio & Online)",
     "code": "Pray 92,9"
 }, {
-    "name": "Radio AREF",
+    "name": "Radio AREF (Radio & Online)",
     "code": "Radio AREF"
 }, {
-    "name": "Radio F",
+    "name": "Radio F (Radio & Online)",
     "code": "Radio F"
 }, {
-    "name": "Radio Gong 97,1",
+    "name": "Radio Gong 97,1 (Radio & Online)",
     "code": "Radio Gong 97,1"
 }, {
-    "name": "Radio Meilensteine",
+    "name": "Radio Meilensteine (Radio & Online)",
     "code": "Radio Meilensteine"
 }, {
-    "name": "Star FM",
+    "name": "Star FM (Radio & Online)",
     "code": "Star FM"
 }, {
-    "name": "Fantasy Lounge",
+    "name": "Fantasy Lounge (Radio & Online)",
     "code": "Fantasy Lounge"
 }, {
-    "name": "Hitradio.rt1",
+    "name": "Hitradio.rt1 (Radio & Online)",
     "code": "Hitradio.rt1"
 }, {
-    "name": "Mega 80's",
+    "name": "Mega 80's (Radio & Online)",
     "code": "Mega 80's"
 }, {
-    "name": "Radio Augsburg",
+    "name": "Radio Augsburg (Radio & Online)",
     "code": "Radio Augsburg"
 }, {
-    "name": "Radio Fantasy",
+    "name": "Radio Fantasy (Radio & Online)",
     "code": "Radio Fantasy"
 }, {
-    "name": "Radio Ilmwelle",
+    "name": "Radio Ilmwelle (Radio & Online)",
     "code": "Radio Ilmwelle"
 }, {
-    "name": "Rt1 in the mix",
+    "name": "Rt1 in the mix (Radio & Online)",
     "code": "Rt1 in the mix"
 }, {
-    "name": "Smart Radio",
+    "name": "Smart Radio (Radio & Online)",
     "code": "Smart Radio"
 }, {
-    "name": "106,9 Radio Gong",
+    "name": "106,9 Radio Gong (Radio & Online)",
     "code": "106,9 Radio Gong"
 }, {
-    "name": "Radio Charivari Würzburg",
+    "name": "Radio Charivari Würzburg (Radio & Online)",
     "code": "Radio Charivari Würzburg"
 }, {
-    "name": "Radio Opera",
+    "name": "Radio Opera (Radio & Online)",
     "code": "Radio Opera"
 }, {
-    "name": "Gong FM",
+    "name": "Gong FM (Radio & Online)",
     "code": "Gong FM"
 }, {
-    "name": "Radio Charivari Regensburg",
+    "name": "Radio Charivari Regensburg (Radio & Online)",
     "code": "Radio Charivari Regensburg"
 }, {
-    "name": "Bayernwelle SüdOst",
+    "name": "Bayernwelle SüdOst (Radio & Online)",
     "code": "Bayernwelle SüdOst"
 }, {
-    "name": "Ensemble am Chiemsee",
+    "name": "Ensemble am Chiemsee (Radio & Online)",
     "code": "Ensemble am Chiemsee"
 }, {
-    "name": "Ilmwelle 90s",
+    "name": "Ilmwelle 90s (Radio & Online)",
     "code": "Ilmwelle 90s"
 }, {
-    "name": "Ilmwelle Event",
+    "name": "Ilmwelle Event (Radio & Online)",
     "code": "Ilmwelle Event"
 }, {
-    "name": "Ilmwelle Schlager",
+    "name": "Ilmwelle Schlager (Radio & Online)",
     "code": "Ilmwelle Schlager"
 }, {
-    "name": "Inn-Salzach-Welle",
+    "name": "Inn-Salzach-Welle (Radio & Online)",
     "code": "Inn-Salzach-Welle"
 }, {
-    "name": "PN Eins Dance",
+    "name": "PN Eins Dance (Radio & Online)",
     "code": "PN Eins Dance"
 }, {
-    "name": "Radio Alpenwelle",
+    "name": "Radio Alpenwelle (Radio & Online)",
     "code": "Radio Alpenwelle"
 }, {
-    "name": "Radio Charivari Rosenheim",
+    "name": "Radio Charivari Rosenheim (Radio & Online)",
     "code": "Radio Charivari Rosenheim"
 }, {
-    "name": "Radio IN",
+    "name": "Radio IN (Radio & Online)",
     "code": "Radio IN"
 }, {
-    "name": "Radio ND1",
+    "name": "Radio ND1 (Radio & Online)",
     "code": "Radio ND1"
 }, {
-    "name": "Radio Oberland",
+    "name": "Radio Oberland (Radio & Online)",
     "code": "Radio Oberland"
 }, {
-    "name": "Radio 8",
+    "name": "Radio 8 (Radio & Online)",
     "code": "Radio 8"
 }, {
-    "name": "Das neue RSA Radio",
+    "name": "Das neue RSA Radio (Radio & Online)",
     "code": "Das neue RSA Radio"
 }, {
-    "name": "Hitradio.rt1 nordschwaben",
+    "name": "Hitradio.rt1 nordschwaben (Radio & Online)",
     "code": "Hitradio.rt1 nordschwaben"
 }, {
-    "name": "Hitradio.rt1 südschwaben",
+    "name": "Hitradio.rt1 südschwaben (Radio & Online)",
     "code": "Hitradio.rt1 südschwaben"
 }, {
-    "name": "Radio Hashtag+",
+    "name": "Radio Hashtag+ (Radio & Online)",
     "code": "Radio Hashtag+"
 }, {
-    "name": "Radio Primaton",
+    "name": "Radio Primaton (Radio & Online)",
     "code": "Radio Primaton"
 }, {
-    "name": "Radio Primavera",
+    "name": "Radio Primavera (Radio & Online)",
     "code": "Radio Primavera"
 }, {
-    "name": "Radio Ramasuri",
+    "name": "Radio Ramasuri (Radio & Online)",
     "code": "Radio Ramasuri"
 }, {
-    "name": "Extra-Radio",
+    "name": "Extra-Radio (Radio & Online)",
     "code": "Extra-Radio"
 }, {
-    "name": "Radio Bamberg",
+    "name": "Radio Bamberg (Radio & Online)",
     "code": "Radio Bamberg"
 }, {
-    "name": "Radio Euroherz",
+    "name": "Radio Euroherz (Radio & Online)",
     "code": "Radio Euroherz"
 }, {
-    "name": "Radio Mainwelle",
+    "name": "Radio Mainwelle (Radio & Online)",
     "code": "Radio Mainwelle"
 }, {
-    "name": "Radio Plassenburg",
+    "name": "Radio Plassenburg (Radio & Online)",
     "code": "Radio Plassenburg"
 }, {
-    "name": "Radio AWN",
+    "name": "Radio AWN (Radio & Online)",
     "code": "Radio AWN"
 }, {
-    "name": "Radio Trausnitz",
+    "name": "Radio Trausnitz (Radio & Online)",
     "code": "Radio Trausnitz"
 }, {
-    "name": "UnserRadio, Passau",
+    "name": "UnserRadio, Passau (Radio & Online)",
     "code": "UnserRadio, Passau"
 }, {
-    "name": "Unser Radio Deggendorf",
+    "name": "Unser Radio Deggendorf (Radio & Online)",
     "code": "Unser Radio Deggendorf"
 }, {
-    "name": "104.6 RTL",
+    "name": "104.6 RTL (Radio & Online)",
     "code": "104.6 RTL"
 }, {
-    "name": "105’5 Spreeradio",
+    "name": "105’5 Spreeradio (Radio & Online)",
     "code": "105’5 Spreeradio"
 }, {
-    "name": "89.2 Radio Potsdam",
+    "name": "89.2 Radio Potsdam (Radio & Online)",
     "code": "89.2 Radio Potsdam"
 }, {
-    "name": "93,6 Jam FM",
+    "name": "93,6 Jam FM (Radio & Online)",
     "code": "93,6 Jam FM"
 }, {
-    "name": "94,3 rs2",
+    "name": "94,3 rs2 (Radio & Online)",
     "code": "94,3 rs2"
 }, {
-    "name": "94.5 Radio Cottbus",
+    "name": "94.5 Radio Cottbus (Radio & Online)",
     "code": "94.5 Radio Cottbus"
 }, {
-    "name": "98.2 Radio Paradiso",
+    "name": "98.2 Radio Paradiso (Radio & Online)",
     "code": "98.2 Radio Paradiso"
 }, {
-    "name": "98.8 Kiss FM",
+    "name": "98.8 Kiss FM (Radio & Online)",
     "code": "98.8 Kiss FM"
 }, {
-    "name": "BB Radio",
+    "name": "BB Radio (Radio & Online)",
     "code": "BB Radio"
 }, {
-    "name": "Berliner Rundfunk 91.4",
+    "name": "Berliner Rundfunk 91.4 (Radio & Online)",
     "code": "Berliner Rundfunk 91.4"
 }, {
-    "name": "BHeins",
+    "name": "BHeins (Radio & Online)",
     "code": "BHeins"
 }, {
-    "name": "Elsterwelle",
+    "name": "Elsterwelle (Radio & Online)",
     "code": "Elsterwelle"
 }, {
-    "name": "Energy Berlin",
+    "name": "Energy Berlin (Radio & Online)",
     "code": "Energy Berlin"
 }, {
-    "name": "ERF Pop",
+    "name": "ERF Pop (Radio & Online)",
     "code": "ERF Pop"
 }, {
-    "name": "FG.chic",
+    "name": "FG.chic (Radio & Online)",
     "code": "FG.chic"
 }, {
-    "name": "Flux FM",
+    "name": "Flux FM (Radio & Online)",
     "code": "Flux FM"
 }, {
-    "name": "Hit104",
+    "name": "Hit104 (Radio & Online)",
     "code": "Hit104"
 }, {
-    "name": "HitRadio SKW",
+    "name": "HitRadio SKW (Radio & Online)",
     "code": "HitRadio SKW"
 }, {
-    "name": "JazzRadio 106.8",
+    "name": "JazzRadio 106.8 (Radio & Online)",
     "code": "JazzRadio 106.8"
 }, {
-    "name": "Lulu.fm",
+    "name": "Lulu.fm (Radio & Online)",
     "code": "Lulu.fm"
 }, {
-    "name": "Maxx FM",
+    "name": "Maxx FM (Radio & Online)",
     "code": "Maxx FM"
 }, {
-    "name": "Mega Radio SNA",
+    "name": "Mega Radio SNA (Radio & Online)",
     "code": "Mega Radio SNA"
 }, {
-    "name": "Nice",
+    "name": "Nice (Radio & Online)",
     "code": "Nice"
 }, {
-    "name": "Power Radio",
+    "name": "Power Radio (Radio & Online)",
     "code": "Power Radio"
 }, {
-    "name": "Pure FM Berlin",
+    "name": "Pure FM Berlin (Radio & Online)",
     "code": "Pure FM Berlin"
 }, {
-    "name": "Radio B2",
+    "name": "Radio B2 (Radio & Online)",
     "code": "Radio B2"
 }, {
-    "name": "Radio Gold",
+    "name": "Radio Gold (Radio & Online)",
     "code": "Radio Gold"
 }, {
-    "name": "Radio Paloma",
+    "name": "Radio Paloma (Radio & Online)",
     "code": "Radio Paloma"
 }, {
-    "name": "Radio Paradiso Brandenburg",
+    "name": "Radio Paradiso Brandenburg (Radio & Online)",
     "code": "Radio Paradiso Brandenburg"
 }, {
-    "name": "Radio Russkij Berlin",
+    "name": "Radio Russkij Berlin (Radio & Online)",
     "code": "Radio Russkij Berlin"
 }, {
-    "name": "Radyo Metropol FM",
+    "name": "Radyo Metropol FM (Radio & Online)",
     "code": "Radyo Metropol FM"
 }, {
-    "name": "Star FM 87.9",
+    "name": "Star FM 87.9 (Radio & Online)",
     "code": "Star FM 87.9"
 }, {
-    "name": "Star*Sat Radio",
+    "name": "Star*Sat Radio (Radio & Online)",
     "code": "Star*Sat Radio"
 }, {
-    "name": "Energy Bremen",
+    "name": "Energy Bremen (Radio & Online)",
     "code": "Energy Bremen"
 }, {
-    "name": "Radio 21 Bremen",
+    "name": "Radio 21 Bremen (Radio & Online)",
     "code": "Radio 21 Bremen"
 }, {
-    "name": "80s80s",
+    "name": "80s80s (Radio & Online)",
     "code": "80s80s"
 }, {
-    "name": "917 xfm",
+    "name": "917 xfm (Radio & Online)",
     "code": "917 xfm"
 }, {
-    "name": "Alsterradio",
+    "name": "Alsterradio (Radio & Online)",
     "code": "Alsterradio"
 }, {
-    "name": "Energy Hamburg",
+    "name": "Energy Hamburg (Radio & Online)",
     "code": "Energy Hamburg"
 }, {
-    "name": "Hamburg Zwei",
+    "name": "Hamburg Zwei (Radio & Online)",
     "code": "Hamburg Zwei"
 }, {
-    "name": "Megaradio",
+    "name": "Megaradio (Radio & Online)",
     "code": "Megaradio"
 }, {
-    "name": "Pure FM Hamburg",
+    "name": "Pure FM Hamburg (Radio & Online)",
     "code": "Pure FM Hamburg"
 }, {
-    "name": "Radio Hamburg",
+    "name": "Radio Hamburg (Radio & Online)",
     "code": "Radio Hamburg"
 }, {
-    "name": "Radio Paradiso Nord",
+    "name": "Radio Paradiso Nord (Radio & Online)",
     "code": "Radio Paradiso Nord"
 }, {
-    "name": "Antenne Frankfurt 95.1",
+    "name": "Antenne Frankfurt 95.1 (Radio & Online)",
     "code": "Antenne Frankfurt 95.1"
 }, {
-    "name": "Harmony.fm",
+    "name": "Harmony.fm (Radio & Online)",
     "code": "Harmony.fm"
 }, {
-    "name": "Hit Radio FFH",
+    "name": "Hit Radio FFH (Radio & Online)",
     "code": "Hit Radio FFH"
 }, {
-    "name": "Planet radio",
+    "name": "Planet radio (Radio & Online)",
     "code": "Planet radio"
 }, {
-    "name": "Antenne MV",
+    "name": "Antenne MV (Radio & Online)",
     "code": "Antenne MV"
 }, {
-    "name": "JazzRadio Rostock",
+    "name": "JazzRadio Rostock (Radio & Online)",
     "code": "JazzRadio Rostock"
 }, {
-    "name": "Ostseewelle",
+    "name": "Ostseewelle (Radio & Online)",
     "code": "Ostseewelle"
 }, {
-    "name": "Radio B2 MV",
+    "name": "Radio B2 MV (Radio & Online)",
     "code": "Radio B2 MV"
 }, {
-    "name": "Antenne Niedersachsen",
+    "name": "Antenne Niedersachsen (Radio & Online)",
     "code": "Antenne Niedersachsen"
 }, {
-    "name": "Radio 21",
+    "name": "Radio 21 (Radio & Online)",
     "code": "Radio 21"
 }, {
-    "name": "Radio ffn",
+    "name": "Radio ffn (Radio & Online)",
     "code": "Radio ffn"
 }, {
-    "name": "Radio38",
+    "name": "Radio38 (Radio & Online)",
     "code": "Radio38"
 }, {
-    "name": "Radio Hannover",
+    "name": "Radio Hannover (Radio & Online)",
     "code": "Radio Hannover"
 }, {
-    "name": "Radio Mittelweser",
+    "name": "Radio Mittelweser (Radio & Online)",
     "code": "Radio Mittelweser"
 }, {
-    "name": "Radio Nordseewelle",
+    "name": "Radio Nordseewelle (Radio & Online)",
     "code": "Radio Nordseewelle"
 }, {
-    "name": "Radio Osnabrück",
+    "name": "Radio Osnabrück (Radio & Online)",
     "code": "Radio Osnabrück"
 }, {
-    "name": "Domradio",
+    "name": "Domradio (Radio & Online)",
     "code": "Domradio"
 }, {
-    "name": "107.7 Radio Hagen",
+    "name": "107.7 Radio Hagen (Radio & Online)",
     "code": "107.7 Radio Hagen"
 }, {
-    "name": "Antenne AC",
+    "name": "Antenne AC (Radio & Online)",
     "code": "Antenne AC"
 }, {
-    "name": "Antenne Düsseldorf",
+    "name": "Antenne Düsseldorf (Radio & Online)",
     "code": "Antenne Düsseldorf"
 }, {
-    "name": "Antenne Münster",
+    "name": "Antenne Münster (Radio & Online)",
     "code": "Antenne Münster"
 }, {
-    "name": "Antenne Niederrhein",
+    "name": "Antenne Niederrhein (Radio & Online)",
     "code": "Antenne Niederrhein"
 }, {
-    "name": "Antenne Unna",
+    "name": "Antenne Unna (Radio & Online)",
     "code": "Antenne Unna"
 }, {
-    "name": "Hellweg Radio",
+    "name": "Hellweg Radio (Radio & Online)",
     "code": "Hellweg Radio"
 }, {
-    "name": "NE-WS 89.4",
+    "name": "NE-WS 89.4 (Radio & Online)",
     "code": "NE-WS 89.4"
 }, {
-    "name": "Radio 90,1 Mönchengladbach",
+    "name": "Radio 90,1 Mönchengladbach (Radio & Online)",
     "code": "Radio 90,1 Mönchengladbach"
 }, {
-    "name": "Radio 91.2",
+    "name": "Radio 91.2 (Radio & Online)",
     "code": "Radio 91.2"
 }, {
-    "name": "Radio Berg",
+    "name": "Radio Berg (Radio & Online)",
     "code": "Radio Berg"
 }, {
-    "name": "Radio Bielefeld",
+    "name": "Radio Bielefeld (Radio & Online)",
     "code": "Radio Bielefeld"
 }, {
-    "name": "Radio Bochum",
+    "name": "Radio Bochum (Radio & Online)",
     "code": "Radio Bochum"
 }, {
-    "name": "Radio Bonn/Rhein-Sieg",
+    "name": "Radio Bonn/Rhein-Sieg (Radio & Online)",
     "code": "Radio Bonn/Rhein-Sieg"
 }, {
-    "name": "Radio Duisburg",
+    "name": "Radio Duisburg (Radio & Online)",
     "code": "Radio Duisburg"
 }, {
-    "name": "Radio Emscher Lippe",
+    "name": "Radio Emscher Lippe (Radio & Online)",
     "code": "Radio Emscher Lippe"
 }, {
-    "name": "Radio Ennepe Ruhr",
+    "name": "Radio Ennepe Ruhr (Radio & Online)",
     "code": "Radio Ennepe Ruhr"
 }, {
-    "name": "Radio Erft",
+    "name": "Radio Erft (Radio & Online)",
     "code": "Radio Erft"
 }, {
-    "name": "Radio Essen",
+    "name": "Radio Essen (Radio & Online)",
     "code": "Radio Essen"
 }, {
-    "name": "Radio Euskirchen",
+    "name": "Radio Euskirchen (Radio & Online)",
     "code": "Radio Euskirchen"
 }, {
-    "name": "Radio Gütersloh",
+    "name": "Radio Gütersloh (Radio & Online)",
     "code": "Radio Gütersloh"
 }, {
-    "name": "Radio Herford",
+    "name": "Radio Herford (Radio & Online)",
     "code": "Radio Herford"
 }, {
-    "name": "Radio Herne",
+    "name": "Radio Herne (Radio & Online)",
     "code": "Radio Herne"
 }, {
-    "name": "Radio Hochstift",
+    "name": "Radio Hochstift (Radio & Online)",
     "code": "Radio Hochstift"
 }, {
-    "name": "Radio Kiepenkerl",
+    "name": "Radio Kiepenkerl (Radio & Online)",
     "code": "Radio Kiepenkerl"
 }, {
-    "name": "Radio Köln",
+    "name": "Radio Köln (Radio & Online)",
     "code": "Radio Köln"
 }, {
-    "name": "Radio K.W.",
+    "name": "Radio K.W. (Radio & Online)",
     "code": "Radio K.W."
 }, {
-    "name": "Radio Leverkusen",
+    "name": "Radio Leverkusen (Radio & Online)",
     "code": "Radio Leverkusen"
 }, {
-    "name": "Radio Lippe",
+    "name": "Radio Lippe (Radio & Online)",
     "code": "Radio Lippe"
 }, {
-    "name": "Radio Lippe Welle Hamm",
+    "name": "Radio Lippe Welle Hamm (Radio & Online)",
     "code": "Radio Lippe Welle Hamm"
 }, {
-    "name": "Radio MK",
+    "name": "Radio MK (Radio & Online)",
     "code": "Radio MK"
 }, {
-    "name": "Radio Mülheim",
+    "name": "Radio Mülheim (Radio & Online)",
     "code": "Radio Mülheim"
 }, {
-    "name": "Radio Neandertal",
+    "name": "Radio Neandertal (Radio & Online)",
     "code": "Radio Neandertal"
 }, {
-    "name": "Radio Oberhausen",
+    "name": "Radio Oberhausen (Radio & Online)",
     "code": "Radio Oberhausen"
 }, {
-    "name": "Radio RSG",
+    "name": "Radio RSG (Radio & Online)",
     "code": "Radio RSG"
 }, {
-    "name": "Radio RST",
+    "name": "Radio RST (Radio & Online)",
     "code": "Radio RST"
 }, {
-    "name": "Radio Rur",
+    "name": "Radio Rur (Radio & Online)",
     "code": "Radio Rur"
 }, {
-    "name": "Radio Sauerland",
+    "name": "Radio Sauerland (Radio & Online)",
     "code": "Radio Sauerland"
 }, {
-    "name": "Radio Siegen",
+    "name": "Radio Siegen (Radio & Online)",
     "code": "Radio Siegen"
 }, {
-    "name": "Radio Vest",
+    "name": "Radio Vest (Radio & Online)",
     "code": "Radio Vest"
 }, {
-    "name": "Radio WAF",
+    "name": "Radio WAF (Radio & Online)",
     "code": "Radio WAF"
 }, {
-    "name": "Radio Westfalica",
+    "name": "Radio Westfalica (Radio & Online)",
     "code": "Radio Westfalica"
 }, {
-    "name": "Radio WMW",
+    "name": "Radio WMW (Radio & Online)",
     "code": "Radio WMW"
 }, {
-    "name": "Radio Wuppertal",
+    "name": "Radio Wuppertal (Radio & Online)",
     "code": "Radio Wuppertal"
 }, {
-    "name": "Welle Niederrhein",
+    "name": "Welle Niederrhein (Radio & Online)",
     "code": "Welle Niederrhein"
 }, {
-    "name": "Antenne Pulheim",
+    "name": "Antenne Pulheim (Radio & Online)",
     "code": "Antenne Pulheim"
 }, {
-    "name": "Radio 700",
+    "name": "Radio 700 (Radio & Online)",
     "code": "Radio 700"
 }, {
-    "name": "Rockland Radio",
+    "name": "Rockland Radio (Radio & Online)",
     "code": "Rockland Radio"
 }, {
-    "name": "RPR1",
+    "name": "RPR1 (Radio & Online)",
     "code": "RPR1"
 }, {
-    "name": "Antenne Idar-Oberstein",
+    "name": "Antenne Idar-Oberstein (Radio & Online)",
     "code": "Antenne Idar-Oberstein"
 }, {
-    "name": "Antenne Bad Kreuznach",
+    "name": "Antenne Bad Kreuznach (Radio & Online)",
     "code": "Antenne Bad Kreuznach"
 }, {
-    "name": "Antenne Kaiserslautern",
+    "name": "Antenne Kaiserslautern (Radio & Online)",
     "code": "Antenne Kaiserslautern"
 }, {
-    "name": "Antenne Koblenz 98.0",
+    "name": "Antenne Koblenz 98.0 (Radio & Online)",
     "code": "Antenne Koblenz 98.0"
 }, {
-    "name": "Antenne Landau",
+    "name": "Antenne Landau (Radio & Online)",
     "code": "Antenne Landau"
 }, {
-    "name": "Antenne Mainz",
+    "name": "Antenne Mainz (Radio & Online)",
     "code": "Antenne Mainz"
 }, {
-    "name": "Antenne Pfalz",
+    "name": "Antenne Pfalz (Radio & Online)",
     "code": "Antenne Pfalz"
 }, {
-    "name": "Antenne Pirmasens",
+    "name": "Antenne Pirmasens (Radio & Online)",
     "code": "Antenne Pirmasens"
 }, {
-    "name": "Antenne Zweibrücken",
+    "name": "Antenne Zweibrücken (Radio & Online)",
     "code": "Antenne Zweibrücken"
 }, {
-    "name": "Cityradio Trier",
+    "name": "Cityradio Trier (Radio & Online)",
     "code": "Cityradio Trier"
 }, {
-    "name": "Domradio Studio Nahe",
+    "name": "Domradio Studio Nahe (Radio & Online)",
     "code": "Domradio Studio Nahe"
 }, {
-    "name": "BigFM Saarland",
+    "name": "BigFM Saarland (Radio & Online)",
     "code": "BigFM Saarland"
 }, {
-    "name": "Classic Rock Radio",
+    "name": "Classic Rock Radio (Radio & Online)",
     "code": "Classic Rock Radio"
 }, {
-    "name": "Radio Homburg",
+    "name": "Radio Homburg (Radio & Online)",
     "code": "Radio Homburg"
 }, {
-    "name": "Radio Neunkirchen",
+    "name": "Radio Neunkirchen (Radio & Online)",
     "code": "Radio Neunkirchen"
 }, {
-    "name": "Radio Saarbrücken",
+    "name": "Radio Saarbrücken (Radio & Online)",
     "code": "Radio Saarbrücken"
 }, {
-    "name": "Radio Saarschleifenland",
+    "name": "Radio Saarschleifenland (Radio & Online)",
     "code": "Radio Saarschleifenland"
 }, {
-    "name": "Radio Salü",
+    "name": "Radio Salü (Radio & Online)",
     "code": "Radio Salü"
 }, {
-    "name": "Apollo radio",
+    "name": "Apollo radio (Radio & Online)",
     "code": "Apollo radio"
 }, {
-    "name": "Energy Sachsen",
+    "name": "Energy Sachsen (Radio & Online)",
     "code": "Energy Sachsen"
 }, {
-    "name": "Hitradio RTL Sachsen",
+    "name": "Hitradio RTL Sachsen (Radio & Online)",
     "code": "Hitradio RTL Sachsen"
 }, {
-    "name": "Radio PSR",
+    "name": "Radio PSR (Radio & Online)",
     "code": "Radio PSR"
 }, {
-    "name": "R.SA",
+    "name": "R.SA (Radio & Online)",
     "code": "R.SA"
 }, {
-    "name": "InPulz Radio",
+    "name": "InPulz Radio (Radio & Online)",
     "code": "InPulz Radio"
 }, {
-    "name": "Leipzig 1",
+    "name": "Leipzig 1 (Radio & Online)",
     "code": "Leipzig 1"
 }, {
-    "name": "Leipzig Beatzz",
+    "name": "Leipzig Beatzz (Radio & Online)",
     "code": "Leipzig Beatzz"
 }, {
-    "name": "Radio Chemnitz",
+    "name": "Radio Chemnitz (Radio & Online)",
     "code": "Radio Chemnitz"
 }, {
-    "name": "Radio Dresden",
+    "name": "Radio Dresden (Radio & Online)",
     "code": "Radio Dresden"
 }, {
-    "name": "Radio Erzgebirge",
+    "name": "Radio Erzgebirge (Radio & Online)",
     "code": "Radio Erzgebirge"
 }, {
-    "name": "Radio Erzgebirge 2",
+    "name": "Radio Erzgebirge 2 (Radio & Online)",
     "code": "Radio Erzgebirge 2"
 }, {
-    "name": "Radio Erzgebirge 107,7",
+    "name": "Radio Erzgebirge 107,7 (Radio & Online)",
     "code": "Radio Erzgebirge 107,7"
 }, {
-    "name": "Radio Lausitz",
+    "name": "Radio Lausitz (Radio & Online)",
     "code": "Radio Lausitz"
 }, {
-    "name": "Radio Leipzig",
+    "name": "Radio Leipzig (Radio & Online)",
     "code": "Radio Leipzig"
 }, {
-    "name": "Radio Leipzig 2",
+    "name": "Radio Leipzig 2 (Radio & Online)",
     "code": "Radio Leipzig 2"
 }, {
-    "name": "Radio WSW",
+    "name": "Radio WSW (Radio & Online)",
     "code": "Radio WSW"
 }, {
-    "name": "Radio Zwickau",
+    "name": "Radio Zwickau (Radio & Online)",
     "code": "Radio Zwickau"
 }, {
-    "name": "Vogtland Radio",
+    "name": "Vogtland Radio (Radio & Online)",
     "code": "Vogtland Radio"
 }, {
-    "name": "90s90s",
+    "name": "90s90s (Radio & Online)",
     "code": "90s90s"
 }, {
-    "name": "Detektor.fm Wort",
+    "name": "Detektor.fm Wort (Radio & Online)",
     "code": "Detektor.fm Wort"
 }, {
-    "name": "Rockland",
+    "name": "Rockland (Radio & Online)",
     "code": "Rockland"
 }, {
-    "name": "SchlagerPlanet Radio",
+    "name": "SchlagerPlanet Radio (Radio & Online)",
     "code": "SchlagerPlanet Radio"
 }, {
-    "name": "SecondRadio",
+    "name": "SecondRadio (Radio & Online)",
     "code": "SecondRadio"
 }, {
-    "name": "1A Deutsche Hits",
+    "name": "1A Deutsche Hits (Radio & Online)",
     "code": "1A Deutsche Hits"
 }, {
-    "name": "89.0 RTL",
+    "name": "89.0 RTL (Radio & Online)",
     "code": "89.0 RTL"
 }, {
-    "name": "89.0 RTL In The Mix",
+    "name": "89.0 RTL In The Mix (Radio & Online)",
     "code": "89.0 RTL In The Mix"
 }, {
-    "name": "Radio Brocken",
+    "name": "Radio Brocken (Radio & Online)",
     "code": "Radio Brocken"
 }, {
-    "name": "Radio SAW",
+    "name": "Radio SAW (Radio & Online)",
     "code": "Radio SAW"
 }, {
-    "name": "Rockland Sachsen-Anhalt",
+    "name": "Rockland Sachsen-Anhalt (Radio & Online)",
     "code": "Rockland Sachsen-Anhalt"
 }, {
-    "name": "Delta radio",
+    "name": "Delta radio (Radio & Online)",
     "code": "Delta radio"
 }, {
-    "name": "R.SH",
+    "name": "R.SH (Radio & Online)",
     "code": "R.SH"
 }, {
-    "name": "Antenne Thüringen",
+    "name": "Antenne Thüringen (Radio & Online)",
     "code": "Antenne Thüringen"
 }, {
-    "name": "Landeswelle Thüringen",
+    "name": "Landeswelle Thüringen (Radio & Online)",
     "code": "Landeswelle Thüringen"
 }, {
-    "name": "Radio Top 40",
+    "name": "Radio Top 40 (Radio & Online)",
     "code": "Radio Top 40"
 }, {
-    "name": "Bermudafunk",
+    "name": "Bermudafunk (Radio & Online)",
     "code": "Bermudafunk"
 }, {
-    "name": "Freies Radio Freudenstadt",
+    "name": "Freies Radio Freudenstadt (Radio & Online)",
     "code": "Freies Radio Freudenstadt"
 }, {
-    "name": "Freies Radio für Stuttgart",
+    "name": "Freies Radio für Stuttgart (Radio & Online)",
     "code": "Freies Radio für Stuttgart"
 }, {
-    "name": "Freies Radio Wiesental",
+    "name": "Freies Radio Wiesental (Radio & Online)",
     "code": "Freies Radio Wiesental"
 }, {
-    "name": "Querfunk",
+    "name": "Querfunk (Radio & Online)",
     "code": "Querfunk"
 }, {
-    "name": "Radio Dreyeckland",
+    "name": "Radio Dreyeckland (Radio & Online)",
     "code": "Radio Dreyeckland"
 }, {
-    "name": "Radio Fips",
+    "name": "Radio Fips (Radio & Online)",
     "code": "Radio Fips"
 }, {
-    "name": "Radio free FM",
+    "name": "Radio free FM (Radio & Online)",
     "code": "Radio free FM"
 }, {
-    "name": "Radio helle welle",
+    "name": "Radio helle welle (Radio & Online)",
     "code": "Radio helle welle"
 }, {
-    "name": "Radio StHörfunk",
+    "name": "Radio StHörfunk (Radio & Online)",
     "code": "Radio StHörfunk"
 }, {
-    "name": "Wüste Welle",
+    "name": "Wüste Welle (Radio & Online)",
     "code": "Wüste Welle"
 }, {
-    "name": "LORA München",
+    "name": "LORA München (Radio & Online)",
     "code": "LORA München"
 }, {
-    "name": "Radio München",
+    "name": "Radio München (Radio & Online)",
     "code": "Radio München"
 }, {
-    "name": "Radio Z",
+    "name": "Radio Z (Radio & Online)",
     "code": "Radio Z"
 }, {
-    "name": "1 FL TV FL-Kabel",
+    "name": "1 FL TV FL-Kabel (Fernsehen & Online)",
     "code": "1 FL TV FL-Kabel"
 }, {
-    "name": "1-2-3.tv",
+    "name": "1-2-3.tv (Fernsehen & Online)",
     "code": "1-2-3.tv"
 }, {
-    "name": "3 Plus TV",
+    "name": "3 Plus TV (Fernsehen & Online)",
     "code": "3 Plus TV"
 }, {
-    "name": "3sat",
+    "name": "3sat (Fernsehen & Online)",
     "code": "3sat"
 }, {
-    "name": "4 Plus TV",
+    "name": "4 Plus TV (Fernsehen & Online)",
     "code": "4 Plus TV"
 }, {
-    "name": "5 Plus TV",
+    "name": "5 Plus TV (Fernsehen & Online)",
     "code": "5 Plus TV"
 }, {
-    "name": "Alpenland TV",
+    "name": "Alpenland TV (Fernsehen & Online)",
     "code": "Alpenland TV"
 }, {
-    "name": "Anixe",
+    "name": "Anixe (Fernsehen & Online)",
     "code": "Anixe"
 }, {
-    "name": "ARD-alpha",
+    "name": "ARD-alpha (Fernsehen & Online)",
     "code": "ARD-alpha"
 }, {
-    "name": "Arte",
+    "name": "Arte (Fernsehen & Online)",
     "code": "Arte"
 }, {
-    "name": "Astro TV",
+    "name": "Astro TV (Fernsehen & Online)",
     "code": "Astro TV"
 }, {
-    "name": "ATV",
+    "name": "ATV (Fernsehen & Online)",
     "code": "ATV"
 }, {
-    "name": "ATV2",
+    "name": "ATV2 (Fernsehen & Online)",
     "code": "ATV2"
 }, {
-    "name": "BB-MV Lokal-TV",
+    "name": "BB-MV Lokal-TV (Fernsehen & Online)",
     "code": "BB-MV Lokal-TV"
 }, {
-    "name": "Bibel TV",
+    "name": "Bibel TV (Fernsehen & Online)",
     "code": "Bibel TV"
 }, {
-    "name": "Bloomberg Television",
+    "name": "Bloomberg Television (Fernsehen & Online)",
     "code": "Bloomberg Television"
 }, {
-    "name": "BRF-Fernsehen",
+    "name": "BRF-Fernsehen (Fernsehen & Online)",
     "code": "BRF-Fernsehen"
 }, {
-    "name": "BW Family.tv",
+    "name": "BW Family.tv (Fernsehen & Online)",
     "code": "BW Family.tv"
 }, {
-    "name": "Channel 21",
+    "name": "Channel 21 (Fernsehen & Online)",
     "code": "Channel 21"
 }, {
-    "name": "Comedy Central",
+    "name": "Comedy Central (Fernsehen & Online)",
     "code": "Comedy Central"
 }, {
-    "name": "Deluxe Music",
+    "name": "Deluxe Music (Fernsehen & Online)",
     "code": "Deluxe Music"
 }, {
-    "name": "Den 2. RTL",
+    "name": "Den 2. RTL (Fernsehen & Online)",
     "code": "Den 2. RTL"
 }, {
-    "name": "Der Aktionär TV",
+    "name": "Der Aktionär TV (Fernsehen & Online)",
     "code": "Der Aktionär TV"
 }, {
-    "name": "Deutsches Musik Fernsehen",
+    "name": "Deutsches Musik Fernsehen (Fernsehen & Online)",
     "code": "Deutsches Musik Fernsehen"
 }, {
-    "name": "Die neue Zeit TV",
+    "name": "Die neue Zeit TV (Fernsehen & Online)",
     "code": "Die neue Zeit TV"
 }, {
-    "name": "Disney Channel",
+    "name": "Disney Channel (Fernsehen & Online)",
     "code": "Disney Channel"
 }, {
-    "name": "DMAX",
+    "name": "DMAX (Fernsehen & Online)",
     "code": "DMAX"
 }, {
-    "name": "DRF1",
+    "name": "DRF1 (Fernsehen & Online)",
     "code": "DRF1"
 }, {
-    "name": "DW-TV",
+    "name": "DW-TV (Fernsehen & Online)",
     "code": "DW-TV"
 }, {
-    "name": "Energy TV",
+    "name": "Energy TV (Fernsehen & Online)",
     "code": "Energy TV"
 }, {
-    "name": "Eo TV",
+    "name": "Eo TV (Fernsehen & Online)",
     "code": "Eo TV"
 }, {
-    "name": "Euronews",
+    "name": "Euronews (Fernsehen & Online)",
     "code": "Euronews"
 }, {
-    "name": "Eurosport 1",
+    "name": "Eurosport 1 (Fernsehen & Online)",
     "code": "Eurosport 1"
 }, {
-    "name": "EWTN",
+    "name": "EWTN (Fernsehen & Online)",
     "code": "EWTN"
 }, {
-    "name": "Family TV",
+    "name": "Family TV (Fernsehen & Online)",
     "code": "Family TV"
 }, {
-    "name": "Flux TV",
+    "name": "Flux TV (Fernsehen & Online)",
     "code": "Flux TV"
 }, {
-    "name": "Folx TV",
+    "name": "Folx TV (Fernsehen & Online)",
     "code": "Folx TV"
 }, {
-    "name": "GeniusPlus TV",
+    "name": "GeniusPlus TV (Fernsehen & Online)",
     "code": "GeniusPlus TV"
 }, {
-    "name": "Gotv",
+    "name": "Gotv (Fernsehen & Online)",
     "code": "Gotv"
 }, {
-    "name": "H2D",
+    "name": "H2D (Fernsehen & Online)",
     "code": "H2D"
 }, {
-    "name": "Hope TV deutsch",
+    "name": "Hope TV deutsch (Fernsehen & Online)",
     "code": "Hope TV deutsch"
 }, {
-    "name": "Hr-fernsehen",
+    "name": "Hr-fernsehen (Fernsehen & Online)",
     "code": "Hr-fernsehen"
 }, {
-    "name": "HSE24",
+    "name": "HSE24 (Fernsehen & Online)",
     "code": "HSE24"
 }, {
-    "name": "HSE24 Extra",
+    "name": "HSE24 Extra (Fernsehen & Online)",
     "code": "HSE24 Extra"
 }, {
-    "name": "HSE24 Trend",
+    "name": "HSE24 Trend (Fernsehen & Online)",
     "code": "HSE24 Trend"
 }, {
-    "name": "Juwelo",
+    "name": "Juwelo (Fernsehen & Online)",
     "code": "Juwelo"
 }, {
-    "name": "K-TV",
+    "name": "K-TV (Fernsehen & Online)",
     "code": "K-TV"
 }, {
-    "name": "Kabel eins Doku",
+    "name": "Kabel eins Doku (Fernsehen & Online)",
     "code": "Kabel eins Doku"
 }, {
-    "name": "Khatereh Tv/PDF Channel",
+    "name": "Khatereh Tv/PDF Channel (Fernsehen & Online)",
     "code": "Khatereh Tv/PDF Channel"
 }, {
-    "name": "KiKA",
+    "name": "KiKA (Fernsehen & Online)",
     "code": "KiKA"
 }, {
-    "name": "Landeskanal",
+    "name": "Landeskanal (Fernsehen & Online)",
     "code": "Landeskanal"
 }, {
-    "name": "Melodie TV",
+    "name": "Melodie TV (Fernsehen & Online)",
     "code": "Melodie TV"
 }, {
-    "name": "MediaSpar TV",
+    "name": "MediaSpar TV (Fernsehen & Online)",
     "code": "MediaSpar TV"
 }, {
-    "name": "MeinTVshop",
+    "name": "MeinTVshop (Fernsehen & Online)",
     "code": "MeinTVshop"
 }, {
-    "name": "MTV",
+    "name": "MTV (Fernsehen & Online)",
     "code": "MTV"
 }, {
-    "name": "N24 Doku",
+    "name": "N24 Doku (Fernsehen & Online)",
     "code": "N24 Doku"
 }, {
-    "name": "N-tv",
+    "name": "N-tv (Fernsehen & Online)",
     "code": "N-tv"
 }, {
-    "name": "NDR Fernsehen",
+    "name": "NDR Fernsehen (Fernsehen & Online)",
     "code": "NDR Fernsehen"
 }, {
-    "name": "Nick",
+    "name": "Nick (Fernsehen & Online)",
     "code": "Nick"
 }, {
-    "name": "Nitro",
+    "name": "Nitro (Fernsehen & Online)",
     "code": "Nitro"
 }, {
-    "name": "One",
+    "name": "One (Fernsehen & Online)",
     "code": "One"
 }, {
-    "name": "ORF eins",
+    "name": "ORF eins (Fernsehen & Online)",
     "code": "ORF eins"
 }, {
-    "name": "ORF 2",
+    "name": "ORF 2 (Fernsehen & Online)",
     "code": "ORF 2"
 }, {
-    "name": "ORF 2 Europe",
+    "name": "ORF 2 Europe (Fernsehen & Online)",
     "code": "ORF 2 Europe"
 }, {
-    "name": "ORF III",
+    "name": "ORF III (Fernsehen & Online)",
     "code": "ORF III"
 }, {
-    "name": "ORF SPORT +",
+    "name": "ORF SPORT + (Fernsehen & Online)",
     "code": "ORF SPORT +"
 }, {
-    "name": "Pearl.tv",
+    "name": "Pearl.tv (Fernsehen & Online)",
     "code": "Pearl.tv"
 }, {
-    "name": "Phoenix",
+    "name": "Phoenix (Fernsehen & Online)",
     "code": "Phoenix"
 }, {
-    "name": "ProSieben",
+    "name": "ProSieben (Fernsehen & Online)",
     "code": "ProSieben"
 }, {
-    "name": "ProSieben MAXX",
+    "name": "ProSieben MAXX (Fernsehen & Online)",
     "code": "ProSieben MAXX"
 }, {
-    "name": "Puls 4",
+    "name": "Puls 4 (Fernsehen & Online)",
     "code": "Puls 4"
 }, {
-    "name": "Puls 8",
+    "name": "Puls 8 (Fernsehen & Online)",
     "code": "Puls 8"
 }, {
-    "name": "QVC",
+    "name": "QVC (Fernsehen & Online)",
     "code": "QVC"
 }, {
-    "name": "QVC Beauty & Style",
+    "name": "QVC Beauty & Style (Fernsehen & Online)",
     "code": "QVC Beauty & Style"
 }, {
-    "name": "QVC Plus",
+    "name": "QVC Plus (Fernsehen & Online)",
     "code": "QVC Plus"
 }, {
-    "name": "R9 Österreich",
+    "name": "R9 Österreich (Fernsehen & Online)",
     "code": "R9 Österreich"
 }, {
-    "name": "Radio Bremen TV",
+    "name": "Radio Bremen TV (Fernsehen & Online)",
     "code": "Radio Bremen TV"
 }, {
-    "name": "RiC",
+    "name": "RiC (Fernsehen & Online)",
     "code": "RiC"
 }, {
-    "name": "RTL Télé Lëtzebuerg",
+    "name": "RTL Télé Lëtzebuerg (Fernsehen & Online)",
     "code": "RTL Télé Lëtzebuerg"
 }, {
-    "name": "RTLplus",
+    "name": "RTLplus (Fernsehen & Online)",
     "code": "RTLplus"
 }, {
-    "name": "S1",
+    "name": "S1 (Fernsehen & Online)",
     "code": "S1"
 }, {
-    "name": "Sat.1 Gold",
+    "name": "Sat.1 Gold (Fernsehen & Online)",
     "code": "Sat.1 Gold"
 }, {
-    "name": "Schweiz 5",
+    "name": "Schweiz 5 (Fernsehen & Online)",
     "code": "Schweiz 5"
 }, {
-    "name": "Sender Neu Jerusalem",
+    "name": "Sender Neu Jerusalem (Fernsehen & Online)",
     "code": "Sender Neu Jerusalem"
 }, {
-    "name": "Servus TV",
+    "name": "Servus TV (Fernsehen & Online)",
     "code": "Servus TV"
 }, {
-    "name": "Sixx",
+    "name": "Sixx (Fernsehen & Online)",
     "code": "Sixx"
 }, {
-    "name": "Sophia TV",
+    "name": "Sophia TV (Fernsehen & Online)",
     "code": "Sophia TV"
 }, {
-    "name": "Sonnenklar.TV",
+    "name": "Sonnenklar.TV (Fernsehen & Online)",
     "code": "Sonnenklar.TV"
 }, {
-    "name": "Sport1",
+    "name": "Sport1 (Fernsehen & Online)",
     "code": "Sport1"
 }, {
-    "name": "Sport Szene fernsehen",
+    "name": "Sport Szene fernsehen (Fernsehen & Online)",
     "code": "Sport Szene fernsehen"
 }, {
-    "name": "Sky Sport News",
+    "name": "Sky Sport News (Fernsehen & Online)",
     "code": "Sky Sport News"
 }, {
-    "name": "SR Fernsehen",
+    "name": "SR Fernsehen (Fernsehen & Online)",
     "code": "SR Fernsehen"
 }, {
-    "name": "SRF 1",
+    "name": "SRF 1 (Fernsehen & Online)",
     "code": "SRF 1"
 }, {
-    "name": "SRF zwei",
+    "name": "SRF zwei (Fernsehen & Online)",
     "code": "SRF zwei"
 }, {
-    "name": "SRF info",
+    "name": "SRF info (Fernsehen & Online)",
     "code": "SRF info"
 }, {
-    "name": "Star TV",
+    "name": "Star TV (Fernsehen & Online)",
     "code": "Star TV"
 }, {
-    "name": "Studio live",
+    "name": "Studio live (Fernsehen & Online)",
     "code": "Studio live"
 }, {
-    "name": "Tagesschau24",
+    "name": "Tagesschau24 (Fernsehen & Online)",
     "code": "Tagesschau24"
 }, {
-    "name": "TecTime TV SD",
+    "name": "TecTime TV SD (Fernsehen & Online)",
     "code": "TecTime TV SD"
 }, {
-    "name": "Tele 5",
+    "name": "Tele 5 (Fernsehen & Online)",
     "code": "Tele 5"
 }, {
-    "name": "TLC",
+    "name": "TLC (Fernsehen & Online)",
     "code": "TLC"
 }, {
-    "name": "Toggo plus",
+    "name": "Toggo plus (Fernsehen & Online)",
     "code": "Toggo plus"
 }, {
-    "name": "TV24",
+    "name": "TV24 (Fernsehen & Online)",
     "code": "TV24"
 }, {
-    "name": "TV25",
+    "name": "TV25 (Fernsehen & Online)",
     "code": "TV25"
 }, {
-    "name": "VIVA",
+    "name": "VIVA (Fernsehen & Online)",
     "code": "VIVA"
 }, {
-    "name": "VOX",
+    "name": "VOX (Fernsehen & Online)",
     "code": "VOX"
 }, {
-    "name": "Welt (Fernsehen)",
+    "name": "Welt (Fernsehen) (Fernsehen & Online)",
     "code": "Welt (Fernsehen)"
 }, {
-    "name": "Welt der Wunder TV",
+    "name": "Welt der Wunder TV (Fernsehen & Online)",
     "code": "Welt der Wunder TV"
 }, {
-    "name": "Xite",
+    "name": "Xite (Fernsehen & Online)",
     "code": "Xite"
 }, {
-    "name": "ZDFinfo",
+    "name": "ZDFinfo (Fernsehen & Online)",
     "code": "ZDFinfo"
 }, {
-    "name": "ZDFneo",
+    "name": "ZDFneo (Fernsehen & Online)",
     "code": "ZDFneo"
 }, {
-    "name": "Zee.One",
+    "name": "Zee.One (Fernsehen & Online)",
     "code": "Zee.One"
 }, {
-    "name": "13th Street Universal",
+    "name": "13th Street Universal (Fernsehen & Online)",
     "code": "13th Street Universal"
 }, {
-    "name": "Animal Planet",
+    "name": "Animal Planet (Fernsehen & Online)",
     "code": "Animal Planet"
 }, {
-    "name": "Auto Motor und Sport Channel",
+    "name": "Auto Motor und Sport Channel (Fernsehen & Online)",
     "code": "Auto Motor und Sport Channel"
 }, {
-    "name": "A&E Germany",
+    "name": "A&E Germany (Fernsehen & Online)",
     "code": "A&E Germany"
 }, {
-    "name": "AXN",
+    "name": "AXN (Fernsehen & Online)",
     "code": "AXN"
 }, {
-    "name": "Beate-Uhse.TV",
+    "name": "Beate-Uhse.TV (Fernsehen & Online)",
     "code": "Beate-Uhse.TV"
 }, {
-    "name": "Blue Movie",
+    "name": "Blue Movie (Fernsehen & Online)",
     "code": "Blue Movie"
 }, {
-    "name": "Bon Gusto",
+    "name": "Bon Gusto (Fernsehen & Online)",
     "code": "Bon Gusto"
 }, {
-    "name": "Boomerang",
+    "name": "Boomerang (Fernsehen & Online)",
     "code": "Boomerang"
 }, {
-    "name": "Cartoon Network",
+    "name": "Cartoon Network (Fernsehen & Online)",
     "code": "Cartoon Network"
 }, {
-    "name": "Classica",
+    "name": "Classica (Fernsehen & Online)",
     "code": "Classica"
 }, {
-    "name": "Discovery Channel",
+    "name": "Discovery Channel (Fernsehen & Online)",
     "code": "Discovery Channel"
 }, {
-    "name": "Disney Cinemagic",
+    "name": "Disney Cinemagic (Fernsehen & Online)",
     "code": "Disney Cinemagic"
 }, {
-    "name": "Disney Junior",
+    "name": "Disney Junior (Fernsehen & Online)",
     "code": "Disney Junior"
 }, {
-    "name": "Disney XD",
+    "name": "Disney XD (Fernsehen & Online)",
     "code": "Disney XD"
 }, {
-    "name": "DuckTV",
+    "name": "DuckTV (Fernsehen & Online)",
     "code": "DuckTV"
 }, {
-    "name": "E! Entertainment Television",
+    "name": "E! Entertainment Television (Fernsehen & Online)",
     "code": "E! Entertainment Television"
 }, {
-    "name": "3D The Channel",
+    "name": "3D The Channel (Fernsehen & Online)",
     "code": "3D The Channel"
 }, {
-    "name": "Eurosport 2",
+    "name": "Eurosport 2 (Fernsehen & Online)",
     "code": "Eurosport 2"
 }, {
-    "name": "Eurosport 2 HD Xtra",
+    "name": "Eurosport 2 HD Xtra (Fernsehen & Online)",
     "code": "Eurosport 2 HD Xtra"
 }, {
-    "name": "Extreme Sports Channel",
+    "name": "Extreme Sports Channel (Fernsehen & Online)",
     "code": "Extreme Sports Channel"
 }, {
-    "name": "Fix & Foxi",
+    "name": "Fix & Foxi (Fernsehen & Online)",
     "code": "Fix & Foxi"
 }, {
-    "name": "FOX Channel",
+    "name": "FOX Channel (Fernsehen & Online)",
     "code": "FOX Channel"
 }, {
-    "name": "Fundorado.TV",
+    "name": "Fundorado.TV (Fernsehen & Online)",
     "code": "Fundorado.TV"
 }, {
-    "name": "GEO Television",
+    "name": "GEO Television (Fernsehen & Online)",
     "code": "GEO Television"
 }, {
-    "name": "Goldstar TV",
+    "name": "Goldstar TV (Fernsehen & Online)",
     "code": "Goldstar TV"
 }, {
-    "name": "Gute Laune TV",
+    "name": "Gute Laune TV (Fernsehen & Online)",
     "code": "Gute Laune TV"
 }, {
-    "name": "Heimatkanal",
+    "name": "Heimatkanal (Fernsehen & Online)",
     "code": "Heimatkanal"
 }, {
-    "name": "History",
+    "name": "History (Fernsehen & Online)",
     "code": "History"
 }, {
-    "name": "Ikono.tv",
+    "name": "Ikono.tv (Fernsehen & Online)",
     "code": "Ikono.tv"
 }, {
-    "name": "Jukebox",
+    "name": "Jukebox (Fernsehen & Online)",
     "code": "Jukebox"
 }, {
-    "name": "Junior",
+    "name": "Junior (Fernsehen & Online)",
     "code": "Junior"
 }, {
-    "name": "Kabel eins classics",
+    "name": "Kabel eins classics (Fernsehen & Online)",
     "code": "Kabel eins classics"
 }, {
-    "name": "Kinowelt TV Premium",
+    "name": "Kinowelt TV Premium (Fernsehen & Online)",
     "code": "Kinowelt TV Premium"
 }, {
-    "name": "Lust Pur",
+    "name": "Lust Pur (Fernsehen & Online)",
     "code": "Lust Pur"
 }, {
-    "name": "Marco Polo TV",
+    "name": "Marco Polo TV (Fernsehen & Online)",
     "code": "Marco Polo TV"
 }, {
-    "name": "Motorsport.tv",
+    "name": "Motorsport.tv (Fernsehen & Online)",
     "code": "Motorsport.tv"
 }, {
-    "name": "Motorvision TV",
+    "name": "Motorvision TV (Fernsehen & Online)",
     "code": "Motorvision TV"
 }, {
-    "name": "MTV Brand New, MTV Music",
+    "name": "MTV Brand New, MTV Music (Fernsehen & Online)",
     "code": "MTV Brand New, MTV Music"
 }, {
-    "name": "National Geographic Channel",
+    "name": "National Geographic Channel (Fernsehen & Online)",
     "code": "National Geographic Channel"
 }, {
-    "name": "Nat Geo People",
+    "name": "Nat Geo People (Fernsehen & Online)",
     "code": "Nat Geo People"
 }, {
-    "name": "Nat Geo Wild",
+    "name": "Nat Geo Wild (Fernsehen & Online)",
     "code": "Nat Geo Wild"
 }, {
-    "name": "Nautical Channel",
+    "name": "Nautical Channel (Fernsehen & Online)",
     "code": "Nautical Channel"
 }, {
-    "name": "Nick Jr. Deutschland",
+    "name": "Nick Jr. Deutschland (Fernsehen & Online)",
     "code": "Nick Jr. Deutschland"
 }, {
-    "name": "Nicktoons Deutschland",
+    "name": "Nicktoons Deutschland (Fernsehen & Online)",
     "code": "Nicktoons Deutschland"
 }, {
-    "name": "Penthouse",
+    "name": "Penthouse (Fernsehen & Online)",
     "code": "Penthouse"
 }, {
-    "name": "Planet",
+    "name": "Planet (Fernsehen & Online)",
     "code": "Planet"
 }, {
-    "name": "ProSieben Fun",
+    "name": "ProSieben Fun (Fernsehen & Online)",
     "code": "ProSieben Fun"
 }, {
-    "name": "ProSiebenSat.1 Welt",
+    "name": "ProSiebenSat.1 Welt (Fernsehen & Online)",
     "code": "ProSiebenSat.1 Welt"
 }, {
-    "name": "Rck.tv",
+    "name": "Rck.tv (Fernsehen & Online)",
     "code": "Rck.tv"
 }, {
-    "name": "Romance TV",
+    "name": "Romance TV (Fernsehen & Online)",
     "code": "Romance TV"
 }, {
-    "name": "RTL Crime",
+    "name": "RTL Crime (Fernsehen & Online)",
     "code": "RTL Crime"
 }, {
-    "name": "RTL Living",
+    "name": "RTL Living (Fernsehen & Online)",
     "code": "RTL Living"
 }, {
-    "name": "RTL Passion",
+    "name": "RTL Passion (Fernsehen & Online)",
     "code": "RTL Passion"
 }, {
-    "name": "SAT.1 emotions",
+    "name": "SAT.1 emotions (Fernsehen & Online)",
     "code": "SAT.1 emotions"
 }, {
-    "name": "Silverline",
+    "name": "Silverline (Fernsehen & Online)",
     "code": "Silverline"
 }, {
-    "name": "Sky 1",
+    "name": "Sky 1 (Fernsehen & Online)",
     "code": "Sky 1"
 }, {
-    "name": "Sky Arts HD",
+    "name": "Sky Arts HD (Fernsehen & Online)",
     "code": "Sky Arts HD"
 }, {
-    "name": "Sky Atlantic",
+    "name": "Sky Atlantic (Fernsehen & Online)",
     "code": "Sky Atlantic"
 }, {
-    "name": "Sky Cinema",
+    "name": "Sky Cinema (Fernsehen & Online)",
     "code": "Sky Cinema"
 }, {
-    "name": "Sky Cinema Action",
+    "name": "Sky Cinema Action (Fernsehen & Online)",
     "code": "Sky Cinema Action"
 }, {
-    "name": "Sky Cinema Comedy",
+    "name": "Sky Cinema Comedy (Fernsehen & Online)",
     "code": "Sky Cinema Comedy"
 }, {
-    "name": "Sky Cinema Emotion",
+    "name": "Sky Cinema Emotion (Fernsehen & Online)",
     "code": "Sky Cinema Emotion"
 }, {
-    "name": "Sky Cinema Family",
+    "name": "Sky Cinema Family (Fernsehen & Online)",
     "code": "Sky Cinema Family"
 }, {
-    "name": "Sky Cinema Hits",
+    "name": "Sky Cinema Hits (Fernsehen & Online)",
     "code": "Sky Cinema Hits"
 }, {
-    "name": "Sky Cinema Nostalgie",
+    "name": "Sky Cinema Nostalgie (Fernsehen & Online)",
     "code": "Sky Cinema Nostalgie"
 }, {
-    "name": "Sky Krimi",
+    "name": "Sky Krimi (Fernsehen & Online)",
     "code": "Sky Krimi"
 }, {
-    "name": "Sky Select",
+    "name": "Sky Select (Fernsehen & Online)",
     "code": "Sky Select"
 }, {
-    "name": "Sky Sport Austria",
+    "name": "Sky Sport Austria (Fernsehen & Online)",
     "code": "Sky Sport Austria"
 }, {
-    "name": "Sky Sport 1–11 inkl. Bundesliga und UHD",
+    "name": "Sky Sport 1–11 inkl. Bundesliga und UHD (Fernsehen & Online)",
     "code": "Sky Sport 1–11 inkl. Bundesliga und UHD"
 }, {
-    "name": "Sony Channel",
+    "name": "Sony Channel (Fernsehen & Online)",
     "code": "Sony Channel"
 }, {
-    "name": "Spiegel Geschichte",
+    "name": "Spiegel Geschichte (Fernsehen & Online)",
     "code": "Spiegel Geschichte"
 }, {
-    "name": "Spiegel TV Wissen",
+    "name": "Spiegel TV Wissen (Fernsehen & Online)",
     "code": "Spiegel TV Wissen"
 }, {
-    "name": "Sport1 US",
+    "name": "Sport1 US (Fernsehen & Online)",
     "code": "Sport1 US"
 }, {
-    "name": "Sport1+",
+    "name": "Sport1+ (Fernsehen & Online)",
     "code": "Sport1+"
 }, {
-    "name": "Syfy",
+    "name": "Syfy (Fernsehen & Online)",
     "code": "Syfy"
 }, {
-    "name": "Sportdigital",
+    "name": "Sportdigital (Fernsehen & Online)",
     "code": "Sportdigital"
 }, {
-    "name": "TNT Comedy",
+    "name": "TNT Comedy (Fernsehen & Online)",
     "code": "TNT Comedy"
 }, {
-    "name": "TNT Film",
+    "name": "TNT Film (Fernsehen & Online)",
     "code": "TNT Film"
 }, {
-    "name": "TNT Serie",
+    "name": "TNT Serie (Fernsehen & Online)",
     "code": "TNT Serie"
 }, {
-    "name": "Travel Channel",
+    "name": "Travel Channel (Fernsehen & Online)",
     "code": "Travel Channel"
 }, {
-    "name": "Unitymedia 3D",
+    "name": "Unitymedia 3D (Fernsehen & Online)",
     "code": "Unitymedia 3D"
 }, {
-    "name": "Universal Channel",
+    "name": "Universal Channel (Fernsehen & Online)",
     "code": "Universal Channel"
 }, {
-    "name": "VH1 Europe",
+    "name": "VH1 Europe (Fernsehen & Online)",
     "code": "VH1 Europe"
 }, {
-    "name": "VH1 Classic",
+    "name": "VH1 Classic (Fernsehen & Online)",
     "code": "VH1 Classic"
 }, {
-    "name": "Wetter.com TV",
+    "name": "Wetter.com TV (Fernsehen & Online)",
     "code": "Wetter.com TV"
 }, {
-    "name": "Baden TV",
+    "name": "Baden TV (Fernsehen & Online)",
     "code": "Baden TV"
 }, {
-    "name": "HD Campus TV",
+    "name": "HD Campus TV (Fernsehen & Online)",
     "code": "HD Campus TV"
 }, {
-    "name": "Filstalwelle",
+    "name": "Filstalwelle (Fernsehen & Online)",
     "code": "Filstalwelle"
 }, {
-    "name": "KraichgauTV",
+    "name": "KraichgauTV (Fernsehen & Online)",
     "code": "KraichgauTV"
 }, {
-    "name": "L-TV",
+    "name": "L-TV (Fernsehen & Online)",
     "code": "L-TV"
 }, {
-    "name": "Regio TV Bodensee",
+    "name": "Regio TV Bodensee (Fernsehen & Online)",
     "code": "Regio TV Bodensee"
 }, {
-    "name": "Regio TV Schwaben",
+    "name": "Regio TV Schwaben (Fernsehen & Online)",
     "code": "Regio TV Schwaben"
 }, {
-    "name": "Regio TV Stuttgart",
+    "name": "Regio TV Stuttgart (Fernsehen & Online)",
     "code": "Regio TV Stuttgart"
 }, {
-    "name": "Rhein-Neckar Fernsehen",
+    "name": "Rhein-Neckar Fernsehen (Fernsehen & Online)",
     "code": "Rhein-Neckar Fernsehen"
 }, {
-    "name": "RTF.1",
+    "name": "RTF.1 (Fernsehen & Online)",
     "code": "RTF.1"
 }, {
-    "name": "Augsburg.tv",
+    "name": "Augsburg.tv (Fernsehen & Online)",
     "code": "Augsburg.tv"
 }, {
-    "name": "BR FS Nord",
+    "name": "BR FS Nord (Fernsehen & Online)",
     "code": "BR FS Nord"
 }, {
-    "name": "BR FS Süd",
+    "name": "BR FS Süd (Fernsehen & Online)",
     "code": "BR FS Süd"
 }, {
-    "name": "Donau TV",
+    "name": "Donau TV (Fernsehen & Online)",
     "code": "Donau TV"
 }, {
-    "name": "Franken Fernsehen",
+    "name": "Franken Fernsehen (Fernsehen & Online)",
     "code": "Franken Fernsehen"
 }, {
-    "name": "Herzo.TV",
+    "name": "Herzo.TV (Fernsehen & Online)",
     "code": "Herzo.TV"
 }, {
-    "name": "Intv",
+    "name": "Intv (Fernsehen & Online)",
     "code": "Intv"
 }, {
-    "name": "Isar TV",
+    "name": "Isar TV (Fernsehen & Online)",
     "code": "Isar TV"
 }, {
-    "name": "ITV Coburg",
+    "name": "ITV Coburg (Fernsehen & Online)",
     "code": "ITV Coburg"
 }, {
-    "name": "Kulmbach TV",
+    "name": "Kulmbach TV (Fernsehen & Online)",
     "code": "Kulmbach TV"
 }, {
-    "name": "München.tv",
+    "name": "München.tv (Fernsehen & Online)",
     "code": "München.tv"
 }, {
-    "name": "München2",
+    "name": "München2 (Fernsehen & Online)",
     "code": "München2"
 }, {
-    "name": "Oberpfalz TV",
+    "name": "Oberpfalz TV (Fernsehen & Online)",
     "code": "Oberpfalz TV"
 }, {
-    "name": "Regionalfernsehen Oberbayern",
+    "name": "Regionalfernsehen Oberbayern (Fernsehen & Online)",
     "code": "Regionalfernsehen Oberbayern"
 }, {
-    "name": "TRP1",
+    "name": "TRP1 (Fernsehen & Online)",
     "code": "TRP1"
 }, {
-    "name": "Allgäu.tv",
+    "name": "Allgäu.tv (Fernsehen & Online)",
     "code": "Allgäu.tv"
 }, {
-    "name": "TV Oberfranken",
+    "name": "TV Oberfranken (Fernsehen & Online)",
     "code": "TV Oberfranken"
 }, {
-    "name": "TV touring",
+    "name": "TV touring (Fernsehen & Online)",
     "code": "TV touring"
 }, {
-    "name": "TVAktuell",
+    "name": "TVAktuell (Fernsehen & Online)",
     "code": "TVAktuell"
 }, {
-    "name": "Alex Offener Kanal Berlin",
+    "name": "Alex Offener Kanal Berlin (Fernsehen & Online)",
     "code": "Alex Offener Kanal Berlin"
 }, {
-    "name": "Rbb Fernsehen Berlin",
+    "name": "Rbb Fernsehen Berlin (Fernsehen & Online)",
     "code": "Rbb Fernsehen Berlin"
 }, {
-    "name": "Spreekanal",
+    "name": "Spreekanal (Fernsehen & Online)",
     "code": "Spreekanal"
 }, {
-    "name": "BFtv",
+    "name": "BFtv (Fernsehen & Online)",
     "code": "BFtv"
 }, {
-    "name": "Elbe-Elster-Fernsehen",
+    "name": "Elbe-Elster-Fernsehen (Fernsehen & Online)",
     "code": "Elbe-Elster-Fernsehen"
 }, {
-    "name": "Jüterbog-tv:",
+    "name": "Jüterbog-tv: (Fernsehen & Online)",
     "code": "Jüterbog-tv:"
 }, {
-    "name": "KW-TV",
+    "name": "KW-TV (Fernsehen & Online)",
     "code": "KW-TV"
 }, {
-    "name": "Lausitz TV",
+    "name": "Lausitz TV (Fernsehen & Online)",
     "code": "Lausitz TV"
 }, {
-    "name": "Luck-tv:",
+    "name": "Luck-tv: (Fernsehen & Online)",
     "code": "Luck-tv:"
 }, {
-    "name": "Neiße Welle Guben",
+    "name": "Neiße Welle Guben (Fernsehen & Online)",
     "code": "Neiße Welle Guben"
 }, {
-    "name": "Oderland.TV",
+    "name": "Oderland.TV (Fernsehen & Online)",
     "code": "Oderland.TV"
 }, {
-    "name": "Oder Spree Fernsehen",
+    "name": "Oder Spree Fernsehen (Fernsehen & Online)",
     "code": "Oder Spree Fernsehen"
 }, {
-    "name": "ODF",
+    "name": "ODF (Fernsehen & Online)",
     "code": "ODF"
 }, {
-    "name": "OHV TV",
+    "name": "OHV TV (Fernsehen & Online)",
     "code": "OHV TV"
 }, {
-    "name": "PotsdamTV",
+    "name": "PotsdamTV (Fernsehen & Online)",
     "code": "PotsdamTV"
 }, {
-    "name": "Rangsdorf-tv:",
+    "name": "Rangsdorf-tv: (Fernsehen & Online)",
     "code": "Rangsdorf-tv:"
 }, {
-    "name": "Rbb Fernsehen Brandenburg",
+    "name": "Rbb Fernsehen Brandenburg (Fernsehen & Online)",
     "code": "Rbb Fernsehen Brandenburg"
 }, {
-    "name": "Sabinchen-tv:",
+    "name": "Sabinchen-tv: (Fernsehen & Online)",
     "code": "Sabinchen-tv:"
 }, {
-    "name": "SKB Stadtfernsehen Brandenburg",
+    "name": "SKB Stadtfernsehen Brandenburg (Fernsehen & Online)",
     "code": "SKB Stadtfernsehen Brandenburg"
 }, {
-    "name": "Strausberg TV",
+    "name": "Strausberg TV (Fernsehen & Online)",
     "code": "Strausberg TV"
 }, {
-    "name": "TeltOwkanal",
+    "name": "TeltOwkanal (Fernsehen & Online)",
     "code": "TeltOwkanal"
 }, {
-    "name": "Tv-lu",
+    "name": "Tv-lu (Fernsehen & Online)",
     "code": "Tv-lu"
 }, {
-    "name": "WMZ TV",
+    "name": "WMZ TV (Fernsehen & Online)",
     "code": "WMZ TV"
 }, {
-    "name": "Radio Weser.TV",
+    "name": "Radio Weser.TV (Fernsehen & Online)",
     "code": "Radio Weser.TV"
 }, {
-    "name": "Hamburg 1",
+    "name": "Hamburg 1 (Fernsehen & Online)",
     "code": "Hamburg 1"
 }, {
-    "name": "NDR HH",
+    "name": "NDR HH (Fernsehen & Online)",
     "code": "NDR HH"
 }, {
-    "name": "Tide TV",
+    "name": "Tide TV (Fernsehen & Online)",
     "code": "Tide TV"
 }, {
-    "name": "noa4",
+    "name": "noa4 (Fernsehen & Online)",
     "code": "noa4"
 }, {
-    "name": "Offener Kanal Fulda",
+    "name": "Offener Kanal Fulda (Fernsehen & Online)",
     "code": "Offener Kanal Fulda"
 }, {
-    "name": "Offener Kanal Gießen",
+    "name": "Offener Kanal Gießen (Fernsehen & Online)",
     "code": "Offener Kanal Gießen"
 }, {
-    "name": "Offener Kanal Kassel",
+    "name": "Offener Kanal Kassel (Fernsehen & Online)",
     "code": "Offener Kanal Kassel"
 }, {
-    "name": "Offener Kanal Offenbach/Frankfurt",
+    "name": "Offener Kanal Offenbach/Frankfurt (Fernsehen & Online)",
     "code": "Offener Kanal Offenbach/Frankfurt"
 }, {
-    "name": "OF-TV",
+    "name": "OF-TV (Fernsehen & Online)",
     "code": "OF-TV"
 }, {
-    "name": "Rheinmaintv",
+    "name": "Rheinmaintv (Fernsehen & Online)",
     "code": "Rheinmaintv"
 }, {
-    "name": "Fernsehen in Schwerin",
+    "name": "Fernsehen in Schwerin (Fernsehen & Online)",
     "code": "Fernsehen in Schwerin"
 }, {
-    "name": "Greifswald-TV",
+    "name": "Greifswald-TV (Fernsehen & Online)",
     "code": "Greifswald-TV"
 }, {
-    "name": "Grevesmühlen-TV",
+    "name": "Grevesmühlen-TV (Fernsehen & Online)",
     "code": "Grevesmühlen-TV"
 }, {
-    "name": "MV1",
+    "name": "MV1 (Fernsehen & Online)",
     "code": "MV1"
 }, {
-    "name": "NDR MV",
+    "name": "NDR MV (Fernsehen & Online)",
     "code": "NDR MV"
 }, {
-    "name": "neu'eins",
+    "name": "neu'eins (Fernsehen & Online)",
     "code": "neu'eins"
 }, {
-    "name": "Rok-tv",
+    "name": "Rok-tv (Fernsehen & Online)",
     "code": "Rok-tv"
 }, {
-    "name": "Rügen TV & Stralsund TV",
+    "name": "Rügen TV & Stralsund TV (Fernsehen & Online)",
     "code": "Rügen TV & Stralsund TV"
 }, {
-    "name": "Tv.rostock",
+    "name": "Tv.rostock (Fernsehen & Online)",
     "code": "Tv.rostock"
 }, {
-    "name": "TV-Schwerin",
+    "name": "TV-Schwerin (Fernsehen & Online)",
     "code": "TV-Schwerin"
 }, {
-    "name": "Vorpommern TV",
+    "name": "Vorpommern TV (Fernsehen & Online)",
     "code": "Vorpommern TV"
 }, {
-    "name": "Wismar TV",
+    "name": "Wismar TV (Fernsehen & Online)",
     "code": "Wismar TV"
 }, {
-    "name": "Ev1.tv",
+    "name": "Ev1.tv (Fernsehen & Online)",
     "code": "Ev1.tv"
 }, {
-    "name": "Friesischer Rundfunk",
+    "name": "Friesischer Rundfunk (Fernsehen & Online)",
     "code": "Friesischer Rundfunk"
 }, {
-    "name": "H1",
+    "name": "H1 (Fernsehen & Online)",
     "code": "H1"
 }, {
-    "name": "NDR NDS",
+    "name": "NDR NDS (Fernsehen & Online)",
     "code": "NDR NDS"
 }, {
-    "name": "Oldenburg eins",
+    "name": "Oldenburg eins (Fernsehen & Online)",
     "code": "Oldenburg eins"
 }, {
-    "name": "Os1.tv",
+    "name": "Os1.tv (Fernsehen & Online)",
     "code": "Os1.tv"
 }, {
-    "name": "Regiotv",
+    "name": "Regiotv (Fernsehen & Online)",
     "code": "Regiotv"
 }, {
-    "name": "TV38",
+    "name": "TV38 (Fernsehen & Online)",
     "code": "TV38"
 }, {
-    "name": "CityVision",
+    "name": "CityVision (Fernsehen & Online)",
     "code": "CityVision"
 }, {
-    "name": "nrwision",
+    "name": "nrwision (Fernsehen & Online)",
     "code": "nrwision"
 }, {
-    "name": "Studio 47",
+    "name": "Studio 47 (Fernsehen & Online)",
     "code": "Studio 47"
 }, {
-    "name": ":OKTV Südwestpfalz",
+    "name": ":OKTV Südwestpfalz (Fernsehen & Online)",
     "code": ":OKTV Südwestpfalz"
 }, {
-    "name": "naheTV",
+    "name": "naheTV (Fernsehen & Online)",
     "code": "naheTV"
 }, {
-    "name": "Offener Kanal Kirchheimbolanden",
+    "name": "Offener Kanal Kirchheimbolanden (Fernsehen & Online)",
     "code": "Offener Kanal Kirchheimbolanden"
 }, {
-    "name": "RheinLokal",
+    "name": "RheinLokal (Fernsehen & Online)",
     "code": "RheinLokal"
 }, {
-    "name": "OK Weinstraße",
+    "name": "OK Weinstraße (Fernsehen & Online)",
     "code": "OK Weinstraße"
 }, {
-    "name": "OK-KL",
+    "name": "OK-KL (Fernsehen & Online)",
     "code": "OK-KL"
 }, {
-    "name": "OK:TV Mainz",
+    "name": "OK:TV Mainz (Fernsehen & Online)",
     "code": "OK:TV Mainz"
 }, {
-    "name": "OK54 Bürgerrundfunk",
+    "name": "OK54 Bürgerrundfunk (Fernsehen & Online)",
     "code": "OK54 Bürgerrundfunk"
 }, {
-    "name": "OK-TV Ludwigshafen",
+    "name": "OK-TV Ludwigshafen (Fernsehen & Online)",
     "code": "OK-TV Ludwigshafen"
 }, {
-    "name": "OK4",
+    "name": "OK4 (Fernsehen & Online)",
     "code": "OK4"
 }, {
-    "name": "Rheinahr.tv",
+    "name": "Rheinahr.tv (Fernsehen & Online)",
     "code": "Rheinahr.tv"
 }, {
-    "name": "SWR Fernsehen RP",
+    "name": "SWR Fernsehen RP (Fernsehen & Online)",
     "code": "SWR Fernsehen RP"
 }, {
-    "name": "TV Mittelrhein",
+    "name": "TV Mittelrhein (Fernsehen & Online)",
     "code": "TV Mittelrhein"
 }, {
-    "name": "Wwtv",
+    "name": "Wwtv (Fernsehen & Online)",
     "code": "Wwtv"
 }, {
-    "name": "Coswiger Infokanal K3",
+    "name": "Coswiger Infokanal K3 (Fernsehen & Online)",
     "code": "Coswiger Infokanal K3"
 }, {
-    "name": "Dresden Fernsehen",
+    "name": "Dresden Fernsehen (Fernsehen & Online)",
     "code": "Dresden Fernsehen"
 }, {
-    "name": "Dresdeneins",
+    "name": "Dresdeneins (Fernsehen & Online)",
     "code": "Dresdeneins"
 }, {
-    "name": "Eff 3",
+    "name": "Eff 3 (Fernsehen & Online)",
     "code": "Eff 3"
 }, {
-    "name": "ERtv – euro-Regional tv",
+    "name": "ERtv – euro-Regional tv (Fernsehen & Online)",
     "code": "ERtv – euro-Regional tv"
 }, {
-    "name": "Infokanal Crimmitschau",
+    "name": "Infokanal Crimmitschau (Fernsehen & Online)",
     "code": "Infokanal Crimmitschau"
 }, {
-    "name": "Kabeljournal Flöha",
+    "name": "Kabeljournal Flöha (Fernsehen & Online)",
     "code": "Kabeljournal Flöha"
 }, {
-    "name": "KabelJournal Chemnitzer-Land",
+    "name": "KabelJournal Chemnitzer-Land (Fernsehen & Online)",
     "code": "KabelJournal Chemnitzer-Land"
 }, {
-    "name": "Kanal 8 – dresden",
+    "name": "Kanal 8 – dresden (Fernsehen & Online)",
     "code": "Kanal 8 – dresden"
 }, {
-    "name": "Kanal 8 – sport",
+    "name": "Kanal 8 – sport (Fernsehen & Online)",
     "code": "Kanal 8 – sport"
 }, {
-    "name": "Kanal 9 Erzgebirge",
+    "name": "Kanal 9 Erzgebirge (Fernsehen & Online)",
     "code": "Kanal 9 Erzgebirge"
 }, {
-    "name": "Kanal Eins",
+    "name": "Kanal Eins (Fernsehen & Online)",
     "code": "Kanal Eins"
 }, {
-    "name": "Leipzig Fernsehen",
+    "name": "Leipzig Fernsehen (Fernsehen & Online)",
     "code": "Leipzig Fernsehen"
 }, {
-    "name": "MDR Fernsehen Sachsen",
+    "name": "MDR Fernsehen Sachsen (Fernsehen & Online)",
     "code": "MDR Fernsehen Sachsen"
 }, {
-    "name": "Mittel Erzgebirgs Fernsehen",
+    "name": "Mittel Erzgebirgs Fernsehen (Fernsehen & Online)",
     "code": "Mittel Erzgebirgs Fernsehen"
 }, {
-    "name": "Mittelsachsen TV",
+    "name": "Mittelsachsen TV (Fernsehen & Online)",
     "code": "Mittelsachsen TV"
 }, {
-    "name": "Mwdigital",
+    "name": "Mwdigital (Fernsehen & Online)",
     "code": "Mwdigital"
 }, {
-    "name": "Nordsachsen TV",
+    "name": "Nordsachsen TV (Fernsehen & Online)",
     "code": "Nordsachsen TV"
 }, {
-    "name": "Pirna TV/Prohlis TV",
+    "name": "Pirna TV/Prohlis TV (Fernsehen & Online)",
     "code": "Pirna TV/Prohlis TV"
 }, {
-    "name": "Punkteins oberlausitz TV",
+    "name": "Punkteins oberlausitz TV (Fernsehen & Online)",
     "code": "Punkteins oberlausitz TV"
 }, {
-    "name": "Regio TV Borna",
+    "name": "Regio TV Borna (Fernsehen & Online)",
     "code": "Regio TV Borna"
 }, {
-    "name": "Riesa TV",
+    "name": "Riesa TV (Fernsehen & Online)",
     "code": "Riesa TV"
 }, {
-    "name": "Sachsen Fernsehen",
+    "name": "Sachsen Fernsehen (Fernsehen & Online)",
     "code": "Sachsen Fernsehen"
 }, {
-    "name": "TV Westsachsen",
+    "name": "TV Westsachsen (Fernsehen & Online)",
     "code": "TV Westsachsen"
 }, {
-    "name": "Torgau TV",
+    "name": "Torgau TV (Fernsehen & Online)",
     "code": "Torgau TV"
 }, {
-    "name": "TV Zwönitztal/tele-Journal",
+    "name": "TV Zwönitztal/tele-Journal (Fernsehen & Online)",
     "code": "TV Zwönitztal/tele-Journal"
 }, {
-    "name": "TV-Laußig",
+    "name": "TV-Laußig (Fernsehen & Online)",
     "code": "TV-Laußig"
 }, {
-    "name": "TvM Meissen Fernsehen",
+    "name": "TvM Meissen Fernsehen (Fernsehen & Online)",
     "code": "TvM Meissen Fernsehen"
 }, {
-    "name": "Vogtland Regional Fernsehen",
+    "name": "Vogtland Regional Fernsehen (Fernsehen & Online)",
     "code": "Vogtland Regional Fernsehen"
 }, {
-    "name": "KulturmdTV",
+    "name": "KulturmdTV (Fernsehen & Online)",
     "code": "KulturmdTV"
 }, {
-    "name": "MDF.1",
+    "name": "MDF.1 (Fernsehen & Online)",
     "code": "MDF.1"
 }, {
-    "name": "MDR Fernsehen Sachsen-Anhalt",
+    "name": "MDR Fernsehen Sachsen-Anhalt (Fernsehen & Online)",
     "code": "MDR Fernsehen Sachsen-Anhalt"
 }, {
-    "name": "Offener Kanal Magdeburg",
+    "name": "Offener Kanal Magdeburg (Fernsehen & Online)",
     "code": "Offener Kanal Magdeburg"
 }, {
-    "name": "Offener Kanal Merseburg-Querfurt",
+    "name": "Offener Kanal Merseburg-Querfurt (Fernsehen & Online)",
     "code": "Offener Kanal Merseburg-Querfurt"
 }, {
-    "name": "Offener Kanal Wettin",
+    "name": "Offener Kanal Wettin (Fernsehen & Online)",
     "code": "Offener Kanal Wettin"
 }, {
-    "name": "Punktum",
+    "name": "Punktum (Fernsehen & Online)",
     "code": "Punktum"
 }, {
-    "name": "RAN1",
+    "name": "RAN1 (Fernsehen & Online)",
     "code": "RAN1"
 }, {
-    "name": "Regionalfernsehen Bitterfeld-Wolfen",
+    "name": "Regionalfernsehen Bitterfeld-Wolfen (Fernsehen & Online)",
     "code": "Regionalfernsehen Bitterfeld-Wolfen"
 }, {
-    "name": "RFH",
+    "name": "RFH (Fernsehen & Online)",
     "code": "RFH"
 }, {
-    "name": "TV Halle",
+    "name": "TV Halle (Fernsehen & Online)",
     "code": "TV Halle"
 }, {
-    "name": "NDR S-H",
+    "name": "NDR S-H (Fernsehen & Online)",
     "code": "NDR S-H"
 }, {
-    "name": "Kiel TV",
+    "name": "Kiel TV (Fernsehen & Online)",
     "code": "Kiel TV"
 }, {
-    "name": "Offener Kanal Flensburg",
+    "name": "Offener Kanal Flensburg (Fernsehen & Online)",
     "code": "Offener Kanal Flensburg"
 }, {
-    "name": "Bad Berka TV",
+    "name": "Bad Berka TV (Fernsehen & Online)",
     "code": "Bad Berka TV"
 }, {
-    "name": "JenaTV",
+    "name": "JenaTV (Fernsehen & Online)",
     "code": "JenaTV"
 }, {
-    "name": "Kabel Plus",
+    "name": "Kabel Plus (Fernsehen & Online)",
     "code": "Kabel Plus"
 }, {
-    "name": "MDR Fernsehen Thüringen",
+    "name": "MDR Fernsehen Thüringen (Fernsehen & Online)",
     "code": "MDR Fernsehen Thüringen"
 }, {
-    "name": "Rennsteig.TV",
+    "name": "Rennsteig.TV (Fernsehen & Online)",
     "code": "Rennsteig.TV"
 }, {
-    "name": "Saale-Info-Kanal",
+    "name": "Saale-Info-Kanal (Fernsehen & Online)",
     "code": "Saale-Info-Kanal"
 }, {
-    "name": "Salve.TV",
+    "name": "Salve.TV (Fernsehen & Online)",
     "code": "Salve.TV"
 }, {
-    "name": "Stadtkanal Steinach",
+    "name": "Stadtkanal Steinach (Fernsehen & Online)",
     "code": "Stadtkanal Steinach"
 }, {
-    "name": "Südthüringer Regionalfernsehen",
+    "name": "Südthüringer Regionalfernsehen (Fernsehen & Online)",
     "code": "Südthüringer Regionalfernsehen"
 }, {
-    "name": "Telemedien Rudolstadt",
+    "name": "Telemedien Rudolstadt (Fernsehen & Online)",
     "code": "Telemedien Rudolstadt"
 }, {
-    "name": "Tv.altenburg",
+    "name": "Tv.altenburg (Fernsehen & Online)",
     "code": "Tv.altenburg"
 }, {
-    "name": "ORF 2 B",
+    "name": "ORF 2 B (Fernsehen & Online)",
     "code": "ORF 2 B"
 }, {
-    "name": "KT1",
+    "name": "KT1 (Fernsehen & Online)",
     "code": "KT1"
 }, {
-    "name": "ORF 2 K",
+    "name": "ORF 2 K (Fernsehen & Online)",
     "code": "ORF 2 K"
 }, {
-    "name": "M4 Mostviertelfernsehen",
+    "name": "M4 Mostviertelfernsehen (Fernsehen & Online)",
     "code": "M4 Mostviertelfernsehen"
 }, {
-    "name": "N1 TV",
+    "name": "N1 TV (Fernsehen & Online)",
     "code": "N1 TV"
 }, {
-    "name": "ORF 2 NÖ",
+    "name": "ORF 2 NÖ (Fernsehen & Online)",
     "code": "ORF 2 NÖ"
 }, {
-    "name": "P3tv",
+    "name": "P3tv (Fernsehen & Online)",
     "code": "P3tv"
 }, {
-    "name": "WNTV",
+    "name": "WNTV (Fernsehen & Online)",
     "code": "WNTV"
 }, {
-    "name": "Austria24 TV",
+    "name": "Austria24 TV (Fernsehen & Online)",
     "code": "Austria24 TV"
 }, {
-    "name": "Dorf tv",
+    "name": "Dorf tv (Fernsehen & Online)",
     "code": "Dorf tv"
 }, {
-    "name": "LinzLand TV",
+    "name": "LinzLand TV (Fernsehen & Online)",
     "code": "LinzLand TV"
 }, {
-    "name": "LT1",
+    "name": "LT1 (Fernsehen & Online)",
     "code": "LT1"
 }, {
-    "name": "MF1plus Mühlviertel Fernsehen 1",
+    "name": "MF1plus Mühlviertel Fernsehen 1 (Fernsehen & Online)",
     "code": "MF1plus Mühlviertel Fernsehen 1"
 }, {
-    "name": "RTV",
+    "name": "RTV (Fernsehen & Online)",
     "code": "RTV"
 }, {
-    "name": "WT1",
+    "name": "WT1 (Fernsehen & Online)",
     "code": "WT1"
 }, {
-    "name": "FS1",
+    "name": "FS1 (Fernsehen & Online)",
     "code": "FS1"
 }, {
-    "name": "Kanal3",
+    "name": "Kanal3 (Fernsehen & Online)",
     "code": "Kanal3"
 }, {
-    "name": "Tirol TV",
+    "name": "Tirol TV (Fernsehen & Online)",
     "code": "Tirol TV"
 }, {
-    "name": "Okto",
+    "name": "Okto (Fernsehen & Online)",
     "code": "Okto"
 }, {
-    "name": "W24",
+    "name": "W24 (Fernsehen & Online)",
     "code": "W24"
 }, {
-    "name": "Schau TV",
+    "name": "Schau TV (Fernsehen & Online)",
     "code": "Schau TV"
 }, {
-    "name": "Ländle TV",
+    "name": "Ländle TV (Fernsehen & Online)",
     "code": "Ländle TV"
 }, {
-    "name": "Tele M1",
+    "name": "Tele M1 (Fernsehen & Online)",
     "code": "Tele M1"
 }, {
-    "name": "Gstaad TV",
+    "name": "Gstaad TV (Fernsehen & Online)",
     "code": "Gstaad TV"
 }, {
-    "name": "Info-TV Adelboden-Frutigen",
+    "name": "Info-TV Adelboden-Frutigen (Fernsehen & Online)",
     "code": "Info-TV Adelboden-Frutigen"
 }, {
-    "name": "Infokanal der RKO Signal AG",
+    "name": "Infokanal der RKO Signal AG (Fernsehen & Online)",
     "code": "Infokanal der RKO Signal AG"
 }, {
-    "name": "Rega-Sense / Rega-Text",
+    "name": "Rega-Sense / Rega-Text (Fernsehen & Online)",
     "code": "Rega-Sense / Rega-Text"
 }, {
-    "name": "REGAS-Info",
+    "name": "REGAS-Info (Fernsehen & Online)",
     "code": "REGAS-Info"
 }, {
-    "name": "TeleBärn",
+    "name": "TeleBärn (Fernsehen & Online)",
     "code": "TeleBärn"
 }, {
-    "name": "TeleBielingue",
+    "name": "TeleBielingue (Fernsehen & Online)",
     "code": "TeleBielingue"
 }, {
-    "name": "Telebasel",
+    "name": "Telebasel (Fernsehen & Online)",
     "code": "Telebasel"
 }, {
-    "name": "Tele Südostschweiz",
+    "name": "Tele Südostschweiz (Fernsehen & Online)",
     "code": "Tele Südostschweiz"
 }, {
-    "name": "Infokanal Bergbahnen Davos Klosters",
+    "name": "Infokanal Bergbahnen Davos Klosters (Fernsehen & Online)",
     "code": "Infokanal Bergbahnen Davos Klosters"
 }, {
-    "name": "Tele 1",
+    "name": "Tele 1 (Fernsehen & Online)",
     "code": "Tele 1"
 }, {
-    "name": "Tele Napf",
+    "name": "Tele Napf (Fernsehen & Online)",
     "code": "Tele Napf"
 }, {
-    "name": "Tele Zentralschweiz",
+    "name": "Tele Zentralschweiz (Fernsehen & Online)",
     "code": "Tele Zentralschweiz"
 }, {
-    "name": "KFN Infokanal",
+    "name": "KFN Infokanal (Fernsehen & Online)",
     "code": "KFN Infokanal"
 }, {
-    "name": "LKW-Infokanal",
+    "name": "LKW-Infokanal (Fernsehen & Online)",
     "code": "LKW-Infokanal"
 }, {
-    "name": "Informationen Engelberg Aktuell",
+    "name": "Informationen Engelberg Aktuell (Fernsehen & Online)",
     "code": "Informationen Engelberg Aktuell"
 }, {
-    "name": "Tamina Aktuell",
+    "name": "Tamina Aktuell (Fernsehen & Online)",
     "code": "Tamina Aktuell"
 }, {
-    "name": "TVO",
+    "name": "TVO (Fernsehen & Online)",
     "code": "TVO"
 }, {
-    "name": "Schaffhauser Fernsehen",
+    "name": "Schaffhauser Fernsehen (Fernsehen & Online)",
     "code": "Schaffhauser Fernsehen"
 }, {
-    "name": "Tele Stein",
+    "name": "Tele Stein (Fernsehen & Online)",
     "code": "Tele Stein"
 }, {
-    "name": "ALF-TV Arolfinger Lokalfernsehen",
+    "name": "ALF-TV Arolfinger Lokalfernsehen (Fernsehen & Online)",
     "code": "ALF-TV Arolfinger Lokalfernsehen"
 }, {
-    "name": "Infokanal GAW",
+    "name": "Infokanal GAW (Fernsehen & Online)",
     "code": "Infokanal GAW"
 }, {
-    "name": "Infokanal Goldau",
+    "name": "Infokanal Goldau (Fernsehen & Online)",
     "code": "Infokanal Goldau"
 }, {
-    "name": "Lokalfernsehen Steckborn",
+    "name": "Lokalfernsehen Steckborn (Fernsehen & Online)",
     "code": "Lokalfernsehen Steckborn"
 }, {
-    "name": "Stafag Infokanal",
+    "name": "Stafag Infokanal (Fernsehen & Online)",
     "code": "Stafag Infokanal"
 }, {
-    "name": "Tele D",
+    "name": "Tele D (Fernsehen & Online)",
     "code": "Tele D"
 }, {
-    "name": "Infokanal Saas-Fee",
+    "name": "Infokanal Saas-Fee (Fernsehen & Online)",
     "code": "Infokanal Saas-Fee"
 }, {
-    "name": "Lokaler Infokanal Leukerbad",
+    "name": "Lokaler Infokanal Leukerbad (Fernsehen & Online)",
     "code": "Lokaler Infokanal Leukerbad"
 }, {
-    "name": "LOLY",
+    "name": "LOLY (Fernsehen & Online)",
     "code": "LOLY"
 }, {
-    "name": "TV Oberwallis",
+    "name": "TV Oberwallis (Fernsehen & Online)",
     "code": "TV Oberwallis"
 }, {
-    "name": "City Channel 1",
+    "name": "City Channel 1 (Fernsehen & Online)",
     "code": "City Channel 1"
 }, {
-    "name": "Televista 8403",
+    "name": "Televista 8403 (Fernsehen & Online)",
     "code": "Televista 8403"
 }, {
-    "name": "Informationskanal Dübendorf",
+    "name": "Informationskanal Dübendorf (Fernsehen & Online)",
     "code": "Informationskanal Dübendorf"
 }, {
-    "name": "Tele Top",
+    "name": "Tele Top (Fernsehen & Online)",
     "code": "Tele Top"
 }, {
-    "name": "TeleZüri",
+    "name": "TeleZüri (Fernsehen & Online)",
     "code": "TeleZüri"
 }, {
-    "name": "Tele Z",
+    "name": "Tele Z (Fernsehen & Online)",
     "code": "Tele Z"
 }, {
-    "name": "Rai Südtirol",
+    "name": "Rai Südtirol (Fernsehen & Online)",
     "code": "Rai Südtirol"
 }, {
-    "name": "Südtirol Digital Fernsehen",
+    "name": "Südtirol Digital Fernsehen (Fernsehen & Online)",
     "code": "Südtirol Digital Fernsehen"
 }, {
-    "name": "Tv3",
+    "name": "Tv3 (Fernsehen & Online)",
     "code": "Tv3"
 }, {
-    "name": "Südtirol TV",
+    "name": "Südtirol TV (Fernsehen & Online)",
     "code": "Südtirol TV"
 }, {
     "name": "Academia",

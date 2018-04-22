@@ -22,7 +22,7 @@ function gradientboxplot(responsejson, elementid) {
     };
 
     barwidth = width / 25;
-    elementid = "#" + elementid
+    elementidhash = "#" + elementid
     console.log(elementid)
     console.log(responsejson);
     console.log(width);
@@ -30,8 +30,9 @@ function gradientboxplot(responsejson, elementid) {
 
 
     var svg = d3
-        .select(elementid)
+        .select(elementidhash)
         .append("svg")
+        .attr("id",(String(elementid)+"_svg"))
         .attr('xmlns', 'http://www.w3.org/2000/svg')
         .attr('xmlns', 'http://www.w3.org/1999/xlink')
         .attr('version', '1.1')
@@ -117,13 +118,13 @@ function gradientboxplot(responsejson, elementid) {
             .append("stop")
             .attr("stop-color", colour)
             .attr("class", "middle")
-            .attr("offset", "20%")
+            .attr("offset", "25%")
             .attr("stop-opacity", op2);
         d3.select(idtag)
             .append("stop")
             .attr("stop-color", colour)
             .attr("class", "middle")
-            .attr("offset", "80%")
+            .attr("offset", "75%")
             .attr("stop-opacity", op2);
         //and the finish
         d3.select(idtag)
@@ -260,7 +261,7 @@ function gradientboxplot(responsejson, elementid) {
           .style("stroke", "white")
           .style("fill", "white")
           .style('font-size', '1.2em')
-          .style('font-family', 'Open Sans')
+          .style('font-family', 'OpenSans-Regular')
 
 
       .call(wrap, (xscale.bandwidth()));
@@ -275,7 +276,7 @@ function gradientboxplot(responsejson, elementid) {
         .style("stroke", "white")
         .style("fill", "white")
         .style('font-size', '1.2em')
-        .style('font-family', 'Open Sans');
+        .style('font-family', 'OpenSans-Regular');
 
     svg
         .selectAll("line")
@@ -290,7 +291,7 @@ function gradientboxplot(responsejson, elementid) {
             .style("stroke", "white")
             .style("fill", "white")
             .style('font-size', '0.7em')
-            .style('font-family', 'Open Sans');
+            .style('font-family', 'OpenSans-Regular');
 
             element.classList.add("hide");
             element.classList.remove("show");
