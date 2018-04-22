@@ -107,7 +107,7 @@ function gradientboxplot(responsejson, elementid) {
             word,
             line = [],
             lineNumber = 0,
-            lineHeight = 1.9, // ems
+            lineHeight = 1.3, // ems
             y = text.attr("y"),
             dy = parseFloat(text.attr("dy")),
             tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");

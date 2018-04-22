@@ -273,11 +273,11 @@ $(document).ready(function() {
                         mean: parseFloat(data["MediumFreiSalaryPerHour"]["median"])
                     }, {
                         id: "AllFreiSalaryPerHour",
-                        category: "Ø alle Medien",
+                        category: "alle Medien",
                         min: parseFloat(data["AllFreiSalaryPerHour"]["lower"]),
                         max: parseFloat(data["AllFreiSalaryPerHour"]["upper"]),
                         mean: parseFloat(data["AllFreiSalaryPerHour"]["median"]),
-                        charttitle: "Mittleres Stundenhonorar #(Brutto / Euro)"
+                        charttitle: "Stundenhonorar #(Brutto / Euro)"
                     }];
 
                     gradientboxplot(d3festjson, elementid)
@@ -305,7 +305,7 @@ $(document).ready(function() {
                         mean: parseFloat(data["MediumFreiVideoFeePerMin"]["median"])
                     }, {
                         id: "AllFreiVideoFeePerMin",
-                        category: "Ø \n alle \n Freiberufler",
+                        category: "alle Medien",
                         min: parseFloat(data["AllFreiVideoFeePerMin"]["lower"]),
                         max: parseFloat(data["AllFreiVideoFeePerMin"]["upper"]),
                         mean: parseFloat(data["AllFreiVideoFeePerMin"]["median"]),
@@ -336,7 +336,7 @@ $(document).ready(function() {
                         mean: parseFloat(data["MediumFreiAudioFeePerMin"]["median"])
                     }, {
                         id: "AllFreiAudioFeePerMin",
-                        category: "Ø \n alle \n Freiberufler",
+                        category: "alle Medien",
                         min: parseFloat(data["AllFreiAudioFeePerMin"]["lower"]),
                         max: parseFloat(data["AllFreiAudioFeePerMin"]["upper"]),
                         mean: parseFloat(data["AllFreiAudioFeePerMin"]["median"]),
@@ -368,7 +368,7 @@ $(document).ready(function() {
                         mean: parseFloat(data["MediumFreiArticleFeePerChar"]["median"]*1000),
                     }, {
                         id: "AllFreiArticleFeePerChar",
-                        category: "Ø \n alle \n Freiberufler",
+                        category: "alle Medien",
                         min: parseFloat(data["AllFreiArticleFeePerChar"]["lower"]*1000),
                         max: parseFloat(data["AllFreiArticleFeePerChar"]["upper"]*1000),
                         mean: parseFloat(data["AllFreiArticleFeePerChar"]["median"]*1000),
