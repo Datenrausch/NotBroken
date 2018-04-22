@@ -218,7 +218,7 @@ $(document).ready(function() {
                         min: 25,
                         max: 25,
                         mean: 25,
-                        charttitle: "Stundenlohn für Festangestellt in Euro"
+                        charttitle: "Stundenlohn für Festangestellte (€), brutto"
 
                     }];
 
@@ -257,7 +257,7 @@ $(document).ready(function() {
                         min: 25,
                         max: 25,
                         mean: 25,
-                        charttitle: "Stundenlohn für Pauschalisten in Euro"
+                        charttitle: "Stundenlohn für Pauschalisten (€), brutto"
 
                     }];
 
@@ -287,7 +287,7 @@ $(document).ready(function() {
                         mean: parseFloat(data["MediumFreiSalaryPerHour"]["median"])
                     }, {
                         id: "AllFreiSalaryPerHour",
-                        category: "Ø alle Freiberufler",
+                        category: "Ø alle Medien",
                         min: parseFloat(data["AllFreiSalaryPerHour"]["lower"]),
                         max: parseFloat(data["AllFreiSalaryPerHour"]["upper"]),
                         mean: parseFloat(data["AllFreiSalaryPerHour"]["median"])
@@ -297,7 +297,7 @@ $(document).ready(function() {
                         min: 25,
                         max: 25,
                         mean: 25,
-                        charttitle: "Stundenlohn für Freie in Euro"
+                        charttitle: "Mittleres Stundenhonorar (€), brutto"
 
                     }];
 
@@ -336,7 +336,7 @@ $(document).ready(function() {
                         min: 25,
                         max: 25,
                         mean: 25,
-                        charttitle: "Honorar pro Videominute (€)"
+                        charttitle: "Honorar pro Videominute (€), brutto"
 
                     }];
 
@@ -374,7 +374,7 @@ $(document).ready(function() {
                         min: 25,
                         max: 25,
                         mean: 25,
-                        charttitle: "Honorar pro Audiominute (€)"
+                        charttitle: "Honorar pro Audiominute (€), brutto"
 
                     }];
 
@@ -413,7 +413,7 @@ $(document).ready(function() {
                         min: 10,
                         max: 10,
                         mean: 100,
-                        charttitle: "Honorar pro hundert Zeichen (€)"
+                        charttitle: "Honorar pro hundert Zeichen (€), brutto"
 
                     }];
 

@@ -118,13 +118,13 @@ function gradientboxplot(responsejson, elementid) {
             .append("stop")
             .attr("stop-color", colour)
             .attr("class", "middle")
-            .attr("offset", "20%")
+            .attr("offset", "25%")
             .attr("stop-opacity", op2);
         d3.select(idtag)
             .append("stop")
             .attr("stop-color", colour)
             .attr("class", "middle")
-            .attr("offset", "80%")
+            .attr("offset", "75%")
             .attr("stop-opacity", op2);
         //and the finish
         d3.select(idtag)
