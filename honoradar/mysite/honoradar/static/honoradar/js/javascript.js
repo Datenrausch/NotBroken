@@ -102,47 +102,10 @@ function rangehourday(event) {
   stylevideo.textContent = css.replace('{value}', Math.round(event.target.value / 3.6))
 }
 
-
-
-
-
-/*
-window.onload=function(){
-document.querySelector('#data_stunden_woche').addEventListener('input', function rangeChange() {
-  this.setAttribute('value', this.value);
-});
-document.querySelector('#data_tag_monat').addEventListener('input', function rangeChange() {
-  this.setAttribute('value', this.value);
-});
-document.querySelector('#data_stunden_tag').addEventListener('input', function rangeChange() {
-  this.setAttribute('value', this.value);
-});
-document.querySelector('#data_laenge_text').addEventListener('input', function rangeChange() {
-  this.setAttribute('value', this.value);
-});
-document.querySelector('#data_laenge_audio').addEventListener('input', function rangeChange() {
-  this.setAttribute('value', this.value);
-});
-document.querySelector('#data_laenge_video').addEventListener('input', function rangeChange() {
-  this.setAttribute('value', this.value);
-});
-document.querySelector('#data_zeit').addEventListener('input', function rangeChange() {
-  this.setAttribute('value', this.value);
-});
-document.querySelector('#data_athmosphaere').addEventListener('input', function rangeChange() {
-  this.setAttribute('value', this.value);
-});
-document.querySelector('#data_zusammenarbeit').addEventListener('input', function rangeChange() {
-  this.setAttribute('value', this.value);
-});
-}
-
-*/
-
-
-
-
 function festfunction() {
+	var element = document.getElementById("data_submit");
+	element.disabled = false;
+	
 	var element = document.getElementById("data_gehalt");
     element.classList.add("show");
     element.classList.remove("hide");
@@ -185,6 +148,10 @@ function festfunction() {
 	var element = document.getElementById("pre-data_laenge_video");
     element.classList.add("hide");
     element.classList.remove("show");
+	
+	var element = document.getElementById("pre-data_genre");
+    element.classList.add("hide");
+    element.classList.remove("show");
 
 	var element = document.getElementById("data_genre");
     element.classList.add("hide");
@@ -213,6 +180,10 @@ function festfunction() {
 	var element = document.getElementById("data_position");
     element.classList.add("show");
     element.classList.remove("hide");
+
+	var element = document.getElementById("pre-data_position");
+    element.classList.add("show");
+    element.classList.remove("hide");	
 
 	var element = document.getElementById("pre-data_erfahrung_jahr_1_3_5");
     element.classList.add("show");
@@ -245,6 +216,9 @@ function festfunction() {
 };
 
 function pauschalfunction() {
+	var element = document.getElementById("data_submit");
+	element.disabled = false;
+	
 	var element = document.getElementById("data_gehalt");
     element.classList.add("show");
     element.classList.remove("hide");
@@ -287,6 +261,10 @@ function pauschalfunction() {
 	var element = document.getElementById("pre-data_laenge_video");
     element.classList.add("hide");
     element.classList.remove("show");
+	
+	var element = document.getElementById("pre-data_genre");
+    element.classList.add("hide");
+    element.classList.remove("show");
 
 	var element = document.getElementById("data_genre");
     element.classList.add("hide");
@@ -309,6 +287,10 @@ function pauschalfunction() {
     element.classList.remove("hide");
 
 	var element = document.getElementById("banner-left-triangle");
+    element.classList.add("show");
+    element.classList.remove("hide");
+	
+	var element = document.getElementById("pre-data_position");
     element.classList.add("show");
     element.classList.remove("hide");
 
@@ -347,6 +329,9 @@ function pauschalfunction() {
 };
 
 function freifunction() {
+	var element = document.getElementById("data_submit");
+	element.disabled = false;
+
 	var element = document.getElementById("data_gehalt");
     element.classList.add("hide");
     element.classList.remove("show");
@@ -374,6 +359,10 @@ function freifunction() {
 	var element = document.getElementById("pre-data_format_text_audio_video");
     element.classList.add("show");
     element.classList.remove("hide");
+	
+	var element = document.getElementById("pre-data_genre");
+    element.classList.add("show");
+    element.classList.remove("hide");
 
 	var element = document.getElementById("data_genre");
     element.classList.add("show");
@@ -398,6 +387,10 @@ function freifunction() {
 	var element = document.getElementById("banner-left-triangle");
     element.classList.add("show");
     element.classList.remove("hide");
+	
+	var element = document.getElementById("pre-data_position");
+    element.classList.add("hide");
+    element.classList.remove("show");
 
 	var element = document.getElementById("data_position");
     element.classList.add("hide");
@@ -483,8 +476,7 @@ function videofunction() {
 
 function getfunction() {
 	var element = document.getElementById("analyse_submit");
-    element.classList.add("show");
-    element.classList.remove("hide");
+	element.disabled = false;
 
 	var element = document.getElementById("media-analyse");
     element.classList.remove("alert");

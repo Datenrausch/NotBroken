@@ -37,6 +37,10 @@
 	padding-right: 5%;
 }
 
+.teaser-box-abstand {
+	margin-bottom: 80px;
+}
+
 .teaser-box-reports {
 	margin-bottom: 120px;
 }
@@ -68,6 +72,11 @@
 	max-width: 800px;
 	padding-left: 5%;
 	padding-right: 5%;
+	-moz-hyphens: auto;
+	-o-hyphens: auto;
+	-webkit-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto; 
 }
 
 /*Auorenbox*/
@@ -241,10 +250,16 @@
 }
 
 .artikelbild:after {
-	margin: 10px auto 0px calc(50vw);
+	margin: 10px auto 0px calc(40vw);
 	position: relative;
 	font-size: 15px;
 	font-family: OpenSans-Italic;
+}
+
+@media (max-width: 	1150px)	{
+	.artikelbild:after {
+		margin: 10px auto 0px calc(30vw);
+	}
 }
 
 @media (max-width: 	950px)	{
@@ -254,6 +269,15 @@
 		height: 0;
 		padding-top: 50%;
 	}
+	.artikelbild:after {
+		margin: 10px auto 0px calc(20vw);
+	}
+}
+
+@media (max-width: 	850px)	{
+	.artikelbild:after {
+		margin: 10px auto 0px calc(30vw);
+	}
 }
 
 @media (max-width: 	650px)	{
@@ -262,6 +286,15 @@
 		margin: 30px auto 70px 0px;
 		height: 0;
 		padding-top: 60%;
+	}
+	.artikelbild:after {
+		margin: 10px auto 0px calc(25vw);
+	}
+}
+
+@media (max-width: 	450px)	{
+	.artikelbild:after {
+		margin: 10px auto 0px calc(15vw);
 	}
 }
 

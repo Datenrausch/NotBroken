@@ -43,18 +43,18 @@
     <meta property="og:title" content="XXX">
     <meta property="og:description" content="XXX">
     <meta property="og:url" content="XXX">
-    <meta property="og:image" content="../image/reports.jpg">
+    <meta property="og:image" content="../image/methodik.jpg">
 
     <!-- General SEO -->
-    <meta name="author" content="Michel Penke">
-    <meta name="title" content="Freischreiber-Report">
+    <meta name="author" content="Haluka Maier-Borst">
+    <meta name="title" content="Die Methodik">
     <meta name="description" content="XXX">
-    <meta name="keywords" content="freischreiber,report,ranking,medien,gehalt,honorar,übersicht,daten,datenbank,analyse,bericht">
+    <meta name="keywords" content="methodik,median,durchschnitt,berechnung">
 
 </head>
 
 <body>
-    <title>Freischreiber-Report</title>
+    <title>Die Methodik</title>
 
 <!-- Navbar -->
     <a href="#cd-nav" class="cd-nav-trigger clear-fixed">Menu
@@ -105,25 +105,75 @@
 	<div class="text-feld">
 	
 <!-- Titel-Box-->
-	<h1 class="text-title">Freischreiber-Reporte</h1>
+	<h1 class="text-title">Die Methodik</h1>
 	
 <!-- Teaser -->
-	<div class="teaser-box teaser-box-reports">
-	Einmal im Jahr veröffentlichen wir den Freischreiber-Report mit einer Analyse der deutschsprachigen Medienlandschaft und einem Honorar-Ranking. 
-	Hier findest du die Übersicht aller bisherigen Reporte.
+	<div class="teaser-box">
+	Anonym und transparent. Möglichst viel zeigen, aber nicht unsere Datenspender versehentlich verraten. 
+	Das war die Herausforderung dieses Projekts. Wir haben uns darum entschieden, auf „gleitende“ Werte für alle Grafiken zu setzen. Doch was genau bedeutet das? 
 	</div>
 
-<!-- Text-Box -->
-	<p class="text-box offset-2">
-	Leider sind bisher keine Reports erschienen. Der erste Freischreiber-Report ist für den Januar 2019 geplant. 
-	Wenn wir dich informieren sollen, sobald der erste Report veröffentlicht wird, trage dich in unseren Newsletter ein. 
-	</p>
-	
-<!-- Download-Button -->
-	<a href="../../../static/honoradar/artikel/newsletter.html">
-	<input type="submit" class="submit-download" value="Newsletter"/>
+<!-- Autorenbox -->
+	<a href="https://twitter.com/halukamb">
+	<div class="autoren-box autor-haluka offset-autorenbox">
+	</div>
 	</a>
 	
+<!-- Text-Box -->
+	<p class="text-box offset-2">
+	Jeder Wert, den wir angeben, geht nicht auf einen einzelnen Datenspender zurück. 
+	Stattdessen errechnen wir stets Mittelwerte, um auf unsere Ergebnisse zu kommen.
+	Der Grund: Datenschutz. Denn wir müssen sicherstellen, dass kein Spender von seinem Arbeit- oder Auftraggeber identifiziert werden kann. 
+	Lieber verzichten wir auf die Darstellung von Ergebnissen, als dass wir unsere Spender verraten. 
+	</p>
+	
+	<p class="text-box offset-2">
+	Wir visualisieren deswegen nur dann ein Mediangehalt oder ein Medianhonorar, wenn wir mindestens drei Datenspenden haben. 
+	Wenn das zutrifft, errechnet unsere Datenbank einen Schnitt, der auf den drei bzw. vier „mittigsten“ Werten aller Angaben zu einem Medium basiert. 
+	</p>
+
+	<h2 class="zwischentitel offset-3">Rechenbeispiel I</h2>
+	<p class="text-box offset-3">
+	Angenommen wir haben sieben Angaben von Journalisten, die bei Spiegel Online frei gearbeitet haben. 
+	Aus ihren Datenspenden zu Honorar und zeitlichem Aufwand lassen sich via Dreisatz die folgenden Stundenhonorare berechnen:
+	<br><br><strong class="points">Datensätze:</strong> 20, 25, 30, 35, 55, 55, 60 (Euro pro Stunde)
+	<br><br>Dann berechnet sich unser gleitender Medianwert als Mittelwert von 30, 35 und 55.
+	<br><br><strong class="points">Gleitender Median:</strong> (30 + 35 + 55) / 3 = 40 Euro pro Stunde
+	</p>
+
+	<p class="text-box offset-2">
+	Haben wir dagegen eine gerade Anzahl von Werten, dann nehmen wir nicht die <em>drei</em> mittigsten, sondern die <em>vier</em> mittigsten Werte. 
+	Das Mediangehalt siehst du in unseren Grafiken als den grauen Punkt auf dem Chart.
+	</p>
+
+	<p class="text-box offset-2">
+	Neben dem Medianwert zeigen wir auch den Rahmen, in dem die Gehälter und Honorare variieren. In der Analyse ist das als vertikaler, grüner Balken dargestellt.
+	Wir geben dort allerdings nur einen Korridor für Gehälter und Honorare an, wenn wir mindestens sechs Datenspenden zu diesem Medium haben. 
+	Ist das der Fall, nehmen wir uns die drei höchsten und die drei niedrigsten Werte und errechnen darauf basierend unser gleitendes Minimum und unser gleitendes Maximum.
+	</p>
+
+	<h2 class="zwischentitel offset-3">Rechenbeispiel II</h2>
+	<p class="text-box offset-3">
+	Konkretes Beispiel: Gehen wir wieder von den sieben Einträgen aus, für Leute die bei Spiegel Online frei gearbeitet haben.
+	<br><br><strong class="points">Datensätze:</strong> 20, 25, 30, 35, 55, 55, 60 (Euro pro Stunde)
+	<br><br>Die drei unteren Werte sind 20, 25 und 30. Das Minimum, das wir errechnen, ist entsprechend:
+	<br><br><strong class="points">Minimum:</strong> (20 + 25 + 30) / 3 = 25 Euro pro Stunde
+	<br><br>Und für das Maximum gilt:
+	<br><br><strong class="points">Maximum:</strong> (55 + 55 + 60) / 3 = 56,67 Euro pro Stunde
+	</p>
+
+	
+	<p class="text-box offset-2">
+	Diese Werte siehst du bei uns als Balken in der Grafik. 
+	Weil aber die exakten Maximum- und Minimum-Werte in der Realität wenig Bedeutung haben, beenden wir die Balken nicht mit einem klaren Trennstrich, sondern lassen sie mit einem weichen Übergang enden.
+	</p>
+	   
+	<p class="text-box offset-2">
+	Natürlich hat auch diese Methodik ihre Schwächen. 
+	Und hundertprozentige Sicherheit kann niemand garantieren. Es ist ein Spagat dieses Projekts möglichst präzise aber nicht identifizierende Daten zu liefern. 
+	Wir wollen und müssen verhindern, dass ein Verlag oder ein Sender einen einzelnen Datenspender identifizieren und später wegen seiner Offenheit bestrafen kann.
+	</p>
+	   
 	</div>
 
 <!-- Social Share -->

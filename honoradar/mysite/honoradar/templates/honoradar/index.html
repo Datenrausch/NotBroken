@@ -12,14 +12,12 @@
     <meta name="date" content="2017-11-18">
     <meta name="robots" content="index,follow">
 
-    <!-- Favicon final_redone: https://realfavicongenerator.net PLEASE DO NOT FORGET -->
-    <link rel="shortcut icon" type="image/x-icon" href="#">
-    <link rel="apple-touch-icon" sizes="180x180" href="#">
-    <link rel="icon" type="image/png" sizes="32x32" href="#">
-    <link rel="icon" type="image/png" sizes="16x16" href="#">
-    <link rel="manifest" href="{% static 'honoradar/manifest.json'%}">
-    <link rel="mask-icon" href="{% static 'honoradar/safari-pinned-tab.svg'%}" color="#5bbad5">
-    <meta name="theme-color" content="#ffffff">
+	<!-- Flavicon -->
+	<link rel="shortcut icon" href="../templates/honoradar/favicon.png">
+	<link rel="icon" type="image/png" href="../templates/honoradar/favicon.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="../templates/honoradar/favicon.png" sizes="96x96">
+	<link rel="apple-touch-icon" sizes="180x180" href="../templates/honoradar/favicon_apple_touch.png">
+	<meta name="msapplication-TileImage" content="../templates/honoradar/favicon_msapplication.png">
 
     <!-- Style -->
     <link rel="stylesheet" href="{% static 'honoradar/css/style.css'%}">
@@ -54,7 +52,7 @@
 </head>
 
 <body>
-    <title>Honoradar</title>
+    <title>Was verdienen Journalisten?</title>
 
     <!-- Parallax -->
     <div class="panel">
@@ -82,7 +80,7 @@
                 <h2 class="navtitle1">Navigation</h2>
                 <nav>
                     <ul class="cd-primary-nav">
-                        <li><a href="{% static "../../../ "%}" class="selected">Startseite</a></li>
+                        <li><a href="{% static "../../../"%}" class="selected">Startseite</a></li>
                         <li><a href="{% static "/honoradar/artikel/projekt.html "%}">Über das Projekt</a></li>
                         <li><a href="{% static "/honoradar/artikel/reports.html"%}">Freischreiber-Report</a></li>
                         <li><a href="{% static "/honoradar/artikel/newsletter.html"%}">Newsletter</a></li>
@@ -114,19 +112,17 @@
 
         <!-- Safe-Points -->
         <div class="safe-box">
-            <a target="_blank" href="#">
+            <a href="{% static "/honoradar/artikel/prinzipien.html"%}#anonym">
                 <div class="safe safe-1 safetile"></div>
             </a>
-            <a target="_blank" href="#">
+            <a href="{% static "/honoradar/artikel/prinzipien.html"%}#verschluesselt">
                 <div class="safe safe-2 safetile"></div>
             </a>
-            <a target="_blank" href="#">
                 <div class="safe safe-3 safetile-gross"></div>
-            </a>
-            <a target="_blank" href="#">
+            <a href="{% static "/honoradar/artikel/prinzipien.html"%}#transparent">
                 <div class="safe safe-4 safetile"></div>
             </a>
-            <a target="_blank" href="#">
+            <a href="{% static "/honoradar/artikel/prinzipien.html"%}#kostenlos">
                 <div class="safe safe-5 safetile"></div>
             </a>
         </div>
@@ -225,7 +221,7 @@
                     </div>
 
                     <!-- Genre-Select -->
-					<div class="genre-select-container">
+					<div id="pre-data_genre" class="genre-select-container hide">
                     <input name="Genre" id="data_genre" class="genre-select select-font hide" list="genre" placeholder="Welches Genre?" type="text" />
 					</div>
 
@@ -254,7 +250,7 @@
                     <div class="banner-left-shadow hide"></div>
 
                     <!-- Position-Select -->
-					<div class="media-select-container">
+					<div id="pre-data_position" class="media-select-container hide">
                     <input name="JobPosition" id="data_position" class="position-select select-font hide" list="position" placeholder="Als was arbeitest du?" type="text" onclick="alertoffdataposition()" />
 					</div>
 
@@ -306,13 +302,13 @@
                     <!-- Submit -->
                     <div class="alert-denied alert-media-select hide" id="WARNING">
                     </div>
-                    <input type="submit" linkdirection="#banderole" class="submit-get hide" id="data_submit" value="Daten spenden" />
+                    <input type="submit" linkdirection="#banderole" class="submit-get show" id="data_submit" value="Daten spenden" disabled/>
 
                 </form>
 
                 <!-- After-Submit Accpeted -->
                 <div class="alert alert-accepted alert-media-select hide" id="ACCEPTED">
-                    <span class="closebtn" onclick="hideaccepted()">&times;</span> Wir haben deine Infos	 in die Datenbank aufgenommen.
+                    <span class="closebtn" onclick="hideaccepted()">&times;</span> Wir haben deine Infos in die Datenbank aufgenommen.
                 </div>
 
                 <!-- Newsletter-Anmeldung -->
@@ -352,7 +348,7 @@
 
                     <!-- Bedingung -->
                     <div class="bedingung-container" id="">
-                        <span id="bedingung" class="bedingung">Wir zeigen die Analyse nur, wenn mindestens zwei Datensätze vorliegen! </span>
+                        <span id="bedingung" class="bedingung">Wir zeigen die Analyse nur, wenn mindestens drei Datensätze vorliegen! </span>
                     </div>
 
                     <div class="break"></div>
@@ -361,7 +357,7 @@
                     <strong>Achtung! </strong>Du musst ein Medium definieren.
                     </div>
                     <!-- Submit -->
-                    <a href="#break-2"><input type="submit" class="submit-giv hide" id="analyse_submit" value="Daten auslesen" /></a>
+                    <a href="#break-2"><input type="submit" class="submit-giv show" id="analyse_submit" value="Daten auslesen" disabled/></a>
 
                 </form>
             </div>
@@ -488,17 +484,17 @@
                 <a href="{% static "/honoradar/artikel/freischreiber-report-ankuendigung.html"%}">
                     <div class="ntile-first news news_1"><span class="news-title-head">Einmal im Jahr:<br>Freischreiber-Report startet 2019</span></div>
                 </a>
-                <a href="{% static " /honoradar/artikel/xxx.html "%}">
-                    <div class="ntile-first news news_2"><span class="news-title">Hier erscheint ein Titel</span></div>
+                <a href="{% static "/honoradar/artikel/tumblr.html"%}">
+                    <div class="ntile-first news news_2"><span class="news-title">Gibs da nicht<br>schon 'n Tumblr?</span></div>
                 </a>
-                <a href="{% static " /honoradar/artikel/xxx.html "%}">
-                    <div class="ntile-first news news_3"><span class="news-title">Hier erscheint ein Titel</span></div>
+                <a href="{% static "/honoradar/artikel/credits.html"%}">
+                    <div class="ntile-first news news_3"><span class="news-title">Wer steckt hinter dem Projekt?</span></div>
                 </a>
-                <a href="{% static " /honoradar/artikel/xxx.html "%}">
-                    <div class="ntile-first news news_4"><span class="news-title">Hier erscheint ein Titel</span></div>
+                <a href="{% static "/honoradar/artikel/prinzipien.html"%}">
+                    <div class="ntile-first news news_4"><span class="news-title">Was passiert mit den Daten?</span></div>
                 </a>
-                <a href="{% static " /honoradar/artikel/xxx.html "%}">
-                    <div class="ntile-first news news_5"><span class="news-title">Hier erscheint ein Titel</span></div>
+                <a href="{% static "/honoradar/artikel/methodik.html"%}">
+                    <div class="ntile-first news news_5"><span class="news-title">Methodik:<br>Wie wir Daten analysieren</span></div>
                 </a>
             </div>
 
@@ -537,21 +533,21 @@
                         <a href="{% static "/honoradar/artikel/reports.html"%}">
                             <p class="footer-item clear-footer">Freischreiber-Report</p>
                         </a>
-                        <a href="{% static " /honoradar/artikel/methodik.html "%}">
+                        <a href="{% static "/honoradar/artikel/methodik.html"%}">
                             <p class="footer-item clear-footer">Methodik</p>
                         </a>
                     </div>
                     <div class="footer-grid-second">
-                        <a href="{% static " /honoradar/artikel/newsletter.html "%}">
+                        <a href="{% static "/honoradar/artikel/newsletter.html"%}">
                             <p class="footer-item-first footer-item clear-footer">Newsletter</p>
                         </a>
-                        <a href="{% static " /honoradar/artikel/datenschutz.html "%}">
+                        <a href="{% static "/honoradar/artikel/datenschutz.html"%}">
                             <p class="footer-item clear-footer">Datenschutz</p>
                         </a>
-                        <a href="{% static " /honoradar/artikel/kontakt.html "%}">
+                        <a href="{% static "/honoradar/artikel/kontakt.html"%}">
                             <p class="footer-item clear-footer">Kontakt & Fragen</p>
                         </a>
-                        <a href="{% static " /honoradar/artikel/impressum.html "%}">
+                        <a href="{% static "/honoradar/artikel/impressum.html"%}">
                             <p class="footer-item clear-footer">Impressum</p>
                         </a>
                     </div>

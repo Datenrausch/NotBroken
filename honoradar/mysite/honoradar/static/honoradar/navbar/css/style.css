@@ -25,6 +25,12 @@ body, html {
 }
 
 
+.cd-contact-info li a {
+	outline: none;
+	text-decoration: none;
+}
+
+
 /*Main Components*/
 
 main {
@@ -368,6 +374,7 @@ main {
 .cd-nav .cd-primary-nav li {
 	margin: 1.6em 0;
 }
+
 .cd-nav .cd-primary-nav a {
 	font-family: InknutAntiqua-Bold;
 	font-size: 1.4rem;

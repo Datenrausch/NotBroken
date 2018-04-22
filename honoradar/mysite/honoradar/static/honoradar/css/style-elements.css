@@ -54,7 +54,31 @@
 }
 
 .artikelbild-carola:after {
-	content: 'Carola Dorner';
+	content: 'Carola Dorner, Freischreiber-Vorsitzende';
+}
+
+.artikelbild-haluka-crazy {
+	background-image: url(../image/Haluka-crazy.jpg);
+}
+
+.artikelbild-haluka-crazy:after {
+	content: 'Haluka Maier-Borst, wilder Python-Bändiger';
+}
+
+.artikelbild-michel-relaxed {
+	background-image: url(../image/Michel-relaxed.jpg);
+}
+
+.artikelbild-michel-relaxed:after {
+	content: 'Michel Penke, entspannter CSS-Großmeister';
+}
+
+.artikelbild-mediafon {
+	background-image: url(../image/mediafon.jpg);
+}
+
+.artikelbild-mediafon:after {
+	content: 'Pixel-Website "Mediafon" von Verdi';
 }
 
 /*News*/
@@ -62,28 +86,32 @@
 
 .news_1 {
 	background-image: url(../image/news_1.jpg);
-	padding: 170px 50px 0px calc(10%);
+	padding: 130px 50px 0px calc(10%);
 }
 
 .news_2 {
 	background-image: url(../image/news_2.jpg);
-	padding: 20px 50px 0px calc(3.5%);	
+	padding: 130px 50px 20px calc(3.5%);	
 	background-size: 130% ;
 }
 
 .news_3 {
 	background-image: url(../image/news_3.jpg);
-	padding: 160px 50px 0px calc(3.5%);
+	padding: 20px 50px 0px calc(3.5%);
+	background-position: center bottom;	
 }
 
 .news_4 {
 	background-image: url(../image/news_4.jpg);
-	padding: 160px 50px 0px calc(3.5%);
+	padding: 150px 10px 0px 10px;
+	background-position: top right;	
 }
 
 .news_5 {
 	background-image: url(../image/news_5.jpg);
-	padding: 100px 0px 0px calc(50% - 140px);
+	padding: 130px 10px 0px 10px;
+	text-align: right;
+	background-position: center bottom;	
 }
 
 .news_6 {
@@ -93,7 +121,7 @@
 
 .news_7 {
 	background-image: url(../image/news_7.jpg);
-	padding: 150px 30px 0px calc(4%);
+	padding: 145px 30px 0px calc(4%);
 }
 
 .news_8 {
