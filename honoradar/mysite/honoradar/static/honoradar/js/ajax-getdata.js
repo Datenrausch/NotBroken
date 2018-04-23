@@ -54,18 +54,38 @@ $(document).ready(function() {
         element.innerHTML=""
 
 
-        var element=document.getElementById("festgrafik1")
-        element.innerHTML=""
-        var element=document.getElementById("pauschalgrafik1")
-        element.innerHTML=""
-        var element=document.getElementById("freigrafik1")
-        element.innerHTML=""
-        var element=document.getElementById("freigrafikvideo")
-        element.innerHTML=""
-        var element=document.getElementById("freigrafikaudio")
-        element.innerHTML=""
-        var element=document.getElementById("freigrafikprint")
-        element.innerHTML=""
+        d3.select("#festgrafik1_svg").remove();
+        d3.select("#pauschalgrafik1_svg").remove();
+        d3.select("#freigrafik1_svg").remove();
+        d3.select("#freigrafikvideo_svg").remove();
+        d3.select("#freigrafikaudio_svg").remove();
+        d3.select("#freigrafiktext_svg").remove();
+
+        var element=document.getElementById("nodata-frei-1")
+        element.classList.add("hide");
+        element.classList.remove("show");
+
+        var element=document.getElementById("nodata-frei-2")
+        element.classList.add("hide");
+        element.classList.remove("show");
+
+        var element=document.getElementById("nodata-frei-3")
+        element.classList.add("hide");
+        element.classList.remove("show");
+
+        var element=document.getElementById("nodata-frei-4")
+        element.classList.add("hide");
+        element.classList.remove("show");
+
+        var element=document.getElementById("nodata-pauschal-1")
+        element.classList.add("hide");
+        element.classList.remove("show");
+
+        var element=document.getElementById("nodata-fest-1")
+        element.classList.add("hide");
+        element.classList.remove("show");
+
+
         const mediumname = document.getElementById("result-mediumname")
         console.log(mediumname)
         const size = Object.keys(data).length;
@@ -81,12 +101,50 @@ $(document).ready(function() {
 
 
         if (data["nodata"] != undefined) {
+          var element=document.getElementById("NoDataAtAllMessage")
+          console.log(element)
+          if (element!=null){
+            element.parentNode.removeChild(element);
+          }
 
-            var element=document.getElementsByClassName("result-grid")[0];
-            console.log(element)
+          var element=document.getElementById("result-grid");
+          console.log(element)
+          element.classList.add("show");
+          element.classList.remove("hide");
+          console.log(element)
 
-            element.classList.add("hide");
-            element.classList.remove("show");
+                  var element=document.getElementById("nodata-frei-1")
+                  element.classList.add("show");
+                  element.classList.remove("hide");
+
+                  var element=document.getElementById("nodata-frei-2")
+                  element.classList.add("show");
+                  element.classList.remove("hide");
+
+
+                  var element=document.getElementById("nodata-frei-3")
+                  element.classList.add("show");
+                  element.classList.remove("hide");
+
+
+                  var element=document.getElementById("nodata-frei-4")
+                  element.classList.add("show");
+                  element.classList.remove("hide");
+
+
+                  var element=document.getElementById("nodata-pauschal-1")
+                  element.classList.add("show");
+                  element.classList.remove("hide");
+
+
+                  var element=document.getElementById("nodata-fest-1")
+                  element.classList.add("show");
+                  element.classList.remove("hide");
+
+
+
+
+
         } else {
 
           var element=document.getElementById("NoDataAtAllMessage");
@@ -114,15 +172,15 @@ $(document).ready(function() {
           if (data["MediumFestHappiness"]) {
               if (data["MediumFestHappiness"]["status"] == "Success") {
                   var element=document.getElementById("result_athmosphaere-fest")
-                  element.setAttribute("value",Math.round((data["MediumFestHappiness"]["avg"])))
-                  element.setAttribute("class","range result_happiness-bar result_happiness-"+String(Math.round((data["MediumFestHappiness"]["avg"]))))
+                  element.setAttribute("value",Math.round((data["MediumFestHappiness"]["median"])))
+                  element.setAttribute("class","range result_happiness-bar result_happiness-"+String(Math.round((data["MediumFestHappiness"]["median"]))))
               };
           };
           if (data["MediumPauschalHappiness"]) {
               if (data["MediumPauschalHappiness"]["status"] == "Success") {
                   var element=document.getElementById("result_athmosphaere-pauschal")
-                  element.setAttribute("value",Math.round((data["MediumPauschalHappiness"]["avg"])))
-                  element.setAttribute("class","range result_happiness-bar result_happiness-"+String(Math.round((data["MediumPauschalHappiness"]["avg"]))))
+                  element.setAttribute("value",Math.round((data["MediumPauschalHappiness"]["median"])))
+                  element.setAttribute("class","range result_happiness-bar result_happiness-"+String(Math.round((data["MediumPauschalHappiness"]["median"]))))
 
               };
           };
@@ -130,8 +188,8 @@ $(document).ready(function() {
           if (data["MediumFreiHappiness"]) {
               if (data["MediumFreiHappiness"]["status"] == "Success") {
                   var element=document.getElementById("result_athmosphaere-frei")
-                  element.setAttribute("value",Math.round((data["MediumFreiHappiness"]["avg"])))
-                  element.setAttribute("class","range result_happiness-bar result_happiness-"+String(Math.round((data["MediumFreiHappiness"]["avg"]))))
+                  element.setAttribute("value",Math.round((data["MediumFreiHappiness"]["median"])))
+                  element.setAttribute("class","range result_happiness-bar result_happiness-"+String(Math.round((data["MediumFreiHappiness"]["median"]))))
 
               };
           };
@@ -141,218 +199,198 @@ $(document).ready(function() {
             let elementid = "festgrafik1"
 
             if ((data["MediumFestSalaryPerHour"]) && (data["AllFestSalaryPerHour"])) {
-                if ((data["MediumFestSalaryPerHour"]["status"] == "Success") && (data["AllFestSalaryPerHour"]["status"] == "Success")) {
+                if ((data["MediumFestSalaryPerHour"]["status"] == "Success") && (data["AllFestSalaryPerHour"]["status"] == "Success")&& (data["MediumFestSalaryPerHour"]["median"] != 0) && (data["AllFestSalaryPerHour"]["median"] != 0)){
                     let d3festjson = [{
                         id: "MediumFestSalaryPerHour",
                         category: String(data["mediumname"]),
-                        min: parseFloat(data["MediumFestSalaryPerHour"]["avg"]) - parseFloat(data["MediumFestSalaryPerHour"]["std"]),
-                        max: parseFloat(data["MediumFestSalaryPerHour"]["avg"]) + parseFloat(data["MediumFestSalaryPerHour"]["std"]),
-                        mean: parseFloat(data["MediumFestSalaryPerHour"]["avg"])
+                        min: parseFloat(data["MediumFestSalaryPerHour"]["lower"]),
+                        max: parseFloat(data["MediumFestSalaryPerHour"]["upper"]),
+                        mean: parseFloat(data["MediumFestSalaryPerHour"]["median"])
                     }, {
                         id: "AllFestSalaryPerHour",
                         category: "Ø \n alle \n Festangestellte",
-                        min: parseFloat(data["AllFestSalaryPerHour"]["avg"]) - parseFloat(data["AllFestSalaryPerHour"]["std"]),
-                        max: parseFloat(data["AllFestSalaryPerHour"]["avg"]) + parseFloat(data["AllFestSalaryPerHour"]["std"]),
-                        mean: parseFloat(data["AllFestSalaryPerHour"]["avg"])
-                    }, {
-                        id: "FreischreiberFestSalaryPerHour",
-                        category: "Freischreiber \n Empfehlung",
-                        min: 25,
-                        max: 25,
-                        mean: 25,
-                        charttitle: "Stundenlohn für Festangestellt in Euro"
-
+                        min: parseFloat(data["AllFestSalaryPerHour"]["lower"]),
+                        max: parseFloat(data["AllFestSalaryPerHour"]["upper"]),
+                        mean: parseFloat(data["AllFestSalaryPerHour"]["median"]),
+                        charttitle: "Stundenlohn für Festangestellte #(Brutto / Euro)"
                     }];
 
                     gradientboxplot(d3festjson, elementid)
                 }else{
-                  $graphicdiv = $("#"+elementid)
-                  $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
+                  var element=document.getElementById("nodata-fest-1")
+                  element.classList.add("show");
+                  element.classList.remove("hide");
+
                 }
             }else{
-              $graphicdiv = $("#"+elementid)
-              $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
-
+              var element=document.getElementById("nodata-fest-1")
+              element.classList.add("show");
+              element.classList.remove("hide");
             };
+
              elementid = "pauschalgrafik1"
 
             if ((data["MediumPauschalSalaryPerHour"]) && (data["AllPauschalSalaryPerHour"])) {
-                if ((data["MediumPauschalSalaryPerHour"]["status"] == "Success") && (data["AllPauschalSalaryPerHour"]["status"] == "Success")) {
+                if ((data["MediumPauschalSalaryPerHour"]["status"] == "Success") && (data["AllPauschalSalaryPerHour"]["status"] == "Success")&& (data["MediumPauschalSalaryPerHour"]["median"] != 0) && (data["AllPauschalSalaryPerHour"]["median"] != 0)) {
                     let d3festjson = [{
                         id: "MediumPauschalSalaryPerHour",
                         category: String(data["mediumname"]),
-                        min: parseFloat(data["MediumPauschalSalaryPerHour"]["avg"]) - parseFloat(data["MediumPauschalSalaryPerHour"]["std"]),
-                        max: parseFloat(data["MediumPauschalSalaryPerHour"]["avg"]) + parseFloat(data["MediumPauschalSalaryPerHour"]["std"]),
-                        mean: parseFloat(data["MediumPauschalSalaryPerHour"]["avg"])
+                        min: parseFloat(data["MediumPauschalSalaryPerHour"]["lower"]),
+                        max: parseFloat(data["MediumPauschalSalaryPerHour"]["upper"]),
+                        mean: parseFloat(data["MediumPauschalSalaryPerHour"]["median"])
                     }, {
                         id: "AllPauschalSalaryPerHour",
                         category: "Ø \n alle \n Pauschalisten",
-                        min: parseFloat(data["AllPauschalSalaryPerHour"]["avg"]) - parseFloat(data["AllPauschalSalaryPerHour"]["std"]),
-                        max: parseFloat(data["AllPauschalSalaryPerHour"]["avg"]) + parseFloat(data["AllPauschalSalaryPerHour"]["std"]),
-                        mean: parseFloat(data["AllPauschalSalaryPerHour"]["avg"])
-                    }, {
-                        id: "FreischreiberPauschalSalaryPerHour",
-                        category: "Freischreiber Empfehlung",
-                        min: 25,
-                        max: 25,
-                        mean: 25,
-                        charttitle: "Stundenlohn für Pauschalisten in Euro"
-
+                        min: parseFloat(data["AllPauschalSalaryPerHour"]["lower"]),
+                        max: parseFloat(data["AllPauschalSalaryPerHour"]["upper"]),
+                        mean: parseFloat(data["AllPauschalSalaryPerHour"]["median"]),
+                        charttitle: "Stundenlohn für Pauschalisten #(Brutto / Euro)"
                     }];
 
                     gradientboxplot(d3festjson, elementid)
                   }else{
-                    $graphicdiv = $("#"+elementid)
-                    $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
+                    var element=document.getElementById("nodata-pauschal-1")
+                    element.classList.add("show");
+                    element.classList.remove("hide");
+
                   }
               }else{
-                $graphicdiv = $("#"+elementid)
-                $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
-                };
+                var element=document.getElementById("nodata-pauschal-1")
+                element.classList.add("show");
+                element.classList.remove("hide");
+              };
+
+
                elementid = "freigrafik1"
 
             if ((data["MediumFreiSalaryPerHour"]) && (data["AllFreiSalaryPerHour"])) {
-                if ((data["MediumFreiSalaryPerHour"]["status"] == "Success") && (data["AllFreiSalaryPerHour"]["status"] == "Success")) {
+                if ((data["MediumFreiSalaryPerHour"]["status"] == "Success") && (data["AllFreiSalaryPerHour"]["status"] == "Success")&& (data["MediumFreiSalaryPerHour"]["median"] != 0) && (data["AllFreiSalaryPerHour"]["median"] != 0))  {
                     let d3festjson = [{
                         id: "MediumFreiSalaryPerHour",
                         category: String(data["mediumname"]),
-                        min: parseFloat(data["MediumFreiSalaryPerHour"]["avg"]) - parseFloat(data["MediumFreiSalaryPerHour"]["std"]),
-                        max: parseFloat(data["MediumFreiSalaryPerHour"]["avg"]) + parseFloat(data["MediumFreiSalaryPerHour"]["std"]),
-                        mean: parseFloat(data["MediumFreiSalaryPerHour"]["avg"])
+                        min: parseFloat(data["MediumFreiSalaryPerHour"]["lower"]),
+                        max: parseFloat(data["MediumFreiSalaryPerHour"]["upper"]),
+                        mean: parseFloat(data["MediumFreiSalaryPerHour"]["median"])
                     }, {
                         id: "AllFreiSalaryPerHour",
-                        category: "Ø alle Freiberufler",
-                        min: parseFloat(data["AllFreiSalaryPerHour"]["avg"]) - parseFloat(data["AllFreiSalaryPerHour"]["std"]),
-                        max: parseFloat(data["AllFreiSalaryPerHour"]["avg"]) + parseFloat(data["AllFreiSalaryPerHour"]["std"]),
-                        mean: parseFloat(data["AllFreiSalaryPerHour"]["avg"])
-                    }, {
-                        id: "FreischreiberFreiSalaryPerHour",
-                        category: "Freischreiber Empfehlung",
-                        min: 25,
-                        max: 25,
-                        mean: 25,
-                        charttitle: "Stundenlohn für Freie in Euro"
-
+                        category: "Ø alle Medien",
+                        min: parseFloat(data["AllFreiSalaryPerHour"]["lower"]),
+                        max: parseFloat(data["AllFreiSalaryPerHour"]["upper"]),
+                        mean: parseFloat(data["AllFreiSalaryPerHour"]["median"]),
+                        charttitle: "Mittleres Stundenhonorar #(Brutto / Euro)"
                     }];
 
                     gradientboxplot(d3festjson, elementid)
-                }else{
-                  $graphicdiv = $("#"+elementid)
-                  $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
-                }
+                  }else{
+                    var element=document.getElementById("nodata-frei-1")
+                    element.classList.add("show");
+                    element.classList.remove("hide");
+
+                  }
               }else{
-                $graphicdiv = $("#"+elementid)
-                $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
+                var element=document.getElementById("nodata-frei-1")
+                element.classList.add("show");
+                element.classList.remove("hide");
               };
+
                elementid = "freigrafikvideo"
 
             if ((data["MediumFreiVideoFeePerMin"]) && (data["AllFreiVideoFeePerMin"])) {
-                if ((data["MediumFreiVideoFeePerMin"]["status"] == "Success") && (data["AllFreiVideoFeePerMin"]["status"] == "Success")) {
+                if ((data["MediumFreiVideoFeePerMin"]["status"] == "Success") && (data["AllFreiVideoFeePerMin"]["status"] == "Success")&& (data["MediumFreiVideoFeePerMin"]["median"] != 0) && (data["AllFreiVideoFeePerMin"]["median"] != 0)) {
                     let d3festjson = [{
                         id: "MediumFreiVideoFeePerMin",
                         category: String(data["mediumname"]),
-                        min: parseFloat(data["MediumFreiVideoFeePerMin"]["avg"]) - parseFloat(data["MediumFreiVideoFeePerMin"]["std"]),
-                        max: parseFloat(data["MediumFreiVideoFeePerMin"]["avg"]) + parseFloat(data["MediumFreiVideoFeePerMin"]["std"]),
-                        mean: parseFloat(data["MediumFreiVideoFeePerMin"]["avg"])
+                        min: parseFloat(data["MediumFreiVideoFeePerMin"]["lower"]),
+                        max: parseFloat(data["MediumFreiVideoFeePerMin"]["upper"]),
+                        mean: parseFloat(data["MediumFreiVideoFeePerMin"]["median"])
                     }, {
                         id: "AllFreiVideoFeePerMin",
                         category: "Ø \n alle \n Freiberufler",
-                        min: parseFloat(data["AllFreiVideoFeePerMin"]["avg"]) - parseFloat(data["AllFreiVideoFeePerMin"]["std"]),
-                        max: parseFloat(data["AllFreiVideoFeePerMin"]["avg"]) + parseFloat(data["AllFreiVideoFeePerMin"]["std"]),
-                        mean: parseFloat(data["AllFreiVideoFeePerMin"]["avg"])
-                    }, {
-                        id: "FreischreiberFreiSalaryPerHour",
-                        category: "Freischreiber Empfehlung",
-                        min: 25,
-                        max: 25,
-                        mean: 25,
-                        charttitle: "Honorar pro Videominute (€)"
-
+                        min: parseFloat(data["AllFreiVideoFeePerMin"]["lower"]),
+                        max: parseFloat(data["AllFreiVideoFeePerMin"]["upper"]),
+                        mean: parseFloat(data["AllFreiVideoFeePerMin"]["median"]),
+                        charttitle: "Honorar pro Videominute #(Brutto / Euro)"
                     }];
 
                     gradientboxplot(d3festjson, elementid)
-                }else{
-                  $graphicdiv = $("#"+elementid)
-                  $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
-                }
+                  }else{
+                    var element=document.getElementById("nodata-frei-4")
+                    element.classList.add("show");
+                    element.classList.remove("hide");
+
+                  }
               }else{
-                $graphicdiv = $("#"+elementid)
-                $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
+                var element=document.getElementById("nodata-frei-4")
+                element.classList.add("show");
+                element.classList.remove("hide");
               };
                elementid = "freigrafikaudio"
 
             if ((data["MediumFreiAudioFeePerMin"]) && (data["AllFreiAudioFeePerMin"])) {
-                if ((data["MediumFreiAudioFeePerMin"]["status"] == "Success") && (data["AllFreiAudioFeePerMin"]["status"] == "Success")) {
+                if ((data["MediumFreiAudioFeePerMin"]["status"] == "Success") && (data["AllFreiAudioFeePerMin"]["status"] == "Success")&& (data["MediumFreiAudioFeePerMin"]["median"] != 0) && (data["AllFreiAudioFeePerMin"]["median"] != 0)) {
                     let d3festjson = [{
                         id: "MediumFreiAudioFeePerMin",
                         category: String(data["mediumname"]),
-                        min: parseFloat(data["MediumFreiAudioFeePerMin"]["avg"]) - parseFloat(data["MediumFreiAudioFeePerMin"]["std"]),
-                        max: parseFloat(data["MediumFreiAudioFeePerMin"]["avg"]) + parseFloat(data["MediumFreiAudioFeePerMin"]["std"]),
-                        mean: parseFloat(data["MediumFreiAudioFeePerMin"]["avg"])
+                        min: parseFloat(data["MediumFreiAudioFeePerMin"]["lower"]),
+                        max: parseFloat(data["MediumFreiAudioFeePerMin"]["upper"]),
+                        mean: parseFloat(data["MediumFreiAudioFeePerMin"]["median"])
                     }, {
                         id: "AllFreiAudioFeePerMin",
                         category: "Ø \n alle \n Freiberufler",
-                        min: parseFloat(data["AllFreiAudioFeePerMin"]["avg"]) - parseFloat(data["AllFreiAudioFeePerMin"]["std"]),
-                        max: parseFloat(data["AllFreiAudioFeePerMin"]["avg"]) + parseFloat(data["AllFreiAudioFeePerMin"]["std"]),
-                        mean: parseFloat(data["AllFreiAudioFeePerMin"]["avg"])
-                    }, {
-                        id: "FreischreiberAudioFeePerMin",
-                        category: "Freischreiber Empfehlung",
-                        min: 25,
-                        max: 25,
-                        mean: 25,
-                        charttitle: "Honorar pro Audiominute (€)"
-
+                        min: parseFloat(data["AllFreiAudioFeePerMin"]["lower"]),
+                        max: parseFloat(data["AllFreiAudioFeePerMin"]["upper"]),
+                        mean: parseFloat(data["AllFreiAudioFeePerMin"]["median"]),
+                        charttitle: "Honorar pro Audiominute #(Brutto / Euro)"
                     }];
 
                     gradientboxplot(d3festjson, elementid)
-                }else{
-                  $graphicdiv = $("#"+elementid)
-                  $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
-                }
+                  }else{
+                    var element=document.getElementById("nodata-frei-3")
+                    element.classList.add("show");
+                    element.classList.remove("hide");
+
+                  }
               }else{
-                $graphicdiv = $("#"+elementid)
-                $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
+                var element=document.getElementById("nodata-frei-3")
+                element.classList.add("show");
+                element.classList.remove("hide");
               };
-               elementid = "freigrafikprint"
+
+               elementid = "freigrafiktext"
 
             if ((data["MediumFreiArticleFeePerChar"]) && (data["AllFreiArticleFeePerChar"])) {
-                if ((data["MediumFreiArticleFeePerChar"]["status"] == "Success") && (data["AllFreiArticleFeePerChar"]["status"] == "Success")) {
+                if ((data["MediumFreiArticleFeePerChar"]["status"] == "Success") && (data["AllFreiArticleFeePerChar"]["status"] == "Success")&& (data["MediumFreiArticleFeePerChar"]["median"] != 0) && (data["MediumFreiArticleFeePerChar"]["median"] != 0)) {
                     let d3festjson = [{
                         id: "MediumFreiArticleFeePerChar",
                         category: String(data["mediumname"]),
-                        min: parseFloat(data["MediumFreiArticleFeePerChar"]["avg"]*100) - parseFloat(data["MediumFreiArticleFeePerChar"]["std"]*100),
-                        max: parseFloat(data["MediumFreiArticleFeePerChar"]["avg"]*100) + parseFloat(data["MediumFreiArticleFeePerChar"]["std"]*100),
-                        mean: parseFloat(data["MediumFreiArticleFeePerChar"]["avg"]*100),
+                        min: parseFloat(data["MediumFreiArticleFeePerChar"]["lower"]*1000),
+                        max: parseFloat(data["MediumFreiArticleFeePerChar"]["upper"]*1000),
+                        mean: parseFloat(data["MediumFreiArticleFeePerChar"]["median"]*1000),
                     }, {
                         id: "AllFreiArticleFeePerChar",
                         category: "Ø \n alle \n Freiberufler",
-                        min: parseFloat(data["AllFreiArticleFeePerChar"]["avg"]*100) - parseFloat(data["AllFreiArticleFeePerChar"]["std"]*100),
-                        max: parseFloat(data["AllFreiArticleFeePerChar"]["avg"]*100) + parseFloat(data["AllFreiArticleFeePerChar"]["std"]*100),
-                        mean: parseFloat(data["AllFreiArticleFeePerChar"]["avg"]*100)
-                    }, {
-                        id: "FreischreiberArticleFeePerChar",
-                        category: "Freischreiber Empfehlung",
-                        min: 10,
-                        max: 10,
-                        mean: 100,
-                        charttitle: "Honorar pro hundert Zeichen (€)"
-
+                        min: parseFloat(data["AllFreiArticleFeePerChar"]["lower"]*1000),
+                        max: parseFloat(data["AllFreiArticleFeePerChar"]["upper"]*1000),
+                        mean: parseFloat(data["AllFreiArticleFeePerChar"]["median"]*1000),
+                        charttitle: "Honorar pro 1000 Zeichen #(Brutto / Euro)"
                     }];
 
                     gradientboxplot(d3festjson, elementid)
-                }else{
-                  $graphicdiv = $("#"+elementid)
-                  $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
+                  }else{
+                    var element=document.getElementById("nodata-frei-2")
+                    element.classList.add("show");
+                    element.classList.remove("hide");
 
-                }
+                  }
               }else{
-                $graphicdiv = $("#"+elementid)
-                $graphicdiv.append('<div class="result-text">Leider haben wir keine Daten für diese Kategorie.</div>');
+                var element=document.getElementById("nodata-frei-2")
+                element.classList.add("show");
+                element.classList.remove("hide");
               };
+
         }
 
-        var element = document.getElementById("freigrafikprint");
+        var element = document.getElementById("freigrafiktext");
           element.classList.add("show");
           element.classList.remove("hide");
         var element = document.getElementById("pauschalgrafik1");

@@ -13,16 +13,42 @@ function gradientboxplot(responsejson, elementid) {
 
     height = 400;
 
+    function titlewrap(text, width) {
+      console.log(width)
 
-    const margin = {
+      text.each(function() {
+        var text = d3.select(this),
+            words = text.text().split("#").reverse(),
+            word,
+            line = [],
+            lineNumber = 0,
+            lineHeight = 1.3, // ems
+            y = text.attr("y"),
+            dy = parseFloat(text.attr("dy")),
+            tspan = text.text(null).append("tspan").attr("x", 10).attr("y", y).attr("dy", dy + "em");
+        while (word = words.pop()) {
+          line.push(word);
+          tspan.text(line.join(" "));
+          if (tspan.node().getComputedTextLength() > width) {
+            line.pop();
+            tspan.text(line.join(" "));
+            line = [word];
+            tspan = text.append("tspan").attr("x", 10).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+          }
+        }
+      });
+    }
+
+
+    let margin = {
         top: 30,
-        right: 5,
+        right: 10,
         bottom: 30,
         left: 30,
     };
 
     barwidth = width / 25;
-    elementid = "#" + elementid
+    elementidhash = "#" + elementid
     console.log(elementid)
     console.log(responsejson);
     console.log(width);
@@ -30,8 +56,9 @@ function gradientboxplot(responsejson, elementid) {
 
 
     var svg = d3
-        .select(elementid)
+        .select(elementidhash)
         .append("svg")
+        .attr("id",(String(elementid)+"_svg"))
         .attr('xmlns', 'http://www.w3.org/2000/svg')
         .attr('xmlns', 'http://www.w3.org/1999/xlink')
         .attr('version', '1.1')
@@ -43,18 +70,7 @@ function gradientboxplot(responsejson, elementid) {
         .attr("fill", "black");
 
 
-    svg
-        .append("text")
-        .attr("class","title")
-        .attr("transform", "rotate(0)")
-        .attr("x", 0)
-        .attr("y", 0)
-        .attr("stroke", "white")
-        .attr("fill", "white")
-        .attr("font-size", "12")
 
-        .style("text-anchor", "left")
-        .text(responsejson[2].charttitle);
 
 
     let maxY = d3.max(responsejson, function(d) {
@@ -65,6 +81,22 @@ function gradientboxplot(responsejson, elementid) {
     });
     height = height - margin.top-margin.bottom;
     width   = width- margin.left-margin.right;
+
+    svg
+        .append("text")
+        .attr("class","title")
+        .attr("transform", "rotate(0)")
+        .attr("x", 0)
+        .attr("y", -30)
+        .attr("dy", 1)
+
+        .attr("stroke", "white")
+        .attr("fill", "white")
+        .attr("font-size", "12")
+        .style("text-anchor", "start")
+        .text(responsejson[1].charttitle)
+        .call(titlewrap, (width-70))
+;
 
     function wrap(text, width) {
       console.log(width)
@@ -92,6 +124,8 @@ function gradientboxplot(responsejson, elementid) {
       });
     }
 
+
+
     function gradient(colour, id, y1, y2, off1, off2, op1, op2) {
         //gradient function.
         //defines the gradient
@@ -117,13 +151,13 @@ function gradientboxplot(responsejson, elementid) {
             .append("stop")
             .attr("stop-color", colour)
             .attr("class", "middle")
-            .attr("offset", "20%")
+            .attr("offset", "25%")
             .attr("stop-opacity", op2);
         d3.select(idtag)
             .append("stop")
             .attr("stop-color", colour)
             .attr("class", "middle")
-            .attr("offset", "80%")
+            .attr("offset", "75%")
             .attr("stop-opacity", op2);
         //and the finish
         d3.select(idtag)
@@ -134,20 +168,27 @@ function gradientboxplot(responsejson, elementid) {
             .attr("stop-opacity", op1);
 
     }
+
+    margin = {
+        top: 40,
+        right: 5,
+        bottom: 30,
+        left: 40,
+    };
     xscale = d3
         .scaleBand()
-        .domain([responsejson[0].category, responsejson[1].category, responsejson[2].category])
+        .domain([responsejson[0].category, responsejson[1].category])
         .range([margin.left, width - margin.right]);
 
     colorscale = d3
         .scaleOrdinal()
-        .domain([responsejson[0].category, responsejson[1].category, responsejson[2].category])
-        .range(["#2ecc71", "#2ecc71", "#2ecc71"]);
+        .domain([responsejson[0].category, responsejson[1].category])
+        .range(["#2ecc71", "#2ecc71"]);
 
     colorscaleellipse = d3
         .scaleOrdinal()
-        .domain([responsejson[0].category, responsejson[1].category, responsejson[2].category])
-        .range(["#ecf0f1", "#ecf0f1", "#ecf0f1"]);
+        .domain([responsejson[0].category, responsejson[1].category])
+        .range(["#ecf0f1", "#ecf0f1"]);
 
     var xband = xscale.bandwidth();
     var step = xscale.step();
@@ -260,7 +301,7 @@ function gradientboxplot(responsejson, elementid) {
           .style("stroke", "white")
           .style("fill", "white")
           .style('font-size', '1.2em')
-          .style('font-family', 'Open Sans')
+          .style('font-family', 'OpenSans-Regular')
 
 
       .call(wrap, (xscale.bandwidth()));
@@ -275,7 +316,7 @@ function gradientboxplot(responsejson, elementid) {
         .style("stroke", "white")
         .style("fill", "white")
         .style('font-size', '1.2em')
-        .style('font-family', 'Open Sans');
+        .style('font-family', 'OpenSans-Regular');
 
     svg
         .selectAll("line")
@@ -290,7 +331,7 @@ function gradientboxplot(responsejson, elementid) {
             .style("stroke", "white")
             .style("fill", "white")
             .style('font-size', '0.7em')
-            .style('font-family', 'Open Sans');
+            .style('font-family', 'OpenSans-Regular');
 
             element.classList.add("hide");
             element.classList.remove("show");
