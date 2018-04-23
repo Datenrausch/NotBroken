@@ -362,8 +362,12 @@
                                         <span class="closebtn" onclick="hidedenied2()">&times;</span>
                                         <strong>Achtung! </strong>Du musst ein Medium definieren.
                                         </div>
+										<div class="alert-denied alert-media-select hide" id="WARNING_unkown">
+                                        <span class="closebtn" onclick="hidedenied3()">&times;</span>
+                                        <strong>Achtung! </strong>Dieses Medium ist uns unbekannt. Hast du dich vertippt?
+                                        </div>
                                         <!-- Submit -->
-                                        <!--<a href="#break-2">--><input type="submit" class="submit-giv hide" id="analyse_submit" value="Daten auslesen" /><!--</a>-->
+                                        <input type="submit" class="submit-giv show" id="analyse_submit" value="Daten auslesen" disabled/>
 
                                     </form>
                                 </div>
@@ -439,13 +443,13 @@
                         <div class="fact-text">
                             <div class="result-happiness-grid">
                                 <div class="happiness-result happiness-result-frei" id="">
-                                    <input name="" id="result_athmosphaere-frei" class="range result_happiness-bar result_happiness-1" type="range" min="1" max="9" value="0" disabled/>
+                                    <input name="" id="result_athmosphaere-frei" class="range result_happiness-bar result_happiness-0" type="range" min="1" max="9" value="0" disabled/>
                                 </div>
                                 <div class="happiness-result happiness-result-pauschal" id="">
-                                    <input name="" id="result_athmosphaere-pauschal" class="range result_happiness-bar result_happiness-1" type="range" min="1" max="9" value="0" disabled/>
+                                    <input name="" id="result_athmosphaere-pauschal" class="range result_happiness-bar result_happiness-0" type="range" min="1" max="9" value="0" disabled/>
                                 </div>
                                 <div class="happiness-result happiness-result-fest" id="">
-                                    <input name="" id="result_athmosphaere-fest" class="range result_happiness-bar result_happiness-1" type="range" min="1" max="9" value="0" disabled/>
+                                    <input name="" id="result_athmosphaere-fest" class="range result_happiness-bar result_happiness-0" type="range" min="1" max="9" value="0" disabled/>
                                 </div>
                             </div>
 

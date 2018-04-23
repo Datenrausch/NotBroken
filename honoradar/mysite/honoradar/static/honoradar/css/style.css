@@ -4939,10 +4939,18 @@ input[type=range].result_happiness-9::-ms-thumb {
 	height: 400px;
 }
 
+#freigrafik1, #freigrafiktext, #freigrafikaudio, #freigrafikvideo {
+
+}
+
+#pauschalgrafik1, #festgrafik1 {
+	
+}
+
 .nodata {
 	width: auto;
 	height: auto;
-	margin-top: calc(50% - 100px);
+	margin-top: calc(40% - 100px);
 	display: inline-block;
 	font-size: 3em;
 	color: white;
@@ -4950,6 +4958,7 @@ input[type=range].result_happiness-9::-ms-thumb {
 	border: 3px solid white;
 	border-radius: 100%;
 	background: rgba(244, 67, 54, 0.85);
+	
 }
 
 .nodata:after {
@@ -4960,9 +4969,102 @@ input[type=range].result_happiness-9::-ms-thumb {
 	margin: 110px auto auto -120px;
 }
 
-#freigrafiktext, #freigrafikaudio, #freigrafikvideo {
+@media (max-width: 1800px)	{
+	.nodata {
+		margin-top: calc(50% - 100px);
+	}
+}
+
+@media (max-width: 1600px)	{
+	.nodata {
+		margin-top: calc(60% - 100px);
+	}
+}
+
+@media (max-width: 1350px)	{
+	.nodata {
+		margin-top: calc(70% - 100px);
+	}
+}
+
+@media (max-width: 1150px)	{
+	.nodata {
+		margin-top: calc(80% - 100px);
+	}
+	.nodata:after {
+		font-size: 0.25em;
+		margin: 110px auto auto -110px;
+	}
+}
+
+@media (max-width: 1100px)	{
+	.nodata {
+		margin-top: calc(60% - 100px);
+	}
+	.nodata:after {
+	font-size: 0.3em;
+	margin: 110px auto auto -120px;
+	}
+}
+
+@media (max-width: 900px)	{
+	.nodata {
+		margin-top: calc(70% - 100px);
+	}
+}
+
+@media (max-width: 800px)	{
+	.nodata {
+		margin-top: calc(80% - 100px);
+	}
+	.nodata:after {
+		font-size: 0.25em;
+		margin: 110px auto auto -110px;
+	}
+}
+
+@media (max-width: 700px)	{
+	.nodata {
+		margin-top: calc(90% - 100px);
+	}
+}
+
+@media (max-width: 650px)	{
+	.nodata {
+		margin-top: calc(50% - 100px);
+	}
+	.nodata:after {
+	font-size: 0.3em;
+	margin: 110px auto auto -120px;
+	}
+}
+
+@media (max-width: 550px)	{
+	.nodata {
+		margin-top: calc(60% - 100px);
+	}
+}
+
+@media (max-width: 400px)	{
+	.nodata {
+		margin-top: calc(70% - 100px);
+	}
+	.nodata:after {
+		font-size: 0.25em;
+		margin: 110px auto auto -110px;
+	}
+}
+
+@media (max-width: 350px)	{
+	.nodata {
+		margin-top: calc(80% - 100px);
+	}
+}
+
+#freigrafik1, #freigrafik2, #freigrafik3, #freigrafiktext, #freigrafikaudio, #freigrafikvideo {
 	display: inline-block;
 }
+
 
 /*Mechanics*/
 
@@ -4978,6 +5080,13 @@ input[type=range].result_happiness-9::-ms-thumb {
 	display: block;
 }
 
-.nodata.show {
-	display: inline-block !important;
+
+
+#pauschalgrafik1.show, #festgrafik1.show, #pauschalgrafik1.nodata, #festgrafik1.nodata {
+	display: inline-block;
+}
+
+#freigrafik1 div.nodata.show, #freigrafiktext div.nodata.show, #freigrafikaudio div.nodata.show, 
+#freigrafikvideo div.nodata.show, #pauschalgrafik1 div.nodata.show, #festgrafik1 div.nodata.show {
+	display: inline-block;
 }
