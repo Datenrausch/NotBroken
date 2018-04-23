@@ -4686,54 +4686,6 @@ input[type=range].result_happiness-9::-ms-thumb {
 	padding: 10px;
 }
 
-/*Result Comments*/
-
-.result-comments {
-	background-color: white;
-	border-radius: 10px;
-	width: 100%;
-	display: inline-block;
-	min-height: 127px;
-	margin-top: 30px;
-	font-family: OpenSans-Regular;
-	padding: 30px 30px 30px 30px;
-	color: #243040;
-	overflow: hidden;
-	text-align: center;
-	line-height: 127px;
-}
-
-.result-comments p {
-	display: inline-block;
-	vertical-align: middle;
-	line-height: normal;
-	font-size: 1em;
-}
-
-@media (min-width: 800px)	{
-	.result-comments {
-		padding: 30px 50px 30px 50px;
-	}
-}
-
-@media (min-width: 1000px)	{
-	.result-comments {
-		padding: 30px 90px 30px 90px;
-	}
-}
-
-@media (min-width: 1100px)	{
-	.result-comments {
-		padding: 30px 50px 30px 50px;
-	}
-}
-
-@media (min-width: 1400px)	{
-	.result-comments {
-		padding: 30px 90px 30px 90px;
-	}
-}
-
 /*Bedingung Get*/
 
 .bedingung-container {
@@ -5061,12 +5013,71 @@ input[type=range].result_happiness-9::-ms-thumb {
 	}
 }
 
+/*Result Comments*/
+
+.result-comments {
+	background-color: white;
+	border-radius: 10px;
+	width: 100%;
+	display: inline-block;
+	min-height: 127px;
+	margin-top: 30px;
+	font-family: OpenSans-Regular;
+	padding: 30px 30px 30px 30px;
+	color: #243040;
+	overflow: hidden;
+	text-align: center;
+	line-height: 127px;
+}
+
+.result-comments p {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: normal;
+	font-size: 1em;
+}
+
+.result-comments p.hide {
+	display: none;
+}
+
+@media (min-width: 800px)	{
+	.result-comments {
+		padding: 30px 50px 30px 50px;
+	}
+}
+
+@media (min-width: 1000px)	{
+	.result-comments {
+		padding: 30px 90px 30px 90px;
+	}
+}
+
+@media (min-width: 1100px)	{
+	.result-comments {
+		padding: 30px 50px 30px 50px;
+	}
+}
+
+@media (min-width: 1400px)	{
+	.result-comments {
+		padding: 30px 90px 30px 90px;
+	}
+}
+
+#comment-1 {
+	transition-duration: 1s;
+    -webkit-transition: mymove infinite; /* Safari 4.0 - 8.0 */
+    -webkit-transition-duration: 3s; /* Safari 4.0 - 8.0 */
+    transition: mymove infinite;
+    transition-duration: 3s;
+}
+
+/*Mechanics*/
+
 #freigrafik1, #freigrafik2, #freigrafik3, #freigrafiktext, #freigrafikaudio, #freigrafikvideo {
 	display: inline-block;
 }
-
-
-/*Mechanics*/
 
 .hide {
 	display: none;
@@ -5080,8 +5091,6 @@ input[type=range].result_happiness-9::-ms-thumb {
 	display: block;
 }
 
-
-
 #pauschalgrafik1.show, #festgrafik1.show, #pauschalgrafik1.nodata, #festgrafik1.nodata {
 	display: inline-block;
 }
@@ -5090,3 +5099,9 @@ input[type=range].result_happiness-9::-ms-thumb {
 #freigrafikvideo div.nodata.show, #pauschalgrafik1 div.nodata.show, #festgrafik1 div.nodata.show {
 	display: inline-block;
 }
+
+
+#userAsCat {
+	display:none;
+}
+
