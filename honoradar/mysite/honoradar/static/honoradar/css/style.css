@@ -5065,14 +5065,6 @@ input[type=range].result_happiness-9::-ms-thumb {
 	}
 }
 
-#comment-1 {
-	transition-duration: 1s;
-    -webkit-transition: mymove infinite; /* Safari 4.0 - 8.0 */
-    -webkit-transition-duration: 3s; /* Safari 4.0 - 8.0 */
-    transition: mymove infinite;
-    transition-duration: 3s;
-}
-
 /*Mechanics*/
 
 #freigrafik1, #freigrafik2, #freigrafik3, #freigrafiktext, #freigrafikaudio, #freigrafikvideo {
