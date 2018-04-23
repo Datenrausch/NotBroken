@@ -339,7 +339,7 @@ em {
 
 .panel {
 	height: 100vh;
-	background: url(../image/parallax_3.jpg) no-repeat 0% 0%;
+	background: url(../image/parallax_1.jpg) no-repeat 0% 0%;
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
@@ -347,6 +347,24 @@ em {
 	justify-content: left;
 	align-items: flex-end;
 	position: absolute;
+}
+
+@media (max-width: 1600px)	{
+	.panel {
+		background: url(../image/parallax_2.jpg) no-repeat 0% 0%;
+		background-position: center;
+		background-size: cover;
+		background-attachment: fixed;
+	}
+}
+
+@media (max-width: 400px)	{
+	.panel {
+		background: url(../image/parallax_3.jpg) no-repeat 0% 0%;
+		background-position: center;
+		background-size: cover;
+		background-attachment: fixed;
+	}
 }
 
 .head-title {
@@ -571,21 +589,9 @@ em {
 	}
 }
 
-@media (min-width: 900px)	{
-	.panel {
-		background: url(../image/parallax_2.jpg) no-repeat 0% 0%;
-		background-position: center;
-		background-size: cover;
-		background-attachment: fixed;
-	}
-}
-
 @media (min-width: 1600px)	{
 	.panel {
-		background: url(../image/parallax_1.jpg) no-repeat 0% 0%;
-		background-position: center;
-		background-size: cover;
-		background-attachment: fixed;
+
 	}
 }
 
