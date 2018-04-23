@@ -47,14 +47,14 @@
 
     <!-- General SEO -->
     <meta name="author" content="Michel Penke">
-    <meta name="title" content="Newsletter">
+    <meta name="title" content="Kontakt & Fragen">
     <meta name="description" content="XXX">
-    <meta name="keywords" content="newsletter,abo,anmeldung">
+    <meta name="keywords" content="kontakt,fragen,mail">
 
 </head>
 
 <body>
-    <title>Newsletter</title>
+    <title>Kontakt & Fragen</title>
 
 <!-- Navbar -->
     <a href="#cd-nav" class="cd-nav-trigger clear-fixed">Menu
@@ -105,74 +105,32 @@
 	<div class="text-feld">
 	
 <!-- Titel-Box-->
-	<h1 class="text-title">Newsletter-Anmeldung</h1>
+	<h1 class="text-title">Kontakt & Fragen</h1>
 	
 <!-- Teaser -->
 	<div class="teaser-box teaser-box-abstand">
-	Willst du die großen Jahres-Analysen lesen und über Neuigkeiten informiert werden? Dann melde dich beim Newsletter an. 
-	
+	Du willst uns kontaktieren? Kein Problem. Wir sind per Mail oder über die sozialen Netzwerke erreichbar. 
 	</div>
-
+	
 <!-- Text-Box -->
+	<h2 class="zwischentitel offset-2">An die Freischreiber</h2>
 	<p class="text-box offset-2">
-	Einmal im Jahr veröffentlichen wir den Freischreiber-Report mit einer Analyse der deutschsprachigen Medienlandschaft und einem Honorar- und Gehalts-Ranking.
-	Wenn wir dich informieren sollen, sobald es soweit ist, trage dich in den Newsletter ein. 
+	Der erreichst den Freischreiber-Verband <a href="mailto:kontakt@freischreiber.de">per Mail</a> oder telefonisch unter der <a href="tel:04022867152">040 – 22 86 71 52</a>. 
+	Wenn du einen Brief schreiben willst, adressiere ihn an das <a href="//maps.google.com/maps?q=Hoheluftchaussee+53A,+20253+Hamburg/" class="clear-navi" data-lity>
+	Büro Freischreiber e.V.</a> in der Hoheluftchaussee 53a, 20253 Hamburg 24.
 	</p>
 	
-<!-- Newsletter-Script -->
-	<script type="text/javascript">
-	//<![CDATA[
-	if (typeof newsletter_check !== "function") {
-	window.newsletter_check = function (f) {
-		var re = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-]{1,})+\.)+([a-zA-Z0-9]{2,})+$/;
-		if (!re.test(f.elements["ne"].value)) {
-			alert("Diese Email ist nicht korrekt. ");
-			return false;
-		}
-		for (var i=1; i<20; i++) {
-		if (f.elements["np" + i] && f.elements["np" + i].required && f.elements["np" + i].value == "") {
-			alert("");
-			return false;
-		}
-		}
-		if (f.elements["ny"] && !f.elements["ny"].checked) {
-			alert("Du musst die Datenschutz-AGBs akzeptieren. ");
-			return false;
-		}
-		return true;
-	}
-	}
-	//]]>
-	</script>
-	<div class="align">
-	<div id="" class="newsletter-box grid">
-	<h2 class="newsletter-box-title">Newsletter: Freischreiber-Reporte</h2>
-	<form method="post" action="http://michelpenke.de/?na=s" onsubmit="return newsletter_check(this)">
-	<fieldset id="fieldset">
-		<p><input class="email-select" type="email" id="email" name="ne" size="30" placeholder="Deine Emailadresse ..." required></p>
-				<div style="display: none;">
-					<input type="checkbox" name="nl[]" value="1" checked/>Was-Journalisten-Verdienen<br />
-				</div>
-		<p><input name="AGB" class="checkbox-newsletter" name="ny" type="checkbox" id="data_checkbox" required/>
-		<label class="checkboxlabel-newsletter" for="data_checkbox"></label>
-		<span class="checkboxtext-newsletter">Ich akzeptiere die <a href="../../../static/honoradar/artikel/datenschutz.html" target="_blank" class="clear-agb">Datenschutz-AGBs</a> dieser Seite.</span></p>
-		<input class="submit-newsletter" type="submit" value="Abonnieren"/>
-	</fieldset>
-      </form>
-    </div>
-	</div>
-	
 	<p class="text-box offset-2">
-	Wir schicken dir maximal zwei, drei Mal pro Jahr eine Mail – keinesfalls häufiger. Kein Spam. Versprochen!
+	Auf <a href="https://www.facebook.com/Freischreiber.de/">Facebook</a> findest du die Freischreiber ebenso wie auf <a href="https://twitter.com/freischreiber?lang=de">Twitter</a>. 
+	Und wenn du vorher noch ein wenig recherchieren willst: Es gibt auch eine <a href="https://de.wikipedia.org/wiki/Freischreiber">Wikipedia</a>-Seite. 
 	</p>
-
 	
-	<p class="text-box offset-2">
-	Falls du mehr über die Freischreiber, den Berufsverband der freien Journalisten, erfahren willst, kannst du dich für den <a href="https://www.freischreiber.de/service/newsletter/" target="_blank">Freischreiber-Newsletter</a> anmelden. 
-	Er liefert Infos rund um die Arbeit als Freelancer, Tipps zu Weiterbildungen und Veranstaltungen sowie News, die deine Arbeit als Freier betreffen könnten.
-	Der Newsletter wird meist alle zwei bis drei Wochen verschickt. 	
+	<h2 class="zwischentitel offset-3">An die Programmierer</h2>
+	<p class="text-box offset-3">
+	Falls du Fragen an die <a href="../../../static/honoradar/artikel/credits.html">Programmierer</a> hast, schicke uns einfach eine <a href="mailto:wasjournalistenverdienen@michelpenke.de">Mail</a>. 
+	Ansonsten findest du uns in den sozialen Netzwerken: zum Beispiel bei Twitter (<a href="https://twitter.com/halukamb">Haluka</a> & <a href="https://twitter.com/michelpenke">Michel</a>). 
 	</p>
-
+	   
 	</div>
 
 <!-- Social Share -->
