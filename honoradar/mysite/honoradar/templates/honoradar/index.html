@@ -399,8 +399,12 @@
                                         <span class="closebtn" onclick="hidedenied2()">&times;</span>
                                         <strong>Achtung! </strong>Du musst ein Medium definieren.
                                         </div>
+										<div class="alert-denied alert-media-select hide" id="WARNING_unkown">
+                                        <span class="closebtn" onclick="hidedenied3()">&times;</span>
+                                        <strong>Achtung! </strong>Dieses Medium ist uns unbekannt. Hast du dich vertippt?
+                                        </div>
                                         <!-- Submit -->
-                                        <!--<a href="#break-2">--><input type="submit" class="submit-giv hide" id="analyse_submit" value="Daten auslesen" /><!--</a>-->
+                                        <input type="submit" class="submit-giv show" id="analyse_submit" value="Daten auslesen" disabled/>
 
                                     </form>
                                 </div>
@@ -476,19 +480,26 @@
                         <div class="fact-text">
                             <div class="result-happiness-grid">
                                 <div class="happiness-result happiness-result-frei" id="">
-                                    <input name="" id="result_athmosphaere-frei" class="range result_happiness-bar result_happiness-1" type="range" min="1" max="9" value="0" disabled/>
+                                    <input name="" id="result_athmosphaere-frei" class="range result_happiness-bar result_happiness-0" type="range" min="1" max="9" value="0" disabled/>
                                 </div>
                                 <div class="happiness-result happiness-result-pauschal" id="">
-                                    <input name="" id="result_athmosphaere-pauschal" class="range result_happiness-bar result_happiness-1" type="range" min="1" max="9" value="0" disabled/>
+                                    <input name="" id="result_athmosphaere-pauschal" class="range result_happiness-bar result_happiness-0" type="range" min="1" max="9" value="0" disabled/>
                                 </div>
                                 <div class="happiness-result happiness-result-fest" id="">
-                                    <input name="" id="result_athmosphaere-fest" class="range result_happiness-bar result_happiness-1" type="range" min="1" max="9" value="0" disabled/>
+                                    <input name="" id="result_athmosphaere-fest" class="range result_happiness-bar result_happiness-0" type="range" min="1" max="9" value="0" disabled/>
                                 </div>
                             </div>
 
-                            <div class="result-comments">
-                                <p>Hier erscheinen später gespendete Kommentare der User. Hier erscheinen später gespendete Kommentare der User. Hier erscheinen später gespendete Kommentare der User.
-                                </p>
+                            <div id="result-comments" class="result-comments">
+                                <p class="comment hide" id="comment-1">TEST 1: Diese Website ist sooo toll!</p>
+								<p class="comment hide" id="comment-2">TEST 2: Na ja, die Datenbank is eher langsam.</p>
+								<p class="comment hide" id="comment-3">TEST 3: Riecht ein bisschen fishy.</p>
+								<p class="comment hide" id="comment-4">TEST 4: Hallo? Hallo? Ich würde gerne meine Oma grüßen!</p>
+								<p class="comment hide" id="comment-5">TEST 5: Haluuuuuuuka!.</p>
+								<p class="comment hide" id="comment-6">TEST 6: Mach mal die Function rekursiv!</p>
+								<p class="comment hide" id="comment-7">TEST 7: Und denk drüber nach ...</p>
+								<p class="comment hide" id="comment-8">TEST 8: ... was passiert, wenn n(comments) < n(platzhalter)</p>
+								<p class="comment hide" id="comment-9">TEST 9: Da haben wir sonst nämlich whitespace. Not geil. </p>
                             </div>
                         </div>
                     </div>
