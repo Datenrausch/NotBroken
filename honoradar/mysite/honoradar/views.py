@@ -13,6 +13,8 @@ from django.http import JsonResponse
 import math
 import json
 import io
+from random import shuffle
+
 
 def StdAvgFunction(entries, column):
     ids = list(entries.values_list(column, flat=True))
@@ -1322,8 +1324,20 @@ def getdata(request):
 
             print("Enough Data Frei")
             Mediumdict.update(MediumFreiContext)
+            AllMedium=DataCollection.objects.filter(Medium__mediumname=MediumName)
+            comments = list(AllMedium.values_list("Comment", flat=True))
+            comments = list(filter(None, comments))
+            if len(comments)==0:
+                comments.append("Leider haben wir keine Kommentare für dieses Medium")
+            while (len(comments))<9:
+                comments.extend(comments)
+            shuffle(comments)
+            while (len(comments))>9:
+                comments.pop()
+            print(comments)
+            MediumComments={"MediumComments":comments}
+            Mediumdict.update(MediumComments)
 
-        print(Mediumdict)
         return JsonResponse(Mediumdict)
 
 
