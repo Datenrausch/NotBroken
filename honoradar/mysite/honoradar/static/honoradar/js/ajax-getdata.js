@@ -142,7 +142,6 @@ $(document).ready(function() {
                   element.classList.remove("hide");
 
                   for (i = 0; i < 9; i++) {
-                    Commenttext=(listofcomments[i])
                     commentid="comment-"+String(i+1)
                     console.log(commentid)
                     var element = document.getElementById(commentid);
