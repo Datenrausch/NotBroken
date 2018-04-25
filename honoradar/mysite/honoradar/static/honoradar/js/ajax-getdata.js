@@ -406,6 +406,7 @@ $(document).ready(function() {
                 element.innerHTML=Commenttext}
         };
 
+
         var element = document.getElementById("freigrafiktext");
           element.classList.add("show");
           element.classList.remove("hide");
@@ -421,10 +422,42 @@ $(document).ready(function() {
             element.classList.add("show");
             element.classList.remove("hide");
 
+            		//	var startTimer = Date.now();
+            		//	var endTimer = startTimer+900000;
+            		//if(startTimer<endTimer){
+
         console.log(textStatus)
         console.log(jqXHR)
         $myForm[0].reset(); // reset form data
         smoothfunction()
+
+        
+
+          document.getElementById("comment-1").style.display="inline-block";
+          setTimeout(function(){document.getElementById("comment-1").style.display="none";
+          document.getElementById("comment-2").style.display="inline-block"},5000);
+
+          setTimeout(function(){document.getElementById("comment-2").style.display="none";
+          document.getElementById("comment-3").style.display="inline-block"},10000);
+
+          setTimeout(function(){document.getElementById("comment-3").style.display="none";
+          document.getElementById("comment-4").style.display="inline-block"},15000);
+
+          setTimeout(function(){document.getElementById("comment-4").style.display="none";
+          document.getElementById("comment-5").style.display="inline-block"},20000);
+
+          setTimeout(function(){document.getElementById("comment-5").style.display="none";
+          document.getElementById("comment-6").style.display="inline-block"},25000);
+
+          setTimeout(function(){document.getElementById("comment-6").style.display="none";
+          document.getElementById("comment-7").style.display="inline-block"},30000);
+
+          setTimeout(function(){document.getElementById("comment-7").style.display="none";
+          document.getElementById("comment-8").style.display="inline-block"},35000);
+
+          setTimeout(function(){document.getElementById("comment-8").style.display="none";
+          document.getElementById("comment-9").style.display="inline-block"},40000);
+
     }
 
     function handleFormErrorGet(jqXHR, textStatus, errorThrown) {
