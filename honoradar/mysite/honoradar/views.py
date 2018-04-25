@@ -410,7 +410,7 @@ def senddata(request):
                         pass
                     else:
                         sanitycheck = 1
-                        messages.info(request, 'Mediumsart')
+                        messages.info(request, 'Format des Mediums')
 
 
                     if VideoAudioTextFree == "video":
@@ -624,7 +624,7 @@ def senddata(request):
                         pass
                     else:
                         sanitycheck = 1
-                        messages.info(request, 'Mediumformat')
+                        messages.info(request, 'Format des Mediums')
 
 
                     if VideoAudioTextFree == "video":
@@ -887,7 +887,7 @@ def senddata(request):
                         pass
                     else:
                         sanitycheck = 1
-                        messages.info(request, 'Mediumsart')
+                        messages.info(request, 'Format des Mediums')
 
                         if float(Happiness) != 1:
                             pass
@@ -1069,7 +1069,7 @@ def senddata(request):
                         pass
                     else:
                         sanitycheck = 1
-                        messages.info(request, 'Mediumsart')
+                        messages.info(request, 'Format des Mediums')
                         if float(Happiness) != 1:
                             pass
                         else:

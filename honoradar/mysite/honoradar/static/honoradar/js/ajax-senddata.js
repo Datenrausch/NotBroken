@@ -71,7 +71,7 @@ $(document).ready(function() {
                 if ((String(data[keyname])) == "Gehalt") {
                     document.getElementById('data_gehalt').classList.add("alert");
                 }
-                if ((String(data[keyname])) == "Mediumformat") {
+                if ((String(data[keyname])) == "Format des Mediums") {
                     document.getElementById('data_format_text_audio_video').classList.add("alert-switch");
                 };
                 if ((String(data[keyname])) == "Anzahl an Zeichen für den Artikel") {
