@@ -79,6 +79,8 @@
 	hyphens: auto; 
 }
 
+
+
 /*Auorenbox*/
 
 .autoren-box {
@@ -319,6 +321,8 @@
 }
 }
 
+
+
 /*Tabellen-Styling*/
 
 table {
@@ -471,6 +475,15 @@ td.text-left, td.text-right, th.text-left, th.text-right {
 	margin: 30px auto 30px 24%;
 }
 
+.newsletter-box-right {
+	margin: 30px auto 30px 24%;
+}
+
+@media (min-width: 1200px)	{
+	.newsletter-box-right {
+		margin: 30px auto 30px 34%;
+	}
+}
 
 @media (max-width: 1100px)	{
 	.newsletter-box {
@@ -500,6 +513,18 @@ td.text-left, td.text-right, th.text-left, th.text-right {
 	.newsletter-box {
 		width: 90%;
 	}
+}
+
+@media (max-width: 1200px)	{
+	.newsletter-text {
+		margin-left: 20%;
+	}
+}
+
+@media (max-width: 	650px)	{
+	.newsletter-text {
+		margin-left: 0%;
+	}	
 }
 
 .newsletter-box fieldset {
@@ -676,3 +701,18 @@ td.text-left, td.text-right, th.text-left, th.text-right {
 	-o-transition-delay: all 400ms ease;
 	border: solid 3px #27ae60;
 }
+
+.submit-newsletter:hover {
+	background: #fff;
+	color: #27ae60;
+	transition: all ease 0.5s;
+	-webkit-transition: all ease 0.5s;
+	-o-transition: all ease 0.5s;
+	-moz-transition: all ease 0.5s;
+	transition-delay: all 400ms ease;
+	-webkit-transition-delay: all 400ms ease;
+	-moz-transition-delay: all 400ms ease;
+	-o-transition-delay: all 400ms ease;
+	border: solid 3px #27ae60;
+}
+
