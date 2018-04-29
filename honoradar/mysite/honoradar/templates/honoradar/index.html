@@ -56,8 +56,8 @@
     <!-- Parallax -->
     <div class="panel">
         <h1 class="head-title">Was verdienen Journalisten?</h1>
-        <h2 class="head-subtitle-1">Die Antwort gibt's hier: Erfahre, was deine Kollegen verdienen – oder spende selbst deine Daten.</h2>
-        <h2 class="head-subtitle-2">Bisher spendeten Journalisten 1.245 Daten zu 134 Medien.</h2>
+        <h2 class="head-subtitle-1">Die Antwort gibt's hier: Erfahre kostenlos, was Kollegen verdienen – oder trage selbst anonym deine Daten ein.</h2>
+        <h2 class="head-subtitle-2">Bisher legten Journalisten 1.245 Gehälter und Honorare bei 134 Medien offen.</h2>
 
         <a href="#banderole" id="machmit" class="smooth clear-absolute"><h3 class="head-action">Mach mit!</h3></a>
         <div class="head-box-1"></div>
@@ -303,28 +303,28 @@
                         <span class="closebtn" onclick="hidedenied()">&times;</span>
                         <strong>Achtung! </strong>Bitte fülle folgende Felder aus: Feld1, Feld2 und Feld2.
                     </div>
-                    <input type="submit" linkdirection="#banderole" class="submit-get show" id="data_submit" value="Daten spenden" disabled/>
+                    <input type="submit" linkdirection="#banderole" class="submit-get show" id="data_submit" value="Daten senden" disabled/>
 
                 </form>
 
                 <!-- After-Submit Accpeted -->
                 <div class="alert alert-accepted alert-media-select hide" id="ACCEPTED">
-                    <span class="closebtn" onclick="hideaccepted()">&times;</span> Wir haben deine Infos in die Datenbank aufgenommen.
+                    <span class="closebtn" onclick="hideaccepted()">&times;</span><strong>Vielen Dank!</strong> Wir haben deine Infos in die Datenbank aufgenommen.
                 </div>
 
                 <!-- Newsletter-Anmeldung -->
-                <p class="after-submit-text hide" id="after-submit-text-1">Einmal im Jahr werten wir alle Daten aus und veröffentlichen den Freischreiber-Report – inklusive der besten Arbeitgeber. Falls gewünscht, informieren wir dich via Newsletter.
+                <p class="after-submit-text hide" id="after-submit-text-1">Einmal im Jahr werten wir alle Daten aus und veröffentlichen den Freischreiber-Report. Falls gewünscht, informieren wir dich via Newsletter.
                 </p>
                 <a href="{% static "/honoradar/artikel/newsletter.html"%}">
-                    <input type="submit" class="submit hide" id="newsletter_submit" value="Newsletter-Abo" />
+                    <input type="submit" class="submit hide" id="newsletter_submit" value="Newsletter" />
                 </a>
 
                 <!-- Reload -->
-                <p class="after-submit-text hide" id="after-submit-text-2">Wenn du noch mehr Daten spenden möchtest, freuen wir uns natürlich. Oder erzähl deinen Kollegen hiervon, sodass sie auch Daten spenden. Je mehr, desto besser für alle.
+                <p class="after-submit-text hide" id="after-submit-text-2">Hast du noch mehr Daten für uns? Ansonsten erzähle doch deinen Kollegen hiervon. Je mehr Gehalts- und Honorar-Daten, desto besser für alle.
                 </p>
 
                 <a href="#banderole" class="smooth">
-                    <input type="submit" linkdirection="#result" class="submit submit-reload hide" id="reload_submit" value="Erneut spenden" onmousedown="reload()" ontouchstart="reload()" />
+                    <input type="submit" linkdirection="#result" class="submit submit-reload hide" id="reload_submit" value="Dateneingabe" onmousedown="reload()" ontouchstart="reload()" />
                 </a>
 
             </div>
@@ -374,10 +374,33 @@
 
 
             <!-- Grafik-Box -->
-            <div class="result hide" id="result">
+            <div class="result show" id="result">
 
                 <!-- Mediumname -->
-                <div class="result-mediumname" id="result-mediumname">Nürnberger Nachrichten</div>
+                <div class="result-mediumname" id="result-mediumname">Mediumsname</div>
+				
+				<!-- Code of Fairness & Quellenanzahl-->
+				<div class="result-facts" id="result-facts">
+					<div class="codeoffairness denied" id="codeoffairness">
+					<div class="codeoffairness-symbol">
+						<span></span>
+						<p class="haken show">&#x2714;</p>
+						<p class="strich">&#x02572;</p>
+					</div>
+					<a class="" href="http://www.freischreiber.de/positionen/code-of-fairness/">"Code of Fairness"-Unterzeichner</a>
+					</div>
+					<div class="quellenanzahl show" id="quellenanzahl">
+					<p>Anzahl der Datensätze: XX</p>
+					</div>
+				</div>
+	
+				
+				<!-- Verlage Disclaimer -->
+					<div class="alert-disclaimer alert-media-select show" id="alert-disclaimer">
+                        <span class="closebtn" onclick="hidedenied3()">&times;</span>
+                        <strong>Achtung! </strong>Die Ergebnisse basieren auf den Daten von Nutzern dieser Website. Wir bürgen nicht für deren Richtigkeit. 
+						Mehr Infos findest du <a class="alert-disclaimer-link" href="{% static "/honoradar/artikel/impressum.html"%}"><strong>hier</strong></a>.
+                    </div>
 
                 <!-- Result Flexbox -->
                 <div class="result-grid" id="result-grid">

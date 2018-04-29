@@ -779,6 +779,12 @@ function hidedenied2() {
     element.classList.remove("show");
 };
 
+function hidedenied3() {
+	var element = document.getElementById("alert-disclaimer");
+    element.classList.add("hide");
+    element.classList.remove("show");
+};
+
 
 function hideaccepted() {
 	var element = document.getElementById("ACCEPTED");
