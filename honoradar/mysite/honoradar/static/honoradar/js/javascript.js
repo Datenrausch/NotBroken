@@ -690,16 +690,13 @@ function reload() {
     element.classList.add("show");
     element.classList.remove("hide");
 	element.disabled = true;
-<<<<<<< HEAD
 
-=======
-	
+
 	var element = document.getElementById("analyse_submit");
     element.classList.add("show");
     element.classList.remove("hide");
 	element.disabled = true;
-	
->>>>>>> master
+
 	var element = document.getElementById("pre-data_genre");
     element.classList.add("hide");
     element.classList.remove("show");
