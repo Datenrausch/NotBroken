@@ -240,7 +240,7 @@ $(document).ready(function() {
                         min: parseFloat(data["AllFestSalaryPerHour"]["lower"]),
                         max: parseFloat(data["AllFestSalaryPerHour"]["upper"]),
                         mean: parseFloat(data["AllFestSalaryPerHour"]["median"]),
-                        charttitle: "Stundenlohn für Festangestellte #(Brutto / Euro)"
+                        charttitle: "Mittlerer Stundenlohn #(Brutto / Euro)"
                     }];
 
                     gradientboxplot(d3festjson, elementid)
@@ -272,7 +272,7 @@ $(document).ready(function() {
                         min: parseFloat(data["AllPauschalSalaryPerHour"]["lower"]),
                         max: parseFloat(data["AllPauschalSalaryPerHour"]["upper"]),
                         mean: parseFloat(data["AllPauschalSalaryPerHour"]["median"]),
-                        charttitle: "Stundenlohn für Pauschalisten #(Brutto / Euro)"
+                        charttitle: "Mittlerer Stundenlohn #(Brutto / Euro)"
                     }];
 
                     gradientboxplot(d3festjson, elementid)
@@ -305,7 +305,7 @@ $(document).ready(function() {
                         min: parseFloat(data["AllFreiSalaryPerHour"]["lower"]),
                         max: parseFloat(data["AllFreiSalaryPerHour"]["upper"]),
                         mean: parseFloat(data["AllFreiSalaryPerHour"]["median"]),
-                        charttitle: "Stundenhonorar #(Brutto / Euro)"
+                        charttitle: "Mittleres Stundenhonorar # (Brutto / Euro)"
                     }];
 
                     gradientboxplot(d3festjson, elementid)
@@ -337,7 +337,7 @@ $(document).ready(function() {
                         min: parseFloat(data["AllFreiVideoFeePerMin"]["lower"]),
                         max: parseFloat(data["AllFreiVideoFeePerMin"]["upper"]),
                         mean: parseFloat(data["AllFreiVideoFeePerMin"]["median"]),
-                        charttitle: "Honorar pro Videominute #(Brutto / Euro)"
+                        charttitle: "Mittleres Honorar # pro Videominute # (Brutto / Euro)"
                     }];
 
                     gradientboxplot(d3festjson, elementid)
@@ -368,7 +368,7 @@ $(document).ready(function() {
                         min: parseFloat(data["AllFreiAudioFeePerMin"]["lower"]),
                         max: parseFloat(data["AllFreiAudioFeePerMin"]["upper"]),
                         mean: parseFloat(data["AllFreiAudioFeePerMin"]["median"]),
-                        charttitle: "Honorar pro Audiominute #(Brutto / Euro)"
+                        charttitle: "Mittleres Honorar #pro Audiominute #(Brutto / Euro)"
                     }];
 
                     gradientboxplot(d3festjson, elementid)
@@ -400,7 +400,7 @@ $(document).ready(function() {
                         min: parseFloat(data["AllFreiArticleFeePerChar"]["lower"] * 1000),
                         max: parseFloat(data["AllFreiArticleFeePerChar"]["upper"] * 1000),
                         mean: parseFloat(data["AllFreiArticleFeePerChar"]["median"] * 1000),
-                        charttitle: "Honorar pro 1000 Zeichen #(Brutto / Euro)"
+                        charttitle: "Mittleres Honorar # pro 1000 Zeichen #(Brutto / Euro)"
                     }];
 
                     gradientboxplot(d3festjson, elementid)

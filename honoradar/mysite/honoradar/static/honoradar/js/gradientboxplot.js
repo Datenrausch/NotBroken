@@ -9,12 +9,13 @@ function gradientboxplot(responsejson, elementid) {
     console.log(elementid)
     elementstr = "'" + elementid + "'"
     console.log(document.getElementById(elementid))
-    width = document.getElementById(elementid).offsetWidth;
+    width = document.getElementById(elementid).offsetWidth*0.75;
+    console.log("width")
+    console.log(width)
 
     height = 400;
 
     function titlewrap(text, width) {
-      console.log(width)
 
       text.each(function() {
         var text = d3.select(this),
