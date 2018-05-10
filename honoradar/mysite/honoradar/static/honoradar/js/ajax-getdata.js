@@ -89,6 +89,9 @@ $(document).ready(function() {
         $('input[id=result_format_audio]').attr('checked',false);
         $('input[id=result_format_video]').attr('checked',false);
 
+        var element = document.getElementById("datasets_no")
+        element.innerHTML=""
+        element.innerHTML=(String(data["mediumoverallcount"]))
 
         const mediumname = document.getElementById("result-mediumname")
         console.log(mediumname)
