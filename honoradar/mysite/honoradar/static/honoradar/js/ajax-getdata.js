@@ -397,6 +397,7 @@ $(document).ready(function() {
                 element.classList.remove("hide");
               };
               listofcomments=data["MediumComments"]
+              if (listofcomments!=undefined){
               for (i = 0; i < 9; i++) {
                 Commenttext=(listofcomments[i])
                 commentid="comment-"+String(i+1)
@@ -404,6 +405,17 @@ $(document).ready(function() {
                 var element = document.getElementById(commentid);
                 element.innerHTML=""
                 element.innerHTML=Commenttext}
+                ;}else{
+                  for (i = 0; i < 9; i++) {
+                    commentid="comment-"+String(i+1)
+                    console.log(commentid)
+                    var element = document.getElementById(commentid);
+                    element.innerHTML=""
+                    element.innerHTML="Keine Daten"
+
+                  }
+
+                }
         };
 
 
@@ -431,7 +443,7 @@ $(document).ready(function() {
         $myForm[0].reset(); // reset form data
         smoothfunction()
 
-        
+
 
           document.getElementById("comment-1").style.display="inline-block";
           setTimeout(function(){document.getElementById("comment-1").style.display="none";
