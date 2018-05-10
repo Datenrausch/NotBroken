@@ -697,7 +697,7 @@ def senddata(request):
         print(MediumName)
 
 
-        with open('honoradar/static/honoradar/mediumsname.json') as json_file:
+        with io.open('honoradar/static/honoradar/mediumsname.json', "r") as json_file:
             oldjsondata = json.load(json_file)
             inthere=0
             for p in oldjsondata:

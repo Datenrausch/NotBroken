@@ -287,8 +287,8 @@ function gradientboxplot(responsejson, elementid) {
             return colorscaleellipse(d.category);
         })
         .attr("opacity", 1)
-        .attr("rx", width / 25)
-        .attr("ry", width / 100)
+        .attr("rx", width / 75)
+        .attr("ry", width / 75)
 
 
     svg
