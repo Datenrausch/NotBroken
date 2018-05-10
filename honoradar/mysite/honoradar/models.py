@@ -44,9 +44,9 @@ class DataCollection(models.Model):
 
 
     #Have to change into buttons
-    JobPosition=models.CharField(default="None",max_length=200)
+    JobPosition=models.CharField(default="None",max_length=200,blank=True)
     EXPERIENCE = Choices("keineAngabe","1 Jahr","3 Jahre"," 5 Jahre")
-    Experience = models.CharField(choices=EXPERIENCE, default=EXPERIENCE.keineAngabe, max_length=10, null=True)
+    Experience = models.CharField(choices=EXPERIENCE, default=EXPERIENCE.keineAngabe, max_length=20, null=True,blank=True)
 
     HoursPerWeekEmp=models.FloatField(default=0)
     HoursSpentFree=models.FloatField(default=0)
@@ -56,17 +56,18 @@ class DataCollection(models.Model):
     Genre=models.CharField(default="None",max_length=200)
 
     VATF = Choices("keineAngabe","text","audio"," video")
-    VideoAudioTextFree = models.CharField(choices=VATF, default=VATF.keineAngabe, max_length=200, null=True)
-
+    VideoAudioTextFree = models.CharField(choices=VATF, default=VATF.keineAngabe, max_length=200, null=True,blank=True)
     ANALOGDIGITAL = Choices("keineAngabe","Analog","Digital","Analog & Digital")
-    AnalogDigitalFree = models.CharField(choices=ANALOGDIGITAL, default=ANALOGDIGITAL.keineAngabe, max_length=200, null=True)
+    AnalogDigitalFree = models.CharField(choices=ANALOGDIGITAL, default=ANALOGDIGITAL.keineAngabe, max_length=200, null=True,blank=True)
 
 
     MinPerAudioFree=models.FloatField(default=0)
     MinPerVideoFree=models.FloatField(default=0)
     CharPerArticleFree=models.FloatField(default=0)
 
-    Comment=models.TextField(default="Kein Kommentar",max_length=600, null=True)
+    Comment=models.TextField(default="Kein Kommentar",max_length=600, null=True,blank=True)
+    FAIRNESS = Choices("keineAngabe","Ja")
+    fairness = models.CharField(choices=FAIRNESS, default="", max_length=20, null=True,blank=True)
 
 
 

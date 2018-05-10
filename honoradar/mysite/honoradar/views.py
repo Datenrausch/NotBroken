@@ -1187,7 +1187,9 @@ def getdata(request):
 
         DoesMediumExist=DataCollection.objects.filter(Medium__mediumname=MediumName)
         mediumoverallcount=DoesMediumExist.count()
-        mediumoverallcount_dict={"mediumoverallcount":mediumoverallcount}
+        FairnessCount=DoesMediumExist.filter(fairness='Ja').count()
+        print("FairnessCount: ",FairnessCount)
+        mediumoverallcount_dict={"mediumoverallcount":mediumoverallcount,"FairnessCount":FairnessCount}
         Mediumdict.update(mediumoverallcount_dict)
 
         if (DoesMediumExist.count())==0:

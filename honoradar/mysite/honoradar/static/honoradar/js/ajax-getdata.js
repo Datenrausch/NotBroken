@@ -92,7 +92,6 @@ $(document).ready(function() {
         var element = document.getElementById("datasets_no")
         element.innerHTML=""
         element.innerHTML=(String(data["mediumoverallcount"]))
-
         const mediumname = document.getElementById("result-mediumname")
         console.log(mediumname)
         const size = Object.keys(data).length;
@@ -104,6 +103,14 @@ $(document).ready(function() {
 
         resultsdiv.classList.add("show");
         resultsdiv.classList.remove("hide");
+
+        if(data["FairnessCount"]>0){
+          resultsdiv.classList.add("fair-accepted");
+        }else{
+          resultsdiv.classList.remove("fair-accepted");
+
+        }
+
 
         if (data["nodata"] != undefined) {
             var element = document.getElementById("NoDataAtAllMessage")
