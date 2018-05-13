@@ -109,6 +109,11 @@ $(document).ready(function() {
 
           document.getElementById('outputtime').innerHTML="0"
 
+          document.getElementById('outputtext').innerHTML="0"
+          document.getElementById('outputaudio').innerHTML="0"
+          document.getElementById('outputvideo').innerHTML="0"
+
+
 
           var element=document.getElementById("outputhappiness").setAttribute("class","fav-output fav-output-0")
 
