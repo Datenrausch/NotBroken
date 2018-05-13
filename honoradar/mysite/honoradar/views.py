@@ -1399,12 +1399,19 @@ def getdata(request):
 
 
 class IndexView(generic.ListView):
+    model=DataCollection
     template_name = 'honoradar/index.html'
-    context_object_name = 'latest_question_list'
+    def get_context_data(self, **context):
+        entriesno = DataCollection.objects.count()
+        model=Medium
+        mediumno=Medium.objects.values("mediumname").distinct().count()
 
-    def get_queryset(self):
-        """Return the last five published questions."""
-        return Question.objects.order_by('-pub_date')[:5]
+        print("entriesno:",entriesno,"mediumno:",mediumno)
+        context["entriesno"] = entriesno
+        context["mediumno"] = mediumno
+
+        return context
+
 
 
 class DetailView(generic.DetailView):
