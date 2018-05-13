@@ -465,6 +465,7 @@ $(document).ready(function() {
         $myForm[0].reset(); // reset form data
 
 
+        document.getElementById("comment-9").style.display = "none";
 
         document.getElementById("comment-1").style.display = "inline-block";
         setTimeout(function() {
