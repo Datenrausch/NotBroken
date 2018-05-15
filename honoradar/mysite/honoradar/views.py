@@ -24,31 +24,22 @@ def StdAvgFunction(entries, column):
     median=0
     lowerboundary=0
     upperboundary=0
-    print(n)
     if n>2:
         if n % 2 == 0:
             print("even values")
-            print(ids[int(n/2-1)],ids[int(n/2)])
 
             median=((ids[int(n/2-1)] + ids[int(n/2)])/2.0)
         else:
             print("uneven values")
-            print(ids[int(n/2-1)],ids[int(n/2)],ids[int(n/2+1)])
 
             median=((ids[int(n/2-1)] + ids[int(n/2)]+ ids[int(n/2+1)])/3.0)
 
-        print(column)
 
-        print("1")
-        print(ids)
-        print(median)
         lowerboundary=median
         upperboundary=median
     if n>5:
         lowerboundary=((ids[int(0)] + ids[int(1)]+ ids[int(2)])/3.0)
         upperboundary=((ids[int(n-1)] + ids[int(n-2)]+ ids[int(n-3)])/3.0)
-        print(lowerboundary)
-        print(upperboundary)
 
     count = entries.aggregate(Count(column))
     columncount = str(column) + "__count"
@@ -56,7 +47,6 @@ def StdAvgFunction(entries, column):
 
     if count > 1:
         avg = entries.aggregate(Avg(column))
-        print(avg)
         columnavg = str(column) + "__avg"
         avg = (avg[columnavg])
         count = 0
@@ -83,7 +73,6 @@ def StdAvgFunction(entries, column):
     else:
         result["status"] = "Failed"
 
-        print("check")
     return(result)
 
             #MediumFreiArticleFeePerChar = StdAvgTwoColumnsFunction(MediumFrei, 'FeeFree', 'CharPerArticleFree',"/")
@@ -98,26 +87,21 @@ def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
     count2 = (count2[columncount2])
     combinelist=[]
     value=0
-    print(combinelist)
 
 
     n=0
     for entry in entries:
-        print(combinelist)
         column1val = float(getattr(entry, str(column1)))
         column2val = float(getattr(entry, str(column2)))
-        print(column1,column2)
-        print(column1val,column2val)
+
         if (column1val != 0) and (column2val != 0):
             if operator == "/":
                 value = (column1val / column2val)
             if operator == "*":
                 value = (column1val*column2val)
             n += 1
-            print(combinelist)
-            print(value)
+
             combinelist.append(value)
-            print(combinelist)
 
 
     median=0
@@ -127,27 +111,21 @@ def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
         ids=sorted(combinelist)
         n = len(ids)
 
-        print(n)
         if n % 2 == 0:
             print("even values")
-            print(ids[int(n/2-1)],ids[int(n/2)])
 
             median=((ids[int(n/2-2)] + ids[int(n/2-1)] + ids[int(n/2)]+ ids[int(n/2+1)])/4.0)
         else:
             print("uneven values")
-            print(ids[int(n/2-1)],ids[int(n/2)],ids[int(n/2+1)])
 
             median=((ids[int(n/2-1)] + ids[int(n/2)]+ ids[int(n/2+1)])/3.0)
 
 
-        print(median)
         lowerboundary=median
         upperboundary=median
     if n>5:
         lowerboundary=((ids[int(0)] + ids[int(1)]+ ids[int(2)])/3.0)
         upperboundary=((ids[int(n-1)] + ids[int(n-2)]+ ids[int(n-3)])/3.0)
-        print(lowerboundary)
-        print(upperboundary)
 
 
     if (count1 > 1)and (count2 > 1):
@@ -167,8 +145,7 @@ def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
                 result["status"] = "Failed"
 
         if count !=0:
-            print(productsum)
-            print(count)
+
             avgtwocolumns = productsum / count
             count = 0
             stdsumSQ = 0
@@ -187,7 +164,6 @@ def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
 
             variance = stdsumSQ / count
             std = round(math.sqrt(variance), 2)
-            print(std)
             result = {}
             avgtwocolumns = round(avgtwocolumns, 2)
             result["avg"] = avgtwocolumns
@@ -200,7 +176,6 @@ def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
             if (float(result["avg"]) == 0) and (float(result["std"]) == 0):
                 result = {}
                 result["status"] = "Failed"
-                print("check")
 
 
         else:
@@ -221,10 +196,8 @@ def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
 def senddata(request):
     # this variable checks if all compulsory fields are filled and hence, a new instance should be created in the backend
     if request.is_ajax():
-        print("this is ajax")
 
         if request.method == 'POST':
-            print("senddata")
             print(request.POST)
             sanitycheck = 0
 
@@ -232,14 +205,11 @@ def senddata(request):
             #freelance, pauschalist or employed
             MediumName = (request.POST.get('MediumName'))
             MediumName=MediumName.title()
-            print(MediumName)
             FreeOrEmployed = (request.POST.get('FreeOrEmployed'))
             Comment = (request.POST.get('Comment'))
-            print(Comment)
             AGB = (request.POST.get('AGB'))
             Happiness = (request.POST.get('Happiness'))
-            print(Happiness)
-            print(request.POST)
+
 
             # if the mediumname or the AGB is not given, we set the sanitycheck to 1
             # and create a warning message that will pop-up
@@ -259,7 +229,6 @@ def senddata(request):
                     Q(freeoremployed=FreeOrEmployed)
                 )
                 print("Found it")
-                print(mediumobj)
 
                 # CHECKING FOR FEST, PAUSCHAL, FREI
                 # if the criteria for free or employed is "fest",
@@ -270,7 +239,6 @@ def senddata(request):
                     HoursPerWeekEmp = (request.POST.get("HoursPerWeekEmp"))
                     JobPosition = (request.POST.get("JobPosition"))
                     Experience = (request.POST.get("ExperienceEmplMix"))
-                    print(request.POST)
 
                     # check the compulsory three of them and send warning if they are missing
                     if SalaryPerMonthEmpMix:
@@ -358,7 +326,6 @@ def senddata(request):
                     if AGB == "on":
                         pass
                     else:
-                        print("No AGB!!")
                         sanitycheck = 1
                         messages.info(request, 'AGB')
 
@@ -449,7 +416,6 @@ def senddata(request):
                     if AGB == "on":
                         pass
                     else:
-                        print("No AGB!!")
                         sanitycheck = 1
                         messages.info(request, 'AGB')
 
@@ -609,8 +575,7 @@ def senddata(request):
                     CharPerArticleFree = (request.POST.get("CharPerArticleFree"))
                     MinPerAudioFree = (request.POST.get("MinPerAudioFree"))
                     MinPerVideoFree = (request.POST.get("MinPerVideoFree"))
-                    print("check fails")
-                    print(MinPerAudioFree)
+
 
                     # check the compulsory four of them and send warning if they are missing
                     if FeeFree:
@@ -663,7 +628,6 @@ def senddata(request):
                     if AGB == "on":
                         pass
                     else:
-                        print("No AGB!!")
                         sanitycheck = 1
                         messages.info(request, 'AGB')
 
@@ -716,461 +680,10 @@ def senddata(request):
             bla = str(i)
             testdict["message" + str(counter)] = bla
             counter += 1
-        print(testdict)
 
         return JsonResponse(testdict)
     else:
-
-        sanitycheck = 0
-
-        if request.method == 'POST':
-            print("senddata")
-            print(request.POST)
-            sanitycheck = 0
-
-            # we get the three categories that all entries have in common regardless of
-            #freelance, pauschalist or employed
-            MediumName = (request.POST.get('MediumName'))
-            MediumName=MediumName.title()
-            print(MediumName)
-
-            FreeOrEmployed = (request.POST.get('FreeOrEmployed'))
-            Comment = (request.POST.get('Comment'))
-            AGB = (request.POST.get('AGB'))
-            print(request.POST)
-
-            # if the mediumname or the AGB is not given, we set the sanitycheck to 1
-            # and create a warning message that will pop-up
-            if MediumName:
-                pass
-            else:
-                print("No Mediumname!!")
-                sanitycheck = 1
-                messages.info(request, 'Mediumname')
-
-            if AGB == "on":
-                pass
-            else:
-                print("No AGB!!")
-                sanitycheck = 1
-                messages.info(request, 'AGB')
-
-            # CHECKING WHETHER THERE ARE ALREADY ENTIRES WITH THIS MEDIUM
-            try:
-                mediumobj = Medium.objects.get(
-                    Q(mediumname=MediumName),
-                    Q(freeoremployed=FreeOrEmployed)
-                )
-                print("Found it")
-                print(mediumobj)
-
-                # CHECKING FOR FEST, PAUSCHAL, FREI
-                # if the criteria for free or employed is "fest",
-                # we get the data relevant for this case
-                if FreeOrEmployed == "fest":
-                    SalaryPerMonthEmpMix = (request.POST.get('SalaryPerMonthEmpMix'))
-                    Happiness = (request.POST.get("Happiness"))
-                    HoursPerWeekEmp = (request.POST.get("HoursPerWeekEmp"))
-                    JobPosition = (request.POST.get("JobPosition"))
-                    Experience = (request.POST.get("ExperienceEmplMix"))
-                    print(request.POST)
-
-                    # check the compulsory three of them and send warning if they are missing
-                    if SalaryPerMonthEmpMix:
-                        pass
-                    else:
-                        sanitycheck = 1
-                        messages.info(request, 'Gehalt')
-
-                    if float(HoursPerWeekEmp) != 1:
-                        pass
-                    else:
-                        sanitycheck = 1
-                        messages.info(request, 'gearbeiteten Stunden pro Woche')
-
-                    SalaryPerHour=0
-                    SalaryPerMonth=0
-                    # if all these data sanitychecks are okay, we bind the input to an existing medium
-                    if(sanitycheck == 0):
-                        SalaryPerHour=SalaryPerMonthEmpMix/(HoursPerWeekEmp*4)
-                        SalaryPerMonth=SalaryPerHour*160
-
-                        d = mediumobj.datacollection_set.create(
-                            SalaryPerHour=float(SalaryPerHour),
-                            SalaryPerMonth=float(SalaryPerMonth),
-                            SalaryPerMonthEmpMix=float(SalaryPerMonthEmpMix),
-                            Happiness=float(Happiness),
-                            HoursPerWeekEmp=float(HoursPerWeekEmp),
-                            JobPosition=JobPosition,
-                            Experience=Experience,
-                            Comment=Comment
-                        )
-                    else:
-                        pass
-
-                # if the criteria for free or employed is "pauschal",
-                # we get the data relevant for this case
-                if FreeOrEmployed == "pauschal":
-                    SalaryPerMonthEmpMix = (
-                        request.POST.get('SalaryPerMonthEmpMix'))
-                    DaysPerMonthMix = (request.POST.get("DaysPerMonthMix"))
-                    HoursPerDayMix = (request.POST.get("HoursPerDayMix"))
-                    JobPosition = (request.POST.get("JobPosition"))
-                    Experience = (request.POST.get("ExperienceEmplMix"))
-                    Happiness = (request.POST.get("Happiness"))
-                    Comment = (request.POST.get("Comment"))
-
-                    # check the compulsory four of them and send warning if they are missing
-                    if SalaryPerMonthEmpMix:
-                        pass
-                    else:
-                        sanitycheck = 1
-                        messages.info(request, 'Gehalt')
-
-                    if float(DaysPerMonthMix) != 0:
-                        pass
-                    else:
-                        sanitycheck = 1
-                        messages.info(request, 'gearbeiteten Tagen pro Monat')
-
-                    if float(HoursPerDayMix) != 0:
-                        pass
-                    else:
-                        sanitycheck = 1
-                        messages.info(request, 'gearbeiteten Stunden pro Tag')
-                    SalaryPerHour=0
-                    SalaryPerMonth=0
-                    # if all these data sanitychecks are okay, we bind the input to an existing medium
-                    if(sanitycheck == 0):
-                        SalaryPerHour=SalaryPerMonthEmpMix/(DaysPerMonthMix*HoursPerDayMix)
-                        SalaryPerMonth=SalaryPerHour*160
-                        d = mediumobj.datacollection_set.create(
-                            SalaryPerHour=float(SalaryPerHour),
-                            SalaryPerMonth=float(SalaryPerMonth),
-                            SalaryPerMonthEmpMix=float(SalaryPerMonthEmpMix),
-                            DaysPerMonthMix=float(DaysPerMonthMix),
-                            HoursPerDayMix=float(HoursPerDayMix),
-                            JobPosition=JobPosition,
-                            Experience=Experience,
-                            Happiness=float(Happiness),
-                            Comment=Comment,
-                        )
-                    else:
-                        pass
-
-                if FreeOrEmployed == "frei":
-
-                    FeeFree = (request.POST.get('FeeFree'))
-                    VideoAudioTextFree = (request.POST.get("VideoAudioTextFree"))
-                    Genre = (request.POST.get("Genre"))
-                    AnalogDigitalFree = (request.POST.get("AnalogDigitalFree"))
-                    JobPosition = (request.POST.get("JobPosition"))
-                    HoursSpentFree = (request.POST.get("HoursSpentFree"))
-                    Experience = (request.POST.get("ExperienceEmplMix"))
-                    Happiness = (request.POST.get("Happiness"))
-                    Comment = (request.POST.get("Comment"))
-
-                    # check the compulsory four of them and send warning if they are missing
-                    if FeeFree:
-                        pass
-                    else:
-                        sanitycheck = 1
-                        messages.info(request, 'Honorar')
-
-                    if float(HoursSpentFree) != 0:
-                        pass
-                    else:
-                        sanitycheck = 1
-                        messages.info(request, 'Zeitaufwand')
-
-                    if VideoAudioTextFree:
-                        pass
-                    else:
-                        sanitycheck = 1
-                        messages.info(request, 'Format des Mediums')
-
-                        if float(Happiness) != 1:
-                            pass
-                        else:
-                            sanitycheck = 1
-                            messages.info(request, 'Arbeitsatmosphäre')
-
-                        if AGB == "on":
-                            pass
-                        else:
-                            print("No AGB!!")
-                            sanitycheck = 1
-                            messages.info(request, 'AGB')
-
-                    if VideoAudioTextFree == "video":
-                        if float(MinPerVideoFree) != 0:
-                            pass
-                        else:
-                            sanitycheck = 1
-                            messages.info(request, 'Beitragsminuten für den Videobeitrag')
-
-                    if VideoAudioTextFree == "audio":
-                        if float(MinPerAudioFree) != 0:
-                            pass
-                        else:
-                            sanitycheck = 1
-                            messages.info(request, 'Beitragsminuten für den Audiobeitrag')
-
-                    if VideoAudioTextFree == "text":
-                        if float(CharPerArticleFree) != 0:
-                            pass
-                        else:
-                            sanitycheck = 1
-                            messages.info(request, 'Anzahl an Zeichen')
-                    SalaryPerHour=0
-                    SalaryPerMonth=0
-                    if(sanitycheck == 0):
-                        SalaryPerHour=float(FeeFree)/float(HoursSpentFree)
-                        SalaryPerMonth=SalaryPerHour*160
-                        d = mediumobj.datacollection_set.create(
-                            SalaryPerHour=float(SalaryPerHour),
-                            SalaryPerMonth=float(SalaryPerMonth),
-                            FeeFree=float(FeeFree),
-                            VideoAudioTextFree=str(VideoAudioTextFree),
-                            MinPerAudioFree=float(MinPerAudioFree),
-                            MinPerVideoFree=float(MinPerVideoFree),
-                            CharPerArticleFree=float(CharPerArticleFree),
-                            Genre=Genre,
-                            AnalogDigitalFree=AnalogDigitalFree,
-                            JobPosition=JobPosition,
-                            HoursSpentFree=float(HoursSpentFree),
-                            Experience=Experience,
-                            Happiness=float(Happiness),
-                            Comment=Comment,
-                        )
-
-            except Medium.DoesNotExist:
-                if FreeOrEmployed == "fest":
-                    SalaryPerMonthEmpMix = (request.POST.get('SalaryPerMonthEmpMix'))
-                    Happiness = (request.POST.get("Happiness"))
-                    HoursPerWeekEmp = (request.POST.get("HoursPerWeekEmp"))
-                    JobPosition = (request.POST.get("JobPosition"))
-                    Experience = (request.POST.get("ExperienceEmplMix"))
-                    print(request.POST)
-
-                    # check the compulsory three of them and send warning if they are missing
-                    if SalaryPerMonthEmpMix:
-                        pass
-                    else:
-                        sanitycheck = 1
-                        messages.info(request, 'Gehalt')
-
-                    if float(HoursPerWeekEmp)!=1:
-                        pass
-                    else:
-                        sanitycheck = 1
-                        messages.info(request, 'gearbeiteten Stunden pro Woche')
-
-
-                    SalaryPerHour=0
-                    SalaryPerMonth=0
-                    # if all these data sanitychecks are okay, we bind the input to an existing medium
-                    if(sanitycheck == 0):
-
-                        SalaryPerHour=SalaryPerMonthEmpMix/(HoursPerWeekEmp*4)
-                        SalaryPerMonth=SalaryPerHour*160
-                        mediumobj = Medium(
-                            mediumname=MediumName, freeoremployed=FreeOrEmployed)
-
-                        mediumobj.save()
-                        d = mediumobj.datacollection_set.create(
-                            SalaryPerHour=float(SalaryPerHour),
-                            SalaryPerMonth=float(SalaryPerMonth),
-                            SalaryPerMonthEmpMix=float(SalaryPerMonthEmpMix),
-                            Happiness=float(Happiness),
-                            HoursPerWeekEmp=float(HoursPerWeekEmp),
-                            JobPosition=JobPosition,
-                            Experience=Experience,
-                            Comment=Comment
-                        )
-
-                if FreeOrEmployed == "pauschal":
-                    SalaryPerMonthEmpMix = (request.POST.get('SalaryPerMonthEmpMix'))
-                    DaysPerMonthMix = (request.POST.get("DaysPerMonthMix"))
-                    HoursPerDayMix = (request.POST.get("HoursPerDayMix"))
-                    JobPosition = (request.POST.get("JobPosition"))
-                    Experience = (request.POST.get("ExperienceEmplMix"))
-                    Happiness = (request.POST.get("Happiness"))
-                    Comment = (request.POST.get("Comment"))
-                    # check the compulsory four of them and send warning if they are missing
-                    if SalaryPerMonthEmpMix:
-                        pass
-                    else:
-                        sanitycheck = 1
-                        messages.info(request, 'Gehalt')
-
-                    if float(DaysPerMonthMix) != 0:
-                        pass
-                    else:
-                        sanitycheck = 1
-                        messages.info(request, 'gearbeiteten Tagen pro Monat')
-
-                    if float(HoursPerDayMix) != 0:
-                        pass
-                    else:
-                        sanitycheck = 1
-                        messages.info(request, 'gearbeiteten Stunden pro Tag')
-
-                    SalaryPerHour=0
-                    SalaryPerMonth=0
-                    if(sanitycheck == 0):
-
-                        mediumobj = Medium(
-                            mediumname=MediumName, freeoremployed=FreeOrEmployed)
-                        mediumobj.save()
-
-                        SalaryPerHour=SalaryPerMonthEmpMix/(DaysPerMonthMix*HoursPerDayMix)
-                        SalaryPerMonth=SalaryPerHour*160
-                        d = mediumobj.datacollection_set.create(
-                            SalaryPerHour=float(SalaryPerHour),
-                            SalaryPerMonth=float(SalaryPerMonth),
-                            SalaryPerMonthEmpMix=float(SalaryPerMonthEmpMix),
-                            DaysPerMonthMix=float(DaysPerMonthMix),
-                            HoursPerDayMix=float(HoursPerDayMix),
-                            JobPosition=str(JobPosition),
-                            Experience=str(Experience),
-                            Happiness=float(Happiness),
-                            Comment=str(Comment),
-                        )
-
-                if FreeOrEmployed == "frei":
-                    FeeFree = (request.POST.get('FeeFree'))
-                    VideoAudioTextFree = (request.POST.get("VideoAudioTextFree"))
-                    Genre = (request.POST.get("Genre"))
-                    AnalogDigitalFree = (request.POST.get("AnalogDigitalFree"))
-                    JobPosition = (request.POST.get("JobPosition"))
-                    HoursSpentFree = (request.POST.get("HoursSpentFree"))
-                    Experience = (request.POST.get("ExperienceEmplMix"))
-                    Happiness = (request.POST.get("Happiness"))
-                    Comment = (request.POST.get("Comment"))
-                    CharPerArticleFree = (request.POST.get("CharPerArticleFree"))
-                    MinPerAudioFree = (request.POST.get("MinPerAudioFree"))
-                    MinPerVideoFree = (request.POST.get("MinPerVideoFree"))
-
-                    # check the compulsory four of them and send warning if they are missing
-                    if FeeFree:
-                        pass
-                    else:
-                        sanitycheck = 1
-                        messages.info(request, 'Honorar')
-
-                    if float(HoursSpentFree) != 0:
-                        pass
-                    else:
-                        sanitycheck = 1
-                        messages.info(request, 'Zeitaufwand')
-
-                    if VideoAudioTextFree:
-                        pass
-                    else:
-                        sanitycheck = 1
-                        messages.info(request, 'Format des Mediums')
-                        if float(Happiness) != 1:
-                            pass
-                        else:
-                            sanitycheck = 1
-                            messages.info(request, 'Arbeitsatmosphäre')
-
-                        if AGB == "on":
-                            pass
-                        else:
-                            print("No AGB!!")
-                            sanitycheck = 1
-                            messages.info(request, 'AGB')
-
-
-                    if VideoAudioTextFree == "video":
-                        if float(MinPerVideoFree) != 0:
-                            pass
-                        else:
-                            sanitycheck = 1
-                            messages.info(request, 'Beitragsminuten für den Videobeitrag')
-                        if float(Happiness) != 1:
-                            pass
-                        else:
-                            sanitycheck = 1
-                            messages.info(request, 'Arbeitsatmosphäre')
-
-                        if AGB == "on":
-                            pass
-                        else:
-                            print("No AGB!!")
-                            sanitycheck = 1
-                            messages.info(request, 'AGB')
-
-                    if VideoAudioTextFree == "audio":
-                        if float(MinPerAudioFree) != 0:
-                            pass
-                        else:
-                            sanitycheck = 1
-                            messages.info(request, 'Beitragsminuten für den Audiobeitrag')
-
-                        if float(Happiness) != 1:
-                            pass
-                        else:
-                            sanitycheck = 1
-                            messages.info(request, 'Arbeitsatmosphäre')
-
-                        if AGB == "on":
-                            pass
-                        else:
-                            print("No AGB!!")
-                            sanitycheck = 1
-                            messages.info(request, 'AGB')
-
-
-                    if VideoAudioTextFree == "text":
-                        if float(CharPerArticleFree) != 0:
-                            pass
-                        else:
-                            sanitycheck = 1
-                            messages.info(request, 'Anzahl an Zeichen')
-
-                        if float(Happiness) != 1:
-                            pass
-                        else:
-                            sanitycheck = 1
-                            messages.info(request, 'Arbeitsatmosphäre')
-
-                        if AGB == "on":
-                            pass
-                        else:
-                            print("No AGB!!")
-                            sanitycheck = 1
-                            messages.info(request, 'AGB')
-
-
-                    SalaryPerHour=0
-                    SalaryPerMonth=0
-                    if(sanitycheck == 0):
-                        mediumobj = Medium(
-                            mediumname=MediumName, freeoremployed=FreeOrEmployed)
-                        mediumobj.save()
-                        SalaryPerHour=float(FeeFree)/float(HoursSpentFree)
-                        SalaryPerMonth=SalaryPerHour*160
-                        d = mediumobj.datacollection_set.create(
-                            SalaryPerHour=float(SalaryPerHour),
-                            SalaryPerMonth=float(SalaryPerMonth),
-                            FeeFree=float(FeeFree),
-                            VideoAudioTextFree=str(VideoAudioTextFree),
-                            MinPerAudioFree=float(MinPerAudioFree),
-                            MinPerVideoFree=float(MinPerVideoFree),
-                            CharPerArticleFree=float(CharPerArticleFree),
-                            Genre=Genre,
-                            AnalogDigitalFree=AnalogDigitalFree,
-                            JobPosition=JobPosition,
-                            HoursSpentFree=float(HoursSpentFree),
-                            Experience=Experience,
-                            Happiness=float(Happiness),
-                            Comment=Comment,
-                        )
-        return render(request, 'honoradar/index.html')
-
+        print("Something went wrong")
     #    latest_question_list = Question.objects.order_by('-pub_date')[:5]
     # return HttpResponseRedirect(reverse('honoradar:index'))
 
@@ -1188,7 +701,6 @@ def getdata(request):
         DoesMediumExist=DataCollection.objects.filter(Medium__mediumname=MediumName)
         mediumoverallcount=DoesMediumExist.count()
         FairnessCount=DoesMediumExist.filter(fairness='Ja').count()
-        print("FairnessCount: ",FairnessCount)
         mediumoverallcount_dict={"mediumoverallcount":mediumoverallcount,"FairnessCount":FairnessCount}
         Mediumdict.update(mediumoverallcount_dict)
 
@@ -1204,7 +716,6 @@ def getdata(request):
         mediumfestcount=MediumFest.count()
 
         if ((MediumFest.count()) > 1):
-            print("more than one for fest")
 
             MediumFestSalaryPerHour = StdAvgFunction(MediumFest, 'SalaryPerHour')
             MediumFestSalaryPerMonth= StdAvgFunction(MediumFest, 'SalaryPerMonth')
@@ -1270,7 +781,6 @@ def getdata(request):
             "AllPauschalHoursPerMonth": AllPauschalHoursPerMonth,
             "AllPauschalHappiness": AllPauschalHappiness,
                        }
-            print("Enough Data Pauschal")
 
             Mediumdict.update(MediumPauschalContext)
 
@@ -1335,7 +845,6 @@ def getdata(request):
 
                        }
 
-            print("Enough Data Frei")
             Mediumdict.update(MediumFreiContext)
             AllMedium=DataCollection.objects.filter(Medium__mediumname=MediumName)
             comments = list(AllMedium.values_list("Comment", flat=True))
@@ -1353,49 +862,8 @@ def getdata(request):
 
         return JsonResponse(Mediumdict)
 
-
-
-            #   return HttpResponseRedirect(reverse('honoradar:index'))
-                #    return render(request, 'polls/index.html', context)
-
-
-
     else:
-        print(request.GET)
-        MediumName = (request.GET.get('mediumget'))
-        FreeOrEmployed = (request.GET.get('switch'))
-        print(MediumName)
-        print(FreeOrEmployed)
-
-        try:
-            mediumobj = Medium.objects.get(
-                Q(mediumname=MediumName),
-                Q(freeoremployed=FreeOrEmployed)
-            )
-            print(mediumobj)
-            entries = DataCollection.objects.filter(Medium=mediumobj)
-            print("found")
-            counter = (entries.count())
-            print(counter)
-            if (counter > 1):
-                print("more than one")
-                if FreeOrEmployed == "fest":
-                    avghappiness = entries.aggregate(Avg('Happiness'))
-                    avghappiness = (avghappiness['Happiness__avg'])
-                    context = {'medium': mediumobj,
-                               "avghappiness": avghappiness}
-                    return render(request, 'honoradar/index.html', context)
-            else:
-                print("uns fehlen noch daten")
-                return render(request, 'honoradar/index.html', context)
-
-            #   return HttpResponseRedirect(reverse('honoradar:index'))
-                #    return render(request, 'polls/index.html', context)
-
-        except Medium.DoesNotExist:
-            print("Sorry, wir haben noch keine Daten")
-
-            return HttpResponseRedirect(reverse('honoradar:index'))
+        print("Ohje")
 
 
 class IndexView(generic.ListView):
@@ -1411,26 +879,3 @@ class IndexView(generic.ListView):
         context["mediumno"] = mediumno
 
         return context
-
-
-
-
-
-def vote(request, question_id):
-    question = get_object_or_404(Question, pk=question_id)
-    try:
-        selected_choice = question.choice_set.get(pk=request.POST['choice'])
-    except (KeyError, Choice.DoesNotExist):
-        # Redisplay the question voting form.
-        return render(request, 'honoradar/detail.html', {
-            'question': question,
-            'error_message': "You didn't select a choice.",
-        })
-    else:
-        selected_choice.votes += 1
-        selected_choice.save()
-        # Always return an HttpResponseRedirect after successfully dealing
-        # with POST data. This prevents data from being posted twice if a
-        # user hits the Back button.
-
-        # return HttpResponseRedirect(reverse('honoradar:results', args=(question.id,)))
