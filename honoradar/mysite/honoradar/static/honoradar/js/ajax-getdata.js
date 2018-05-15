@@ -436,7 +436,7 @@ $(document).ready(function() {
                 }
 
             }
-            smoothfunction()
+            smoothfunction2()
 
         };
 

@@ -805,6 +805,15 @@ function smoothfunction(){
     scrollTop:$(href).offset().top
   },'slow');
 }
+function smoothfunction2(){
+  console.log("this is smooth")
+  var button = document.getElementById("reload_submit");
+  console.log(button)
+
+  $('html, body').animate({
+    scrollTop:$("#result").offset().top
+  },'slow');
+}
 function smoothfunction_submit(){
   console.log("this is smooth")
   var button = document.getElementById("data_submit");

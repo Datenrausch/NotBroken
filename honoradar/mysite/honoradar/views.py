@@ -1414,14 +1414,6 @@ class IndexView(generic.ListView):
 
 
 
-class DetailView(generic.DetailView):
-    model = Question
-    template_name = 'honoradar/detail.html'
-
-
-class ResultsView(generic.DetailView):
-    model = Question
-    template_name = 'honoradar/results.html'
 
 
 def vote(request, question_id):
