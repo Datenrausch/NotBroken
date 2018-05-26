@@ -13,11 +13,13 @@
     <meta name="robots" content="index,follow">
 
 	<!-- Flavicon -->
-	<link rel="shortcut icon" href="../templates/honoradar/favicon.png">
-	<link rel="icon" type="image/png" href="../templates/honoradar/favicon.png" sizes="32x32">
-	<link rel="icon" type="image/png" href="../templates/honoradar/favicon.png" sizes="96x96">
-	<link rel="apple-touch-icon" sizes="180x180" href="../templates/honoradar/favicon_apple_touch.png">
-	<meta name="msapplication-TileImage" content="../templates/honoradar/favicon_msapplication.png">
+  <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
+  <link rel="shortcut icon" href="{%  static 'favicon.png' %}">
+
+	<link rel="icon" type="image/png" href="{%  static 'favicon.png' %}" sizes="32x32">
+	<link rel="icon" type="image/png" href="{%  static 'favicon.png' %}" sizes="96x96">
+	<link rel="apple-touch-icon" sizes="180x180" href="{%  static 'favicon_apple_touch.png' %}">
+	<meta name="msapplication-TileImage" content="{%  static 'favicon_msapplication.png' %}">
 
     <!-- Style -->
     <link rel="stylesheet" href="{% static 'honoradar/css/style.css'%}">
@@ -25,7 +27,7 @@
     <link rel="stylesheet" href="{% static 'honoradar/css/font.css'%}">
     <link rel="stylesheet" href="{% static 'honoradar/navbar/css/reset.css'%}">
     <link rel="stylesheet" href="{% static 'honoradar/navbar/css/style.css'%}">
-    <link rel="stylesheet" href="{% static 'honoradar/lity/dist/lity.css'%}">
+
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
@@ -57,7 +59,7 @@
     <div class="panel">
         <h1 class="head-title">Was verdienen Journalisten?</h1>
         <h2 class="head-subtitle-1">Die Antwort gibt's hier: Erfahre kostenlos, was Kollegen verdienen – oder trage selbst anonym deine Daten ein.</h2>
-        <h2 class="head-subtitle-2">Bisher legten Journalisten 1.245 Gehälter und Honorare bei 134 Medien offen.</h2>
+        <h2 class="head-subtitle-2">Bisher legten Journalisten {% if entriesno %}{{ entriesno }} {% endif %} Gehälter und Honorare bei {% if mediumno %}{{ mediumno }} {% endif %} Medien offen.</h2>
 
         <a href="#banderole" id="machmit" class="smooth clear-absolute"><h3 class="head-action">Mach mit!</h3></a>
         <div class="head-box-1"></div>
@@ -222,6 +224,33 @@
                     <!-- Genre-Select -->
 					<div id="pre-data_genre" class="genre-select-container hide">
                     <input name="Genre" id="data_genre" class="genre-select select-font hide" list="genre" placeholder="Welches Genre?" type="text" />
+                    <datalist id="genre">
+	<!--[if lte IE 9]><select data-datalist="samples"><![endif]-->
+		<option value="Analyse">
+        <option value="Bericht">
+        <option value="Dokumentation">
+		<option value="Editorial">
+		<option value="Essay">
+        <option value="Feature">
+		<option value="Foto">
+		<option value="Gebauter Beitrag">
+		<option value="Glosse">
+		<option value="Infografik">
+        <option value="Interview">
+		<option value="Kolumne">
+        <option value="Kommentar">
+		<option value="Kritik">
+		<option value="Leitartikel">
+        <option value="Moderation">
+        <option value="Nachricht">
+		<option value="Podcast">
+        <option value="Porträt">
+        <option value="Reportage">
+		<option value="Rezension">
+		<option value="Servicetext">
+	<!--[if lte IE 9]></select><![endif]-->
+    </datalist>
+
 					</div>
 
                     <!-- Digitalization-Select -->
@@ -251,6 +280,16 @@
                     <!-- Position-Select -->
 					<div id="pre-data_position" class="media-select-container hide">
                     <input name="JobPosition" id="data_position" class="position-select select-font hide" list="position" placeholder="Als was arbeitest du?" type="text" onclick="alertoffdataposition()" />
+                    <datalist id="position">
+	<!--[if lte IE 9]><select data-datalist="samples"><![endif]-->
+        <option value="Chefredakteur">
+        <option value="Ressortleiter">
+        <option value="Chef vom Dienst (CvD)">
+        <option value="Redakteur">
+        <option value="Volontär">
+        <option value="Praktikant">
+	<!--[if lte IE 9]></select><![endif]-->
+    </datalist>
 					</div>
 
                     <!-- Experience-Select -->
@@ -324,7 +363,7 @@
                 </p>
 
                 <a href="#banderole" class="smooth">
-                    <input type="submit" linkdirection="#result" class="submit submit-reload hide" id="reload_submit" value="Dateneingabe" onmousedown="reload()" ontouchstart="reload()" />
+                    <input type="submit" linkdirection="#banderole" class="submit submit-reload hide" id="reload_submit" value="Dateneingabe" onmousedown="reload()" ontouchstart="reload()" />
                 </a>
 
             </div>
@@ -361,7 +400,7 @@
                                         <span class="closebtn" onclick="hidedenied2()">&times;</span>
                                         <strong>Achtung! </strong>Du musst ein Medium definieren.
                                         </div>
-										<div class="alert-denied alert-media-select hide" id="WARNING_unkown">
+										<div class="alert-denied alert-media-select hide" id="WARNING_unknown">
                                         <span class="closebtn" onclick="hidedenied3()">&times;</span>
                                         <strong>Achtung! </strong>Dieses Medium ist uns unbekannt. Hast du dich vertippt?
                                         </div>
@@ -374,11 +413,11 @@
 
 
             <!-- Grafik-Box -->
-            <div class="result fair-accepted hide" id="result">
+            <div class="result hide" id="result">
 
                 <!-- Mediumname -->
                 <div class="result-mediumname" id="result-mediumname">Mediumsname</div>
-				
+
 				<!-- Code of Fairness & Quellenanzahl-->
 				<div class="result-facts" id="result-facts">
 					<div class="codeoffairness" id="codeoffairness">
@@ -389,15 +428,15 @@
 					<a class="" href="http://www.freischreiber.de/positionen/code-of-fairness/">"Code of Fairness"-Unterzeichner</a>
 					</div>
 					<div class="quellenanzahl show" id="quellenanzahl">
-					<p>Anzahl der Datensätze: XX</p>
+					<p>Anzahl der Datensätze: <span id="datasets_no"></span></p>
 					</div>
 				</div>
-	
-				
+
+
 				<!-- Verlage Disclaimer -->
 					<div class="alert-disclaimer alert-media-select show" id="alert-disclaimer">
                         <span class="closebtn" onclick="hidedenied3()">&times;</span>
-                        <strong>Achtung! </strong>Die Ergebnisse basieren auf den Daten von Nutzern dieser Website. Wir bürgen nicht für deren Richtigkeit. 
+                        <strong>Achtung! </strong>Die Ergebnisse basieren auf den Daten von Nutzern dieser Website. Wir bürgen nicht für deren Richtigkeit.
 						Mehr Infos findest du <a class="alert-disclaimer-link" href="{% static "/honoradar/artikel/impressum.html"%}"><strong>hier</strong></a>.
                     </div>
 
@@ -599,16 +638,12 @@
 
 
     <!-- Javascript -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 
     <script src="{% static 'honoradar/navbar/js/modernizr.js'%}"></script>
     <script src="{% static 'honoradar/js/html5shiv.js'%}"></script>
-    <script src="{% static 'honoradar/lity/vendor/jquery.js'%}"></script>
-    <script src="{% static 'honoradar/lity/dist/lity.js'%}"></script>
-    <script src="{% static 'honoradar/js/jquery.js'%}"></script>
-    <script src="{% static 'honoradar/js/javascript.js'%}"></script>
     <script src="{% static 'honoradar/navbar/js/jquery-2.1.1.js'%}"></script>
+
+    <script src="{% static 'honoradar/lity/dist/lity.js'%}"></script>
     <script src="{% static 'honoradar/navbar/js/main.js'%}"></script>
     <script src="{% static 'honoradar/js/ajax-setup.js'%}"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
@@ -621,8 +656,12 @@
 
     <script src="static/honoradar/js/autocomplete-giv.js"></script>
     <script src="static/honoradar/js/autocomplete-get.js"></script>
-    <script src="static/honoradar/js/autocomplete-genre.js"></script>
-    <script src="static/honoradar/js/autocomplete-position.js"></script>
+    <!--<script src="static/honoradar/js/autocomplete-genre.js"></script>-->
+    <!--<script src="static/honoradar/js/autocomplete-position.js"></script>-->
+    <script src="static/honoradar/js/datalist-polyfill.min.js"></script>
+    <link rel="stylesheet" href="static/honoradar/lity/dist/lity.css">
+
+    <script src="{% static 'honoradar/js/javascript.js'%}"></script>
 
 
     </script>

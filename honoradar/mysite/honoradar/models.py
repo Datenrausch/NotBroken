@@ -4,69 +4,52 @@ import datetime
 from model_utils import Choices
 
 
-class Question(models.Model):
-    question_text = models.CharField(max_length=200)
-    pub_date = models.DateTimeField('date published')
-    def __str__(self):
-        return self.question_text
-    def was_published_recently(self):
-        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
-        was_published_recently.admin_order_field = 'pub_date'
-        was_published_recently.boolean = True
-        was_published_recently.short_description = 'Published recently?'
-    list_filter = ['pub_date']
-    search_fields = ['question_text']
-
-class Choice(models.Model):
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    choice_text = models.CharField(max_length=200)
-    votes = models.IntegerField(default=0)
-    def __str__(self):
-        return self.choice_text
 
 
 class Medium(models.Model):
     mediumname = models.CharField(max_length=200)
     FREEOREMPLOYED = Choices("fest","pauschal","frei")
     freeoremployed = models.CharField(choices=FREEOREMPLOYED, default=FREEOREMPLOYED.frei, max_length=10)
+    UpDate = models.DateTimeField(default=datetime.datetime.now, blank=True)
 
     def __str__(self):
         return self.mediumname
 
 class DataCollection(models.Model):
-
+    Date = models.DateTimeField(default=datetime.datetime.now, blank=True)
     Medium = models.ForeignKey(Medium, on_delete=models.CASCADE)
-    Happiness=models.FloatField(default=0)
-    SalaryPerMonthEmpMix=models.FloatField(default=0)
-    FeeFree=models.FloatField(default=0)
-    SalaryPerHour=models.FloatField(default=0)
-    SalaryPerMonth=models.FloatField(default=0)
+    Happiness=models.DecimalField(default=0, max_digits=10, decimal_places=3)
+    SalaryPerMonthEmpMix=models.DecimalField(default=0, max_digits=10, decimal_places=3)
+    FeeFree=models.DecimalField(default=0, max_digits=10, decimal_places=3)
+    SalaryPerHour=models.DecimalField(default=0, max_digits=10, decimal_places=3)
+    SalaryPerMonth=models.DecimalField(default=0, max_digits=10, decimal_places=3)
 
 
     #Have to change into buttons
-    JobPosition=models.CharField(default="None",max_length=200)
+    JobPosition=models.CharField(default="None",max_length=200,blank=True)
     EXPERIENCE = Choices("keineAngabe","1 Jahr","3 Jahre"," 5 Jahre")
-    Experience = models.CharField(choices=EXPERIENCE, default=EXPERIENCE.keineAngabe, max_length=10, null=True)
+    Experience = models.CharField(choices=EXPERIENCE, default=EXPERIENCE.keineAngabe, max_length=20, null=True,blank=True)
 
-    HoursPerWeekEmp=models.FloatField(default=0)
-    HoursSpentFree=models.FloatField(default=0)
+    HoursPerWeekEmp=models.DecimalField(default=0, max_digits=10, decimal_places=3)
+    HoursSpentFree=models.DecimalField(default=0, max_digits=10, decimal_places=3)
 
-    HoursPerDayMix=models.FloatField(default=0)
-    DaysPerMonthMix=models.FloatField(default=0)
-    Genre=models.CharField(default="None",max_length=200)
+    HoursPerDayMix=models.DecimalField(default=0, max_digits=10, decimal_places=3)
+    DaysPerMonthMix=models.DecimalField(default=0, max_digits=10, decimal_places=3)
+    Genre=models.CharField(default="None",max_length=200,  null=True,blank=True)
 
     VATF = Choices("keineAngabe","text","audio"," video")
-    VideoAudioTextFree = models.CharField(choices=VATF, default=VATF.keineAngabe, max_length=200, null=True)
-
+    VideoAudioTextFree = models.CharField(choices=VATF, default=VATF.keineAngabe, max_length=200, null=True,blank=True)
     ANALOGDIGITAL = Choices("keineAngabe","Analog","Digital","Analog & Digital")
-    AnalogDigitalFree = models.CharField(choices=ANALOGDIGITAL, default=ANALOGDIGITAL.keineAngabe, max_length=200, null=True)
+    AnalogDigitalFree = models.CharField(choices=ANALOGDIGITAL, default=ANALOGDIGITAL.keineAngabe, max_length=200, null=True,blank=True)
 
 
-    MinPerAudioFree=models.FloatField(default=0)
-    MinPerVideoFree=models.FloatField(default=0)
-    CharPerArticleFree=models.FloatField(default=0)
+    MinPerAudioFree=models.DecimalField(default=0, max_digits=10, decimal_places=3)
+    MinPerVideoFree=models.DecimalField(default=0, max_digits=10, decimal_places=3)
+    CharPerArticleFree=models.DecimalField(default=0, max_digits=10, decimal_places=3)
 
-    Comment=models.TextField(default="Kein Kommentar",max_length=600, null=True)
+    Comment=models.TextField(default="Kein Kommentar",max_length=600, null=True,blank=True)
+    FAIRNESS = Choices("keineAngabe","Ja")
+    fairness = models.CharField(choices=FAIRNESS, default="", max_length=20, null=True,blank=True)
 
 
 

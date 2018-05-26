@@ -11,8 +11,8 @@ match: {
   enabled: true
 },
 
-onSelectItemEvent: function() {
-var value = $("#media-analyse").getSelectedItemData().code;
+onChooseEvent: function() {
+var value = $("#media-analyse").getSelectedItemData().name;
 
 $("#media-analyse").val(value).trigger("change");
 }
