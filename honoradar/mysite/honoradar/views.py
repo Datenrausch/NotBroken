@@ -245,6 +245,14 @@ def senddata(request):
                     Q(mediumname=MediumName),
                     Q(freeoremployed=FreeOrEmployed)
                 )
+                #MyModel.objects.filter(pk=some_value).update(field1='some value')
+
+                mediumobj.UpDate=(datetime.datetime.now())
+                mediumobj.save()
+                mediumobj = Medium.objects.get(
+                    Q(mediumname=MediumName),
+                    Q(freeoremployed=FreeOrEmployed)
+                )
                 print("Found it")
 
                 # CHECKING FOR FEST, PAUSCHAL, FREI
@@ -298,7 +306,8 @@ def senddata(request):
                             HoursPerWeekEmp=float(HoursPerWeekEmp),
                             JobPosition=JobPosition,
                             Experience=Experience,
-                            Comment=Comment
+                            Comment=Comment,
+                            Date=datetime.datetime.now()
                         )
                     else:
                         pass
@@ -363,6 +372,8 @@ def senddata(request):
                             Experience=Experience,
                             Happiness=float(Happiness),
                             Comment=Comment,
+                            Date=datetime.datetime.now()
+
                         )
                     else:
                         pass
@@ -456,6 +467,7 @@ def senddata(request):
                             Experience=Experience,
                             Happiness=float(Happiness),
                             Comment=Comment,
+                            Date=datetime.datetime.now()
                         )
 
             except Medium.DoesNotExist:
@@ -502,8 +514,9 @@ def senddata(request):
                         SalaryPerHour=float(SalaryPerMonthEmpMix)/(float(HoursPerWeekEmp)*4)
                         SalaryPerMonth=SalaryPerHour*160
                         mediumobj = Medium(
-                            mediumname=MediumName, freeoremployed=FreeOrEmployed)
-
+                            mediumname=MediumName,
+                            freeoremployed=FreeOrEmployed,
+                            UpDate=datetime.datetime.now())
                         mediumobj.save()
                         d = mediumobj.datacollection_set.create(
                             SalaryPerHour=float(SalaryPerHour),
@@ -514,6 +527,8 @@ def senddata(request):
                             JobPosition=JobPosition,
                             Experience=Experience,
                             Comment=Comment,
+                            Date=datetime.datetime.now()
+
                         )
 
                 if FreeOrEmployed == "pauschal":
@@ -562,7 +577,9 @@ def senddata(request):
                     if(sanitycheck == 0):
 
                         mediumobj = Medium(
-                            mediumname=MediumName, freeoremployed=FreeOrEmployed)
+                            mediumname=MediumName,
+                            freeoremployed=FreeOrEmployed,
+                            UpDate=datetime.datetime.now())
                         mediumobj.save()
 
                         SalaryPerHour=float(SalaryPerMonthEmpMix)/(float(DaysPerMonthMix)*float(HoursPerDayMix))
@@ -577,6 +594,8 @@ def senddata(request):
                             Experience=str(Experience),
                             Happiness=float(Happiness),
                             Comment=str(Comment),
+                            Date=datetime.datetime.now()
+
                         )
 
                 if FreeOrEmployed == "frei":
@@ -653,7 +672,9 @@ def senddata(request):
                     SalaryPerMonth=0
                     if(sanitycheck == 0):
                         mediumobj = Medium(
-                            mediumname=MediumName, freeoremployed=FreeOrEmployed)
+                            mediumname=MediumName,
+                            freeoremployed=FreeOrEmployed,
+                            UpDate=datetime.datetime.now())
                         mediumobj.save()
                         SalaryPerHour=float(FeeFree)/float(HoursSpentFree)
                         SalaryPerMonth=SalaryPerHour*160
@@ -672,6 +693,8 @@ def senddata(request):
                             Experience=Experience,
                             Happiness=float(Happiness),
                             Comment=Comment,
+                            Date=datetime.datetime.now()
+
                         )
         testdict = {}
         counter = 0
