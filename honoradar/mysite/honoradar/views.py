@@ -203,22 +203,40 @@ def senddata(request):
 
             # we get the three categories that all entries have in common regardless of
             #freelance, pauschalist or employed
-            MediumName = (request.POST.get('giv_value'))
+            MediumName = (request.POST.get('MediumName'))
             FreeOrEmployed = (request.POST.get('FreeOrEmployed'))
             Comment = (request.POST.get('Comment'))
             AGB = (request.POST.get('AGB'))
             Happiness = (request.POST.get('Happiness'))
 
 
+
+
             # if the mediumname or the AGB is not given, we set the sanitycheck to 1
             # and create a warning message that will pop-up
             if MediumName:
-                pass
+                with io.open('honoradar/static/honoradar/mediumsname.json', "r") as json_file:
+                    oldjsondata = json.load(json_file)
+                    inthere=0
+                    for p in oldjsondata:
+                        if p['name']==MediumName:
+                            inthere=1
+                            mediumcode=p['code']
+                            MediumName=mediumcode
+                    if inthere !=1:
+                        newjsondata=oldjsondata
+                        newentry={"name":MediumName.title(),"code":MediumName.title()}
+
+                        newjsondata.append(newentry)
+
+                        with io.open('honoradar/static/honoradar/mediumsname.json', 'w') as outfile:
+                            data=json.dumps(newjsondata, ensure_ascii=False)
+                            outfile.write(data)
+
             else:
                 print("No Mediumname!!")
                 sanitycheck = 1
                 messages.info(request, 'Mediumname')
-
 
 
             # CHECKING WHETHER THERE ARE ALREADY ENTIRES WITH THIS MEDIUM
@@ -660,23 +678,6 @@ def senddata(request):
         print(MediumName)
 
 
-        with io.open('honoradar/static/honoradar/mediumsname.json', "r") as json_file:
-            oldjsondata = json.load(json_file)
-            inthere=0
-            for p in oldjsondata:
-                if p['name']==MediumName:
-                    inthere=1
-            newentry={"name":MediumName,"code":MediumName}
-            if inthere !=1:
-                newjsondata=oldjsondata
-                newentry={"name":MediumName.title(),"code":MediumName}
-
-                newjsondata.append(newentry)
-
-                with io.open('honoradar/static/honoradar/mediumsname.json', 'w') as outfile:
-                    data=json.dumps(newjsondata, ensure_ascii=False)
-                    outfile.write(data)
-
         for i in list(messages.get_messages(request)):
             bla = str(i)
             testdict["message" + str(counter)] = bla
@@ -692,7 +693,16 @@ def senddata(request):
 def getdata(request):
     if request.is_ajax():
         print("this is ajax")
-        MediumName = (request.GET.get('get_value'))
+        MediumName = (request.GET.get('mediumget'))
+        with io.open('honoradar/static/honoradar/mediumsname.json', "r") as json_file:
+            oldjsondata = json.load(json_file)
+            for p in oldjsondata:
+                if p['name']==MediumName:
+                    mediumcode=p['code']
+                    MediumName=mediumcode
+
+
+
         Mediumdict={'mediumname': MediumName}
         MediumFestContext={}
         MediumPauschalContext={}

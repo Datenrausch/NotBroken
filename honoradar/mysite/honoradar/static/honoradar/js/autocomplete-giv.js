@@ -12,9 +12,9 @@ var options = {
         },
 
         onChooseEvent: function() {
-            var value = $("#data_medium").getSelectedItemData().code;
+            var value = $("#data_medium").getSelectedItemData().name;
 
-            $("#id-value-giv").val(value).trigger("change");
+            $("#data_medium").val(value).trigger("change");
         }
     }
 };

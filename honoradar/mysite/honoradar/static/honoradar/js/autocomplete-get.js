@@ -12,9 +12,9 @@ match: {
 },
 
 onChooseEvent: function() {
-var value = $("#media-analyse").getSelectedItemData().code;
+var value = $("#media-analyse").getSelectedItemData().name;
 
-$("#id-value-get").val(value).trigger("change");
+$("#media-analyse").val(value).trigger("change");
 }
 }
 };
