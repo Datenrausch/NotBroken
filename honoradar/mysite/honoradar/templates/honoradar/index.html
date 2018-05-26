@@ -144,6 +144,7 @@
                     <!-- Medium-Select -->
                     <div class="media-select-container">
                         <input name="MediumName" id="data_medium" class="media-select select-font dropdown" list="medium" placeholder="Für welches Medium arbeitest du?" type="text" onclick="alertoffdatamedium()" />
+                        <input type="hidden" id="id-value-giv" name="giv_value">
 
                     </div>
                     <!-- Support Safari? https://stackoverflow.com/questions/27494084/html5-datalist-tag-is-not-populating-in-safari?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa -->
@@ -379,6 +380,7 @@
                     <!-- Medium-Select -->
                     <div class="media-select-container">
                         <input name="mediumget" id="media-analyse" class="media-select select-font" list="medium" placeholder="Welches Medium interessiert dich?" type="text" onclick="getfunction()" />
+                        <input type="hidden" id="id-value-get" name="get_value">
 
                         <datalist id="medium-analyse">
 	<!--[if lte IE 9]><select data-datalist="samples"><![endif]-->

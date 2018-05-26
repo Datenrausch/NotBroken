@@ -11,10 +11,10 @@ var options = {
             enabled: true
         },
 
-        onSelectItemEvent: function() {
+        onChooseEvent: function() {
             var value = $("#data_medium").getSelectedItemData().code;
 
-            $("#data_medium").val(value).trigger("change");
+            $("#id-value-giv").val(value).trigger("change");
         }
     }
 };

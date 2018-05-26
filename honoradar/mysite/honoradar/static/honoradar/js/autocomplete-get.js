@@ -11,10 +11,10 @@ match: {
   enabled: true
 },
 
-onSelectItemEvent: function() {
+onChooseEvent: function() {
 var value = $("#media-analyse").getSelectedItemData().code;
 
-$("#media-analyse").val(value).trigger("change");
+$("#id-value-get").val(value).trigger("change");
 }
 }
 };

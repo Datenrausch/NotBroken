@@ -203,8 +203,7 @@ def senddata(request):
 
             # we get the three categories that all entries have in common regardless of
             #freelance, pauschalist or employed
-            MediumName = (request.POST.get('MediumName'))
-            MediumName=MediumName.title()
+            MediumName = (request.POST.get('giv_value'))
             FreeOrEmployed = (request.POST.get('FreeOrEmployed'))
             Comment = (request.POST.get('Comment'))
             AGB = (request.POST.get('AGB'))
@@ -670,6 +669,8 @@ def senddata(request):
             newentry={"name":MediumName,"code":MediumName}
             if inthere !=1:
                 newjsondata=oldjsondata
+                newentry={"name":MediumName.title(),"code":MediumName}
+
                 newjsondata.append(newentry)
 
                 with io.open('honoradar/static/honoradar/mediumsname.json', 'w') as outfile:
@@ -691,7 +692,7 @@ def senddata(request):
 def getdata(request):
     if request.is_ajax():
         print("this is ajax")
-        MediumName = (request.GET.get('mediumget'))
+        MediumName = (request.GET.get('get_value'))
         Mediumdict={'mediumname': MediumName}
         MediumFestContext={}
         MediumPauschalContext={}

@@ -25,6 +25,8 @@ $(document).ready(function() {
 
         alertdiv.classList.add("show");
         alertdiv.classList.remove("hide");
+        var element = document.getElementById("id-value-get")
+        element.innerHTML = ""
         const size = Object.keys(data).length;
         if (size > 0) {
             alertdiv.innerHTML = ""

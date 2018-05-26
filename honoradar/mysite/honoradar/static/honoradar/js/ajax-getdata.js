@@ -44,6 +44,8 @@ $(document).ready(function() {
         const $resultfrei = $("#result-text-frei")
         const $resultpauschal = $("#result-text-pauschal")
         const $resultfest = $("#result-text-fest")
+        var element = document.getElementById("id-value-giv")
+        element.innerHTML = ""
 
         var element = document.getElementById("result-text-frei")
         element.innerHTML = ""
