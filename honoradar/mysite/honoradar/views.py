@@ -935,6 +935,13 @@ def getdata(request):
             MediumComments={"MediumComments":comments}
             Mediumdict.update(MediumComments)
 
+            Gegendarstellung=list(AllMedium.values_list("Gegendarstellung", flat=True))
+            print(Gegendarstellung)
+            Gegendarstellung = list(filter(None, Gegendarstellung))
+            print(Gegendarstellung)
+            MediumGegendarstellung={"MediumGegendarstellung":Gegendarstellung}
+            Mediumdict.update(MediumGegendarstellung)
+
         return JsonResponse(Mediumdict)
 
     else:

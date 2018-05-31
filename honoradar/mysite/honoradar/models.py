@@ -57,6 +57,7 @@ class DataCollection(models.Model):
 
     Comment=models.TextField(default="Kein Kommentar",max_length=600, null=True,blank=True)
 
+    Gegendarstellung=models.TextField(default=None,max_length=600, null=True,blank=True)
 
 
     def __str__(self):
