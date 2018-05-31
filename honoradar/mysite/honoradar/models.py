@@ -9,8 +9,8 @@ from model_utils import Choices
 class Medium(models.Model):
     FAIRNESS = Choices("keineAngabe","Ja","Hoelle","Himmel")
     fairness = models.CharField(choices=FAIRNESS, default="", max_length=20, null=True,blank=True)
-    #SUSPICIOUSMEDIUM = Choices("Ok","Weird")
-    #Suspiciousmedium = models.CharField(choices=SUSPICIOUSMEDIUM, default=SUSPICIOUSMEDIUM.Ok, max_length=20, null=True,blank=True)
+    SUSPICIOUSMEDIUM = Choices("Ok","Weird")
+    Suspiciousmedium = models.CharField(choices=SUSPICIOUSMEDIUM, default=SUSPICIOUSMEDIUM.Ok, max_length=20, null=True,blank=True)
 
     mediumname = models.CharField(max_length=200)
     FREEOREMPLOYED = Choices("fest","pauschal","frei")
@@ -28,8 +28,8 @@ class DataCollection(models.Model):
     FeeFree=models.FloatField(default=0)
     SalaryPerHour=models.FloatField(default=0)
     SalaryPerMonth=models.FloatField(default=0)
-    #SUSPICIOUSENTRY = Choices("Ok","Weird")
-    #Suspiciousentry = models.CharField(choices=SUSPICIOUSENTRY, default=SUSPICIOUSENTRY.Ok, max_length=20, null=True,blank=True)
+    SUSPICIOUSENTRY = Choices("Ok","Weird")
+    Suspiciousentry = models.CharField(choices=SUSPICIOUSENTRY, default=SUSPICIOUSENTRY.Ok, max_length=20, null=True,blank=True)
 
 
 

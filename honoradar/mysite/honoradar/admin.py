@@ -15,14 +15,15 @@ class MediumAdmin(admin.ModelAdmin):
     fieldsets = [
     (None,               {'fields': ['mediumname'] }),
     ('Jobstatus', {'fields': ['freeoremployed']}),
-    ('Fairness', {'fields': ['fairness']})
+    ('Fairness', {'fields': ['fairness']}),
+    ('Suspiciousmedium', {'fields': ['Suspiciousmedium']})
 
 ]
     inlines = [DataCollection]
     #this is for the question page
-    list_display = ['mediumname','freeoremployed','UpDate','fairness']
+    list_display = ['mediumname','freeoremployed','UpDate','fairness','Suspiciousmedium']
     #fields = ['pub_date', 'question_text']
-    list_filter = ['freeoremployed','UpDate']
+    list_filter = ['freeoremployed','UpDate','Suspiciousmedium']
     search_fields = ['mediumname']
 
 
