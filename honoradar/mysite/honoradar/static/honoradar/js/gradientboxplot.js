@@ -289,7 +289,47 @@ function gradientboxplot(responsejson, elementid) {
         })
         .attr("opacity", 1)
         .attr("rx", width / 75)
-        .attr("ry", width / 75)
+        .attr("ry", width / 75);
+
+
+        console.log("TEXT")
+        var textellipses = svg
+            .selectAll(".textellipse")
+            .data(responsejson);
+
+        textellipses
+            .exit()
+            .transition()
+
+        .attr("x", 0)
+        .attr("y", 0)
+        .remove();
+
+        var new_textellipses = textellipses
+            .enter()
+            .append("text")
+            .attr("class", "textellipse")
+            .attr("x", 0)
+            .attr("y", 0)
+
+        new_textellipses
+            .merge(textellipses)
+            .attr("y", function(d) {
+                return yscale(d.mean);
+            })
+
+        .attr("x", function(d) {
+                return xscale(d.category) - margin.left + step / 2;
+            })
+            .attr("dx", barwidth*1.1)
+            .attr("dy", barwidth*0.1)
+
+            .text(function(d) { return ((d.mean).toFixed(2)+" €"); })
+            .style("stroke", "white")
+            .style("fill", "white")
+            .style('font-size', '0.45em')
+            .style('font-family', 'OpenSans-Regular');
+
 
 
     svg
