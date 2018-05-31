@@ -322,7 +322,7 @@ function gradientboxplot(responsejson, elementid) {
                 return xscale(d.category) - margin.left + step / 2;
             })
             .attr("dx", barwidth*1.1)
-            .attr("dy", barwidth*0.1)
+            .attr("dy", width / 75)
 
             .text(function(d) { return ((d.mean).toFixed(2)+" €"); })
             .style("stroke", "white")
