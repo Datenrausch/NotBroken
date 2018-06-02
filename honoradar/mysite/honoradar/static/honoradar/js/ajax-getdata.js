@@ -320,7 +320,7 @@ $(document).ready(function() {
                         min: parseFloat(data["AllFreiSalaryPerHour"]["lower"]),
                         max: parseFloat(data["AllFreiSalaryPerHour"]["upper"]),
                         mean: parseFloat(data["AllFreiSalaryPerHour"]["median"]),
-                        charttitle: "Mittleres Stundenhonorar # (Brutto / Euro)"
+                        charttitle: "Mittleres Honorar # pro Stunde # (Brutto / Euro)"
                     }];
 
                     gradientboxplot(d3festjson, elementid)
@@ -352,7 +352,7 @@ $(document).ready(function() {
                         min: parseFloat(data["AllFreiVideoFeePerMin"]["lower"]),
                         max: parseFloat(data["AllFreiVideoFeePerMin"]["upper"]),
                         mean: parseFloat(data["AllFreiVideoFeePerMin"]["median"]),
-                        charttitle: "Mittleres Honorar pro Video- # minute (Brutto / Euro)"
+                        charttitle: "Mittleres Honorar # pro Videominute # (Brutto / Euro)"
                     }];
 
                     gradientboxplot(d3festjson, elementid)
@@ -383,7 +383,7 @@ $(document).ready(function() {
                         min: parseFloat(data["AllFreiAudioFeePerMin"]["lower"]),
                         max: parseFloat(data["AllFreiAudioFeePerMin"]["upper"]),
                         mean: parseFloat(data["AllFreiAudioFeePerMin"]["median"]),
-                        charttitle: "Mittleres Honorar pro Audio- # minute (Brutto / Euro)"
+                        charttitle: "Mittleres Honorar # pro Audiominute - # (Brutto / Euro)"
                     }];
 
                     gradientboxplot(d3festjson, elementid)
@@ -415,7 +415,7 @@ $(document).ready(function() {
                         min: parseFloat(data["AllFreiArticleFeePerChar"]["lower"] * 1000),
                         max: parseFloat(data["AllFreiArticleFeePerChar"]["upper"] * 1000),
                         mean: parseFloat(data["AllFreiArticleFeePerChar"]["median"] * 1000),
-                        charttitle: "Mittleres Honorar pro 1000 # Zeichen (Brutto / Euro)"
+                        charttitle: "Mittleres Honorar pro # 1000 Zeichen#  (Brutto / Euro)"
                     }];
 
                     gradientboxplot(d3festjson, elementid)
