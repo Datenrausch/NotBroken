@@ -3,18 +3,19 @@ function gradientboxplot(responsejson, elementid) {
     element.classList.add("show");
     element.classList.remove("hide");
 
-    let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    let height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
     console.log(elementid)
     elementstr = "'" + elementid + "'"
     console.log(document.getElementById(elementid))
-    width = document.getElementById(elementid).offsetWidth;
+    width = document.getElementById(elementid).offsetWidth*0.75;
+    console.log("width")
+    console.log(width)
 
     height = 400;
 
     function titlewrap(text, width) {
-      console.log(width)
 
       text.each(function() {
         var text = d3.select(this),
@@ -40,7 +41,7 @@ function gradientboxplot(responsejson, elementid) {
     }
 
 
-    let margin = {
+    var margin = {
         top: 30,
         right: 10,
         bottom: 30,
@@ -73,10 +74,10 @@ function gradientboxplot(responsejson, elementid) {
 
 
 
-    let maxY = d3.max(responsejson, function(d) {
+    var maxY = d3.max(responsejson, function(d) {
         return +d.max;
     });
-    let minY = d3.min(responsejson, function(d) {
+    var minY = d3.min(responsejson, function(d) {
         return +d.min;
     });
     height = height - margin.top-margin.bottom;
@@ -107,7 +108,7 @@ function gradientboxplot(responsejson, elementid) {
             word,
             line = [],
             lineNumber = 0,
-            lineHeight = 1.9, // ems
+            lineHeight = 1.3, // ems
             y = text.attr("y"),
             dy = parseFloat(text.attr("dy")),
             tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
@@ -287,8 +288,48 @@ function gradientboxplot(responsejson, elementid) {
             return colorscaleellipse(d.category);
         })
         .attr("opacity", 1)
-        .attr("rx", width / 25)
-        .attr("ry", width / 100)
+        .attr("rx", width / 75)
+        .attr("ry", width / 75);
+
+
+        console.log("TEXT")
+        var textellipses = svg
+            .selectAll(".textellipse")
+            .data(responsejson);
+
+        textellipses
+            .exit()
+            .transition()
+
+        .attr("x", 0)
+        .attr("y", 0)
+        .remove();
+
+        var new_textellipses = textellipses
+            .enter()
+            .append("text")
+            .attr("class", "textellipse")
+            .attr("x", 0)
+            .attr("y", 0)
+
+        new_textellipses
+            .merge(textellipses)
+            .attr("y", function(d) {
+                return yscale(d.mean);
+            })
+
+        .attr("x", function(d) {
+                return xscale(d.category) - margin.left + step / 2;
+            })
+            .attr("dx", barwidth*1.1)
+            .attr("dy", width / 75)
+
+            .text(function(d) { return ((d.mean).toFixed(2)+" €"); })
+            .style("stroke", "white")
+            .style("fill", "white")
+            .style('font-size', '0.45em')
+            .style('font-family', 'OpenSans-Regular');
+
 
 
     svg

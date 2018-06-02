@@ -15,32 +15,16 @@ class MediumAdmin(admin.ModelAdmin):
     fieldsets = [
     (None,               {'fields': ['mediumname'] }),
     ('Jobstatus', {'fields': ['freeoremployed']}),
+    ('Fairness', {'fields': ['fairness']}),
+    ('Suspiciousmedium', {'fields': ['Suspiciousmedium']})
 
 ]
     inlines = [DataCollection]
     #this is for the question page
-    list_display = ['mediumname','freeoremployed']
+    list_display = ['mediumname','freeoremployed','UpDate','fairness','Suspiciousmedium']
     #fields = ['pub_date', 'question_text']
-    list_filter = ['freeoremployed']
+    list_filter = ['freeoremployed','UpDate','Suspiciousmedium']
     search_fields = ['mediumname']
-
-class ChoiceInline(admin.TabularInline):
-    model = Choice
-    extra = 3
-
-
-class QuestionAdmin(admin.ModelAdmin):
-    fieldsets = [
-        (None,               {'fields': ['question_text']}),
-        ('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
-    ]
-    inlines = [ChoiceInline]
-    #this is for the question page
-    list_display = ('question_text', 'pub_date', 'was_published_recently')
-    #fields = ['pub_date', 'question_text']
-    list_filter = ['pub_date']
-    search_fields = ['question_text']
 
 
 admin.site.register(Medium, MediumAdmin)
-admin.site.register(Question, QuestionAdmin)

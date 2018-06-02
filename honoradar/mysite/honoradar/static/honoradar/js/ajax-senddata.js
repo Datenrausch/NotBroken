@@ -25,6 +25,7 @@ $(document).ready(function() {
 
         alertdiv.classList.add("show");
         alertdiv.classList.remove("hide");
+
         const size = Object.keys(data).length;
         if (size > 0) {
             alertdiv.innerHTML = ""
@@ -71,7 +72,7 @@ $(document).ready(function() {
                 if ((String(data[keyname])) == "Gehalt") {
                     document.getElementById('data_gehalt').classList.add("alert");
                 }
-                if ((String(data[keyname])) == "Mediumformat") {
+                if ((String(data[keyname])) == "Format des Mediums") {
                     document.getElementById('data_format_text_audio_video').classList.add("alert-switch");
                 };
                 if ((String(data[keyname])) == "Anzahl an Zeichen für den Artikel") {
@@ -109,6 +110,11 @@ $(document).ready(function() {
 
           document.getElementById('outputtime').innerHTML="0"
 
+          document.getElementById('outputtext').innerHTML="0"
+          document.getElementById('outputaudio').innerHTML="0"
+          document.getElementById('outputvideo').innerHTML="0"
+
+
 
           var element=document.getElementById("outputhappiness").setAttribute("class","fav-output fav-output-0")
 
@@ -141,6 +147,11 @@ $(document).ready(function() {
             }
 
             var element = document.getElementById("data_arbeitsverhaeltnis");
+            if (element != null) {
+                element.classList.add("hide");
+                element.classList.remove("show");
+            }
+            var element = document.getElementById("pre-data_position");
             if (element != null) {
                 element.classList.add("hide");
                 element.classList.remove("show");
