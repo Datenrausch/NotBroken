@@ -6,12 +6,9 @@ function gradientboxplot(responsejson, elementid) {
     var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
-    console.log(elementid)
     elementstr = "'" + elementid + "'"
-    console.log(document.getElementById(elementid))
     width = document.getElementById(elementid).offsetWidth;
-    console.log("width")
-    console.log(width)
+
 
     height = 400;
 
@@ -50,10 +47,6 @@ function gradientboxplot(responsejson, elementid) {
 
     barwidth = width / 25;
     elementidhash = "#" + elementid
-    console.log(elementid)
-    console.log(responsejson);
-    console.log(width);
-    console.log(height);
 
 
     var svg = d3
@@ -100,7 +93,6 @@ function gradientboxplot(responsejson, elementid) {
 ;
 
     function wrap(text, width) {
-      console.log(width)
 
       text.each(function() {
         var text = d3.select(this),
@@ -130,7 +122,6 @@ function gradientboxplot(responsejson, elementid) {
     function gradient(colour, id, y1, y2, off1, off2, op1, op2) {
         //gradient function.
         //defines the gradient
-        console.log(colour)
         svg.append("defs")
             .append("linearGradient")
             .attr("id", id)
@@ -205,7 +196,6 @@ function gradientboxplot(responsejson, elementid) {
     var yAxis = d3.axisLeft(yscale);
 
     var bars = svg.selectAll(".bar").data(responsejson);
-    console.log(bars)
 
     bars
         .exit()
@@ -292,7 +282,6 @@ function gradientboxplot(responsejson, elementid) {
         .attr("ry", width / 75);
 
 
-        console.log("TEXT")
         var textellipses = svg
             .selectAll(".textellipse")
             .data(responsejson);
