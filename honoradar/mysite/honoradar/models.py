@@ -7,6 +7,11 @@ from model_utils import Choices
 
 
 class Medium(models.Model):
+    FAIRNESS = Choices("keineAngabe","Ja","Hoelle","Himmel")
+    fairness = models.CharField(choices=FAIRNESS, default="", max_length=20, null=True,blank=True)
+    SUSPICIOUSMEDIUM = Choices("Ok","Weird")
+    Suspiciousmedium = models.CharField(choices=SUSPICIOUSMEDIUM, default=SUSPICIOUSMEDIUM.Ok, max_length=20, null=True,blank=True)
+
     mediumname = models.CharField(max_length=200)
     FREEOREMPLOYED = Choices("fest","pauschal","frei")
     freeoremployed = models.CharField(choices=FREEOREMPLOYED, default=FREEOREMPLOYED.frei, max_length=10)
@@ -18,11 +23,14 @@ class Medium(models.Model):
 class DataCollection(models.Model):
     Date = models.DateTimeField(default=datetime.datetime.now, blank=True)
     Medium = models.ForeignKey(Medium, on_delete=models.CASCADE)
-    Happiness=models.DecimalField(default=0, max_digits=10, decimal_places=3)
-    SalaryPerMonthEmpMix=models.DecimalField(default=0, max_digits=10, decimal_places=3)
-    FeeFree=models.DecimalField(default=0, max_digits=10, decimal_places=3)
-    SalaryPerHour=models.DecimalField(default=0, max_digits=10, decimal_places=3)
-    SalaryPerMonth=models.DecimalField(default=0, max_digits=10, decimal_places=3)
+    Happiness=models.FloatField(default=0)
+    SalaryPerMonthEmpMix=models.FloatField(default=0)
+    FeeFree=models.FloatField(default=0)
+    SalaryPerHour=models.FloatField(default=0)
+    SalaryPerMonth=models.FloatField(default=0)
+    SUSPICIOUSENTRY = Choices("Ok","Weird")
+    Suspiciousentry = models.CharField(choices=SUSPICIOUSENTRY, default=SUSPICIOUSENTRY.Ok, max_length=20, null=True,blank=True)
+
 
 
     #Have to change into buttons
@@ -30,11 +38,11 @@ class DataCollection(models.Model):
     EXPERIENCE = Choices("keineAngabe","1 Jahr","3 Jahre"," 5 Jahre")
     Experience = models.CharField(choices=EXPERIENCE, default=EXPERIENCE.keineAngabe, max_length=20, null=True,blank=True)
 
-    HoursPerWeekEmp=models.DecimalField(default=0, max_digits=10, decimal_places=3)
-    HoursSpentFree=models.DecimalField(default=0, max_digits=10, decimal_places=3)
+    HoursPerWeekEmp=models.FloatField(default=0)
+    HoursSpentFree=models.FloatField(default=0)
 
-    HoursPerDayMix=models.DecimalField(default=0, max_digits=10, decimal_places=3)
-    DaysPerMonthMix=models.DecimalField(default=0, max_digits=10, decimal_places=3)
+    HoursPerDayMix=models.FloatField(default=0)
+    DaysPerMonthMix=models.FloatField(default=0)
     Genre=models.CharField(default="None",max_length=200,  null=True,blank=True)
 
     VATF = Choices("keineAngabe","text","audio"," video")
@@ -43,14 +51,13 @@ class DataCollection(models.Model):
     AnalogDigitalFree = models.CharField(choices=ANALOGDIGITAL, default=ANALOGDIGITAL.keineAngabe, max_length=200, null=True,blank=True)
 
 
-    MinPerAudioFree=models.DecimalField(default=0, max_digits=10, decimal_places=3)
-    MinPerVideoFree=models.DecimalField(default=0, max_digits=10, decimal_places=3)
-    CharPerArticleFree=models.DecimalField(default=0, max_digits=10, decimal_places=3)
+    MinPerAudioFree=models.FloatField(default=0)
+    MinPerVideoFree=models.FloatField(default=0)
+    CharPerArticleFree=models.FloatField(default=0)
 
     Comment=models.TextField(default="Kein Kommentar",max_length=600, null=True,blank=True)
-    FAIRNESS = Choices("keineAngabe","Ja")
-    fairness = models.CharField(choices=FAIRNESS, default="", max_length=20, null=True,blank=True)
 
+    Gegendarstellung=models.TextField(default=None,max_length=600, null=True,blank=True)
 
 
     def __str__(self):
