@@ -72,6 +72,8 @@ $(document).ready(function() {
         var element = document.getElementById("result-text-fest")
         element.innerHTML = ""
 
+
+
         //We remove the graphics in case they are still there from an older request
         d3.select("#festgrafik1_svg").remove();
         d3.select("#pauschalgrafik1_svg").remove();
@@ -454,6 +456,16 @@ $(document).ready(function() {
         };
 
         //Lastly we set the texts accompanying the graphics to show
+        var element = document.getElementById("freigrafikaudio")
+        element.classList.add("hide");
+        element.classList.remove("show");
+        var element = document.getElementById("freigrafikvideo")
+        element.classList.add("hide");
+        element.classList.remove("show");
+        var element = document.getElementById("freigrafiktext")
+        element.classList.add("hide");
+        element.classList.remove("show");
+
         var element = document.getElementById("freigrafiktext");
         element.classList.add("show");
         element.classList.remove("hide");

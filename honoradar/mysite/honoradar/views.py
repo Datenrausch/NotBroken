@@ -81,7 +81,7 @@ def StdAvgFunction(entries, column):
 
 
 def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
-
+    
     count1 = entries.aggregate(Count(column1))
     columncount1 = str(column1) + "__count"
     count1 = (count1[columncount1])
