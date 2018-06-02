@@ -129,7 +129,16 @@ $(document).ready(function() {
           resultsdiv.classList.add("fair-accepted");
         }else{
           resultsdiv.classList.remove("fair-accepted");
-
+        }
+        if(data["HimmelCount"]>0){
+          resultsdiv.classList.add("got-himmel");
+        }else{
+          resultsdiv.classList.remove("got-himmel");
+        }
+        if(data["HoelleCount"]>0){
+          resultsdiv.classList.add("got-hoelle");
+        }else{
+          resultsdiv.classList.remove("got-hoelle");
         }
 
         //If it turns out that the backend says, we have no data, we show the error messages

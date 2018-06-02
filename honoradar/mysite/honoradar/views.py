@@ -788,7 +788,10 @@ def getdata(request):
         mediumoverallcount=DoesMediumExist.count()
         FairnessCheck=Medium.objects.filter(mediumname=MediumName)
         FairnessCount=FairnessCheck.filter(fairness='Ja').count()
-        mediumoverallcount_dict={"mediumoverallcount":mediumoverallcount,"FairnessCount":FairnessCount}
+        HimmelCount=FairnessCheck.filter(fairness='Himmel').count()
+        HoelleCount=FairnessCheck.filter(fairness='Hoelle').count()
+
+        mediumoverallcount_dict={"mediumoverallcount":mediumoverallcount,"FairnessCount":FairnessCount, "HimmelCount":HimmelCount,"HoelleCount":HoelleCount}
         #we then update our mediumdict with this information
         Mediumdict.update(mediumoverallcount_dict)
 
