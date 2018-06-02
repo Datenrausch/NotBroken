@@ -2,18 +2,15 @@ function gradientboxplot(responsejson, elementid) {
   var element = document.getElementById(elementid);
     element.classList.add("show");
     element.classList.remove("hide");
-
     var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
     elementstr = "'" + elementid + "'"
     width = document.getElementById(elementid).offsetWidth;
-
-
     height = 400;
 
     function titlewrap(text, width) {
-
+      width=width-45
       text.each(function() {
         var text = d3.select(this),
             words = text.text().split("#").reverse(),

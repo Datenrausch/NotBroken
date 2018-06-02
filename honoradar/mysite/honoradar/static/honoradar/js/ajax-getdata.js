@@ -40,6 +40,12 @@ $(document).ready(function() {
     function handleFormSuccessGet(data, textStatus, jqXHR) {
 
 
+      document.getElementById("result_format_text").checked = true
+      document.getElementById("result_format_audio").checked = false
+
+      document.getElementById("result_format_video").checked = false
+
+
         newdata=data
         newtextStatus=textStatus
         newjqXHR=jqXHR
@@ -435,7 +441,6 @@ $(document).ready(function() {
 
             }
             smoothfunction2()
-
         };
 
 
