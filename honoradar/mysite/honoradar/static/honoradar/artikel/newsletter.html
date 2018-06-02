@@ -11,14 +11,13 @@
   	<meta name="date" content="2017-11-18">
 	<meta name="robots" content="index,follow">
 
-    <!-- Favicon final_redone: https://realfavicongenerator.net PLEASE DO NOT FORGET -->
-    <link rel="shortcut icon" type="image/x-icon" href="#">
-    <link rel="apple-touch-icon" sizes="180x180" href="#">
-    <link rel="icon" type="image/png" sizes="32x32" href="#">
-    <link rel="icon" type="image/png" sizes="16x16" href="#">
-    <link rel="manifest" href="../honoradar/manifest.json">
-    <link rel="mask-icon" href="../honoradar/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="theme-color" content="#ffffff">
+	<!-- Flavicon -->
+	<link rel="shortcut icon" href="../../../static/favicon.ico">
+	<link rel="shortcut icon" href="../../../static/favicon.png">
+	<link rel="icon" type="image/png" href="../../../static/favicon.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="../../../static/favicon.png" sizes="96x96">
+	<link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicon_apple_touch.png">
+	<meta name="msapplication-TileImage" content="../../../static/favicon_msapplication.png">
 
     <!-- Style -->
     <link rel="stylesheet" href="../../../static/honoradar/css/style.css">
@@ -150,12 +149,20 @@
 	<form method="post" action="http://michelpenke.de/?na=s" onsubmit="return newsletter_check(this)">
 	<fieldset id="fieldset">
 		<p><input class="email-select" type="email" id="email" name="ne" size="30" placeholder="Deine Emailadresse ..." required></p>
+		<p class="newsletter-belehrung-1">Freischreiber e.V. wird deine E-Mail-Adresse ausschließlich dafür verwenden, dir den Newsletter zu senden. 
+		Bitte bestätige, dass wir uns per E-Mail bei dir melden dürfen:</p>
 				<div style="display: none;">
 					<input type="checkbox" name="nl[]" value="1" checked/>Was-Journalisten-Verdienen<br />
 				</div>
 		<p><input name="AGB" class="checkbox-newsletter" name="ny" type="checkbox" id="newsletter_checkbox-1" required/>
 		<label class="checkboxlabel-newsletter" for="newsletter_checkbox-1"></label>
 		<span class="checkboxtext-newsletter">Ich akzeptiere die <a href="../../../static/honoradar/artikel/datenschutz.html" target="_blank" class="clear-agb">Datenschutz-AGBs</a> dieser Seite.</span></p>
+		<p class="newsletter-belehrung-2">Du kannst deine Meinung jederzeit ändern. In jedem Newsletter wirst du ganz unten einen Link finden, über den du dich abmelden kannst. 
+		Indem du unten auf "Abonnieren" klickst, erklärst du dich damit einverstanden, dass wir dir den Newsletter senden dürfen.</p>	
+		
+		<p class="newsletter-belehrung-3">Wir verwenden <a class="clear-agb-bedingung" href="https://www.thenewsletterplugin.com">The Newsletterplugin</a> für den Versand. 
+		Indem du unten zur Absendung dieses Formulars klickst, bestätigst du, dass die von dir angegebenen Informationen 
+		in bereinstimmung mit deren <a class="clear-agb-bedingung" href="https://www.thenewsletterplugin.com/terms">Bedingungen</a> verarbeiten dürfen.</p>
 		<input class="submit-newsletter" type="submit" value="Abonnieren"/>
 	</fieldset>
       </form>
@@ -181,10 +188,21 @@
 			<div class="response" id="mce-error-response" style="display:none"></div>
 			<div class="response" id="mce-success-response" style="display:none"></div>
 		</div>   
+		<p class="newsletter-belehrung-1">Freischreiber e.V. wird deine E-Mail-Adresse ausschließlich dafür verwenden, dir den Newsletter zu senden. 
+		Bitte bestätige, dass wir uns per E-Mail bei dir melden dürfen:</p>
+		
     <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_0538baadc33c3c9b656707d6f_1b498a8529" tabindex="-1" value=""></div>
 		<p><input name="AGB" class="checkbox-newsletter required"" name="ny" type="checkbox" id="newsletter_checkbox-2" required='required'/>
 		<label class="checkboxlabel-newsletter" for="newsletter_checkbox-2"></label>
+		
 		<span class="checkboxtext-newsletter">Ich akzeptiere die <a href="../../../static/honoradar/artikel/datenschutz.html" target="_blank" class="clear-agb">Datenschutz-AGBs</a> dieser Seite.</span></p>
+		<p class="newsletter-belehrung-2">Du kannst deine Meinung jederzeit ändern. In jedem Newsletter wirst du ganz unten einen Link finden, über den du dich abmelden kannst. 
+		Indem du unten auf "Abonnieren" klickst, erklärst du dich damit einverstanden, dass wir dir den Newsletter senden dürfen.</p>	
+		
+		<p class="newsletter-belehrung-3">Wir verwenden <a class="clear-agb-bedingung" href="https://mailchimp.com">MailChimp</a> als unsere Plattform zur Marketing-Automatisierung. 
+		Indem du unten zur Absendung dieses Formulars klickst, bestätigst du, dass die von dir angegebenen Informationen an MailChimp zur Verarbeitung in 
+		Übereinstimmung mit deren <a class="clear-agb-bedingung" href="https://mailchimp.com/legal/privacy/">Datenschutzrichtlinien</a> und <a class="clear-agb-bedingung" href="https://mailchimp.com/legal/terms/">Bedingungen</a> weitergegeben werden.</p>
+			
 			<input type="submit" value="Abonnieren" name="subscribe" id="mc-embedded-subscribe" class="submit-newsletter">
 	</fieldset>
 	</form>
@@ -193,7 +211,7 @@
 	
 	<p class="text-box offset-3 newsletter-text">	
 	Er liefert Infos rund um die Arbeit als Freelancer, Tipps zu Weiterbildungen und Veranstaltungen sowie News, die deine Arbeit als Freier betreffen könnten.
-	Der Newsletter wird meist alle zwei bis drei Wochen verschickt. 	
+	Der Newsletter wird meist alle zwei Wochen verschickt. 	
 	</p>
 
 	</div>
