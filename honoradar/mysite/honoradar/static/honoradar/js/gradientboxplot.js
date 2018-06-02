@@ -9,7 +9,7 @@ function gradientboxplot(responsejson, elementid) {
     console.log(elementid)
     elementstr = "'" + elementid + "'"
     console.log(document.getElementById(elementid))
-    width = document.getElementById(elementid).offsetWidth*0.75;
+    width = document.getElementById(elementid).offsetWidth;
     console.log("width")
     console.log(width)
 
@@ -45,7 +45,7 @@ function gradientboxplot(responsejson, elementid) {
         top: 30,
         right: 10,
         bottom: 30,
-        left: 30,
+        left: 45,
     };
 
     barwidth = width / 25;
@@ -327,7 +327,7 @@ function gradientboxplot(responsejson, elementid) {
             .text(function(d) { return ((d.mean).toFixed(2)+" €"); })
             .style("stroke", "white")
             .style("fill", "white")
-            .style('font-size', '0.45em')
+            .style('font-size', '0.7em')
             .style('font-family', 'OpenSans-Regular');
 
 
@@ -341,7 +341,7 @@ function gradientboxplot(responsejson, elementid) {
 
           .style("stroke", "white")
           .style("fill", "white")
-          .style('font-size', '1.2em')
+          .style('font-size', '1.6em')
           .style('font-family', 'OpenSans-Regular')
 
 

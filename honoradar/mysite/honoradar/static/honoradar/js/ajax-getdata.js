@@ -1,3 +1,7 @@
+var newdata=""
+var newtextStatus=""
+var newjqXHR=""
+
 $(document).ready(function() {
     var $myForm = $("#get-form")
     $myForm.submit(function(event) {
@@ -39,6 +43,12 @@ $(document).ready(function() {
 
     function handleFormSuccessGet(data, textStatus, jqXHR) {
         console.log(data)
+        console.log(textStatus)
+        console.log(jqXHR)
+
+        newdata=data
+        newtextStatus=textStatus
+        newjqXHR=jqXHR
         const resultsdiv = document.getElementById('result')
         const $result = $(".result")
         const $resultfrei = $("#result-text-frei")
@@ -515,5 +525,18 @@ $(document).ready(function() {
         console.log(jqXHR)
         console.log(textStatus)
         console.log(errorThrown)
+        var newdata=""
+        var newtextStatus=""
+        var newjqXHR=""
     }
+    function redraw (){
+      console.log("Listening")
+      if (newdata!=""){
+        handleFormSuccessGet(newdata,newtextStatus,newjqXHR)
+
+      }
+    }
+    window.addEventListener("resize", redraw);
+
+
 })
