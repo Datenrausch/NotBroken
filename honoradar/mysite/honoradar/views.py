@@ -43,7 +43,7 @@ def StdAvgFunction(entries, column):
         lowerboundary=((ids[int(0)] + ids[int(1)]+ ids[int(2)])/3.0)
         upperboundary=((ids[int(n-1)] + ids[int(n-2)]+ ids[int(n-3)])/3.0)
 
-    #Also we check how many entries we had
+    #This is an older part that calculates averages and standard deviation
     count = entries.aggregate(Count(column))
     columncount = str(column) + "__count"
     count = (count[columncount])
@@ -52,7 +52,9 @@ def StdAvgFunction(entries, column):
     if count > 1:
         avg = entries.aggregate(Avg(column))
         columnavg = str(column) + "__avg"
+        #here we caluclate the average
         avg = (avg[columnavg])
+        #and then the std
         count = 0
         sqdiff = 0
         for entry in entries:
@@ -63,6 +65,7 @@ def StdAvgFunction(entries, column):
         std = round(math.sqrt(variance), 2)
         result = {}
         avg = round(avg, 2)
+        #finally push this all into one dictionary
         result["avg"] = avg
         result["std"] = std
         result["median"] = median
@@ -79,9 +82,9 @@ def StdAvgFunction(entries, column):
 
     return(result)
 
-
+#this is the function when we want to combine two columns
 def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
-    
+    #first we count all the entries of the first and the second column
     count1 = entries.aggregate(Count(column1))
     columncount1 = str(column1) + "__count"
     count1 = (count1[columncount1])
@@ -90,9 +93,9 @@ def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
     count2 = (count2[columncount2])
     combinelist=[]
     value=0
-
-
     n=0
+    #we either divide or multiply value from column1 with value from column2 of each row
+    #and create a list of these combined values
     for entry in entries:
         column1val = float(getattr(entry, str(column1)))
         column2val = float(getattr(entry, str(column2)))
@@ -106,7 +109,7 @@ def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
 
             combinelist.append(value)
 
-
+    #then we calculate the media and the upper /lowerboundary from this list of combined values
     median=0
     lowerboundary=0
     upperboundary=0
@@ -130,7 +133,7 @@ def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
         lowerboundary=((ids[int(0)] + ids[int(1)]+ ids[int(2)])/3.0)
         upperboundary=((ids[int(n-1)] + ids[int(n-2)]+ ids[int(n-3)])/3.0)
 
-
+#this is the old average and std calculation function
     if (count1 > 1)and (count2 > 1):
         productsum = 0
         count = 0
@@ -167,6 +170,7 @@ def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
 
             variance = stdsumSQ / count
             std = round(math.sqrt(variance), 2)
+            #and again we create a results dictionary
             result = {}
             avgtwocolumns = round(avgtwocolumns, 2)
             result["avg"] = avgtwocolumns
@@ -744,7 +748,7 @@ def senddata(request):
         counter = 0
         print(MediumName)
 
-
+        #we prepare the dictionary of messages to be displayed
         for i in list(messages.get_messages(request)):
             bla = str(i)
             testdict["message" + str(counter)] = bla
@@ -753,14 +757,17 @@ def senddata(request):
         return JsonResponse(testdict)
     else:
         print("Something went wrong")
-    #    latest_question_list = Question.objects.order_by('-pub_date')[:5]
-    # return HttpResponseRedirect(reverse('honoradar:index'))
 
-
+#this is used to get the data from the backend
 def getdata(request):
+    #we check if the request is ajax
     if request.is_ajax():
         print("this is ajax")
+        #and retrieve the mediumname from the request
         MediumName = (request.GET.get('mediumget'))
+        #then we open the json with all media names and change the mediumname
+        #with the coded mediumname of the json, if it exists to use the same coded
+        #even if user input differs
         with io.open('honoradar/static/honoradar/mediumsname.json', "r") as json_file:
             oldjsondata = json.load(json_file)
             for p in oldjsondata:
@@ -776,24 +783,29 @@ def getdata(request):
         MediumFreiContext={}
         MediumNoDataAtAll={"nodata":"Es gibt keine Daten"}
 
+        #we check how many entries for the medium exist in the DB and whether it was flagged as fair
         DoesMediumExist=DataCollection.objects.filter(Medium__mediumname=MediumName)
         mediumoverallcount=DoesMediumExist.count()
         FairnessCheck=Medium.objects.filter(mediumname=MediumName)
         FairnessCount=FairnessCheck.filter(fairness='Ja').count()
         mediumoverallcount_dict={"mediumoverallcount":mediumoverallcount,"FairnessCount":FairnessCount}
+        #we then update our mediumdict with this information
         Mediumdict.update(mediumoverallcount_dict)
 
+        #if we have no entries for this medium, we add MediumNoDataAtAll to the dictionary
         if (DoesMediumExist.count())==0:
             print("this should trigger, no data at all")
             Mediumdict.update(MediumNoDataAtAll)
 
 
 
-
+        #retrieves all entries for this medium and fest VS all entries for mediums with category fest
         MediumFest=DataCollection.objects.filter(Medium__mediumname=MediumName, Medium__freeoremployed="fest")
         AllFest=DataCollection.objects.filter(Medium__freeoremployed="fest")
         mediumfestcount=MediumFest.count()
 
+        #if we have more than two entries for this medium in this category we use the StdAvgFunctions
+        #to get the results for these categories and then push it to the dictionaries
         if ((MediumFest.count()) > 1):
 
             MediumFestSalaryPerHour = StdAvgFunction(MediumFest, 'SalaryPerHour')
@@ -805,7 +817,6 @@ def getdata(request):
             AllFestSalaryPerMonth= StdAvgFunction(AllFest, 'SalaryPerMonth')
             AllFestHoursPerWeekEmp = StdAvgFunction(AllFest, 'HoursPerWeekEmp')
             AllFestHappiness = StdAvgFunction(AllFest, 'Happiness')
-
 
             MediumFestContext = {
                     "mediumfestcount":mediumfestcount,
@@ -823,7 +834,7 @@ def getdata(request):
             Mediumdict.update(MediumFestContext)
 
 
-
+        #similar procedure for pauschal
         MediumPauschal=DataCollection.objects.filter(Medium__mediumname=MediumName, Medium__freeoremployed="pauschal")
         AllPauschal=DataCollection.objects.filter(Medium__freeoremployed="pauschal")
         mediumpauschalcount=MediumPauschal.count()
@@ -860,9 +871,9 @@ def getdata(request):
             "AllPauschalHoursPerMonth": AllPauschalHoursPerMonth,
             "AllPauschalHappiness": AllPauschalHappiness,
                        }
-
             Mediumdict.update(MediumPauschalContext)
 
+        #similar procedure for frei
         MediumFrei=DataCollection.objects.filter(Medium__mediumname=MediumName, Medium__freeoremployed="frei")
         AllFrei=DataCollection.objects.filter(Medium__freeoremployed="frei")
         mediumfreicount=MediumFrei.count()
@@ -925,20 +936,28 @@ def getdata(request):
                        }
 
             Mediumdict.update(MediumFreiContext)
+
+            #now retrieving the comments for frei, pauschal and fest for this medium
             AllMedium=DataCollection.objects.filter(Medium__mediumname=MediumName)
             comments = list(AllMedium.values_list("Comment", flat=True))
             comments = list(filter(None, comments))
+
+            #if there are no comments we add this default in there
             if len(comments)==0:
                 comments.append("Leider haben wir keine Kommentare für dieses Medium")
+            #if the length is below 9 we keep on increasing the number of comments
             while (len(comments))<9:
                 comments.extend(comments)
             shuffle(comments)
+            #if the length is over 9, then we keep on popping comments
             while (len(comments))>9:
                 comments.pop()
-            print(comments)
+
+            #adding these comments to the dictionary
             MediumComments={"MediumComments":comments}
             Mediumdict.update(MediumComments)
 
+            #Gets Gegendarstellungen for the medium and update the dictionar with this
             Gegendarstellung=list(AllMedium.values_list("Gegendarstellung", flat=True))
             print(Gegendarstellung)
             Gegendarstellung = list(filter(None, Gegendarstellung))
@@ -946,16 +965,18 @@ def getdata(request):
             MediumGegendarstellung={"MediumGegendarstellung":Gegendarstellung}
             Mediumdict.update(MediumGegendarstellung)
 
+        #and finally return the JSON
         return JsonResponse(Mediumdict)
 
     else:
         print("Ohje")
 
-
+#this view defines the index
 class IndexView(generic.ListView):
     model=DataCollection
     template_name = 'honoradar/index.html'
     def get_context_data(self, **context):
+        #gets all entries and all distinc mediumnames and passes this as context to the tempate
         entriesno = DataCollection.objects.count()
         model=Medium
         mediumno=Medium.objects.values("mediumname").distinct().count()
