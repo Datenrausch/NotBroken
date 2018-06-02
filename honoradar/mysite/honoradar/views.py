@@ -18,32 +18,37 @@ from random import shuffle
 
 def StdAvgFunction(entries, column):
     print(column)
+    #Taking all entries of a certrain column and filtering out the zeroes
     ids = list(entries.values_list(column, flat=True))
     ids=list(filter((float(0)).__ne__, ids))
+    #We sort them according to their value and define the length of this list
     ids=sorted(ids)
     n = len(ids)
     median=0
     lowerboundary=0
     upperboundary=0
+    #Now we calculate a median for the two or three middliest values
+    #and set the lower and upperboundaries to the median, if we only have more than 2 values
+    #but less than 5
     if n>2:
         if n % 2 == 0:
-
             median=((ids[int(n/2-1)] + ids[int(n/2)])/2.0)
         else:
-
             median=((ids[int(n/2-1)] + ids[int(n/2)]+ ids[int(n/2+1)])/3.0)
-
-
         lowerboundary=median
         upperboundary=median
+    #if we have more than five, we take the upper three and the lower three values to calculate
+    # a lower and upper boundary
     if n>5:
         lowerboundary=((ids[int(0)] + ids[int(1)]+ ids[int(2)])/3.0)
         upperboundary=((ids[int(n-1)] + ids[int(n-2)]+ ids[int(n-3)])/3.0)
 
+    #Also we check how many entries we had
     count = entries.aggregate(Count(column))
     columncount = str(column) + "__count"
     count = (count[columncount])
 
+    #If it is more than one, we show at least an average
     if count > 1:
         avg = entries.aggregate(Avg(column))
         columnavg = str(column) + "__avg"
@@ -74,7 +79,6 @@ def StdAvgFunction(entries, column):
 
     return(result)
 
-            #MediumFreiArticleFeePerChar = StdAvgTwoColumnsFunction(MediumFrei, 'FeeFree', 'CharPerArticleFree',"/")
 
 def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
 

@@ -1,13 +1,16 @@
+//Checking whether the page is ready to fire-up Ajax etc.
 $(document).ready(function() {
     var $myForm = $("#giv-form")
+    //If Form is submitted, we prevent the default of reloading
     $myForm.submit(function(event) {
         event.preventDefault()
+        //instead we take the data from the form, serialize it,
+        //also we retrieve the name and the url where to send the data to
         var $formData = $(this).serialize()
-        console.log($formData)
         var $name = $myForm.attr('name')
-        console.log($name)
         var $url = $myForm.attr('data-url')
-        console.log($url)
+        //we send the data in an ajax call to the backend, if the call was a Success
+        //we run the handleFormSuccessGet function. Otherewise an errorfunction
         $.ajax({
             method: "POST",
             url: $url,
@@ -18,15 +21,15 @@ $(document).ready(function() {
         })
 
     })
-
+    //Now if we submitted the data, the backend has checked whether inputs were correct
+    //if not, we get a data JSON send back that contains warnings
     function handleFormSuccessPost(data, textStatus, jqXHR) {
-        console.log(data)
         const alertdiv = document.getElementById('WARNING')
 
         alertdiv.classList.add("show");
         alertdiv.classList.remove("hide");
-
         const size = Object.keys(data).length;
+        //These are now pushed into a div right below the input
         if (size > 0) {
             alertdiv.innerHTML = ""
             alertdiv.innerHTML = "<strong>Achtung! </strong>Es fehlen noch Angaben zu folgenden Pflicht-Feldern: "
@@ -39,18 +42,17 @@ $(document).ready(function() {
                 keyname = String("message" + String(i));
                 if (i == 0) {
                     $Warning.append('<span class="closebtn" onclick="hidedenied()">&times;</span>')
-
                     $Warning.append('<span>' + String(data[keyname]) + '</span>');
                 } else {
                     $Warning.append('<span>, ' + String(data[keyname]) + '</span>');
                 };
+                //Also the fields where the data is missing light up in red
                 if ((String(data[keyname])) == "Mediumname") {
                     document.getElementById('data_medium').classList.add("alert");
                 };
                 if ((String(data[keyname])) == "Arbeitsverhältnis") {
                     document.getElementById('data_arbeitsverhaeltnis_frei').classList.add("alert-switch");
                 };
-
                 if ((String(data[keyname])) == "gearbeiteten Tagen pro Monat") {
                     document.getElementById('pre-data_tag_monat').classList.add("pre-alert-bar-day-month");
                     document.getElementById('data_tag_monat').classList.add("alert-bar_tag_monat");
@@ -58,12 +60,10 @@ $(document).ready(function() {
                 if ((String(data[keyname])) == "gearbeiteten Stunden pro Tag") {
                     document.getElementById('pre-data_stunden_tag').classList.add("pre-alert-bar-hour-day");
                     document.getElementById('data_stunden_tag').classList.add("alert-bar_stunde_tag");
-
                 };
                 if ((String(data[keyname])) == "gearbeiteten Stunden pro Woche") {
                     document.getElementById('pre-data_stunden_woche').classList.add("pre-alert-bar-hour-week");
                     document.getElementById('data_stunden_woche').classList.add("alert-bar_stunden_woche");
-
                 };
 
                 if ((String(data[keyname])) == "Honorar") {
@@ -102,7 +102,8 @@ $(document).ready(function() {
 
             }
         } else {
-
+          //If there is no need for new input, we reset the Form
+          //and all other elements that show the input into the form
           $myForm[0].reset(); // reset form data
           document.getElementById('outputdaymonth').innerHTML="0"
           document.getElementById('outputhourday').innerHTML="0"
@@ -113,13 +114,10 @@ $(document).ready(function() {
           document.getElementById('outputtext').innerHTML="0"
           document.getElementById('outputaudio').innerHTML="0"
           document.getElementById('outputvideo').innerHTML="0"
-
-
-
           var element=document.getElementById("outputhappiness").setAttribute("class","fav-output fav-output-0")
 
 
-
+          //We hide the alert-div and instead show the divs that thank for the data
             alertdiv.innerHTML = ""
             alertdiv.classList.add("hide");
             alertdiv.classList.remove("show");
@@ -140,6 +138,7 @@ $(document).ready(function() {
             element.classList.add("show");
             element.classList.remove("hide");
 
+            //Also we set all warnings in the field to green again
             var element = document.getElementById("data_medium");
             if (element != null) {
                 element.classList.add("hide");
@@ -378,15 +377,11 @@ $(document).ready(function() {
                 }
             }
         }
-        console.log(textStatus)
-        console.log(jqXHR)
 
         smoothfunction_submit()
     }
 
     function handleFormErrorPost(jqXHR, textStatus, errorThrown) {
-        console.log(jqXHR)
-        console.log(textStatus)
-        console.log(errorThrown)
+
     }
 })
