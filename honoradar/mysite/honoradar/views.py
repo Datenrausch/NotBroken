@@ -118,11 +118,11 @@ def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
         n = len(ids)
 
         if n % 2 == 0:
-            print("even values")
+            #print("even values")
 
             median=((ids[int(n/2-2)] + ids[int(n/2-1)] + ids[int(n/2)]+ ids[int(n/2+1)])/4.0)
         else:
-            print("uneven values")
+            #print("uneven values")
 
             median=((ids[int(n/2-1)] + ids[int(n/2)]+ ids[int(n/2+1)])/3.0)
 
@@ -260,7 +260,6 @@ def senddata(request):
                     Q(mediumname=MediumName),
                     Q(freeoremployed=FreeOrEmployed)
                 )
-                print("Found it")
 
                 # CHECKING FOR FEST, PAUSCHAL, FREI
                 # if the criteria for free or employed is "fest",
@@ -294,7 +293,6 @@ def senddata(request):
                     if AGB == "on":
                         pass
                     else:
-                        print("No AGB!!")
                         sanitycheck = 1
                         messages.info(request, 'AGB')
 
@@ -515,7 +513,6 @@ def senddata(request):
                     HoursPerWeekEmp = (request.POST.get("HoursPerWeekEmp"))
                     JobPosition = (request.POST.get("JobPosition"))
                     Experience = (request.POST.get("ExperienceEmplMix"))
-                    print(request.POST)
 
                     # check the compulsory three of them and send warning if they are missing
                     if SalaryPerMonthEmpMix:
@@ -540,7 +537,6 @@ def senddata(request):
                     if AGB == "on":
                         pass
                     else:
-                        print("No AGB!!")
                         sanitycheck = 1
                         messages.info(request, 'AGB')
 
@@ -611,7 +607,6 @@ def senddata(request):
                     if AGB == "on":
                         pass
                     else:
-                        print("No AGB!!")
                         sanitycheck = 1
                         messages.info(request, 'AGB')
 
@@ -762,21 +757,20 @@ def senddata(request):
 def getdata(request):
     #we check if the request is ajax
     if request.is_ajax():
-        print("this is ajax")
         #and retrieve the mediumname from the request
         MediumName = (request.GET.get('mediumget'))
         #then we open the json with all media names and change the mediumname
         #with the coded mediumname of the json, if it exists to use the same coded
         #even if user input differs
+        MediumNoDataAtAll={}
         with io.open('honoradar/static/honoradar/mediumsname.json', "r") as json_file:
             oldjsondata = json.load(json_file)
+            MediumNoDataAtAll={"nodata":"Vertippt?"}
             for p in oldjsondata:
                 if p['name']==MediumName:
                     mediumcode=p['code']
                     MediumName=mediumcode
                     MediumNoDataAtAll={"nodata":"Es gibt keine Daten"}
-                else:
-                    MediumNoDataAtAll={"nodata":"Vertippt?"}
 
 
 
@@ -801,7 +795,6 @@ def getdata(request):
 
         #if we have no entries for this medium, we add MediumNoDataAtAll to the dictionary
         if (DoesMediumExist.count())==0:
-            print("this should trigger, no data at all")
             Mediumdict.update(MediumNoDataAtAll)
 
 
@@ -967,7 +960,7 @@ def getdata(request):
             #Gets Gegendarstellungen for the medium and update the dictionar with this
             Gegendarstellung=list(AllMedium.values_list("Gegendarstellung", flat=True))
             Gegendarstellung = list(filter(None, Gegendarstellung))
-            print(Gegendarstellung)
+            print("Gegendarstellung:", Gegendarstellung)
             MediumGegendarstellung={"MediumGegendarstellung":Gegendarstellung}
             Mediumdict.update(MediumGegendarstellung)
 

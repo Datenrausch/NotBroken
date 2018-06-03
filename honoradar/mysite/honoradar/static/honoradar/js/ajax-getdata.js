@@ -15,6 +15,10 @@ $(document).ready(function() {
         var $name = $myForm.attr('name-get')
         var $url = $myForm.attr('data-url-get')
 
+        document.getElementById('WARNING_unknown').classList.add("hide");
+        document.getElementById('WARNING_unknown').classList.remove("show");
+        document.getElementById('WARNING_misspelled').classList.add("hide");
+        document.getElementById('WARNING_misspelled').classList.remove("show");
 
         //This is to reset the alert in case of a second request
         document.getElementById('media-analyse').classList.remove("alert");
@@ -140,14 +144,15 @@ $(document).ready(function() {
         }else{
           resultsdiv.classList.remove("got-hoelle");
         }
-
-        if(data["Gegendarstellung"]!=""){
+        console.log(data)
+        if((data["MediumGegendarstellung"]!="") && (data["MediumGegendarstellung"]!=undefined)){
+          console.log(data["MediumGegendarstellung"])
           var element = document.getElementById("resultverlag")
           element.classList.add("show");
           element.classList.remove("hide");
           var element = document.getElementById("gegendarstellung")
           element.innerHTML=""
-          element.innerHTML=data["Gegendarstellung"]
+          element.innerHTML=String(data["MediumGegendarstellung"])
         }else{
           var element = document.getElementById("resultverlag")
           element.classList.add("hide");
