@@ -141,16 +141,37 @@ $(document).ready(function() {
           resultsdiv.classList.remove("got-hoelle");
         }
 
+        if(data["Gegendarstellung"]!=""){
+          var element = document.getElementById("resultverlag")
+          element.classList.add("show");
+          element.classList.remove("hide");
+          var element = document.getElementById("gegendarstellung")
+          element.innerHTML=""
+          element.innerHTML=data["Gegendarstellung"]
+        }else{
+          var element = document.getElementById("resultverlag")
+          element.classList.add("hide");
+          element.classList.remove("show");
+          var element = document.getElementById("gegendarstellung")
+          element.innerHTML=""
+        }
+
         //If it turns out that the backend says, we have no data, we show the error messages
         if (data["nodata"] != undefined) {
             var element = document.getElementById("NoDataAtAllMessage")
             if (element != null) {
                 element.parentNode.removeChild(element);
             }
+            if (data["nodata"] == "Vertippt?") {
+            var element = document.getElementById("WARNING_misspelled");
+            element.classList.add("show");
+            element.classList.remove("hide");
+            ;}
+            if (data["nodata"] == "Es gibt keine Daten") {
             var element = document.getElementById("WARNING_unknown");
             element.classList.add("show");
             element.classList.remove("hide");
-
+            ;}
             var element = document.getElementById("result-grid");
             element.classList.add("show");
             element.classList.remove("hide");
@@ -188,7 +209,6 @@ $(document).ready(function() {
                 var element = document.getElementById(commentid);
                 element.innerHTML = ""
                 element.innerHTML = "Keine Daten"
-
             }
 
 
@@ -201,6 +221,10 @@ $(document).ready(function() {
                 element.innerHTML = ""
             }
             var element = document.getElementById("WARNING_unknown");
+            element.classList.add("hide");
+            element.classList.remove("show");
+
+            var element = document.getElementById("WARNING_misspelled");
             element.classList.add("hide");
             element.classList.remove("show");
 

@@ -774,6 +774,11 @@ def getdata(request):
                 if p['name']==MediumName:
                     mediumcode=p['code']
                     MediumName=mediumcode
+                    MediumNoDataAtAll={"nodata":"Es gibt keine Daten"}
+                else:
+                    MediumNoDataAtAll={"nodata":"Vertippt?"}
+
+
 
 
 
@@ -781,7 +786,6 @@ def getdata(request):
         MediumFestContext={}
         MediumPauschalContext={}
         MediumFreiContext={}
-        MediumNoDataAtAll={"nodata":"Es gibt keine Daten"}
 
         #we check how many entries for the medium exist in the DB and whether it was flagged as fair
         DoesMediumExist=DataCollection.objects.filter(Medium__mediumname=MediumName)
@@ -962,7 +966,6 @@ def getdata(request):
 
             #Gets Gegendarstellungen for the medium and update the dictionar with this
             Gegendarstellung=list(AllMedium.values_list("Gegendarstellung", flat=True))
-            print(Gegendarstellung)
             Gegendarstellung = list(filter(None, Gegendarstellung))
             print(Gegendarstellung)
             MediumGegendarstellung={"MediumGegendarstellung":Gegendarstellung}
