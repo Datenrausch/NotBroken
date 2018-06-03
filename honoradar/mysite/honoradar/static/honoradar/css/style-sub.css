@@ -716,3 +716,38 @@ td.text-left, td.text-right, th.text-left, th.text-right {
 	border: solid 3px #27ae60;
 }
 
+.newsletter-belehrung-1, .newsletter-belehrung-2, .newsletter-belehrung-3 {
+	line-height: 1.5em;
+	font-size: 15px;
+}
+
+.newsletter-belehrung-2 {
+	margin-top: 40px;
+}
+
+.newsletter-belehrung-3 {
+	margin-top: 20px;	
+}
+
+.clear-agb-bedingung {
+	color: grey !important;
+	font-weight: bold;
+}
+
+.clear-agb-bedingung:hover {
+	font-weight: bold;
+	color: #243040 !important;
+	transition:0.5s color ease;
+	-webkit-transition:0.5s color ease;
+	-mz-transition:0.5s color ease;
+	-o-transition:0.5s color ease;
+	-moz-transition:0.5s color ease;
+}
+
+p a.clear-agb-bedingung:after{
+	height:50px;
+	height:2.2rem;
+	height:2.2rem;
+	background: white;
+
+}

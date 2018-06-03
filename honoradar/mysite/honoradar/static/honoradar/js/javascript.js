@@ -691,7 +691,6 @@ function reload() {
     element.classList.remove("hide");
 	element.disabled = true;
 
-
 	var element = document.getElementById("analyse_submit");
     element.classList.add("show");
     element.classList.remove("hide");
@@ -779,6 +778,18 @@ function hidedenied2() {
 
 function hidedenied3() {
 	var element = document.getElementById("alert-disclaimer");
+    element.classList.add("hide");
+    element.classList.remove("show");
+};
+
+function hidedenied4() {
+	var element = document.getElementById("WARNING_unknown");
+    element.classList.add("hide");
+    element.classList.remove("show");
+};
+
+function hidedenied5() {
+	var element = document.getElementById("WARNING_misspelled");
     element.classList.add("hide");
     element.classList.remove("show");
 };

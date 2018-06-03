@@ -1532,7 +1532,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .happiness-select:before {
-	content: 'Wie angenehm war die Zusammenarbeit?';
+	content: 'Wie war die Zusammenarbeit?';
 }
 
 @media (max-width: 800px)	{
@@ -2381,6 +2381,9 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .checkboxtext a {
+	text-decoration: none;
+	font-family: OpenSans-Bold;
+	/*
 	border: solid 2px #fff;
 	border-radius: 20px;
 	padding: 0px 7px 0px 7px;
@@ -2388,7 +2391,7 @@ input[type=range]:focus::-ms-fill-upper {
 	margin-left: 4px;
 	text-decoration: none;
 	color: #fff;
-	background: rgb(39, 173, 95);
+	background: rgb(39, 173, 95);*/
 }
 
 /*News-Grid*/
@@ -4381,6 +4384,13 @@ input[type=range].alert-bar_video:-moz-focusring {
 	padding: 0px 0px 40px 0px;
 }
 
+.result-item-ultralarge {
+	width: calc(100% - 2vw);
+	border: 2px solid #27ae60;
+	margin: 25px 1vw 25px 1vw;
+	padding: 0px 0px 40px 0px;
+}
+
 @media (max-width: 1100px)	{
 	.result-item-thin, .result-item-large {
 		width: calc(50% - 2vw);
@@ -4785,6 +4795,16 @@ input[type=range].result_happiness-9::-ms-thumb {
 	margin: 0px 40px 0px 40px;
 }
 
+.result-item-text-verlage {
+	font-size: 0.8em;
+	line-height: 1.8em;
+	font-family: OpenSans-Italic;
+	color: #fff;
+	z-index: 2;
+	width: calc(100% - 80px);
+	margin: 0px 40px 0px 40px;
+}
+
  /*Autocomplete*/
 
 .easy-autocomplete-container {
@@ -4883,7 +4903,7 @@ input[type=range].result_happiness-9::-ms-thumb {
 
 /*Inner Box Design*/
 
-.result-box-fest-titel, .result-box-pauschal-titel, .result-box-frei-titel, .result-box-facts-titel {
+.result-box-fest-titel, .result-box-pauschal-titel, .result-box-frei-titel, .result-box-facts-titel, .result-box-stellungnahme-titel {
 	color: #fff;
 	font-size: 0.9em;
 	font-family: OpenSans-Regular;
@@ -4898,10 +4918,21 @@ input[type=range].result_happiness-9::-ms-thumb {
 	border-right: 2px solid #27ae60;
 }
 
+.result-box-stellungnahme-titel {
+	width: 350px;
+	margin: calc(-1em + 5px) calc(50% - (220px / 2)) 30px calc(16.5% - (350px / 2));
+}
+
 .result-box-facts-titel {
 	margin: calc(-1em + 5px) calc(50% - (270px / 2)) 50px calc(50% - (270px / 2));
 	width: 270px;
+}
+
+@media (max-width: 1500px)	{
+	.result-box-stellungnahme-titel {
+		margin: calc(-1em + 5px) calc(50% - (220px / 2)) 30px calc(25% - (350px / 2));	
 	}
+}
 
 @media (max-width: 1100px)	{
 	.result-box-fest-titel, .result-box-pauschal-titel, .result-box-frei-titel {
@@ -4912,6 +4943,10 @@ input[type=range].result_happiness-9::-ms-thumb {
 		font-size: 0.9em;
 		margin: calc(-1em + 5px) calc(75% - (270px / 2)) 50px calc(25% - (270px / 2));
 		width: 270px;
+	}
+	.result-box-stellungnahme-titel {
+		font-size: 0.9em;
+		margin: calc(-1em + 5px) calc(50% - (220px / 2)) 30px calc(50% - (350px / 2));	
 	}
 }
 
@@ -4926,9 +4961,14 @@ input[type=range].result_happiness-9::-ms-thumb {
 		margin: calc(-1.1em + 5px) calc(75% - (230px / 2)) 50px calc(25% - (230px / 2));
 		width: 230px;
 	}
+	.result-box-stellungnahme-titel {
+		width: 310px;
+		font-size: 0.8em;
+		margin: calc(-1em + 5px) calc(50% - (220px / 2)) 30px calc(50% - (310px / 2));	
+	}
 }
 
-@media (max-width: 650px)	{
+@media (max-width: 700px)	{
 	.result-box-fest-titel, .result-box-pauschal-titel, .result-box-frei-titel {
 		font-size: 0.9em;
 		margin: calc(-1em + 5px) calc(50% - (220px / 2)) 30px calc(50% - (220px / 2));
@@ -4938,6 +4978,11 @@ input[type=range].result_happiness-9::-ms-thumb {
 		font-size: 0.9em;
 		margin: calc(-1em + 5px) calc(50% - (270px / 2)) 50px calc(50% - (270px / 2));
 		width: 270px;
+	}
+	.result-box-stellungnahme-titel {
+		width: 350px;
+		font-size: 0.9em;
+		margin: calc(-1em + 5px) calc(50% - (220px / 2)) 30px calc(50% - (350px / 2));	
 	}
 }
 
@@ -4952,18 +4997,28 @@ input[type=range].result_happiness-9::-ms-thumb {
 		margin: calc(-20px + 4px) calc(50% - (230px / 2)) 50px calc(50% - (230px / 2));
 		width: 230px;
 	}
+	.result-box-stellungnahme-titel {
+		width: 310px;
+		font-size: 20px;
+		margin: calc(-1em + 5px) calc(50% - (220px / 2)) 30px calc(50% - (310px / 2));	
+	}
 }
 
 @media (max-width: 400px)	{
 	.result-box-fest-titel, .result-box-pauschal-titel, .result-box-frei-titel {
-		font-size: 19px;
-		margin: calc(-19px + 3.5px) calc(50% - (170px / 2)) 30px calc(50% - (170px / 2));
-		width: 170px;
+		font-size: 17px;
+		margin: calc(-19px + 3.5px) calc(50% - (170px / 2)) 30px calc(50% - (150px / 2));
+		width: 150px;
 	}
 	.result-box-facts-titel {
-		font-size: 19px;
-		margin: calc(-19px + 3.5px) calc(50% - (230px / 2)) 50px calc(50% - (230px / 2));
-		width: 230px;
+		font-size: 17px;
+		margin: calc(-19px + 3.5px) calc(50% - (230px / 2)) 50px calc(50% - (210px / 2));
+		width: 210px;
+	}
+	.result-box-stellungnahme-titel {
+		width: 250px;
+		font-size: 17px;
+		margin: calc(-1em + 5px) calc(50% - (220px / 2)) 30px calc(50% - (250px / 2));	
 	}
 }
 
@@ -5187,7 +5242,7 @@ input[type=range].result_happiness-9::-ms-thumb {
 	}
 	div.fair-accepted div.codeoffairness {
 		font-size: 20px;
-		width: 264px;
+		width: 274px;
 		float: left;
 		margin-left: calc(50% - 230px - 30px);	
 		margin-right: 30px;
@@ -5206,7 +5261,22 @@ input[type=range].result_happiness-9::-ms-thumb {
 
 @media (max-width: 1000px)	{
 	div.fair-accepted div.codeoffairness {
-		margin-left: calc(50% - 132px);	
+		margin-left: calc(50% - 75px);	
+		margin-bottom: 10px;
+	}
+}
+
+@media (max-width: 500px)	{
+	div.fair-accepted div.codeoffairness {
+		margin-left: calc(20%);	
+		margin-bottom: 10px;
+	}
+}
+
+@media (max-width: 400px)	{
+	div.fair-accepted div.codeoffairness {
+		margin-left: calc(5%);	
+		margin-bottom: 10px;
 	}
 }
 
@@ -5220,15 +5290,15 @@ input[type=range].result_happiness-9::-ms-thumb {
 div.fair-accepted div div.codeoffairness-symbol span {
 	border: 3px solid #2fb86f;
 	border-radius: 100%;
-	padding: 7px 7px 7px 7px;
+	padding: 12px 12px 12px 12px;
 	font-size: 10px;
 	position: absolute;
 	z-index: 0;
-	margin-top: 2px;
+	margin-top: -4px;
 }
 
 .codeoffairness-symbol p.haken {
-	margin: -3px auto auto 3px;
+	margin: 0px auto auto 6px;
 	font-size: 22px;
 	position: absolute;
 	z-index: 1;
@@ -5237,7 +5307,7 @@ div.fair-accepted div div.codeoffairness-symbol span {
 .codeoffairness a {
 	text-decoration: none;
 	color: white;
-	margin: 2px auto auto 30px;
+	margin: 2px auto auto 40px;
 	font-size: 15px;
 }
 
@@ -5257,21 +5327,192 @@ div.fair-accepted div div.codeoffairness-symbol p.haken {
 .quellenanzahl {
 	width: 270px;
 	float: left;	
-	margin-left: calc(50% - 135px);	
+	margin-left: calc(50% - 75px);	
 }
 
 @media (max-width: 750px)	{
 	.quellenanzahl {
-		margin-left: calc(50% - 135px);	
+		margin-left: calc(50% - 75px);	
+	}
+}
+
+@media (max-width: 500px)	{
+	.quellenanzahl {
+		margin-left: calc(20%);	
+	}
+}
+
+@media (max-width: 400px)	{
+	.quellenanzahl {
+		margin-left: calc(5%);	
 	}
 }
 
 .quellenanzahl p {
-	width: 100%;
+	width: 30%;
 	font-size: 15px;
 	margin-top: 6px;
-	margin-left: 35px;
-	min-width: 320px;
+	margin-left: 40px;
+	position: absolute;
+}
+
+.quellenanzahl span {
+	float: left;
+	font-size: 15px;
+	margin-top: 6px;
+	width: 30px;
+	text-align: center;
+}
+
+.quellenanzahl span.circle {
+
+
+	border: 3px solid #2fb86f;
+	border-radius: 100%;
+	padding: 12px 10px 12px 10px;
+	position: absolute;
+	z-index: 0;
+	margin-top: -2px;
+}
+
+
+/*Himmel&Hölle*/
+
+@media (min-width: 1000px)	{
+	.result.got-himmel {
+		background-image: url(../image/himmelpreis.png);
+		background-size: 300px auto;
+		background-repeat: no-repeat;
+		background-position: 0% 0%;
+	}
+	.result.got-himmel.fair-accepted {
+		background-image: url(../image/himmelpreis.png), url(../image/fairness-banner.png);
+		background-size: 300px auto;
+		background-repeat: no-repeat;
+		background-position: 0% 0%, 100% 0%;
+	}
+	.result.got-hoelle {
+		background-image: url(../image/hoellepreis.png);
+		background-size: 300px auto;
+		background-repeat: no-repeat;
+		background-position: 0% 0%;
+	}
+	.result.got-hoelle.fair-accepted {
+		background-image: url(../image/hoellepreis.png), url(../image/fairness-banner.png);
+		background-size: 300px auto;
+		background-repeat: no-repeat;
+		background-position: 0% 0%, 100% 0%;
+	}
+}
+
+.result-facts {
+	width: 90%;
+	margin: 30px 5% 30px 5%;
+	height: 30px;
+	text-align: left;
+	color: white;
+	position: relative;
+}
+
+@media (max-width: 1000px)	{
+	div.result div.himmelpreis, div.result div.hoellepreis {
+		display: none;
+	}
+	div.got-himmel div.himmelpreis, div.got-hoelle div.hoellepreis {
+		font-size: 20px;
+		width: 264px;
+		float: left;
+		margin: 0px 30px 10px calc(50% - 230px - 30px);
+		display: inline-block;
+	}
+		div.got-himmel.fair-accepted div.result-facts, div.got-hoelle.fair-accepted div.result-facts {
+		margin: 30px 5% 110px 5%;
+	}
+	div.got-himmel div.result-facts, div.got-hoelle div.result-facts {
+		margin: 30px 5% 60px 5%;
+	}
+}
+
+@media (min-width: 1000px)	{
+	.himmelpreis, .hoellepreis {
+		display: none;
+	}
+}
+
+@media (max-width: 1000px)	{
+	div.got-himmel div.himmelpreis, div.got-hoelle div.hoellepreis {
+		margin-left: calc(50% - 75px);	
+	}
+}
+
+@media (max-width: 500px)	{
+	div.got-himmel div.himmelpreis, div.got-hoelle div.hoellepreis {
+		margin-left: calc(20%);	
+	}
+}
+
+@media (max-width: 400px)	{
+	div.got-himmel div.himmelpreis, div.got-hoelle div.hoellepreis {
+		margin-left: calc(5%);	
+	}
+}
+
+.himmel-symbol, .hoelle-symbol {
+	height: 30px;
+	width: auto;
+	z-index: 1;
+	font-size: 25px;
+}
+
+.himmel-symbol p.symbol-wolke {
+	margin: 0px auto auto 5px;
+	font-size: 22px;
+	position: absolute;
+	z-index: 1;
+}
+
+.hoelle-symbol p.symbol-dreizack {
+	margin: 0px auto auto 6px;
+	font-size: 22px;
+	position: absolute;
+	z-index: 1;
+}
+
+.himmelpreis a, .hoellepreis a {
+	text-decoration: none;
+	color: white;
+	margin: 2px auto auto 40px;
+	font-size: 15px;
+}
+
+.himmel-symbol, .hoelle-symbol {
+	float: left;
+}
+
+
+div.result div div.himmel-symbol p.symbol-wolke, div.result div div.hoelle-symbol p.symbol-dreizack {
+	display: none;
+}
+
+div.got-himmel div div.himmel-symbol p.symbol-wolke, div.got-hoelle div div.hoelle-symbol p.symbol-dreizack {
+	display: inline-block;
+}
+
+div.got-himmel div div.himmel-symbol span, div.got-hoelle div div.hoelle-symbol span {
+	border-radius: 100%;
+	padding: 12px 12px 12px 12px;
+	font-size: 10px;
+	position: absolute;
+	z-index: 0;
+	margin-top: -4px;
+}
+
+div.got-himmel div div.himmel-symbol span {
+	border: 3px solid #2fb86f;
+}
+
+div.got-hoelle div div.hoelle-symbol span {
+	border: 3px solid rgba(244, 67, 54, 1);
 }
 
 /*Mechanics*/
