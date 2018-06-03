@@ -2381,6 +2381,9 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .checkboxtext a {
+	text-decoration: none;
+	font-family: OpenSans-Bold;
+	/*
 	border: solid 2px #fff;
 	border-radius: 20px;
 	padding: 0px 7px 0px 7px;
@@ -2388,7 +2391,7 @@ input[type=range]:focus::-ms-fill-upper {
 	margin-left: 4px;
 	text-decoration: none;
 	color: #fff;
-	background: rgb(39, 173, 95);
+	background: rgb(39, 173, 95);*/
 }
 
 /*News-Grid*/
@@ -4381,6 +4384,13 @@ input[type=range].alert-bar_video:-moz-focusring {
 	padding: 0px 0px 40px 0px;
 }
 
+.result-item-ultralarge {
+	width: calc(100% - 2vw);
+	border: 2px solid #27ae60;
+	margin: 25px 1vw 25px 1vw;
+	padding: 0px 0px 40px 0px;
+}
+
 @media (max-width: 1100px)	{
 	.result-item-thin, .result-item-large {
 		width: calc(50% - 2vw);
@@ -4785,6 +4795,16 @@ input[type=range].result_happiness-9::-ms-thumb {
 	margin: 0px 40px 0px 40px;
 }
 
+.result-item-text-verlage {
+	font-size: 0.8em;
+	line-height: 1.8em;
+	font-family: OpenSans-Italic;
+	color: #fff;
+	z-index: 2;
+	width: calc(100% - 80px);
+	margin: 0px 40px 0px 40px;
+}
+
  /*Autocomplete*/
 
 .easy-autocomplete-container {
@@ -4883,7 +4903,7 @@ input[type=range].result_happiness-9::-ms-thumb {
 
 /*Inner Box Design*/
 
-.result-box-fest-titel, .result-box-pauschal-titel, .result-box-frei-titel, .result-box-facts-titel {
+.result-box-fest-titel, .result-box-pauschal-titel, .result-box-frei-titel, .result-box-facts-titel, .result-box-stellungnahme-titel {
 	color: #fff;
 	font-size: 0.9em;
 	font-family: OpenSans-Regular;
@@ -4898,10 +4918,21 @@ input[type=range].result_happiness-9::-ms-thumb {
 	border-right: 2px solid #27ae60;
 }
 
+.result-box-stellungnahme-titel {
+	width: 350px;
+	margin: calc(-1em + 5px) calc(50% - (220px / 2)) 30px calc(16.5% - (350px / 2));
+}
+
 .result-box-facts-titel {
 	margin: calc(-1em + 5px) calc(50% - (270px / 2)) 50px calc(50% - (270px / 2));
 	width: 270px;
+}
+
+@media (max-width: 1500px)	{
+	.result-box-stellungnahme-titel {
+		margin: calc(-1em + 5px) calc(50% - (220px / 2)) 30px calc(25% - (350px / 2));	
 	}
+}
 
 @media (max-width: 1100px)	{
 	.result-box-fest-titel, .result-box-pauschal-titel, .result-box-frei-titel {
@@ -4912,6 +4943,10 @@ input[type=range].result_happiness-9::-ms-thumb {
 		font-size: 0.9em;
 		margin: calc(-1em + 5px) calc(75% - (270px / 2)) 50px calc(25% - (270px / 2));
 		width: 270px;
+	}
+	.result-box-stellungnahme-titel {
+		font-size: 0.9em;
+		margin: calc(-1em + 5px) calc(50% - (220px / 2)) 30px calc(50% - (350px / 2));	
 	}
 }
 
@@ -4926,9 +4961,14 @@ input[type=range].result_happiness-9::-ms-thumb {
 		margin: calc(-1.1em + 5px) calc(75% - (230px / 2)) 50px calc(25% - (230px / 2));
 		width: 230px;
 	}
+	.result-box-stellungnahme-titel {
+		width: 310px;
+		font-size: 0.8em;
+		margin: calc(-1em + 5px) calc(50% - (220px / 2)) 30px calc(50% - (310px / 2));	
+	}
 }
 
-@media (max-width: 650px)	{
+@media (max-width: 700px)	{
 	.result-box-fest-titel, .result-box-pauschal-titel, .result-box-frei-titel {
 		font-size: 0.9em;
 		margin: calc(-1em + 5px) calc(50% - (220px / 2)) 30px calc(50% - (220px / 2));
@@ -4938,6 +4978,11 @@ input[type=range].result_happiness-9::-ms-thumb {
 		font-size: 0.9em;
 		margin: calc(-1em + 5px) calc(50% - (270px / 2)) 50px calc(50% - (270px / 2));
 		width: 270px;
+	}
+	.result-box-stellungnahme-titel {
+		width: 350px;
+		font-size: 0.9em;
+		margin: calc(-1em + 5px) calc(50% - (220px / 2)) 30px calc(50% - (350px / 2));	
 	}
 }
 
@@ -4952,18 +4997,28 @@ input[type=range].result_happiness-9::-ms-thumb {
 		margin: calc(-20px + 4px) calc(50% - (230px / 2)) 50px calc(50% - (230px / 2));
 		width: 230px;
 	}
+	.result-box-stellungnahme-titel {
+		width: 310px;
+		font-size: 20px;
+		margin: calc(-1em + 5px) calc(50% - (220px / 2)) 30px calc(50% - (310px / 2));	
+	}
 }
 
 @media (max-width: 400px)	{
 	.result-box-fest-titel, .result-box-pauschal-titel, .result-box-frei-titel {
-		font-size: 19px;
-		margin: calc(-19px + 3.5px) calc(50% - (170px / 2)) 30px calc(50% - (170px / 2));
-		width: 170px;
+		font-size: 17px;
+		margin: calc(-19px + 3.5px) calc(50% - (170px / 2)) 30px calc(50% - (150px / 2));
+		width: 150px;
 	}
 	.result-box-facts-titel {
-		font-size: 19px;
-		margin: calc(-19px + 3.5px) calc(50% - (230px / 2)) 50px calc(50% - (230px / 2));
-		width: 230px;
+		font-size: 17px;
+		margin: calc(-19px + 3.5px) calc(50% - (230px / 2)) 50px calc(50% - (210px / 2));
+		width: 210px;
+	}
+	.result-box-stellungnahme-titel {
+		width: 250px;
+		font-size: 17px;
+		margin: calc(-1em + 5px) calc(50% - (220px / 2)) 30px calc(50% - (250px / 2));	
 	}
 }
 

@@ -320,7 +320,7 @@
                     <span class="hide" id="pre-data_checkbox">
 						<input name="AGB" class="checkbox" type="checkbox" id="data_checkbox" />
 						<label class="checkboxlabel " for="data_checkbox"></label>
-						<span class="checkboxtext">Ich habe den <a href="#" target="_blank" class="clear-agb">Hinweis</a> gelesen.</span>
+						<span class="checkboxtext">Ich habe den <a target="_blank" class="clear-agb" href="{% static "/honoradar/artikel/datenschutz.html"%}">Datenschutz-Hinweis</a> gelesen.</span>
                     </span>
 
                     {% if messages %} {% for message in messages %}
@@ -393,13 +393,18 @@
 				</div>
 
 					<div class="break"></div>
+					
 					<div class="alert-denied alert-media-select hide" id="WARNING_getdata">
 					<span class="closebtn" onclick="hidedenied2()">&times;</span>
 					<strong>Achtung! </strong>Du musst ein Medium definieren.
 					</div>
-					<div class="alert-denied alert-media-select hide" id="WARNING_unknown">
-					<span class="closebtn" onclick="hidedenied3()">&times;</span>
+					<div class="alert-denied alert-media-select hide" id="WARNING_misspelled">
+					<span class="closebtn" onclick="hidedenied5()">&times;</span>
 					<strong>Achtung! </strong>Dieses Medium ist uns unbekannt. Hast du dich vertippt?
+					</div>
+					<div class="alert-denied alert-media-select hide" id="WARNING_unknown">
+					<span class="closebtn" onclick="hidedenied4()">&times;</span>
+					<strong>Entschuldige! </strong>Zu diesem Medium haben wir leider nicht genug Daten. 
 					</div>
 					
 		<!-- Submit -->
@@ -459,9 +464,17 @@
                         <strong>Achtung! </strong>Die Ergebnisse basieren auf den Daten von Nutzern dieser Website. Wir bürgen nicht für deren Richtigkeit.
 						Mehr Infos findest du <a class="alert-disclaimer-link" href="{% static "/honoradar/artikel/impressum.html"%}"><strong>hier</strong></a>.
                     </div>
+					
+				
 
                 <!-- Result Flexbox -->
                 <div class="result-grid" id="result-grid">
+				
+				<!-- Verlage Gegendarstellung -->
+				<div class="result-item result-item-ultralarge hide" id="resultverlag">
+				<div class="result-box-stellungnahme-titel">Stellungnahme des Verlags</div>
+				 <div class="result-item-text-verlage" id="gegendarstellung"></div>
+				</div>
 
                     <!-- Result Frei-Box -->
                     <div class="result-item result-item-thin" id="resultfrei">

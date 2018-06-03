@@ -785,6 +785,18 @@ function hidedenied3() {
     element.classList.remove("show");
 };
 
+function hidedenied4() {
+	var element = document.getElementById("WARNING_unknown");
+    element.classList.add("hide");
+    element.classList.remove("show");
+};
+
+function hidedenied5() {
+	var element = document.getElementById("WARNING_misspelled");
+    element.classList.add("hide");
+    element.classList.remove("show");
+};
+
 
 function hideaccepted() {
 	var element = document.getElementById("ACCEPTED");
