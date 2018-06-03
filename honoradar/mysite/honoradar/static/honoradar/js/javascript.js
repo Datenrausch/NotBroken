@@ -748,12 +748,9 @@ function reload() {
     element.classList.add("hide");
     element.classList.remove("show");
 
-	console.log("this is smooth")
 	var button = document.getElementById("reload_submit");
-	console.log(button)
 
 	var href = $(button).attr('linkdirection');
-	console.log(href)
 	$('html, body').animate({
 	scrollTop:$(href).offset().top
       },'slow');
