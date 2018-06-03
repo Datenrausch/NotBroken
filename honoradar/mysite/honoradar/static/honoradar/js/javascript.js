@@ -808,30 +808,23 @@ function hideaccepted() {
 function smoothfunction(){
   console.log("this is smooth")
   var button = document.getElementById("reload_submit");
-  console.log(button)
 
   var href = $(button).attr('linktdirection');
-  console.log(href)
   $('html, body').animate({
     scrollTop:$(href).offset().top
   },'slow');
 }
 function smoothfunction2(){
-  console.log("this is smooth")
   var button = document.getElementById("reload_submit");
-  console.log(button)
 
   $('html, body').animate({
     scrollTop:$("#result").offset().top
   },'slow');
 }
 function smoothfunction_submit(){
-  console.log("this is smooth")
   var button = document.getElementById("data_submit");
-  console.log(button)
 
   var href = $(button).attr('linkdirection');
-  console.log(href)
   $('html, body').animate({
     scrollTop:$(href).offset().top
   },'slow');
@@ -879,12 +872,9 @@ function videoamountloan() {
 };
 
 function smoothfunction(){
-  console.log("this is smooth")
   var button = document.getElementById("reload_submit");
-  console.log(button)
 
   var href = $(button).attr('linkdirection');
-  console.log(href)
   $('html, body').animate({
     scrollTop:$(href).offset().top
   },'slow');

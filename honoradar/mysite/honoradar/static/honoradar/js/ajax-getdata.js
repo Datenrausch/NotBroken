@@ -1,17 +1,17 @@
+var newdata=""
+var newtextStatus=""
+var newjqXHR=""
+
 $(document).ready(function() {
     var $myForm = $("#get-form")
     $myForm.submit(function(event) {
         event.preventDefault()
 
         var $formData = $(this).serialize()
-        console.log($formData)
         var $name = $myForm.attr('name-get')
-        console.log($name)
         var $url = $myForm.attr('data-url-get')
-        console.log($url)
 
         var $data_medium = $myForm.find('input[name="mediumget"]').val()
-        console.log($data_medium);
         document.getElementById('media-analyse').classList.remove("alert");
 
         if ($data_medium == "") {
@@ -38,7 +38,17 @@ $(document).ready(function() {
     })
 
     function handleFormSuccessGet(data, textStatus, jqXHR) {
-        console.log(data)
+
+
+      document.getElementById("result_format_text").checked = true
+      document.getElementById("result_format_audio").checked = false
+
+      document.getElementById("result_format_video").checked = false
+
+
+        newdata=data
+        newtextStatus=textStatus
+        newjqXHR=jqXHR
         const resultsdiv = document.getElementById('result')
         const $result = $(".result")
         const $resultfrei = $("#result-text-frei")
@@ -115,7 +125,6 @@ $(document).ready(function() {
 
         if (data["nodata"] != undefined) {
             var element = document.getElementById("NoDataAtAllMessage")
-            console.log(element)
             if (element != null) {
                 element.parentNode.removeChild(element);
             }
@@ -124,7 +133,6 @@ $(document).ready(function() {
             element.classList.remove("hide");
 
             var element = document.getElementById("result-grid");
-            console.log(element)
             element.classList.add("show");
             element.classList.remove("hide");
 
@@ -158,7 +166,6 @@ $(document).ready(function() {
 
             for (i = 0; i < 9; i++) {
                 commentid = "comment-" + String(i + 1)
-                console.log(commentid)
                 var element = document.getElementById(commentid);
                 element.innerHTML = ""
                 element.innerHTML = "Keine Daten"
@@ -174,14 +181,12 @@ $(document).ready(function() {
             var element = document.getElementById("NoDataAtAllMessage");
             if (element != undefined) {
                 element.innerHTML = ""
-                console.log(element)
             }
             var element = document.getElementById("WARNING_unknown");
             element.classList.add("hide");
             element.classList.remove("show");
 
             var element = document.getElementsByClassName("result-grid")[0];
-            console.log(element)
             element.classList.add("show");
             element.classList.remove("hide");
 
@@ -421,7 +426,6 @@ $(document).ready(function() {
                 for (i = 0; i < 9; i++) {
                     Commenttext = (listofcomments[i])
                     commentid = "comment-" + String(i + 1)
-                    console.log(commentid)
                     var element = document.getElementById(commentid);
                     element.innerHTML = ""
                     element.innerHTML = Commenttext
@@ -429,7 +433,6 @@ $(document).ready(function() {
             } else {
                 for (i = 0; i < 9; i++) {
                     commentid = "comment-" + String(i + 1)
-                    console.log(commentid)
                     var element = document.getElementById(commentid);
                     element.innerHTML = ""
                     element.innerHTML = "Keine Daten"
@@ -438,7 +441,6 @@ $(document).ready(function() {
 
             }
             smoothfunction2()
-
         };
 
 
@@ -452,7 +454,6 @@ $(document).ready(function() {
         element.classList.add("show");
         element.classList.remove("hide");
         var element = document.getElementById("freigrafik1");
-        console.log(element)
 
         element.classList.add("show");
         element.classList.remove("hide");
@@ -461,8 +462,7 @@ $(document).ready(function() {
         //	var endTimer = startTimer+900000;
         //if(startTimer<endTimer){
 
-        console.log(textStatus)
-        console.log(jqXHR)
+
         $myForm[0].reset(); // reset form data
 
 
@@ -512,8 +512,18 @@ $(document).ready(function() {
     }
 
     function handleFormErrorGet(jqXHR, textStatus, errorThrown) {
-        console.log(jqXHR)
-        console.log(textStatus)
-        console.log(errorThrown)
+
+        var newdata=""
+        var newtextStatus=""
+        var newjqXHR=""
     }
+    function redraw (){
+      if (newdata!=""){
+        handleFormSuccessGet(newdata,newtextStatus,newjqXHR)
+
+      }
+    }
+    window.addEventListener("resize", redraw);
+
+
 })

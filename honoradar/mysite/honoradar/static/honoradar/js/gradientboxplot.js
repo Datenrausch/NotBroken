@@ -2,21 +2,15 @@ function gradientboxplot(responsejson, elementid) {
   var element = document.getElementById(elementid);
     element.classList.add("show");
     element.classList.remove("hide");
-
     var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
-    console.log(elementid)
     elementstr = "'" + elementid + "'"
-    console.log(document.getElementById(elementid))
-    width = document.getElementById(elementid).offsetWidth*0.75;
-    console.log("width")
-    console.log(width)
-
+    width = document.getElementById(elementid).offsetWidth;
     height = 400;
 
     function titlewrap(text, width) {
-
+      width=width-45
       text.each(function() {
         var text = d3.select(this),
             words = text.text().split("#").reverse(),
@@ -45,15 +39,11 @@ function gradientboxplot(responsejson, elementid) {
         top: 30,
         right: 10,
         bottom: 30,
-        left: 30,
+        left: 45,
     };
 
     barwidth = width / 25;
     elementidhash = "#" + elementid
-    console.log(elementid)
-    console.log(responsejson);
-    console.log(width);
-    console.log(height);
 
 
     var svg = d3
@@ -100,7 +90,6 @@ function gradientboxplot(responsejson, elementid) {
 ;
 
     function wrap(text, width) {
-      console.log(width)
 
       text.each(function() {
         var text = d3.select(this),
@@ -130,7 +119,6 @@ function gradientboxplot(responsejson, elementid) {
     function gradient(colour, id, y1, y2, off1, off2, op1, op2) {
         //gradient function.
         //defines the gradient
-        console.log(colour)
         svg.append("defs")
             .append("linearGradient")
             .attr("id", id)
@@ -205,7 +193,6 @@ function gradientboxplot(responsejson, elementid) {
     var yAxis = d3.axisLeft(yscale);
 
     var bars = svg.selectAll(".bar").data(responsejson);
-    console.log(bars)
 
     bars
         .exit()
@@ -292,7 +279,6 @@ function gradientboxplot(responsejson, elementid) {
         .attr("ry", width / 75);
 
 
-        console.log("TEXT")
         var textellipses = svg
             .selectAll(".textellipse")
             .data(responsejson);
@@ -327,7 +313,7 @@ function gradientboxplot(responsejson, elementid) {
             .text(function(d) { return ((d.mean).toFixed(2)+" €"); })
             .style("stroke", "white")
             .style("fill", "white")
-            .style('font-size', '0.45em')
+            .style('font-size', '0.7em')
             .style('font-family', 'OpenSans-Regular');
 
 
@@ -341,7 +327,7 @@ function gradientboxplot(responsejson, elementid) {
 
           .style("stroke", "white")
           .style("fill", "white")
-          .style('font-size', '1.2em')
+          .style('font-size', '1.6em')
           .style('font-family', 'OpenSans-Regular')
 
 
