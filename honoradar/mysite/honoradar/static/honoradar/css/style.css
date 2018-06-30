@@ -126,7 +126,7 @@ em {
 		min-width: 600px;
 	}
 	.get {
-		min-width: 650px;
+		min-width: 600px;
 	}
 }
 
@@ -339,31 +339,216 @@ em {
 
 .panel {
 	height: 100vh;
-	background: url(../image/parallax_1.jpg) no-repeat 0% 0%;
-	background-position: center;
-	background-size: cover;
+	background: url(../image/parallax_1.png) no-repeat 90% 120%;
 	background-attachment: fixed;
 	display: flex;
 	justify-content: left;
 	align-items: flex-end;
 	position: absolute;
+	background-color: #394d66;
 }
 
 @media (max-width: 1600px)	{
 	.panel {
-		background: url(../image/parallax_2.jpg) no-repeat 0% 0%;
-		background-position: center;
-		background-size: cover;
-		background-attachment: fixed;
+	background-position: 100% 120%;
+	background-color: #394d66;
+	}
+}
+
+@media (max-width: 1450px)	{
+	.panel {
+	background-position: 110% 120%;
+	background-color: #394d66;
+	}
+}
+
+@media (max-width: 1350px)	{
+	.panel {
+	background-position: 120% 120%;
+	background-color: #394d66;
+	}
+}
+
+@media (max-width: 1150px)	{
+	.panel {
+	background-position: 135% 120%;
+	background-color: #394d66;
+	}
+}
+
+
+@media (max-width: 1100px)	{
+	.panel {
+	background: url(../image/parallax_2.png) no-repeat;
+	background-position: 80% -150px;
+	background-color: #394d66;
+	background-size: 50%;
+	}
+}
+
+@media (max-width: 1000px)	{
+	.panel {
+	background-position: 90% -100px;
+	background-color: #394d66;
+	background-size: 50%;
+	}
+}
+
+@media (max-width: 900px)	{
+	.panel {
+	background: url(../image/parallax_2.png) no-repeat;
+	background-position: 50% calc(50% - 200px);
+	background-color: #394d66;
+	background-size: 70%;
+	}
+}
+
+@media (max-width: 800px)	{
+	.panel {
+	background-position: 50% calc(50% - 150px);
+	background-color: #394d66;
+	background-size: 75%;
+	}
+}
+
+@media (max-width: 700px)	{
+	.panel {
+	background-position: 50% calc(50% - 150px);
+	background-color: #394d66;
+	background-size: 80%;
+	}
+}
+
+@media (max-width: 650px)	{
+	.panel {
+	background-position: 50% calc(50% - 150px);
+	background-color: #394d66;
+	background-size: 85%;
+	}
+}
+
+@media (max-width: 600px)	{
+	.panel {
+	background-position: 50% calc(50% - 125px);
+	background-color: #394d66;
+	background-size: 90%;
+	}
+}
+
+@media (max-width: 500px)	{
+	.panel {
+	background-position: 50% calc(50% - 125px);
+	background-color: #394d66;
+	background-size: 95%;
 	}
 }
 
 @media (max-width: 400px)	{
 	.panel {
-		background: url(../image/parallax_3.jpg) no-repeat 0% 0%;
-		background-position: center;
-		background-size: cover;
-		background-attachment: fixed;
+	background: url(../image/parallax_3.png) no-repeat;
+	background-position: 50% calc(50% - 100px);
+	background-color: #394d66;
+	background-size: 100%;
+	}
+}
+
+@media (max-width: 390px)	{
+	.panel {
+	background-position: 50% calc(50% - 150px);
+	background-color: #394d66;
+	background-size: 100%;
+	}
+}
+
+@media (max-width: 360px)	{
+	.panel {
+	background-position: 50% calc(50% - 175px);
+	background-color: #394d66;
+	background-size: 100%;
+	}
+}
+
+@media (max-width: 340px)	{
+	.panel {
+	background-position: 50% calc(50% - 200px);
+	background-color: #394d66;
+	background-size: 100%;
+	}
+}
+
+@media (max-width: 340px)	{
+	.panel {
+	background-position: 50% calc(50% - 200px);
+	background-color: #394d66;
+	background-size: 100%;
+	}
+}
+
+@media (max-height: 420px)	{
+	.panel {
+	background: url(../image/parallax_2.png) no-repeat;
+	background-position: 50% calc(50% - 130px);
+	background-color: #394d66;
+	background-size: 40%;
+	}
+}
+
+@media (width: 1024px) and (max-height: 1400px)	{
+	.panel {
+	background: url(../image/parallax_1.png) no-repeat;
+	background-position: 110% calc(50% - 200px);
+	background-color: #394d66;
+	background-size: 60%;
+	}
+}
+
+@media (width: 1024px) and (max-height: 1100px)	{
+	.panel {
+	background-position: 110% calc(50% - 70px);
+	background-color: #394d66;
+	background-size: 60%;
+	}
+}
+
+@media (width: 1024px) and (max-height: 600px)	{
+	.panel {
+	background-position: 50% calc(50% - 200px);
+	background-color: #394d66;
+	background-size: 40%;
+	}
+}
+
+@media (max-width: 1000px) and (height: 600px)	{
+	.panel {
+	background-position: 50% calc(50% - 220px);
+	background-color: #394d66;
+	background-size: 50%;
+	}
+}
+
+@media (max-width: 1000px) and (height: 480px)	{
+	.panel {
+	background-position: 50% calc(50% - 220px);
+	background-color: #394d66;
+	background-size: 50%;
+	}
+}
+
+@media (max-width: 900px) and (height: 480px)	{
+	.panel {
+	background: url(../image/parallax_2.png) no-repeat;
+	background-position: 50% calc(50% - 230px);
+	background-color: #394d66;
+	background-size: 50%;
+	}
+}
+
+@media (max-width: 320px) and (height: 480px)	{
+	.panel {
+	background: url(../image/parallax_2.png) no-repeat;
+	background-position: 50% calc(50% - 200px);
+	background-color: #394d66;
+	background-size: 100%;
 	}
 }
 
@@ -5154,14 +5339,18 @@ input[type=range].result_happiness-9::-ms-thumb {
 	width: 100%;
 	display: inline-block;
 	min-height: 127px;
-	margin-top: 30px;
 	font-family: OpenSans-Regular;
 	padding: 30px 30px 30px 30px;
 	color: #243040;
 	overflow: hidden;
 	text-align: center;
-	line-height: 127px;
 }
+
+/*old attributs
+	line-height: 127px;
+	margin-top: 30px;
+
+*/
 
 .result-comments p {
 	display: inline-block;
