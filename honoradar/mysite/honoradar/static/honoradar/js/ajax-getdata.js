@@ -1,18 +1,30 @@
+//Setting up global variables
 var newdata=""
 var newtextStatus=""
 var newjqXHR=""
 
+//Checking whether the page is ready to fire-up Ajax etc.
 $(document).ready(function() {
     var $myForm = $("#get-form")
+    //If Form is submitted, we prevent the default of reloading
     $myForm.submit(function(event) {
         event.preventDefault()
-
+        //instead we take the data from the form, serialize it,
+        //also we retrieve the name and the url where to send the data to
         var $formData = $(this).serialize()
         var $name = $myForm.attr('name-get')
         var $url = $myForm.attr('data-url-get')
 
-        var $data_medium = $myForm.find('input[name="mediumget"]').val()
+        document.getElementById('WARNING_unknown').classList.add("hide");
+        document.getElementById('WARNING_unknown').classList.remove("show");
+        document.getElementById('WARNING_misspelled').classList.add("hide");
+        document.getElementById('WARNING_misspelled').classList.remove("show");
+
+        //This is to reset the alert in case of a second request
         document.getElementById('media-analyse').classList.remove("alert");
+
+        //If there is no input for the name of the medium, we just send an alert
+        var $data_medium = $myForm.find('input[name="mediumget"]').val()
 
         if ($data_medium == "") {
             console.log("Empty")
@@ -20,8 +32,8 @@ $(document).ready(function() {
             document.getElementById('WARNING_getdata').classList.add("show");
             document.getElementById('WARNING_getdata').classList.remove("hide");
 
-
-
+        //otherwise we send the data in an ajax call to the backend, if the call was a Success
+        //we run the handleFormSuccessGet function. Otherewise an errorfunction
         } else {
             document.getElementById('WARNING_getdata').classList.add("hide");
             document.getElementById('WARNING_getdata').classList.remove("show");
@@ -39,16 +51,17 @@ $(document).ready(function() {
 
     function handleFormSuccessGet(data, textStatus, jqXHR) {
 
-
+//We first reset the button for graphic no.2 with the data for text/audio/video
       document.getElementById("result_format_text").checked = true
       document.getElementById("result_format_audio").checked = false
-
       document.getElementById("result_format_video").checked = false
-
-
         newdata=data
         newtextStatus=textStatus
         newjqXHR=jqXHR
+
+//and save the data in the global variables
+
+        //Then we get the texts of each category, clear them in order to be able to fill them later
         const resultsdiv = document.getElementById('result')
         const $result = $(".result")
         const $resultfrei = $("#result-text-frei")
@@ -64,6 +77,8 @@ $(document).ready(function() {
         element.innerHTML = ""
 
 
+
+        //We remove the graphics in case they are still there from an older request
         d3.select("#festgrafik1_svg").remove();
         d3.select("#pauschalgrafik1_svg").remove();
         d3.select("#freigrafik1_svg").remove();
@@ -71,6 +86,7 @@ $(document).ready(function() {
         d3.select("#freigrafikaudio_svg").remove();
         d3.select("#freigrafiktext_svg").remove();
 
+        //We hide the no data warnings
         var element = document.getElementById("nodata-frei-1")
         element.classList.add("hide");
         element.classList.remove("show");
@@ -95,43 +111,72 @@ $(document).ready(function() {
         element.classList.add("hide");
         element.classList.remove("show");
 
-
-        $('input[id=result_format_text]').attr('checked',true);
-        $('input[id=result_format_audio]').attr('checked',false);
-        $('input[id=result_format_video]').attr('checked',false);
-
+        //We add how many datasets we have for this medium
         var element = document.getElementById("datasets_no")
         element.innerHTML=""
         element.innerHTML=(String(data["mediumoverallcount"]))
-        const mediumname = document.getElementById("result-mediumname")
-        console.log(mediumname)
-        const size = Object.keys(data).length;
-        mediumname.innerHTML = ""
 
+        //And the name of the medium
+        const mediumname = document.getElementById("result-mediumname")
+        mediumname.innerHTML = ""
         mediumname.innerHTML = (String(data["mediumname"]))
 
+        const size = Object.keys(data).length;
 
-
+        //Then we set the resultsdiv to show
         resultsdiv.classList.add("show");
         resultsdiv.classList.remove("hide");
 
+        //If we have a Fainresscount of more than 1, then we change the markup in the html
+        //To show that this medium accepted the Freischreiber code of fairness
         if(data["FairnessCount"]>0){
           resultsdiv.classList.add("fair-accepted");
         }else{
           resultsdiv.classList.remove("fair-accepted");
-
+        }
+        if(data["HimmelCount"]>0){
+          resultsdiv.classList.add("got-himmel");
+        }else{
+          resultsdiv.classList.remove("got-himmel");
+        }
+        if(data["HoelleCount"]>0){
+          resultsdiv.classList.add("got-hoelle");
+        }else{
+          resultsdiv.classList.remove("got-hoelle");
+        }
+        console.log(data)
+        if((data["MediumGegendarstellung"]!="") && (data["MediumGegendarstellung"]!=undefined)){
+          console.log(data["MediumGegendarstellung"])
+          var element = document.getElementById("resultverlag")
+          element.classList.add("show");
+          element.classList.remove("hide");
+          var element = document.getElementById("gegendarstellung")
+          element.innerHTML=""
+          element.innerHTML=String(data["MediumGegendarstellung"])
+        }else{
+          var element = document.getElementById("resultverlag")
+          element.classList.add("hide");
+          element.classList.remove("show");
+          var element = document.getElementById("gegendarstellung")
+          element.innerHTML=""
         }
 
-
+        //If it turns out that the backend says, we have no data, we show the error messages
         if (data["nodata"] != undefined) {
             var element = document.getElementById("NoDataAtAllMessage")
             if (element != null) {
                 element.parentNode.removeChild(element);
             }
+            if (data["nodata"] == "Vertippt?") {
+            var element = document.getElementById("WARNING_misspelled");
+            element.classList.add("show");
+            element.classList.remove("hide");
+            ;}
+            if (data["nodata"] == "Es gibt keine Daten") {
             var element = document.getElementById("WARNING_unknown");
             element.classList.add("show");
             element.classList.remove("hide");
-
+            ;}
             var element = document.getElementById("result-grid");
             element.classList.add("show");
             element.classList.remove("hide");
@@ -169,15 +214,13 @@ $(document).ready(function() {
                 var element = document.getElementById(commentid);
                 element.innerHTML = ""
                 element.innerHTML = "Keine Daten"
-
             }
-
-
-
 
 
         } else {
 
+          //If we have data, we remove the NoDataAtAllMessage on the html
+          //and set up all div-containers to show
             var element = document.getElementById("NoDataAtAllMessage");
             if (element != undefined) {
                 element.innerHTML = ""
@@ -186,10 +229,15 @@ $(document).ready(function() {
             element.classList.add("hide");
             element.classList.remove("show");
 
+            var element = document.getElementById("WARNING_misspelled");
+            element.classList.add("hide");
+            element.classList.remove("show");
+
             var element = document.getElementsByClassName("result-grid")[0];
             element.classList.add("show");
             element.classList.remove("hide");
 
+            //Here we start with setting the atmosphere to zero
             var element = document.getElementById("result_athmosphaere-fest")
             element.setAttribute("value", 0)
             element.setAttribute("class", "range result_happiness-bar result_happiness-0")
@@ -202,7 +250,7 @@ $(document).ready(function() {
             element.setAttribute("value", 0)
             element.setAttribute("class", "range result_happiness-bar result_happiness-0")
 
-
+            //And then we manipulate it depending on the results from the backend
             if (data["MediumFestHappiness"]) {
                 if (data["MediumFestHappiness"]["status"] == "Success") {
                     var element = document.getElementById("result_athmosphaere-fest")
@@ -215,21 +263,20 @@ $(document).ready(function() {
                     var element = document.getElementById("result_athmosphaere-pauschal")
                     element.setAttribute("value", Math.round((data["MediumPauschalHappiness"]["median"])))
                     element.setAttribute("class", "range result_happiness-bar result_happiness-" + String(Math.round((data["MediumPauschalHappiness"]["median"]))))
-
                 };
             };
-
             if (data["MediumFreiHappiness"]) {
                 if (data["MediumFreiHappiness"]["status"] == "Success") {
                     var element = document.getElementById("result_athmosphaere-frei")
                     element.setAttribute("value", Math.round((data["MediumFreiHappiness"]["median"])))
                     element.setAttribute("class", "range result_happiness-bar result_happiness-" + String(Math.round((data["MediumFreiHappiness"]["median"]))))
-
                 };
             };
 
 
-
+            //Now we fill the graphics one by one, checking whether we have data and whether the request status was a success
+            // We are doing this with our gradientboxplot.js function that uses a json as a database that we create here
+            // Also the # help to split the graph titles at the right spots
             var elementid = "festgrafik1"
 
             if ((data["MediumFestSalaryPerHour"]) && (data["AllFestSalaryPerHour"])) {
@@ -311,7 +358,7 @@ $(document).ready(function() {
                         min: parseFloat(data["AllFreiSalaryPerHour"]["lower"]),
                         max: parseFloat(data["AllFreiSalaryPerHour"]["upper"]),
                         mean: parseFloat(data["AllFreiSalaryPerHour"]["median"]),
-                        charttitle: "Mittleres Stundenhonorar # (Brutto / Euro)"
+                        charttitle: "Mittleres Honorar # pro Stunde # (Brutto / Euro)"
                     }];
 
                     gradientboxplot(d3festjson, elementid)
@@ -343,7 +390,7 @@ $(document).ready(function() {
                         min: parseFloat(data["AllFreiVideoFeePerMin"]["lower"]),
                         max: parseFloat(data["AllFreiVideoFeePerMin"]["upper"]),
                         mean: parseFloat(data["AllFreiVideoFeePerMin"]["median"]),
-                        charttitle: "Mittleres Honorar pro Video- # minute (Brutto / Euro)"
+                        charttitle: "Mittleres Honorar # pro Videominute # (Brutto / Euro)"
                     }];
 
                     gradientboxplot(d3festjson, elementid)
@@ -374,7 +421,7 @@ $(document).ready(function() {
                         min: parseFloat(data["AllFreiAudioFeePerMin"]["lower"]),
                         max: parseFloat(data["AllFreiAudioFeePerMin"]["upper"]),
                         mean: parseFloat(data["AllFreiAudioFeePerMin"]["median"]),
-                        charttitle: "Mittleres Honorar pro Audio- # minute (Brutto / Euro)"
+                        charttitle: "Mittleres Honorar # pro Audiominute - # (Brutto / Euro)"
                     }];
 
                     gradientboxplot(d3festjson, elementid)
@@ -406,7 +453,7 @@ $(document).ready(function() {
                         min: parseFloat(data["AllFreiArticleFeePerChar"]["lower"] * 1000),
                         max: parseFloat(data["AllFreiArticleFeePerChar"]["upper"] * 1000),
                         mean: parseFloat(data["AllFreiArticleFeePerChar"]["median"] * 1000),
-                        charttitle: "Mittleres Honorar pro 1000 # Zeichen (Brutto / Euro)"
+                        charttitle: "Mittleres Honorar pro # 1000 Zeichen#  (Brutto / Euro)"
                     }];
 
                     gradientboxplot(d3festjson, elementid)
@@ -421,6 +468,7 @@ $(document).ready(function() {
                 element.classList.add("show");
                 element.classList.remove("hide");
             };
+            //We add the comments to a pre-defined container
             listofcomments = data["MediumComments"]
             if (listofcomments != undefined) {
                 for (i = 0; i < 9; i++) {
@@ -440,9 +488,21 @@ $(document).ready(function() {
                 }
 
             }
+
+            //Then we trigger the smoothfunction to scroll down to the graphs
             smoothfunction2()
         };
 
+        //Lastly we set the texts accompanying the graphics to show
+        var element = document.getElementById("freigrafikaudio")
+        element.classList.add("hide");
+        element.classList.remove("show");
+        var element = document.getElementById("freigrafikvideo")
+        element.classList.add("hide");
+        element.classList.remove("show");
+        var element = document.getElementById("freigrafiktext")
+        element.classList.add("hide");
+        element.classList.remove("show");
 
         var element = document.getElementById("freigrafiktext");
         element.classList.add("show");
@@ -458,14 +518,11 @@ $(document).ready(function() {
         element.classList.add("show");
         element.classList.remove("hide");
 
-        //	var startTimer = Date.now();
-        //	var endTimer = startTimer+900000;
-        //if(startTimer<endTimer){
 
 
         $myForm[0].reset(); // reset form data
 
-
+        //lastly, we iterate through the different comments
         document.getElementById("comment-9").style.display = "none";
 
         document.getElementById("comment-1").style.display = "inline-block";
@@ -517,6 +574,7 @@ $(document).ready(function() {
         var newtextStatus=""
         var newjqXHR=""
     }
+    //Also we rerun this whole function on resize to make the graphics responsive
     function redraw (){
       if (newdata!=""){
         handleFormSuccessGet(newdata,newtextStatus,newjqXHR)

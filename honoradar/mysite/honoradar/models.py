@@ -7,7 +7,7 @@ from model_utils import Choices
 
 
 class Medium(models.Model):
-    FAIRNESS = Choices("keineAngabe","Ja","Hoelle","Himmel")
+    FAIRNESS = Choices("keineAngabe","Ja","Hoelle","Himmel", "HoelleJa", "HimmelJa")
     fairness = models.CharField(choices=FAIRNESS, default="", max_length=20, null=True,blank=True)
     SUSPICIOUSMEDIUM = Choices("Ok","Weird")
     Suspiciousmedium = models.CharField(choices=SUSPICIOUSMEDIUM, default=SUSPICIOUSMEDIUM.Ok, max_length=20, null=True,blank=True)

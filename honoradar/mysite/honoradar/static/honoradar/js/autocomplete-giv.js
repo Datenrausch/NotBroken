@@ -1,3 +1,5 @@
+//Only checking for the names in the inputs
+
 var options = {
     url: "static/honoradar/mediumsname.json",
 
