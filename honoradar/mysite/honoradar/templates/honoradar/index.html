@@ -35,7 +35,7 @@
     <meta name="twitter:title" content="Was verdienen Journalisten?">
     <meta name="twitter:description" content="Hier erfährst du, welche Medien wie viel zahlen.">
     <meta name="twitter:url" content="https://wwww.wasjournalistenverdienen.de">
-    <meta name="twitter:image" content="https://wwww.wasjournalistenverdienen.de/static/honoradar/image/cover_social.png">
+    <meta name="twitter:image" content="https://wwww.wasjournalistenverdienen.de/static/honoradar/image/cover_social.jpg">
 
     <!-- Facebook / Open Graph -->
     <meta property="og:type" content="article">
@@ -43,18 +43,19 @@
     <meta property="og:title" content="Was verdienen Journalisten?">
     <meta property="og:description" content="Hier erfährst du, welche Medien wie viel zahlen.">
     <meta property="og:url" content="https://wwww.wasjournalistenverdienen.de">
-    <meta property="og:image" content="https://wwww.wasjournalistenverdienen.de/static/honoradar/image/cover_social.png">
+    <meta property="og:image" content="https://wwww.wasjournalistenverdienen.de/static/honoradar/image/cover_social.jpg">
 
     <!-- General SEO -->
     <meta name="author" content="Michel Penke und Haluka Maier-Borst">
     <meta name="title" content="Was verdienen Journalisten?">
     <meta name="description" content="Hier erfährst du, welche Medien wie viel zahlen.">
     <meta name="keywords" content="was,journalisten,verdienen,gehalt,honorar,pauschale,einkommen,euro,job,redakteur,angebot,verhandeln">
+	
+	<title>Was verdienen Journalisten?</title>
 
 </head>
 
 <body>
-    <title>Was verdienen Journalisten?</title>
 
     <!-- Parallax -->
     <div class="panel">
@@ -203,21 +204,21 @@
                     <!-- Text-Amount-Select -->
                     <div class="text-amount-select hide" id="pre-data_laenge_text">
                         <style id="style-text" scoped></style>
-                        <input name="CharPerArticleFree" id="data_laenge_text" class="range amount-text-bar" type="range" min="0" max="20000" value="0" step="100" / onmousedown="alertoffdatatext()" ontouchstart="alertoffdatatext()">
+                        <input name="CharPerArticleFree" id="data_laenge_text" class="range amount-text-bar" type="range" min="0" max="20000" value="0" step="100" onmousedown="alertoffdatatext()" ontouchstart="alertoffdatatext()" />
                         <p id="outputtext" class="output">0</p>
                     </div>
 
                     <!-- Audio-Amount-Select -->
                     <div class="audio-amount-select hide" id="pre-data_laenge_audio">
                         <style id="style-audio" scoped></style>
-                        <input name="MinPerAudioFree" id="data_laenge_audio" class="range amount-audio-bar" type="range" min="0" max="90" value="0" step="0.5" / onmousedown="alertoffdataaudio()" ontouchstart="alertoffdataaudio()">
+                        <input name="MinPerAudioFree" id="data_laenge_audio" class="range amount-audio-bar" type="range" min="0" max="90" value="0" step="0.5" onmousedown="alertoffdataaudio()" ontouchstart="alertoffdataaudio()" />
                         <p id="outputaudio" class="output">0</p>
                     </div>
 
                     <!-- Video-Amount-Select -->
                     <div class="video-amount-select hide" id="pre-data_laenge_video">
                         <style id="style-video" scoped></style>
-                        <input name="MinPerVideoFree" id="data_laenge_video" class="range amount-video-bar" type="range" min="0" max="90" value="0" step="0.5" / onmousedown="alertoffdatavideo()" ontouchstart="alertoffdatavideo()">
+                        <input name="MinPerVideoFree" id="data_laenge_video" class="range amount-video-bar" type="range" min="0" max="90" value="0" step="0.5" onmousedown="alertoffdatavideo()" ontouchstart="alertoffdatavideo()" />
                         <p id="outputvideo" class="output">0</p>
                     </div>
 
@@ -320,7 +321,7 @@
                     <span class="hide" id="pre-data_checkbox">
 						<input name="AGB" class="checkbox" type="checkbox" id="data_checkbox" />
 						<label class="checkboxlabel " for="data_checkbox"></label>
-						<span class="checkboxtext">Ich habe den <a target="_blank" class="clear-agb" href="{% static "/honoradar/artikel/datenschutz.html"%}">Datenschutz-Hinweis</a> gelesen.</span>
+						<span class="checkboxtext">Ich habe den <a target="_blank" class="clear-agb" href="{% static "/honoradar/artikel/nutzungsbedingungen.html"%}">Nutzungsbedingungen</a> gelesen.</span>
                     </span>
 
                     {% if messages %} {% for message in messages %}
@@ -388,7 +389,7 @@
 
 
 				<!-- Bedingung -->
-				<div class="bedingung-container" id="">
+				<div class="bedingung-container">
 				<span id="bedingung" class="bedingung">Wir zeigen die Analyse nur, wenn mindestens drei Datensätze vorliegen! </span>
 				</div>
 
@@ -411,6 +412,7 @@
 				<input type="submit" class="submit-giv show" id="analyse_submit" value="Daten auslesen" disabled/>
 
 	</form>
+	</div>
 	</div>
 
 
@@ -462,7 +464,7 @@
 					<div class="alert-disclaimer alert-media-select show" id="alert-disclaimer">
                         <span class="closebtn" onclick="hidedenied3()">&times;</span>
                         <strong>Achtung! </strong>Die Ergebnisse basieren auf den Daten von Nutzern dieser Website. Wir bürgen nicht für deren Richtigkeit.
-						Mehr Infos findest du <a class="alert-disclaimer-link" href="{% static "/honoradar/artikel/impressum.html"%}"><strong>hier</strong></a>.
+						Mehr Infos findest du <a href="{% static "/honoradar/artikel/impressum.html"%}" class="alert-disclaimer-link"><strong>hier</strong></a>.
                     </div>
 					
 				
@@ -535,41 +537,105 @@
                         <div class="result-box-facts-titel">Zufriedenheit</div>
                         <div class="fact-text">
                             <div class="result-happiness-grid">
-                                <div class="happiness-result happiness-result-frei" id="">
+                                <div class="happiness-result happiness-result-frei">
                                     <input name="" id="result_athmosphaere-frei" class="range result_happiness-bar result_happiness-0" type="range" min="1" max="9" value="0" disabled/>
                                 </div>
-                                <div class="happiness-result happiness-result-pauschal" id="">
+                                <div class="happiness-result happiness-result-pauschal">
                                     <input name="" id="result_athmosphaere-pauschal" class="range result_happiness-bar result_happiness-0" type="range" min="1" max="9" value="0" disabled/>
                                 </div>
-                                <div class="happiness-result happiness-result-fest" id="">
+                                <div class="happiness-result happiness-result-fest">
                                     <input name="" id="result_athmosphaere-fest" class="range result_happiness-bar result_happiness-0" type="range" min="1" max="9" value="0" disabled/>
                                 </div>
                             </div>
+							
+							
+                    <!-- Meinungs-Box -->
+				 <section class="section slider">							
+					<input type="radio" name="slider" id="slide-1" class="slider__radio">
+					<input type="radio" name="slider" id="slide-2" class="slider__radio">
+					<input type="radio" name="slider" id="slide-3" class="slider__radio" checked>
+					<input type="radio" name="slider" id="slide-4" class="slider__radio">
+					<input type="radio" name="slider" id="slide-5" class="slider__radio">
+					<input type="radio" name="slider" id="slide-6" class="slider__radio">
+					<input type="radio" name="slider" id="slide-7" class="slider__radio">
+					<input type="radio" name="slider" id="slide-8" class="slider__radio">
+										
+					<div class="slider__holder">
 
-                            <div id="result-comments" class="result-comments">
-                                <p class="comment hide" id="comment-1"></p>
-								<p class="comment hide" id="comment-2"></p>
-								<p class="comment hide" id="comment-3"></p>
-								<p class="comment hide" id="comment-4"></p>
-								<p class="comment hide" id="comment-5"></p>
-								<p class="comment hide" id="comment-6"></p>
-								<p class="comment hide" id="comment-7"></p>
-								<p class="comment hide" id="comment-8"></p>
-								<p class="comment hide" id="comment-9"></p>
-                            </div>
-                        </div>
-                    </div>
+					<label for="slide-1" class="slider__item slider__item--1 card hide" id="slider-comment-5">
+					<div class="slider__item-content result-comments">
+					  <p class="slider__item-text" id="comment-5"></p>
+					</div>
+					</label>  
 
-                </div>
+					<label for="slide-2" class="slider__item slider__item--2 card hide" id="slider-comment-3">
+					<div class="slider__item-content result-comments">
+					  <p class="slider__item-text" id="comment-3"></p>
+					</div>
+					</label>  
 
+					<label for="slide-3" class="slider__item slider__item--3 card hide" id="slider-comment-1">
+					<div class="slider__item-content result-comments">
+					  <p class="slider__item-text" id="comment-1"></p>
+					</div>
+					</label>  
+
+					<label for="slide-4" class="slider__item slider__item--4 card hide" id="slider-comment-2">
+					<div class="slider__item-content result-comments">
+					  <p class="slider__item-text" id="comment-2"></p>
+					</div>
+					</label>  
+
+					<label for="slide-5" class="slider__item slider__item--5 card hide" id="slider-comment-4">
+					<div class="slider__item-content result-comments">
+					  <p class="slider__item-text" id="comment-4"></p>
+					</div>
+					</label>  
+					
+					<label for="slide-6" class="slider__item slider__item--6 card hide" id="slider-comment-6">
+					<div class="slider__item-content result-comments">
+					  <p class="slider__item-text" id="comment-6"></p>
+					</div>
+					</label> 
+					
+					<label for="slide-7" class="slider__item slider__item--7 card hide" id="slider-comment-7">
+					<div class="slider__item-content result-comments">
+					  <p class="slider__item-text" id="comment-7"></p>
+					</div>
+					</label> 
+					
+					<label for="slide-8" class="slider__item slider__item--8 card hide" id="slider-comment-8">
+					<div class="slider__item-content result-comments">
+					  <p class="slider__item-text" id="comment-8"></p>
+					</div>
+					</label> 
+
+					</div>
+
+					<div class="bullets">
+						<label for="slide-1" id="label-slide-1" class="bullets__item bullets__item--1 hide"></label>
+						<label for="slide-2" id="label-slide-2" class="bullets__item bullets__item--2 hide"></label>
+						<label for="slide-3" id="label-slide-3" class="bullets__item bullets__item--3 hide"></label>
+						<label for="slide-4" id="label-slide-4" class="bullets__item bullets__item--4 hide"></label>
+						<label for="slide-5" id="label-slide-5" class="bullets__item bullets__item--5 hide"></label>
+						<label for="slide-6" id="label-slide-6" class="bullets__item bullets__item--6 hide"></label>
+						<label for="slide-7" id="label-slide-7" class="bullets__item bullets__item--7 hide"></label>
+						<label for="slide-8" id="label-slide-7" class="bullets__item bullets__item--8 hide"></label>
+					</div>  						
+							
+				</section>						
+							
+	
+		</div>
+		</div>
+	</div>
+	
                 <!-- Infografiken - Text -->
                 <div class="result-text"> {% if medium %}{{ medium.mediumname }} {% endif %}</div>
                 <div class="result-text"> {% if avghappiness %}{{ avghappiness}} {% endif %}</div>
 
-
-
-
-            </div>
+		</div>
+	</div>
 
             <!-- Social Share -->
             <div class="social-box">
