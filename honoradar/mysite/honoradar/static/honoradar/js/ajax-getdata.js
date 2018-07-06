@@ -171,11 +171,17 @@ $(document).ready(function() {
             var element = document.getElementById("WARNING_misspelled");
             element.classList.add("show");
             element.classList.remove("hide");
+            var element = document.getElementById("result");
+            element.classList.add("hide");
+            element.classList.remove("show");
             ;}else{
             if (data["nodata"] == "Es gibt keine Daten") {
             var element = document.getElementById("WARNING_unknown");
             element.classList.add("show");
             element.classList.remove("hide");
+            var element = document.getElementById("result");
+            element.classList.add("hide");
+            element.classList.remove("show");
             ;};}
             var element = document.getElementById("result-grid");
             element.classList.add("show");
