@@ -477,7 +477,7 @@ $(document).ready(function() {
             //We add the comments to a pre-defined container
             listofcomments = data["MediumComments"]
             if (listofcomments != undefined) {
-                for (i = 0; i < 9; i++) {
+                for (i = 0; i < 8; i++) {
                     Commenttext = (listofcomments[i])
                     commentid = "comment-" + String(i + 1)
                     var element = document.getElementById(commentid);
@@ -485,7 +485,7 @@ $(document).ready(function() {
                     element.innerHTML = Commenttext
                 };
             } else {
-                for (i = 0; i < 9; i++) {
+                for (i = 0; i < 8; i++) {
                     commentid = "comment-" + String(i + 1)
                     var element = document.getElementById(commentid);
                     element.innerHTML = ""
@@ -529,48 +529,7 @@ $(document).ready(function() {
         $myForm[0].reset(); // reset form data
 
         //lastly, we iterate through the different comments
-        document.getElementById("comment-9").style.display = "none";
 
-        document.getElementById("comment-1").style.display = "inline-block";
-        setTimeout(function() {
-            document.getElementById("comment-1").style.display = "none";
-            document.getElementById("comment-2").style.display = "inline-block"
-        }, 5000);
-
-        setTimeout(function() {
-            document.getElementById("comment-2").style.display = "none";
-            document.getElementById("comment-3").style.display = "inline-block"
-        }, 10000);
-
-        setTimeout(function() {
-            document.getElementById("comment-3").style.display = "none";
-            document.getElementById("comment-4").style.display = "inline-block"
-        }, 15000);
-
-        setTimeout(function() {
-            document.getElementById("comment-4").style.display = "none";
-            document.getElementById("comment-5").style.display = "inline-block"
-        }, 20000);
-
-        setTimeout(function() {
-            document.getElementById("comment-5").style.display = "none";
-            document.getElementById("comment-6").style.display = "inline-block"
-        }, 25000);
-
-        setTimeout(function() {
-            document.getElementById("comment-6").style.display = "none";
-            document.getElementById("comment-7").style.display = "inline-block"
-        }, 30000);
-
-        setTimeout(function() {
-            document.getElementById("comment-7").style.display = "none";
-            document.getElementById("comment-8").style.display = "inline-block"
-        }, 35000);
-
-        setTimeout(function() {
-            document.getElementById("comment-8").style.display = "none";
-            document.getElementById("comment-9").style.display = "inline-block"
-        }, 40000);
 
     }
 
