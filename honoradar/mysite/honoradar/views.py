@@ -941,14 +941,14 @@ def getdata(request):
             AllMedium=DataCollection.objects.filter(Medium__mediumname=MediumName)
             comments = list(AllMedium.values_list("Comment", flat=True))
             comments = list(filter(None, comments))
-
+            shuffle(comments)
             #if there are no comments we add this default in there
             if len(comments)==0:
                 comments.append("Leider haben wir keine Kommentare für dieses Medium")
             #if the length is below 9 we keep on increasing the number of comments
-            while (len(comments))<9:
-                comments.extend(comments)
-            shuffle(comments)
+            #while (len(comments))<9:
+                #comments.extend(comments)
+            #shuffle(comments)
             #if the length is over 9, then we keep on popping comments
             while (len(comments))>9:
                 comments.pop()

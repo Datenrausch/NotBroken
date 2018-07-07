@@ -477,7 +477,8 @@ $(document).ready(function() {
             //We add the comments to a pre-defined container
             listofcomments = data["MediumComments"]
             if (listofcomments != undefined) {
-                for (i = 0; i < 8; i++) {
+              numberofcomments=(listofcomments.length)
+                for (i = 0; i < numberofcomments; i++) {
                     Commenttext = (listofcomments[i])
                     commentid = "comment-" + String(i + 1)
                     var element = document.getElementById(commentid);
@@ -485,7 +486,7 @@ $(document).ready(function() {
                     element.innerHTML = Commenttext
                 };
             } else {
-                for (i = 0; i < 8; i++) {
+                for (i = 0; i < numberofcomments; i++) {
                     commentid = "comment-" + String(i + 1)
                     var element = document.getElementById(commentid);
                     element.innerHTML = ""
