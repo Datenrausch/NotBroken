@@ -472,7 +472,6 @@ $(document).ready(function() {
 
             //We add the comments to a pre-defined container
             listofcomments = data["MediumComments"]
-            console.log(listofcomments)
               for (i = 0; i < 8; i++) {
                 var elementid="slider-comment-" + String(i + 1)
                 var element = document.getElementById(elementid);
@@ -481,14 +480,11 @@ $(document).ready(function() {
 
                 var elementid="label-slide-" + String(i + 1)
                 var element = document.getElementById(elementid);
-                console.log(elementid)
                 element.classList.add("hide");
-                element.classList.remove("show");
 
                 commentid = "comment-" + String(i + 1)
                 var element = document.getElementById(commentid);
                 element.innerHTML = ""
-                element.innerHTML = Commenttext
               ;}
             if (listofcomments != undefined) {
               numberofcomments=(listofcomments.length)
@@ -506,25 +502,11 @@ $(document).ready(function() {
 
                     var elementid="label-slide-" + String(i + 1)
                     var element = document.getElementById(elementid);
-                    element.classList.add("show");
                     element.classList.remove("hide");
 
 
                 };
             } else {
-                commentid= "comment-1"
-                var element = document.getElementById(commentid);
-                element.innerHTML = ""
-                element.innerHTML = "Es gibt leider keine Kommentare zu diesem Medium."
-                var elementid="slider-comment-" + String(1)
-                var element = document.getElementById(elementid);
-                element.classList.add("show");
-                element.classList.remove("hide");
-
-                var elementid="label-slide-" + String(1)
-                var element = document.getElementById(elementid);
-                element.classList.add("show");
-                element.classList.remove("hide");
 
 
             }
