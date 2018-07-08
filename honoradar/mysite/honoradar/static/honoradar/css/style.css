@@ -5549,14 +5549,18 @@ div.fair-accepted div div.codeoffairness-symbol p.haken {
 }
 
 .quellenanzahl span.circle {
-
-
 	border: 3px solid #2fb86f;
 	border-radius: 100%;
 	padding: 12px 10px 12px 10px;
 	position: absolute;
 	z-index: 0;
 	margin-top: -2px;
+}
+
+@-moz-document url-prefix() {
+	.quellenanzahl span.circle {
+		margin-left: -30px;
+	}
 }
 
 
