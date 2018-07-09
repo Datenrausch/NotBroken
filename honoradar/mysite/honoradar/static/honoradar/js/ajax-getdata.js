@@ -215,12 +215,7 @@ $(document).ready(function() {
             element.classList.add("show");
             element.classList.remove("hide");
 
-            for (i = 0; i < 9; i++) {
-                commentid = "comment-" + String(i + 1)
-                var element = document.getElementById(commentid);
-                element.innerHTML = ""
-                element.innerHTML = "Keine Daten"
-            }
+
 
 
         } else {
@@ -474,24 +469,45 @@ $(document).ready(function() {
                 element.classList.add("show");
                 element.classList.remove("hide");
             };
+
             //We add the comments to a pre-defined container
             listofcomments = data["MediumComments"]
+              for (i = 0; i < 8; i++) {
+                var elementid="slider-comment-" + String(i + 1)
+                var element = document.getElementById(elementid);
+                element.classList.add("hide");
+                element.classList.remove("show");
+
+                var elementid="label-slide-" + String(i + 1)
+                var element = document.getElementById(elementid);
+                element.classList.add("hide");
+
+                commentid = "comment-" + String(i + 1)
+                var element = document.getElementById(commentid);
+                element.innerHTML = ""
+              ;}
             if (listofcomments != undefined) {
-                for (i = 0; i < 8; i++) {
+              numberofcomments=(listofcomments.length)
+                for (i = 0; i < numberofcomments; i++) {
                     Commenttext = (listofcomments[i])
                     commentid = "comment-" + String(i + 1)
                     var element = document.getElementById(commentid);
                     element.innerHTML = ""
                     element.innerHTML = Commenttext
+
+                    var elementid="slider-comment-" + String(i + 1)
+                    var element = document.getElementById(elementid);
+                    element.classList.add("show");
+                    element.classList.remove("hide");
+
+                    var elementid="label-slide-" + String(i + 1)
+                    var element = document.getElementById(elementid);
+                    element.classList.remove("hide");
+
+
                 };
             } else {
-                for (i = 0; i < 8; i++) {
-                    commentid = "comment-" + String(i + 1)
-                    var element = document.getElementById(commentid);
-                    element.innerHTML = ""
-                    element.innerHTML = "Keine Daten"
 
-                }
 
             }
 
