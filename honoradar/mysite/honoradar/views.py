@@ -209,7 +209,7 @@ def senddata(request):
             print(request.POST)
             sanitycheck = 0
 
-            # we get the three categories that all entries have in common regardless of
+            #we get the three categories that all entries have in common regardless of
             #freelance, pauschalist or employed
             MediumName = (request.POST.get('MediumName'))
             FreeOrEmployed = (request.POST.get('FreeOrEmployed'))
