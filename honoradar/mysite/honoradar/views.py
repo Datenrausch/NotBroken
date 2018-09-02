@@ -202,6 +202,7 @@ def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
 # this entire view handles the process of sending data, checking it and saving it in the backend
 def senddata(request):
     # this variable checks if all compulsory fields are filled and hence, a new instance should be created in the backend
+
     if request.is_ajax():
 
         if request.method == 'POST':
@@ -215,6 +216,7 @@ def senddata(request):
             Comment = (request.POST.get('Comment'))
             AGB = (request.POST.get('AGB'))
             Happiness = (request.POST.get('Happiness'))
+            Suspiciousentry="Ok"
 
 
 
