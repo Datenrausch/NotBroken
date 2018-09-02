@@ -81,6 +81,14 @@
 	content: 'Pixel-Website „Mediafon“ von ver.di';
 }
 
+.artikelbild-vorstand {
+	background-image: url(../image/vorstand.jpg);
+}
+
+.artikelbild-vorstand:after {
+	content: 'Der Freischreiber-Vorstand';
+}
+
 /*News*/
 
 
