@@ -55,7 +55,7 @@ function gradientboxplot(responsejson, elementid) {
         .attr('version', '1.1')
         .attr('xml:space', 'preserve')
         //We set width and height
-        .attr("width", width)
+        .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         //Then we further add g into our svg as our canvas
         .append("g")

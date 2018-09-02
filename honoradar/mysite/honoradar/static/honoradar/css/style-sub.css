@@ -201,6 +201,10 @@
 	display:block;
 }
 
+.bold {
+	font-family: InknutAntiqua-Bold !important;
+}
+
 /*Artikel-Parallax*/
 .parallax-box {
 	margin: 50px 5% 50px 5%;
