@@ -215,7 +215,7 @@ def senddata(request):
             Comment = (request.POST.get('Comment'))
             AGB = (request.POST.get('AGB'))
             Happiness = (request.POST.get('Happiness'))
-
+            Suspiciousentry="Ok"
 
 
 
