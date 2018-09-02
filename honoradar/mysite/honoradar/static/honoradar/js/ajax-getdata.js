@@ -485,6 +485,7 @@ $(document).ready(function() {
                 commentid = "comment-" + String(i + 1)
                 var element = document.getElementById(commentid);
                 element.innerHTML = ""
+                
               ;}
             if (listofcomments != undefined) {
               numberofcomments=(listofcomments.length)
