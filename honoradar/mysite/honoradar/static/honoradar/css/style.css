@@ -266,7 +266,7 @@ em {
 @media (max-width: 460px)	{
 	.banner-right-1 {
 		height: 40px;
-		width: 330px;
+		width: 340px;
 		background-color: #FF9F23;
 		margin-left: -20px;
 		font-family: InknutAntiqua-Bold;
@@ -275,15 +275,6 @@ em {
 		line-height: 2.3em;
 		color: #fff !important;
 		font-size: 0.7em;
-	}
-	.banner-right-shadow {
-		width: 20px;
-		height: 0;
-		padding-left:20px;
-		padding-bottom: 20px;
-		overflow: hidden;
-		margin-left: -20px;
-		float: left;
 	}
 	.banner-right-shadow:after {
 		content: "";
@@ -294,6 +285,18 @@ em {
 		border-left: 20px solid transparent;
 		border-right: 0px solid transparent;
 		border-top: 20px solid #B56600;
+	}
+}
+
+@media (max-width: 459px)	{
+		.banner-right-shadow {
+		width: 20px;
+		height: 0;
+		padding-left:20px;
+		padding-bottom: 20px;
+		overflow: hidden;
+		margin-left: -20px;
+		float: left;
 	}
 }
 
