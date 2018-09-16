@@ -459,7 +459,7 @@ $(document).ready(function() {
                         min: parseFloat(data["AllFreiArticleFeePerChar"]["lower"] * 1000),
                         max: parseFloat(data["AllFreiArticleFeePerChar"]["upper"] * 1000),
                         mean: parseFloat(data["AllFreiArticleFeePerChar"]["median"] * 1000),
-                        charttitle: "Mittleres Honorar pro # 1000 Zeichen#  (Brutto / Euro)"
+                        charttitle: "Mittleres Honorar pro # 1000 Zeichen# (Brutto / Euro)"
                     }];
 
                     gradientboxplot(d3festjson, elementid)
