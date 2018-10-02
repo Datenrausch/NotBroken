@@ -614,10 +614,14 @@ def senddata(request):
                         messages.info(request, 'AGB')
 
 
-                    SalaryPerHour=0
-                    SalaryPerMonth=0
+                    SalaryPerHour=float(SalaryPerMonthEmpMix)/(float(DaysPerMonthMix)*float(HoursPerDayMix))
+                    SalaryPerMonth=SalaryPerHour*160
                     if(sanitycheck == 0):
 
+                        if SalaryPerHour>100:
+                            Suspiciousentry="Weird"
+                        else:
+                            Suspiciousentry="Ok"
                         mediumobj = Medium(
                             mediumname=MediumName,
                             freeoremployed=FreeOrEmployed,
@@ -627,6 +631,7 @@ def senddata(request):
 
                         SalaryPerHour=float(SalaryPerMonthEmpMix)/(float(DaysPerMonthMix)*float(HoursPerDayMix))
                         SalaryPerMonth=SalaryPerHour*160
+
                         d = mediumobj.datacollection_set.create(
                             SalaryPerHour=float(SalaryPerHour),
                             SalaryPerMonth=float(SalaryPerMonth),
@@ -715,14 +720,19 @@ def senddata(request):
                     SalaryPerHour=0
                     SalaryPerMonth=0
                     if(sanitycheck == 0):
+
+                        SalaryPerHour=float(FeeFree)/float(HoursSpentFree)
+                        SalaryPerMonth=SalaryPerHour*160
+                        if SalaryPerHour>100:
+                            Suspiciousentry="Weird"
+                        else:
+                            Suspiciousentry="Ok"
                         mediumobj = Medium(
                             mediumname=MediumName,
                             freeoremployed=FreeOrEmployed,
                             UpDate=datetime.datetime.now(),
                             Suspiciousmedium=Suspiciousentry)
                         mediumobj.save()
-                        SalaryPerHour=float(FeeFree)/float(HoursSpentFree)
-                        SalaryPerMonth=SalaryPerHour*160
                         d = mediumobj.datacollection_set.create(
                             SalaryPerHour=float(SalaryPerHour),
                             SalaryPerMonth=float(SalaryPerMonth),
