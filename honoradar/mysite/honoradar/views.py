@@ -212,6 +212,7 @@ def senddata(request):
             #we get the three categories that all entries have in common regardless of
             #freelance, pauschalist or employed
             MediumName = (request.POST.get('MediumName'))
+            MediumName=MediumName.strip()
             FreeOrEmployed = (request.POST.get('FreeOrEmployed'))
             Comment = (request.POST.get('Comment'))
             AGB = (request.POST.get('AGB'))
@@ -944,15 +945,14 @@ def getdata(request):
             comments = list(AllMedium.values_list("Comment", flat=True))
             comments = list(filter(None, comments))
 
-            #if there are no comments we add this default in there
+            #if there are no comments we do nothing
             if len(comments)==0:
-                comments.append("Leider haben wir keine Kommentare für dieses Medium")
-            #if the length is below 9 we keep on increasing the number of comments
-            while (len(comments))<9:
-                comments.extend(comments)
-            shuffle(comments)
-            #if the length is over 9, then we keep on popping comments
-            while (len(comments))>9:
+                pass
+            #if there are comments, we shuffle them
+            if len(comments)>0:
+                shuffle(comments)
+            #if the length is over 8, then we keep on popping comments
+            while (len(comments))>8:
                 comments.pop()
 
             #adding these comments to the dictionary
