@@ -483,6 +483,19 @@ $(document).ready(function() {
                     var element = document.getElementById(commentid);
                     element.innerHTML = ""
                     element.innerHTML = Commenttext
+
+                    var elementid="slider-comment-" + String(i + 1)
+                    var element = document.getElementById(elementid);
+                    element.classList.add("show");
+                    element.classList.remove("hide");
+
+                    var elementid="label-slide-" + String(i + 1)
+                    var element = document.getElementById(elementid);
+                    if (element!=undefined){
+                    element.classList.remove("hide");
+                  }else{
+                    
+                  }
                 };
             } else {
                 for (i = 0; i < 8; i++) {
@@ -491,6 +504,13 @@ $(document).ready(function() {
                     element.innerHTML = ""
                     element.innerHTML = "Keine Daten"
 
+                    var elementid="slider-comment-" + String(i + 1)
+                    var element = document.getElementById(elementid);
+                    element.classList.add("hide");
+                    element.classList.remove("show");
+                     var elementid="label-slide-" + String(i + 1)
+                    var element = document.getElementById(elementid);
+                    element.classList.add("hide");
                 }
 
             }
