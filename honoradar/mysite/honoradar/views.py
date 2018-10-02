@@ -772,6 +772,7 @@ def getdata(request):
     if request.is_ajax():
         #and retrieve the mediumname from the request
         MediumName = (request.GET.get('mediumget'))
+        MediumName = MediumName.strip()
         #then we open the json with all media names and change the mediumname
         #with the coded mediumname of the json, if it exists to use the same coded
         #even if user input differs
