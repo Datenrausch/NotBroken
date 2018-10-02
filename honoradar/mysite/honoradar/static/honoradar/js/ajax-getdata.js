@@ -475,12 +475,12 @@ $(document).ready(function() {
                 element.classList.add("show");
                 element.classList.remove("hide");
             };
-            //We add the comments to a pre-defined container
+            //We empty all comments
+
             listofcomments = data["MediumComments"]
             for (i = 0; i < 8; i++) {
                 console.log(i)
 
-                Commenttext = (listofcomments[i])
                 commentid = "comment-" + String(i + 1)
                 var element = document.getElementById(commentid);
                 element.innerHTML = ""
@@ -496,6 +496,8 @@ $(document).ready(function() {
                     element.classList.add("hide");
                 }
             }
+            //We add the comments to a pre-defined container
+
             if (listofcomments != undefined) {
                 console.log((listofcomments).length)
                 var loopnumber = (listofcomments).length
