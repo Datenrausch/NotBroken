@@ -479,7 +479,6 @@ $(document).ready(function() {
 
             listofcomments = data["MediumComments"]
             for (i = 0; i < 8; i++) {
-                console.log(i)
 
                 commentid = "comment-" + String(i + 1)
                 var element = document.getElementById(commentid);
@@ -499,11 +498,9 @@ $(document).ready(function() {
             //We add the comments to a pre-defined container
 
             if (listofcomments != undefined) {
-                console.log((listofcomments).length)
                 var loopnumber = (listofcomments).length
 
                 for (i = 0; i < loopnumber; i++) {
-                    console.log(i)
 
                     Commenttext = (listofcomments[i])
                     commentid = "comment-" + String(i + 1)
