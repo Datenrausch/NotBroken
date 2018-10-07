@@ -17,7 +17,7 @@ from random import shuffle
 
 
 def StdAvgFunction(entries, column):
-    print(column)
+    #print(column)
     #Taking all entries of a certrain column and filtering out the zeroes
     ids = list(entries.values_list(column, flat=True))
     ids=list(filter((float(0)).__ne__, ids))
@@ -206,12 +206,13 @@ def senddata(request):
     if request.is_ajax():
 
         if request.method == 'POST':
-            print(request.POST)
+            #print(request.POST)
             sanitycheck = 0
 
             #we get the three categories that all entries have in common regardless of
             #freelance, pauschalist or employed
             MediumName = (request.POST.get('MediumName'))
+            #print(MediumName)
             MediumName=MediumName.strip()
             FreeOrEmployed = (request.POST.get('FreeOrEmployed'))
             Comment = (request.POST.get('Comment'))
@@ -244,7 +245,6 @@ def senddata(request):
                             outfile.write(data)
 
             else:
-                print("No Mediumname!!")
                 sanitycheck = 1
                 messages.info(request, 'Mediumname')
 
@@ -754,7 +754,6 @@ def senddata(request):
                         )
         testdict = {}
         counter = 0
-        print(MediumName)
 
         #we prepare the dictionary of messages to be displayed
         for i in list(messages.get_messages(request)):
@@ -844,7 +843,6 @@ def getdata(request):
                        "AllFestHoursPerWeekEmp":AllFestHoursPerWeekEmp,
                        "AllFestHappiness":AllFestHappiness,
                        }
-            print("Enough Data Fest")
             Mediumdict.update(MediumFestContext)
 
 
@@ -981,7 +979,7 @@ def getdata(request):
         return JsonResponse(Mediumdict)
 
     else:
-        print("Ohje")
+        pass
 
 #this view defines the index
 class IndexView(generic.ListView):
@@ -993,7 +991,7 @@ class IndexView(generic.ListView):
         model=Medium
         mediumno=Medium.objects.values("mediumname").distinct().count()
 
-        print("entriesno:",entriesno,"mediumno:",mediumno)
+        #print("entriesno:",entriesno,"mediumno:",mediumno)
         context["entriesno"] = entriesno
         context["mediumno"] = mediumno
 

@@ -1,7 +1,7 @@
 //Only checking for the names in the inputs
-
+var versionUpdate = (new Date()).getTime();
 var options = {
-    url: "static/honoradar/mediumsname.json",
+    url: "static/honoradar/mediumsname.json?v="+versionUpdate,
 
     getValue: function(element) {
         return element.name;
