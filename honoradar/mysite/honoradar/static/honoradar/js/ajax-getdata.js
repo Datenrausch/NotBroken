@@ -2,10 +2,12 @@
 var newdata = ""
 var newtextStatus = ""
 var newjqXHR = ""
-
+var redraw=1
 //Checking whether the page is ready to fire-up Ajax etc.
 $(document).ready(function() {
     var $myForm = $("#get-form")
+     runonce=0
+
         //If Form is submitted, we prevent the default of reloading
     $myForm.submit(function(event) {
         event.preventDefault()
@@ -35,13 +37,18 @@ $(document).ready(function() {
             //otherwise we send the data in an ajax call to the backend, if the call was a Success
             //we run the handleFormSuccessGet function. Otherewise an errorfunction
         } else {
+          redraw = 0
+
             document.getElementById('WARNING_getdata').classList.add("hide");
             document.getElementById('WARNING_getdata').classList.remove("show");
             $.ajax({
                 method: "GET",
                 url: $url,
                 data: $formData,
-                success: handleFormSuccessGet,
+                success: function(data){
+                  console.log("Inside Ajax")
+                 handleFormSuccessGet(data, redraw);
+               },
                 error: handleFormErrorGet,
 
             });
@@ -49,7 +56,10 @@ $(document).ready(function() {
 
     })
 
-    function handleFormSuccessGet(data, textStatus, jqXHR) {
+    function handleFormSuccessGet(data, textStatus, jqXHR, redraw) {
+
+        while(redraw==undefined){
+          redraw=1
 
         //We first reset the button for graphic no.2 with the data for text/audio/video
         document.getElementById("result_format_text").checked = true
@@ -124,6 +134,7 @@ $(document).ready(function() {
         const size = Object.keys(data).length;
 
         //Then we set the resultsdiv to show
+
         resultsdiv.classList.add("show");
         resultsdiv.classList.remove("hide");
 
@@ -175,7 +186,7 @@ $(document).ready(function() {
                 element.classList.add("hide");
                 element.classList.remove("show");;
             } else {
-                if (data["nodata"] == "Es gibt keine Daten") {
+                if (data["nodata"] == "Es gibt keine Daten")  {
                     var element = document.getElementById("WARNING_unknown");
                     element.classList.add("show");
                     element.classList.remove("hide");
@@ -219,8 +230,10 @@ $(document).ready(function() {
             for (i = 0; i < 9; i++) {
                 commentid = "comment-" + String(i + 1)
                 var element = document.getElementById(commentid);
+                if (element!=undefined){
                 element.innerHTML = ""
                 element.innerHTML = "Keine Daten"
+                }
             }
 
 
@@ -538,8 +551,11 @@ $(document).ready(function() {
                 }
 
             }
+            $myForm[0].reset(); // reset form data
+
             //Then we trigger the smoothfunction to scroll down to the graphs
             smoothfunction2()
+            };
         };
 
         //Lastly we set the texts accompanying the graphics to show
@@ -569,7 +585,6 @@ $(document).ready(function() {
 
 
 
-        $myForm[0].reset(); // reset form data
 
         //lastly, we iterate through the different comments
 
@@ -585,7 +600,8 @@ $(document).ready(function() {
     //Also we rerun this whole function on resize to make the graphics responsive
     function redraw() {
         if (newdata != "") {
-            handleFormSuccessGet(newdata, newtextStatus, newjqXHR)
+          var redraw=0
+            handleFormSuccessGet(newdata, newtextStatus, newjqXHR, redraw)
 
         }
     }

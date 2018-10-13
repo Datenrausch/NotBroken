@@ -949,31 +949,31 @@ def getdata(request):
 
             Mediumdict.update(MediumFreiContext)
 
-            #now retrieving the comments for frei, pauschal and fest for this medium
-            AllMedium=DataCollection.objects.filter(Medium__mediumname=MediumName)
-            comments = list(AllMedium.values_list("Comment", flat=True))
-            comments = list(filter(None, comments))
+        #now retrieving the comments for frei, pauschal and fest for this medium
+        AllMedium=DataCollection.objects.filter(Medium__mediumname=MediumName)
+        comments = list(AllMedium.values_list("Comment", flat=True))
+        comments = list(filter(None, comments))
 
-            #if there are no comments we do nothing
-            if len(comments)==0:
-                pass
-            #if there are comments, we shuffle them
-            if len(comments)>0:
-                shuffle(comments)
-            #if the length is over 8, then we keep on popping comments
-            while (len(comments))>8:
-                comments.pop()
+        #if there are no comments we do nothing
+        if len(comments)==0:
+            pass
+        #if there are comments, we shuffle them
+        if len(comments)>0:
+            shuffle(comments)
+        #if the length is over 8, then we keep on popping comments
+        while (len(comments))>8:
+            comments.pop()
 
-            #adding these comments to the dictionary
-            MediumComments={"MediumComments":comments}
-            Mediumdict.update(MediumComments)
+        #adding these comments to the dictionary
+        MediumComments={"MediumComments":comments}
+        Mediumdict.update(MediumComments)
 
-            #Gets Gegendarstellungen for the medium and update the dictionar with this
-            Gegendarstellung=list(AllMedium.values_list("Gegendarstellung", flat=True))
-            Gegendarstellung = list(filter(None, Gegendarstellung))
-            print("Gegendarstellung:", Gegendarstellung)
-            MediumGegendarstellung={"MediumGegendarstellung":Gegendarstellung}
-            Mediumdict.update(MediumGegendarstellung)
+        #Gets Gegendarstellungen for the medium and update the dictionar with this
+        Gegendarstellung=list(AllMedium.values_list("Gegendarstellung", flat=True))
+        Gegendarstellung = list(filter(None, Gegendarstellung))
+        print("Gegendarstellung:", Gegendarstellung)
+        MediumGegendarstellung={"MediumGegendarstellung":Gegendarstellung}
+        Mediumdict.update(MediumGegendarstellung)
 
         #and finally return the JSON
         return JsonResponse(Mediumdict)
@@ -985,12 +985,31 @@ def getdata(request):
 class IndexView(generic.ListView):
     model=DataCollection
     template_name = 'honoradar/index.html'
+
     def get_context_data(self, **context):
         #gets all entries and all distinc mediumnames and passes this as context to the tempate
         entriesno = DataCollection.objects.count()
         model=Medium
         mediumno=Medium.objects.values("mediumname").distinct().count()
-
+        with io.open('honoradar/static/honoradar/mediumsname.json', "r") as json_file:
+             oldjsondata = json.load(json_file)
+             all_db_entries=Medium.objects.values("mediumname").distinct()
+             for entry in all_db_entries:
+                 mediumname=(entry["mediumname"])
+                 newentry={"name":mediumname.title(),"code":mediumname.title()}
+                 oldjsondata.append(newentry)
+                 print(mediumname)
+             seen = set()
+             new_l = []
+             for d in oldjsondata:
+                 t = tuple(d.items())
+                 if t not in seen:
+                     seen.add(t)
+                     new_l.append(d)
+             with io.open('honoradar/static/honoradar/mediumsname_temporary.json', 'w') as outfile:
+                             data=json.dumps(new_l, ensure_ascii=False)
+                             outfile.write(data)
+        print("success")
         #print("entriesno:",entriesno,"mediumno:",mediumno)
         context["entriesno"] = entriesno
         context["mediumno"] = mediumno
