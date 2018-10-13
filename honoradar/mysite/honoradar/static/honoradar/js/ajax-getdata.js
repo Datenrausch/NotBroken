@@ -534,14 +534,10 @@ $(document).ready(function() {
                     var element = document.getElementById(elementid);
                     if (element != undefined) {
                       element.classList.add("hide");
-
                     }
-
-
                 }
 
             }
-
             //Then we trigger the smoothfunction to scroll down to the graphs
             smoothfunction2()
         };
