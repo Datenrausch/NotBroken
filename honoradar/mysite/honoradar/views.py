@@ -819,7 +819,7 @@ def getdata(request):
 
         #if we have more than two entries for this medium in this category we use the StdAvgFunctions
         #to get the results for these categories and then push it to the dictionaries
-        if ((MediumFest.count()) > 1):
+        if ((MediumFest.count()) > 2):
 
             MediumFestSalaryPerHour = StdAvgFunction(MediumFest, 'SalaryPerHour')
             MediumFestSalaryPerMonth= StdAvgFunction(MediumFest, 'SalaryPerMonth')
@@ -851,7 +851,7 @@ def getdata(request):
         AllPauschal=DataCollection.objects.filter(Medium__freeoremployed="pauschal")
         mediumpauschalcount=MediumPauschal.count()
 
-        if ((MediumPauschal.count()) > 1):
+        if ((MediumPauschal.count()) > 2):
             MediumPauschalSalaryPerHour = StdAvgFunction(MediumPauschal, 'SalaryPerHour')
             MediumPauschalSalaryPerMonth = StdAvgFunction(MediumPauschal, 'SalaryPerMonth')
             MediumPauschalDaysPerMonthMix = StdAvgFunction(MediumPauschal, 'DaysPerMonthMix')
@@ -890,7 +890,7 @@ def getdata(request):
         AllFrei=DataCollection.objects.filter(Medium__freeoremployed="frei")
         mediumfreicount=MediumFrei.count()
 
-        if ((MediumFrei.count()) > 1):
+        if ((MediumFrei.count()) > 2):
 
 
             MediumFreiSalaryPerHour = StdAvgFunction(MediumFrei, 'SalaryPerHour')
@@ -967,6 +967,12 @@ def getdata(request):
         #adding these comments to the dictionary
         MediumComments={"MediumComments":comments}
         Mediumdict.update(MediumComments)
+
+        #If Neither of the categories is above three
+        if ((MediumFest.count() < 3) and (MediumPauschal.count() < 3) and (MediumFrei.count() < 3)):
+            Wenigeralsdrei={"nodata":"Weniger als drei"}
+            Mediumdict.update(Wenigeralsdrei)
+            print("here")
 
         #Gets Gegendarstellungen for the medium and update the dictionar with this
         Gegendarstellung=list(AllMedium.values_list("Gegendarstellung", flat=True))

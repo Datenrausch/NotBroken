@@ -194,6 +194,14 @@ $(document).ready(function() {
                     element.classList.add("hide");
                     element.classList.remove("show");;
                 };
+                if (data["nodata"] == "Weniger als drei")  {
+                    var element = document.getElementById("WARNING_unknown");
+                    element.classList.add("show");
+                    element.classList.remove("hide");
+                    var element = document.getElementById("result");
+                    element.classList.add("hide");
+                    element.classList.remove("show");;
+                };
             }
             var element = document.getElementById("result-grid");
             element.classList.add("show");
@@ -527,9 +535,10 @@ $(document).ready(function() {
 
                     var elementid = "label-slide-" + String(i + 1)
                     var element = document.getElementById(elementid);
-                    if (element != undefined) {
-                        element.classList.remove("hide");
-                    }
+                    console.log(elementid)
+
+                    element.classList.add("show");
+                    element.classList.remove("hide");
                 };
             } else {
                 for (i = 0; i < 8; i++) {
