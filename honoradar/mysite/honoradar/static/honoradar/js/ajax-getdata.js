@@ -173,12 +173,12 @@ $(document).ready(function() {
         }
 
         //If it turns out that the backend says, we have no data, we show the error messages
-        if (data["nodata"] != undefined) {
+        if ((data["nodata"] != undefined)||(data["drei"] != undefined)) {
             var element = document.getElementById("NoDataAtAllMessage")
             if (element != null) {
                 element.parentNode.removeChild(element);
             }
-            if (data["nodata"] == "Vertippt?") {
+            if (data["nodata"] == "Vertippt?"){
                 var element = document.getElementById("WARNING_misspelled");
                 element.classList.add("show");
                 element.classList.remove("hide");
@@ -186,15 +186,8 @@ $(document).ready(function() {
                 element.classList.add("hide");
                 element.classList.remove("show");;
             } else {
-                if (data["nodata"] == "Es gibt keine Daten")  {
-                    var element = document.getElementById("WARNING_unknown");
-                    element.classList.add("show");
-                    element.classList.remove("hide");
-                    var element = document.getElementById("result");
-                    element.classList.add("hide");
-                    element.classList.remove("show");;
-                };
-                if (data["nodata"] == "Weniger als drei")  {
+                if ((data["nodata"] == "Es gibt keine Daten")||(data["drei"] == "Weniger als drei"))  {
+                    console.log("huch")
                     var element = document.getElementById("WARNING_unknown");
                     element.classList.add("show");
                     element.classList.remove("hide");
@@ -535,10 +528,9 @@ $(document).ready(function() {
 
                     var elementid = "label-slide-" + String(i + 1)
                     var element = document.getElementById(elementid);
-                    console.log(elementid)
-
-                    element.classList.add("show");
-                    element.classList.remove("hide");
+                    if (element != undefined) {
+                        element.classList.remove("hide");
+                    }
                 };
             } else {
                 for (i = 0; i < 8; i++) {

@@ -970,7 +970,7 @@ def getdata(request):
 
         #If Neither of the categories is above three
         if ((MediumFest.count() < 3) and (MediumPauschal.count() < 3) and (MediumFrei.count() < 3)):
-            Wenigeralsdrei={"nodata":"Weniger als drei"}
+            Wenigeralsdrei={"drei":"Weniger als drei"}
             Mediumdict.update(Wenigeralsdrei)
             print("here")
 
