@@ -305,7 +305,7 @@ def senddata(request):
                     if(sanitycheck == 0):
                         SalaryPerHour=float(SalaryPerMonthEmpMix)/(float(HoursPerWeekEmp)*4)
                         SalaryPerMonth=SalaryPerHour*160
-                        if SalaryPerHour>100:
+                        if ((SalaryPerHour>100) or (SalaryPerHour==0)):
                             Suspiciousentry="Weird"
                         else:
                             Suspiciousentry="Ok"
@@ -380,7 +380,7 @@ def senddata(request):
                     if(sanitycheck == 0):
                         SalaryPerHour=float(SalaryPerMonthEmpMix)/(float(DaysPerMonthMix)*float(HoursPerDayMix))
                         SalaryPerMonth=SalaryPerHour*160
-                        if SalaryPerHour>100:
+                        if ((SalaryPerHour>100) or (SalaryPerHour==0)):
                             Suspiciousentry="Weird"
                         else:
                             Suspiciousentry="Ok"
@@ -480,8 +480,13 @@ def senddata(request):
                     if(sanitycheck == 0):
                         SalaryPerHour=float(FeeFree)/float(HoursSpentFree)
                         SalaryPerMonth=SalaryPerHour*160
-                        if SalaryPerHour>100:
+                        if ((SalaryPerHour>100) or (SalaryPerHour==0)):
                             Suspiciousentry="Weird"
+                        if (CharPerArticleFree is not None):
+                            print("Loop")
+                            if float(FeeFree)/float(CharPerArticleFree)>0.15:
+                                Suspiciousentry="Weird"
+                                print("Weird Zeilensatz")
                         else:
                             Suspiciousentry="Ok"
                         mediumobj.Suspiciousmedium=Suspiciousentry
@@ -550,7 +555,7 @@ def senddata(request):
 
                         SalaryPerHour=float(SalaryPerMonthEmpMix)/(float(HoursPerWeekEmp)*4)
                         SalaryPerMonth=SalaryPerHour*160
-                        if SalaryPerHour>100:
+                        if ((SalaryPerHour>100) or (SalaryPerHour==0)):
                             Suspiciousentry="Weird"
                         else:
                             Suspiciousentry="Ok"
@@ -618,7 +623,7 @@ def senddata(request):
                     SalaryPerMonth=SalaryPerHour*160
                     if(sanitycheck == 0):
 
-                        if SalaryPerHour>100:
+                        if ((SalaryPerHour>100) or (SalaryPerHour==0)):
                             Suspiciousentry="Weird"
                         else:
                             Suspiciousentry="Ok"
@@ -723,8 +728,14 @@ def senddata(request):
 
                         SalaryPerHour=float(FeeFree)/float(HoursSpentFree)
                         SalaryPerMonth=SalaryPerHour*160
-                        if SalaryPerHour>100:
+                        if ((SalaryPerHour>100) or (SalaryPerHour==0)):
                             Suspiciousentry="Weird"
+                        if (CharPerArticleFree is not None):
+                            print("Loop")
+                            if float(FeeFree)/float(CharPerArticleFree)>0.15:
+                                Suspiciousentry="Weird"
+                                print("Weird Zeilensatz")
+
                         else:
                             Suspiciousentry="Ok"
                         mediumobj = Medium(
