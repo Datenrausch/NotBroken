@@ -205,7 +205,7 @@ def createjson(request):
             all_db_entries=Medium.objects.values("mediumname").distinct()
             for entry in all_db_entries:
                  mediumname=(entry["mediumname"])
-                 newentry={"name":mediumname.title(),"code":mediumname.title()}
+                 newentry={"name":mediumname,"code":mediumname.title()}
                  oldjsondata.append(newentry)
                  print(mediumname)
             seen = set()
@@ -1010,7 +1010,7 @@ class IndexView(generic.ListView):
         entriesno = DataCollection.objects.count()
         model=Medium
         mediumno=Medium.objects.values("mediumname").distinct().count()
-        
+
         print("success")
         #print("entriesno:",entriesno,"mediumno:",mediumno)
         context["entriesno"] = entriesno
