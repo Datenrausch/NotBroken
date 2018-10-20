@@ -6186,7 +6186,20 @@
     "name": "P.M. Magazin",
     "code": "P.M. Magazin"
 }, {
+    "name": "PM Magazin",
+    "code": "P.M. Magazin"
+},{
+    "name": "PM",
+    "code": "P.M. Magazin"
+},{
+    "name": "P.M.",
+    "code": "P.M. Magazin"
+},{
     "name": "P.M. History",
+    "code": "P.M. History"
+},
+{
+    "name": "PM History",
     "code": "P.M. History"
 }, {
     "name": "Poesiealbum neu",
