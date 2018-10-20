@@ -662,6 +662,9 @@
     "name": "Kölner Stadt-Anzeiger",
     "code": "Kölner Stadt-Anzeiger"
 }, {
+    "name": "Kölner Stadt Anzeiger",
+    "code": "Kölner Stadt-Anzeiger"
+}, {
     "name": "Kölnische Rundschau",
     "code": "Kölnische Rundschau"
 }, {
@@ -1139,6 +1142,12 @@
     "name": "Rhein-Zeitung",
     "code": "Rhein-Zeitung"
 }, {
+    "name": "RND Redaktionsnetzwerk Deutschland",
+    "code": "RND"
+}, {
+    "name": "RND",
+    "code": "RND"
+}, {
     "name": "Rhön- und Saalepost",
     "code": "Rhön- und Saalepost"
 }, {
@@ -1158,6 +1167,9 @@
     "code": "Rottaler Anzeiger"
 }, {
     "name": "Ruhr-Nachrichten",
+    "code": "Ruhr-Nachrichten"
+}, {
+    "name": "Ruhr Nachrichten",
     "code": "Ruhr-Nachrichten"
 }, {
     "name": "Rundschau für den Schwäbischen Wald",
@@ -1204,6 +1216,12 @@
 }, {
     "name": "Schleswig-Holsteinische Landeszeitung",
     "code": "Schleswig-Holsteinische Landeszeitung"
+}, {
+    "name": "Schleswig-Holsteinischer Zeitungsverlag",
+    "code": "Schleswig-Holsteinischer Zeitungsverlag"
+}, {
+    "name": "SHZ",
+    "code": "Schleswig-Holsteinischer Zeitungsverlag"
 }, {
     "name": "Schlitzer Bote",
     "code": "Schlitzer Bote"
@@ -1343,6 +1361,12 @@
     "name": "Sylter Rundschau",
     "code": "Sylter Rundschau"
 }, {
+    "name": "SZENE Hamburg",
+    "code": "Szene Hamburg"
+}, {
+    "name": "Szene Hamburg",
+    "code": "Szene Hamburg"
+}, {
     "name": "Tageblatt für den Kreis Steinfurt",
     "code": "Tageblatt für den Kreis Steinfurt"
 }, {
@@ -1359,6 +1383,21 @@
     "code": "Die Tageszeitung"
 }, {
     "name": "Taz",
+    "code": "Die Tageszeitung"
+}, {
+    "name": "taz",
+    "code": "Die Tageszeitung"
+}, {
+    "name": "taz.nord",
+    "code": "Die Tageszeitung"
+}, {
+    "name": "Taz Online",
+    "code": "Die Tageszeitung"
+}, {
+    "name": "taz.die tageszeitung",
+    "code": "Die Tageszeitung"
+}, {
+    "name": "taz. die tageszeitung ",
     "code": "Die Tageszeitung"
 }, {
     "name": "Täglicher Anzeiger Holzminden",
@@ -1496,6 +1535,12 @@
     "name": "Der Westallgäuer",
     "code": "Der Westallgäuer"
 }, {
+    "name": "welt-sichten",
+    "code": "welt-sichten"
+}, {
+    "name": "Weltsichten",
+    "code": "welt-sichten"
+}, {
     "name": "Westdeutsche Allgemeine Zeitung",
     "code": "Westdeutsche Allgemeine Zeitung"
 }, {
@@ -1616,6 +1661,9 @@
     "name": "Der Freitag",
     "code": "Der Freitag"
 }, {
+    "name": "enorm",
+    "code": "enorm"
+}, {
     "name": "Freitags-Anzeiger",
     "code": "Freitags-Anzeiger"
 }, {
@@ -1642,6 +1690,12 @@
 }, {
     "name": "The Munich Eye",
     "code": "The Munich Eye"
+}, {
+    "name": "The Munich Online",
+    "code": "The Munich Online"
+}, {
+    "name": "The Munich online",
+    "code": "The Munich Online"
 }, {
     "name": "National-Zeitung",
     "code": "National-Zeitung"
@@ -1682,10 +1736,19 @@
     "name": "VDI Nachrichten",
     "code": "VDI Nachrichten"
 }, {
+    "name": "vdi nachrichten",
+    "code": "VDI Nachrichten"
+}, {
     "name": "Werdener Nachrichten",
     "code": "Werdener Nachrichten"
 }, {
     "name": "Die Zeit",
+    "code": "Die Zeit"
+}, {
+    "name": "DIE ZEIT",
+    "code": "Die Zeit"
+}, {
+    "name": "Die ZEIT",
     "code": "Die Zeit"
 }, {
     "name": "Zeit",
@@ -1799,13 +1862,22 @@
     "name": "MDR (Fernsehen & Online)",
     "code": "Mitteldeutscher Rundfunk"
 }, {
+    "name": "WDR Online",
+    "code": "Westdeutscher Rundfunk"
+}, {
     "name": "WDR (Fernsehen & Online)",
+    "code": "Westdeutscher Rundfunk"
+}, {
+    "name": "WDR Fernsehen",
     "code": "Westdeutscher Rundfunk"
 }, {
     "name": "Westdeutscher Rundfunk (Fernsehen & Online)",
     "code": "Westdeutscher Rundfunk"
 }, {
     "name": "NDR (Fernsehen & Online)",
+    "code": "Norddeutscher Rundfunk"
+}, {
+    "name": "Ndr",
     "code": "Norddeutscher Rundfunk"
 }, {
     "name": "Norddeutscher Rundfunk (Fernsehen & Online)",
@@ -1862,11 +1934,26 @@
     "name": "Spiegel TV",
     "code": "Spiegel TV"
 }, {
+    "name": "Spiegel Geschichte (Print)",
+    "code": "Spiegel Geschichte (Print)"
+}, {
     "name": "Zeit Online",
     "code": "Zeit Online"
 }, {
     "name": "ZON",
     "code": "Zeit Online"
+}, {
+    "name": "ZEIT Online",
+    "code": "Zeit Online"
+}, {
+    "name": "ze.tt",
+    "code": "ze.tt"
+}, {
+    "name": "Ze.tt",
+    "code": "ze.tt"
+}, {
+    "name": "Zett",
+    "code": "ze.tt"
 }, {
     "name": "Zeit.de",
     "code": "Zeit Online"
@@ -1896,6 +1983,9 @@
     "code": "Stern Online"
 }, {
     "name": "Stern.de",
+    "code": "Stern Online"
+}, {
+    "name": "stern.de",
     "code": "Stern Online"
 }, {
     "name": "Golem.de",
@@ -1970,6 +2060,9 @@
     "name": "Vice.de",
     "code": "Vice Online"
 }, {
+    "name": "Impulse",
+    "code": "Impulse"
+}, {
     "name": "Jetzt Online",
     "code": "Jetzt Online"
 }, {
@@ -2015,6 +2108,9 @@
     "name": "Prosieben (Fernsehen & Online)",
     "code": "Prosieben"
 }, {
+    "name": "ProSieben",
+    "code": "Prosieben"
+}, {
     "name": "Sat.1 (Fernsehen & Online)",
     "code": "Sat.1"
 }, {
@@ -2028,6 +2124,9 @@
     "code": "T-Online"
 }, {
     "name": "T-Online.de",
+    "code": "T-Online"
+}, {
+    "name": "t-online.de",
     "code": "T-Online"
 }, {
     "name": "Chip Online",
@@ -2109,10 +2208,10 @@
     "code": "11 Freunde Online"
 }, {
     "name": "Deutsche Presseagentur",
-    "code": "Deutsche Presseagentur"
+    "code": "DPA"
 }, {
     "name": "DPA",
-    "code": "Deutsche Presseagentur"
+    "code": "DPA"
 }, {
     "name": "Allgemeiner Deutscher Nachrichtendienst",
     "code": "Allgemeiner Deutscher Nachrichtendienst"
@@ -2139,6 +2238,12 @@
     "code": "Evangelischer Pressedienst"
 }, {
     "name": "EPD",
+    "code": "Evangelischer Pressedienst"
+}, {
+    "name": "epd",
+    "code": "Evangelischer Pressedienst"
+}, {
+    "name": "epd medien",
     "code": "Evangelischer Pressedienst"
 }, {
     "name": "Humanistischer Pressedienst",
@@ -2194,6 +2299,9 @@
 }, {
     "name": "Gründerszene",
     "code": "Gründerszene Online"
+}, {
+    "name": "Domus, deutsche Ausgabe",
+    "code": "Domus, deutsche Ausgabe"
 }, {
     "name": "Deutschlandfunk (Radio & Online)",
     "code": "Deutschlandfunk"
@@ -2384,6 +2492,9 @@
     "name": "SWR2 (Radio & Online)",
     "code": "SWR2"
 }, {
+    "name": "SWR2 Radio",
+    "code": "SWR2"
+}, {
     "name": "SWR3 (Radio & Online)",
     "code": "SWR3"
 }, {
@@ -2397,13 +2508,22 @@
     "code": "SWR Aktuell"
 }, {
     "name": "1 Live (Radio & Online)",
-    "code": "1 Live"
+    "code": "WDR 1LIVE"
+}, {
+    "name": "WDR 1Live",
+    "code": "WDR 1LIVE"
+}, {
+    "name": "WDR 1LIVE",
+    "code": "WDR 1LIVE"
 }, {
     "name": "1 Live diggi (Radio & Online)",
     "code": "1 Live diggi"
 }, {
-    "name": "KiRaKa (Radio & Online)",
-    "code": "KiRaKa"
+    "name": "WDR KiRaKa (Radio & Online)",
+    "code": "WDR KiRaKa"
+}, {
+    "name": "WDR KiRaKa",
+    "code": "WDR KiRaKa"
 }, {
     "name": "WDR 2 (Radio & Online)",
     "code": "WDR 2"
@@ -2416,6 +2536,15 @@
 }, {
     "name": "WDR 5 (Radio & Online)",
     "code": "WDR 5"
+}, {
+    "name": "WDR Cosmo (Radio & Online)",
+    "code": "WDR Cosmo"
+}, {
+    "name": "WDR COSMO",
+    "code": "WDR Cosmo"
+}, {
+    "name": "Wdr 5 Kiraka",
+    "code": "WDR KiRaKa"
 }, {
     "name": "WDR Event (Radio & Online)",
     "code": "WDR Event"
@@ -4759,7 +4888,14 @@
 }, {
     "name": "Bluesnews",
     "code": "Bluesnews"
+},
+{
+    "name": "Allg. Hotel und Gastronomie Zeitung",
+    "code": "Allgemeine Hotel- und Gastronomie Zeitung"
 }, {
+    "name": "Allgemeine Hotel- und Gastronomie Zeitung",
+    "code": "Allgemeine Hotel- und Gastronomie Zeitung"
+},{
     "name": "Bolivia",
     "code": "Bolivia"
 }, {
@@ -4775,7 +4911,19 @@
     "name": "Box – Deutschlands Magazin für schwule Männer",
     "code": "Box – Deutschlands Magazin für schwule Männer"
 }, {
+    "name": "Bento",
+    "code": "Bento"
+},{
+    "name": "Bento.de",
+    "code": "Bento"
+},{
+    "name": "Brand Eins",
+    "code": "Brand eins"
+},{
     "name": "Brand eins",
+    "code": "Brand eins"
+},{
+    "name": "brandeins",
     "code": "Brand eins"
 }, {
     "name": "Bravo Girl",
@@ -5318,6 +5466,12 @@
     "name": "Flug Revue",
     "code": "Flug Revue"
 }, {
+    "name": "Fluter",
+    "code": "Fluter"
+}, {
+    "name": "fluter",
+    "code": "Fluter"
+}, {
     "name": "Focus",
     "code": "Focus"
 }, {
@@ -5372,6 +5526,12 @@
     "name": "Funk Uhr",
     "code": "Funk Uhr"
 }, {
+    "name": "Funke Mediengruppe",
+    "code": "Funke Mediengruppe"
+}, {
+    "name": "Funke Medien Gruppe",
+    "code": "Funke Mediengruppe"
+}, {
     "name": "Für Dich",
     "code": "Für Dich"
 }, {
@@ -5406,6 +5566,9 @@
     "code": "Gegenstandpunkt"
 }, {
     "name": "Gehirn&Geist",
+    "code": "Gehirn&Geist"
+}, {
+    "name": "Gehirn und Geist",
     "code": "Gehirn&Geist"
 }, {
     "name": "Geistiges Eigentum",
@@ -5744,6 +5907,9 @@
     "name": "Mare",
     "code": "Mare"
 }, {
+    "name": "mare",
+    "code": "Mare"
+}, {
     "name": "Marineforum",
     "code": "Marineforum"
 }, {
@@ -5879,6 +6045,18 @@
     "name": "Neue Zeitschrift für Baurecht",
     "code": "Neue Zeitschrift für Baurecht"
 }, {
+    "name": "Neue Zürcher Zeitung",
+    "code": "NZZ"
+}, {
+    "name": "NZZ",
+    "code": "NZZ"
+}, {
+    "name": "NZZ am Sonntag",
+    "code": "NZZ am Sonntag"
+}, {
+    "name": "NZZaS",
+    "code": "NZZ am Sonntag"
+}, {
     "name": "Neutralität",
     "code": "Neutralität"
 }, {
@@ -5895,6 +6073,9 @@
     "code": "NordHandwerk"
 }, {
     "name": "Nordis",
+    "code": "Nordis"
+}, {
+    "name": "Nordis Skandinavienmagazin",
     "code": "Nordis"
 }, {
     "name": "Novo",
@@ -6211,6 +6392,15 @@
 }, {
     "name": "Stern",
     "code": "Stern"
+}, {
+    "name": "stern",
+    "code": "Stern"
+}, {
+    "name": "Stern - Gesund leben",
+    "code": "Stern gesund leben"
+}, {
+    "name": "Stern gesund leben",
+    "code": "Stern gesund leben"
 }, {
     "name": "Stickerei- und Spitzen-Rundschau",
     "code": "Stickerei- und Spitzen-Rundschau"
