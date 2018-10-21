@@ -17,7 +17,7 @@ from random import shuffle
 
 
 def StdAvgFunction(entries, column):
-    print(column)
+    #print(column)
     #Taking all entries of a certrain column and filtering out the zeroes
     ids = list(entries.values_list(column, flat=True))
     ids=list(filter((float(0)).__ne__, ids))
@@ -198,6 +198,29 @@ def StdAvgTwoColumnsFunction(entries, column1, column2, operator):
 
     return(result)
 
+def createjson(request):
+    if request.is_ajax():
+        with io.open('honoradar/static/honoradar/mediumsname.json', "r") as json_file:
+            oldjsondata = json.load(json_file)
+            all_db_entries=Medium.objects.values("mediumname").distinct()
+            for entry in all_db_entries:
+                 mediumname=(entry["mediumname"])
+                 newentry={"name":mediumname,"code":mediumname.title()}
+                 oldjsondata.append(newentry)
+                 print(mediumname)
+            seen = set()
+            new_l = []
+            for d in oldjsondata:
+                t = tuple(d.items())
+                if t not in seen:
+                     seen.add(t)
+                     new_l.append(d)
+            result={}
+            result["data"]=new_l
+            result["status"] = "Success"
+            return JsonResponse(result)
+
+
 
 # this entire view handles the process of sending data, checking it and saving it in the backend
 def senddata(request):
@@ -206,12 +229,14 @@ def senddata(request):
     if request.is_ajax():
 
         if request.method == 'POST':
-            print(request.POST)
+            #print(request.POST)
             sanitycheck = 0
 
             #we get the three categories that all entries have in common regardless of
             #freelance, pauschalist or employed
             MediumName = (request.POST.get('MediumName'))
+            #print(MediumName)
+            MediumName=MediumName.strip()
             FreeOrEmployed = (request.POST.get('FreeOrEmployed'))
             Comment = (request.POST.get('Comment'))
             AGB = (request.POST.get('AGB'))
@@ -223,29 +248,7 @@ def senddata(request):
 
             # if the mediumname or the AGB is not given, we set the sanitycheck to 1
             # and create a warning message that will pop-up
-            if MediumName:
-                with io.open('honoradar/static/honoradar/mediumsname.json', "r") as json_file:
-                    oldjsondata = json.load(json_file)
-                    inthere=0
-                    for p in oldjsondata:
-                        if p['name']==MediumName:
-                            inthere=1
-                            mediumcode=p['code']
-                            MediumName=mediumcode
-                    if inthere !=1:
-                        newjsondata=oldjsondata
-                        newentry={"name":MediumName.title(),"code":MediumName.title()}
 
-                        newjsondata.append(newentry)
-
-                        with io.open('honoradar/static/honoradar/mediumsname.json', 'w') as outfile:
-                            data=json.dumps(newjsondata, ensure_ascii=False)
-                            outfile.write(data)
-
-            else:
-                print("No Mediumname!!")
-                sanitycheck = 1
-                messages.info(request, 'Mediumname')
 
 
             # CHECKING WHETHER THERE ARE ALREADY ENTIRES WITH THIS MEDIUM
@@ -304,7 +307,7 @@ def senddata(request):
                     if(sanitycheck == 0):
                         SalaryPerHour=float(SalaryPerMonthEmpMix)/(float(HoursPerWeekEmp)*4)
                         SalaryPerMonth=SalaryPerHour*160
-                        if SalaryPerHour>100:
+                        if ((SalaryPerHour>100) or (SalaryPerHour==0)):
                             Suspiciousentry="Weird"
                         else:
                             Suspiciousentry="Ok"
@@ -379,7 +382,7 @@ def senddata(request):
                     if(sanitycheck == 0):
                         SalaryPerHour=float(SalaryPerMonthEmpMix)/(float(DaysPerMonthMix)*float(HoursPerDayMix))
                         SalaryPerMonth=SalaryPerHour*160
-                        if SalaryPerHour>100:
+                        if ((SalaryPerHour>100) or (SalaryPerHour==0)):
                             Suspiciousentry="Weird"
                         else:
                             Suspiciousentry="Ok"
@@ -479,8 +482,13 @@ def senddata(request):
                     if(sanitycheck == 0):
                         SalaryPerHour=float(FeeFree)/float(HoursSpentFree)
                         SalaryPerMonth=SalaryPerHour*160
-                        if SalaryPerHour>100:
+                        if ((SalaryPerHour>100) or (SalaryPerHour==0)):
                             Suspiciousentry="Weird"
+                        if (CharPerArticleFree is not None):
+                            print("Loop")
+                            if float(FeeFree)/float(CharPerArticleFree)>0.15:
+                                Suspiciousentry="Weird"
+                                print("Weird Zeilensatz")
                         else:
                             Suspiciousentry="Ok"
                         mediumobj.Suspiciousmedium=Suspiciousentry
@@ -549,7 +557,7 @@ def senddata(request):
 
                         SalaryPerHour=float(SalaryPerMonthEmpMix)/(float(HoursPerWeekEmp)*4)
                         SalaryPerMonth=SalaryPerHour*160
-                        if SalaryPerHour>100:
+                        if ((SalaryPerHour>100) or (SalaryPerHour==0)):
                             Suspiciousentry="Weird"
                         else:
                             Suspiciousentry="Ok"
@@ -613,10 +621,14 @@ def senddata(request):
                         messages.info(request, 'AGB')
 
 
-                    SalaryPerHour=0
-                    SalaryPerMonth=0
+                    SalaryPerHour=float(SalaryPerMonthEmpMix)/(float(DaysPerMonthMix)*float(HoursPerDayMix))
+                    SalaryPerMonth=SalaryPerHour*160
                     if(sanitycheck == 0):
 
+                        if ((SalaryPerHour>100) or (SalaryPerHour==0)):
+                            Suspiciousentry="Weird"
+                        else:
+                            Suspiciousentry="Ok"
                         mediumobj = Medium(
                             mediumname=MediumName,
                             freeoremployed=FreeOrEmployed,
@@ -626,6 +638,7 @@ def senddata(request):
 
                         SalaryPerHour=float(SalaryPerMonthEmpMix)/(float(DaysPerMonthMix)*float(HoursPerDayMix))
                         SalaryPerMonth=SalaryPerHour*160
+
                         d = mediumobj.datacollection_set.create(
                             SalaryPerHour=float(SalaryPerHour),
                             SalaryPerMonth=float(SalaryPerMonth),
@@ -714,14 +727,25 @@ def senddata(request):
                     SalaryPerHour=0
                     SalaryPerMonth=0
                     if(sanitycheck == 0):
+
+                        SalaryPerHour=float(FeeFree)/float(HoursSpentFree)
+                        SalaryPerMonth=SalaryPerHour*160
+                        if ((SalaryPerHour>100) or (SalaryPerHour==0)):
+                            Suspiciousentry="Weird"
+                        if (CharPerArticleFree is not None):
+                            print("Loop")
+                            if float(FeeFree)/float(CharPerArticleFree)>0.15:
+                                Suspiciousentry="Weird"
+                                print("Weird Zeilensatz")
+
+                        else:
+                            Suspiciousentry="Ok"
                         mediumobj = Medium(
                             mediumname=MediumName,
                             freeoremployed=FreeOrEmployed,
                             UpDate=datetime.datetime.now(),
                             Suspiciousmedium=Suspiciousentry)
                         mediumobj.save()
-                        SalaryPerHour=float(FeeFree)/float(HoursSpentFree)
-                        SalaryPerMonth=SalaryPerHour*160
                         d = mediumobj.datacollection_set.create(
                             SalaryPerHour=float(SalaryPerHour),
                             SalaryPerMonth=float(SalaryPerMonth),
@@ -743,7 +767,6 @@ def senddata(request):
                         )
         testdict = {}
         counter = 0
-        print(MediumName)
 
         #we prepare the dictionary of messages to be displayed
         for i in list(messages.get_messages(request)):
@@ -761,6 +784,7 @@ def getdata(request):
     if request.is_ajax():
         #and retrieve the mediumname from the request
         MediumName = (request.GET.get('mediumget'))
+        MediumName = MediumName.strip()
         #then we open the json with all media names and change the mediumname
         #with the coded mediumname of the json, if it exists to use the same coded
         #even if user input differs
@@ -808,7 +832,7 @@ def getdata(request):
 
         #if we have more than two entries for this medium in this category we use the StdAvgFunctions
         #to get the results for these categories and then push it to the dictionaries
-        if ((MediumFest.count()) > 1):
+        if ((MediumFest.count()) > 2):
 
             MediumFestSalaryPerHour = StdAvgFunction(MediumFest, 'SalaryPerHour')
             MediumFestSalaryPerMonth= StdAvgFunction(MediumFest, 'SalaryPerMonth')
@@ -832,7 +856,6 @@ def getdata(request):
                        "AllFestHoursPerWeekEmp":AllFestHoursPerWeekEmp,
                        "AllFestHappiness":AllFestHappiness,
                        }
-            print("Enough Data Fest")
             Mediumdict.update(MediumFestContext)
 
 
@@ -841,7 +864,7 @@ def getdata(request):
         AllPauschal=DataCollection.objects.filter(Medium__freeoremployed="pauschal")
         mediumpauschalcount=MediumPauschal.count()
 
-        if ((MediumPauschal.count()) > 1):
+        if ((MediumPauschal.count()) > 2):
             MediumPauschalSalaryPerHour = StdAvgFunction(MediumPauschal, 'SalaryPerHour')
             MediumPauschalSalaryPerMonth = StdAvgFunction(MediumPauschal, 'SalaryPerMonth')
             MediumPauschalDaysPerMonthMix = StdAvgFunction(MediumPauschal, 'DaysPerMonthMix')
@@ -880,7 +903,7 @@ def getdata(request):
         AllFrei=DataCollection.objects.filter(Medium__freeoremployed="frei")
         mediumfreicount=MediumFrei.count()
 
-        if ((MediumFrei.count()) > 1):
+        if ((MediumFrei.count()) > 2):
 
 
             MediumFreiSalaryPerHour = StdAvgFunction(MediumFrei, 'SalaryPerHour')
@@ -939,50 +962,57 @@ def getdata(request):
 
             Mediumdict.update(MediumFreiContext)
 
-            #now retrieving the comments for frei, pauschal and fest for this medium
-            AllMedium=DataCollection.objects.filter(Medium__mediumname=MediumName)
-            comments = list(AllMedium.values_list("Comment", flat=True))
-            comments = list(filter(None, comments))
+        #now retrieving the comments for frei, pauschal and fest for this medium
+        AllMedium=DataCollection.objects.filter(Medium__mediumname=MediumName)
+        comments = list(AllMedium.values_list("Comment", flat=True))
+        comments = list(filter(None, comments))
 
-            #if there are no comments we add this default in there
-            if len(comments)==0:
-                comments.append("Leider haben wir keine Kommentare für dieses Medium")
-            #if the length is below 9 we keep on increasing the number of comments
-            while (len(comments))<9:
-                comments.extend(comments)
+        #if there are no comments we do nothing
+        if len(comments)==0:
+            pass
+        #if there are comments, we shuffle them
+        if len(comments)>0:
             shuffle(comments)
-            #if the length is over 9, then we keep on popping comments
-            while (len(comments))>9:
-                comments.pop()
+        #if the length is over 8, then we keep on popping comments
+        while (len(comments))>8:
+            comments.pop()
 
-            #adding these comments to the dictionary
-            MediumComments={"MediumComments":comments}
-            Mediumdict.update(MediumComments)
+        #adding these comments to the dictionary
+        MediumComments={"MediumComments":comments}
+        Mediumdict.update(MediumComments)
 
-            #Gets Gegendarstellungen for the medium and update the dictionar with this
-            Gegendarstellung=list(AllMedium.values_list("Gegendarstellung", flat=True))
-            Gegendarstellung = list(filter(None, Gegendarstellung))
-            print("Gegendarstellung:", Gegendarstellung)
-            MediumGegendarstellung={"MediumGegendarstellung":Gegendarstellung}
-            Mediumdict.update(MediumGegendarstellung)
+        #If Neither of the categories is above three
+        if ((MediumFest.count() < 3) and (MediumPauschal.count() < 3) and (MediumFrei.count() < 3)):
+            Wenigeralsdrei={"drei":"Weniger als drei"}
+            Mediumdict.update(Wenigeralsdrei)
+            print("here")
+
+        #Gets Gegendarstellungen for the medium and update the dictionar with this
+        Gegendarstellung=list(AllMedium.values_list("Gegendarstellung", flat=True))
+        Gegendarstellung = list(filter(None, Gegendarstellung))
+        print("Gegendarstellung:", Gegendarstellung)
+        MediumGegendarstellung={"MediumGegendarstellung":Gegendarstellung}
+        Mediumdict.update(MediumGegendarstellung)
 
         #and finally return the JSON
         return JsonResponse(Mediumdict)
 
     else:
-        print("Ohje")
+        pass
 
 #this view defines the index
 class IndexView(generic.ListView):
     model=DataCollection
     template_name = 'honoradar/index.html'
+
     def get_context_data(self, **context):
         #gets all entries and all distinc mediumnames and passes this as context to the tempate
         entriesno = DataCollection.objects.count()
         model=Medium
         mediumno=Medium.objects.values("mediumname").distinct().count()
 
-        print("entriesno:",entriesno,"mediumno:",mediumno)
+        print("success")
+        #print("entriesno:",entriesno,"mediumno:",mediumno)
         context["entriesno"] = entriesno
         context["mediumno"] = mediumno
 

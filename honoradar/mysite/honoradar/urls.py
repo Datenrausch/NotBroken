@@ -8,6 +8,8 @@ urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
     path('senddata/', views.senddata, name='senddata'),
     path('getdata/', views.getdata, name='getdata'),
+    path('createjson/', views.createjson, name='createjson'),
+
 ]
 
 

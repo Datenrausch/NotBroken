@@ -1,16 +1,18 @@
 //Setting up global variables
-var newdata=""
-var newtextStatus=""
-var newjqXHR=""
-
+var newdata = ""
+var newtextStatus = ""
+var newjqXHR = ""
+var redraw=1
 //Checking whether the page is ready to fire-up Ajax etc.
 $(document).ready(function() {
     var $myForm = $("#get-form")
-    //If Form is submitted, we prevent the default of reloading
+     runonce=0
+
+        //If Form is submitted, we prevent the default of reloading
     $myForm.submit(function(event) {
         event.preventDefault()
-        //instead we take the data from the form, serialize it,
-        //also we retrieve the name and the url where to send the data to
+            //instead we take the data from the form, serialize it,
+            //also we retrieve the name and the url where to send the data to
         var $formData = $(this).serialize()
         var $name = $myForm.attr('name-get')
         var $url = $myForm.attr('data-url-get')
@@ -32,16 +34,21 @@ $(document).ready(function() {
             document.getElementById('WARNING_getdata').classList.add("show");
             document.getElementById('WARNING_getdata').classList.remove("hide");
 
-        //otherwise we send the data in an ajax call to the backend, if the call was a Success
-        //we run the handleFormSuccessGet function. Otherewise an errorfunction
+            //otherwise we send the data in an ajax call to the backend, if the call was a Success
+            //we run the handleFormSuccessGet function. Otherewise an errorfunction
         } else {
+          redraw = 0
+
             document.getElementById('WARNING_getdata').classList.add("hide");
             document.getElementById('WARNING_getdata').classList.remove("show");
             $.ajax({
                 method: "GET",
                 url: $url,
                 data: $formData,
-                success: handleFormSuccessGet,
+                success: function(data){
+                  console.log("Inside Ajax")
+                 handleFormSuccessGet(data, redraw);
+               },
                 error: handleFormErrorGet,
 
             });
@@ -49,17 +56,20 @@ $(document).ready(function() {
 
     })
 
-    function handleFormSuccessGet(data, textStatus, jqXHR) {
+    function handleFormSuccessGet(data, textStatus, jqXHR, redraw) {
 
-//We first reset the button for graphic no.2 with the data for text/audio/video
-      document.getElementById("result_format_text").checked = true
-      document.getElementById("result_format_audio").checked = false
-      document.getElementById("result_format_video").checked = false
-        newdata=data
-        newtextStatus=textStatus
-        newjqXHR=jqXHR
+        while(redraw==undefined){
+          redraw=1
 
-//and save the data in the global variables
+        //We first reset the button for graphic no.2 with the data for text/audio/video
+        document.getElementById("result_format_text").checked = true
+        document.getElementById("result_format_audio").checked = false
+        document.getElementById("result_format_video").checked = false
+        newdata = data
+        newtextStatus = textStatus
+        newjqXHR = jqXHR
+
+        //and save the data in the global variables
 
         //Then we get the texts of each category, clear them in order to be able to fill them later
         const resultsdiv = document.getElementById('result')
@@ -113,8 +123,8 @@ $(document).ready(function() {
 
         //We add how many datasets we have for this medium
         var element = document.getElementById("datasets_no")
-        element.innerHTML=""
-        element.innerHTML=(String(data["mediumoverallcount"]))
+        element.innerHTML = ""
+        element.innerHTML = (String(data["mediumoverallcount"]))
 
         //And the name of the medium
         const mediumname = document.getElementById("result-mediumname")
@@ -124,65 +134,68 @@ $(document).ready(function() {
         const size = Object.keys(data).length;
 
         //Then we set the resultsdiv to show
+
         resultsdiv.classList.add("show");
         resultsdiv.classList.remove("hide");
 
         //If we have a Fainresscount of more than 1, then we change the markup in the html
         //To show that this medium accepted the Freischreiber code of fairness
-        if(data["FairnessCount"]>0){
-          resultsdiv.classList.add("fair-accepted");
-        }else{
-          resultsdiv.classList.remove("fair-accepted");
+        if (data["FairnessCount"] > 0) {
+            resultsdiv.classList.add("fair-accepted");
+        } else {
+            resultsdiv.classList.remove("fair-accepted");
         }
-        if(data["HimmelCount"]>0){
-          resultsdiv.classList.add("got-himmel");
-        }else{
-          resultsdiv.classList.remove("got-himmel");
+        if (data["HimmelCount"] > 0) {
+            resultsdiv.classList.add("got-himmel");
+        } else {
+            resultsdiv.classList.remove("got-himmel");
         }
-        if(data["HoelleCount"]>0){
-          resultsdiv.classList.add("got-hoelle");
-        }else{
-          resultsdiv.classList.remove("got-hoelle");
+        if (data["HoelleCount"] > 0) {
+            resultsdiv.classList.add("got-hoelle");
+        } else {
+            resultsdiv.classList.remove("got-hoelle");
         }
         console.log(data)
-        if((data["MediumGegendarstellung"]!="") && (data["MediumGegendarstellung"]!=undefined)){
-          console.log(data["MediumGegendarstellung"])
-          var element = document.getElementById("resultverlag")
-          element.classList.add("show");
-          element.classList.remove("hide");
-          var element = document.getElementById("gegendarstellung")
-          element.innerHTML=""
-          element.innerHTML=String(data["MediumGegendarstellung"])
-        }else{
-          var element = document.getElementById("resultverlag")
-          element.classList.add("hide");
-          element.classList.remove("show");
-          var element = document.getElementById("gegendarstellung")
-          element.innerHTML=""
+        if ((data["MediumGegendarstellung"] != "") && (data["MediumGegendarstellung"] != undefined)) {
+            console.log(data["MediumGegendarstellung"])
+            var element = document.getElementById("resultverlag")
+            element.classList.add("show");
+            element.classList.remove("hide");
+            var element = document.getElementById("gegendarstellung")
+            element.innerHTML = ""
+            element.innerHTML = String(data["MediumGegendarstellung"])
+        } else {
+            var element = document.getElementById("resultverlag")
+            element.classList.add("hide");
+            element.classList.remove("show");
+            var element = document.getElementById("gegendarstellung")
+            element.innerHTML = ""
         }
 
         //If it turns out that the backend says, we have no data, we show the error messages
-        if (data["nodata"] != undefined) {
+        if ((data["nodata"] != undefined)||(data["drei"] != undefined)) {
             var element = document.getElementById("NoDataAtAllMessage")
             if (element != null) {
                 element.parentNode.removeChild(element);
             }
-            if (data["nodata"] == "Vertippt?") {
-            var element = document.getElementById("WARNING_misspelled");
-            element.classList.add("show");
-            element.classList.remove("hide");
-            var element = document.getElementById("result");
-            element.classList.add("hide");
-            element.classList.remove("show");
-            ;}else{
-            if (data["nodata"] == "Es gibt keine Daten") {
-            var element = document.getElementById("WARNING_unknown");
-            element.classList.add("show");
-            element.classList.remove("hide");
-            var element = document.getElementById("result");
-            element.classList.add("hide");
-            element.classList.remove("show");
-            ;};}
+            if (data["nodata"] == "Vertippt?"){
+                var element = document.getElementById("WARNING_misspelled");
+                element.classList.add("show");
+                element.classList.remove("hide");
+                var element = document.getElementById("result");
+                element.classList.add("hide");
+                element.classList.remove("show");;
+            } else {
+                if ((data["nodata"] == "Es gibt keine Daten")||(data["drei"] == "Weniger als drei"))  {
+                    console.log("huch")
+                    var element = document.getElementById("WARNING_unknown");
+                    element.classList.add("show");
+                    element.classList.remove("hide");
+                    var element = document.getElementById("result");
+                    element.classList.add("hide");
+                    element.classList.remove("show");;
+                };
+            }
             var element = document.getElementById("result-grid");
             element.classList.add("show");
             element.classList.remove("hide");
@@ -218,15 +231,17 @@ $(document).ready(function() {
             for (i = 0; i < 9; i++) {
                 commentid = "comment-" + String(i + 1)
                 var element = document.getElementById(commentid);
+                if (element!=undefined){
                 element.innerHTML = ""
                 element.innerHTML = "Keine Daten"
+                }
             }
 
 
         } else {
 
-          //If we have data, we remove the NoDataAtAllMessage on the html
-          //and set up all div-containers to show
+            //If we have data, we remove the NoDataAtAllMessage on the html
+            //and set up all div-containers to show
             var element = document.getElementById("NoDataAtAllMessage");
             if (element != undefined) {
                 element.innerHTML = ""
@@ -474,15 +489,48 @@ $(document).ready(function() {
                 element.classList.add("show");
                 element.classList.remove("hide");
             };
-            //We add the comments to a pre-defined container
+            //We empty all comments
+
             listofcomments = data["MediumComments"]
+            for (i = 0; i < 8; i++) {
+
+                commentid = "comment-" + String(i + 1)
+                var element = document.getElementById(commentid);
+                element.innerHTML = ""
+
+                var elementid = "slider-comment-" + String(i + 1)
+                var element = document.getElementById(elementid);
+                element.classList.add("hide");
+                element.classList.remove("show");
+
+                var elementid = "label-slide-" + String(i + 1)
+                var element = document.getElementById(elementid);
+                if (element != undefined) {
+                    element.classList.add("hide");
+                }
+            }
+            //We add the comments to a pre-defined container
+
             if (listofcomments != undefined) {
-                for (i = 0; i < 8; i++) {
+                var loopnumber = (listofcomments).length
+
+                for (i = 0; i < loopnumber; i++) {
+
                     Commenttext = (listofcomments[i])
                     commentid = "comment-" + String(i + 1)
                     var element = document.getElementById(commentid);
-                    element.innerHTML = ""
                     element.innerHTML = Commenttext
+
+                    var elementid = "slider-comment-" + String(i + 1)
+                    var element = document.getElementById(elementid);
+                    element.classList.add("show");
+                    element.classList.remove("hide");
+
+                    var elementid = "label-slide-" + String(i + 1)
+                    var element = document.getElementById(elementid);
+                    if (element != undefined) {
+                        element.classList.remove("hide");
+                    }
                 };
             } else {
                 for (i = 0; i < 8; i++) {
@@ -491,12 +539,24 @@ $(document).ready(function() {
                     element.innerHTML = ""
                     element.innerHTML = "Keine Daten"
 
+                    var elementid = "slider-comment-" + String(i + 1)
+                    var element = document.getElementById(elementid);
+                    element.classList.add("hide");
+                    element.classList.remove("show");
+
+                    var elementid = "label-slide-" + String(i + 1)
+                    var element = document.getElementById(elementid);
+                    if (element != undefined) {
+                      element.classList.add("hide");
+                    }
                 }
 
             }
+            $myForm[0].reset(); // reset form data
 
             //Then we trigger the smoothfunction to scroll down to the graphs
             smoothfunction2()
+            };
         };
 
         //Lastly we set the texts accompanying the graphics to show
@@ -526,7 +586,6 @@ $(document).ready(function() {
 
 
 
-        $myForm[0].reset(); // reset form data
 
         //lastly, we iterate through the different comments
 
@@ -535,16 +594,17 @@ $(document).ready(function() {
 
     function handleFormErrorGet(jqXHR, textStatus, errorThrown) {
 
-        var newdata=""
-        var newtextStatus=""
-        var newjqXHR=""
+        var newdata = ""
+        var newtextStatus = ""
+        var newjqXHR = ""
     }
     //Also we rerun this whole function on resize to make the graphics responsive
-    function redraw (){
-      if (newdata!=""){
-        handleFormSuccessGet(newdata,newtextStatus,newjqXHR)
+    function redraw() {
+        if (newdata != "") {
+          var redraw=0
+            handleFormSuccessGet(newdata, newtextStatus, newjqXHR, redraw)
 
-      }
+        }
     }
     window.addEventListener("resize", redraw);
 
