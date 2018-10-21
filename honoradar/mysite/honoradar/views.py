@@ -43,6 +43,18 @@ def StdAvgFunction(entries, column):
         lowerboundary=((ids[int(0)] + ids[int(1)]+ ids[int(2)])/3.0)
         upperboundary=((ids[int(n-1)] + ids[int(n-2)]+ ids[int(n-3)])/3.0)
 
+    if n>30:
+        percentile=n//10
+        lowerboundary=0
+        upperboundary=0
+        for i in range(percentile+1):
+            lowerboundary+=ids[int(i)]
+            upperboundary+=ids[int(n-(i+1))]
+
+        lowerboundary=lowerboundary/percentile
+
+        upperboundary=upperboundary/percentile
+
     #This is an older part that calculates averages and standard deviation
     count = entries.aggregate(Count(column))
     columncount = str(column) + "__count"
