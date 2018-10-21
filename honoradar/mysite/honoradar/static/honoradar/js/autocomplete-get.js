@@ -1,22 +1,27 @@
-var options = {
-  url: "static/honoradar/mediumsname.json",
+function autocomplete_get() {
+    var versionUpdate = (new Date()).getTime();
+    console.log(nameJSON)
+    var options = {
+      data: nameJSON["data"],
 
-getValue: function(element) {
-return element.name;
-},
-requestDelay: 1000,
-list: {
-maxNumberOfElements: 5,
-match: {
-  enabled: true
-},
+        getValue: function(element) {
 
-onChooseEvent: function() {
-var value = $("#media-analyse").getSelectedItemData().name;
+            return element.name;
+        },
+        requestDelay: 1000,
+        list: {
+            maxNumberOfElements: 5,
+            match: {
+                enabled: true
+            },
 
-$("#media-analyse").val(value).trigger("change");
-}
-}
+            onChooseEvent: function() {
+                var value = $("#media-analyse").getSelectedItemData().name;
+
+                $("#media-analyse").val(value).trigger("change");
+            }
+        }
+    };
+
+    $("#media-analyse").easyAutocomplete(options);
 };
-
-$("#media-analyse").easyAutocomplete(options);

@@ -1,7 +1,9 @@
 //Only checking for the names in the inputs
+function autocomplete_giv() {
 
+var versionUpdate = (new Date()).getTime();
 var options = {
-    url: "static/honoradar/mediumsname.json",
+  data: nameJSON["data"],
 
     getValue: function(element) {
         return element.name;
@@ -21,4 +23,4 @@ var options = {
     }
 };
 
-$("#data_medium").easyAutocomplete(options);
+$("#data_medium").easyAutocomplete(options);}

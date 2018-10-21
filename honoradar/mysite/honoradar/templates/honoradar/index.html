@@ -323,7 +323,7 @@
                     <span class="hide" id="pre-data_checkbox">
 						<input name="AGB" class="checkbox" type="checkbox" id="data_checkbox" />
 						<label class="checkboxlabel " for="data_checkbox"></label>
-						<span class="checkboxtext">Ich habe den <a target="_blank" class="clear-agb" href="{% static "/honoradar/artikel/nutzungsbedingungen.html"%}">Nutzungsbedingungen</a> gelesen.</span>
+						<span class="checkboxtext">Ich habe die <a target="_blank" class="clear-agb" href="{% static "/honoradar/artikel/nutzungsbedingungen.html"%}">Nutzungsbedingungen</a> gelesen.</span>
                     </span>
 
                     {% if messages %} {% for message in messages %}
@@ -623,7 +623,7 @@
 						<label for="slide-5" id="label-slide-4" class="bullets__item bullets__item--5 hide"></label>
 						<label for="slide-6" id="label-slide-6" class="bullets__item bullets__item--6 hide"></label>
 						<label for="slide-7" id="label-slide-7" class="bullets__item bullets__item--7 hide"></label>
-						<label for="slide-8" id="label-slide-7" class="bullets__item bullets__item--8 hide"></label>
+						<label for="slide-8" id="label-slide-8" class="bullets__item bullets__item--8 hide"></label>
 					</div>
 
 				</section>
@@ -751,10 +751,11 @@
     <script src="https://d3js.org/d3.v5.min.js"></script>
 
     <script src="{% static 'honoradar/js/gradientboxplot.js'%}"></script>
-
+    <script type='text/javascript' > var nameJSON = {}; </script>
     <script src="{% static 'honoradar/js/ajax-senddata.js'%}"></script>
     <script src="{% static 'honoradar/js/ajax-getdata.js'%}"></script>
     <script src="{% static 'honoradar/js/jquery.easy-autocomplete.min.js'%}"></script>
+    <script src="{% static 'honoradar/js/ajax-JSON.js'%}"></script>
 
     <script src="static/honoradar/js/autocomplete-giv.js"></script>
     <script src="static/honoradar/js/autocomplete-get.js"></script>

@@ -802,26 +802,17 @@ function hideaccepted() {
 };
 
 
-function smoothfunction(){
-  console.log("this is smooth")
+function smoothfunction2(){
   var button = document.getElementById("reload_submit");
-
-  var href = $(button).attr('linktdirection');
+  var href = "#result"
   $('html, body').animate({
     scrollTop:$(href).offset().top
   },'slow');
 }
-function smoothfunction2(){
-  var button = document.getElementById("reload_submit");
-
-  $('html, body').animate({
-    scrollTop:$("#result").offset().top
-  },'slow');
-}
 function smoothfunction_submit(){
   var button = document.getElementById("data_submit");
-
   var href = $(button).attr('linkdirection');
+  console.log(href)
   $('html, body').animate({
     scrollTop:$(href).offset().top
   },'slow');
@@ -870,7 +861,6 @@ function videoamountloan() {
 
 function smoothfunction(){
   var button = document.getElementById("reload_submit");
-
   var href = $(button).attr('linkdirection');
   $('html, body').animate({
     scrollTop:$(href).offset().top
@@ -878,7 +868,6 @@ function smoothfunction(){
 };
 $('#machmit').on('click', function(event){
   event.preventDefault();
-
   var href = $(this).attr('href');
   $('html, body').animate({
     scrollTop:$(href).offset().top
