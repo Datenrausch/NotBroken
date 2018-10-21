@@ -966,6 +966,8 @@ def getdata(request):
         AllMedium=DataCollection.objects.filter(Medium__mediumname=MediumName)
         comments = list(AllMedium.values_list("Comment", flat=True))
         comments = list(filter(None, comments))
+        comments=list(filter(lambda a:a != "Kein Kommentar",comments))
+
 
         #if there are no comments we do nothing
         if len(comments)==0:
