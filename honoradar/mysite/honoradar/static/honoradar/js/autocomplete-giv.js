@@ -16,7 +16,7 @@ var options = {
         },
 
         onChooseEvent: function() {
-            var value = $("#data_medium").getSelectedItemData().name;
+            var value = $("#data_medium").getSelectedItemData().code;
 
             $("#data_medium").val(value).trigger("change");
         }

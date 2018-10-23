@@ -16,7 +16,7 @@ function autocomplete_get() {
             },
 
             onChooseEvent: function() {
-                var value = $("#media-analyse").getSelectedItemData().name;
+                var value = $("#media-analyse").getSelectedItemData().code;
 
                 $("#media-analyse").val(value).trigger("change");
             }
