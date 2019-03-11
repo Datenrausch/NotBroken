@@ -3475,6 +3475,14 @@ p a:after{
 	z-index: -1;
 }
 
+p a.quote:after{
+	height:25px;
+	height:1.4rem;
+	width:0;
+	background:#2ecc71;
+	z-index: -1;
+}
+
 p a:after {
 	left:50%;
 	-webkit-transform:translateX(-50%);

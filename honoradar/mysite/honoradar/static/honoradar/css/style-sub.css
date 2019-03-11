@@ -755,3 +755,22 @@ p a.clear-agb-bedingung:after{
 	background: white;
 
 }
+
+.listicle {
+	margin-left: 25px;
+}
+
+.chart-description {
+	width: 100%;
+	max-width: 100%;
+	padding: 0 15% 0 15%;
+	margin: 0 0 50px 0;
+	font-size: 50%;
+	color: #505E70;
+	text-align: justify;
+}
+
+sup {
+	vertical-align: 6px !important; 
+	font-size : 60% !important;
+}

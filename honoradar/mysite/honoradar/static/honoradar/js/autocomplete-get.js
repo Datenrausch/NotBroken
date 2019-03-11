@@ -1,8 +1,7 @@
 function autocomplete_get() {
     var versionUpdate = (new Date()).getTime();
-    console.log(nameJSON)
     var options = {
-      data: nameJSON["data"],
+      data: nameJSON["autofilljson"],
 
         getValue: function(element) {
 
@@ -16,7 +15,7 @@ function autocomplete_get() {
             },
 
             onChooseEvent: function() {
-                var value = $("#media-analyse").getSelectedItemData().name;
+                var value = $("#media-analyse").getSelectedItemData().code;
 
                 $("#media-analyse").val(value).trigger("change");
             }

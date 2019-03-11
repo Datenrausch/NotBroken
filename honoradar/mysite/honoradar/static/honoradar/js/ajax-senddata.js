@@ -378,7 +378,13 @@ $(document).ready(function() {
             }
         }
 
-        smoothfunction_submit()
+        smoothfunction_submit();
+        nameJSON=data["autofilljson"]
+        nameJSON["status"]=data["status"]
+
+        console.log(nameJSON);
+        autocomplete_get();
+        autocomplete_giv();
     }
 
     function handleFormErrorPost(jqXHR, textStatus, errorThrown) {

@@ -3,7 +3,7 @@ function autocomplete_giv() {
 
 var versionUpdate = (new Date()).getTime();
 var options = {
-  data: nameJSON["data"],
+  data: nameJSON["autofilljson"],
 
     getValue: function(element) {
         return element.name;
@@ -16,7 +16,7 @@ var options = {
         },
 
         onChooseEvent: function() {
-            var value = $("#data_medium").getSelectedItemData().name;
+            var value = $("#data_medium").getSelectedItemData().code;
 
             $("#data_medium").val(value).trigger("change");
         }

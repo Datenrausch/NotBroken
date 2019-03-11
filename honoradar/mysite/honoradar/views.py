@@ -43,6 +43,18 @@ def StdAvgFunction(entries, column):
         lowerboundary=((ids[int(0)] + ids[int(1)]+ ids[int(2)])/3.0)
         upperboundary=((ids[int(n-1)] + ids[int(n-2)]+ ids[int(n-3)])/3.0)
 
+    if n>30:
+        percentile=n//10
+        lowerboundary=0
+        upperboundary=0
+        for i in range(percentile+1):
+            lowerboundary+=ids[int(i)]
+            upperboundary+=ids[int(n-(i+1))]
+
+        lowerboundary=lowerboundary/percentile
+
+        upperboundary=upperboundary/percentile
+
     #This is an older part that calculates averages and standard deviation
     count = entries.aggregate(Count(column))
     columncount = str(column) + "__count"
@@ -205,7 +217,7 @@ def createjson(request):
             all_db_entries=Medium.objects.values("mediumname").distinct()
             for entry in all_db_entries:
                  mediumname=(entry["mediumname"])
-                 newentry={"name":mediumname,"code":mediumname.title()}
+                 newentry={"name":mediumname,"code":mediumname}
                  oldjsondata.append(newentry)
                  print(mediumname)
             seen = set()
@@ -215,8 +227,9 @@ def createjson(request):
                 if t not in seen:
                      seen.add(t)
                      new_l.append(d)
+
             result={}
-            result["data"]=new_l
+            result["autofilljson"]=new_l
             result["status"] = "Success"
             return JsonResponse(result)
 
@@ -484,7 +497,7 @@ def senddata(request):
                         SalaryPerMonth=SalaryPerHour*160
                         if ((SalaryPerHour>100) or (SalaryPerHour==0)):
                             Suspiciousentry="Weird"
-                        if (CharPerArticleFree is not None):
+                        if (CharPerArticleFree is not None) and (CharPerArticleFree !=0):
                             print("Loop")
                             if float(FeeFree)/float(CharPerArticleFree)>0.15:
                                 Suspiciousentry="Weird"
@@ -773,7 +786,25 @@ def senddata(request):
             bla = str(i)
             testdict["message" + str(counter)] = bla
             counter += 1
+        with io.open('honoradar/static/honoradar/mediumsname.json', "r") as json_file:
+            oldjsondata = json.load(json_file)
+            all_db_entries=Medium.objects.values("mediumname").distinct()
+            for entry in all_db_entries:
+                 mediumname=(entry["mediumname"])
+                 newentry={"name":mediumname,"code":mediumname}
+                 oldjsondata.append(newentry)
+                 print(mediumname)
+            seen = set()
+            new_l = []
+            for d in oldjsondata:
+                t = tuple(d.items())
+                if t not in seen:
+                     seen.add(t)
+                     new_l.append(d)
 
+            testdict={}
+            testdict["autofilljson"]=new_l
+            testdict["status"] = "Success"
         return JsonResponse(testdict)
     else:
         print("Something went wrong")
@@ -966,6 +997,8 @@ def getdata(request):
         AllMedium=DataCollection.objects.filter(Medium__mediumname=MediumName)
         comments = list(AllMedium.values_list("Comment", flat=True))
         comments = list(filter(None, comments))
+        comments=list(filter(lambda a:a != "Kein Kommentar",comments))
+
 
         #if there are no comments we do nothing
         if len(comments)==0:
@@ -993,7 +1026,26 @@ def getdata(request):
         print("Gegendarstellung:", Gegendarstellung)
         MediumGegendarstellung={"MediumGegendarstellung":Gegendarstellung}
         Mediumdict.update(MediumGegendarstellung)
+        with io.open('honoradar/static/honoradar/mediumsname.json', "r") as json_file:
+            oldjsondata = json.load(json_file)
+            all_db_entries=Medium.objects.values("mediumname").distinct()
+            for entry in all_db_entries:
+                 mediumname=(entry["mediumname"])
+                 newentry={"name":mediumname,"code":mediumname}
+                 oldjsondata.append(newentry)
+                 print(mediumname)
+            seen = set()
+            new_l = []
+            for d in oldjsondata:
+                t = tuple(d.items())
+                if t not in seen:
+                     seen.add(t)
+                     new_l.append(d)
 
+            testdict={}
+            testdict["autofilljson"]=new_l
+            testdict["status"] = "Success"
+            Mediumdict.update(testdict)
         #and finally return the JSON
         return JsonResponse(Mediumdict)
 
