@@ -6,7 +6,15 @@
 }
 
 .autor-michel:after {
-	content:"Michel Penke ※ Journalist & Frontend Designer";
+	content:"Michel Penke ※ Datenjournalist & Frontend Designer";
+}
+
+.autor-katharina {
+	background-image: url(../image/katharina_jakob.jpg);
+}
+
+.autor-katharina:after {
+	content:"Katharina Jakob ※  Journalistin & Buchautorin";
 }
 
 .autor-haluka {
@@ -94,13 +102,15 @@
 
 .news_1 {
 	background-image: url(../image/news_1.jpg);
-	padding: 130px 50px 0px calc(10%);
+	padding: 120px 50px 0px calc(3%);
+	background-position: 0% 40%;
+	background-size: 100%;
 }
 
 .news_2 {
 	background-image: url(../image/news_2.jpg);
 	padding: 130px 50px 20px calc(3.5%);	
-	background-size: 130% ;
+	background-size: 130%;
 }
 
 .news_3 {
