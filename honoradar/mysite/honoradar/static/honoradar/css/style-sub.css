@@ -3,6 +3,12 @@
 	margin: 150px 0px 70px 0px;	
 }
 
+/*Scroll Padding*/
+
+* {
+	scroll-padding: 30px 0 0 50px;
+}
+
 /*Text-Design*/
 
 .text-feld {
@@ -773,4 +779,8 @@ p a.clear-agb-bedingung:after{
 sup {
 	vertical-align: 6px !important; 
 	font-size : 60% !important;
+}
+
+#disclaimer {
+	margin-top: 150px;
 }
