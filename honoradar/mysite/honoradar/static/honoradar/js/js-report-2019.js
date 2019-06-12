@@ -53,6 +53,8 @@ Highcharts.chart('zufriedenheitvslohn', {
 		tickLength: 0
     },
     yAxis: {
+		max: 60,
+		min: 0,
         title: {
             text: 'Stundenhonorar',
 			style: {"fontWeight": "bold"},
@@ -149,7 +151,6 @@ Highcharts.chart('zufriedenheitvslohn', {
 {name: "Westdeutscher Rundfunk (Freiberufler)", data: [[7, 39.56]], showInLegend: false, marker: {states: {hover: {fillColor: '#2ecc71'}}}},
   {name: "NZZ (Freiberufler)", data: [[7, 16.5]], showInLegend: false, marker: {states: {hover: {fillColor: '#2ecc71'}}}},
   {name: "Brigitte (Freiberufler)", data: [[8.5, 52.12]], showInLegend: false, marker: {states: {hover: {fillColor: '#2ecc71'}}}},
-  {name: "Maxi (Freiberufler)", data: [[7.3, 63.74]], showInLegend: false, marker: {states: {hover: {fillColor: '#2ecc71'}}}},
   {name: "WDR 5 (Freiberufler)", data: [[7.8, 56.03]], showInLegend: false, marker: {states: {hover: {fillColor: '#2ecc71'}}}},
   {name: "Bild (Freiberufler)", data: [[6.3, 35.38]], showInLegend: false, marker: {states: {hover: {fillColor: '#2ecc71'}}}},
   {name: "Gehirn&Geist (Freiberufler)", data: [[7.3, 59.03]], showInLegend: false, marker: {states: {hover: {fillColor: '#2ecc71'}}}},
@@ -160,7 +161,7 @@ Highcharts.chart('zufriedenheitvslohn', {
   {name: "Deutschlandfunk Kultur (Freiberufler)", data: [[7.5, 49.88]], showInLegend: false, marker: {states: {hover: {fillColor: '#2ecc71'}}}},
   {name: "Brigitte Woman (Freiberufler)", data: [[6.8, 55.83]], showInLegend: false, marker: {states: {hover: {fillColor: '#2ecc71'}}}},
   {name: "Handelsblatt (Freiberufler)", data: [[7.3, 42.41]], showInLegend: false, marker: {states: {hover: {fillColor: '#2ecc71'}}}},
-  {name: "DPA (Freiberufler)", data: [[5.5, 84.75]], showInLegend: false, marker: {states: {hover: {fillColor: '#2ecc71'}}}},
+  {name: "DPA (Freiberufler)", data: [[5.5, 8.48]], showInLegend: false, marker: {states: {hover: {fillColor: '#2ecc71'}}}},
   {name: "Slow Food Magazin (Freiberufler)", data: [[8, 40.23]], showInLegend: false, marker: {states: {hover: {fillColor: '#2ecc71'}}}},
   {name: "Technology Review (Freiberufler)", data: [[7.3, 46.45]], showInLegend: false, marker: {states: {hover: {fillColor: '#2ecc71'}}}},
   {name: "Spektrum Online (Freiberufler)", data: [[8.3, 35.87]], showInLegend: false, marker: {states: {hover: {fillColor: '#2ecc71'}}}},
@@ -214,7 +215,7 @@ Highcharts.chart('zufriedenheitvslohn', {
   {name: "VICE (Freiberufler)", data: [[6.7, 18.83]], showInLegend: false, marker: {states: {hover: {fillColor: '#2ecc71'}}}},
   {name: "SWR2 (Freiberufler)", data: [[6.3, 21.02]], showInLegend: false, marker: {states: {hover: {fillColor: '#2ecc71'}}}},
   {name: "RND (Freiberufler)", data: [[6.7, 15.03]], showInLegend: false, marker: {states: {hover: {fillColor: '#2ecc71'}}}},
-  {name: "Neues Deutschland (Freiberufler)", data: [[6.3, 19.01]], showInLegend: false, marker: {states: {hover: {fillColor: '#2ecc71'}}}},
+  {name: "Neues Deutschland (Freiberufler)", data: [[6.3, 9.61]], showInLegend: false, marker: {states: {hover: {fillColor: '#2ecc71'}}}},
   {name: "Badische Zeitung (Freiberufler)", data: [[7, 11.21]], showInLegend: false, marker: {states: {hover: {fillColor: '#2ecc71'}}}},
   {name: "Frankfurter Rundschau (Freiberufler)", data: [[6.7, 14.11]], showInLegend: false, marker: {states: {hover: {fillColor: '#2ecc71'}}}},
   {name: "Der Feinschmecker (Freiberufler)", data: [[5, 30]], showInLegend: false, marker: {states: {hover: {fillColor: '#2ecc71'}}}},
@@ -1872,7 +1873,7 @@ Highcharts.chart('erfahrungvszufriedenheit', {
 		},
     },
     title: {
-        text: 'Stabile Glücksehligkeit',
+        text: 'Stabile Zufriedenheit',
         style: {
             color: "#ff9f23",
             fontWeight: 'bold',
@@ -2005,6 +2006,8 @@ Highcharts.chart('erfahrungvszufriedenheit', {
 	]
 });
 
+
+/*
 Highcharts.chart('positionvszufriedenheit', {
     chart: {
         type: 'column',
@@ -2146,3 +2149,5 @@ Highcharts.chart('positionvszufriedenheit', {
   {type: "spline", color: '#ff9f23', data: [[],[6.83],[6.25],[5.29],[6.29],[6.67]], marker: {enabled: false}, lineWidth: 3, enableMouseTracking: false}
 	]
 });
+
+*/

@@ -1,0 +1,341 @@
+{
+  "standing": [
+ {
+   "name": "Deutschlandfunk",
+   "amount": 12,
+   "geld_text": null,
+   "geld_audio": 72.11,
+   "geld_video": null,
+   "zufriedenheit_frei": 7.3
+ },
+ {
+   "name": "Deutschlandfunk Kultur",
+   "amount": 8,
+   "geld_text": null,
+   "geld_audio": 80.57,
+   "geld_video": null,
+   "zufriedenheit_frei": 7.5
+ },
+ {
+   "name": "SWR2",
+   "amount": 8,
+   "geld_text": null,
+   "geld_audio": 61.86,
+   "geld_video": null,
+   "zufriedenheit_frei": 6.3
+ },
+ {
+   "name": "WDR 5",
+   "amount": 6,
+   "geld_text": null,
+   "geld_audio": 66.22,
+   "geld_video": null,
+   "zufriedenheit_frei": 7.8
+ },
+ {
+   "name": "Radio Essen",
+   "amount": 5,
+   "geld_text": null,
+   "geld_audio": 38.89,
+   "geld_video": null,
+   "zufriedenheit_frei": 7.3
+ },
+ {
+   "name": "Westdeutscher Rundfunk (WDR)",
+   "amount": 21,
+   "geld_text": null,
+   "geld_audio": null,
+   "geld_video": 329.23,
+   "zufriedenheit_frei": 7
+ },
+ {
+   "name": "Norddeutscher Rundfunk (NDR)",
+   "amount": 5,
+   "geld_text": null,
+   "geld_audio": null,
+   "geld_video": 293.33,
+   "zufriedenheit_frei": 5.3
+ },
+ {
+   "name": "Die Tageszeitung (taz)",
+   "amount": 31,
+   "geld_text": 20.09,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 6.3
+ },
+ {
+   "name": "Die Zeit",
+   "amount": 28,
+   "geld_text": 71.67,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 7
+ },
+ {
+   "name": "Süddeutsche Zeitung (SZ)",
+   "amount": 26,
+   "geld_text": 40.85,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 7
+ },
+ {
+   "name": "Zeit Online (ZON)",
+   "amount": 24,
+   "geld_text": 30.42,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 6
+ },
+ {
+   "name": "Spiegel Online (SPON)",
+   "amount": 22,
+   "geld_text": 48.61,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 5
+ },
+ {
+   "name": "Frankfurter Allgemeine Zeitung (FAZ)",
+   "amount": 13,
+   "geld_text": 35.57,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 6
+ },
+ {
+   "name": "Ze.tt",
+   "amount": 13,
+   "geld_text": 23.84,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 7.3
+ },
+ {
+   "name": "Der Tagesspiegel",
+   "amount": 11,
+   "geld_text": 28.25,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 5
+ },
+ {
+   "name": "Neue Zürcher Zeitung (NZZ)",
+   "amount": 11,
+   "geld_text": 57.66,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 7
+ },
+ {
+   "name": "Deutsche Presse-Agentur (DPA)",
+   "amount": 10,
+   "geld_text": 18.08,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 5.5
+ },
+ {
+   "name": "Geo",
+   "amount": 8,
+   "geld_text": 174.94,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 6.8
+ },
+ {
+   "name": "Deutsche Welle",
+   "amount": 7,
+   "geld_text": 50.84,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 7
+ },
+ {
+   "name": "Frankfurter Allgemeine Sonntagszeitung (FAS)",
+   "amount": 7,
+   "geld_text": 40.23,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 6.3
+ },
+ {
+   "name": "Rheinische Post (RP)",
+   "amount": 7,
+   "geld_text": 22.07,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 6
+ },
+ {
+   "name": "Jetzt Online",
+   "amount": 6,
+   "geld_text": 26.64,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 7
+ },
+ {
+   "name": "Spektrum Online",
+   "amount": 6,
+   "geld_text": 61.39,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 8.3
+ },
+ {
+   "name": "Stern",
+   "amount": 6,
+   "geld_text": 125.83,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 7
+ },
+ {
+   "name": "Vice Online",
+   "amount": 6,
+   "geld_text": 30.95,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 6
+ },
+ {
+   "name": "Bento",
+   "amount": 5,
+   "geld_text": 33.39,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 6
+ },
+ {
+   "name": "Berliner Zeitung",
+   "amount": 5,
+   "geld_text": 34.99,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 5.7
+ },
+ {
+   "name": "Brand eins",
+   "amount": 5,
+   "geld_text": 128.94,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 9
+ },
+ {
+   "name": "Chrismon",
+   "amount": 5,
+   "geld_text": 91.14,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 7
+ },
+ {
+   "name": "Der Freitag",
+   "amount": 5,
+   "geld_text": 19.23,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 5.3
+ },
+ {
+   "name": "Die Welt",
+   "amount": 5,
+   "geld_text": 26.24,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 7.7
+ },
+ {
+   "name": "Evangelischer Pressedienst",
+   "amount": 5,
+   "geld_text": 31.14,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 7.3
+ },
+ {
+   "name": "Geo Wissen",
+   "amount": 5,
+   "geld_text": 148.28,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 7.3
+ },
+ {
+   "name": "Juice Magazin",
+   "amount": 5,
+   "geld_text": 12,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 6.7
+ },
+ {
+   "name": "Jungle World",
+   "amount": 5,
+   "geld_text": 7.92,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 9
+ },
+ {
+   "name": "Mare",
+   "amount": 5,
+   "geld_text": 88.89,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 7
+ },
+ {
+   "name": "P.M. History",
+   "amount": 5,
+   "geld_text": 115.56,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 7.7
+ },
+ {
+   "name": "P.M. Magazin",
+   "amount": 5,
+   "geld_text": 127.09,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 8.3
+ },
+ {
+   "name": "Redaktions Netzwerk Deutschland (RND)",
+   "amount": 5,
+   "geld_text": 42.41,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 6.7
+ },
+ {
+   "name": "Südkurier",
+   "amount": 5,
+   "geld_text": 20.35,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 5.7
+ },
+ {
+   "name": "Unispiegel",
+   "amount": 5,
+   "geld_text": 84.85,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 6.7
+ },
+ {
+   "name": "Westdeutsche Allgemeine Zeitung (WAZ)",
+   "amount": 5,
+   "geld_text": 12.13,
+   "geld_audio": null,
+   "geld_video": null,
+   "zufriedenheit_frei": 4.7
+ }
+]
+}
+
