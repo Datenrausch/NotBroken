@@ -2,12 +2,12 @@ new Vue({
 	el: "#ranking",
 	data: {
 		medias: [],
-		orderBy: "position",
+		orderBy: "name",
 		orderOption: "asc",
 		searchQuery: ""
 	},
 	mounted() {
-		fetch("../../../static/honoradar/data-2018.json")
+		fetch("../../../static/honoradar/data-2019.json")
 			.then(response => response.json())
 			.then(json => {
 				this.medias = json.standing;
