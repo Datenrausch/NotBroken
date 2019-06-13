@@ -312,7 +312,7 @@ Highcharts.chart('zeitvslohn', {
         }
     },
     subtitle: {
-        text: 'Stundenlohn freier Journalisten in Abhängigkeit von der Erstellungsdauer ihrer Auftragsarbeiten in Stunden',
+        text: 'Stundensatz freier Journalist*innen in Abhängigkeit von der Erstellungsdauer ihrer Auftragsarbeiten in Stunden',
         style: {
             color: "#ffbb63",
             fontWeight: 'regular',
@@ -1746,7 +1746,7 @@ Highcharts.chart('erfahrungvslohn', {
 		enabled: false
 	},
     subtitle: {
-        text: 'Monatslohn in Euro im Vergleich zur Arbeitserfahrung<br>Geringe Erfahrung: < 5 Jahre | Mittlere Erfahrung: < 10 Jahre | Hohe Erfahrung: > 10 Jahre',
+        text: 'Monatseinkommen in Euro im Vergleich zur Arbeitserfahrung<br>Geringe Erfahrung: < 5 Jahre | Mittlere Erfahrung: < 10 Jahre | Hohe Erfahrung: > 10 Jahre',
         style: {
             color: "#ffbb63",
             fontWeight: 'regular',
@@ -1785,7 +1785,7 @@ Highcharts.chart('erfahrungvslohn', {
     },
     yAxis: {
         title: {
-            text: 'Monatslohn',
+            text: 'Monatseinkommen',
 			style: {"fontWeight": "bold"},
         },
 		style: {
