@@ -1,6 +1,5 @@
 //Only checking for the names in the inputs
 function autocomplete_giv() {
-
 var versionUpdate = (new Date()).getTime();
 var options = {
   data: nameJSON["autofilljson"],
@@ -8,7 +7,7 @@ var options = {
     getValue: function(element) {
         return element.name;
     },
-    requestDelay: 750,
+    requestDelay: 1000,
     list: {
         maxNumberOfElements: 5,
         match: {
