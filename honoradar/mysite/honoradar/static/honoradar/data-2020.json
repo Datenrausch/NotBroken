@@ -1,0 +1,1084 @@
+{
+    "standing": [
+        {
+            "name": "11 Freunde Online",
+            "zufriedenheit_frei": 6.5,
+            "geld_text": 36.6,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 4
+  },
+        {
+            "name": "Allgemeine Zeitung (VRM)",
+            "zufriedenheit_frei": 5,
+            "geld_text": 9.68,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Augsburger Allgemeine",
+            "zufriedenheit_frei": 7.3,
+            "geld_text": 26.19,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Badische Zeitung",
+            "zufriedenheit_frei": 6.5,
+            "geld_text": 28.31,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 6
+  },
+        {
+            "name": "Bento",
+            "zufriedenheit_frei": 6,
+            "geld_text": 35.39,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 7
+  },
+        {
+            "name": "Berliner Zeitung",
+            "zufriedenheit_frei": 6,
+            "geld_text": 34.48,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 6
+  },
+        {
+            "name": "Bild",
+            "zufriedenheit_frei": 7,
+            "geld_text": 73.17,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 5
+  },
+        {
+            "name": "Bild der Wissenschaft",
+            "zufriedenheit_frei": 7,
+            "geld_text": 99.92,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Brand eins",
+            "zufriedenheit_frei": 9,
+            "geld_text": 128.94,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 5
+  },
+        {
+            "name": "Brigitte",
+            "zufriedenheit_frei": 8.3,
+            "geld_text": 139.58,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 7
+  },
+        {
+            "name": "Buzzfeed",
+            "zufriedenheit_frei": 7.7,
+            "geld_text": 95.74,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Chip Online",
+            "zufriedenheit_frei": 4,
+            "geld_text": 12.15,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 5
+  },
+        {
+            "name": "Chrismon",
+            "zufriedenheit_frei": 7.3,
+            "geld_text": 93.73,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 6
+  },
+        {
+            "name": "Cicero",
+            "zufriedenheit_frei": 6.5,
+            "geld_text": 109.58,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 4
+  },
+        {
+            "name": "Das Magazin (Berlin)",
+            "zufriedenheit_frei": 6.5,
+            "geld_text": 26.85,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 4
+  },
+        {
+            "name": "Der Feinschmecker",
+            "zufriedenheit_frei": 5,
+            "geld_text": 125.93,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Der Freitag",
+            "zufriedenheit_frei": 5.3,
+            "geld_text": 17.92,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 9
+  },
+        {
+            "name": "Der Standard",
+            "zufriedenheit_frei": 5.3,
+            "geld_text": 40.95,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Der Tagesspiegel",
+            "zufriedenheit_frei": 5,
+            "geld_text": 32.1,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 19
+  },
+        {
+            "name": "Deutsche Welle",
+            "zufriedenheit_frei": 7,
+            "geld_text": 43.96,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 7
+  },
+        {
+            "name": "Die Rheinpfalz",
+            "zufriedenheit_frei": 6.3,
+            "geld_text": 18.81,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Die Tageszeitung",
+            "zufriedenheit_frei": 6,
+            "geld_text": 20,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 46
+  },
+        {
+            "name": "Die Welt",
+            "zufriedenheit_frei": 6.3,
+            "geld_text": 26.26,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 8
+  },
+        {
+            "name": "Die Welt am Sonntag",
+            "zufriedenheit_frei": 6,
+            "geld_text": 41.32,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 9
+  },
+        {
+            "name": "Die Zeit",
+            "zufriedenheit_frei": 7,
+            "geld_text": 75,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 35
+  },
+        {
+            "name": "Dogs",
+            "zufriedenheit_frei": 8,
+            "geld_text": 125.54,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "dpa",
+            "zufriedenheit_frei": 5.7,
+            "geld_text": 18.72,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 13
+  },
+        {
+            "name": "dpa Themendienst",
+            "zufriedenheit_frei": 6.7,
+            "geld_text": 20.97,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Edison Online",
+            "zufriedenheit_frei": 4.8,
+            "geld_text": 56.99,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 4
+  },
+        {
+            "name": "Eltern",
+            "zufriedenheit_frei": 8.7,
+            "geld_text": 108.09,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 5
+  },
+        {
+            "name": "Emotion",
+            "zufriedenheit_frei": 6.7,
+            "geld_text": 95,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "enorm",
+            "zufriedenheit_frei": 8.5,
+            "geld_text": 100,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 6
+  },
+        {
+            "name": "Essen & Trinken",
+            "zufriedenheit_frei": 7.5,
+            "geld_text": 135.01,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 4
+  },
+        {
+            "name": "Evangelisch.de",
+            "zufriedenheit_frei": 6,
+            "geld_text": 29.11,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Evangelischer Pressedienst",
+            "zufriedenheit_frei": 6.3,
+            "geld_text": 28.91,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 9
+  },
+        {
+            "name": "filmecho/filmwoche",
+            "zufriedenheit_frei": 3.7,
+            "geld_text": 13.98,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Fluter",
+            "zufriedenheit_frei": 6.3,
+            "geld_text": 54.22,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 6
+  },
+        {
+            "name": "Focus Gesundheit",
+            "zufriedenheit_frei": 6.3,
+            "geld_text": 122.77,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 4
+  },
+        {
+            "name": "Focus Gesundheit Arztsuche",
+            "zufriedenheit_frei": 6,
+            "geld_text": 43.47,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 5
+  },
+        {
+            "name": "Focus Online",
+            "zufriedenheit_frei": 6.3,
+            "geld_text": 30.35,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Forum-Wochenmagazin",
+            "zufriedenheit_frei": 6.3,
+            "geld_text": 37.06,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Frankfurter Allgemeine Sonntagszeitung",
+            "zufriedenheit_frei": 6.3,
+            "geld_text": 40.84,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 8
+  },
+        {
+            "name": "Frankfurter Allgemeine Zeitung",
+            "zufriedenheit_frei": 6,
+            "geld_text": 36.07,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 17
+  },
+        {
+            "name": "Frankfurter Rundschau",
+            "zufriedenheit_frei": 6.5,
+            "geld_text": 18.33,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 6
+  },
+        {
+            "name": "Freie Presse",
+            "zufriedenheit_frei": 5.7,
+            "geld_text": 25.79,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 5
+  },
+        {
+            "name": "Funke Mediengruppe",
+            "zufriedenheit_frei": 5.5,
+            "geld_text": 41.53,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 4
+  },
+        {
+            "name": "Gehirn & Geist",
+            "zufriedenheit_frei": 6.7,
+            "geld_text": 48.89,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 7
+  },
+        {
+            "name": "Geo",
+            "zufriedenheit_frei": 6.7,
+            "geld_text": 176.11,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 9
+  },
+        {
+            "name": "Geo Wissen",
+            "zufriedenheit_frei": 7.3,
+            "geld_text": 148.28,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 5
+  },
+        {
+            "name": "Goethe Online",
+            "zufriedenheit_frei": 6.3,
+            "geld_text": 39.89,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Golem.de",
+            "zufriedenheit_frei": 4.3,
+            "geld_text": 38.73,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Greenpeace Magazin",
+            "zufriedenheit_frei": 6.3,
+            "geld_text": 198.14,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Hamburger Morgenpost",
+            "zufriedenheit_frei": 5.3,
+            "geld_text": 56.75,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Handelsblatt",
+            "zufriedenheit_frei": 6.5,
+            "geld_text": 43.58,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 4
+  },
+        {
+            "name": "Heidenheimer Zeitung",
+            "zufriedenheit_frei": 5,
+            "geld_text": 34.99,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Ideat",
+            "zufriedenheit_frei": 6,
+            "geld_text": 88.64,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Jetzt.de",
+            "zufriedenheit_frei": 6.8,
+            "geld_text": 29.22,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 10
+  },
+        {
+            "name": "Jüdische Allgemeine",
+            "zufriedenheit_frei": 5,
+            "geld_text": 16.54,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Juice Magazin",
+            "zufriedenheit_frei": 6.3,
+            "geld_text": 12,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 6
+  },
+        {
+            "name": "Junge Welt",
+            "zufriedenheit_frei": 6.3,
+            "geld_text": 11.36,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 5
+  },
+        {
+            "name": "Jungle World",
+            "zufriedenheit_frei": 8.3,
+            "geld_text": 7.81,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 6
+  },
+        {
+            "name": "Landeszeitung für die Lüneburger Heide",
+            "zufriedenheit_frei": 4,
+            "geld_text": 46.49,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Mair Dumont",
+            "zufriedenheit_frei": 5.7,
+            "geld_text": 74.83,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Mare",
+            "zufriedenheit_frei": 6.8,
+            "geld_text": 91.67,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 6
+  },
+        {
+            "name": "Märkische Allgemeine",
+            "zufriedenheit_frei": 5,
+            "geld_text": 25.84,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Medium Magazin",
+            "zufriedenheit_frei": 7.3,
+            "geld_text": 64.49,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Merian",
+            "zufriedenheit_frei": 6.3,
+            "geld_text": 155.35,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 5
+  },
+        {
+            "name": "Missy Magazine",
+            "zufriedenheit_frei": 6.8,
+            "geld_text": 15.79,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 4
+  },
+        {
+            "name": "Mit Vergnügen",
+            "zufriedenheit_frei": 8,
+            "geld_text": 24.08,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Münchner Merkur",
+            "zufriedenheit_frei": 6.7,
+            "geld_text": 24.24,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 5
+  },
+        {
+            "name": "Natur",
+            "zufriedenheit_frei": 7.8,
+            "geld_text": 79.92,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 4
+  },
+        {
+            "name": "Neue Osnabrücker Zeitung",
+            "zufriedenheit_frei": 4.7,
+            "geld_text": 23.4,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Neues Deutschland",
+            "zufriedenheit_frei": 5.3,
+            "geld_text": 14.91,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 5
+  },
+        {
+            "name": "Nordis",
+            "zufriedenheit_frei": 6.3,
+            "geld_text": 26.03,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "NZZ",
+            "zufriedenheit_frei": 7,
+            "geld_text": 61.71,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 14
+  },
+        {
+            "name": "NZZ am Sonntag",
+            "zufriedenheit_frei": 8,
+            "geld_text": 98.93,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 4
+  },
+        {
+            "name": "Orange by Handelsblatt",
+            "zufriedenheit_frei": 6.3,
+            "geld_text": 13.47,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "P.M. Magazin",
+            "zufriedenheit_frei": 8,
+            "geld_text": 121.22,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 8
+  },
+        {
+            "name": "P.M. History",
+            "zufriedenheit_frei": 8.7,
+            "geld_text": 104.44,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 7
+  },
+        {
+            "name": "Perspective Daily",
+            "zufriedenheit_frei": 8,
+            "geld_text": 34.76,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 5
+  },
+        {
+            "name": "Psychologie Heute",
+            "zufriedenheit_frei": 8,
+            "geld_text": 100,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 6
+  },
+        {
+            "name": "Redaktionsnetzwerk Deutschland",
+            "zufriedenheit_frei": 6.8,
+            "geld_text": 40.72,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 6
+  },
+        {
+            "name": "Rhein-Neckar-Zeitung",
+            "zufriedenheit_frei": 5.5,
+            "geld_text": 14.47,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 6
+  },
+        {
+            "name": "Rheinische Post",
+            "zufriedenheit_frei": 5.8,
+            "geld_text": 18.96,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 8
+  },
+        {
+            "name": "Saarbrücker Zeitung",
+            "zufriedenheit_frei": 5.3,
+            "geld_text": 23.94,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 4
+  },
+        {
+            "name": "Sächsische Zeitung",
+            "zufriedenheit_frei": 5.3,
+            "geld_text": 29.25,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Science Notes Magazin",
+            "zufriedenheit_frei": 7,
+            "geld_text": 54.55,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Senioren Ratgeber",
+            "zufriedenheit_frei": 7,
+            "geld_text": 145.83,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 4
+  },
+        {
+            "name": "Slow Food Magazin",
+            "zufriedenheit_frei": 8,
+            "geld_text": 55.33,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Spektrum Online",
+            "zufriedenheit_frei": 8,
+            "geld_text": 57.47,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 11
+  },
+        {
+            "name": "Spex",
+            "zufriedenheit_frei": 5.8,
+            "geld_text": 12.38,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 4
+  },
+        {
+            "name": "Spiegel Geschichte",
+            "zufriedenheit_frei": 8.5,
+            "geld_text": 156.69,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 4
+  },
+        {
+            "name": "Spiegel Online",
+            "zufriedenheit_frei": 5.5,
+            "geld_text": 47.22,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 26
+  },
+        {
+            "name": "Stern",
+            "zufriedenheit_frei": 7,
+            "geld_text": 140,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 7
+  },
+        {
+            "name": "Süddeutsche Zeitung",
+            "zufriedenheit_frei": 7,
+            "geld_text": 40.75,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 37
+  },
+        {
+            "name": "Südkurier",
+            "zufriedenheit_frei": 5.8,
+            "geld_text": 18.83,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 6
+  },
+        {
+            "name": "Szene Hamburg",
+            "zufriedenheit_frei": 4.7,
+            "geld_text": 29.44,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "T-Online",
+            "zufriedenheit_frei": 6.8,
+            "geld_text": 55.9,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 4
+  },
+        {
+            "name": "T3n",
+            "zufriedenheit_frei": 8.3,
+            "geld_text": 62.07,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Technology Review",
+            "zufriedenheit_frei": 7.8,
+            "geld_text": 89.7,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 6
+  },
+        {
+            "name": "Tempus Corporate",
+            "zufriedenheit_frei": 5,
+            "geld_text": 107.75,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "tip Berlin",
+            "zufriedenheit_frei": 6.8,
+            "geld_text": 37.92,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 4
+  },
+        {
+            "name": "Tour Magazin",
+            "zufriedenheit_frei": 6.3,
+            "geld_text": 68.25,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 7
+  },
+        {
+            "name": "Übermedien",
+            "zufriedenheit_frei": 7,
+            "geld_text": 23.45,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Unispiegel",
+            "zufriedenheit_frei": 6.7,
+            "geld_text": 84.85,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 5
+  },
+        {
+            "name": "Utopia.de",
+            "zufriedenheit_frei": 8.3,
+            "geld_text": 9.71,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "VDI Nachrichten",
+            "zufriedenheit_frei": 6.7,
+            "geld_text": 46.05,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Vice",
+            "zufriedenheit_frei": 7,
+            "geld_text": 27.48,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 4
+  },
+        {
+            "name": "Vice Online",
+            "zufriedenheit_frei": 6,
+            "geld_text": 30.95,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 8
+  },
+        {
+            "name": "Vivanty",
+            "zufriedenheit_frei": 6.3,
+            "geld_text": 38.87,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 4
+  },
+        {
+            "name": "Walden",
+            "zufriedenheit_frei": 8.3,
+            "geld_text": 106.22,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Wanderlust",
+            "zufriedenheit_frei": 3.3,
+            "geld_text": 71.9,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Westdeutscher Rundfunk (Text)",
+            "zufriedenheit_frei": 6.5,
+            "geld_text": 100.5,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 8
+  },
+        {
+            "name": "welt-sichten",
+            "zufriedenheit_frei": 7.7,
+            "geld_text": 43.22,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Weser-Kurier",
+            "zufriedenheit_frei": 6,
+            "geld_text": 22.96,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 4
+  },
+        {
+            "name": "Westdeutsche Allgemeine Zeitung",
+            "zufriedenheit_frei": 5,
+            "geld_text": 12.1,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 6
+  },
+        {
+            "name": "Westfälischer Anzeiger",
+            "zufriedenheit_frei": 6,
+            "geld_text": 38.57,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 4
+  },
+        {
+            "name": "Wiesbadener Kurier",
+            "zufriedenheit_frei": 5.8,
+            "geld_text": 12.09,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 4
+  },
+        {
+            "name": "Wirtschaftswoche",
+            "zufriedenheit_frei": 6.3,
+            "geld_text": 73.44,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Ze.tt",
+            "zufriedenheit_frei": 7,
+            "geld_text": 23.08,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 14
+  },
+        {
+            "name": "Zeit Online",
+            "zufriedenheit_frei": 6,
+            "geld_text": 31.33,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 38
+  },
+        {
+            "name": "Zeit Wissen",
+            "zufriedenheit_frei": 8.7,
+            "geld_text": 105.08,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Zitty",
+            "zufriedenheit_frei": 8,
+            "geld_text": 30.25,
+            "geld_audio": null,
+            "geld_video": null,
+            "amount": 4
+  },
+        {
+            "name": "Bayerischer Rundfunk",
+            "zufriedenheit_frei": 6.3,
+            "geld_text": null,
+            "geld_audio": 40.56,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Deutschlandfunk",
+            "zufriedenheit_frei": 7,
+            "geld_text": null,
+            "geld_audio": 74.52,
+            "geld_video": null,
+            "amount": 11
+  },
+        {
+            "name": "Deutschlandfunk Kultur",
+            "zufriedenheit_frei": 7.5,
+            "geld_text": null,
+            "geld_audio": 80.57,
+            "geld_video": null,
+            "amount": 8
+  },
+        {
+            "name": "Deutschlandfunk Nova",
+            "zufriedenheit_frei": 7.7,
+            "geld_text": null,
+            "geld_audio": 59.41,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "Hellweg Radio",
+            "zufriedenheit_frei": 6.5,
+            "geld_text": null,
+            "geld_audio": 25.99,
+            "geld_video": null,
+            "amount": 4
+  },
+        {
+            "name": "Radio Essen",
+            "zufriedenheit_frei": 7.3,
+            "geld_text": null,
+            "geld_audio": 38.89,
+            "geld_video": null,
+            "amount": 5
+  },
+        {
+            "name": "SWR2",
+            "zufriedenheit_frei": 6.3,
+            "geld_text": null,
+            "geld_audio": 61.86,
+            "geld_video": null,
+            "amount": 8
+  },
+        {
+            "name": "WDR 1LIVE",
+            "zufriedenheit_frei": 6,
+            "geld_text": null,
+            "geld_audio": 72.53,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "WDR 2",
+            "zufriedenheit_frei": 7.3,
+            "geld_text": null,
+            "geld_audio": 103.78,
+            "geld_video": null,
+            "amount": 3
+  },
+        {
+            "name": "WDR 5",
+            "zufriedenheit_frei": 7.8,
+            "geld_text": null,
+            "geld_audio": 66.22,
+            "geld_video": null,
+            "amount": 6
+  },
+        {
+            "name": "Norddeutscher Rundfunk",
+            "zufriedenheit_frei": 5.5,
+            "geld_text": null,
+            "geld_audio": null,
+            "geld_video": 265,
+            "amount": 4
+  },
+        {
+            "name": "Westdeutscher Rundfunk (TV)",
+            "zufriedenheit_frei": 7,
+            "geld_text": null,
+            "geld_audio": null,
+            "geld_video": 302.56,
+            "amount": 19
+  }
+]
+}

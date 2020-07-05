@@ -1,16 +1,17 @@
 {
     "xData": [],
     "datasets": [{
-        "name": "<span style='color: #ff9f23;'>Pauschalisten</span> | Anteil der Einkommensklasse:",
-        "data": [0.85,0.00,0.85,4.27,14.53,10.26,7.69,9.40,15.38,10.26,8.55,6.84,6.84,2.56,0.85,0.00,0.00,0.00,0.00,0.00,0.85],
-        "unit": "Prozent",
-        "type": "areaspline",
-        "valueDecimals": 2
-    }, {
-        "name": "<span style='color: #ff9f23;'>Festangestellte</span> | Anteil der Einkommensklasse:",
-        "data": [1.86,0.93,1.55,5.57,8.98,10.84,19.20,15.79,14.55,6.19,4.64,2.48,2.48,1.24,0.62,0.31,1.24,0.00,0.31,0.00,0.62],
-        "unit": "Prozent",
-        "type": "areaspline",
-        "valueDecimals": 2
+            "name": "<span style='color: #ff9f23;'>Lokal</span> | Anteil der Einkommensklasse:",
+            "data": [4.8, 21.4, 14.8, 22.9, 21.9, 2.9, 3.3, 2.4, 1.4, 1.4, 1, 1.9],
+            "unit": "Prozent",
+            "type": "areaspline",
+            "valueDecimals": 1
+    },
+        {
+            "name": "<span style='color: #ff9f23;'>Überregional</span> | Anteil der Einkommensklasse:",
+            "data": [8.1, 14.3, 12.9, 15.2, 15.2, 10.5, 7.1, 4.8, 4.3, 1.9, 1.4, 4.3],
+            "unit": "Prozent",
+            "type": "areaspline",
+            "valueDecimals": 1
     }]
-} 
+}

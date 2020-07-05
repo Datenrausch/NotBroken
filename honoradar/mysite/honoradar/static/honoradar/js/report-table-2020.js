@@ -7,7 +7,7 @@ new Vue({
 		searchQuery: ""
 	},
 	mounted() {
-		fetch("../../../static/honoradar/data-2019.json")
+		fetch("../../../static/honoradar/data-2020.json")
 			.then(response => response.json())
 			.then(json => {
 				this.medias = json.standing;
